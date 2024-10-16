@@ -1,0 +1,21 @@
+@mixin fullscreen() {
+  @media screen and (display-mode: standalone) {
+    @content;
+  }
+}
+
+@mixin colorElement($var) {
+  #{$var}: var(--color-element);
+}
+
+@mixin colorRole($var) {
+  #{$var}: var(--color-role);
+}
+
+@mixin colorRoleDual($var) {
+  #{$var}: var(--color-role-dual);
+}
+
+@mixin colorGradient($var) {
+  #{$var}: var(--color-gradient);
+}
