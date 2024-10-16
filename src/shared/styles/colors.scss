@@ -12,3 +12,8 @@ $color-elements-air: #BD62CB;
 $color-elements-fire: #FA7C01;
 $color-elements-water: #13A4D3;
 $color-elements-earth: #7FB900;
+
+$bg-elements-air: rgba($color-elements-air, .1);
+$bg-elements-fire: rgba($color-elements-fire, .1);
+$bg-elements-water: rgba($color-elements-water, .1);
+$bg-elements-earth: rgba($color-elements-earth, .1);

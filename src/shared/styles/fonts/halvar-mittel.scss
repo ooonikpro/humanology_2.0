@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Halvar Mittel Rg";
+  src: url("/public/assets/fonts/halvar-mittel/HalvarMittel-Rg.eot");
+  src:
+    local("Halvar Mittelschrift Regular"),
+    local("HalvarMittel-Rg"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-Rg.eot?#iefix") format("embedded-opentype"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-Rg.woff2") format("woff2"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-Rg.woff") format("woff"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-Rg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halvar Mittel Rg";
+  src: url("/public/assets/fonts/halvar-mittel/HalvarMittel-RgSlanted.eot");
+  src:
+    local("Halvar Mittelschrift Regular Slanted"),
+    local("HalvarMittel-RgSlanted"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-RgSlanted.eot?#iefix") format("embedded-opentype"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-RgSlanted.woff2") format("woff2"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-RgSlanted.woff") format("woff"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-RgSlanted.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halvar Mittel Rg SuSlanted";
+  src: url("/public/assets/fonts/halvar-mittel/HalvarMittel-RgSuSlanted.eot");
+  src:
+    local("Halvar Mittelschrift Regular SuperSlanted"),
+    local("HalvarMittel-RgSuSlanted"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-RgSuSlanted.eot?#iefix") format("embedded-opentype"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-RgSuSlanted.woff2") format("woff2"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-RgSuSlanted.woff") format("woff"),
+    url("/public/assets/fonts/halvar-mittel/HalvarMittel-RgSuSlanted.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
