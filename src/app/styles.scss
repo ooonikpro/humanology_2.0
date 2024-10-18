@@ -34,6 +34,10 @@
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
+    appearance: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
 
     &::-webkit-scrollbar {
       width: 0;
@@ -45,7 +49,15 @@
 
 html,
 body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+a, button {
+  text-decoration: none;
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
 }
