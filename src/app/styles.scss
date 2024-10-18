@@ -1,7 +1,27 @@
+@import "../shared/styles/fonts";
+
 :root {
-  font-size: 62.5%;
+  --color-elements-air: #{$color-elements-air};
+  --color-elements-fire: #{$color-elements-fire};
+  --color-elements-water: #{$color-elements-water};
+  --color-elements-earth: #{$color-elements-earth};
+
+  --bg-elements-air: #{$bg-elements-air};
+  --bg-elements-fire: #{$bg-elements-fire};
+  --bg-elements-water: #{$bg-elements-water};
+  --bg-elements-earth: #{$bg-elements-earth};
+
+  --bg-color: #{$color-basic-white};
+  --text-color: #{$color-basic-black};
+
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: subpixel-antialiased;
+  font-family: "Halvar Mittel Rg", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
 * {

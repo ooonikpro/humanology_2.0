@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Halvar Breit Md SuSlanted";
+  src: url("/public/assets/fonts/halvar-breit/HalvarBreit-MdSuSlanted.eot");
+  src:
+      local("Halvar Breitschrift Medium SuperSlanted"),
+      local("HalvarBreit-MdSuSlanted"),
+      url("/public/assets/fonts/halvar-breit/HalvarBreit-MdSuSlanted.eot?#iefix")
+      format("embedded-opentype"),
+      url("/public/assets/fonts/halvar-breit/HalvarBreit-MdSuSlanted.woff2")
+      format("woff2"),
+      url("/public/assets/fonts/halvar-breit/HalvarBreit-MdSuSlanted.woff")
+      format("woff"),
+      url("/public/assets/fonts/halvar-breit/HalvarBreit-MdSuSlanted.ttf")
+      format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halvar Breit Md";
+  src: url("/public/assets/fonts/halvar-breit/HalvarBreit-Md.eot");
+  src:
+      local("Halvar Breitschrift Medium"),
+      local("HalvarBreit-Md"),
+      url("/public/assets/fonts/halvar-breit/HalvarBreit-Md.eot?#iefix")
+      format("embedded-opentype"),
+      url("/public/assets/fonts/halvar-breit/HalvarBreit-Md.woff2")
+      format("woff2"),
+      url("/public/assets/fonts/halvar-breit/HalvarBreit-Md.woff") format("woff"),
+      url("/public/assets/fonts/halvar-breit/HalvarBreit-Md.ttf")
+      format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Halvar Breit Md";
+  src: url("/public/assets/fonts/halvar-breit/HalvarBreit-MdSlanted.eot");
+  src:
+    local("Halvar Breitschrift Medium Slanted"),
+    local("HalvarBreit-MdSlanted"),
+    url("/public/assets/fonts/halvar-breit/HalvarBreit-MdSlanted.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/assets/fonts/halvar-breit/HalvarBreit-MdSlanted.woff2")
+      format("woff2"),
+    url("/public/assets/fonts/halvar-breit/HalvarBreit-MdSlanted.woff")
+      format("woff"),
+    url("/public/assets/fonts/halvar-breit/HalvarBreit-MdSlanted.ttf")
+      format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
