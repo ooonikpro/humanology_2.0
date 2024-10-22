@@ -4,10 +4,11 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueDevTools from "vite-plugin-vue-devtools";
 import autoprefixer from "autoprefixer";
+import viteGenerateIconNameTypePlugin from "./viteGenerateIconNameTypePlugin";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueDevTools()],
+  plugins: [vue(), vueDevTools(), viteGenerateIconNameTypePlugin()],
   resolve: {
     alias: {
       "@app": fileURLToPath(new URL("./src/app", import.meta.url)),
@@ -26,7 +27,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         api: "modern-compiler",
-        additionalData: `@import "@shared/styles/_prepend.scss";`,
+        additionalData: `@use "@shared/styles/_prepend.scss";`,
       },
     },
   },
