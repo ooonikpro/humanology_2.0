@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import UiSvg from "@shared/ui/svg/UiSvg.vue";
 import type { Gender } from "@types";
 import { computed } from "vue";
 
@@ -20,8 +21,8 @@ const checked = computed(() => gender.value === "male");
       :checked
     />
     <span class="ui-gender-switch__icon-wrapper">
-      <!-- <GetIcon v-if="checked" class="ui-gender-switch__icon" name="male" />
-      <GetIcon v-else class="ui-gender-switch__icon" name="female" /> -->
+      <UiSvg v-if="checked" class="ui-gender-switch__icon" name="masculine" />
+      <UiSvg v-else class="ui-gender-switch__icon" name="feminine" />
     </span>
   </label>
 </template>
