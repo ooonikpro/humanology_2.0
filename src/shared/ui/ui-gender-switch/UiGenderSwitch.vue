@@ -49,13 +49,18 @@ const checked = computed(() => gender.value === 'male')
     transform: translate($padding, -50%);
     transition: transform 0.2s linear;
 
-    background-color: $color-basic-white;
     border-radius: 50%;
+
+    background-color: $color-basic-white;
+    background-image: url('/public/assets/icons/feminine.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   &.--active {
     &::before {
       transform: translate(calc(100% - $padding), -50%);
+      background-image: url('/public/assets/icons/masculine.svg');
     }
   }
 }
