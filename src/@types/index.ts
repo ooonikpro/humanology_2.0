@@ -1,3 +1,5 @@
+export type * from "./iconNames";
+
 export type Gender = "male" | "female";
 
 export type Quadras = "air" | "fire" | "earth" | "water";
