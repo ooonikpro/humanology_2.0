@@ -11,26 +11,25 @@ const checked = computed(() => gender.value === "male");
 </script>
 
 <template>
-  <label class="ui-gender-switch">
+  <label class="ui-gender-swap">
     <input
-      class="ui-gender-switch__input"
+      class="ui-gender-swap__input"
       type="checkbox"
       v-model="gender"
       true-value="male"
       false-value="female"
       :checked
     />
-    <span class="ui-gender-switch__icon-wrapper">
-      <UiSvg v-if="checked" class="ui-gender-switch__icon" name="masculine" />
-      <UiSvg v-else class="ui-gender-switch__icon" name="feminine" />
+    <span class="ui-gender-swap__icon-wrapper">
+      <UiSvg class="ui-gender-swap__icon" :name="gender" />
     </span>
   </label>
 </template>
 
 <style lang="scss" scoped>
 $padding: 2px;
-$p: ".ui-gender-switch";
-#{$p} {
+$icon-width: 16px;
+.ui-gender-swap {
   padding: $padding;
   width: 32px;
   height: 20px;
@@ -38,33 +37,36 @@ $p: ".ui-gender-switch";
 
   background-color: $color-basic-black;
   border-radius: 10px;
-  position: relative;
 
   &__input {
     display: none;
-    &:checked + #{$p}__icon-wrapper {
-      transform: translate(calc(100% - $padding), -50%);
-    }
+  }
+
+  &__input:checked + &__icon-wrapper {
+    transform: translateX($icon-width - $padding * 2);
   }
 
   &__icon-wrapper {
-    height: calc(100% - $padding * 2);
-    aspect-ratio: 1/1;
-    display: inline-block;
+    width: 16px;
+    height: 16px;
+    display: flex;
 
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translate($padding, -50%);
-    transition: transform 0.2s linear;
+    transform: translateX(0);
+    transition: transform 300ms linear;
 
     border-radius: 50%;
     background-color: $color-basic-white;
   }
 
   &__icon {
-    display: inline-block;
+    margin: auto;
+    width: 12px;
+    height: 12px;
     color: $color-basic-accent;
+
+    &:deep(svg) {
+      vertical-align: top;
+    }
   }
 }
 </style>

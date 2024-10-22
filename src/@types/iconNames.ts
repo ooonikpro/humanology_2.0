@@ -2,10 +2,8 @@
 
 export type IconNameType =
   | "touch-icon"
-  | "masculine"
   | "logo-symbol"
   | "logo-circle"
-  | "feminine"
   | "vulnerable"
   | "suggestive"
   | "role"
@@ -107,4 +105,6 @@ export type IconNameType =
   | "arrow-left-square"
   | "apps"
   | "annotation"
-  | "alert-square";
+  | "alert-square"
+  | "male"
+  | "female";
