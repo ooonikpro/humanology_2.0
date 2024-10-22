@@ -11,7 +11,7 @@ const checked = computed(() => gender.value === "male");
 </script>
 
 <template>
-  <label class="ui-gender-switch" :class="{ '--active': checked }">
+  <label class="ui-gender-switch">
     <input
       class="ui-gender-switch__input"
       type="checkbox"
