@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import scrollToTop from "@shared/lib/scrollToTop";
-import UiSvg from "@shared/ui/svg/UiSvg.vue";
+import { UiSvg } from "@shared/ui";
 </script>
 
 <template>

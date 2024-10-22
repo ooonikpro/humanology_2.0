@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import UiSvg from "@shared/ui/svg/UiSvg.vue";
+import UiSvg from "@shared/ui/UiSvg.vue";
 import type { Gender } from "@types";
 import { computed } from "vue";
 

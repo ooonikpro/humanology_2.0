@@ -1,3 +1,3 @@
-export { default as UiSvg } from './svg/UiSvg.vue';
-export { default as UiGenderSwitch } from './ui-gender-switch/UiGenderSwitch.vue';
+export { default as UiGenderSwitch } from './UiGenderSwitch.vue';
+export { default as UiSvg } from './UiSvg.vue';
 

@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+import { UiSvg } from "@shared/ui";
+</script>
+
 <template>
   <div class="app-loader">
     <div class="app-loader__image">
@@ -33,6 +37,4 @@
   }
 }
 </style>
-<script lang="ts" setup>
-import UiSvg from "@shared/ui/svg/UiSvg.vue";
-</script>
+
