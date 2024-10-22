@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { GetIcon } from "@shared/icons";
 import type { Gender } from "@types";
 import { computed } from "vue";
 
@@ -6,11 +7,11 @@ const gender = defineModel<Gender>({
   required: true,
 });
 
-const checked = computed(() => gender.value === 'male')
+const checked = computed(() => gender.value === "male");
 </script>
 
 <template>
-  <label class="ui-gender-switch" :class="{'--active': checked}">
+  <label class="ui-gender-switch" :class="{ '--active': checked }">
     <input
       class="ui-gender-switch__input"
       type="checkbox"
@@ -19,12 +20,17 @@ const checked = computed(() => gender.value === 'male')
       false-value="female"
       :checked
     />
+    <span class="ui-gender-switch__icon-wrapper">
+      <GetIcon v-if="checked" class="ui-gender-switch__icon" name="male" />
+      <GetIcon v-else class="ui-gender-switch__icon" name="female" />
+    </span>
   </label>
 </template>
 
 <style lang="scss" scoped>
-.ui-gender-switch {
-  $padding: 2px;
+$padding: 2px;
+$p: ".ui-gender-switch";
+#{$p} {
   padding: $padding;
   width: 32px;
   height: 20px;
@@ -36,12 +42,15 @@ const checked = computed(() => gender.value === 'male')
 
   &__input {
     display: none;
+    &:checked + #{$p}__icon-wrapper {
+      transform: translate(calc(100% - $padding), -50%);
+    }
   }
 
-  &::before {
-    content: "";
+  &__icon-wrapper {
     height: calc(100% - $padding * 2);
     aspect-ratio: 1/1;
+    display: inline-block;
 
     position: absolute;
     left: 0;
@@ -50,18 +59,12 @@ const checked = computed(() => gender.value === 'male')
     transition: transform 0.2s linear;
 
     border-radius: 50%;
-
     background-color: $color-basic-white;
-    background-image: url('/public/assets/icons/feminine.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
-  &.--active {
-    &::before {
-      transform: translate(calc(100% - $padding), -50%);
-      background-image: url('/public/assets/icons/masculine.svg');
-    }
+  &__icon {
+    display: inline-block;
+    color: $color-basic-accent;
   }
 }
 </style>
