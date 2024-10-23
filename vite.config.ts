@@ -1,9 +1,9 @@
 import { fileURLToPath, URL } from "node:url";
 
-import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import vueDevTools from "vite-plugin-vue-devtools";
 import autoprefixer from "autoprefixer";
+import { defineConfig } from "vite";
+import vueDevTools from "vite-plugin-vue-devtools";
 import viteGenerateIconNameTypePlugin from "./viteGenerateIconNameTypePlugin";
 
 // https://vite.dev/config/
@@ -27,11 +27,11 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         api: "modern-compiler",
-        additionalData: `@import "@shared/styles/_prepend.scss";`,
       },
     },
   },
   server: {
+    open: true,
     port: 8080,
   },
 });

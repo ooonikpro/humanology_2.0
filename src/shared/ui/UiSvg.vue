@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import type { IconNameType } from "@types";
-import getIconMap from "@shared/lib/getIconMap";
+import { getIconMap } from "@shared/lib";
 
 const iconMap = getIconMap();
 
@@ -27,7 +27,7 @@ watch(
 
 <style lang="scss">
 .ui-icon {
-  display: inline-block;
+  display: inline-flex;
 
   svg {
     width: 100%;

@@ -9,22 +9,24 @@
 </template>
 
 <style scoped lang="scss">
-.app-layout {
-  --header-height: 40px;
+@use "../shared/styles/variables/layers";
 
+$header-height: 40px;
+
+.app-layout {
   width: 100%;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding-top: var(--header-height);
+  padding-top: $header-height;
 
   &__header {
-    height: var(--header-height);
-    position: fixed;
+    height: $header-height;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: layers.$z-index-app-header;
   }
 
   &__body {
@@ -34,7 +36,7 @@
   &__body,
   &__footer {
     position: relative;
-    z-index: 1;
+    z-index: layers.$z-index-app-content;
   }
 }
 </style>

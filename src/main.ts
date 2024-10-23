@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "@app/App.vue";
 import Router from "@app/router";
-import disableWindowScroll from "@shared/lib/disableWindowScroll";
+import { disableWindowScroll } from "@shared/lib";
 import { register as registerServiceWorker } from "./serviceWorkerRegistration";
 
 const app = createApp(App);
