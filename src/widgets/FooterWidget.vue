@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import scrollToTop from "@shared/lib/scrollToTop";
 import { UiSvg } from "@shared/ui";
+import { scrollToTop } from "@shared/lib";
 </script>
 
 <template>
@@ -30,10 +30,12 @@ import { UiSvg } from "@shared/ui";
 </template>
 
 <style scoped lang="scss">
+@use "../shared/styles/variables/colors";
+
 footer {
   width: 100%;
   height: 160px;
-  background-color: $color-basic-beige;
+  background-color: colors.$beige;
   display: flex;
   flex-direction: column;
   padding: 8px;

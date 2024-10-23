@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { UiGenderSwitch } from "@shared/ui";
-import type { Gender } from "@types";
 import { ref } from "vue";
+import { UiGenderSwitch } from "@shared/ui";
+import { GenderEnum } from "@shared/constants/gender";
 
-const gender = ref<Gender>("male");
+const gender = ref(GenderEnum.male);
 </script>
 
 <template>
   <div>
-    Home 
+    Home
     <UiGenderSwitch v-model="gender" />
   </div>
 </template>

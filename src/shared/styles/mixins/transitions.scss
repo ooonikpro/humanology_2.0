@@ -1,0 +1,12 @@
+@use 'sass:list';
+@use '../variables/transitions';
+
+@mixin ease($properties...) {
+  $value: ();
+
+  @each $prop in $properties {
+    $value: list.append($value, $prop transitions.$transition-base-duration transitions.$transition-base-function, comma);
+  }
+
+  transition: $value;
+}

@@ -11,6 +11,8 @@ import { UiSvg } from "@shared/ui";
 </template>
 
 <style scoped lang="scss">
+@use "../shared/styles/variables/layers";
+
 .app-loader {
   width: 100%;
   height: 100%;
@@ -21,7 +23,7 @@ import { UiSvg } from "@shared/ui";
   align-items: center;
   justify-content: center;
   background-color: var(--bg-color);
-  z-index: 9999;
+  z-index: layers.$z-index-app-loader;
 
   &__image {
     animation: blink 5s ease infinite;
@@ -37,4 +39,3 @@ import { UiSvg } from "@shared/ui";
   }
 }
 </style>
-

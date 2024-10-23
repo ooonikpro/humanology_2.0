@@ -1,25 +1,28 @@
-@import "../shared/styles/fonts";
+@use "../shared/styles/fonts";
+@use "../shared/styles/variables/colors";
 
 :root {
-  --color-elements-air: #{$color-elements-air};
-  --color-elements-fire: #{$color-elements-fire};
-  --color-elements-water: #{$color-elements-water};
-  --color-elements-earth: #{$color-elements-earth};
+  --color-elements-air: #{colors.$air};
+  --color-elements-fire: #{colors.$fire};
+  --color-elements-water: #{colors.$water};
+  --color-elements-earth: #{colors.$earth};
 
-  --bg-elements-air: #{$bg-elements-air};
-  --bg-elements-fire: #{$bg-elements-fire};
-  --bg-elements-water: #{$bg-elements-water};
-  --bg-elements-earth: #{$bg-elements-earth};
+  --bg-elements-air: #{colors.$transparently-air};
+  --bg-elements-fire: #{colors.$transparently-fire};
+  --bg-elements-water: #{colors.$transparently-water};
+  --bg-elements-earth: #{colors.$transparently-earth};
 
-  --bg-color: #{$color-basic-white};
-  --text-color: #{$color-basic-black};
+  --bg-color: #{colors.$white};
+  --text-color: #{colors.$black};
 
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: subpixel-antialiased;
-  font-family: "Halvar Mittel Rg", sans-serif;
+
+  font-family: fonts.$font-family;
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
+
   color: var(--text-color);
   background-color: var(--bg-color);
 }
@@ -59,5 +62,4 @@ a, button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
 }
