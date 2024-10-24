@@ -8,31 +8,25 @@ const props = defineProps<{
 
 <template>
   <div class="ui-row-dual">
-    <span class="ui-row-dual__text">{{ leftText }}</span>
+    <span class="ui-row-dual__text left">{{ leftText }}</span>
     <span class="ui-row-dual__line"></span>
-    <span class="ui-row-dual__text">{{ rightText }}</span>
+    <span class="ui-row-dual__text right">{{ rightText }}</span>
   </div>
 </template>
 
 <style scoped lang="scss">
 @use "../styles/variables/colors";
+
 .ui-row-dual {
   display: flex;
+  gap: 8px;
   align-items: baseline;
-  justify-content: space-between;
-  width: 100%;
-  height: 32px;
-}
-
-.ui-row-dual__text {
-  font-size: 18px;
-  text-decoration: none;
-  padding-bottom: 2px;
-}
-
-.ui-row-dual__line {
-  flex-grow: 1;
-  border-bottom: 1px dotted black;
-  margin: 0 10px;
+    .right {
+      opacity: 0.5;
+    }
+    &__line {
+      flex-grow: 1;
+      border-bottom: 1px dotted colors.$black;
+    }
 }
 </style>
