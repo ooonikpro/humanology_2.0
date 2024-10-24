@@ -1,8 +1,7 @@
 <template>
   <div class="app-layout">
-    <header class="app-layout__header"><slot name="navigation" /></header>
+    <header class="app-layout__header"><slot name="header" /></header>
     <main class="app-layout__body"><slot /></main>
-
     <slot name="footer" />
     <slot name="loader" />
   </div>
@@ -21,11 +20,11 @@ $header-height: 40px;
   padding-top: $header-height;
 
   &__header {
+    width: 100%;
     height: $header-height;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     z-index: layers.$z-index-app-header;
   }
 
@@ -40,3 +39,5 @@ $header-height: 40px;
   }
 }
 </style>
+<script setup>
+</script>
