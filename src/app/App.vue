@@ -29,6 +29,4 @@ setTimeout(() => (isLoading.value = false), Math.random() * 2500);
   </AppLayout>
 </template>
 
-<style src="./styles.scss" lang="scss">
-
-</style>
+<style src="./styles.scss" lang="scss"></style>

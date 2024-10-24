@@ -39,5 +39,5 @@ $header-height: 40px;
   }
 }
 </style>
-<script setup>
-</script>
+
+<script setup></script>

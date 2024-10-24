@@ -37,7 +37,7 @@
   &__icon {
     width: 24px;
     height: 24px;
-    opacity: 50%;
+    opacity: 0.5;
   }
 }
 </style>
