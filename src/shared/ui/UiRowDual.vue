@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps } from "vue";
+
 const props = defineProps<{
   leftText: string;
   rightText: string;
@@ -8,9 +9,11 @@ const props = defineProps<{
 
 <template>
   <div class="ui-row-dual">
-    <span class="ui-row-dual__text left">{{ leftText }}</span>
+    <span class="ui-row-dual__text">{{ props.leftText }}</span>
     <span class="ui-row-dual__line"></span>
-    <span class="ui-row-dual__text right">{{ rightText }}</span>
+    <span class="ui-row-dual__text ui-row-dual__text--right">{{
+      props.rightText
+    }}</span>
   </div>
 </template>
 
@@ -19,14 +22,20 @@ const props = defineProps<{
 
 .ui-row-dual {
   display: flex;
-  gap: 8px;
   align-items: baseline;
-    .right {
+  gap: 8px;
+
+  &__text {
+    color: colors.$black;
+
+    &--right {
       opacity: 0.5;
     }
-    &__line {
-      flex-grow: 1;
-      border-bottom: 1px dotted colors.$black;
-    }
+  }
+
+  &__line {
+    flex-grow: 1;
+    border-bottom: 1px dotted colors.$black;
+  }
 }
 </style>
