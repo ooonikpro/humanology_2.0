@@ -13,22 +13,22 @@ setTimeout(() => (isLoading.value = false), Math.random() * 2500);
 
 <template>
   <AppLayout>
-    <template v-slot:default>
-      <RouterView />
-    </template>
-
-    <template v-slot:header>
+    <template #header>
       <HeaderWidget />
     </template>
 
-    <template v-slot:footer>
+    <template #default>
+      <RouterView />
+    </template>
+
+    <template #footer>
       <FooterWidget />
     </template>
 
-    <template v-slot:loader><AppLoader v-if="isLoading" /></template>
+    <template #loader>
+      <AppLoader v-if="isLoading" />
+    </template>
   </AppLayout>
 </template>
 
-<style src="./styles.scss" lang="scss">
-
-</style>
+<style src="./styles.scss" lang="scss"></style>

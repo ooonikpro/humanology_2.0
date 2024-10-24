@@ -1,11 +1,10 @@
 <script setup lang="ts">
-  import { RouterLink } from 'vue-router';
-  import { UiSvg } from "@shared/ui";
+import { RouterLink } from "vue-router";
+import { UiSvg } from "@shared/ui";
 </script>
 
 <template>
   <header class="header-widget">
-
     <button class="header-widget__button">
       <UiSvg name="menu" class="header-widget__icon" />
     </button>
@@ -17,7 +16,6 @@
     <button class="header-widget__button">
       <UiSvg name="user-square" class="header-widget__icon" />
     </button>
-
   </header>
 </template>
 
@@ -28,6 +26,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid colors.$grey;
+  background-color: colors.$white;
   padding: 8px;
 
   &__button {
@@ -37,7 +37,7 @@
   &__icon {
     width: 24px;
     height: 24px;
-    opacity: 50%;
+    opacity: 0.5;
   }
 }
 </style>

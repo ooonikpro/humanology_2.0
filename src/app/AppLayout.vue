@@ -10,21 +10,19 @@
 <style scoped lang="scss">
 @use "../shared/styles/variables/layers";
 
-$header-height: 40px;
-
 .app-layout {
   width: 100%;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding-top: $header-height;
 
   &__header {
     width: 100%;
-    height: $header-height;
-    position: fixed;
+    position: sticky;
+    align-self: start;
     top: 0;
     left: 0;
+    right: 0;
     z-index: layers.$z-index-app-header;
   }
 
@@ -39,5 +37,3 @@ $header-height: 40px;
   }
 }
 </style>
-<script setup>
-</script>
