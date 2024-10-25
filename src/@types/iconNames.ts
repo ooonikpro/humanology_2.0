@@ -4,6 +4,8 @@ export type IconNameType =
   | "touch-icon"
   | "logo-symbol"
   | "logo-circle"
+  | "vk"
+  | "telegram"
   | "vulnerable"
   | "suggestive"
   | "role"
@@ -12,8 +14,8 @@ export type IconNameType =
   | "creative"
   | "base"
   | "activation"
-  | "vk"
-  | "telegram"
+  | "male"
+  | "female"
   | "zap"
   | "vital-ring"
   | "users"
@@ -105,6 +107,4 @@ export type IconNameType =
   | "arrow-left-square"
   | "apps"
   | "annotation"
-  | "alert-square"
-  | "male"
-  | "female";
+  | "alert-square";
