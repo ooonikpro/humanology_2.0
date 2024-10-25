@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { RouterView } from "vue-router";
 import AppLoader from "./AppLoader.vue";
 import FooterWidget from "@widgets/FooterWidget.vue";
+import HeaderWidget from "@widgets/HeaderWidget.vue";
 import AppLayout from "@app/AppLayout.vue";
 
 const isLoading = ref(true);
@@ -12,15 +13,21 @@ setTimeout(() => (isLoading.value = false), Math.random() * 2500);
 
 <template>
   <AppLayout>
-    <template v-slot:default>
+    <template #header>
+      <HeaderWidget />
+    </template>
+
+    <template #default>
       <RouterView />
     </template>
 
-    <template v-slot:footer>
+    <template #footer>
       <FooterWidget />
     </template>
 
-    <template v-slot:loader><AppLoader v-if="isLoading" /></template>
+    <template #loader>
+      <AppLoader v-if="isLoading" />
+    </template>
   </AppLayout>
 </template>
 
