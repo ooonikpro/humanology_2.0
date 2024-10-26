@@ -116,7 +116,7 @@ const gender = ref(GenderEnum.male);
 
   &__title {
     width: 100%;
-    font-size: 7vw;
+    font-size: min(8vw, 40px);
     line-height: 44px;
     overflow: hidden;
   }
