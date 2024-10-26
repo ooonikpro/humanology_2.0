@@ -1,6 +1,7 @@
 <script lang="ts" setup>
+import { defineModel } from "vue";
 import type { IconNameType } from "@types";
-import { GenderEnum } from "@shared/constants/gender";
+import { GenderEnum } from "@shared/constants";
 import UiSvg from "./UiSvg.vue";
 
 const gender = defineModel<GenderEnum>({
