@@ -7,14 +7,21 @@ import getQuadraSubtitles from "./methods/getQuadraSubtitles";
 import getTarotLabel from "./methods/getTarotLabel";
 import getPsychotypeLabel from "./methods/getPsychotypeLabel";
 import getClubLabel from "./methods/getClubLabel";
-import getYungDichotomyLabel from "./methods/getYungDichotomyLabel";
+import getYungDichtomyLabel from "./methods/getYungDichtomyLabel";
 import getPortraitSrc from "./methods/getPortraitSrc";
 import getSociotypesByQuadra from "./methods/getSociotypesByQuadra";
-import createColorQuadraStyle from "./methods/createColorQuadraStyle";
-import createColorRoleStyle from "./methods/createColorRoleStyle";
-import createBgColorQuadraStyle from "./methods/createBgColorQuadraStyle";
+import getOppositeYungDichtomyLabel from "./methods/getOppositeYungDichtomyLabel";
+import getReininLabel from "./methods/getReininLabel";
+import getOppositeReininLabel from "./methods/getOppositeReininLabel";
+import getTemperament from "./methods/getTemperament";
+import getCommunicationStyle from "./methods/getCommunicationStyle";
+import getMotivation from "./methods/getMotivation";
+import getCompanion from "./methods/getCompanion";
+import getMindset from "./methods/getMindset";
+import getAlignment from "./methods/getAlignment";
+import getGender from "./methods/getGender";
 
-export default {
+const model = {
   getSociotypeBy,
   getRoleQuadra,
   getRoleLabel,
@@ -24,10 +31,20 @@ export default {
   getTarotLabel,
   getPsychotypeLabel,
   getClubLabel,
-  getYungDichotomyLabel,
+  getYungDichtomyLabel,
+  getOppositeYungDichtomyLabel,
   getPortraitSrc,
   getSociotypesByQuadra,
-  createColorQuadraStyle,
-  createColorRoleStyle,
-  createBgColorQuadraStyle,
+  getReininLabel,
+  getOppositeReininLabel,
+  getGender,
+  getAlignment,
+  getCommunicationStyle,
+  getCompanion,
+  getMindset,
+  getMotivation,
+  getTemperament,
 };
+
+export default model;
+export type SociotypeModelType = typeof model;

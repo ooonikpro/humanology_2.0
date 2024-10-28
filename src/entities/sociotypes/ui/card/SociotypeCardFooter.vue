@@ -16,10 +16,10 @@ const props = defineProps<Pick<SociotypeDataType, "yungs">>();
     <UiText
       v-for="(yung, $index) in props.yungs"
       :key="yung"
-      :color="$index > 0 ? 'grey' : 'black'"
-      tag="span"
+      :color="$index > 0 ? 'dark-grey' : 'black'"
+      preset="small"
     >
-      {{ model.getYungDichotomyLabel(yung) }}
+      {{ model.getYungDichtomyLabel(yung) }}
     </UiText>
   </div>
 </template>
@@ -32,6 +32,7 @@ const props = defineProps<Pick<SociotypeDataType, "yungs">>();
   gap: 6px;
   position: relative;
   padding: 8px;
+  border: 0;
   border-bottom: 1px solid colors.$role;
 
   &__gradient {
@@ -51,9 +52,7 @@ const props = defineProps<Pick<SociotypeDataType, "yungs">>();
   &__line {
     width: 53%;
     position: absolute;
-    height: 0;
     top: 0;
-    border-top: 1px dotted colors.$role;
   }
 }
 </style>

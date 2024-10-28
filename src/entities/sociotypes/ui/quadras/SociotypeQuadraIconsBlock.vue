@@ -18,6 +18,7 @@ const props = defineProps<{ activeQuadra: QuadrasType }>();
         'sociotype-quadra-icons-block__icon--active':
           props.activeQuadra === quadra,
       }"
+      size="16"
       class="sociotype-quadra-icons-block__icon"
     />
   </div>
@@ -35,9 +36,7 @@ const props = defineProps<{ activeQuadra: QuadrasType }>();
   &__icon {
     @include transitions.ease(color, opacity);
 
-    height: 16px;
-    color: colors.$black;
-    opacity: 0.1;
+    color: colors.$shadow;
 
     &--active {
       opacity: 1;

@@ -1,6 +1,6 @@
 import type { DichotomyType } from "@types";
 
-const YUNGS_DICHTOMIES: Record<DichotomyType, string> = {
+export const YUNGS_DICHTOMIES_LABEL: Record<DichotomyType, string> = {
   irrational: "Иррационал",
   rational: "Рационал",
   intuit: "Интуит",
@@ -11,4 +11,16 @@ const YUNGS_DICHTOMIES: Record<DichotomyType, string> = {
   introvert: "Интроверт",
 } as const;
 
-export default YUNGS_DICHTOMIES;
+export const YUNGS_DICHTOMIES_MIRROR: Record<DichotomyType, DichotomyType> = {
+  irrational: "rational",
+  rational: "irrational",
+
+  intuit: "sensory",
+  sensory: "intuit",
+
+  logic: "ethic",
+  ethic: "logic",
+
+  extravert: "introvert",
+  introvert: "extravert",
+};

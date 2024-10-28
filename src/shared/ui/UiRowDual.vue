@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
+import UiText from "./UiText.vue";
 
 const props = defineProps<{
   leftText: string;
@@ -9,11 +10,13 @@ const props = defineProps<{
 
 <template>
   <div class="ui-row-dual">
-    <span class="ui-row-dual__text">{{ props.leftText }}</span>
+    <UiText preset="large" class="ui-row-dual__text">
+      {{ props.leftText }}
+    </UiText>
     <span class="ui-row-dual__line"></span>
-    <span class="ui-row-dual__text ui-row-dual__text--right">{{
-      props.rightText
-    }}</span>
+    <UiText preset="large" class="ui-row-dual__text">
+      {{ props.rightText }}
+    </UiText>
   </div>
 </template>
 
@@ -21,6 +24,7 @@ const props = defineProps<{
 @use "../styles/variables/colors";
 
 .ui-row-dual {
+  height: 24px;
   display: flex;
   align-items: baseline;
   gap: 8px;
@@ -28,14 +32,23 @@ const props = defineProps<{
   &__text {
     color: colors.$black;
 
-    &--right {
+    &:last-child {
       opacity: 0.5;
     }
   }
 
   &__line {
+    height: 1px;
     flex-grow: 1;
-    border-bottom: 1px dotted colors.$black;
+    position: relative;
+    background: linear-gradient(90deg, colors.$quadra 0%, colors.$white 100%);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-bottom: 1px dotted colors.$white;
+    }
   }
 }
 </style>

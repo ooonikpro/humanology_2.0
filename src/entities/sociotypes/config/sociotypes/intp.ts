@@ -63,6 +63,8 @@ const INTP: SociotypeDataType = {
     contrary: "ENTP",
     superego: "ISFP",
   },
+  socionicAbbrevation: "ИЛИ",
+  personalitiesTerm: "Logician",
 };
 
 export default INTP;

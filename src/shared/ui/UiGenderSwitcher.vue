@@ -21,6 +21,8 @@ const gender = defineModel<GenderEnum>({
     <span class="ui-gender-switcher__pointer">
       <UiSvg
         :name="gender as IconNameType"
+        size="12"
+        color="accent"
         class="ui-gender-switcher__pointer-icon"
       />
     </span>
@@ -63,9 +65,6 @@ $padding: 2px;
 
   &__pointer-icon {
     margin: auto;
-    width: 12px;
-    height: 12px;
-    color: colors.$accent;
   }
 }
 </style>

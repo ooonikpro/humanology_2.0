@@ -1,6 +1,6 @@
-import type { ReininSign } from "@types";
+import type { ReininSignType } from "@types";
 
-export const REININ_SIGNS: Record<ReininSign, string> = {
+export const REININ_SIGNS_LABEL: Record<ReininSignType, string> = {
   static: "Статик",
   dynamic: "Динамик",
   positivist: "Позитивист",
@@ -23,4 +23,39 @@ export const REININ_SIGNS: Record<ReininSign, string> = {
   objective: "Объективный",
   democrat: "Демократ",
   aristocrat: "Аристократ",
+};
+
+export const REININ_SIGNS_MIRROR: Record<ReininSignType, ReininSignType> = {
+  static: "dynamic",
+  dynamic: "static",
+
+  positivist: "negativist",
+  negativist: "positivist",
+
+  questim: "declatim",
+  declatim: "questim",
+
+  tactician: "strategist",
+  strategist: "tactician",
+
+  constructivist: "emotivist",
+  emotivist: "constructivist",
+
+  process: "result",
+  result: "process",
+
+  compliant: "stubborn",
+  stubborn: "compliant",
+
+  careless: "provident",
+  provident: "careless",
+
+  reasonable: "decisive",
+  decisive: "reasonable",
+
+  subjective: "objective",
+  objective: "subjective",
+
+  democrat: "aristocrat",
+  aristocrat: "democrat",
 };

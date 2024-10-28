@@ -1,16 +1,25 @@
 <script lang="ts" setup>
+import { useRouter } from "@kitbag/router";
+import type { SociotypeIdType } from "@types";
 import {
   SociotypeCard,
   SociotypeCardBody,
   SociotypeProvider,
   SociotypeQuadras,
 } from "@entities/sociotypes";
+
+const router = useRouter();
+const goToPage = (id: SociotypeIdType) => router.push("sociotypes", { id });
 </script>
 
 <template>
   <SociotypeQuadras>
     <template v-slot="quadraProps">
-      <SociotypeProvider :id="quadraProps.id" v-slot="{ data }">
+      <SociotypeProvider
+        :id="quadraProps.id"
+        v-slot="{ data }"
+        @click="goToPage(quadraProps.id)"
+      >
         <SociotypeCard mini :data="data">
           <template #body>
             <SociotypeCardBody v-bind="data" />

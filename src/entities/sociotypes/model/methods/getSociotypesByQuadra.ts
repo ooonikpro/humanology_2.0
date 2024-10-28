@@ -1,5 +1,5 @@
-import getAllSociotypes from "./getAllSociotypes";
 import type { QuadrasType, SociotypeIdType } from "@types";
+import getAllSociotypes from "./getAllSociotypes";
 
 const groupedByQuadras = getAllSociotypes().reduce(
   (acc, item) => {
