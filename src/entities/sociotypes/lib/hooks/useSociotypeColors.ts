@@ -1,12 +1,21 @@
-import type { SociotypeDataType } from "@types";
-import { computed, type ComputedRef } from "vue";
+import type { QuadrasType, RoleType } from "@types";
+import { computed, type ComputedRef, type Ref, toValue } from "vue";
 import model from "../../model";
 
-const useSociotypeColors = (ref: ComputedRef<SociotypeDataType>) => {
-  return computed(() => ({
-    "--color-quadra": `var(--color-quadra-${ref.value.quadra})`,
-    "--color-role": `var(--color-quadra-${model.getRoleQuadra(ref.value.role)})`,
-  }));
+const useSociotypeColors = ({
+  quadra,
+  role,
+}: {
+  quadra: ComputedRef<QuadrasType> | Ref<QuadrasType>;
+  role?: ComputedRef<RoleType> | Ref<RoleType>;
+}) => {
+  return computed(() => {
+    return {
+      ...model.createColorQuadraStyle(toValue(quadra)),
+      ...model.createBgColorQuadraStyle(toValue(quadra)),
+      ...(role ? model.createColorRoleStyle(toValue(role)) : {}),
+    };
+  });
 };
 
 export default useSociotypeColors;

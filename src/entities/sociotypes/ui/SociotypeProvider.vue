@@ -1,12 +1,17 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
-import useSociotypeData from "../lib/hooks/useSociotypeData";
-import useSociotypeColors from "../lib/hooks/useSociotypeColors";
+import { computed, defineProps, toValue } from "vue";
 import type { SociotypeIdType } from "@types";
 
+import useSociotypeColors from "../lib/hooks/useSociotypeColors";
+import model from "../model";
+
 const props = defineProps<{ id: SociotypeIdType }>();
-const data = useSociotypeData(props.id);
-const colors = useSociotypeColors(data);
+
+const data = computed(() => model.getSociotypeBy(props.id));
+const quadra = computed(() => toValue(data).quadra);
+const role = computed(() => toValue(data).role);
+
+const colors = useSociotypeColors({ quadra, role });
 </script>
 
 <template>
