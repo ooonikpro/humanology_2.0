@@ -52,11 +52,11 @@ const {
     }
 
     &-role {
-      color: var(--color-role, colors.$black);
+      color: colors.$role;
     }
 
     &-quadra {
-      color: var(--color-quadra, colors.$black);
+      color: colors.$quadra;
     }
   }
 }

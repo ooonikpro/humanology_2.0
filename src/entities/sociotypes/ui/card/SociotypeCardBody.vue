@@ -3,7 +3,7 @@ import { defineProps } from "vue";
 import type { SociotypeDataType } from "@types";
 import { UiSvg, UiText } from "@shared/ui";
 
-import model from "../model";
+import model from "../../model";
 
 type PropsType = Pick<
   SociotypeDataType,
@@ -39,8 +39,6 @@ const props = defineProps<PropsType>();
 </template>
 
 <style lang="scss" scoped>
-@use "@shared/styles/variables/colors";
-
 .sociotype-card-body {
   display: flex;
   flex-direction: column;
