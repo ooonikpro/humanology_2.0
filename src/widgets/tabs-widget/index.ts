@@ -1,1 +1,1 @@
-export { default } from "./TabsWidget.vue";
+export { default } from "./ui/TabsWidget.vue";
