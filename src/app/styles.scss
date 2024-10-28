@@ -2,15 +2,15 @@
 @use "../shared/styles/variables/colors";
 
 :root {
-  --color-elements-air: #{colors.$air};
-  --color-elements-fire: #{colors.$fire};
-  --color-elements-water: #{colors.$water};
-  --color-elements-earth: #{colors.$earth};
+  --color-quadra-air: #{colors.$air};
+  --color-quadra-fire: #{colors.$fire};
+  --color-quadra-water: #{colors.$water};
+  --color-quadra-earth: #{colors.$earth};
 
-  --bg-elements-air: #{colors.$transparently-air};
-  --bg-elements-fire: #{colors.$transparently-fire};
-  --bg-elements-water: #{colors.$transparently-water};
-  --bg-elements-earth: #{colors.$transparently-earth};
+  --bg-quadra-air: #{colors.$transparently-air};
+  --bg-quadra-fire: #{colors.$transparently-fire};
+  --bg-quadra-water: #{colors.$transparently-water};
+  --bg-quadra-earth: #{colors.$transparently-earth};
 
   --bg-color: #{colors.$white};
   --text-color: #{colors.$black};

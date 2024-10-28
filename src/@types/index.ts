@@ -2,15 +2,15 @@ export type * from "./iconNames";
 
 export type Gender = "male" | "female";
 
-export type Quadras = "air" | "fire" | "earth" | "water";
+export type QuadrasType = "air" | "fire" | "earth" | "water";
 
-export type Role = "knight" | "king" | "queen" | "paige" | "lady";
+export type RoleType = "knight" | "king" | "queen" | "page" | "lady";
 
-export type Psychotype = "infantile" | "aggressor" | "care" | "victim";
+export type PsychotypeType = "childlike" | "aggressor" | "caring" | "victim";
 
-export type Tarot = "swords" | "pentacles" | "cups" | "wands";
+export type TarotType = "swords" | "pentacles" | "cups" | "wands";
 
-export type Club = "scientific" | "practice" | "social" | "humanitarian";
+export type ClubType = "researcher" | "pragmatist" | "social" | "humanitarian";
 
 export type MindKey =
   | "irrational-1"
@@ -20,7 +20,7 @@ export type MindKey =
 
 export type Mindset = "causal" | "algorithmic" | "vortical" | "holographic";
 
-export type SocionicsType =
+export type SociotypeIdType =
   | "ENTP"
   | "ISFP"
   | "ESFJ"
@@ -38,7 +38,7 @@ export type SocionicsType =
   | "ENFP"
   | "ISTP";
 
-export type SocionicsTypeName =
+export type SociotypeNameType =
   | "innovator"
   | "diplomat"
   | "enthusiast"
@@ -122,7 +122,7 @@ export type Alignment =
   | "neutralEvil"
   | "neutralGood";
 
-export type Dichotomy =
+export type DichotomyType =
   | "intuit"
   | "sensory"
   | "logic"
@@ -204,33 +204,36 @@ export type ZodiacSign =
   | "aquarius"
   | "pisces";
 
-export type SignProp = {
+export type SignPropType = {
   label: string;
-  element: Quadras;
+  quadra: QuadrasType;
 };
 
-export type IntertypeProp = {
-  element: Quadras;
-  role: Role;
+export type SociotypeDataType = {
+  id: SociotypeIdType;
+  quadra: QuadrasType;
+  role: RoleType;
   alias: string;
-  typeName: SocionicsTypeName;
+  typeName: SociotypeNameType;
   mindKey: MindKey;
   mindset: Mindset;
   name: string;
   gender: Gender;
-  club: Club;
-  tarot: Tarot;
-  psychotype: Psychotype;
+  club: ClubType;
+  tarot: TarotType;
+  psychotype: PsychotypeType;
   populationPercentage: string;
+  socionicAbbrevation: string;
+  personalitiesTerm: string;
   aspects: Record<AspectKey, Aspect>;
   stimulant: Stimulant;
   communication: CommunicationStyle;
   companion: Companion;
   temperament: Temperament;
   alignment: Alignment;
-  yungs: Dichotomy[];
+  yungs: DichotomyType[];
   reinin: ReininSign[];
-  intertypeRelations: Record<IntertypeRelations, SocionicsType>;
+  intertypeRelations: Record<IntertypeRelations, SociotypeIdType>;
 };
 
 export type UnixDate = string; // mm/dd/yyyy

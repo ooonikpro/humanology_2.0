@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { defineProps, computed, ref, watch } from "vue";
 import type { IconNameType } from "@types";
 import { getIconMap } from "@shared/lib";
 
