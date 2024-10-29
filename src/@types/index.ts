@@ -150,7 +150,7 @@ export type IntertypeRelations =
   | "contrary"
   | "superego";
 
-export type ReininSign =
+export type ReininSignType =
   | "static"
   | "dynamic"
   | "positivist"
@@ -232,7 +232,7 @@ export type SociotypeDataType = {
   temperament: Temperament;
   alignment: Alignment;
   yungs: DichotomyType[];
-  reinin: ReininSign[];
+  reinin: ReininSignType[];
   intertypeRelations: Record<IntertypeRelations, SociotypeIdType>;
 };
 

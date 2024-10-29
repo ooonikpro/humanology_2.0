@@ -1,0 +1,9 @@
+@mixin modificator($name) {
+  $root: &;
+
+  &--#{$name} {
+    #{$root} {
+      @content;
+    }
+  }
+}

@@ -41,4 +41,5 @@ export * from "./quadras";
 export { default as TAROT } from "./tarot";
 export { default as PSYCHOTYPES } from "./psychotypes";
 export { default as CLUBS } from "./clubs";
-export { default as YUNGS_DICHTOMIES } from "./yungsDichotomies";
+export * from "./yungsDichotomies";
+export * from "./reininSigns";

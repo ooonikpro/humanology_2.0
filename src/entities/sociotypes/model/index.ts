@@ -7,9 +7,12 @@ import getQuadraSubtitles from "./methods/getQuadraSubtitles";
 import getTarotLabel from "./methods/getTarotLabel";
 import getPsychotypeLabel from "./methods/getPsychotypeLabel";
 import getClubLabel from "./methods/getClubLabel";
-import getYungDichotomyLabel from "./methods/getYungDichotomyLabel";
+import getYungDichtomyLabel from "./methods/getYungDichtomyLabel";
 import getPortraitSrc from "./methods/getPortraitSrc";
 import getSociotypesByQuadra from "./methods/getSociotypesByQuadra";
+import getOppositeYungDichtomyLabel from "./methods/getOppositeYungDichtomyLabel";
+import getReininLabel from "./methods/getReininLabel";
+import getOppositeReininLabel from "./methods/getOppositeReininLabel";
 import createColorQuadraStyle from "./methods/createColorQuadraStyle";
 import createColorRoleStyle from "./methods/createColorRoleStyle";
 import createBgColorQuadraStyle from "./methods/createBgColorQuadraStyle";
@@ -24,9 +27,12 @@ export default {
   getTarotLabel,
   getPsychotypeLabel,
   getClubLabel,
-  getYungDichotomyLabel,
+  getYungDichtomyLabel,
+  getOppositeYungDichtomyLabel,
   getPortraitSrc,
   getSociotypesByQuadra,
+  getReininLabel,
+  getOppositeReininLabel,
   createColorQuadraStyle,
   createColorRoleStyle,
   createBgColorQuadraStyle,
