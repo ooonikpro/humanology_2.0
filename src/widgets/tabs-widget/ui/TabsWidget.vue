@@ -14,7 +14,7 @@ watch(route, () => {
 
 function scrollToActiveTab(index: number) {
   if (container.value) {
-    const activeChildTab = [...container.value.children][index];
+    const activeChildTab = container.value.children[index];
 
     if (activeChildTab) {
       activeChildTab.scrollIntoView({
@@ -49,6 +49,7 @@ function scrollToActiveTab(index: number) {
   overflow: hidden;
   overflow-x: auto;
   scrollbar-width: none;
+  padding-bottom: 2px;
 
   &::-webkit-scrollbar {
     display: none;
