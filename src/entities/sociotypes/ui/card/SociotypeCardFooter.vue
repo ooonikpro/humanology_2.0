@@ -19,7 +19,7 @@ const props = defineProps<Pick<SociotypeDataType, "yungs">>();
       :color="$index > 0 ? 'grey' : 'black'"
       tag="span"
     >
-      {{ model.getYungDichotomyLabel(yung) }}
+      {{ model.getYungDichtomyLabel(yung) }}
     </UiText>
   </div>
 </template>
@@ -32,6 +32,7 @@ const props = defineProps<Pick<SociotypeDataType, "yungs">>();
   gap: 6px;
   position: relative;
   padding: 8px;
+  border: 0;
   border-bottom: 1px solid colors.$role;
 
   &__gradient {
@@ -53,6 +54,7 @@ const props = defineProps<Pick<SociotypeDataType, "yungs">>();
     position: absolute;
     height: 0;
     top: 0;
+    border: 0;
     border-top: 1px dotted colors.$role;
   }
 }
