@@ -142,10 +142,12 @@ const gender = ref(GenderEnum.male);
     bottom: 8px;
   }
 
-  @include bem.modificator("mini") {
+  &--mini {
     border-radius: 4px;
     box-shadow: 0 1px 1px 0 colors.$shadow;
+  }
 
+  @include bem.modificator("mini") {
     &__header {
       padding-bottom: 0;
     }
