@@ -7,7 +7,7 @@ export const MIND_KEY: Record<MindKey, string> = {
   "rational-4": "Рационал",
 };
 
-export const mindset: Record<Mindset, string> = {
+export const MINDSET: Record<Mindset, string> = {
   causal: "Причинно-следственное",
   algorithmic: "Диалектико-алгоритмическое",
   vortical: "Вихревое",

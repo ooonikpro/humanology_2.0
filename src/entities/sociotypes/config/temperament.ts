@@ -1,5 +1,12 @@
 import type { Temperament } from "@types";
 
+export enum TemperamentEnum {
+  choleric,
+  phlegmatic,
+  melancholic,
+  sanguine,
+}
+
 export const TEMPERAMENT: Record<Temperament, string> = {
   sanguine: "Сангвиник",
   melancholic: "Меланхолик",
