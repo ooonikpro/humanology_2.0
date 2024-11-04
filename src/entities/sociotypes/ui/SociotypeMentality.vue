@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed, defineProps, toValue } from "vue";
-import type { SociotypeDataType, Temperament } from "@types";
+import type { SociotypeDataType } from "@types";
 
-// import UiColumnDual from "@shared/ui/UiColumnDual.vue";
-import UiText from "@shared/ui/UiText.vue";
+import UiSeparator from "@shared/ui/UiSeparator.vue";
 import UiSvg from "@shared/ui/UiSvg.vue";
+import UiText from "@shared/ui/UiText.vue";
 
 import model from "../model";
 import { TemperamentEnum } from "../config";
@@ -18,155 +18,125 @@ const quadra = computed(() => toValue(props).quadra);
 const role = computed(() => toValue(props).role);
 const colors = computed(() => useSociotypeColors({ quadra, role }));
 
-const data = computed(() => model.getTemperanment(props.temperament));
-const motivation = computed(() => model.getMotivation(props.stimulant));
-const communicationStyle = computed(() =>
-  model.getCommunicationStyle(props.communication),
-);
-const companion = computed(() => model.getCompanion(props.companion));
-const mindset = computed(() => model.getMindset(props.mindset));
-const alignment = computed(() => model.getAlignment(props.alignment));
-const gender = computed(() => model.getGender(props.gender));
-const zaps = computed(() => TemperamentEnum[props.temperament]);
-
-// const bg = colors.value["--color-quadra"];
-// const clr = colors.value["--bg-quadra"];
-// const rl = colors.value["--color-role"];
+const sociotypeData = computed(() => ({
+  temperament: model.getTemperanment(props.temperament),
+  motivation: model.getMotivation(props.stimulant),
+  communicationStyle: model.getCommunicationStyle(props.communication),
+  companion: model.getCompanion(props.companion),
+  mindset: model.getMindset(props.mindset),
+  alignment: model.getAlignment(props.alignment),
+  gender: model.getGender(props.gender),
+  zapsQuantity: TemperamentEnum[props.temperament],
+}));
 </script>
 
 <template>
-  <!--
-    holeric - 0
-    flegmatic - 1
-    melanholic - 2
-    sanguine - 3
-  -->
-
   <SociotypeSignsBlock class="sociotype-mentality" title="Ментальность">
-    <div>
-      <!-- 1 -->
-      <div>
-        <UiText tag="h4" class="title">Темперамент</UiText>
-        <div class="wrapper">
-          <UiText
-            tag="span"
-            class="text"
-            :style="{ color: colors.value['--color-role'] }"
-          >
-            {{ data.type }}
-          </UiText>
-          <div class="icons">
-            <UiSvg
-              v-for="n in 4"
-              :style="[
-                n <= zaps
-                  ? { color: colors.value['--color-role'] }
-                  : { color: 'inherit' },
-              ]"
-              :key="n"
-              name="zap"
-            />
-          </div>
-        </div>
-        <UiText tag="p" class="description">
-          {{ data.label }}
-        </UiText>
-      </div>
-    </div>
-
-    <!-- 2 дуал -->
-    <hr />
-    <div class="ui-column-dual">
-      <div>
-        <UiText tag="h4" class="ui-column-dual__title">Стимул</UiText>
+    <div class="sociotype-mentality__block">
+      <UiText tag="h4" class="sociotype-mentality__title">Темперамент</UiText>
+      <div class="sociotype-mentality__text-wrapper">
         <UiText
-          tag="p"
-          class="ui-column-dual__text"
+          tag="span"
+          class="sociotype-mentality__text"
           :style="{ color: colors.value['--color-role'] }"
         >
-          {{ motivation }}
+          {{ sociotypeData.temperament.type }}
         </UiText>
+        <div class="sociotype-mentality__zap-list">
+          <UiSvg
+            v-for="n in 4"
+            class="sociotype-mentality__zap-item"
+            :style="[
+              n <= sociotypeData.zapsQuantity
+                ? {
+                    color: colors.value['--color-role'],
+                  }
+                : { opacity: 0.25 },
+            ]"
+            :key="n"
+            name="zap"
+          />
+        </div>
       </div>
-      <div>
-        <UiText tag="h4" class="ui-column-dual__title">Характер</UiText>
-        <UiText tag="p" class="ui-column-dual__text">
-          <UiText tag="span">{{ gender }} </UiText>
-          <UiSvg name="male" class="icon" />
-        </UiText>
-      </div>
-    </div>
-    <!-- 3 дуал -->
-    <hr />
-    <div class="ui-column-dual">
-      <div>
-        <UiText tag="h4" class="title">Стиль общения</UiText>
-        <UiText tag="p" class="ui-column-dual__text"
-          >``
-          {{ communicationStyle }}
-        </UiText>
-      </div>
-      <div>
-        <UiText tag="h4" class="title">Собеседник</UiText>
-        <UiText tag="p" class="ui-column-dual__text">{{ companion }}</UiText>
-      </div>
-    </div>
-    <!-- 4 -->
-    <hr />
-    <div>
-      <UiText tag="h4" class="title">Мышление</UiText>
-      <UiText tag="p" class="ui-column-dual__text">
-        {{ mindset }}
+      <UiText tag="p" class="sociotype-mentality__text">
+        {{ sociotypeData.temperament.label }}
       </UiText>
     </div>
-    <!-- 5 -->
-    <hr />
-    <div>
-      <UiText tag="h4" class="title">Мировоззрение</UiText>
-      <UiText tag="p" class="ui-column-dual__text">{{ alignment }}</UiText>
+    <UiSeparator />
+
+    <div class="sociotype-mentality__column-dual">
+      <div class="sociotype-mentality__column-dual--left">
+        <UiText tag="h4" class="sociotype-mentality__title">Стимул</UiText>
+        <UiText
+          tag="p"
+          class="sociotype-mentality__text"
+          :style="{ color: colors.value['--color-role'] }"
+        >
+          {{ sociotypeData.motivation }}
+        </UiText>
+      </div>
+      <div class="sociotype-mentality__column-dual--right">
+        <UiText tag="h4" class="sociotype-mentality__title">Характер</UiText>
+        <UiText tag="p" class="sociotype-mentality__text">
+          <UiText tag="span">{{ sociotypeData.gender }}</UiText>
+          <UiSvg
+            :name="props.gender"
+            class="sociotype-mentality__gender-icon"
+          />
+        </UiText>
+      </div>
+    </div>
+    <UiSeparator />
+
+    <div class="sociotype-mentality__column-dual">
+      <div class="sociotype-mentality__column-dual--left">
+        <UiText tag="h4" class="sociotype-mentality__title"
+          >Стиль общения</UiText
+        >
+        <UiText tag="p" class="sociotype-mentality__text">
+          {{ sociotypeData.communicationStyle }}
+        </UiText>
+      </div>
+      <div class="sociotype-mentality__column-dual--right">
+        <UiText tag="h4" class="sociotype-mentality__title">Собеседник</UiText>
+        <UiText tag="p" class="sociotype-mentality__text">{{
+          sociotypeData.companion
+        }}</UiText>
+      </div>
+    </div>
+    <UiSeparator />
+
+    <div class="sociotype-mentality__block">
+      <UiText tag="h4" class="sociotype-mentality__title">Мышление</UiText>
+      <UiText tag="p" class="sociotype-mentality__text">
+        {{ sociotypeData.mindset }}
+      </UiText>
+    </div>
+    <UiSeparator />
+    <div class="sociotype-mentality__block">
+      <UiText tag="h4" class="sociotype-mentality__title">Мировоззрение</UiText>
+      <UiText tag="p" class="sociotype-mentality__text">{{
+        sociotypeData.alignment
+      }}</UiText>
     </div>
   </SociotypeSignsBlock>
 </template>
 
 <style scoped lang="scss">
 @use "@shared/styles/variables/colors";
-
 .sociotype-mentality {
-  .wrapper {
+  margin-top: 16px;
+
+  &__column-dual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+  }
+
+  &__text-wrapper {
     display: flex;
     align-items: center;
-    gap: 2px;
-
-    .icons {
-      display: inline-flex;
-      height: 20px;
-    }
   }
-  .title {
-    font-size: 15px;
-    line-height: 20px;
-    opacity: 0.5;
-    color: colors.$black;
-  }
-
-  .text {
-    font-size: 18px;
-    line-height: 24px;
-    // color: v-bind('colors.value[ "--color-role"]');
-  }
-
-  .description {
-  }
-
-  hr {
-    opacity: 0.1;
-    margin: 8px 0;
-  }
-}
-
-.ui-column-dual {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 12px;
 
   &__title {
     font-size: 15px;
@@ -178,14 +148,25 @@ const zaps = computed(() => TemperamentEnum[props.temperament]);
     display: flex;
     align-items: center;
     gap: 4px;
-    color: colors.$black;
 
-    .icon {
-      width: 20px;
-      height: 20px;
-    }
+    font-size: 18px;
+    line-height: 24px;
   }
-  &__description {
+
+  &__zap-list {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+  }
+
+  &__zap-item {
+    width: 20px;
+    margin-left: -4px;
+  }
+
+  &__gender-icon {
+    height: 20px;
+    width: 20px;
   }
 }
 </style>
