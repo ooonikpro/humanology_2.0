@@ -11,7 +11,11 @@ const generateIconNameType = async () => {
   const iconList = await glob("./public/assets/icons/**/*.svg");
 
   const iconNames = Array.from(
-    new Set(iconList.map((path) => `"${parse(path).name}"`)),
+    new Set(
+      iconList
+        .map((path) => `"${parse(path).name}"`)
+        .sort((a, b) => a.localeCompare(b)),
+    ),
   ).join(" | ");
 
   const contents = `/** ФАЙЛ СГЕНЕРИРОВАН АВТОМАТИЧЕСКИ - НЕ ИЗМЕНЯТЬ **/

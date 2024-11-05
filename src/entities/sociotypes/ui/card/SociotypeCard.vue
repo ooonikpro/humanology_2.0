@@ -13,10 +13,7 @@ const gender = ref(GenderEnum.male);
 <template>
   <div class="sociotype-card" :class="{ 'sociotype-card--mini': props.mini }">
     <div class="sociotype-card__gradient"></div>
-    <div
-      class="sociotype-card__header"
-      :class="{ 'sociotype-card__header--mini': props.mini }"
-    >
+    <div class="sociotype-card__header">
       <UiText tag="span" color="black">{{ props.data.id }}</UiText>
       <UiText v-if="!props.mini" tag="span" color="role">
         {{ props.data.populationPercentage }}
@@ -31,16 +28,12 @@ const gender = ref(GenderEnum.male);
 
       <hr v-if="!props.mini" class="sociotype-card__header-line" />
     </div>
-    <div
-      class="sociotype-card__body"
-      :class="{ 'sociotype-card__body--mini': props.mini }"
-    >
+    <div class="sociotype-card__body">
       <UiText
         tag="h2"
         font="alternative"
         color="role"
         class="sociotype-card__title"
-        :class="{ 'sociotype-card__title--mini': props.mini }"
       >
         {{ props.data.name }}
       </UiText>
@@ -69,6 +62,7 @@ const gender = ref(GenderEnum.male);
 
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
+@use "@shared/styles/mixins/bem";
 
 .sociotype-card {
   position: relative;
@@ -108,10 +102,6 @@ const gender = ref(GenderEnum.male);
       border: 0;
       border-bottom: 1px solid colors.$quadra;
     }
-
-    &--mini {
-      padding-bottom: 0;
-    }
   }
 
   &__body {
@@ -119,11 +109,6 @@ const gender = ref(GenderEnum.male);
     flex-direction: column;
     padding: 12px 8px;
     gap: 12px;
-
-    &--mini {
-      padding-top: 0;
-      gap: 8px;
-    }
   }
 
   &__title {
@@ -131,28 +116,24 @@ const gender = ref(GenderEnum.male);
     font-size: min(8vw, 30px);
     line-height: min(8vw, 40px);
     overflow: hidden;
-
-    &--mini {
-      font-size: min(7vw, 25px);
-    }
   }
 
   &__quadra-circle,
   &__portrait {
     position: absolute;
-    height: min(32vw, 90%);
+    height: min(45vw, 90%);
     aspect-ratio: 1/1;
-    right: 8px;
+    bottom: 0;
   }
 
   &__quadra-circle {
     top: 0;
-    bottom: 0;
+    right: 8px;
     margin: auto;
   }
 
   &__portrait {
-    bottom: 0;
+    right: 0;
   }
 
   &__gender-switcher {
@@ -163,7 +144,27 @@ const gender = ref(GenderEnum.male);
 
   &--mini {
     border-radius: 4px;
-    box-shadow: 0 1px 1px 0 rgba(colors.$black, 0.1);
+    box-shadow: 0 1px 1px 0 colors.$shadow;
+  }
+
+  @include bem.modificator("mini") {
+    &__header {
+      padding-bottom: 0;
+    }
+
+    &__body {
+      padding-top: 0;
+      gap: 8px;
+    }
+
+    &__title {
+      font-size: min(7vw, 25px);
+    }
+
+    &__quadra-circle,
+    &__portrait {
+      height: min(32vw, 90%);
+    }
   }
 }
 </style>

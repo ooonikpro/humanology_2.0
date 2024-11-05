@@ -21,6 +21,7 @@ const props = defineProps<{
 @use "../styles/variables/colors";
 
 .ui-row-dual {
+  height: 24px;
   display: flex;
   align-items: baseline;
   gap: 8px;
@@ -34,8 +35,17 @@ const props = defineProps<{
   }
 
   &__line {
+    height: 1px;
     flex-grow: 1;
-    border-bottom: 1px dotted colors.$black;
+    position: relative;
+    background: linear-gradient(90deg, colors.$quadra 0%, colors.$white 100%);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-bottom: 1px dotted colors.$white;
+    }
   }
 }
 </style>

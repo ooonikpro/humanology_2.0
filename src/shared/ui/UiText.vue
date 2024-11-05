@@ -29,6 +29,7 @@ const {
   &--font {
     &-base {
       font-family: "Halvar Mittel Rg", sans-serif;
+      font-weight: 400;
     }
 
     &-alternative {
