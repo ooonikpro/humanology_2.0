@@ -4,6 +4,7 @@ import {
   SociotypeCardBody,
   SociotypeCardFooter,
   SociotypeProvider,
+  SociotypeMentality,
   SociotypeReininSigns,
   SociotypeYungDichtomy,
 } from "@entities/sociotypes";
@@ -27,6 +28,8 @@ import TabsWidget from "@widgets/tabs-widget";
     </SociotypeCard>
 
     <TabsWidget />
+
+    <SociotypeMentality v-bind="data" />
 
     <SociotypeYungDichtomy v-bind="data" />
 

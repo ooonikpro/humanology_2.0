@@ -12,13 +12,13 @@ export type TarotType = "swords" | "pentacles" | "cups" | "wands";
 
 export type ClubType = "researcher" | "pragmatist" | "social" | "humanitarian";
 
-export type MindKey =
+export type MindKeyType =
   | "irrational-1"
   | "irrational-2"
   | "rational-1"
   | "rational-4";
 
-export type Mindset = "causal" | "algorithmic" | "vortical" | "holographic";
+export type MindsetType = "causal" | "algorithmic" | "vortical" | "holographic";
 
 export type SociotypeIdType =
   | "ENTP"
@@ -88,15 +88,19 @@ export type HumanFunction =
 
 export type FunctionLevel = "1" | "2" | "3" | "4";
 
-export type Stimulant = "uniqueness" | "wealth" | "status" | "selfSufficiency";
+export type StimulantType =
+  | "uniqueness"
+  | "wealth"
+  | "status"
+  | "selfSufficiency";
 
-export type CommunicationStyle =
+export type CommunicationStyleType =
   | "business"
   | "sincere"
   | "passionate"
   | "coldBlooded";
 
-export type Companion =
+export type CompanionType =
   | "categorical"
   | "sensitive"
   | "uncompromising"
@@ -105,13 +109,13 @@ export type Companion =
   | "volitional"
   | "stubborn";
 
-export type Temperament =
+export type TemperamentType =
   | "sanguine"
   | "melancholic"
   | "choleric"
   | "phlegmatic";
 
-export type Alignment =
+export type AlignmentType =
   | "chaoticNeutral"
   | "chaoticGood"
   | "chaoticEvil"
@@ -215,8 +219,8 @@ export type SociotypeDataType = {
   role: RoleType;
   alias: string;
   typeName: SociotypeNameType;
-  mindKey: MindKey;
-  mindset: Mindset;
+  mindKey: MindKeyType;
+  mindset: MindsetType;
   name: string;
   gender: Gender;
   club: ClubType;
@@ -226,11 +230,11 @@ export type SociotypeDataType = {
   socionicAbbrevation: string;
   personalitiesTerm: string;
   aspects: Record<AspectKey, Aspect>;
-  stimulant: Stimulant;
-  communication: CommunicationStyle;
-  companion: Companion;
-  temperament: Temperament;
-  alignment: Alignment;
+  stimulant: StimulantType;
+  communication: CommunicationStyleType;
+  companion: CompanionType;
+  temperament: TemperamentType;
+  alignment: AlignmentType;
   yungs: DichotomyType[];
   reinin: ReininSignType[];
   intertypeRelations: Record<IntertypeRelations, SociotypeIdType>;

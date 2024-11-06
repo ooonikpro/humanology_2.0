@@ -1,6 +1,6 @@
-import type { CommunicationStyle } from "@types";
+import type { CommunicationStyleType } from "@types";
 
-export const COMMUNICATION_STYLE: Record<CommunicationStyle, string> = {
+export const COMMUNICATION_STYLE: Record<CommunicationStyleType, string> = {
   business: "Деловой",
   sincere: "Душевный",
   passionate: "Страстный",

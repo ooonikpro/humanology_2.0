@@ -16,6 +16,13 @@ import getOppositeReininLabel from "./methods/getOppositeReininLabel";
 import createColorQuadraStyle from "./methods/createColorQuadraStyle";
 import createColorRoleStyle from "./methods/createColorRoleStyle";
 import createBgColorQuadraStyle from "./methods/createBgColorQuadraStyle";
+import getTemperanment from "./methods/getTemperanment";
+import getCommunicationStyle from "./methods/getCommunicationStyle";
+import getMotivation from "./methods/getMotivation";
+import getCompanion from "./methods/getCompanion";
+import getMindset from "./methods/getMindset";
+import getAlignment from "./methods/getAlignment";
+import getGender from "./methods/getGender";
 
 export default {
   getSociotypeBy,
@@ -36,4 +43,12 @@ export default {
   createColorQuadraStyle,
   createColorRoleStyle,
   createBgColorQuadraStyle,
+
+  getGender,
+  getAlignment,
+  getCommunicationStyle,
+  getCompanion,
+  getMindset,
+  getMotivation,
+  getTemperanment,
 };
