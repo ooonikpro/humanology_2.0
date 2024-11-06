@@ -1,6 +1,6 @@
-import type { Companion } from "@types";
+import type { CompanionType } from "@types";
 
-export const COMPANION: Record<Companion, string> = {
+export const COMPANION: Record<CompanionType, string> = {
   categorical: "Категоричный",
   sensitive: "Чувствительный",
   uncompromising: "Бескомпромиссный",

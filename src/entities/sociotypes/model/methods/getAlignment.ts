@@ -1,7 +1,7 @@
-import type { Alignment } from "@types";
-import { ALIGNMENT } from "@entities/sociotypes/config/alignment";
+import type { AlignmentType } from "@types";
+import { ALIGNMENT } from "../../config";
 
-const getAlignment = (alignment: Alignment) => {
+const getAlignment = (alignment: AlignmentType) => {
   return ALIGNMENT[alignment];
 };
 

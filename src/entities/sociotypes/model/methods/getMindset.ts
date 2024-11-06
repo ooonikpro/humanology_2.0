@@ -1,7 +1,7 @@
-import type { Mindset } from "@types";
-import { MINDSET } from "@entities/sociotypes/config";
+import type { MindsetType } from "@types";
+import { MINDSET } from "../../config";
 
-const getMindset = (mindset: Mindset) => {
+const getMindset = (mindset: MindsetType) => {
   return MINDSET[mindset];
 };
 

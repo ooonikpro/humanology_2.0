@@ -1,6 +1,6 @@
 import { MOTIVATION } from "../../config";
-import type { Stimulant } from "@types";
+import type { StimulantType } from "@types";
 
-const getMotivation = (stimulant: Stimulant) => MOTIVATION[stimulant];
+const getMotivation = (stimulant: StimulantType) => MOTIVATION[stimulant];
 
 export default getMotivation;

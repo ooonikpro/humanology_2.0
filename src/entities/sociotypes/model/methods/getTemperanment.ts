@@ -1,11 +1,11 @@
-import type { Temperament } from "@types";
+import type { TemperamentType } from "@types";
+import { TEMPERAMENT, TEMPERAMENT_LABEL, TEMPERAMENT_LVL } from "../../config";
 
-import { TEMPERAMENT, TEMPERAMENT_LABEL } from "../../config";
-
-const getTemperanment = (temperament: Temperament) => {
+const getTemperanment = (temperament: TemperamentType) => {
   return {
     type: TEMPERAMENT[temperament],
     label: TEMPERAMENT_LABEL[temperament],
+    lvl: TEMPERAMENT_LVL[temperament],
   };
 };
 

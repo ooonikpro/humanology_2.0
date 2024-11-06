@@ -1,42 +1,29 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { defineProps } from "vue";
 import UiText from "./UiText.vue";
 
-const props = <
-  {
-    leftTitle: string;
-    leftText: string;
-    rightTitle: string;
-    rightText: string;
-  }
->defineProps();
-
-console.log("dualcolumns:", props);
+const props = defineProps<{ leftTitle: string; rightTitle: string }>();
 </script>
 
 <template>
   <div class="ui-column-dual">
     <div>
-      <UiText tag="h4" class="ui-column-dual__title">
+      <UiText tag="h4" color="grey" class="ui-column-dual__title">
         {{ props.leftTitle }}
       </UiText>
-      <UiText tag="p" class="ui-column-dual__text">
-        {{ props.leftText }}
-      </UiText>
+      <slot name="left"></slot>
     </div>
     <div>
-      <UiText tag="h4" class="ui-column-dual__title">
+      <UiText tag="h4" color="grey" class="ui-column-dual__title">
         {{ props.rightTitle }}
       </UiText>
-      <UiText tag="p" class="ui-column-dual__text">
-        {{ props.rightText }}
-      </UiText>
+      <slot name="right"></slot>
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
-@use "../styles/variables/colors";
+<style lang="scss" scoped>
+@use "@shared/styles/variables/colors";
 
 .ui-column-dual {
   display: grid;
@@ -44,9 +31,17 @@ console.log("dualcolumns:", props);
   column-gap: 12px;
 
   &__title {
+    font-size: 15px;
+    line-height: 20px;
   }
+
   &__text {
-    color: colors.$black;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    font-size: 18px;
+    line-height: 24px;
   }
 }
 </style>

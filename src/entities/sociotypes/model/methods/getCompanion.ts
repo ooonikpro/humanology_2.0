@@ -1,7 +1,7 @@
-import type { Companion } from "@types";
-import { COMPANION } from "@entities/sociotypes/config/companion";
+import type { CompanionType } from "@types";
+import { COMPANION } from "../../config";
 
-const getCompanion = (companion: Companion) => {
+const getCompanion = (companion: CompanionType) => {
   return COMPANION[companion];
 };
 

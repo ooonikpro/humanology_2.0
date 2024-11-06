@@ -1,8 +1,7 @@
-import { COMMUNICATION_STYLE } from "@entities/sociotypes/config/communicationStyle";
+import type { CommunicationStyleType } from "@types";
+import { COMMUNICATION_STYLE } from "../../config";
 
-import type { CommunicationStyle } from "@types";
-
-const getCommunicationStyle = (communicationStyle: CommunicationStyle) => {
+const getCommunicationStyle = (communicationStyle: CommunicationStyleType) => {
   return COMMUNICATION_STYLE[communicationStyle];
 };
 
