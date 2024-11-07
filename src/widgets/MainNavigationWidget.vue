@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { NavigationTab } from "@entities/navigation";
-import { UiRandomImg, UiSvg } from "@shared/ui";
+import { SociotypePortraitTrioKids } from "@entities/sociotypes";
+import { UiSvg } from "@shared/ui";
 </script>
 
 <template>
@@ -85,7 +86,7 @@ import { UiRandomImg, UiSvg } from "@shared/ui";
         iconName="chart-bubble"
       >
         <template #bottom>
-          <UiRandomImg class="main-nav__tab-img" />
+          <SociotypePortraitTrioKids class="main-nav__tab-img" />
         </template>
       </NavigationTab>
 
