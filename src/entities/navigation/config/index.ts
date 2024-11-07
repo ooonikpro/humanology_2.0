@@ -1,2 +1,4 @@
-export type { LinkTabPropsType, SizeType } from './tabs';
-
+export * from "./tabs";
+export * from "./types";
+export * from "./urls";
+export * from "./names";

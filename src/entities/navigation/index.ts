@@ -1,3 +1,2 @@
-export { type LinkTabPropsType, type SizeType } from "./config/";
-export { default as TabLink } from "./ui/TabLink.vue";
-
+export * from "./config";
+export { default as NavigationTab } from "./ui/NavigationTab.vue";
