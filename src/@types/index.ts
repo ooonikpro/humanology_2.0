@@ -1,4 +1,3 @@
-
 export type * from "./iconNames";
 
 export type Gender = "male" | "female";
@@ -239,4 +238,4 @@ export type SociotypeDataType = {
 
 export type UnixDate = string; // mm/dd/yyyy
 
-
+export type SociotypeAgeType = "kids" | "youngs" | "adults";

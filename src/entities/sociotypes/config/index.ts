@@ -43,3 +43,4 @@ export { default as PSYCHOTYPES } from "./psychotypes";
 export { default as CLUBS } from "./clubs";
 export * from "./yungsDichotomies";
 export * from "./reininSigns";
+export * from "./portraits-data";
