@@ -11,22 +11,11 @@ const Content = defineAsyncComponent(() => import(`./content/${props.id}.vue`));
 
 <template>
   <SociotypeSignsBlock
-    class="sociotype-short-desctiption"
+    class="sociotype-brief-desctiption"
     title="Краткое описание"
   >
     <component :is="Content"></component>
   </SociotypeSignsBlock>
 </template>
 
-<style lang="scss" scoped>
-.sociotype-short-desctiption {
-  &__person-attributes {
-    font-size: 18px;
-    line-height: 133%;
-  }
-  &__person-description {
-    font-size: 15px;
-    line-height: 133%;
-  }
-}
-</style>
+<style lang="scss" scoped></style>
