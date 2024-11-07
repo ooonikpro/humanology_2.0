@@ -3,13 +3,14 @@ import { defineProps } from "vue";
 import { UiSvg } from "@shared/ui";
 import type { LinkTabPropsType } from "../config";
 
-const props = defineProps<
-  Omit<LinkTabPropsType, "label"> & { label?: LinkTabPropsType["label"] }
->();
+const props = defineProps<LinkTabPropsType>();
 </script>
 
 <template>
-  <RouterLink :to="props.to" :class="['tab-link', `tab-link--size-${props.size}`]">
+  <RouterLink
+    :to="props.to"
+    :class="['tab-link', { [`tab-link--size-${props.size}`]: props.size }]"
+  >
     <UiSvg :name="props.iconName" class="tab-link__icon" />
     <slot>
       <span class="tab-link__title">{{ props.label }}</span>
@@ -42,10 +43,10 @@ const props = defineProps<
 
   :slotted(*),
   &__title {
-    width: 100% !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   &.router-link-active {
