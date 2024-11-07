@@ -7,7 +7,7 @@ import {
   SociotypeReininSigns,
   SociotypeYungDichtomy,
 } from "@entities/sociotypes";
-import TabsWidget from "@widgets/tabs-widget";
+import TabsWidget from "@widgets/TabsWidget.vue";
 </script>
 
 <template>
