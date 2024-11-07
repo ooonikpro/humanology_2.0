@@ -8,20 +8,19 @@ import { SociotypeModel } from "@entities/sociotypes";
 const getRandomIndex = <T,>(arr: Array<T>) =>
   arr[Math.floor(Math.random() * arr.length)];
 
-const { getAllSociotypes } = SociotypeModel;
+const sociotypes = SociotypeModel.getAllSociotypes();
 
 const randomKids = () => {
-  const ids = new Array(3).fill(
-    getRandomIndex<SociotypeDataType>(getAllSociotypes()),
-  ) as [SociotypeDataType, SociotypeDataType, SociotypeDataType];
-
-  return ids.map(({ id, gender }) => ({
-    id: id.toLowerCase() as Lowercase<SociotypeIdType>,
-    gender,
-  }));
+  const ids = [];
+  for (let i = 0; i < 3; i++) {
+    const {id, gender} = getRandomIndex<SociotypeDataType>(sociotypes)
+    ids[i] = {id: id.toLowerCase(), gender};
+  }
+  return ids as {id: Lowercase<SociotypeIdType>, gender: Gender}[]
 };
 
 const kids = randomKids();
+console.log(kids);
 const key = ({
   id,
   gender,
