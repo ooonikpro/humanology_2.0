@@ -23,7 +23,6 @@ import getCompanion from "./methods/getCompanion";
 import getMindset from "./methods/getMindset";
 import getAlignment from "./methods/getAlignment";
 import getGender from "./methods/getGender";
-import getBriefDescriptionById from "./methods/getBriefDescriptionById";
 
 export default {
   getSociotypeBy,
@@ -51,6 +50,4 @@ export default {
   getMindset,
   getMotivation,
   getTemperanment,
-
-  getBriefDescriptionById,
 };

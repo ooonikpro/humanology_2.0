@@ -1,15 +1,12 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
+import { defineAsyncComponent, defineProps } from "vue";
 import type { SociotypeDataType } from "@types";
-
-import { UiText } from "@shared/ui";
-
-import model from "../model";
 
 import SociotypeSignsBlock from "./SociotypeSignsBlock.vue";
 
 const props = defineProps<SociotypeDataType>();
-const sociotypeBriefDescriprionById = model.getBriefDescriptionById(props.id);
+
+const Content = defineAsyncComponent(() => import(`./content/${props.id}.vue`));
 </script>
 
 <template>
@@ -17,25 +14,7 @@ const sociotypeBriefDescriprionById = model.getBriefDescriptionById(props.id);
     class="sociotype-short-desctiption"
     title="Краткое описание"
   >
-    <UiText
-      class="sociotype-short-desctiption__person-attributes"
-      tag="h5"
-      color="role"
-    >
-      {{ sociotypeBriefDescriprionById.personAttributes }}
-    </UiText>
-
-    <UiText
-      class="sociotype-short-desctiption__person-description"
-      v-for="(
-        description, index
-      ) in sociotypeBriefDescriprionById.personDesctiption"
-      :key="index"
-      tag="p"
-      color="black"
-    >
-      {{ description }}
-    </UiText>
+    <component :is="Content"></component>
   </SociotypeSignsBlock>
 </template>
 

@@ -194,43 +194,6 @@ export type BaziSign =
 
 export type YearElements = "wood" | "fire" | "earth" | "metal" | "water";
 
-export type SocionicAbbrevationType =
-  | "ЭИЭ"
-  | "ИЭЭ"
-  | "ЛИЭ"
-  | "ИЛЭ"
-  | "СЭЭ"
-  | "ЛСЭ"
-  | "СЛЭ"
-  | "ЭИИ"
-  | "ИЭИ"
-  | "ЛИИ"
-  | "ИЛИ"
-  | "ЭСИ"
-  | "ЛСИ"
-  | "СЛИ"
-  | "ЭСЭ"
-  | "СЭИ";
-
-export type PersonalitiesTermType =
-  | "Consul"
-  | "Adventurer"
-  | "Protagonist"
-  | "Campaigner"
-  | "Commander"
-  | "Debater"
-  | "Entertainer"
-  | "Executive"
-  | "Enterpreneur"
-  | "Advocate"
-  | "Mediator"
-  | "Logician"
-  | "Defender"
-  | "Adventurer"
-  | "Logistician"
-  | "Virtuoso"
-  | "Architect";
-
 export type ZodiacSign =
   | "aries"
   | "taurus"
@@ -264,8 +227,8 @@ export type SociotypeDataType = {
   tarot: TarotType;
   psychotype: PsychotypeType;
   populationPercentage: string;
-  socionicAbbrevation: SocionicAbbrevationType;
-  personalitiesTerm: PersonalitiesTermType;
+  socionicAbbrevation: string;
+  personalitiesTerm: string;
   aspects: Record<AspectKey, Aspect>;
   stimulant: StimulantType;
   communication: CommunicationStyleType;
@@ -275,10 +238,6 @@ export type SociotypeDataType = {
   yungs: DichotomyType[];
   reinin: ReininSignType[];
   intertypeRelations: Record<IntertypeRelations, SociotypeIdType>;
-  shortDesctiption: {
-    personAttributes: string;
-    personDesctiption: string[];
-  };
 };
 
 export type UnixDate = string; // mm/dd/yyyy
