@@ -2,13 +2,13 @@
 import { useTemplateRef, watch } from "vue";
 import { useRoute } from "vue-router";
 import { tabs } from "../model/data";
-import UiTab from "./UiTab.vue";
+import {TabLink} from '@entities/navigation'
 
 const route = useRoute();
 const container = useTemplateRef<HTMLElement>("my-container");
 
 watch(route, () => {
-  const index: number = tabs.findIndex((el) => el.path === route.path);
+  const index: number = tabs.findIndex((el) => el.to === route.path);
   scrollToActiveTab(index);
 });
 
@@ -29,12 +29,12 @@ function scrollToActiveTab(index: number) {
 
 <template>
   <div class="tabs-widget" ref="my-container">
-    <UiTab
+    <TabLink
       v-for="tab in tabs"
       :key="tab.label"
       v-bind="tab"
       class="tabs-widget__link"
-    ></UiTab>
+    />
   </div>
 </template>
 
@@ -53,6 +53,10 @@ function scrollToActiveTab(index: number) {
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  &__link {
+    min-width: max-content;
   }
 }
 </style>

@@ -1,19 +1,15 @@
-import type { IconNameType } from "@types";
+import type { LinkTabPropsType } from "@entities/navigation";
 
-export interface TabsType {
-  path: string;
-  label: string;
-  iconName: IconNameType;
-}
+export type TabsType = Required<Omit<LinkTabPropsType, "size">>
 
 export const tabs: TabsType[] = [
-  { iconName: "card", path: "/", label: "Карточка" },
-  { iconName: "ghost", path: "/2", label: "Как определить" },
-  { iconName: "description", path: "/3", label: "Описание" },
-  { iconName: "compatibility", path: "/4", label: "Совместимость" },
-  { iconName: "people", path: "/5", label: "Люди" },
-  { iconName: "briefcase-alt", path: "/6", label: "Деловые качества" },
-  { iconName: "emoji-happy-square", path: "/7", label: "Развитие" },
-  { iconName: "emoji-sad-square", path: "/8", label: "Юмор" },
-  { iconName: "annotation", path: "/9", label: "История" },
+  { iconName: "card", to: "/", label: "Карточка" },
+  { iconName: "ghost", to: "/2", label: "Как определить" },
+  { iconName: "description", to: "/3", label: "Описание" },
+  { iconName: "compatibility", to: "/4", label: "Совместимость" },
+  { iconName: "people", to: "/5", label: "Люди" },
+  { iconName: "briefcase-alt", to: "/6", label: "Деловые качества" },
+  { iconName: "emoji-happy-square", to: "/7", label: "Развитие" },
+  { iconName: "emoji-sad-square", to: "/8", label: "Юмор" },
+  { iconName: "annotation", to: "/9", label: "История" },
 ];
