@@ -1,2 +1,0 @@
-export { tabs } from './tabs';
-
