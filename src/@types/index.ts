@@ -1,4 +1,3 @@
-import type { IconNameType } from "./iconNames";
 
 export type * from "./iconNames";
 
@@ -240,8 +239,4 @@ export type SociotypeDataType = {
 
 export type UnixDate = string; // mm/dd/yyyy
 
-export type LinkTabPropsType = {
-  to: string
-  iconName: IconNameType
-  label: string
-}
+
