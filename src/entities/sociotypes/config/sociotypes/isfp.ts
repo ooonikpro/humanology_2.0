@@ -63,6 +63,15 @@ const ISFP: SociotypeDataType = {
     contrary: "ESFP",
     superego: "INTP",
   },
+  socionicAbbrevation: "СЭИ",
+  personalitiesTerm: "Adventurer",
+  shortDesctiption: {
+    personAttributes: "Спокойный, дружелюбный, чувствительный и добрый.",
+    personDesctiption: [
+      "Наслаждается настоящим моментом и тем, что происходит вокруг него. Любит собственное пространство и работать в своем темпе.",
+      "Верен и привержен своим ценностям и важным для него людям.",
+    ],
+  },
 };
 
 export default ISFP;

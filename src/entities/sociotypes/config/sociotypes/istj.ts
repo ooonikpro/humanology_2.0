@@ -63,6 +63,16 @@ const ISTJ: SociotypeDataType = {
     contrary: "ESTJ",
     superego: "INFJ",
   },
+  socionicAbbrevation: "ЛСИ",
+  personalitiesTerm: "Logistician",
+  shortDesctiption: {
+    personAttributes:
+      "Спокойный, серьезный, добивается успеха тщательностью и надежностью.",
+    personDesctiption: [
+      "Практичен, конкретен, реалистичен и ответственен. Логично решает, что нужно сделать, и неуклонно работает над этим, не отвлекаясь на посторонние дела.",
+      "Получают удовольствие от наведения порядка и организованности — на работе, дома, в жизни. Ценят традиции и верность.",
+    ],
+  },
 };
 
 export default ISTJ;

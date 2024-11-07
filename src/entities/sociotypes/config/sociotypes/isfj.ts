@@ -63,6 +63,15 @@ const ISFJ: SociotypeDataType = {
     contrary: "ESFJ",
     superego: "INTJ",
   },
+  socionicAbbrevation: "ЭСИ",
+  personalitiesTerm: "Defender",
+  shortDesctiption: {
+    personAttributes: "Спокоен, доброжелателен, ответственен и добросовестен.",
+    personDesctiption: [
+      "Обязательно и неуклонно выполняет свои обязательства. Тщателен, кропотлив и точен. Лоялен, внимателен, замечает и запоминает особенности важных для них людей, заботится о самочувствии других.",
+      "Стремится создать порядок и гармонию на работе и дома.",
+    ],
+  },
 };
 
 export default ISFJ;

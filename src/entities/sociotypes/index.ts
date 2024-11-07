@@ -6,5 +6,6 @@ export { default as SociotypeQuadras } from "./ui/quadras/SociotypeQuadrasGroup.
 export { default as SociotypeMentality } from "./ui/SociotypeMentality.vue";
 export { default as SociotypeYungDichtomy } from "./ui/SociotypeYungDichtomy.vue";
 export { default as SociotypeReininSigns } from "./ui/SociotypeReininSigns.vue";
+export { default as SociotypeBriefDescription } from "./ui/SociotypeBriefDescription.vue";
 
 export { default as SociotypeModel } from "./model";
