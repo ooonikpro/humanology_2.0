@@ -16,8 +16,10 @@ import getOppositeReininLabel from "./methods/getOppositeReininLabel";
 import createColorQuadraStyle from "./methods/createColorQuadraStyle";
 import createColorRoleStyle from "./methods/createColorRoleStyle";
 import createBgColorQuadraStyle from "./methods/createBgColorQuadraStyle";
+import getAllSociotypes from "./methods/getAllSociotypes";
 
 export default {
+  getAllSociotypes,
   getSociotypeBy,
   getRoleQuadra,
   getRoleLabel,
