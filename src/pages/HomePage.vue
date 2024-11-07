@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import SociotypesByQadrasWidget from "@widgets/sociotypes/SociotypesByQadrasWidget.vue";
-import FAQWidget from "@widgets/faq-widget/FAQWidget.vue";
+import MainNavigationWidget from "@widgets/main-navigation/MainNavigationWidget.vue";
 </script>
 
 <template>
   <div>
     <SociotypesByQadrasWidget />
-    <FAQWidget />
+    <MainNavigationWidget />
   </div>
 </template>
