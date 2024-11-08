@@ -2,7 +2,7 @@
 import { defineAsyncComponent, defineProps } from "vue";
 import type { SociotypeDataType } from "@types";
 
-import SociotypeSignsBlock from "./SociotypeSignsBlock.vue";
+import SociotypeSignsBlock from "../SociotypeSignsBlock.vue";
 
 const props = defineProps<SociotypeDataType>();
 

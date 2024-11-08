@@ -8,13 +8,18 @@ const props = defineProps<{ leftTitle: string; rightTitle: string }>();
 <template>
   <div class="ui-column-dual">
     <div>
-      <UiText tag="h4" color="grey" class="ui-column-dual__title">
+      <UiText tag="h4" color="grey" preset="body" class="ui-column-dual__title">
         {{ props.leftTitle }}
       </UiText>
       <slot name="left"></slot>
     </div>
     <div>
-      <UiText tag="h4" color="grey" class="ui-column-dual__title">
+      <UiText
+        tag="h4"
+        color="grey"
+        preset="large"
+        class="ui-column-dual__title"
+      >
         {{ props.rightTitle }}
       </UiText>
       <slot name="right"></slot>
@@ -30,18 +35,10 @@ const props = defineProps<{ leftTitle: string; rightTitle: string }>();
   grid-template-columns: 1fr 1fr;
   column-gap: 12px;
 
-  &__title {
-    font-size: 15px;
-    line-height: 20px;
-  }
-
   &__text {
     display: flex;
     align-items: center;
     gap: 4px;
-
-    font-size: 18px;
-    line-height: 24px;
   }
 }
 </style>

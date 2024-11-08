@@ -31,8 +31,8 @@ const sociotypeData = {
         </UiText>
         <UiZapList :temperamentLvl="sociotypeData.temperament.lvl"></UiZapList>
       </div>
-      <UiText tag="p" class="sociotype-mentality__text"
-        >{{ sociotypeData.temperament.label }}
+      <UiText tag="p" class="sociotype-mentality__text">
+        {{ sociotypeData.temperament.label }}
       </UiText>
     </div>
     <hr />
