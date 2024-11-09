@@ -54,15 +54,10 @@ const sociotypeData = {
         </UiText>
       </template>
       <template #right>
-        <UiText tag="p" class="sociotype-mentality__text">
-          <UiText tag="span" preset="large">
-            {{ sociotypeData.gender }}
-          </UiText>
-          <UiSvg
-            :name="props.gender"
-            class="sociotype-mentality__gender-icon"
-          />
+        <UiText tag="span" preset="large">
+          {{ sociotypeData.gender }}
         </UiText>
+        <UiSvg :name="props.gender" class="sociotype-mentality__gender-icon" />
       </template>
     </UiColumnDual>
     <hr />
@@ -74,10 +69,8 @@ const sociotypeData = {
         </UiText>
       </template>
       <template #right>
-        <UiText tag="p" class="sociotype-mentality__text">
-          <UiText tag="span" preset="large">
-            {{ sociotypeData.companion }}
-          </UiText>
+        <UiText tag="span" preset="large">
+          {{ sociotypeData.companion }}
         </UiText>
       </template>
     </UiColumnDual>
