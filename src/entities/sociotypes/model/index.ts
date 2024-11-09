@@ -43,7 +43,6 @@ export default {
   createColorQuadraStyle,
   createColorRoleStyle,
   createBgColorQuadraStyle,
-
   getGender,
   getAlignment,
   getCommunicationStyle,

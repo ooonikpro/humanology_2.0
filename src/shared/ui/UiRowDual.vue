@@ -9,11 +9,13 @@ const props = defineProps<{
 
 <template>
   <div class="ui-row-dual">
-    <span class="ui-row-dual__text">{{ props.leftText }}</span>
+    <span class="ui-row-dual__text">
+      {{ props.leftText }}
+    </span>
     <span class="ui-row-dual__line"></span>
-    <span class="ui-row-dual__text ui-row-dual__text--right">{{
-      props.rightText
-    }}</span>
+    <span class="ui-row-dual__text ui-row-dual__text--right">
+      {{ props.rightText }}
+    </span>
   </div>
 </template>
 

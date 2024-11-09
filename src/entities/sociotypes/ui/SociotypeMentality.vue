@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, defineProps } from "vue";
+import { defineProps } from "vue";
 import type { SociotypeDataType } from "@types";
 
 import { UiColumnDual, UiSvg, UiText, UiZapList } from "@shared/ui";
@@ -26,26 +26,38 @@ const sociotypeData = {
     <div class="sociotype-mentality__block">
       <UiText tag="h4" class="sociotype-mentality__title">Темперамент</UiText>
       <div class="sociotype-mentality__text-wrapper">
-        <UiText tag="span" class="sociotype-mentality__text" color="role">
+        <UiText
+          tag="span"
+          color="role"
+          preset="large"
+          class="sociotype-mentality__text"
+        >
           {{ sociotypeData.temperament.type }}
         </UiText>
         <UiZapList :temperamentLvl="sociotypeData.temperament.lvl"></UiZapList>
       </div>
-      <UiText tag="p" class="sociotype-mentality__text"
-        >{{ sociotypeData.temperament.label }}
+      <UiText tag="p" class="sociotype-mentality__text">
+        {{ sociotypeData.temperament.label }}
       </UiText>
     </div>
     <hr />
 
     <UiColumnDual leftTitle="Стимул" rightTitle="Характер">
       <template #left>
-        <UiText tag="p" class="sociotype-mentality__text" color="role">
+        <UiText
+          tag="p"
+          color="role"
+          preset="large"
+          class="sociotype-mentality__text"
+        >
           {{ sociotypeData.motivation }}
         </UiText>
       </template>
       <template #right>
         <UiText tag="p" class="sociotype-mentality__text">
-          <UiText tag="span">{{ sociotypeData.gender }}</UiText>
+          <UiText tag="span" preset="large">
+            {{ sociotypeData.gender }}
+          </UiText>
           <UiSvg
             :name="props.gender"
             class="sociotype-mentality__gender-icon"
@@ -57,13 +69,15 @@ const sociotypeData = {
 
     <UiColumnDual leftTitle="Стиль общения" rightTitle="Собеседник">
       <template #left>
-        <UiText tag="p" class="sociotype-mentality__text">
+        <UiText tag="p" preset="large" class="sociotype-mentality__text">
           {{ sociotypeData.communicationStyle }}
         </UiText>
       </template>
       <template #right>
         <UiText tag="p" class="sociotype-mentality__text">
-          <UiText tag="span">{{ sociotypeData.companion }}</UiText>
+          <UiText tag="span" preset="large">
+            {{ sociotypeData.companion }}
+          </UiText>
         </UiText>
       </template>
     </UiColumnDual>
@@ -71,7 +85,7 @@ const sociotypeData = {
 
     <div class="sociotype-mentality__block">
       <UiText tag="h4" class="sociotype-mentality__title">Мышление</UiText>
-      <UiText tag="p" class="sociotype-mentality__text">
+      <UiText tag="p" preset="large" class="sociotype-mentality__text">
         {{ sociotypeData.mindset }}
       </UiText>
     </div>
@@ -79,7 +93,7 @@ const sociotypeData = {
 
     <div class="sociotype-mentality__block">
       <UiText tag="h4" class="sociotype-mentality__title">Мировоззрение</UiText>
-      <UiText tag="p" class="sociotype-mentality__text">
+      <UiText tag="p" preset="large" class="sociotype-mentality__text">
         {{ sociotypeData.alignment }}
       </UiText>
     </div>
@@ -98,8 +112,6 @@ const sociotypeData = {
   }
 
   &__title {
-    font-size: 15px;
-    line-height: 20px;
     opacity: 0.5;
   }
 
@@ -107,9 +119,6 @@ const sociotypeData = {
     display: flex;
     align-items: center;
     gap: 4px;
-
-    font-size: 18px;
-    line-height: 24px;
   }
 
   &__gender-icon {

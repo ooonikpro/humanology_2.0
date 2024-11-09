@@ -63,6 +63,8 @@ const ENFJ: SociotypeDataType = {
     contrary: "INFJ",
     superego: "ESTJ",
   },
+  socionicAbbrevation: "ЭИЭ",
+  personalitiesTerm: "Protagonist",
 };
 
 export default ENFJ;
