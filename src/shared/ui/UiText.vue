@@ -4,7 +4,7 @@ import { defineProps } from "vue";
 const {
   color = "black",
   font = "base",
-  preset,
+  preset = "body",
   ...props
 } = defineProps<{
   tag: string;
@@ -61,6 +61,7 @@ const {
       font-family: "Halvar Breit Md", sans-serif;
       font-size: 36px;
       line-height: 44px;
+      font-weight: 500;
     }
 
     &-subtitle {
@@ -72,6 +73,7 @@ const {
       font-family: "Halvar Breit Md", sans-serif;
       font-size: 24px;
       line-height: 28px;
+      font-weight: 500;
     }
 
     &-large {

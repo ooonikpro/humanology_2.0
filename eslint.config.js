@@ -6,6 +6,9 @@ export default [
   {
     name: "app/files-to-lint",
     files: ["**/*.{ts,mts,tsx,vue}"],
+    rules: {
+      "no-console": "error",
+    },
   },
 
   {
