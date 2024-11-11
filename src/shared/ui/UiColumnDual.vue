@@ -11,13 +11,18 @@ const props = defineProps<{ leftTitle: string; rightTitle: string }>();
       <UiText tag="h4" color="grey" class="ui-column-dual__title">
         {{ props.leftTitle }}
       </UiText>
-      <slot name="left"></slot>
+      <div class="ui-column-dual__wrapper">
+        <slot name="left"></slot>
+      </div>
+      <slot name="leftBottom"></slot>
     </div>
     <div>
       <UiText tag="h4" color="grey" class="ui-column-dual__title">
         {{ props.rightTitle }}
       </UiText>
-      <slot name="right"></slot>
+      <div class="ui-column-dual__wrapper">
+        <slot name="right"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -30,7 +35,7 @@ const props = defineProps<{ leftTitle: string; rightTitle: string }>();
   grid-template-columns: 1fr 1fr;
   column-gap: 12px;
 
-  &__text {
+  &__wrapper {
     display: flex;
     align-items: center;
     gap: 4px;

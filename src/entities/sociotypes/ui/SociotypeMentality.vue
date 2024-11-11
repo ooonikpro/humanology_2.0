@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
 import type { SociotypeDataType } from "@types";
-
 import { UiColumnDual, UiSvg, UiText, UiZapList } from "@shared/ui";
+import SociotypeSignsBlock from "./SociotypeSignsBlock.vue";
 
 import model from "../model";
-
-import SociotypeSignsBlock from "./SociotypeSignsBlock.vue";
 
 const props = defineProps<SociotypeDataType>();
 
@@ -23,80 +21,66 @@ const sociotypeData = {
 
 <template>
   <SociotypeSignsBlock class="sociotype-mentality" title="Ментальность">
-    <div class="sociotype-mentality__block">
-      <UiText tag="h4" class="sociotype-mentality__title">Темперамент</UiText>
-      <div class="sociotype-mentality__text-wrapper">
-        <UiText
-          tag="span"
-          color="role"
-          preset="large"
-          class="sociotype-mentality__text"
-        >
+    <UiColumnDual leftTitle="Темперамент">
+      <template #left>
+        <UiText tag="span" color="role" preset="large">
           {{ sociotypeData.temperament.type }}
         </UiText>
         <UiZapList :temperamentLvl="sociotypeData.temperament.lvl"></UiZapList>
-      </div>
-      <UiText tag="p" class="sociotype-mentality__text">
-        {{ sociotypeData.temperament.label }}
-      </UiText>
-    </div>
+      </template>
+      <template #leftBottom>
+        <UiText tag="span">
+          {{ sociotypeData.temperament.label }}
+        </UiText>
+      </template>
+    </UiColumnDual>
     <hr />
 
     <UiColumnDual leftTitle="Стимул" rightTitle="Характер">
       <template #left>
-        <UiText
-          tag="p"
-          color="role"
-          preset="large"
-          class="sociotype-mentality__text"
-        >
+        <UiText tag="span" color="role" preset="large">
           {{ sociotypeData.motivation }}
         </UiText>
       </template>
       <template #right>
-        <UiText tag="p" class="sociotype-mentality__text">
-          <UiText tag="span" preset="large">
-            {{ sociotypeData.gender }}
-          </UiText>
-          <UiSvg
-            :name="props.gender"
-            class="sociotype-mentality__gender-icon"
-          />
+        <UiText tag="span" preset="large">
+          {{ sociotypeData.gender }}
         </UiText>
+        <UiSvg :name="props.gender" class="sociotype-mentality__gender-icon" />
       </template>
     </UiColumnDual>
     <hr />
 
     <UiColumnDual leftTitle="Стиль общения" rightTitle="Собеседник">
       <template #left>
-        <UiText tag="p" preset="large" class="sociotype-mentality__text">
+        <UiText tag="span" preset="large">
           {{ sociotypeData.communicationStyle }}
         </UiText>
       </template>
       <template #right>
-        <UiText tag="p" class="sociotype-mentality__text">
-          <UiText tag="span" preset="large">
-            {{ sociotypeData.companion }}
-          </UiText>
+        <UiText tag="span" preset="large">
+          {{ sociotypeData.companion }}
         </UiText>
       </template>
     </UiColumnDual>
     <hr />
 
-    <div class="sociotype-mentality__block">
-      <UiText tag="h4" class="sociotype-mentality__title">Мышление</UiText>
-      <UiText tag="p" preset="large" class="sociotype-mentality__text">
-        {{ sociotypeData.mindset }}
-      </UiText>
-    </div>
+    <UiColumnDual leftTitle="Мышление">
+      <template #left>
+        <UiText tag="span" preset="large">
+          {{ sociotypeData.mindset }}
+        </UiText>
+      </template>
+    </UiColumnDual>
     <hr />
 
-    <div class="sociotype-mentality__block">
-      <UiText tag="h4" class="sociotype-mentality__title">Мировоззрение</UiText>
-      <UiText tag="p" preset="large" class="sociotype-mentality__text">
-        {{ sociotypeData.alignment }}
-      </UiText>
-    </div>
+    <UiColumnDual leftTitle="Мировоззрение">
+      <template #left>
+        <UiText tag="span" preset="large">
+          {{ sociotypeData.alignment }}
+        </UiText>
+      </template>
+    </UiColumnDual>
   </SociotypeSignsBlock>
 </template>
 
@@ -104,23 +88,6 @@ const sociotypeData = {
 @use "@shared/styles/variables/colors";
 
 .sociotype-mentality {
-  margin-top: 16px;
-
-  &__text-wrapper {
-    display: flex;
-    align-items: center;
-  }
-
-  &__title {
-    opacity: 0.5;
-  }
-
-  &__text {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
   &__gender-icon {
     height: 20px;
     width: 20px;

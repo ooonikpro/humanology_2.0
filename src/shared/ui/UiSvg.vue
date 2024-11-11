@@ -5,7 +5,10 @@ import { getIconMap } from "@shared/lib";
 
 const iconMap = getIconMap();
 
-const props = defineProps<{ name: IconNameType }>();
+const props = defineProps<{
+  name: IconNameType;
+  color?: "quadra" | "role";
+}>();
 
 const svgBody = ref("");
 const iconPromise = computed(() => iconMap[props.name]);
@@ -22,12 +25,30 @@ watch(
 </script>
 
 <template>
-  <i class="ui-icon" :class="props.name" v-html="svgBody"></i>
+  <i
+    class="ui-icon"
+    :class="[props.name, `ui-icon--${props.color}`]"
+    v-html="svgBody"
+  ></i>
 </template>
 
 <style lang="scss">
+@use "../styles/variables/colors.scss";
+
 .ui-icon {
   display: inline-flex;
+
+  &--black {
+    color: colors.$black;
+  }
+
+  &--role {
+    color: colors.$role;
+  }
+
+  &--quadra {
+    color: colors.$quadra;
+  }
 
   svg {
     width: 100%;

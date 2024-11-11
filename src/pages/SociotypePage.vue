@@ -8,6 +8,7 @@ import {
   SociotypeReininSigns,
   SociotypeYungDichtomy,
   SociotypeBriefDescription,
+  SociotypeGroupsAndQuadras,
 } from "@entities/sociotypes";
 import TabsWidget from "@widgets/tabs-widget";
 </script>
@@ -33,6 +34,8 @@ import TabsWidget from "@widgets/tabs-widget";
     <SociotypeBriefDescription v-bind="data" />
 
     <SociotypeMentality v-bind="data" />
+
+    <SociotypeGroupsAndQuadras v-bind="data" />
 
     <SociotypeYungDichtomy v-bind="data" />
 
