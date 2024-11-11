@@ -1,13 +1,15 @@
 <script lang="ts" setup>
+import {defineProps} from "vue";
 import type { RouteParams } from "vue-router";
 import { type RouteNameType } from "../config/routes";
 
-interface Props {
+type PropsType = {
   url?: string;
   name: RouteNameType;
   params?: RouteParams;
 }
-const props = defineProps<Props>();
+
+const props = defineProps<PropsType>();
 </script>
 
 <template>
