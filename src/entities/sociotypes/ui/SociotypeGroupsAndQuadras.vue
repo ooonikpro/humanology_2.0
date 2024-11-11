@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
 import type { SociotypeDataType } from "@types";
-
 import { UiColumnDual, UiSvg, UiText } from "@shared/ui";
+import SociotypeSignsBlock from "./SociotypeSignsBlock.vue";
 
 import model from "../model";
-
-import SociotypeSignsBlock from "./SociotypeSignsBlock.vue";
 
 const props = defineProps<SociotypeDataType>();
 
@@ -24,30 +22,18 @@ const groupsAndQuadrasData = {
     class="sociotype-groups-and-quadras"
     title="Группы и квадры"
   >
-    <div class="sociotype-groups-and-quadras__block">
-      <UiText
-        tag="h4"
-        color="quadra"
-        class="sociotype-groups-and-quadras__title"
-      >
-        Квадра
-      </UiText>
-      <div class="sociotype-groups-and-quadras__text-wrapper">
+    <UiColumnDual leftTitle="Квадра">
+      <template #left>
         <UiSvg
           :name="props.quadra"
           color="quadra"
           class="sociotype-groups-and-quadras__icon"
         />
-        <UiText
-          tag="span"
-          preset="large"
-          color="quadra"
-          class="sociotype-groups-and-quadras__text"
-        >
+        <UiText tag="span" preset="large" color="quadra">
           {{ groupsAndQuadrasData.quadra }}
         </UiText>
-      </div>
-    </div>
+      </template>
+    </UiColumnDual>
     <hr />
 
     <UiColumnDual leftTitle="Роль" rightTitle="Масть">
@@ -57,21 +43,14 @@ const groupsAndQuadrasData = {
           color="role"
           class="sociotype-groups-and-quadras__icon"
         />
-        <UiText
-          tag="p"
-          preset="large"
-          color="role"
-          class="sociotype-groups-and-quadras__text"
-        >
+        <UiText tag="span" preset="large" color="role">
           {{ groupsAndQuadrasData.role }}
         </UiText>
       </template>
       <template #right>
         <UiSvg :name="props.tarot" class="sociotype-groups-and-quadras__icon" />
-        <UiText tag="p" class="sociotype-groups-and-quadras__text">
-          <UiText tag="span" preset="large">
-            {{ groupsAndQuadrasData.tarot }}
-          </UiText>
+        <UiText tag="span" preset="large">
+          {{ groupsAndQuadrasData.tarot }}
         </UiText>
       </template>
     </UiColumnDual>
@@ -80,11 +59,7 @@ const groupsAndQuadrasData = {
     <UiColumnDual leftTitle="Клуб" rightTitle="Группа">
       <template #left>
         <UiSvg :name="props.club" class="sociotype-groups-and-quadras__icon" />
-        <UiText
-          tag="p"
-          preset="large"
-          class="sociotype-groups-and-quadras__text"
-        >
+        <UiText tag="span" preset="large">
           {{ groupsAndQuadrasData.club }}
         </UiText>
       </template>
@@ -93,10 +68,8 @@ const groupsAndQuadrasData = {
           :name="props.psychotype"
           class="sociotype-groups-and-quadras__icon"
         />
-        <UiText tag="p" class="sociotype-groups-and-quadras__text">
-          <UiText tag="span" preset="large">
-            {{ groupsAndQuadrasData.psychotype }}
-          </UiText>
+        <UiText tag="span" preset="large">
+          {{ groupsAndQuadrasData.psychotype }}
         </UiText>
       </template>
     </UiColumnDual>
@@ -107,18 +80,6 @@ const groupsAndQuadrasData = {
 @use "@shared/styles/variables/colors";
 
 .sociotype-groups-and-quadras {
-  margin-top: 16px;
-
-  &__text-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  &__title {
-    opacity: 0.5;
-  }
-
   &__icon {
     height: 20px;
     width: 20px;

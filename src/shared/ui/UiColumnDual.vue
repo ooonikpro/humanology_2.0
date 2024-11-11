@@ -14,6 +14,7 @@ const props = defineProps<{ leftTitle: string; rightTitle: string }>();
       <div class="ui-column-dual__wrapper">
         <slot name="left"></slot>
       </div>
+      <slot name="leftBottom"></slot>
     </div>
     <div>
       <UiText tag="h4" color="grey" class="ui-column-dual__title">
