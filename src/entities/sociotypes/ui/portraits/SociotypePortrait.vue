@@ -1,26 +1,31 @@
 <script lang="ts" setup>
 import { defineProps, computed } from "vue";
 import type { Gender, SociotypeAgeType, SociotypeIdType } from "@types";
+import model from "../../model";
+import type { GenderEnum } from "@shared/constants";
 
-const {
-  age = "kids",
-  gender = "male",
-  ...props
-} = defineProps<{
+type PropsType = {
   id: SociotypeIdType;
   age?: SociotypeAgeType;
   gender?: Gender;
-}>();
+};
+
+const { age = "youngs", gender = "male", ...props } = defineProps<PropsType>();
+
+const { getPortraitSrc } = model;
 
 const src = computed(() => {
   const ageParam = age === "kids" ? "-kid" : "";
-  const imgName = `${props.id.toLowerCase()}-${gender}${ageParam}`;
-  return `/assets/images/portraits/${imgName}.png`;
+  const path = getPortraitSrc(props.id, gender as GenderEnum).replace(
+    ".png",
+    `${ageParam}.png`,
+  );
+  return path;
 });
 </script>
 
 <template>
-  <img :src="src" class="sociotype-portrait" :alt="props.id">
+  <img :src="src" class="sociotype-portrait" :alt="props.id" />
 </template>
 
 <style lang="scss" scoped>

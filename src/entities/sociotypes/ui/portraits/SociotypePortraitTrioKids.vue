@@ -3,7 +3,7 @@ import { random } from "@shared/lib";
 import SociotypePortrait from "./SociotypePortrait.vue";
 import { KIDS } from "../../config";
 
-const kids = KIDS[random(KIDS.length)];
+const kids = KIDS[random(KIDS.length - 1)];
 </script>
 
 <template>
