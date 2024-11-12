@@ -13,10 +13,7 @@ import getSociotypesByQuadra from "./methods/getSociotypesByQuadra";
 import getOppositeYungDichtomyLabel from "./methods/getOppositeYungDichtomyLabel";
 import getReininLabel from "./methods/getReininLabel";
 import getOppositeReininLabel from "./methods/getOppositeReininLabel";
-import createColorQuadraStyle from "./methods/createColorQuadraStyle";
-import createColorRoleStyle from "./methods/createColorRoleStyle";
-import createBgColorQuadraStyle from "./methods/createBgColorQuadraStyle";
-import getTemperanment from "./methods/getTemperanment";
+import getTemperament from "./methods/getTemperament";
 import getCommunicationStyle from "./methods/getCommunicationStyle";
 import getMotivation from "./methods/getMotivation";
 import getCompanion from "./methods/getCompanion";
@@ -24,7 +21,7 @@ import getMindset from "./methods/getMindset";
 import getAlignment from "./methods/getAlignment";
 import getGender from "./methods/getGender";
 
-export default {
+const model = {
   getSociotypeBy,
   getRoleQuadra,
   getRoleLabel,
@@ -40,14 +37,14 @@ export default {
   getSociotypesByQuadra,
   getReininLabel,
   getOppositeReininLabel,
-  createColorQuadraStyle,
-  createColorRoleStyle,
-  createBgColorQuadraStyle,
   getGender,
   getAlignment,
   getCommunicationStyle,
   getCompanion,
   getMindset,
   getMotivation,
-  getTemperanment,
+  getTemperament,
 };
+
+export default model;
+export type SociotypeModelType = typeof model;

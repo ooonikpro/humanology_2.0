@@ -6,15 +6,15 @@ import { UiSvg } from "@shared/ui";
 <template>
   <header class="header-widget">
     <button class="header-widget__button">
-      <UiSvg name="menu" class="header-widget__icon" />
+      <UiSvg color="dark-grey" name="menu" size="24" />
     </button>
 
     <RouterLink to="/" class="header-widget__logo">
-      <UiSvg name="logo-circle" class="header-widget__icon" />
+      <UiSvg color="dark-grey" name="logo-circle" size="24" />
     </RouterLink>
 
     <button class="header-widget__button">
-      <UiSvg name="user-square" class="header-widget__icon" />
+      <UiSvg color="dark-grey" name="user-square" size="24" />
     </button>
   </header>
 </template>
@@ -32,12 +32,6 @@ import { UiSvg } from "@shared/ui";
 
   &__button {
     cursor: pointer;
-  }
-
-  &__icon {
-    width: 24px;
-    height: 24px;
-    opacity: 0.5;
   }
 }
 </style>

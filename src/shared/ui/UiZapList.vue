@@ -2,7 +2,7 @@
 import { defineProps } from "vue";
 import UiSvg from "./UiSvg.vue";
 
-const props = defineProps<{ temperamentLvl: number }>();
+const props = defineProps<{ temperamentLvl: 1 | 2 | 3 | 4 }>();
 </script>
 
 <template>
@@ -10,11 +10,12 @@ const props = defineProps<{ temperamentLvl: number }>();
     <UiSvg
       v-for="n in 4"
       :key="n"
-      name="zap"
-      class="zap-list__item"
       :class="{
         'zap-list__item--active': n <= props.temperamentLvl,
       }"
+      name="zap"
+      class="zap-list__item"
+      size="20"
     />
   </div>
 </template>
@@ -28,7 +29,6 @@ const props = defineProps<{ temperamentLvl: number }>();
   margin-left: 8px;
 
   &__item {
-    width: 20px;
     margin-left: -4px;
     color: colors.$black;
     opacity: 0.25;

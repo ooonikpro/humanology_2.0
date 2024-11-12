@@ -3,15 +3,15 @@ import { UiText } from "@shared/ui";
 </script>
 
 <template>
-  <UiText class="attributes" preset="large" tag="h5" color="role">
+  <UiText class="attributes" preset="large" color="role">
     Идеалист, верен своим ценностям и значимым для него людям. Хочет, чтобы
     внешняя жизнь соответствовала их ценностям.
   </UiText>
-  <UiText class="description" preset="body" tag="p" color="black">
+  <UiText class="description" color="black">
     Любознателен, быстро видит возможности, может быть катализаторами реализации
     идей. Стремится понять людей и помочь им реализовать потенциал.
   </UiText>
-  <UiText class="description" preset="body" tag="p" color="black">
+  <UiText class="description" color="black">
     Приспосабливается, проявляет гибкость, смиряется, если только его ценности
     не находятся под угрозой.
   </UiText>

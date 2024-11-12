@@ -9,7 +9,7 @@ import model from "../model";
 const props = defineProps<SociotypeDataType>();
 
 const sociotypeData = {
-  temperament: model.getTemperanment(props.temperament),
+  temperament: model.getTemperament(props.temperament),
   motivation: model.getMotivation(props.stimulant),
   communicationStyle: model.getCommunicationStyle(props.communication),
   companion: model.getCompanion(props.companion),
@@ -23,13 +23,13 @@ const sociotypeData = {
   <SociotypeSignsBlock class="sociotype-mentality" title="Ментальность">
     <UiColumnDual leftTitle="Темперамент">
       <template #left>
-        <UiText tag="span" color="role" preset="large">
+        <UiText color="role" preset="large">
           {{ sociotypeData.temperament.type }}
         </UiText>
         <UiZapList :temperamentLvl="sociotypeData.temperament.lvl"></UiZapList>
       </template>
       <template #leftBottom>
-        <UiText tag="span">
+        <UiText>
           {{ sociotypeData.temperament.label }}
         </UiText>
       </template>
@@ -38,27 +38,27 @@ const sociotypeData = {
 
     <UiColumnDual leftTitle="Стимул" rightTitle="Характер">
       <template #left>
-        <UiText tag="span" color="role" preset="large">
+        <UiText color="role" preset="large">
           {{ sociotypeData.motivation }}
         </UiText>
       </template>
       <template #right>
-        <UiText tag="span" preset="large">
+        <UiText preset="large">
           {{ sociotypeData.gender }}
         </UiText>
-        <UiSvg :name="props.gender" class="sociotype-mentality__gender-icon" />
+        <UiSvg :name="props.gender" size="20" />
       </template>
     </UiColumnDual>
     <hr />
 
     <UiColumnDual leftTitle="Стиль общения" rightTitle="Собеседник">
       <template #left>
-        <UiText tag="span" preset="large">
+        <UiText preset="large">
           {{ sociotypeData.communicationStyle }}
         </UiText>
       </template>
       <template #right>
-        <UiText tag="span" preset="large">
+        <UiText preset="large">
           {{ sociotypeData.companion }}
         </UiText>
       </template>
@@ -67,7 +67,7 @@ const sociotypeData = {
 
     <UiColumnDual leftTitle="Мышление">
       <template #left>
-        <UiText tag="span" preset="large">
+        <UiText preset="large">
           {{ sociotypeData.mindset }}
         </UiText>
       </template>
@@ -76,7 +76,7 @@ const sociotypeData = {
 
     <UiColumnDual leftTitle="Мировоззрение">
       <template #left>
-        <UiText tag="span" preset="large">
+        <UiText preset="large">
           {{ sociotypeData.alignment }}
         </UiText>
       </template>

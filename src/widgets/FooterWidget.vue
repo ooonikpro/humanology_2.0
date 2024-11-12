@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { UiSvg } from "@shared/ui";
+import { UiSvg, UiText } from "@shared/ui";
 import { scrollToTop } from "@shared/lib";
 </script>
 
 <template>
   <footer>
     <RouterLink to="/" class="logo-link">
-      <UiSvg name="logo-circle" class="logo-link__icon" />
+      <UiSvg color="dark-grey" name="logo-circle" size="20" />
     </RouterLink>
     <hr />
     <div class="bottom">
       <a href="/" class="link">
-        <UiSvg name="telegram" class="logo-link__icon" />
+        <UiSvg color="dark-grey" name="telegram" size="24" />
 
-        Телеграм
+        <UiText preset="small" color="dark-grey">Телеграм</UiText>
       </a>
       <a href="/" class="link">
-        <UiSvg name="vk" class="logo-link__icon" />
+        <UiSvg color="dark-grey" name="vk" size="24" />
 
-        ВК
+        <UiText preset="small" color="dark-grey">ВК</UiText>
       </a>
       <a href="#" class="link up" @click.prevent="scrollToTop">
-        Наверх
+        <UiText preset="small" color="dark-grey">Наверх</UiText>
 
-        <UiSvg name="chevron-up" class="logo-link__icon" />
+        <UiSvg color="dark-grey" name="chevron-up" size="24" />
       </a>
     </div>
   </footer>
@@ -43,23 +43,10 @@ footer {
 }
 
 .logo-link {
-  opacity: 0.25;
   height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-color);
-
-  &__icon {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-hr {
-  height: 0.5px;
-  background-color: var(--text-color);
-  opacity: 0.1;
 }
 
 .bottom {
@@ -70,8 +57,6 @@ hr {
 }
 
 .link {
-  font-size: 13px;
-  opacity: 0.5;
   display: flex;
   align-items: center;
   gap: 4px;

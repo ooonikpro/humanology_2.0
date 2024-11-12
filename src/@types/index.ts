@@ -241,3 +241,22 @@ export type SociotypeDataType = {
 };
 
 export type UnixDate = string; // mm/dd/yyyy
+
+export type TextColorType =
+  | "white"
+  | "grey"
+  | "dark-grey"
+  | "beige"
+  | "black"
+  | "shadow"
+  | "accent"
+  | "turquoise"
+  | "green"
+  | "yellow"
+  | "pink"
+  | "air"
+  | "fire"
+  | "water"
+  | "earth"
+  | "quadra"
+  | "role";

@@ -2,25 +2,26 @@
 import { defineProps } from "vue";
 import UiText from "./UiText.vue";
 
-const props = defineProps<{ leftTitle: string; rightTitle: string }>();
+const props = defineProps<{ leftTitle: string; rightTitle?: string }>();
 </script>
 
 <template>
   <div class="ui-column-dual">
     <div>
-      <UiText tag="h4" color="grey" class="ui-column-dual__title">
+      <UiText color="dark-grey" class="ui-column-dual__title">
         {{ props.leftTitle }}
       </UiText>
-      <div class="ui-column-dual__wrapper">
+      <div class="ui-column-dual__content">
         <slot name="left"></slot>
       </div>
       <slot name="leftBottom"></slot>
     </div>
-    <div>
-      <UiText tag="h4" color="grey" class="ui-column-dual__title">
+
+    <div v-if="props.rightTitle || $slots.right">
+      <UiText color="dark-grey" class="ui-column-dual__title">
         {{ props.rightTitle }}
       </UiText>
-      <div class="ui-column-dual__wrapper">
+      <div class="ui-column-dual__content">
         <slot name="right"></slot>
       </div>
     </div>
@@ -35,7 +36,7 @@ const props = defineProps<{ leftTitle: string; rightTitle: string }>();
   grid-template-columns: 1fr 1fr;
   column-gap: 12px;
 
-  &__wrapper {
+  &__content {
     display: flex;
     align-items: center;
     gap: 4px;

@@ -1,6 +1,6 @@
 import type { RoleType } from "@types";
 
-import getRoleQuadra from "./getRoleQuadra";
+import getRoleQuadra from "../model/methods/getRoleQuadra";
 
 const createColorRoleStyle = (role: RoleType) => {
   return {

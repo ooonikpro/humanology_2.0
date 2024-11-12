@@ -1,7 +1,7 @@
 import type { TemperamentType } from "@types";
 import { TEMPERAMENT, TEMPERAMENT_LABEL, TEMPERAMENT_LVL } from "../../config";
 
-const getTemperanment = (temperament: TemperamentType) => {
+const getTemperament = (temperament: TemperamentType) => {
   return {
     type: TEMPERAMENT[temperament],
     label: TEMPERAMENT_LABEL[temperament],
@@ -9,4 +9,4 @@ const getTemperanment = (temperament: TemperamentType) => {
   };
 };
 
-export default getTemperanment;
+export default getTemperament;

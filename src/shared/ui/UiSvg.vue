@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { defineProps, computed, ref, watch } from "vue";
-import type { IconNameType } from "@types";
+import type { IconNameType, TextColorType } from "@types";
 import { getIconMap } from "@shared/lib";
 
 const iconMap = getIconMap();
 
-const props = defineProps<{
+const { color, size, ...props } = defineProps<{
   name: IconNameType;
-  color?: "quadra" | "role";
+  color?: TextColorType;
+  size?: "12" | "16" | "20" | "24" | "64" | "80" | "96";
 }>();
 
 const svgBody = ref("");
@@ -27,7 +28,13 @@ watch(
 <template>
   <i
     class="ui-icon"
-    :class="[props.name, `ui-icon--${props.color}`]"
+    :class="[
+      {
+        [`ui-icon--size-${size}`]: size,
+      },
+      props.name,
+      `g-color--${color}`,
+    ]"
     v-html="svgBody"
   ></i>
 </template>
@@ -37,22 +44,20 @@ watch(
 
 .ui-icon {
   display: inline-flex;
-
-  &--black {
-    color: colors.$black;
-  }
-
-  &--role {
-    color: colors.$role;
-  }
-
-  &--quadra {
-    color: colors.$quadra;
-  }
+  aspect-ratio: 1/1;
 
   svg {
     width: 100%;
     height: 100%;
+  }
+
+  &--size {
+    @each $size in 12, 16, 20, 24, 64, 80, 96 {
+      &-#{$size} {
+        width: #{$size}px;
+        height: #{$size}px;
+      }
+    }
   }
 }
 </style>

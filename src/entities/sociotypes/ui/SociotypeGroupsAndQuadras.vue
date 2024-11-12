@@ -24,12 +24,8 @@ const groupsAndQuadrasData = {
   >
     <UiColumnDual leftTitle="Квадра">
       <template #left>
-        <UiSvg
-          :name="props.quadra"
-          color="quadra"
-          class="sociotype-groups-and-quadras__icon"
-        />
-        <UiText tag="span" preset="large" color="quadra">
+        <UiSvg :name="props.quadra" color="quadra" size="24" />
+        <UiText preset="large" color="quadra">
           {{ groupsAndQuadrasData.quadra }}
         </UiText>
       </template>
@@ -38,18 +34,14 @@ const groupsAndQuadrasData = {
 
     <UiColumnDual leftTitle="Роль" rightTitle="Масть">
       <template #left>
-        <UiSvg
-          :name="props.role"
-          color="role"
-          class="sociotype-groups-and-quadras__icon"
-        />
-        <UiText tag="span" preset="large" color="role">
+        <UiSvg :name="props.role" color="role" size="24" />
+        <UiText preset="large" color="role">
           {{ groupsAndQuadrasData.role }}
         </UiText>
       </template>
       <template #right>
-        <UiSvg :name="props.tarot" class="sociotype-groups-and-quadras__icon" />
-        <UiText tag="span" preset="large">
+        <UiSvg :name="props.tarot" size="24" />
+        <UiText preset="large">
           {{ groupsAndQuadrasData.tarot }}
         </UiText>
       </template>
@@ -58,31 +50,17 @@ const groupsAndQuadrasData = {
 
     <UiColumnDual leftTitle="Клуб" rightTitle="Группа">
       <template #left>
-        <UiSvg :name="props.club" class="sociotype-groups-and-quadras__icon" />
-        <UiText tag="span" preset="large">
+        <UiSvg :name="props.club" size="24" />
+        <UiText preset="large">
           {{ groupsAndQuadrasData.club }}
         </UiText>
       </template>
       <template #right>
-        <UiSvg
-          :name="props.psychotype"
-          class="sociotype-groups-and-quadras__icon"
-        />
-        <UiText tag="span" preset="large">
+        <UiSvg :name="props.psychotype" size="24" />
+        <UiText preset="large">
           {{ groupsAndQuadrasData.psychotype }}
         </UiText>
       </template>
     </UiColumnDual>
   </SociotypeSignsBlock>
 </template>
-
-<style scoped lang="scss">
-@use "@shared/styles/variables/colors";
-
-.sociotype-groups-and-quadras {
-  &__icon {
-    height: 20px;
-    width: 20px;
-  }
-}
-</style>

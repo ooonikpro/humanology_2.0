@@ -26,13 +26,10 @@ const onScroll = (e: Event) => {
 <template>
   <div class="sociotype-quadras-group" :style="styles">
     <div class="sociotype-quadras-group__header">
-      <UiText
-        tag="span"
-        color="quadra"
-        class="sociotype-quadras-group__active-quadra"
-      >
+      <UiText color="quadra" class="sociotype-quadras-group__active-quadra">
         <UiSvg
           :name="activeQuadra"
+          size="20"
           class="sociotype-quadras-group__active-quadra-icon"
         />
         {{ model.getQuadraLabel(activeQuadra) }}
@@ -47,7 +44,7 @@ const onScroll = (e: Event) => {
         <UiText
           v-for="subtitle in subtitles"
           :key="subtitle"
-          tag="span"
+          preset="small"
           color="quadra"
         >
           {{ subtitle }}
