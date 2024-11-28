@@ -1,13 +1,59 @@
+import type { SociotypeIdType } from "@types";
 import type { NavigationTabPropsType } from "./types";
 
-export const tabs: NavigationTabPropsType[] = [
-  { iconName: "card", url: "/", label: "Карточка" },
-  { iconName: "ghost", url: "/2", label: "Как определить" },
-  { iconName: "description", url: "/3", label: "Описание" },
-  { iconName: "compatibility", url: "/4", label: "Совместимость" },
-  { iconName: "people", url: "/5", label: "Люди" },
-  { iconName: "briefcase-alt", url: "/6", label: "Деловые качества" },
-  { iconName: "emoji-happy-square", url: "/7", label: "Развитие" },
-  { iconName: "emoji-sad-square", url: "/8", label: "Юмор" },
-  { iconName: "annotation", url: "/9", label: "История" },
+export const tabs: (NavigationTabPropsType & { id: SociotypeIdType })[] = [
+  {
+    id: "ENFJ",
+    iconName: "card",
+    to: (resolve) => resolve("sociotypes", { id: "ENFJ" }),
+    label: "Карточка",
+  },
+  {
+    id: "ENFJ",
+    iconName: "ghost",
+    to: (resolve) => resolve("sociotypes", { id: "ENFJ" }),
+    label: "Как определить",
+  },
+  {
+    id: "ENFJ",
+    iconName: "description",
+    to: (resolve) => resolve("sociotypes", { id: "ENFJ" }),
+    label: "Описание",
+  },
+  {
+    id: "ENFJ",
+    iconName: "compatibility",
+    to: (resolve) => resolve("sociotypes", { id: "ENFJ" }),
+    label: "Совместимость",
+  },
+  {
+    id: "ENFJ",
+    iconName: "people",
+    to: (resolve) => resolve("sociotypes", { id: "ENFJ" }),
+    label: "Люди",
+  },
+  {
+    id: "ENFJ",
+    iconName: "briefcase-alt",
+    to: (resolve) => resolve("sociotypes", { id: "ENFJ" }),
+    label: "Деловые качества",
+  },
+  {
+    id: "ENFJ",
+    iconName: "emoji-happy-square",
+    to: (resolve) => resolve("sociotypes", { id: "ENFJ" }),
+    label: "Развитие",
+  },
+  {
+    id: "ENFJ",
+    iconName: "emoji-sad-square",
+    to: (resolve) => resolve("sociotypes", { id: "ENFJ" }),
+    label: "Юмор",
+  },
+  {
+    id: "ENFJ",
+    iconName: "annotation",
+    to: (resolve) => resolve("sociotypes", { id: "ENFJ" }),
+    label: "История",
+  },
 ];

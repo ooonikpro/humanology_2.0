@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { useTemplateRef, watch } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute } from "@kitbag/router";
 import { NavigationTab, tabs } from "@entities/navigation";
 
-const route = useRoute();
+const route = useRoute("sociotypes");
 const container = useTemplateRef<HTMLElement>("my-container");
 
 watch(route, () => {
-  const index: number = tabs.findIndex((el) => el.url === route.path);
+  const index: number = tabs.findIndex((el) => el.id === route.params.id);
   scrollToActiveTab(index);
 });
 
@@ -29,7 +29,7 @@ function scrollToActiveTab(index: number) {
 <template>
   <div class="tabs-widget" ref="my-container">
     <NavigationTab
-      v-for="tab in tabs"
+      v-for="{ id, ...tab } in tabs"
       :key="tab.label"
       v-bind="tab"
       class="tabs-widget__link"

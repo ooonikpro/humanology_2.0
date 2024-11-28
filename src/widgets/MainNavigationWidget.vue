@@ -8,29 +8,29 @@ import { UiSvg } from "@shared/ui";
   <nav class="main-nav">
     <div class="main-nav__row">
       <NavigationTab
+        :to="(resolve) => resolve('tabs', { tabName: 'WhatIsPage' })"
         class="main-nav__tab col-50"
-        url="/1"
         label="Что это такое?"
         iconName="square-0"
       />
 
       <NavigationTab
         class="main-nav__tab col-50"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'DisclaimerPage' })"
         label="Дисклеймер"
         iconName="square-1"
       />
 
       <NavigationTab
         class="main-nav__tab col-60"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'HowDefineTypePage' })"
         label="Как определять тип?"
         iconName="ghost"
       />
 
       <NavigationTab
         class="main-nav__tab col-40"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'TestsPage' })"
         label="Тесты"
         iconName="presentation-chart-bar-alt"
       />
@@ -39,14 +39,14 @@ import { UiSvg } from "@shared/ui";
     <div class="main-nav__row main-nav__row--tab-bg-grey">
       <NavigationTab
         class="main-nav__tab col-40"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'ProfilePage' })"
         label="Профиль"
         iconName="user-square"
       />
 
       <NavigationTab
         class="main-nav__tab col-60"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'PeoplePage' })"
         label="Люди"
         iconName="users"
       >
@@ -57,7 +57,7 @@ import { UiSvg } from "@shared/ui";
 
       <NavigationTab
         class="main-nav__tab col-50"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'ProPersonsPage' })"
         label="Специалисты"
         iconName="diamond"
       >
@@ -68,7 +68,7 @@ import { UiSvg } from "@shared/ui";
 
       <NavigationTab
         class="main-nav__tab col-50"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'TeamsPage' })"
         label="Коллективы"
         iconName="briefcase-alt"
       >
@@ -81,7 +81,7 @@ import { UiSvg } from "@shared/ui";
     <div class="main-nav__row">
       <NavigationTab
         class="main-nav__tab col-100"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'ChildsPage' })"
         label="Дети"
         iconName="chart-bubble"
       >
@@ -92,70 +92,70 @@ import { UiSvg } from "@shared/ui";
 
       <NavigationTab
         class="main-nav__tab col-100"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'InformationalMetabolismPage' })"
         label="Информационный метаболизм"
         iconName="square-3"
       />
 
       <NavigationTab
         class="main-nav__tab col-50"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'HistoryPage' })"
         label="История"
         iconName="time"
       />
 
       <NavigationTab
         class="main-nav__tab col-50"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'FunctionsPage' })"
         label="Функции"
         iconName="square-5"
       />
 
       <NavigationTab
         class="main-nav__tab col-100"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'AspectsPage' })"
         label="Аспекты"
         iconName="square-4"
       />
 
       <NavigationTab
         class="main-nav__tab col-50"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'QuadrasPage' })"
         label="Квадры"
         iconName="square-6"
       />
 
       <NavigationTab
         class="main-nav__tab col-50"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'RolesAndSuitsPage' })"
         label="Роли и масти"
         iconName="square-7"
       />
 
       <NavigationTab
         class="main-nav__tab col-50"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'ClubsAndGroupsPage' })"
         label="Клубы и группы"
         iconName="square-8"
       />
 
       <NavigationTab
         class="main-nav__tab col-50"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'MindsetKindsPage' })"
         label="Типы мышления"
         iconName="square-9"
       />
 
       <NavigationTab
         class="main-nav__tab col-50"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'RaininsSignsPage' })"
         label="Признаки Рейнина"
         iconName="square-10"
       />
 
       <NavigationTab
         class="main-nav__tab col-50"
-        url="/1"
+        :to="(resolve) => resolve('tabs', { tabName: 'JungsDichotomysPage' })"
         label="Дихотомии Юнга"
         iconName="square-11"
       />

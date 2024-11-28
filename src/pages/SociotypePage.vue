@@ -12,7 +12,6 @@ import TabsWidget from "@widgets/TabsWidget.vue";
 
 <template>
   <SociotypeProvider
-    :id="$route.params.id"
     v-slot="{ data }"
     class="sociotype-page"
   >

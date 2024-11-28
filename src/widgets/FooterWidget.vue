@@ -5,7 +5,7 @@ import { scrollToTop } from "@shared/lib";
 
 <template>
   <footer>
-    <RouterLink to="/" class="logo-link">
+    <RouterLink :to="(resolve) => resolve('home')" class="logo-link">
       <UiSvg name="logo-circle" class="logo-link__icon" />
     </RouterLink>
     <hr />

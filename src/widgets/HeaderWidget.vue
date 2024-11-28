@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
+import { RouterLink } from "@kitbag/router";
 import { UiSvg } from "@shared/ui";
 </script>
 
@@ -9,7 +9,7 @@ import { UiSvg } from "@shared/ui";
       <UiSvg name="menu" class="header-widget__icon" />
     </button>
 
-    <RouterLink to="/" class="header-widget__logo">
+    <RouterLink :to="(resolve) => resolve('home')" class="header-widget__logo">
       <UiSvg name="logo-circle" class="header-widget__icon" />
     </RouterLink>
 

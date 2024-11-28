@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { RouterLink } from "@kitbag/router";
 import { defineProps } from "vue";
 import { UiSvg } from "@shared/ui";
 import type { NavigationTabPropsType } from "../config";
@@ -7,7 +8,7 @@ const props = defineProps<NavigationTabPropsType>();
 </script>
 
 <template>
-  <RouterLink :to="props.url" class="navigation-tab">
+  <RouterLink :to="props.to" class="navigation-tab">
     <span class="navigation-tab__content">
       <UiSvg :name="props.iconName" class="navigation-tab__icon" />
       <span class="navigation-tab__label">{{ props.label }}</span>

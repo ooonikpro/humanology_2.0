@@ -1,3 +1,3 @@
-export { default as router } from "./config/router";
-export type { RouteNameType } from "./config/routes";
-export { default as NavigationLink } from "./ui/NavigationLink.vue";
+export { routes } from "./routes";
+export type { SociotypeRouteParamsType } from "./sociotypeRoute";
+export type { TabsNamesType, TabsRouteParamsType } from "./tabsRoute";
