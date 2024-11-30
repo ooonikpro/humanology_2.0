@@ -1,0 +1,11 @@
+@use '../variables/colors';
+
+@mixin textColors() {
+  .g-color {
+    @each $name, $color in colors.$all-colors {
+      &--#{$name} {
+        color: $color;
+      }
+    }
+  }
+}

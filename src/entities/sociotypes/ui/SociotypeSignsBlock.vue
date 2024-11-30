@@ -8,7 +8,7 @@ const props = defineProps<{ title: string }>();
 <template>
   <div class="sociotype-signs-block">
     <div class="sociotype-signs-block__header">
-      <UiText tag="h4" color="quadra">{{ props.title }}</UiText>
+      <UiText color="quadra">{{ props.title }}</UiText>
     </div>
 
     <div class="sociotype-signs-block__content">

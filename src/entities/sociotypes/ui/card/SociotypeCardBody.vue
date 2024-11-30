@@ -15,24 +15,32 @@ const props = defineProps<PropsType>();
 
 <template>
   <div class="sociotype-card-body">
-    <UiText tag="span" color="quadra" class="sociotype-card-body__text-row">
-      <UiSvg :name="props.quadra" class="sociotype-card-body__text-icon" />
+    <UiText preset="small" color="quadra" class="sociotype-card-body__text-row">
+      <UiSvg :name="props.quadra" size="20" />
       {{ model.getQuadraLabel(props.quadra) }}
     </UiText>
-    <UiText tag="span" color="role" class="sociotype-card-body__text-row">
-      <UiSvg :name="props.role" class="sociotype-card-body__text-icon" />
+    <UiText preset="small" color="role" class="sociotype-card-body__text-row">
+      <UiSvg :name="props.role" size="20" />
       {{ model.getRoleLabel(props.role) }}
     </UiText>
-    <UiText tag="span" color="accent" class="sociotype-card-body__text-row">
-      <UiSvg :name="props.tarot" class="sociotype-card-body__text-icon" />
+    <UiText preset="small" color="accent" class="sociotype-card-body__text-row">
+      <UiSvg :name="props.tarot" size="20" />
       {{ model.getTarotLabel(props.tarot) }}
     </UiText>
-    <UiText tag="span" color="grey" class="sociotype-card-body__text-row">
-      <UiSvg :name="props.psychotype" class="sociotype-card-body__text-icon" />
+    <UiText
+      preset="small"
+      color="dark-grey"
+      class="sociotype-card-body__text-row"
+    >
+      <UiSvg :name="props.psychotype" size="20" />
       {{ model.getPsychotypeLabel(props.psychotype) }}
     </UiText>
-    <UiText tag="span" color="grey" class="sociotype-card-body__text-row">
-      <UiSvg :name="props.club" class="sociotype-card-body__text-icon" />
+    <UiText
+      preset="small"
+      color="dark-grey"
+      class="sociotype-card-body__text-row"
+    >
+      <UiSvg :name="props.club" size="20" />
       {{ model.getClubLabel(props.club) }}
     </UiText>
   </div>
@@ -49,11 +57,6 @@ const props = defineProps<PropsType>();
     display: flex;
     align-items: center;
     gap: 4px;
-  }
-
-  &__text-icon {
-    width: 20px;
-    height: 20px;
   }
 }
 </style>

@@ -63,6 +63,8 @@ const ESTJ: SociotypeDataType = {
     contrary: "ISTJ",
     superego: "ENFJ",
   },
+  socionicAbbrevation: "ЛСЭ",
+  personalitiesTerm: "Executive",
 };
 
 export default ESTJ;

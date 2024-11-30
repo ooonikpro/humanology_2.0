@@ -63,6 +63,8 @@ const ENFP: SociotypeDataType = {
     contrary: "INFP",
     superego: "ESTP",
   },
+  socionicAbbrevation: "ИЭЭ",
+  personalitiesTerm: "Campaigner",
 };
 
 export default ENFP;

@@ -63,6 +63,8 @@ const INFP: SociotypeDataType = {
     contrary: "ENFP",
     superego: "ISTP",
   },
+  socionicAbbrevation: "ИЭИ",
+  personalitiesTerm: "Mediator",
 };
 
 export default INFP;

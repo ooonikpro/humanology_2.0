@@ -63,6 +63,8 @@ const ISFP: SociotypeDataType = {
     contrary: "ESFP",
     superego: "INTP",
   },
+  socionicAbbrevation: "СЭИ",
+  personalitiesTerm: "Adventurer",
 };
 
 export default ISFP;

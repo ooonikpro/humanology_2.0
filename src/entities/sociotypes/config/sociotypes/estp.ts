@@ -63,6 +63,8 @@ const ESTP: SociotypeDataType = {
     contrary: "ISTP",
     superego: "ENFP",
   },
+  socionicAbbrevation: "СЛЭ",
+  personalitiesTerm: "Enterpreneur",
 };
 
 export default ESTP;

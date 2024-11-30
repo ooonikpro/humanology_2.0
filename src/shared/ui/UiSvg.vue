@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import { defineProps, computed, ref, watch } from "vue";
-import type { IconNameType } from "@types";
+import type { IconNameType, TextColorType } from "@types";
 import { getIconMap } from "@shared/lib";
 
 const iconMap = getIconMap();
 
-const props = defineProps<{ name: IconNameType }>();
+const { color, size, ...props } = defineProps<{
+  name: IconNameType;
+  color?: TextColorType;
+  size?: "12" | "16" | "20" | "24" | "64" | "80" | "96";
+}>();
 
 const svgBody = ref("");
 const iconPromise = computed(() => iconMap[props.name]);
@@ -22,16 +26,38 @@ watch(
 </script>
 
 <template>
-  <i class="ui-icon" :class="props.name" v-html="svgBody"></i>
+  <i
+    class="ui-icon"
+    :class="[
+      {
+        [`ui-icon--size-${size}`]: size,
+      },
+      props.name,
+      `g-color--${color}`,
+    ]"
+    v-html="svgBody"
+  ></i>
 </template>
 
 <style lang="scss">
+@use "../styles/variables/colors.scss";
+
 .ui-icon {
   display: inline-flex;
+  aspect-ratio: 1/1;
 
   svg {
     width: 100%;
     height: 100%;
+  }
+
+  &--size {
+    @each $size in 12, 16, 20, 24, 64, 80, 96 {
+      &-#{$size} {
+        width: #{$size}px;
+        height: #{$size}px;
+      }
+    }
   }
 }
 </style>
