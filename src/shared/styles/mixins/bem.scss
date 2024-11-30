@@ -1,9 +1,15 @@
-@mixin modificator($name) {
+@mixin modificatorForChildren($name) {
   $root: &;
 
   &--#{$name} {
     #{$root} {
       @content;
     }
+  }
+}
+
+@mixin modificator($name) {
+  &--#{$name} {
+    @content;
   }
 }

@@ -63,6 +63,8 @@ const ISFJ: SociotypeDataType = {
     contrary: "ESFJ",
     superego: "INTJ",
   },
+  socionicAbbrevation: "ЭСИ",
+  personalitiesTerm: "Defender",
 };
 
 export default ISFJ;

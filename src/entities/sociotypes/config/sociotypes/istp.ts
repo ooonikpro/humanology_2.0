@@ -63,6 +63,8 @@ const ISTP: SociotypeDataType = {
     contrary: "ESTP",
     superego: "INFP",
   },
+  socionicAbbrevation: "СЛИ",
+  personalitiesTerm: "Virtuoso",
 };
 
 export default ISTP;

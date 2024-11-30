@@ -63,6 +63,8 @@ const ENTJ: SociotypeDataType = {
     contrary: "INTJ",
     superego: "ESFJ",
   },
+  socionicAbbrevation: "ЛИЭ",
+  personalitiesTerm: "Commander",
 };
 
 export default ENTJ;

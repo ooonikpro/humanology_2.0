@@ -2,6 +2,8 @@ $white: #FFFFFF;
 $grey: #F0F0F0;
 $beige: #FBF9F4;
 $black: #261E1E;
+$dark-grey: rgba($black, 0.5);
+$shadow: rgba($black, 0.1);
 $accent: #966F7B;
 
 $turquoise: #b6d1c5;
@@ -25,4 +27,25 @@ $role: var(--color-role);
 $bg-quadra: var(--bg-quadra);
 $bg-role: var(--bg-role);
 
-$shadow: rgba($black, 0.1);
+$all-colors: (
+    "white"      : $white,
+    "grey"       : $grey,
+    "beige"      : $beige,
+    "black"      : $black,
+    "dark-grey"  : $dark-grey,
+    "shadow"     : $shadow,
+    "accent"     : $accent,
+
+    "turquoise"  : $turquoise,
+    "green"      : $green,
+    "yellow"     : $yellow,
+    "pink"       : $pink,
+
+    "air"        : $air,
+    "fire"       : $fire,
+    "water"      : $water,
+    "earth"      : $earth,
+
+    "quadra"     : $quadra,
+    "role"       : $role,
+)

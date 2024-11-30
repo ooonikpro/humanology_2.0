@@ -1,6 +1,6 @@
-import type { Alignment } from "@types";
+import type { AlignmentType } from "@types";
 
-export const ALIGNMENT: Record<Alignment, string> = {
+export const ALIGNMENT: Record<AlignmentType, string> = {
   chaoticNeutral: "Хаотичный нейтральный",
   chaoticGood: "Хаотичный добрый",
   chaoticEvil: "Хаотичный злой",

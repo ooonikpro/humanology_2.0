@@ -63,6 +63,8 @@ const ESFJ: SociotypeDataType = {
     contrary: "ISFJ",
     superego: "ENTJ",
   },
+  socionicAbbrevation: "ЭСЭ",
+  personalitiesTerm: "Consul",
 };
 
 export default ESFJ;

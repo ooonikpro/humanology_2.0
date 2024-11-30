@@ -1,6 +1,9 @@
-import type { QuadrasType, RoleType } from "@types";
 import { computed, type ComputedRef, type Ref, toValue } from "vue";
-import model from "../../model";
+import type { QuadrasType, RoleType } from "@types";
+
+import createColorQuadraStyle from "../createColorQuadraStyle";
+import createBgColorQuadraStyle from "../createBgColorQuadraStyle";
+import createColorRoleStyle from "../createColorRoleStyle";
 
 const useSociotypeColors = ({
   quadra,
@@ -11,9 +14,9 @@ const useSociotypeColors = ({
 }) => {
   return computed(() => {
     return {
-      ...model.createColorQuadraStyle(toValue(quadra)),
-      ...model.createBgColorQuadraStyle(toValue(quadra)),
-      ...(role ? model.createColorRoleStyle(toValue(role)) : {}),
+      ...createColorQuadraStyle(toValue(quadra)),
+      ...createBgColorQuadraStyle(toValue(quadra)),
+      ...(role ? createColorRoleStyle(toValue(role)) : {}),
     };
   });
 };

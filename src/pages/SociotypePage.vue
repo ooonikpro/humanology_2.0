@@ -4,8 +4,11 @@ import {
   SociotypeCardBody,
   SociotypeCardFooter,
   SociotypeProvider,
+  SociotypeMentality,
   SociotypeReininSigns,
   SociotypeYungDichtomy,
+  SociotypeBriefDescription,
+  SociotypeGroupsAndQuadras,
 } from "@entities/sociotypes";
 import TabsWidget from "@widgets/TabsWidget.vue";
 </script>
@@ -26,6 +29,12 @@ import TabsWidget from "@widgets/TabsWidget.vue";
     </SociotypeCard>
 
     <TabsWidget />
+
+    <SociotypeBriefDescription v-bind="data" />
+
+    <SociotypeMentality v-bind="data" />
+
+    <SociotypeGroupsAndQuadras v-bind="data" />
 
     <SociotypeYungDichtomy v-bind="data" />
 

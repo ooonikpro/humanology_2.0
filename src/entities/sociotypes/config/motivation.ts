@@ -1,6 +1,6 @@
-import type { Stimulant } from "@types";
+import type { StimulantType } from "@types";
 
-export const MOTIVATION: Record<Stimulant, string> = {
+export const MOTIVATION: Record<StimulantType, string> = {
   uniqueness: "Уникальность",
   wealth: "Благосостояние",
   status: "Статус",

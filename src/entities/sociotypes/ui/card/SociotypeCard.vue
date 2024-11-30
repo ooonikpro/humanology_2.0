@@ -14,15 +14,19 @@ const gender = ref(GenderEnum.male);
   <div class="sociotype-card" :class="{ 'sociotype-card--mini': props.mini }">
     <div class="sociotype-card__gradient"></div>
     <div class="sociotype-card__header">
-      <UiText tag="span" color="black">{{ props.data.id }}</UiText>
-      <UiText v-if="!props.mini" tag="span" color="role">
+      <UiText preset="small" color="black">{{ props.data.id }}</UiText>
+
+      <UiText v-if="!props.mini" preset="small" color="role">
         {{ props.data.populationPercentage }}
       </UiText>
-      <UiText tag="span" color="grey">{{ props.data.alias }}</UiText>
-      <UiText v-if="!props.mini" tag="span" color="grey">
+
+      <UiText preset="small" color="dark-grey">{{ props.data.alias }}</UiText>
+
+      <UiText v-if="!props.mini" preset="small" color="dark-grey">
         {{ props.data.personalitiesTerm }}
       </UiText>
-      <UiText v-if="!props.mini" tag="span" color="grey">
+
+      <UiText v-if="!props.mini" preset="small" color="dark-grey">
         {{ props.data.socionicAbbrevation }}
       </UiText>
 
@@ -30,8 +34,7 @@ const gender = ref(GenderEnum.male);
     </div>
     <div class="sociotype-card__body">
       <UiText
-        tag="h2"
-        font="alternative"
+        preset="title-alternative"
         color="role"
         class="sociotype-card__title"
       >
@@ -97,10 +100,7 @@ const gender = ref(GenderEnum.male);
     &-line {
       width: 53%;
       position: absolute;
-      height: 0;
       bottom: 0;
-      border: 0;
-      border-bottom: 1px solid colors.$quadra;
     }
   }
 
@@ -147,7 +147,7 @@ const gender = ref(GenderEnum.male);
     box-shadow: 0 1px 1px 0 colors.$shadow;
   }
 
-  @include bem.modificator("mini") {
+  @include bem.modificatorForChildren("mini") {
     &__header {
       padding-bottom: 0;
     }

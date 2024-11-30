@@ -36,11 +36,23 @@ export const SOCIOTYPES: Record<SociotypeIdType, SociotypeDataType> = {
   ISTP,
 };
 
-export { default as ROLES } from "./roles";
+export * from "./alignment";
+export * from "./companion";
+export * from "./communicationStyle";
+export * from "./motivation";
+export * from "./mindset";
+export * from "./temperament";
 export * from "./quadras";
+export * from "./yungsDichotomies";
+export * from "./reininSigns";
+
+export { default as ROLES } from "./roles";
 export { default as TAROT } from "./tarot";
 export { default as PSYCHOTYPES } from "./psychotypes";
 export { default as CLUBS } from "./clubs";
+<<<<<<< HEAD
 export * from "./yungsDichotomies";
 export * from "./reininSigns";
 export * from "./portraits-data";
+=======
+>>>>>>> main

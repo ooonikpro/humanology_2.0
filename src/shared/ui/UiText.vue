@@ -1,22 +1,57 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
+import type { TextColorType } from "@types";
 
 const {
   color = "black",
-  font = "base",
+  preset = "body",
   ...props
 } = defineProps<{
-  tag: string;
-  font?: "base" | "alternative";
-  color?: "black" | "grey" | "accent" | "quadra" | "role";
+  forceTag?: string;
+  color?: TextColorType;
+  preset?:
+    | "display"
+    | "heading"
+    | "title"
+    | "title-alternative"
+    | "subtitle"
+    | "subtitle-alternative"
+    | "large"
+    | "body"
+    | "small";
 }>();
+
+const presetTag = (() => {
+  if (preset == "small") {
+    return "span";
+  }
+
+  if (preset === "display") {
+    return "h1";
+  }
+
+  if (preset === "heading") {
+    return "h2";
+  }
+
+  if (["title", "title-alternative"].includes(preset)) {
+    return "h3";
+  }
+
+  if (["subtitle", "subtitle-alternative"].includes(preset)) {
+    return "h4";
+  }
+
+  return "p";
+})();
+const tag = props.forceTag ?? presetTag;
 </script>
 
 <template>
   <component
-    :is="props.tag"
+    :is="tag"
     class="ui-text"
-    :class="[`ui-text--font-${font}`, `ui-text--color-${color}`]"
+    :class="[`ui-text--preset-${preset}`, `g-color--${color}`]"
   >
     <slot />
   </component>
@@ -24,40 +59,71 @@ const {
 
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
+@use "@shared/styles/variables/fonts";
 
 .ui-text {
-  &--font {
-    &-base {
-      font-family: "Halvar Mittel Rg", sans-serif;
+  &--preset {
+    &-display {
+      font-family: fonts.$family-default;
+      font-size: 64px;
+      line-height: 72px;
       font-weight: 400;
     }
 
-    &-alternative {
-      font-family: "Halvar Breit Md", sans-serif;
+    &-heading {
+      font-family: fonts.$family-default;
+      font-size: 48px;
+      line-height: 56px;
+      font-weight: 400;
+    }
+
+    &-title {
+      font-family: fonts.$family-default;
+      font-size: 36px;
+      line-height: 44px;
+      font-weight: 400;
+    }
+
+    &-title-alternative {
+      font-family: fonts.$family-alternative;
+      font-size: 36px;
+      line-height: 44px;
       font-weight: 500;
     }
-  }
 
-  &--color {
-    &-black {
-      color: colors.$black;
+    &-subtitle {
+      font-family: fonts.$family-default;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 400;
     }
 
-    &-grey {
-      color: colors.$black;
-      opacity: 0.5;
+    &-subtitle-alternative {
+      font-family: fonts.$family-alternative;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 500;
     }
 
-    &-accent {
-      color: colors.$accent;
+    &-large {
+      font-family: fonts.$family-default;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
     }
 
-    &-role {
-      color: colors.$role;
+    &-body {
+      font-family: fonts.$family-default;
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 400;
     }
 
-    &-quadra {
-      color: colors.$quadra;
+    &-small {
+      font-family: fonts.$family-default;
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: 400;
     }
   }
 }
