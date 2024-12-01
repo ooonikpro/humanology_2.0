@@ -50,9 +50,5 @@ export { default as ROLES } from "./roles";
 export { default as TAROT } from "./tarot";
 export { default as PSYCHOTYPES } from "./psychotypes";
 export { default as CLUBS } from "./clubs";
-<<<<<<< HEAD
-export * from "./yungsDichotomies";
-export * from "./reininSigns";
+
 export * from "./portraits-data";
-=======
->>>>>>> main
