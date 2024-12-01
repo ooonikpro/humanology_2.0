@@ -7,11 +7,8 @@ export { default as SociotypeMentality } from "./ui/SociotypeMentality.vue";
 export { default as SociotypeGroupsAndQuadras } from "./ui/SociotypeGroupsAndQuadras.vue";
 export { default as SociotypeYungDichtomy } from "./ui/SociotypeYungDichtomy.vue";
 export { default as SociotypeReininSigns } from "./ui/SociotypeReininSigns.vue";
-<<<<<<< HEAD
 export { default as SociotypePortrait } from "./ui/portraits/SociotypePortrait.vue";
 export { default as SociotypePortraitTrioKids } from "./ui/portraits/SociotypePortraitTrioKids.vue";
-=======
 export { default as SociotypeBriefDescription } from "./ui/description/SociotypeBriefDescription.vue";
->>>>>>> main
 
 export { default as SociotypeModel } from "./model";
