@@ -10,12 +10,11 @@ import {
   SociotypeBriefDescription,
   SociotypeGroupsAndQuadras,
 } from "@entities/sociotypes";
-import TabsWidget from "@widgets/tabs-widget";
+import TabsWidget from "@widgets/TabsWidget.vue";
 </script>
 
 <template>
   <SociotypeProvider
-    :id="$route.params.id"
     v-slot="{ data }"
     class="sociotype-page"
   >

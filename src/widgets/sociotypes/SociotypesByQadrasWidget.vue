@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { useRouter } from "vue-router";
+import { useRouter } from "@kitbag/router";
+import type { SociotypeIdType } from "@types";
 import {
   SociotypeCard,
   SociotypeCardBody,
@@ -8,7 +9,7 @@ import {
 } from "@entities/sociotypes";
 
 const router = useRouter();
-const goToPage = (id: string) => router.push(`/sociotypes/${id}`);
+const goToPage = (id: SociotypeIdType) => router.push("sociotypes", { id });
 </script>
 
 <template>
