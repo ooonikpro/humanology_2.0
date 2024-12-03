@@ -242,6 +242,7 @@ export type SociotypeDataType = {
 
 export type UnixDate = string; // mm/dd/yyyy
 
+export type SociotypeAgeType = "kids" | "youngs" | "adults";
 export type TextColorType =
   | "white"
   | "grey"
