@@ -22,14 +22,27 @@ const kids = KIDS[random(KIDS.length - 1)];
 <style lang="scss" scoped>
 .sociotype-portrait-trio-kids {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: end;
-  height: max-content;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  align-items: flex-end;
 
   &__img {
     --width: clamp(90px, 33%, 200px);
+    position: relative;
     flex: 0 0 var(--width);
     width: var(--width);
+
+    &:nth-child(1) {
+      transform: translateX(120%);
+    }
+
+    &:nth-child(2) {
+      transform: translateX(70%);
+    }
+
+    &:nth-child(3) {
+      transform: translateX(20%);
+    }
   }
 }
 </style>

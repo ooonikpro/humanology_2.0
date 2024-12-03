@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import { UiSvg } from "@shared/ui";
 import { NavigationTab } from "@entities/navigation";
 import { SociotypePortraitTrioKids } from "@entities/sociotypes";
-import { UiSvg } from "@shared/ui";
 </script>
 
 <template>
@@ -92,7 +92,10 @@ import { UiSvg } from "@shared/ui";
 
       <NavigationTab
         class="main-nav__tab col-100"
-        :to="(resolve) => resolve('tabs', { tabName: 'InformationalMetabolismPage' })"
+        :to="
+          (resolve) =>
+            resolve('tabs', { tabName: 'InformationalMetabolismPage' })
+        "
         label="Информационный метаболизм"
         iconName="square-3"
       />
