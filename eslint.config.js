@@ -8,6 +8,28 @@ export default [
     files: ["**/*.{ts,mts,tsx,vue}"],
     rules: {
       "no-console": "error",
+      "vue/attributes-order": [
+        "warn",
+        {
+          order: [
+            "CONDITIONALS",
+            "RENDER_MODIFIERS",
+            "DEFINITION",
+            "SLOT",
+            "LIST_RENDERING",
+            "UNIQUE",
+            "ATTR_DYNAMIC",
+            "GLOBAL",
+            "ATTR_STATIC",
+            "ATTR_SHORTHAND_BOOL",
+            "OTHER_DIRECTIVES",
+            "CONTENT",
+            "TWO_WAY_BINDING",
+            "EVENTS",
+          ],
+          alphabetical: false,
+        },
+      ],
     },
   },
 

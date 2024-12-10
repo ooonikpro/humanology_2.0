@@ -9,12 +9,12 @@ const kids = KIDS[random(KIDS.length - 1)];
 <template>
   <figure class="sociotype-portrait-trio-kids">
     <SociotypePortrait
-      class="sociotype-portrait-trio-kids__img"
       v-for="kid in kids"
       :key="kid[0]"
-      :id="kid[0]"
       :gender="kid[1]"
       :age="kid[2]"
+      :id="kid[0]"
+      class="sociotype-portrait-trio-kids__img"
     />
   </figure>
 </template>

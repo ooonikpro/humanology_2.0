@@ -19,7 +19,7 @@ const src = computed(() =>
 </script>
 
 <template>
-  <img :src="src" class="sociotype-portrait" :alt="props.id" />
+  <img :src="src" :alt="props.id" class="sociotype-portrait" />
 </template>
 
 <style lang="scss" scoped>

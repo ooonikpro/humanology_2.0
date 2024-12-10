@@ -12,11 +12,11 @@ const gender = defineModel<GenderEnum>({
 <template>
   <label class="ui-gender-switcher">
     <input
-      v-model="gender"
       :true-value="GenderEnum.male"
       :false-value="GenderEnum.female"
       type="checkbox"
       class="ui-gender-switcher__input"
+      v-model="gender"
     />
     <span class="ui-gender-switcher__pointer">
       <UiSvg
