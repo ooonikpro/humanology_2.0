@@ -11,7 +11,7 @@ const gender = ref(GenderEnum.male);
 </script>
 
 <template>
-  <div class="sociotype-card" :class="{ 'sociotype-card--mini': props.mini }">
+  <div :class="{ 'sociotype-card--mini': props.mini }" class="sociotype-card">
     <div class="sociotype-card__gradient"></div>
     <div class="sociotype-card__header">
       <UiText preset="small" color="black">{{ props.data.id }}</UiText>
@@ -57,8 +57,8 @@ const gender = ref(GenderEnum.male);
     />
     <UiGenderSwitcher
       v-if="!props.mini"
-      v-model="gender"
       class="sociotype-card__gender-switcher"
+      v-model="gender"
     />
   </div>
 </template>

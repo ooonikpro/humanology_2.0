@@ -45,12 +45,12 @@ const transformValue = computed(
 </script>
 
 <template>
-  <div class="ui-switcher" ref="switcher">
+  <div ref="switcher" class="ui-switcher">
     <label
-      class="ui-switcher__choice"
-      :class="{ 'ui-switcher__choice--picked': picked === choice.value }"
       v-for="choice in props.data"
       :key="choice.value"
+      :class="{ 'ui-switcher__choice--picked': picked === choice.value }"
+      class="ui-switcher__choice"
     >
       <span v-if="choice.subtitle" class="ui-switcher__choice-subtitle">
         {{ choice.subtitle }}
@@ -59,19 +59,19 @@ const transformValue = computed(
       <span class="ui-switcher__choice-label">
         <UiSvg
           v-if="choice.iconName"
-          class="ui-switcher__choice-label-icon"
           :name="choice.iconName"
+          class="ui-switcher__choice-label-icon"
         />
         {{ choice.label }}
       </span>
 
       <input
-        type="radio"
-        class="ui-switcher__input"
         :name="props.name"
-        @change="onPick(choice.value)"
         :value="choice.value"
         :checked="picked === choice.value"
+        type="radio"
+        class="ui-switcher__input"
+        @change="onPick(choice.value)"
       />
     </label>
   </div>

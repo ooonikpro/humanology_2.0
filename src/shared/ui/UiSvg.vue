@@ -27,7 +27,6 @@ watch(
 
 <template>
   <i
-    class="ui-icon"
     :class="[
       {
         [`ui-icon--size-${size}`]: size,
@@ -35,6 +34,7 @@ watch(
       props.name,
       `g-color--${color}`,
     ]"
+    class="ui-icon"
     v-html="svgBody"
   ></i>
 </template>

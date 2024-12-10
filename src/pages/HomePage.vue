@@ -31,6 +31,6 @@ const picked = ref<SwitcherValueType>(switcherData.value[1].value);
   <div>
     <SociotypesByQadrasWidget />
     <MainNavigationWidget />
-    <UiSwitcher name="switcher-test-some" :data="switcherData" v-model="picked" />
+    <UiSwitcher :data="switcherData" name="switcher-test-some" v-model="picked" />
   </div>
 </template>

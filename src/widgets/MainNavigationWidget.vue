@@ -15,22 +15,22 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
       />
 
       <NavigationTab
-        class="main-nav__tab col-50"
         :to="(resolve) => resolve('tabs', { tabName: 'DisclaimerPage' })"
+        class="main-nav__tab col-50"
         label="Дисклеймер"
         iconName="square-1"
       />
 
       <NavigationTab
-        class="main-nav__tab col-60"
         :to="(resolve) => resolve('tabs', { tabName: 'HowDefineTypePage' })"
+        class="main-nav__tab col-60"
         label="Как определять тип?"
         iconName="ghost"
       />
 
       <NavigationTab
-        class="main-nav__tab col-40"
         :to="(resolve) => resolve('tabs', { tabName: 'TestsPage' })"
+        class="main-nav__tab col-40"
         label="Тесты"
         iconName="presentation-chart-bar-alt"
       />
@@ -38,15 +38,15 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
 
     <div class="main-nav__row main-nav__row--tab-bg-grey">
       <NavigationTab
-        class="main-nav__tab col-40"
         :to="(resolve) => resolve('tabs', { tabName: 'ProfilePage' })"
+        class="main-nav__tab col-40"
         label="Профиль"
         iconName="user-square"
       />
 
       <NavigationTab
-        class="main-nav__tab col-60"
         :to="(resolve) => resolve('tabs', { tabName: 'PeoplePage' })"
+        class="main-nav__tab col-60"
         label="Люди"
         iconName="users"
       >
@@ -56,8 +56,8 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
       </NavigationTab>
 
       <NavigationTab
-        class="main-nav__tab col-50"
         :to="(resolve) => resolve('tabs', { tabName: 'ProPersonsPage' })"
+        class="main-nav__tab col-50"
         label="Специалисты"
         iconName="diamond"
       >
@@ -67,8 +67,8 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
       </NavigationTab>
 
       <NavigationTab
-        class="main-nav__tab col-50"
         :to="(resolve) => resolve('tabs', { tabName: 'TeamsPage' })"
+        class="main-nav__tab col-50"
         label="Коллективы"
         iconName="briefcase-alt"
       >
@@ -80,8 +80,8 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
 
     <div class="main-nav__row">
       <NavigationTab
-        class="main-nav__tab col-100"
         :to="(resolve) => resolve('tabs', { tabName: 'ChildsPage' })"
+        class="main-nav__tab col-100"
         label="Дети"
         iconName="chart-bubble"
       >
@@ -91,74 +91,74 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
       </NavigationTab>
 
       <NavigationTab
-        class="main-nav__tab col-100"
         :to="
           (resolve) =>
             resolve('tabs', { tabName: 'InformationalMetabolismPage' })
         "
+        class="main-nav__tab col-100"
         label="Информационный метаболизм"
         iconName="square-3"
       />
 
       <NavigationTab
-        class="main-nav__tab col-50"
         :to="(resolve) => resolve('tabs', { tabName: 'HistoryPage' })"
+        class="main-nav__tab col-50"
         label="История"
         iconName="time"
       />
 
       <NavigationTab
-        class="main-nav__tab col-50"
         :to="(resolve) => resolve('tabs', { tabName: 'FunctionsPage' })"
+        class="main-nav__tab col-50"
         label="Функции"
         iconName="square-5"
       />
 
       <NavigationTab
-        class="main-nav__tab col-100"
         :to="(resolve) => resolve('tabs', { tabName: 'AspectsPage' })"
+        class="main-nav__tab col-100"
         label="Аспекты"
         iconName="square-4"
       />
 
       <NavigationTab
-        class="main-nav__tab col-50"
         :to="(resolve) => resolve('tabs', { tabName: 'QuadrasPage' })"
+        class="main-nav__tab col-50"
         label="Квадры"
         iconName="square-6"
       />
 
       <NavigationTab
-        class="main-nav__tab col-50"
         :to="(resolve) => resolve('tabs', { tabName: 'RolesAndSuitsPage' })"
+        class="main-nav__tab col-50"
         label="Роли и масти"
         iconName="square-7"
       />
 
       <NavigationTab
-        class="main-nav__tab col-50"
         :to="(resolve) => resolve('tabs', { tabName: 'ClubsAndGroupsPage' })"
+        class="main-nav__tab col-50"
         label="Клубы и группы"
         iconName="square-8"
       />
 
       <NavigationTab
-        class="main-nav__tab col-50"
         :to="(resolve) => resolve('tabs', { tabName: 'MindsetKindsPage' })"
+        class="main-nav__tab col-50"
         label="Типы мышления"
         iconName="square-9"
       />
 
       <NavigationTab
-        class="main-nav__tab col-50"
         :to="(resolve) => resolve('tabs', { tabName: 'RaininsSignsPage' })"
+        class="main-nav__tab col-50"
         label="Признаки Рейнина"
         iconName="square-10"
       />
 
       <NavigationTab
-        class="main-nav__tab col-50"
         :to="(resolve) => resolve('tabs', { tabName: 'JungsDichotomysPage' })"
+        class="main-nav__tab col-50"
         label="Дихотомии Юнга"
         iconName="square-11"
       />
