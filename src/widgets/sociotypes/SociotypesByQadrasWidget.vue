@@ -16,11 +16,11 @@ const goToPage = (id: SociotypeIdType) => router.push("sociotypes", { id });
   <SociotypeQuadras>
     <template v-slot="quadraProps">
       <SociotypeProvider
-        :id="quadraProps.id"
         v-slot="{ data }"
+        :id="quadraProps.id"
         @click="goToPage(quadraProps.id)"
       >
-        <SociotypeCard mini :data="data">
+        <SociotypeCard :data="data" mini>
           <template #body>
             <SociotypeCardBody v-bind="data" />
           </template>

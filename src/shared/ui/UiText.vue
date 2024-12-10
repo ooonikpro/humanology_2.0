@@ -50,8 +50,8 @@ const tag = props.forceTag ?? presetTag;
 <template>
   <component
     :is="tag"
-    class="ui-text"
     :class="[`ui-text--preset-${preset}`, `g-color--${color}`]"
+    class="ui-text"
   >
     <slot />
   </component>
