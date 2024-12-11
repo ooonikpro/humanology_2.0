@@ -27,7 +27,7 @@ function scrollToActiveTab(index: number) {
 </script>
 
 <template>
-  <div class="tabs-widget" ref="my-container">
+  <div ref="my-container" class="tabs-widget">
     <NavigationTab
       v-for="{ id, ...tab } in tabs"
       :key="tab.label"

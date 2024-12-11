@@ -24,7 +24,7 @@ const onScroll = (e: Event) => {
 </script>
 
 <template>
-  <div class="sociotype-quadras-group" :style="styles">
+  <div :style="styles" class="sociotype-quadras-group">
     <div class="sociotype-quadras-group__header">
       <UiText color="quadra" class="sociotype-quadras-group__active-quadra">
         <UiSvg

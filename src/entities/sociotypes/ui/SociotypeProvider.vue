@@ -19,7 +19,7 @@ const colors = useSociotypeColors({ quadra, role });
 </script>
 
 <template>
-  <div class="sociotype-provider" :style="colors">
+  <div :style="colors" class="sociotype-provider">
     <slot :data="data" />
   </div>
 </template>
