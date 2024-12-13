@@ -4,3 +4,4 @@ export { default as UiRowDual } from "./UiRowDual.vue";
 export { default as UiText } from "./UiText.vue";
 export { default as UiColumnDual } from "./UiColumnDual.vue";
 export { default as UiZapList } from "./UiZapList.vue";
+export { default as UiSwitcher } from "./UiSwitcher.vue";

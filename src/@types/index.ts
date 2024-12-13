@@ -1,3 +1,5 @@
+import type { IconNameType } from "./iconNames";
+
 export type * from "./iconNames";
 
 export type Gender = "male" | "female";
@@ -261,3 +263,16 @@ export type TextColorType =
   | "earth"
   | "quadra"
   | "role";
+
+export type OptionType = {
+  label: string;
+  value: string;
+};
+
+export type OptionWithIconType = OptionType & {
+  iconName: IconNameType;
+};
+
+export type OptionWithSubtitleType = OptionType & {
+  subtitle: string;
+};
