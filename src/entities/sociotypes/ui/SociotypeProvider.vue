@@ -2,16 +2,14 @@
 import { useRoute } from "@kitbag/router";
 import { computed, defineProps, toValue } from "vue";
 import type { SociotypeIdType } from "@types";
-import type { SociotypeRouteParamsType } from "@app/router";
 
 import useSociotypeColors from "../lib/hooks/useSociotypeColors";
 import model from "../model";
 
-
 const props = defineProps<{ id?: SociotypeIdType }>();
 const route = useRoute();
 
-const data = computed(() => model.getSociotypeBy(props.id || (route.params as SociotypeRouteParamsType).id));
+const data = computed(() => model.getSociotypeBy(props.id || route.params.id));
 const quadra = computed(() => toValue(data).quadra);
 const role = computed(() => toValue(data).role);
 

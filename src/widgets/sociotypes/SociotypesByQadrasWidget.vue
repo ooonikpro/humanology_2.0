@@ -9,7 +9,8 @@ import {
 } from "@entities/sociotypes";
 
 const router = useRouter();
-const goToPage = (id: SociotypeIdType) => router.push("sociotypes", { id });
+const goToPage = (id: SociotypeIdType) =>
+  router.push("sociotypes", { id, tabName: "card" });
 </script>
 
 <template>
