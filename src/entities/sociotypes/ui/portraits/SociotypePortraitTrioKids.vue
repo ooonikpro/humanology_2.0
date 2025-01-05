@@ -33,15 +33,15 @@ const kids = KIDS[random(KIDS.length - 1)];
     width: var(--width);
 
     &:nth-child(1) {
-      transform: translateX(120%);
+      transform: translateX(115%);
     }
 
     &:nth-child(2) {
-      transform: translateX(70%);
+      transform: translateX(65%);
     }
 
     &:nth-child(3) {
-      transform: translateX(20%);
+      transform: translateX(15%);
     }
   }
 }

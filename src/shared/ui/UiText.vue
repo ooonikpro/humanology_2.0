@@ -89,6 +89,7 @@ const tag = props.forceTag ?? presetTag;
       font-size: 36px;
       line-height: 44px;
       font-weight: 500;
+      letter-spacing: -0.05rem;
     }
 
     &-subtitle {
