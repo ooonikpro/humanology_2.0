@@ -109,21 +109,21 @@ const tag = props.forceTag ?? presetTag;
     &-large {
       font-family: fonts.$family-default;
       font-size: 18px;
-      line-height: 24px;
+      line-height: 120%;
       font-weight: 400;
     }
 
     &-body {
       font-family: fonts.$family-default;
-      font-size: 15px;
-      line-height: 20px;
+      font-size: 16px;
+      line-height: 120%;
       font-weight: 400;
     }
 
     &-small {
       font-family: fonts.$family-default;
-      font-size: 13px;
-      line-height: 16px;
+      font-size: 14px;
+      line-height: 120%;
       font-weight: 400;
     }
   }
