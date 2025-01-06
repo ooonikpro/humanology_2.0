@@ -276,3 +276,9 @@ export type OptionWithIconType = OptionType & {
 export type OptionWithSubtitleType = OptionType & {
   subtitle: string;
 };
+
+export type SociotypeTabType = {
+  name: string;
+  iconName: IconNameType;
+  label: string;
+};

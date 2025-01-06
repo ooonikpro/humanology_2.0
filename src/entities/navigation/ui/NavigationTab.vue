@@ -2,7 +2,7 @@
 import { RouterLink } from "@kitbag/router";
 import { defineProps } from "vue";
 import { UiSvg } from "@shared/ui";
-import type { NavigationTabPropsType } from "../config";
+import type { NavigationTabPropsType } from "../types";
 
 const props = defineProps<NavigationTabPropsType>();
 </script>
@@ -26,8 +26,6 @@ const props = defineProps<NavigationTabPropsType>();
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
 
-$gap: 8px;
-
 .navigation-tab {
   padding: 8px;
   flex: 0 0 96px;
@@ -43,7 +41,7 @@ $gap: 8px;
 
   overflow: hidden;
   box-shadow: 0 1px 1px 0 rgba(colors.$black, 0.1);
-  background-color: rgba(colors.$beige, 0.5);
+  background-color: colors.$white;
   border-radius: 4px;
   cursor: pointer;
 
@@ -51,7 +49,7 @@ $gap: 8px;
     grid-column: 1/1;
     display: flex;
     flex-flow: column nowrap;
-    gap: $gap;
+    gap: 8px;
   }
 
   &__icon {
@@ -74,10 +72,6 @@ $gap: 8px;
   &__top,
   &__bottom {
     justify-self: end;
-  }
-
-  &.router-link-active {
-    background-color: colors.$white;
   }
 }
 </style>

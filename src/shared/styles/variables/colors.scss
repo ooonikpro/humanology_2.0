@@ -1,25 +1,25 @@
-$white: #FFFFFF;
-$grey: #F0F0F0;
-$beige: #FBF9F4;
-$black: #261E1E;
+$white: #ffffff;
+$grey: #f0f0f0;
+$beige: #fbf9f4;
+$black: #261e1e;
 $dark-grey: rgba($black, 0.5);
 $shadow: rgba($black, 0.1);
-$accent: #966F7B;
+$accent: #966f7b;
 
 $turquoise: #b6d1c5;
 $green: #d7dd93;
 $yellow: #fece30;
 $pink: #f6c0b1;
 
-$air: #BD62CB;
-$fire: #FA7C01;
-$water: #13A4D3;
-$earth: #7FB900;
+$air: #bd62cb;
+$fire: #fa7c01;
+$water: #13a4d3;
+$earth: #7fb900;
 
-$transparently-air: rgba($air, .1);
-$transparently-fire: rgba($fire, .1);
-$transparently-water: rgba($water, .1);
-$transparently-earth: rgba($earth, .1);
+$transparently-air: rgba($air, 0.1);
+$transparently-fire: rgba($fire, 0.1);
+$transparently-water: rgba($water, 0.1);
+$transparently-earth: rgba($earth, 0.1);
 
 $quadra: var(--color-quadra);
 $role: var(--color-role);
@@ -28,24 +28,24 @@ $bg-quadra: var(--bg-quadra);
 $bg-role: var(--bg-role);
 
 $all-colors: (
-    "white"      : $white,
-    "grey"       : $grey,
-    "beige"      : $beige,
-    "black"      : $black,
-    "dark-grey"  : $dark-grey,
-    "shadow"     : $shadow,
-    "accent"     : $accent,
+  "white": $white,
+  "grey": $grey,
+  "beige": $beige,
+  "black": $black,
+  "dark-grey": $dark-grey,
+  "shadow": $shadow,
+  "accent": $accent,
 
-    "turquoise"  : $turquoise,
-    "green"      : $green,
-    "yellow"     : $yellow,
-    "pink"       : $pink,
+  "turquoise": $turquoise,
+  "green": $green,
+  "yellow": $yellow,
+  "pink": $pink,
 
-    "air"        : $air,
-    "fire"       : $fire,
-    "water"      : $water,
-    "earth"      : $earth,
+  "air": $air,
+  "fire": $fire,
+  "water": $water,
+  "earth": $earth,
 
-    "quadra"     : $quadra,
-    "role"       : $role,
-)
+  "quadra": $quadra,
+  "role": $role,
+);
