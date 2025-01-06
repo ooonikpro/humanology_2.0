@@ -11,4 +11,8 @@ export { default as SociotypePortrait } from "./ui/portraits/SociotypePortrait.v
 export { default as SociotypePortraitTrioKids } from "./ui/portraits/SociotypePortraitTrioKids.vue";
 export { default as SociotypeBriefDescription } from "./ui/description/SociotypeBriefDescription.vue";
 
+export { SOCIOTYPES } from "./config";
+
 export { default as SociotypeModel } from "./model";
+
+export { default as isSociotypeId } from "./lib/guards/isSociotypeId";

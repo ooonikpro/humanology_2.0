@@ -12,7 +12,7 @@ const gender = ref(GenderEnum.male);
 
 <template>
   <div :class="{ 'sociotype-card--mini': props.mini }" class="sociotype-card">
-    <div class="sociotype-card__gradient"></div>
+    <div class="sociotype-card__header-gradient"></div>
     <div class="sociotype-card__header">
       <UiText preset="small" color="black">{{ props.data.id }}</UiText>
 
@@ -43,6 +43,7 @@ const gender = ref(GenderEnum.male);
 
       <slot name="body"></slot>
     </div>
+    <div class="sociotype-card__footer-gradient"></div>
 
     <slot name="footer" />
 
@@ -74,7 +75,7 @@ const gender = ref(GenderEnum.male);
   border-top: 1px solid colors.$quadra;
   background: colors.$white;
 
-  &__gradient {
+  &__header-gradient {
     position: absolute;
     top: 0;
     left: 0;
@@ -84,6 +85,20 @@ const gender = ref(GenderEnum.male);
       0,
       rgba(colors.$white, 0) 10%,
       colors.$quadra 98%
+    );
+    opacity: 0.1;
+  }
+
+  &__footer-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72px;
+    background: linear-gradient(
+      180deg,
+      rgba(colors.$white, 0) 45%,
+      colors.$role 100%
     );
     opacity: 0.1;
   }
