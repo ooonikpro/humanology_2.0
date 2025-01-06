@@ -5,9 +5,9 @@ import { scrollToTop } from "@shared/lib";
 
 <template>
   <footer>
-    <RouterLink :to="(resolve) => resolve('home')" class="logo-link">
+    <div class="logo-link">
       <UiSvg color="dark-grey" name="logo-circle" size="20" />
-    </RouterLink>
+    </div>
     <hr />
     <div class="bottom">
       <a href="/" class="link">
@@ -35,7 +35,7 @@ import { scrollToTop } from "@shared/lib";
 footer {
   width: 100%;
   height: 160px;
-  background-color: colors.$beige;
+  background-color: colors.$white;
   display: flex;
   flex-direction: column;
   padding: 8px;

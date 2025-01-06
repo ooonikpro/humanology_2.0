@@ -12,7 +12,13 @@
 
 .app-layout {
   width: 100%;
-  min-height: 100dvh;
+  max-height: 96dvh;
+  max-width: 480px;
+  min-width: 375px;
+  margin: 0 auto 16px auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
 

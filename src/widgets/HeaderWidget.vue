@@ -26,9 +26,10 @@ import { UiSvg } from "@shared/ui";
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid colors.$grey;
-  background-color: colors.$white;
   padding: 8px;
+  border-radius: 4px;
+  background-color: colors.$white;
+  border-bottom: 1px solid colors.$grey;
 
   &__button {
     cursor: pointer;

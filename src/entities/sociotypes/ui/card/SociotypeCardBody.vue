@@ -50,7 +50,6 @@ const props = defineProps<PropsType>();
 .sociotype-card-body {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 
   &__text-row {
     height: 20px;
