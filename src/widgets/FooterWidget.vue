@@ -35,7 +35,7 @@ import { scrollToTop } from "@shared/lib";
 footer {
   width: 100%;
   height: 160px;
-  background-color: colors.$beige;
+  background-color: colors.$white;
   display: flex;
   flex-direction: column;
   padding: 8px;

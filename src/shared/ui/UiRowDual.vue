@@ -33,6 +33,7 @@ const props = defineProps<{
     color: colors.$black;
 
     &:last-child {
+      font-size: 14px;
       opacity: 0.5;
     }
   }

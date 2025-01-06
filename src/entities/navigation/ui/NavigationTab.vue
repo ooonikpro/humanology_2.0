@@ -43,7 +43,7 @@ $gap: 8px;
 
   overflow: hidden;
   box-shadow: 0 1px 1px 0 rgba(colors.$black, 0.1);
-  background-color: rgba(colors.$white, 0.5);
+  background-color: rgba(colors.$beige, 0.5);
   border-radius: 4px;
   cursor: pointer;
 
