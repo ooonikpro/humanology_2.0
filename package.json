@@ -13,8 +13,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@kitbag/router": "^0.11.2",
-    "vue": "^3.5.12",
+    "@kitbag/router": "^0.15.0",
+    "vue": "^3.5.13",
     "workbox-background-sync": "^6.5.4",
     "workbox-broadcast-update": "^6.5.4",
     "workbox-cacheable-response": "^6.5.4",
@@ -48,6 +48,6 @@
     "typescript": "~5.5.4",
     "vite": "^5.4.8",
     "vite-plugin-vue-devtools": "^7.4.6",
-    "vue-tsc": "^2.1.6"
+    "vue-tsc": "^2.2.0"
   }
 }

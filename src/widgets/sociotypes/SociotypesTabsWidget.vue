@@ -5,7 +5,7 @@ import type { SociotypeTabType } from "@types";
 import { NavigationTab } from "@entities/navigation";
 import { scrollContainerToElementByIndex } from "@shared/lib";
 
-const props = defineProps<{ tabs: SociotypeTabType[] }>();
+const props = defineProps<{ tabs: readonly SociotypeTabType[] }>();
 
 const route = useRoute("sociotypes");
 const container = useTemplateRef<HTMLElement>("my-container");
@@ -33,6 +33,9 @@ onMounted(scrollToActiveElement);
       :to="(r) => r('sociotypes', { id: route.params.id, tabName: tab.name })"
       :iconName="tab.iconName"
       :label="tab.label"
+      :class="{
+        'tabs-widget__link--active': route.params.tabName === tab.name,
+      }"
       class="tabs-widget__link"
     />
   </div>
@@ -57,6 +60,11 @@ onMounted(scrollToActiveElement);
 
   &__link {
     min-width: max-content;
+    opacity: 0.5;
+
+    &--active {
+      opacity: 1;
+    }
   }
 }
 </style>

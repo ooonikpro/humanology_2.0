@@ -5,19 +5,23 @@ import {
   SociotypeCard,
   SociotypeCardBody,
   SociotypeCardFooter,
-  SociotypeProvider,
 } from "@entities/sociotypes";
+import SociotypeProvider from "@entities/sociotypes/ui/SociotypeProvider.vue";
 import SociotypesTabsWidget from "@widgets/sociotypes/SociotypesTabsWidget.vue";
 
 import * as config from "../config";
 
-const route = useRoute();
-const tabName = computed(() => route?.params?.tabName);
+const route = useRoute("sociotypes");
+const tabName = computed(() => route.params.tabName);
 const isCardTab = computed(() => toValue(tabName) === "card");
 </script>
 
 <template>
-  <SociotypeProvider v-slot="{ data }" class="sociotype-page">
+  <SociotypeProvider
+    v-slot="{ data }"
+    :id="route.params.id"
+    class="sociotype-page"
+  >
     <SociotypeCard :data="data">
       <template #body>
         <SociotypeCardBody v-if="isCardTab" v-bind="data" />
@@ -30,7 +34,10 @@ const isCardTab = computed(() => toValue(tabName) === "card");
 
     <SociotypesTabsWidget :tabs="config.TABS" />
 
-    <component :is="config.TABS_COMPONENTS[tabName]" :data="data" />
+    <component
+      :is="config.TABS_COMPONENTS[tabName as config.TabName]"
+      :data="data"
+    />
   </SociotypeProvider>
 </template>
 
