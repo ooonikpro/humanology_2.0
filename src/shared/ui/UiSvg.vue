@@ -8,7 +8,7 @@ const iconMap = getIconMap();
 const { color, size, ...props } = defineProps<{
   name: IconNameType;
   color?: TextColorType;
-  size?: "12" | "16" | "20" | "24" | "64" | "80" | "96";
+  size?: "12" | "16" | "20" | "24" | "48" | "64" | "80" | "96";
 }>();
 
 const svgBody = ref("");
@@ -52,7 +52,7 @@ watch(
   }
 
   &--size {
-    @each $size in 12, 16, 20, 24, 64, 80, 96 {
+    @each $size in 12, 16, 20, 24, 48, 64, 80, 96 {
       &-#{$size} {
         width: #{$size}px;
         height: #{$size}px;
