@@ -43,6 +43,7 @@ onMounted(scrollToActiveElement);
 
 <style scoped lang="scss">
 @use "@shared/styles/variables/colors";
+@use "@shared/styles/mixins/transitions";
 
 .tabs-widget {
   display: flex;
@@ -59,17 +60,15 @@ onMounted(scrollToActiveElement);
   }
 
   &__link {
-    min-width: max-content;
-    opacity: 0.5;
+    @include transitions.ease(background-color, color);
+
     background-color: colors.$beige;
+    min-width: max-content;
+    opacity: 0.75;
 
     &--active {
       opacity: 1;
     }
-  }
-
-  .navigation-tab {
-    background-color: colors.$beige;
 
     &:active {
       background-color: colors.$role;

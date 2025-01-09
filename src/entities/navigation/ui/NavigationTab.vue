@@ -55,7 +55,7 @@ const props = defineProps<NavigationTabPropsType>();
   &__icon {
     width: 24px;
     height: 24px;
-    opacity: 0.5;
+    opacity: 0.75;
   }
 
   &__label {

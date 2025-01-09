@@ -12,7 +12,7 @@
 
 .app-layout {
   width: 100%;
-  max-height: 96dvh;
+  height: 100%;
   max-width: 480px;
   min-width: 375px;
   margin: 0 auto 16px auto;
