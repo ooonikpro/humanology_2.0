@@ -23,7 +23,7 @@ const props = defineProps<{ title: string }>();
 .sociotype-signs-block {
   background-color: colors.$white;
   border-radius: 4px;
-  box-shadow: 0 1px 1px 0 colors.$shadow;
+  border-top: solid 1px colors.$grey;
   padding: 8px;
 
   &__header {
@@ -43,7 +43,7 @@ const props = defineProps<{ title: string }>();
         rgba(colors.$white, 0) 10%,
         colors.$quadra 98%
       );
-      opacity: 0.1;
+      opacity: 0.05;
     }
   }
 
