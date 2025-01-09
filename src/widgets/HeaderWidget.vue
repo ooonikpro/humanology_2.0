@@ -6,15 +6,15 @@ import { UiSvg } from "@shared/ui";
 <template>
   <header class="header-widget">
     <button class="header-widget__button">
-      <UiSvg color="accent" name="menu" size="24" />
+      <UiSvg color="black" name="menu" size="24" />
     </button>
 
-    <RouterLink :to="(resolve) => resolve('home')" class="header-widget__logo">
+    <RouterLink :to="(resolve) => resolve('home')" class="header-widget__button">
       <UiSvg color="black" name="logo-circle" size="24" />
     </RouterLink>
 
     <button class="header-widget__button">
-      <UiSvg color="accent" name="user-square" size="24" />
+      <UiSvg color="black" name="user-square" size="24" />
     </button>
   </header>
 </template>
@@ -30,9 +30,15 @@ import { UiSvg } from "@shared/ui";
   border-radius: 4px;
   background-color: colors.$white;
   border-bottom: 1px solid colors.$grey;
+  
 
   &__button {
     cursor: pointer;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 </style>
