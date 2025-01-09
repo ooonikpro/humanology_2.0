@@ -6,6 +6,7 @@ import { UiSvg } from "@shared/ui";
 <template>
   <header class="header-widget">
     <button class="header-widget__button">
+<<<<<<< Updated upstream
       <UiSvg color="dark-grey" name="menu" size="24" />
     </button>
 
@@ -15,6 +16,17 @@ import { UiSvg } from "@shared/ui";
 
     <button class="header-widget__button">
       <UiSvg color="dark-grey" name="user-square" size="24" />
+=======
+      <UiSvg color="black" name="menu" size="24" />
+    </button>
+
+    <RouterLink :to="(resolve) => resolve('home')" class="header-widget__logo">
+      <UiSvg color="black" name="logo-circle" size="24" />
+    </RouterLink>
+
+    <button class="header-widget__button">
+      <UiSvg color="black" name="user-square" size="24" />
+>>>>>>> Stashed changes
     </button>
   </header>
 </template>

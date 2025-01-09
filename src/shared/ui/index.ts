@@ -5,3 +5,4 @@ export { default as UiText } from "./UiText.vue";
 export { default as UiColumnDual } from "./UiColumnDual.vue";
 export { default as UiZapList } from "./UiZapList.vue";
 export { default as UiSwitcher } from "./UiSwitcher.vue";
+export { default as UiPageTitle } from "./UiPageTitle.vue";

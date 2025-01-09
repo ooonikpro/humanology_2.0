@@ -28,7 +28,7 @@ onMounted(scrollToActiveElement);
 <template>
   <div ref="my-container" class="tabs-widget">
     <NavigationTab
-      v-for="(tab, $index) in props.tabs"
+      v-for="tab in props.tabs"
       :key="tab.name"
       :to="(r) => r('sociotypes', { id: route.params.id, tabName: tab.name })"
       :iconName="tab.iconName"
@@ -61,9 +61,19 @@ onMounted(scrollToActiveElement);
   &__link {
     min-width: max-content;
     opacity: 0.5;
+    background-color: colors.$beige;
 
     &--active {
       opacity: 1;
+    }
+  }
+
+  .navigation-tab {
+    background-color: colors.$beige;
+
+    &:active {
+      background-color: colors.$role;
+      color: colors.$white;
     }
   }
 }

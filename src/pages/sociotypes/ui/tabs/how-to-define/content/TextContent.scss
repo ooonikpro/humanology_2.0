@@ -1,0 +1,15 @@
+@use "@shared/styles/variables/colors";
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-bottom: 16px;
+      border-bottom: solid 1px colors.$grey;
+    }
+  }

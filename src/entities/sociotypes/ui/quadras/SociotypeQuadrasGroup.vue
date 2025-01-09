@@ -115,7 +115,7 @@ const onScroll = (e: Event) => {
     @include transitions.ease(color);
 
     display: flex;
-    gap: 5px;
+    gap: 4px;
 
     *:first-child {
       opacity: 0.5;
