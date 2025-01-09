@@ -69,4 +69,8 @@ hr {
   background-color: colors.$grey;
 }
 
+#app {
+  height: 100vh;
+}
+
 @include globals.textColors();

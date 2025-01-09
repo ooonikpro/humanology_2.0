@@ -48,6 +48,6 @@ const isCardTab = computed(() => toValue(tabName) === "card");
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background-color: colors.$beige;
+  background-color: colors.$white;
 }
 </style>

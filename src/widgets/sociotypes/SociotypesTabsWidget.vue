@@ -28,7 +28,7 @@ onMounted(scrollToActiveElement);
 <template>
   <div ref="my-container" class="tabs-widget">
     <NavigationTab
-      v-for="(tab, $index) in props.tabs"
+      v-for="tab in props.tabs"
       :key="tab.name"
       :to="(r) => r('sociotypes', { id: route.params.id, tabName: tab.name })"
       :iconName="tab.iconName"
@@ -43,6 +43,7 @@ onMounted(scrollToActiveElement);
 
 <style scoped lang="scss">
 @use "@shared/styles/variables/colors";
+@use "@shared/styles/mixins/transitions";
 
 .tabs-widget {
   display: flex;
@@ -59,11 +60,19 @@ onMounted(scrollToActiveElement);
   }
 
   &__link {
+    @include transitions.ease(background-color, color);
+
+    background-color: colors.$beige;
     min-width: max-content;
-    opacity: 0.5;
+    opacity: 0.75;
 
     &--active {
       opacity: 1;
+    }
+
+    &:active {
+      background-color: colors.$role;
+      color: colors.$white;
     }
   }
 }

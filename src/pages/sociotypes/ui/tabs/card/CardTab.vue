@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {
-  SociotypeBriefDescription,
   SociotypeGroupsAndQuadras,
   SociotypeMentality,
   SociotypeReininSigns,

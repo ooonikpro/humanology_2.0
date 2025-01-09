@@ -1,13 +1,6 @@
 <script setup lang="ts">
-import {
-  SociotypeBriefDescription,
-  SociotypeGroupsAndQuadras,
-  SociotypeMentality,
-  SociotypeReininSigns,
-  SociotypeYungDichtomy,
-} from "@entities/sociotypes";
 import type { SociotypeDataType } from "@types";
-import SociotypeSignsBlock from "@entities/sociotypes/ui/SociotypeSignsBlock.vue";
+import { UiPageTitle } from "@shared/ui";
 import { defineAsyncComponent } from "vue";
 
 const props = defineProps<{ data: SociotypeDataType }>();
@@ -18,5 +11,26 @@ const Content = defineAsyncComponent(
 </script>
 
 <template>
-  <component :is="Content" />
+  <div class="how-to-define">
+    <ui-page-title>
+      Как определить
+    </ui-page-title>
+    <div class="how-to-define__text-block">
+      <component :is="Content" />
+    </div>
+  </div>
 </template>
+
+<style lang="scss" scoped>
+
+.how-to-define {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__text-block {
+    padding: 0 8px 24px 8px;
+  }
+}
+
+</style>
