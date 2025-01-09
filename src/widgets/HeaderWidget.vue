@@ -9,7 +9,7 @@ import { UiSvg } from "@shared/ui";
       <UiSvg color="black" name="menu" size="24" />
     </button>
 
-    <RouterLink :to="(resolve) => resolve('home')" class="header-widget__button">
+    <RouterLink :to="(resolve) => resolve('home')" class="header-widget__logo">
       <UiSvg color="black" name="logo-circle" size="24" />
     </RouterLink>
 
