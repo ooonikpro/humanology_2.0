@@ -264,9 +264,9 @@ export type TextColorType =
   | "quadra"
   | "role";
 
-export type OptionType = {
+export type OptionType<T = string> = {
   label: string;
-  value: string;
+  value: T;
 };
 
 export type OptionWithIconType = OptionType & {

@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import { defineProps, ref } from "vue";
 import type { SociotypeDataType } from "@types";
-import { UiSvg, UiText, UiGenderSwitcher } from "@shared/ui";
+import { UiText, UiGenderSwitcher } from "@shared/ui";
 import { GenderEnum } from "@shared/constants";
 
-import model from "../../model";
+import SociotypeQuadraCircle from "../quadras/SociotypeQuadraCircle.vue";
+import SociotypePortrait from "../portraits/SociotypePortrait.vue";
 
 const props = defineProps<{ mini?: boolean; data: SociotypeDataType }>();
 const gender = ref(GenderEnum.male);
@@ -47,15 +48,13 @@ const gender = ref(GenderEnum.male);
 
     <slot name="footer" />
 
-    <UiSvg
-      :name="`${props.data.id}-circle`"
+    <SociotypeQuadraCircle
+      :id="props.data.id"
       class="sociotype-card__quadra-circle"
     />
-    <img
-      :src="model.getPortraitSrc(props.data.id, gender)"
-      :alt="props.data.name"
-      class="sociotype-card__portrait"
-    />
+
+    <SociotypePortrait :id="props.data.id" class="sociotype-card__portrait" />
+
     <UiGenderSwitcher
       v-if="!props.mini"
       class="sociotype-card__gender-switcher"

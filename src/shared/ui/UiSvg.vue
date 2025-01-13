@@ -32,7 +32,7 @@ watch(
         [`ui-icon--size-${size}`]: size,
       },
       props.name,
-      `g-color--${color}`,
+      color && `g-color--${color}`,
     ]"
     class="ui-icon"
     v-html="svgBody"

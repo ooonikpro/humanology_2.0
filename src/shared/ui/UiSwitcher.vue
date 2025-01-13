@@ -95,7 +95,7 @@ const switcherName = useId();
   &__option {
     padding: 6px 8px;
     width: clamp(60px, 100%, 200px);
-
+    min-height: 40px;
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
@@ -129,6 +129,7 @@ const switcherName = useId();
 
     &--picked {
       background-color: colors.$white;
+      box-shadow: 0 1px 1px 0 colors.$shadow;
     }
 
     &--picked > &-label {
