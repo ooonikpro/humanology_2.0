@@ -10,10 +10,15 @@ import SociotypeProvider from "@entities/sociotypes/ui/SociotypeProvider.vue";
 import SociotypesTabsWidget from "@widgets/sociotypes/SociotypesTabsWidget.vue";
 
 import * as config from "../config";
+import SociotypesPageTitleWidget from "@widgets/sociotypes/SociotypesPageTitleWidget.vue";
 
 const route = useRoute("sociotypes");
 const tabName = computed(() => route.params.tabName);
 const isCardTab = computed(() => toValue(tabName) === "card");
+
+const tabDescription = computed(() =>
+  config.TABS.find((row) => row.name === toValue(tabName)),
+);
 </script>
 
 <template>
@@ -33,6 +38,12 @@ const isCardTab = computed(() => toValue(tabName) === "card");
     </SociotypeCard>
 
     <SociotypesTabsWidget :tabs="config.TABS" />
+
+    <SociotypesPageTitleWidget
+      v-if="!isCardTab && tabDescription"
+      :iconName="tabDescription?.iconName"
+      :title="tabDescription?.label"
+    />
 
     <component
       :is="config.TABS_COMPONENTS[tabName as config.TabName]"

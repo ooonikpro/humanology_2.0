@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { SociotypeDataType } from "@types";
-import { UiPageTitle } from "@shared/ui";
 import { defineAsyncComponent } from "vue";
 
 const props = defineProps<{ data: SociotypeDataType }>();
@@ -12,8 +11,6 @@ const Content = defineAsyncComponent(
 
 <template>
   <div class="how-to-define">
-    <ui-page-title>Как определить</ui-page-title>
-
     <div class="how-to-define__text-block">
       <component :is="Content" />
     </div>
