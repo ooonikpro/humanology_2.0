@@ -11,6 +11,7 @@ export { default as SociotypePortraitSwitcher } from "./ui/portraits/SociotypePo
 export { default as SociotypePortraitTrioKids } from "./ui/portraits/SociotypePortraitTrioKids.vue";
 export { default as SociotypeBriefDescription } from "./ui/description/SociotypeBriefDescription.vue";
 export { default as SociotypeBodySwitcher } from "./ui/bodies/SociotypeBodySwitcher.vue";
+export { default as SociotypeFaceSwitcher } from "./ui/faces/SociotypeFaceSwitcher.vue";
 
 export { SOCIOTYPES } from "./config";
 

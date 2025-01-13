@@ -3,6 +3,7 @@ import { UiText } from "@shared/ui";
 import {
   SociotypePortraitSwitcher,
   SociotypeBodySwitcher,
+  SociotypeFaceSwitcher,
 } from "@entities/sociotypes";
 </script>
 
@@ -27,9 +28,7 @@ import {
       <UiText>
         Овальная или треугольная. Черты — довольно резкие, заметные.
       </UiText>
-      <UiText color="fire">
-        Здесь виджет по лицам с переключаетелем по полу.
-      </UiText>
+      <SociotypeFaceSwitcher id="ENTP" />
     </section>
 
     <section>
