@@ -21,6 +21,7 @@ import getMindset from "./methods/getMindset";
 import getAlignment from "./methods/getAlignment";
 import getGender from "./methods/getGender";
 import getBodyImageSrc from "./methods/getBodyImageSrc";
+import getFaceImageSrc from "./methods/getFaceImageSrc";
 
 const model = {
   getSociotypeBy,
@@ -46,6 +47,7 @@ const model = {
   getMotivation,
   getTemperament,
   getBodyImageSrc,
+  getFaceImageSrc,
 };
 
 export default model;
