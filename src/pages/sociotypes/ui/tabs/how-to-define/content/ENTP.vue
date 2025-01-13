@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { UiText } from "@shared/ui";
-import { SociotypePortraitSwitcher } from "@entities/sociotypes";
+import {
+  SociotypePortraitSwitcher,
+  SociotypeBodySwitcher,
+} from "@entities/sociotypes";
 </script>
 
 <template>
@@ -16,8 +19,7 @@ import { SociotypePortraitSwitcher } from "@entities/sociotypes";
         Астеническое. Рост часто выше среднего, нередко выражена сутулость в
         грудном отделе позвоночника.
       </UiText>
-      <img class="bodies" src="/public/assets/images/bodies/ENTP-female.png" />
-      <UiText color="fire">Не хватает переключателя по возрастам.</UiText>
+      <SociotypeBodySwitcher id="ENTP" />
     </section>
 
     <section>
