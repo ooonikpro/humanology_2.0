@@ -12,9 +12,8 @@ const Content = defineAsyncComponent(
 
 <template>
   <div class="how-to-define">
-    <ui-page-title>
-      Как определить
-    </ui-page-title>
+    <ui-page-title>Как определить</ui-page-title>
+
     <div class="how-to-define__text-block">
       <component :is="Content" />
     </div>
@@ -22,7 +21,6 @@ const Content = defineAsyncComponent(
 </template>
 
 <style lang="scss" scoped>
-
 .how-to-define {
   display: flex;
   flex-direction: column;
@@ -32,5 +30,4 @@ const Content = defineAsyncComponent(
     padding: 0 8px 24px 8px;
   }
 }
-
 </style>
