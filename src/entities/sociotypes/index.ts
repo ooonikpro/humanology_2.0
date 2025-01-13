@@ -10,6 +10,7 @@ export { default as SociotypeReininSigns } from "./ui/SociotypeReininSigns.vue";
 export { default as SociotypePortraitSwitcher } from "./ui/portraits/SociotypePortraitSwitcher.vue";
 export { default as SociotypePortraitTrioKids } from "./ui/portraits/SociotypePortraitTrioKids.vue";
 export { default as SociotypeBriefDescription } from "./ui/description/SociotypeBriefDescription.vue";
+export { default as SociotypeBodySwitcher } from "./ui/bodies/SociotypeBodySwitcher.vue";
 
 export { SOCIOTYPES } from "./config";
 

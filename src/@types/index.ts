@@ -269,11 +269,11 @@ export type OptionType<T = string> = {
   value: T;
 };
 
-export type OptionWithIconType = OptionType & {
+export type OptionWithIconType<T = string> = OptionType<T> & {
   iconName: IconNameType;
 };
 
-export type OptionWithSubtitleType = OptionType & {
+export type OptionWithSubtitleType<T = string> = OptionType<T> & {
   subtitle: string;
 };
 
