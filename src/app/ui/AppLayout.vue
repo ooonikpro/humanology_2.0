@@ -9,18 +9,21 @@
 
 <style scoped lang="scss">
 @use "../../shared/styles/variables/layers";
+@use "../../shared/styles/variables/layouts";
 
 .app-layout {
   width: 100%;
   height: 100%;
-  max-width: 480px;
-  min-width: 375px;
-  margin: 0 auto 16px auto;
+  max-width: layouts.$maxWidth;
+  min-width: layouts.$minWidth;
+  margin: 0 auto;
   overflow-y: scroll;
   scrollbar-width: none;
+  scroll-behavior: smooth;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 16px;
 
   &__header {
     width: 100%;
