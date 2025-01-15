@@ -83,18 +83,19 @@ const switcherName = useId();
 @use "@shared/styles/mixins/transitions.scss";
 
 .ui-switcher {
-  padding: 4px 8px;
+  padding: 4px 4px;
 
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   gap: 4px;
+  border-radius: 4px;
 
   background-color: colors.$beige;
 
   &__option {
     padding: 6px 8px;
-    width: clamp(60px, 100%, 200px);
+    width: clamp(60px, 100%, 240px);
     min-height: 40px;
     display: flex;
     flex-flow: column nowrap;

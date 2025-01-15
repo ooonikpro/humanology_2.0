@@ -176,7 +176,7 @@ const gender = ref(GenderEnum.male);
     }
 
     &__title {
-      font-size: min(7vw, 25px);
+      font-size: min(7vw, 24px);
     }
 
     &__quadra-circle,

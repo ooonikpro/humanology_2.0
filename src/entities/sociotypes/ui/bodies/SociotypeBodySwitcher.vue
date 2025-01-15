@@ -25,7 +25,7 @@ const genderRef = ref<GenderEnum>(GenderEnum.male);
 .sociotype-body-switcher {
   &__img {
     display: block;
-    height: 240px;
+    height: 480px;
     margin-bottom: 8px;
   }
 }
