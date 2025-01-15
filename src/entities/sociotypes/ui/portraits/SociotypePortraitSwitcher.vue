@@ -64,7 +64,7 @@ const ageOptions: OptionType<SociotypeAgeType>[] = [
   }
 
   &__img {
-    --width: 220px;
+    --width: 200px;
     position: relative;
     flex: 0 0 var(--width);
     width: var(--width);
