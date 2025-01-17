@@ -1,15 +1,30 @@
 <script lang="ts" setup>
+import { computed, ref } from "vue";
 import UiBackdrop from "./UiBackdrop.vue";
 import UiSvg from "./UiSvg.vue";
-import { ref } from "vue";
 
 const props = defineProps<{ isOpen: boolean }>();
-const emit = defineEmits(["close"]);
 
+const emit = defineEmits<{ close: [] }>();
+
+const moveValue = ref(0);
+const movePercentValue = computed(() => {
+  if (moveValue.value < 0) return "0%";
+  return `${moveValue.value}%`;
+});
+
+const isSwiping = ref(false);
 const isShowBottomSheet = ref(false);
 const isExpanded = ref(false);
 
-const hideBackdrop = () => emit("close");
+const pointermove = computed(() => (isSwiping.value ? "pointermove" : ""));
+const pointerup = computed(() => (isSwiping.value ? "pointerup" : ""));
+
+const pushToByTransformValue = () => {
+  isSwiping.value = false;
+  if (moveValue.value > 35) hideBottomSheet();
+  moveValue.value = 0;
+};
 
 const showBottomSheet = () => (isShowBottomSheet.value = true);
 const hideBottomSheet = () => {
@@ -17,8 +32,26 @@ const hideBottomSheet = () => {
   isExpanded.value = false;
 };
 
-const onScroll = (e) => {
-  isExpanded.value = (e.target.scrollTop / e.target.scrollHeight) * 100 > 15;
+const setTransform = (e: PointerEvent) => (moveValue.value += e.movementY / 5);
+
+const hideBackdrop = () => emit("close");
+
+const handleSwipeStart = (e: PointerEvent) => {
+  isSwiping.value = true;
+  setTransform(e);
+};
+
+const handleSwipe = (e: PointerEvent) => setTransform(e);
+
+const handleSwipeEnd = (e: PointerEvent) => {
+  isSwiping.value = false;
+  setTransform(e);
+  pushToByTransformValue();
+};
+
+const onScroll = (e: Event) => {
+  const target = e.target as HTMLElement;
+  isExpanded.value = (target.scrollTop / target.scrollHeight) * 100 > 15;
 };
 </script>
 
@@ -34,10 +67,16 @@ const onScroll = (e) => {
           v-if="isShowBottomSheet"
           :class="{
             'ui-bottom-sheet--expanded': isExpanded,
+            'ui-bottom-sheet--swiping': isSwiping,
           }"
           class="ui-bottom-sheet"
         >
-          <header class="ui-bottom-sheet__header">
+          <header
+            class="ui-bottom-sheet__header"
+            @pointerdown.prevent="handleSwipeStart"
+            @[pointermove].prevent="handleSwipe"
+            @[pointerup].prevent="handleSwipeEnd"
+          >
             <slot name="title"></slot>
 
             <button
@@ -66,6 +105,10 @@ const onScroll = (e) => {
 $gap: 8px;
 $closeButtonSize: 24px;
 $headerHeight: 36px;
+$translate: v-bind(movePercentValue);
+
+$transform-transition: transform 200ms ease-in;
+$height-transition: height 150ms ease;
 
 .ui-bottom-sheet {
   position: fixed;
@@ -83,7 +126,10 @@ $headerHeight: 36px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: height 150ms ease;
+  transition: $height-transition, $transform-transition;
+
+  transform: translateY($translate);
+  touch-action: none;
 
   &__header {
     flex: 0 1 auto;
@@ -93,7 +139,7 @@ $headerHeight: 36px;
     padding: $gap ($gap * 2 + $closeButtonSize) $gap $gap;
     position: relative;
 
-    &:before {
+    &::before {
       content: "";
       position: absolute;
       top: 0;
@@ -109,7 +155,7 @@ $headerHeight: 36px;
       opacity: 0.1;
     }
 
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       bottom: -1px;
@@ -144,13 +190,17 @@ $headerHeight: 36px;
     height: 95%;
   }
 
+  &--swiping {
+    transition: $height-transition;
+  }
+
   &--animate {
     &-enter-active {
       transition: transform 250ms cubic-bezier(0.38, 0.45, 0, 1.01);
     }
 
     &-leave-active {
-      transition: transform 200ms ease-in;
+      transition: $transform-transition;
     }
 
     &-enter-to {
