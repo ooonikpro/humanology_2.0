@@ -2,29 +2,36 @@
 import { computed, ref } from "vue";
 import UiBackdrop from "./UiBackdrop.vue";
 import UiSvg from "./UiSvg.vue";
+import { useSwipe } from "@shared/hooks/useSwipe";
 
 const props = defineProps<{ isOpen: boolean }>();
 
 const emit = defineEmits<{ close: [] }>();
 
-const moveValue = ref(0);
-const movePercentValue = computed(() => {
-  if (moveValue.value < 0) return "0%";
-  return `${moveValue.value}%`;
-});
+// const moveValue = ref(0);
+// const movePercentValue = computed(() => {
+//   if (moveValue.value < 0) return "0%";
+//   return `${moveValue.value}%`;
+// });
 
-const isSwiping = ref(false);
+const {
+  isSwiping,
+  swipeValue,
+  swipePercentValue,
+  handleSwipeStart,
+  handleSwipe,
+  handleSwipeEnd,
+} = useSwipe(
+  (value) => value > 35,
+  () => hideBottomSheet(),
+);
+
 const isShowBottomSheet = ref(false);
 const isExpanded = ref(false);
 
 const pointermove = computed(() => (isSwiping.value ? "pointermove" : ""));
 const pointerup = computed(() => (isSwiping.value ? "pointerup" : ""));
-
-const pushToByTransformValue = () => {
-  isSwiping.value = false;
-  if (moveValue.value > 35) hideBottomSheet();
-  moveValue.value = 0;
-};
+const pointerleave = computed(() => (isSwiping.value ? "pointerleave" : ""));
 
 const showBottomSheet = () => (isShowBottomSheet.value = true);
 const hideBottomSheet = () => {
@@ -32,21 +39,9 @@ const hideBottomSheet = () => {
   isExpanded.value = false;
 };
 
-const setTransform = (e: PointerEvent) => (moveValue.value += e.movementY / 5);
-
-const hideBackdrop = () => emit("close");
-
-const handleSwipeStart = (e: PointerEvent) => {
-  isSwiping.value = true;
-  setTransform(e);
-};
-
-const handleSwipe = (e: PointerEvent) => setTransform(e);
-
-const handleSwipeEnd = (e: PointerEvent) => {
-  isSwiping.value = false;
-  setTransform(e);
-  pushToByTransformValue();
+const hideBackdrop = () => {
+  emit("close");
+  swipeValue.value = 0;
 };
 
 const onScroll = (e: Event) => {
@@ -76,6 +71,7 @@ const onScroll = (e: Event) => {
             @pointerdown.prevent="handleSwipeStart"
             @[pointermove].prevent="handleSwipe"
             @[pointerup].prevent="handleSwipeEnd"
+            @[pointerleave].prevent="handleSwipeEnd"
           >
             <slot name="title"></slot>
 
@@ -105,7 +101,7 @@ const onScroll = (e: Event) => {
 $gap: 8px;
 $closeButtonSize: 24px;
 $headerHeight: 36px;
-$translate: v-bind(movePercentValue);
+$translate: v-bind(swipePercentValue);
 
 $transform-transition: transform 200ms ease-in;
 $height-transition: height 150ms ease;
