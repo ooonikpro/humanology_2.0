@@ -46,7 +46,7 @@ const hideBackdrop = () => {
 
 const onScroll = (e: Event) => {
   const target = e.target as HTMLElement;
-  isExpanded.value = (target.scrollTop / target.scrollHeight) * 100 > 15;
+  isExpanded.value = (target.scrollTop / target.scrollHeight) * 100 > 2;
 };
 </script>
 
@@ -103,13 +103,13 @@ $closeButtonSize: 24px;
 $headerHeight: 36px;
 $translate: v-bind(swipePercentValue);
 
-$transform-transition: transform 200ms ease-in;
+$transform-transition: transform 150ms ease;
 $height-transition: height 150ms ease;
 
 .ui-bottom-sheet {
   position: fixed;
   width: 100%;
-  height: 85%;
+  height: 80%;
   max-width: layouts.$maxWidth;
   min-width: layouts.$minWidth;
   bottom: 0;
@@ -183,7 +183,7 @@ $height-transition: height 150ms ease;
   }
 
   &--expanded {
-    height: 95%;
+    height: 87%;
   }
 
   &--swiping {
