@@ -42,3 +42,8 @@ function handleSheetClose() {
 </template>
 
 <style scoped lang="scss"></style>
+<style lang="scss">
+main {
+  height: 3000px;
+}
+</style>

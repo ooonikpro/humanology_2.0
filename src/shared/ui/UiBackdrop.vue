@@ -1,8 +1,35 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
+import {
+  clearAllBodyScrollLocks,
+  enableBodyScroll,
+  disableBodyScroll,
+} from "body-scroll-lock";
+import { defineProps, inject, onUnmounted, type ShallowRef, watch } from "vue";
 
 const props = defineProps<{ isShow: boolean }>();
 const emit = defineEmits(["afterEnter", "afterLeave"]);
+
+const layoutRef = inject("layoutRef") as Readonly<ShallowRef<HTMLElement>>;
+
+watch(
+  () => props.isShow,
+  (newState) => {
+    if (newState) {
+      disableBodyScroll(layoutRef.value);
+      disableBodyScroll(document.body);
+    } else {
+      enableBodyScroll(layoutRef.value);
+      enableBodyScroll(document.body);
+    }
+  },
+  {
+    immediate: true,
+  },
+);
+
+onUnmounted(() => {
+  clearAllBodyScrollLocks();
+});
 </script>
 
 <template>
@@ -35,6 +62,8 @@ $gutter: 70px;
   background-color: colors.$dark-grey;
   transition: opacity 130ms ease;
   overflow: hidden;
+
+  touch-action: none;
 
   &--animate-enter-from,
   &--animate-leave-to {

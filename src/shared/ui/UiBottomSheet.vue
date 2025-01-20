@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ref } from "vue";
+import { defineProps, defineEmits, computed, ref } from "vue";
 import UiBackdrop from "./UiBackdrop.vue";
 import UiSvg from "./UiSvg.vue";
 import { useSwipe } from "@shared/hooks/useSwipe";
@@ -7,12 +7,6 @@ import { useSwipe } from "@shared/hooks/useSwipe";
 const props = defineProps<{ isOpen: boolean }>();
 
 const emit = defineEmits<{ close: [] }>();
-
-// const moveValue = ref(0);
-// const movePercentValue = computed(() => {
-//   if (moveValue.value < 0) return "0%";
-//   return `${moveValue.value}%`;
-// });
 
 const {
   isSwiping,

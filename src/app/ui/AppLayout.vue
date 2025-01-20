@@ -1,5 +1,13 @@
+<script setup lang="ts">
+import { useTemplateRef, provide } from "vue";
+
+const layoutRef = useTemplateRef("layout-ref");
+
+provide("layoutRef", layoutRef);
+</script>
+
 <template>
-  <div class="app-layout">
+  <div ref="layout-ref" class="app-layout">
     <header class="app-layout__header"><slot name="header" /></header>
     <main class="app-layout__body"><slot /></main>
     <slot name="footer" />
