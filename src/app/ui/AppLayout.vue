@@ -1,5 +1,13 @@
+<script setup lang="ts">
+import { useTemplateRef, provide } from "vue";
+
+const layoutRef = useTemplateRef("layout-ref");
+
+provide("layoutRef", layoutRef);
+</script>
+
 <template>
-  <div class="app-layout">
+  <div ref="layout-ref" class="app-layout">
     <header class="app-layout__header"><slot name="header" /></header>
     <main class="app-layout__body"><slot /></main>
     <slot name="footer" />
@@ -9,18 +17,21 @@
 
 <style scoped lang="scss">
 @use "../../shared/styles/variables/layers";
+@use "../../shared/styles/variables/layouts";
 
 .app-layout {
   width: 100%;
   height: 100%;
-  max-width: 480px;
-  min-width: 375px;
-  margin: 0 auto 16px auto;
+  max-width: layouts.$maxWidth;
+  min-width: layouts.$minWidth;
+  margin: 0 auto;
   overflow-y: scroll;
   scrollbar-width: none;
+  scroll-behavior: smooth;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 16px;
 
   &__header {
     width: 100%;
