@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineProps, ref } from "vue";
+import { computed, defineProps, ref } from "vue";
 import type { SociotypeDataType } from "@types";
 import { UiText, UiGenderToggle } from "@shared/ui";
 import { GenderEnum } from "@shared/constants";
@@ -7,63 +7,58 @@ import { GenderEnum } from "@shared/constants";
 import SociotypeQuadraCircle from "../quadras/SociotypeQuadraCircle.vue";
 import SociotypePortrait from "../portraits/SociotypePortrait.vue";
 
-const props = defineProps<{ mini?: boolean; data: SociotypeDataType }>();
-const gender = ref(GenderEnum.male);
+const props = defineProps<{
+  mini?: boolean;
+  gender?: GenderEnum;
+  data: SociotypeDataType;
+}>();
+const genderModel = ref(GenderEnum.male);
 </script>
 
 <template>
   <div :class="{ 'sociotype-card--mini': props.mini }" class="sociotype-card">
-    <div class="sociotype-card__header-gradient"></div>
-    <div class="sociotype-card__header">
-      <UiText preset="small" color="black">{{ props.data.id }}</UiText>
+    <div class="sociotype-card__content">
+      <slot name="header" />
 
-      <UiText v-if="!props.mini" preset="small" color="role">
-        {{ props.data.populationPercentage }}
-      </UiText>
+      <template v-if="!$slots.photo">
+        <UiText
+          preset="title-alternative"
+          color="role"
+          class="sociotype-card__title"
+        >
+          {{ props.data.name }}
+        </UiText>
 
-      <UiText preset="small" color="dark-grey">{{ props.data.alias }}</UiText>
+        <slot name="groups-and-quadras"></slot>
 
-      <UiText v-if="!props.mini" preset="small" color="dark-grey">
-        {{ props.data.personalitiesTerm }}
-      </UiText>
+        <slot name="yungs" />
+      </template>
 
-      <UiText v-if="!props.mini" preset="small" color="dark-grey">
-        {{ props.data.socionicAbbrevation }}
-      </UiText>
+      <template v-else>
+        <div class="sociotype-card__photo">
+          <slot name="photo" />
+        </div>
+      </template>
 
-      <hr v-if="!props.mini" class="sociotype-card__header-line" />
+      <SociotypeQuadraCircle
+        :id="props.data.id"
+        class="sociotype-card__quadra-circle"
+      />
+
+      <SociotypePortrait
+        :gender="props.gender ?? genderModel"
+        :id="props.data.id"
+        class="sociotype-card__portrait"
+      />
+
+      <UiGenderToggle
+        v-if="!props.gender && !props.mini"
+        class="sociotype-card__gender-switcher"
+        v-model="genderModel"
+      />
     </div>
-    <div class="sociotype-card__body">
-      <UiText
-        preset="title-alternative"
-        color="role"
-        class="sociotype-card__title"
-      >
-        {{ props.data.name }}
-      </UiText>
-
-      <slot name="body"></slot>
-    </div>
-    <div class="sociotype-card__footer-gradient"></div>
 
     <slot name="footer" />
-
-    <SociotypeQuadraCircle
-      :id="props.data.id"
-      class="sociotype-card__quadra-circle"
-    />
-
-    <SociotypePortrait
-      :gender="gender"
-      :id="props.data.id"
-      class="sociotype-card__portrait"
-    />
-
-    <UiGenderToggle
-      v-if="!props.mini"
-      class="sociotype-card__gender-switcher"
-      v-model="gender"
-    />
   </div>
 </template>
 
@@ -78,55 +73,24 @@ const gender = ref(GenderEnum.male);
   border-top: 1px solid colors.$quadra;
   background: colors.$white;
 
-  &__header-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 48px;
-    background: linear-gradient(
-      0,
-      rgba(colors.$white, 0) 10%,
-      colors.$quadra 98%
-    );
-    opacity: 0.1;
-  }
-
-  &__footer-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 72px;
-    background: linear-gradient(
-      180deg,
-      rgba(colors.$white, 0) 45%,
-      colors.$role 100%
-    );
-    opacity: 0.1;
-  }
-
-  &__header {
-    display: flex;
-    gap: 6px;
+  &__content {
     position: relative;
-    padding: 8px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: column;
 
-    &-line {
-      width: 53%;
+    &::before {
+      content: "";
       position: absolute;
-      bottom: 0;
+      inset: 0;
+      opacity: 0.1;
+      background: linear-gradient(0, colors.$role 1%, colors.$quadra 56%);
     }
   }
 
-  &__body {
-    display: flex;
-    flex-direction: column;
-    padding: 12px 8px;
-    gap: 12px;
+  &__photo {
+    width: 96px;
+    height: 96px;
+    margin: 8px 8px 0;
   }
 
   &__title {
@@ -134,12 +98,13 @@ const gender = ref(GenderEnum.male);
     font-size: min(8vw, 30px);
     line-height: min(8vw, 40px);
     overflow: hidden;
+    margin: 12px 8px;
   }
 
   &__quadra-circle,
   &__portrait {
     position: absolute;
-    height: min(45vw, 90%);
+    height: min(50vw, 90%);
     aspect-ratio: 1/1;
     bottom: 0;
   }
@@ -166,17 +131,9 @@ const gender = ref(GenderEnum.male);
   }
 
   @include bem.modificatorForChildren("mini") {
-    &__header {
-      padding-bottom: 0;
-    }
-
-    &__body {
-      padding-top: 0;
-      gap: 8px;
-    }
-
     &__title {
       font-size: min(7vw, 24px);
+      margin: -8px 8px 8px;
     }
 
     &__quadra-circle,

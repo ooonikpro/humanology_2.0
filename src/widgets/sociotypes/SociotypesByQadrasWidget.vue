@@ -3,7 +3,8 @@ import { useRouter } from "@kitbag/router";
 import type { SociotypeIdType } from "@types";
 import {
   SociotypeCard,
-  SociotypeCardBody,
+  SociotypeCardGroupsAndQuadras,
+  SociotypeCardHeader,
   SociotypeProvider,
   SociotypeQuadras,
 } from "@entities/sociotypes";
@@ -22,8 +23,12 @@ const goToPage = (id: SociotypeIdType) =>
         @click="goToPage(quadraProps.id)"
       >
         <SociotypeCard :data="data" mini>
-          <template #body>
-            <SociotypeCardBody v-bind="data" />
+          <template #header>
+            <SociotypeCardHeader :data="data" mini />
+          </template>
+
+          <template #groups-and-quadras>
+            <SociotypeCardGroupsAndQuadras v-bind="data" />
           </template>
         </SociotypeCard>
       </SociotypeProvider>

@@ -3,14 +3,17 @@ import { computed, toValue } from "vue";
 import { useRoute } from "@kitbag/router";
 import {
   SociotypeCard,
-  SociotypeCardBody,
-  SociotypeCardFooter,
+  SociotypeCardGroupsAndQuadras,
+  SociotypeCardYungs,
+  SociotypeCardHeader,
+  SociotypeProvider,
 } from "@entities/sociotypes";
-import SociotypeProvider from "@entities/sociotypes/ui/SociotypeProvider.vue";
-import SociotypesTabsWidget from "@widgets/sociotypes/SociotypesTabsWidget.vue";
+import {
+  SociotypesTabsWidget,
+  SociotypesPageTitleWidget,
+} from "@widgets/sociotypes";
 
 import * as config from "../config";
-import SociotypesPageTitleWidget from "@widgets/sociotypes/SociotypesPageTitleWidget.vue";
 
 const route = useRoute("sociotypes");
 const tabName = computed(() => route.params.tabName);
@@ -28,12 +31,16 @@ const tabDescription = computed(() =>
     class="sociotype-page"
   >
     <SociotypeCard :data="data">
-      <template #body>
-        <SociotypeCardBody v-if="isCardTab" v-bind="data" />
+      <template #header>
+        <SociotypeCardHeader :data="data" />
       </template>
 
-      <template #footer>
-        <SociotypeCardFooter v-if="isCardTab" v-bind="data" />
+      <template #groups-and-quadras>
+        <SociotypeCardGroupsAndQuadras v-if="isCardTab" v-bind="data" />
+      </template>
+
+      <template #yungs>
+        <SociotypeCardYungs v-if="isCardTab" v-bind="data" />
       </template>
     </SociotypeCard>
 
