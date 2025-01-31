@@ -1,11 +1,11 @@
-import type { Gender, SociotypeIdType, UnixDate } from "@types";
+import type { Gender, SociotypeIdType, DateRuLocaleType } from "@types";
 
 export type PeopleItem = {
   uid: string;
   id: SociotypeIdType;
   name: string;
   subtitle: string;
-  birthDate: UnixDate;
+  birthDate: DateRuLocaleType;
   gender: Gender;
 };
 

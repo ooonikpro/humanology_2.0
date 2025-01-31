@@ -180,7 +180,7 @@ export type ReininSignType =
   | "democrat"
   | "aristocrat";
 
-export type BaziSign =
+export type BaziSignType =
   | "bull"
   | "dragon"
   | "goat"
@@ -191,12 +191,12 @@ export type BaziSign =
   | "dog"
   | "pig"
   | "tiger"
-  | "hare"
-  | "snake";
+  | "snake"
+  | "rabbit";
 
 export type YearElements = "wood" | "fire" | "earth" | "metal" | "water";
 
-export type ZodiacSign =
+export type ZodiacSignType =
   | "aries"
   | "taurus"
   | "gemini"
@@ -206,7 +206,7 @@ export type ZodiacSign =
   | "libra"
   | "scorpio"
   | "sagittarius"
-  | "capricorn"
+  | "capricornus"
   | "aquarius"
   | "pisces";
 
@@ -242,7 +242,7 @@ export type SociotypeDataType = {
   intertypeRelations: Record<IntertypeRelations, SociotypeIdType>;
 };
 
-export type UnixDate = string; // mm/dd/yyyy
+export type DateRuLocaleType = `${string}.${string}.${string}`; // dd.mm.yyyy
 
 export type SociotypeAgeType = "kid" | "young" | "adult";
 export type TextColorType =
@@ -277,8 +277,29 @@ export type OptionWithSubtitleType<T = string> = OptionType<T> & {
   subtitle: string;
 };
 
+export type IconSizeType =
+  | "12"
+  | "16"
+  | "20"
+  | "24"
+  | "48"
+  | "64"
+  | "80"
+  | "96";
+
 export type SociotypeTabType = {
   name: string;
   iconName: IconNameType;
   label: string;
+};
+
+export type FamousPersonType = {
+  id: SociotypeIdType;
+  name: string;
+  role: string;
+  birthDate: DateRuLocaleType;
+  zodiac: ZodiacSignType;
+  bazi: BaziSignType;
+  photo: string;
+  gender: Gender;
 };

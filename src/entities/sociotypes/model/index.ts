@@ -22,6 +22,7 @@ import getAlignment from "./methods/getAlignment";
 import getGender from "./methods/getGender";
 import getBodyImageSrc from "./methods/getBodyImageSrc";
 import getFaceImageSrc from "./methods/getFaceImageSrc";
+import getFamousPeople from "./methods/getFamousPeople";
 
 const model = {
   getSociotypeBy,
@@ -48,6 +49,7 @@ const model = {
   getTemperament,
   getBodyImageSrc,
   getFaceImageSrc,
+  getFamousPeople,
 };
 
 export default model;

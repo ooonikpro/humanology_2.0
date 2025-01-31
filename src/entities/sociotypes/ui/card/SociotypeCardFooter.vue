@@ -1,24 +1,21 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
 import type { SociotypeDataType } from "@types";
-import { UiText } from "@shared/ui";
+import { UiSvg, UiText } from "@shared/ui";
 
-import model from "../../model";
-
-const props = defineProps<Pick<SociotypeDataType, "yungs">>();
+const props = defineProps<SociotypeDataType>();
 </script>
 
 <template>
   <div class="sociotype-card-footer">
-    <hr class="sociotype-card-footer__line" />
+    <div class="sociotype-card-footer__info-tower">
+      <UiSvg :name="props.quadra" size="16" color="quadra" />
+      <UiSvg :name="props.role" size="16" color="role" />
+      <UiSvg :name="props.tarot" size="16" color="dark-grey" />
+    </div>
 
-    <UiText
-      v-for="(yung, $index) in props.yungs"
-      :key="yung"
-      :color="$index > 0 ? 'dark-grey' : 'black'"
-      preset="small"
-    >
-      {{ model.getYungDichtomyLabel(yung) }}
+    <UiText preset="small" color="role">
+      {{ props.name }}
     </UiText>
   </div>
 </template>
@@ -27,17 +24,25 @@ const props = defineProps<Pick<SociotypeDataType, "yungs">>();
 @use "@shared/styles/variables/colors";
 
 .sociotype-card-footer {
-  display: flex;
-  gap: 6px;
   position: relative;
+  height: 24px;
+  border-top: 1px solid colors.$role;
   padding: 8px;
-  border: 0;
-  border-bottom: 1px solid colors.$role;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  &__line {
-    width: 53%;
+  &::before {
+    content: "";
+    inset: 0;
     position: absolute;
-    top: 0;
+    opacity: 0.1;
+    background-color: colors.$role;
+  }
+
+  &__info-tower {
+    display: flex;
+    align-items: center;
   }
 }
 </style>

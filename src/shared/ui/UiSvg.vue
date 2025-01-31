@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineProps, computed, ref, watch } from "vue";
-import type { IconNameType, TextColorType } from "@types";
+import type { IconNameType, IconSizeType, TextColorType } from "@types";
 import { getIconMap } from "@shared/lib";
 
 const iconMap = getIconMap();
@@ -8,7 +8,7 @@ const iconMap = getIconMap();
 const { color, size, ...props } = defineProps<{
   name: IconNameType;
   color?: TextColorType;
-  size?: "12" | "16" | "20" | "24" | "48" | "64" | "80" | "96";
+  size?: IconSizeType;
 }>();
 
 const svgBody = ref("");

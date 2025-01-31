@@ -1,22 +1,16 @@
 <script setup lang="ts">
-import {
-  SociotypeBriefDescription,
-  SociotypeGroupsAndQuadras,
-  SociotypeMentality,
-  SociotypeReininSigns,
-  SociotypeYungDichtomy,
-} from "@entities/sociotypes";
+import { computed } from "vue";
 import type { SociotypeDataType } from "@types";
-import SociotypeSignsBlock from "@entities/sociotypes/ui/SociotypeSignsBlock.vue";
-import { defineAsyncComponent } from "vue";
+import { SociotypesFamousPeopleWidget } from "@widgets/sociotypes";
+import { sociotypeModel } from "@entities/sociotypes";
 
 const props = defineProps<{ data: SociotypeDataType }>();
 
-const Content = defineAsyncComponent(
-  () => import(`./content/${props.data.id}.vue`),
+const list = computed(() =>
+  sociotypeModel.getFamousPeople((person) => person.id === props.data.id),
 );
 </script>
 
 <template>
-  <component :is="Content" />
+  <SociotypesFamousPeopleWidget :list="list" />
 </template>
