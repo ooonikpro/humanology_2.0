@@ -18,7 +18,7 @@ const subtitles = computed(() =>
 const onScroll = (e: Event) => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
-  const value = Math.round(e.target.scrollLeft / window.outerWidth);
+  const value = Math.round(e.target.scrollLeft / e.target.clientWidth);
   activeQuadra.value = quadrasList[value];
 };
 </script>
