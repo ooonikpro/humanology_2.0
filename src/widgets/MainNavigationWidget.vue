@@ -34,6 +34,13 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
         label="Тесты"
         iconName="presentation-chart-bar-alt"
       />
+
+      <NavigationTab
+        :to="(r) => r('relations')"
+        class="main-nav__tab col-100"
+        label="Интертипные отношения"
+        iconName="square-2"
+      />
     </div>
 
     <div class="main-nav__row main-nav__row--tab-bg-grey">
