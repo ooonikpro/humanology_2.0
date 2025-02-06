@@ -1,14 +1,10 @@
 <script setup lang="ts">
 import type { SociotypeDataType } from "@types";
-import { defineAsyncComponent } from "vue";
+import { SociotypesCompatibilityWidget } from "@widgets/sociotypes";
 
 const props = defineProps<{ data: SociotypeDataType }>();
-
-const Content = defineAsyncComponent(
-  () => import(`./content/${props.data.id}.vue`),
-);
 </script>
 
 <template>
-  <component :is="Content" />
+  <SociotypesCompatibilityWidget :sociotype-id="props.data.id" />
 </template>

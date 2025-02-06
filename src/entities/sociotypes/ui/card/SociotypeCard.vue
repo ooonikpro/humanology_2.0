@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, defineProps, ref } from "vue";
+import { defineProps, ref } from "vue";
 import type { SociotypeDataType } from "@types";
 import { UiText, UiGenderToggle } from "@shared/ui";
 import { GenderEnum } from "@shared/constants";

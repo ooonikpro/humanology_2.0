@@ -21,8 +21,19 @@ $transparently-fire: rgba($fire, 0.1);
 $transparently-water: rgba($water, 0.1);
 $transparently-earth: rgba($earth, 0.1);
 
+$transparently-turquoise: rgba($turquoise, 0.3);
+$transparently-green: rgba($green, 0.3);
+$transparently-yellow: rgba($yellow, 0.3);
+$transparently-pink: rgba($pink, 0.3);
+
+$quadral: $turquoise;
+$favorable: $green;
+$neutral: $yellow;
+$unfavorable: $pink;
+
 $quadra: var(--color-quadra);
 $role: var(--color-role);
+$intertype: var(--color-role);
 
 $bg-quadra: var(--bg-quadra);
 $bg-role: var(--bg-role);
@@ -48,4 +59,5 @@ $all-colors: (
 
   "quadra": $quadra,
   "role": $role,
+  "intertype": $intertype,
 );
