@@ -23,6 +23,7 @@ import getGender from "./methods/getGender";
 import getBodyImageSrc from "./methods/getBodyImageSrc";
 import getFaceImageSrc from "./methods/getFaceImageSrc";
 import getFamousPeople from "./methods/getFamousPeople";
+import fetchFamousPeople from "./methods/fetchFamousPeople";
 
 const model = {
   getSociotypeBy,
@@ -50,6 +51,7 @@ const model = {
   getBodyImageSrc,
   getFaceImageSrc,
   getFamousPeople,
+  fetchFamousPeople,
 };
 
 export default model;

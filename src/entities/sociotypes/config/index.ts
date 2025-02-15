@@ -51,5 +51,4 @@ export { default as ROLES } from "./roles";
 export { default as TAROT } from "./tarot";
 export { default as PSYCHOTYPES } from "./psychotypes";
 export { default as CLUBS } from "./clubs";
-export { default as FAMOUS_PEOPLE } from "./famousPeople";
 export { default as SIGNS_COLORS_MAP } from "./signsColorsMap";

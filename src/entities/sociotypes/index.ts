@@ -17,7 +17,7 @@ export { default as SociotypeBriefDescription } from "./ui/description/Sociotype
 export { default as SociotypeBodySwitcher } from "./ui/bodies/SociotypeBodySwitcher.vue";
 export { default as SociotypeFaceSwitcher } from "./ui/faces/SociotypeFaceSwitcher.vue";
 
-export { SOCIOTYPES, FAMOUS_PEOPLE } from "./config";
+export { SOCIOTYPES } from "./config";
 
 export { default as sociotypeModel } from "./model";
 
