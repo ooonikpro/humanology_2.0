@@ -215,6 +215,40 @@ export type SignPropType = {
   quadra: QuadrasType;
 };
 
+export type IntertypeRelationsGroupNameType =
+  | "quadral"
+  | "favorable"
+  | "neutral"
+  | "unfavorable";
+
+export type IntertypeRelationsType = {
+  quadral: Record<
+    Extract<IntertypeRelations, "dual" | "activity" | "mirror" | "identical">,
+    SociotypeIdType
+  >;
+  favorable: Record<
+    Extract<
+      IntertypeRelations,
+      "kindred" | "semidual" | "pragmatic" | "illusionary"
+    >,
+    SociotypeIdType
+  >;
+  neutral: Record<
+    Extract<
+      IntertypeRelations,
+      "beneficiary" | "giver" | "supervisor" | "underling"
+    >,
+    SociotypeIdType
+  >;
+  unfavorable: Record<
+    Extract<
+      IntertypeRelations,
+      "quasidentical" | "parallel" | "contrary" | "superego"
+    >,
+    SociotypeIdType
+  >;
+};
+
 export type SociotypeDataType = {
   id: SociotypeIdType;
   quadra: QuadrasType;
@@ -239,7 +273,7 @@ export type SociotypeDataType = {
   alignment: AlignmentType;
   yungs: DichotomyType[];
   reinin: ReininSignType[];
-  intertypeRelations: Record<IntertypeRelations, SociotypeIdType>;
+  intertypeRelations: IntertypeRelationsType;
 };
 
 export type DateRuLocaleType = `${string}.${string}.${string}`; // dd.mm.yyyy
@@ -262,7 +296,8 @@ export type TextColorType =
   | "water"
   | "earth"
   | "quadra"
-  | "role";
+  | "role"
+  | "intertype";
 
 export type OptionType<T = string> = {
   label: string;

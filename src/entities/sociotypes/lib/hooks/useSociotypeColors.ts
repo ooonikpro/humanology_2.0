@@ -1,4 +1,4 @@
-import { computed, type ComputedRef, type Ref, toValue } from "vue";
+import { computed, type MaybeRefOrGetter, toValue } from "vue";
 import type { QuadrasType, RoleType } from "@types";
 
 import createColorQuadraStyle from "../createColorQuadraStyle";
@@ -9,8 +9,8 @@ const useSociotypeColors = ({
   quadra,
   role,
 }: {
-  quadra: ComputedRef<QuadrasType> | Ref<QuadrasType>;
-  role?: ComputedRef<RoleType> | Ref<RoleType>;
+  quadra: MaybeRefOrGetter<QuadrasType>;
+  role?: MaybeRefOrGetter<RoleType>;
 }) => {
   return computed(() => {
     return {

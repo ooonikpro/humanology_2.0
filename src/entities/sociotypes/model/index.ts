@@ -24,6 +24,9 @@ import getBodyImageSrc from "./methods/getBodyImageSrc";
 import getFaceImageSrc from "./methods/getFaceImageSrc";
 import getFamousPeople from "./methods/getFamousPeople";
 import fetchFamousPeople from "./methods/fetchFamousPeople";
+import getIntertypeRelations from "./methods/getIntertypeRelations";
+import getIntertypeRelationGroupName from "./methods/getIntertypeRelationGroupName";
+import getRelationData from "./methods/getRelationData";
 
 const model = {
   getSociotypeBy,
@@ -52,6 +55,9 @@ const model = {
   getFaceImageSrc,
   getFamousPeople,
   fetchFamousPeople,
+  getIntertypeRelations,
+  getIntertypeRelationGroupName,
+  getRelationData,
 };
 
 export default model;
