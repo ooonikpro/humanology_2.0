@@ -14,15 +14,15 @@ const ISFJ: SociotypeDataType = {
   tarot: "wands", // масть
   psychotype: "aggressor", // группа
   populationPercentage: "9 ~ 14%",
-  aspects: {
-    lives: "people",
-    creates: "will",
-    mad: "emotions",
-    does: "comfort",
-    afraid: "logic",
-    suffers: "ideas",
-    desires: "business",
-    likes: "time",
+  functions: {
+    base: "people",
+    creative: "will",
+    limit: "emotions",
+    back: "comfort",
+    role: "logic",
+    pain: "ideas",
+    suggestive: "business",
+    activate: "time",
   },
   stimulant: "wealth",
   communication: "sincere",

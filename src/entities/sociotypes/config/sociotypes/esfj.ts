@@ -14,15 +14,15 @@ const ESFJ: SociotypeDataType = {
   tarot: "wands", // масть
   psychotype: "caring", // группа
   populationPercentage: "9 ~ 13%",
-  aspects: {
-    lives: "emotions",
-    creates: "comfort",
-    mad: "people",
-    does: "will",
-    afraid: "business",
-    suffers: "time",
-    desires: "logic",
-    likes: "ideas",
+  functions: {
+    base: "emotions",
+    creative: "comfort",
+    limit: "people",
+    back: "will",
+    pain: "time",
+    role: "business",
+    activate: "ideas",
+    suggestive: "logic",
   },
   stimulant: "status",
   communication: "passionate",

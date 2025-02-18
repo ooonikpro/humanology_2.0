@@ -14,15 +14,15 @@ const ENFP: SociotypeDataType = {
   tarot: "cups", // масть
   psychotype: "childlike", // группа
   populationPercentage: "6 ~ 8%",
-  aspects: {
-    lives: "ideas",
-    creates: "people",
-    mad: "time",
-    does: "emotions",
-    afraid: "will",
-    suffers: "logic",
-    desires: "comfort",
-    likes: "business",
+  functions: {
+    base: "ideas",
+    creative: "people",
+    limit: "time",
+    back: "emotions",
+    role: "will",
+    pain: "logic",
+    suggestive: "comfort",
+    activate: "business",
   },
   stimulant: "uniqueness",
   communication: "passionate",

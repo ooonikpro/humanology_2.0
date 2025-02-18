@@ -14,15 +14,15 @@ const ISTP: SociotypeDataType = {
   tarot: "swords", // масть
   psychotype: "caring", // группа
   populationPercentage: "4 ~ 6%",
-  aspects: {
-    lives: "comfort",
-    creates: "business",
-    mad: "will",
-    does: "logic",
-    afraid: "time",
-    suffers: "emotions",
-    desires: "ideas",
-    likes: "people",
+  functions: {
+    base: "comfort",
+    creative: "business",
+    limit: "will",
+    back: "logic",
+    role: "time",
+    pain: "emotions",
+    suggestive: "ideas",
+    activate: "people",
   },
   stimulant: "wealth",
   communication: "coldBlooded",

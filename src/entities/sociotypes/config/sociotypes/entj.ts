@@ -14,15 +14,15 @@ const ENTJ: SociotypeDataType = {
   tarot: "pentacles", // масть
   psychotype: "victim", // группа
   populationPercentage: "2 ~ 5%",
-  aspects: {
-    lives: "business",
-    creates: "time",
-    mad: "logic",
-    does: "ideas",
-    afraid: "emotions",
-    suffers: "comfort",
-    desires: "people",
-    likes: "will",
+  functions: {
+    base: "business",
+    creative: "time",
+    limit: "logic",
+    back: "ideas",
+    role: "emotions",
+    pain: "comfort",
+    suggestive: "people",
+    activate: "will",
   },
   stimulant: "uniqueness",
   communication: "business",

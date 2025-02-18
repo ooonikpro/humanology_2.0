@@ -14,15 +14,15 @@ const ISFP: SociotypeDataType = {
   tarot: "cups", // масть
   psychotype: "caring", // группа
   populationPercentage: "5 ~ 9%",
-  aspects: {
-    lives: "comfort",
-    creates: "emotions",
-    mad: "will",
-    does: "people",
-    afraid: "time",
-    suffers: "business",
-    desires: "ideas",
-    likes: "logic",
+  functions: {
+    base: "comfort",
+    creative: "emotions",
+    limit: "will",
+    back: "people",
+    pain: "business",
+    role: "time",
+    activate: "logic",
+    suggestive: "ideas",
   },
   stimulant: "wealth",
   communication: "sincere",

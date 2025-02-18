@@ -14,15 +14,15 @@ const INTJ: SociotypeDataType = {
   tarot: "pentacles", // масть
   psychotype: "childlike", // группа
   populationPercentage: "2 ~ 4%",
-  aspects: {
-    lives: "logic",
-    creates: "ideas",
-    mad: "business",
-    does: "time",
-    afraid: "people",
-    suffers: "will",
-    desires: "emotions",
-    likes: "comfort",
+  functions: {
+    base: "logic",
+    creative: "ideas",
+    limit: "business",
+    back: "time",
+    pain: "will",
+    role: "people",
+    activate: "comfort",
+    suggestive: "emotions",
   },
   stimulant: "selfSufficiency",
   communication: "coldBlooded",

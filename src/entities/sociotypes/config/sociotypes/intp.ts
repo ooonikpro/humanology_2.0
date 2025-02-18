@@ -14,15 +14,15 @@ const INTP: SociotypeDataType = {
   tarot: "swords", // масть
   psychotype: "victim", // группа
   populationPercentage: "3 ~ 5%",
-  aspects: {
-    lives: "time",
-    creates: "business",
-    mad: "ideas",
-    does: "logic",
-    afraid: "comfort",
-    suffers: "emotions",
-    desires: "will",
-    likes: "people",
+  functions: {
+    base: "time",
+    creative: "business",
+    limit: "ideas",
+    back: "logic",
+    role: "comfort",
+    pain: "emotions",
+    suggestive: "will",
+    activate: "people",
   },
   stimulant: "selfSufficiency",
   communication: "coldBlooded",

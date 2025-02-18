@@ -14,6 +14,7 @@ import {
 } from "@widgets/sociotypes";
 
 import * as config from "../config";
+import BlockFunctionsWithModalWidget from "@widgets/functions-and-blocks/BlockFunctionsWithModalWidget.vue";
 
 const route = useRoute("sociotypes");
 const tabName = computed(() => route.params.tabName);
@@ -43,6 +44,19 @@ const tabDescription = computed(() =>
         <SociotypeCardYungs v-if="isCardTab" v-bind="data" />
       </template>
     </SociotypeCard>
+
+    <template v-if="isCardTab">
+      <BlockFunctionsWithModalWidget :sociotypeId="data.id" blockName="ego" />
+      <BlockFunctionsWithModalWidget
+        :sociotypeId="data.id"
+        blockName="superego"
+      />
+      <BlockFunctionsWithModalWidget :sociotypeId="data.id" blockName="id" />
+      <BlockFunctionsWithModalWidget
+        :sociotypeId="data.id"
+        blockName="superid"
+      />
+    </template>
 
     <SociotypesTabsWidget :tabs="config.TABS" />
 

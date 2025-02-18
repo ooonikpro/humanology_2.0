@@ -1,6 +1,6 @@
-import type { BaziSign, SignPropType } from "@types";
+import type { BaziSignType, SignPropType } from "@types";
 
-export const BAZI_SIGNS: Record<BaziSign, SignPropType> = {
+export const BAZI_SIGNS: Record<BaziSignType, SignPropType> = {
   bull: {
     label: "Бык",
     quadra: "earth",
@@ -41,7 +41,7 @@ export const BAZI_SIGNS: Record<BaziSign, SignPropType> = {
     label: "Тигр",
     quadra: "fire",
   },
-  hare: {
+  rabbit: {
     label: "Заяц",
     quadra: "water",
   },

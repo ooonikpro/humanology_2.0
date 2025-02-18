@@ -14,15 +14,15 @@ const ESTP: SociotypeDataType = {
   tarot: "swords", // масть
   psychotype: "aggressor", // группа
   populationPercentage: "4 ~ 5%",
-  aspects: {
-    lives: "will",
-    creates: "logic",
-    mad: "comfort",
-    does: "business",
-    afraid: "ideas",
-    suffers: "people",
-    desires: "time",
-    likes: "emotions",
+  functions: {
+    base: "will",
+    creative: "logic",
+    limit: "comfort",
+    back: "business",
+    pain: "people",
+    role: "ideas",
+    activate: "emotions",
+    suggestive: "time",
   },
   stimulant: "status",
   communication: "business",

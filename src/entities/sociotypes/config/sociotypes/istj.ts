@@ -14,15 +14,15 @@ const ISTJ: SociotypeDataType = {
   tarot: "pentacles", // масть
   psychotype: "aggressor", // группа
   populationPercentage: "11 ~ 14%",
-  aspects: {
-    lives: "logic",
-    creates: "will",
-    mad: "business",
-    does: "comfort",
-    afraid: "people",
-    suffers: "ideas",
-    desires: "emotions",
-    likes: "time",
+  functions: {
+    base: "logic",
+    creative: "will",
+    limit: "business",
+    back: "comfort",
+    pain: "ideas",
+    role: "people",
+    activate: "time",
+    suggestive: "emotions",
   },
   stimulant: "wealth",
   communication: "coldBlooded",

@@ -14,15 +14,15 @@ const INFP: SociotypeDataType = {
   tarot: "cups", // масть
   psychotype: "victim", // группа
   populationPercentage: "4 ~ 5%",
-  aspects: {
-    lives: "time",
-    creates: "emotions",
-    mad: "ideas",
-    does: "people",
-    afraid: "comfort",
-    suffers: "business",
-    desires: "will",
-    likes: "logic",
+  functions: {
+    base: "time",
+    creative: "emotions",
+    limit: "ideas",
+    back: "people",
+    pain: "business",
+    role: "comfort",
+    activate: "logic",
+    suggestive: "will",
   },
   stimulant: "selfSufficiency",
   communication: "sincere",

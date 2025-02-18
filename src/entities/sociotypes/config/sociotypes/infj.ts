@@ -14,15 +14,15 @@ const INFJ: SociotypeDataType = {
   tarot: "wands", // масть
   psychotype: "childlike", // группа
   populationPercentage: "1 ~ 3%",
-  aspects: {
-    lives: "people",
-    creates: "ideas",
-    mad: "emotions",
-    does: "time",
-    afraid: "logic",
-    suffers: "will",
-    desires: "business",
-    likes: "comfort",
+  functions: {
+    base: "people",
+    creative: "ideas",
+    limit: "emotions",
+    back: "time",
+    role: "logic",
+    pain: "will",
+    suggestive: "business",
+    activate: "comfort",
   },
   stimulant: "selfSufficiency",
   communication: "sincere",

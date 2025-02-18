@@ -14,15 +14,15 @@ const ENFJ: SociotypeDataType = {
   tarot: "wands", // масть
   psychotype: "victim", // группа
   populationPercentage: "2 ~ 5%",
-  aspects: {
-    lives: "emotions",
-    creates: "time",
-    mad: "people",
-    does: "ideas",
-    afraid: "business",
-    suffers: "comfort",
-    desires: "logic",
-    likes: "will",
+  functions: {
+    base: "emotions",
+    creative: "time",
+    limit: "people",
+    back: "ideas",
+    pain: "comfort",
+    role: "business",
+    activate: "will",
+    suggestive: "logic",
   },
   stimulant: "uniqueness",
   communication: "passionate",

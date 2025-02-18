@@ -58,7 +58,7 @@ export type SociotypeNameType =
   | "adviser"
   | "master";
 
-export type Aspect =
+export type AspectType =
   | "ideas"
   | "business"
   | "will"
@@ -88,7 +88,7 @@ export type HumanFunction =
   | "back"
   | "limit";
 
-export type FunctionLevel = "1" | "2" | "3" | "4";
+export type FunctionLevel = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 export type StimulantType =
   | "uniqueness"
@@ -265,7 +265,7 @@ export type SociotypeDataType = {
   populationPercentage: string;
   socionicAbbrevation: string;
   personalitiesTerm: string;
-  aspects: Record<AspectKey, Aspect>;
+  functions: Record<HumanFunction, AspectType>;
   stimulant: StimulantType;
   communication: CommunicationStyleType;
   companion: CompanionType;
@@ -297,7 +297,8 @@ export type TextColorType =
   | "earth"
   | "quadra"
   | "role"
-  | "intertype";
+  | "intertype"
+  | "inherit";
 
 export type OptionType<T = string> = {
   label: string;
@@ -338,3 +339,5 @@ export type FamousPersonType = {
   photo: string;
   gender: Gender;
 };
+
+export type BlockNameType = "ego" | "superego" | "id" | "superid";

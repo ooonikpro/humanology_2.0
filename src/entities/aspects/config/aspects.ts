@@ -1,6 +1,6 @@
-import type { Aspect } from "@types";
+import type { AspectType } from "@types";
 
-export const ASPECTS: Record<Aspect, string> = {
+export const ASPECTS: Record<AspectType, string> = {
   business: "Дела",
   logic: "Разум",
   emotions: "Эмоции",
@@ -11,7 +11,7 @@ export const ASPECTS: Record<Aspect, string> = {
   time: "Время",
 } as const;
 
-export const ASPECTS_LABEL: Record<Aspect, string> = {
+export const ASPECTS_LABEL: Record<AspectType, string> = {
   business: "Деловая логика",
   logic: "Структурная логика",
   emotions: "Этика эмоций",
@@ -25,7 +25,7 @@ export const ASPECTS_LABEL: Record<Aspect, string> = {
 export const ASPECTS_GROUPS: Array<{
   title: string;
   subtitle: string;
-  aspects: Aspect[];
+  aspects: AspectType[];
 }> = [
   {
     title: "Объекты",

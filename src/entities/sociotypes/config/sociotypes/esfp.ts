@@ -14,15 +14,15 @@ const ESFP: SociotypeDataType = {
   tarot: "cups", // масть
   psychotype: "aggressor", // группа
   populationPercentage: "4 ~ 9%",
-  aspects: {
-    lives: "will",
-    creates: "people",
-    mad: "comfort",
-    does: "emotions",
-    afraid: "ideas",
-    suffers: "logic",
-    desires: "time",
-    likes: "business",
+  functions: {
+    base: "will",
+    creative: "people",
+    limit: "comfort",
+    back: "emotions",
+    role: "ideas",
+    pain: "logic",
+    suggestive: "time",
+    activate: "business",
   },
   stimulant: "status",
   communication: "passionate",

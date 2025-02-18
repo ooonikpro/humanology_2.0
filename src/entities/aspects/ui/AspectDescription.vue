@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import type { ToCallback } from "@kitbag/router";
 import { UiText, UiSvg } from "@shared/ui";
-import type { Aspect } from "@types";
+import type { AspectType } from "@types";
 
 const props = defineProps<{
-  iconName?: Aspect;
+  iconName?: AspectType;
   to: ToCallback;
   title: string;
   subtitle?: string;

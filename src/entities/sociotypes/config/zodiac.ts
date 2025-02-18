@@ -1,6 +1,6 @@
-import type { SignPropType, ZodiacSign } from "@types";
+import type { SignPropType, ZodiacSignType } from "@types";
 
-export const ZODIAC_SIGNS: Record<ZodiacSign, SignPropType> = {
+export const ZODIAC_SIGNS: Record<ZodiacSignType, SignPropType> = {
   aries: {
     label: "Овен",
     quadra: "fire",
@@ -37,7 +37,7 @@ export const ZODIAC_SIGNS: Record<ZodiacSign, SignPropType> = {
     label: "Стрелец",
     quadra: "fire",
   },
-  capricorn: {
+  capricornus: {
     label: "Козерог",
     quadra: "earth",
   },

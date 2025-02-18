@@ -27,6 +27,8 @@ import fetchFamousPeople from "./methods/fetchFamousPeople";
 import getIntertypeRelations from "./methods/getIntertypeRelations";
 import getIntertypeRelationGroupName from "./methods/getIntertypeRelationGroupName";
 import getRelationData from "./methods/getRelationData";
+import getFunctions from "./methods/getFunctions";
+import getAspectByFunction from "./methods/getAspectByFunction";
 
 const model = {
   getSociotypeBy,
@@ -58,6 +60,8 @@ const model = {
   getIntertypeRelations,
   getIntertypeRelationGroupName,
   getRelationData,
+  getFunctions,
+  getAspectByFunction,
 };
 
 export default model;
