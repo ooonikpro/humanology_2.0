@@ -4,11 +4,13 @@ import { isSociotypeId } from "@entities/sociotypes";
 import { SOCIOTYPE_PAGE_TABS } from "@pages/sociotypes";
 
 export const sociotypeIdParam = createParam((id, { invalid }) => {
-  if (!isSociotypeId(id)) {
+  const preparedId = id.toUpperCase();
+
+  if (!isSociotypeId(preparedId)) {
     throw invalid("Некорректный параметр sociotypeId");
   }
 
-  return id;
+  return preparedId;
 });
 
 export const sociotypeTabNameParam = createParam((tabName: string) => {

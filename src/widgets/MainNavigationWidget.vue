@@ -80,7 +80,7 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
 
     <div class="main-nav__row">
       <NavigationTab
-        :to="(r) => r('children')"
+        :to="(r) => r('kids')"
         class="main-nav__tab col-100"
         label="Дети"
         iconName="chart-bubble"

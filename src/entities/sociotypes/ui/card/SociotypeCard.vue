@@ -1,15 +1,16 @@
 <script lang="ts" setup>
 import { defineProps, ref } from "vue";
-import type { SociotypeDataType } from "@types";
+import type { SociotypeAgeType, SociotypeDataType } from "@types";
 import { UiText, UiGenderToggle } from "@shared/ui";
 import { GenderEnum } from "@shared/constants";
 
 import SociotypeQuadraCircle from "../quadras/SociotypeQuadraCircle.vue";
 import SociotypePortrait from "../portraits/SociotypePortrait.vue";
 
-const props = defineProps<{
+const { age = "young", ...props } = defineProps<{
   mini?: boolean;
   gender?: GenderEnum;
+  age?: SociotypeAgeType;
   data: SociotypeDataType;
 }>();
 const genderModel = ref(GenderEnum.male);
@@ -47,6 +48,7 @@ const genderModel = ref(GenderEnum.male);
 
       <SociotypePortrait
         :gender="props.gender ?? genderModel"
+        :age="age"
         :id="props.data.id"
         class="sociotype-card__portrait"
       />

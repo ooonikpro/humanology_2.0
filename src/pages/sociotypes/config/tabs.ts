@@ -1,9 +1,13 @@
+const SOCIOTYPE_CARD_TAB = {
+  name: "card",
+  iconName: "card",
+  label: "Карточка",
+};
+
+export const DEFAULT_PAGE_TAB_NAME = SOCIOTYPE_CARD_TAB.name;
+
 export const SOCIOTYPE_PAGE_TABS = [
-  {
-    name: "card",
-    iconName: "card",
-    label: "Карточка",
-  },
+  SOCIOTYPE_CARD_TAB,
   {
     name: "how-to-define",
     iconName: "ghost",

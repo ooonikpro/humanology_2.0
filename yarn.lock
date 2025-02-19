@@ -249,9 +249,9 @@
     "@babel/plugin-syntax-typescript" "^7.25.9"
 
 "@babel/runtime@^7.7.6":
-  version "7.26.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.26.0.tgz#8600c2f595f277c60815256418b85356a65173c1"
-  integrity sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==
+  version "7.26.9"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.26.9.tgz#aa4c6facc65b9cb3f87d75125ffd47781b475433"
+  integrity sha512-aA63XwOkcl4xxQa3HjPMqOP6LiK0ZDv3mUPYEFXkpHbaFjtGggE1A61FjFzJnB+p7/oy2gA8E+rcBNl/zC1tMg==
   dependencies:
     regenerator-runtime "^0.14.0"
 
@@ -555,10 +555,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@kitbag/router@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@kitbag/router/-/router-0.15.0.tgz#9af924f1eecbc4a018147f17d1883325824fccae"
-  integrity sha512-f0sf8jXBsbpgptqf6ETkz6di0GUlGm91icxTwAes+y+nnQmNmicWABMSevKVHwAsjSPD6l0t2sTbn3x4xrh5IA==
+"@kitbag/router@^0.18.2":
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/@kitbag/router/-/router-0.18.2.tgz#14b956fc52dcbcc38e2c7470d96b88b049a6bca0"
+  integrity sha512-kP3UQvXEqQdaHYDqc8PLGVKJM2EhdOurQo3v0hX9gqN7IY8l0LFQ4FK1RvkqKR2uWkB64GPjNHTxR8pWA3/e6w==
   dependencies:
     history "^5.3.0"
 

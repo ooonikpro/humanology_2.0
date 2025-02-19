@@ -7,7 +7,7 @@ import { scrollContainerToElementByIndex } from "@shared/lib";
 
 const props = defineProps<{ tabs: readonly SociotypeTabType[] }>();
 
-const route = useRoute("sociotypes");
+const route = useRoute();
 const container = useTemplateRef<HTMLElement>("my-container");
 
 const activeElementIndex = computed(() =>

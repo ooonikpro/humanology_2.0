@@ -10,8 +10,7 @@ import {
 } from "@entities/sociotypes";
 
 const router = useRouter();
-const goToPage = (id: SociotypeIdType) =>
-  router.push("sociotypes", { id, tabName: "card" });
+const goToPage = (id: SociotypeIdType) => router.push("kids.card", { id });
 </script>
 
 <template>
@@ -22,7 +21,7 @@ const goToPage = (id: SociotypeIdType) =>
         :id="quadraProps.id"
         @click="goToPage(quadraProps.id)"
       >
-        <SociotypeCard :data="data" mini>
+        <SociotypeCard :data="data" age="kid" mini>
           <template #header>
             <SociotypeCardHeader :data="data" mini />
           </template>

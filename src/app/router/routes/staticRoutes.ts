@@ -1,24 +1,7 @@
 import { createRoute } from "@kitbag/router";
 import HomePage from "@pages/HomePage.vue";
-import WhatIsPage from "@pages/WhatIsPage.vue";
-import DisclaimerPage from "@pages/DisclaimerPage.vue";
-import HowToDefineTypePage from "@pages/HowToDefineTypePage.vue";
-import TestsPage from "@pages/TestsPage.vue";
-import ProfilePage from "@pages/ProfilePage.vue";
-import PeoplesPage from "@pages/PeoplesPage.vue";
-import SpecialistsPage from "@pages/SpecialistsPage.vue";
-import TeamsPage from "@pages/TeamsPage.vue";
-import ChildrenPage from "@pages/ChildrenPage.vue";
-import MetabolismPage from "@pages/MetabolismPage.vue";
-import HistoryPage from "@pages/HistoryPage.vue";
-import FunctionsPage from "@pages/FunctionsPage.vue";
-import AspectsPage from "@pages/AspectsPage.vue";
-import QuadrasPage from "@pages/QuadrasPage.vue";
-import RolesAndSuitsPage from "@pages/RolesAndSuitsPage.vue";
-import ClubsAndGroupsPage from "@pages/ClubsAndGroupsPage.vue";
-import MindsetKindsPage from "@pages/MindsetKindsPage.vue";
-import RainingSignsPage from "@pages/RainingSignsPage.vue";
-import JungDichotomyPage from "@pages/JungDichotomyPage.vue";
+
+import { defineAsyncComponent } from "vue";
 
 export const HOME_ROUTE = createRoute({
   path: "/",
@@ -29,113 +12,125 @@ export const HOME_ROUTE = createRoute({
 export const WHAT_IS_IT_ROUTE = createRoute({
   path: "/what-is-it",
   name: "what-is-it",
-  component: WhatIsPage,
+  component: defineAsyncComponent(() => import("@pages/WhatIsPage.vue")),
 });
 
 export const DISCLAIMER_ROUTE = createRoute({
   path: "/disclaimer",
   name: "disclaimer",
-  component: DisclaimerPage,
+  component: defineAsyncComponent(() => import("@pages/DisclaimerPage.vue")),
 });
 
 export const HOW_TO_DEFINE_ROUTE = createRoute({
   path: "/how-to-define-type",
   name: "how-to-define",
-  component: HowToDefineTypePage,
+  component: defineAsyncComponent(
+    () => import("@pages/HowToDefineTypePage.vue"),
+  ),
 });
 
 export const TESTS_ROUTE = createRoute({
   path: "/tests",
   name: "tests",
-  component: TestsPage,
+  component: defineAsyncComponent(() => import("@pages/TestsPage.vue")),
 });
 
 export const PROFILE_ROUTE = createRoute({
   path: "/profile",
   name: "profile",
-  component: ProfilePage,
+  component: defineAsyncComponent(() => import("@pages/ProfilePage.vue")),
 });
 
 export const PEOPLE_ROUTE = createRoute({
   path: "/people",
   name: "people",
-  component: PeoplesPage,
+  component: defineAsyncComponent(() => import("@pages/PeoplesPage.vue")),
 });
 
 export const SPECIALISTS_ROUTE = createRoute({
   path: "/specialists",
   name: "specialists",
-  component: SpecialistsPage,
+  component: defineAsyncComponent(() => import("@pages/SpecialistsPage.vue")),
 });
 
 export const TEAMS_ROUTE = createRoute({
   path: "/teams",
   name: "teams",
-  component: TeamsPage,
+  component: defineAsyncComponent(() => import("@pages/TeamsPage.vue")),
 });
 
-export const CHILDREN_ROUTE = createRoute({
-  path: "/children",
-  name: "children",
-  component: ChildrenPage,
+export const THEORY_ROUTE = createRoute({
+  path: "/t",
+  name: "theory",
 });
 
 export const METABOLISM_ROUTE = createRoute({
+  parent: THEORY_ROUTE,
   path: "/information-metabolism",
   name: "metabolism",
-  component: MetabolismPage,
+  component: defineAsyncComponent(() => import("@pages/MetabolismPage.vue")),
 });
 
 export const HISTORY_ROUTE = createRoute({
   path: "/history",
   name: "history",
-  component: HistoryPage,
+  component: defineAsyncComponent(() => import("@pages/HistoryPage.vue")),
 });
 
 export const FUNCTIONS_ROUTE = createRoute({
+  parent: THEORY_ROUTE,
   path: "/functions",
   name: "functions",
-  component: FunctionsPage,
+  component: defineAsyncComponent(() => import("@pages/FunctionsPage.vue")),
 });
 
 export const ASPECTS_ROUTE = createRoute({
+  parent: THEORY_ROUTE,
   path: "/aspects",
   name: "aspects",
-  component: AspectsPage,
+  component: defineAsyncComponent(() => import("@pages/AspectsPage.vue")),
 });
 
 export const QUADRAS_ROUTE = createRoute({
+  parent: THEORY_ROUTE,
   path: "/quadras",
   name: "quadras",
-  component: QuadrasPage,
+  component: defineAsyncComponent(() => import("@pages/QuadrasPage.vue")),
 });
 
 export const ROLES_AND_SUITS_ROUTE = createRoute({
+  parent: THEORY_ROUTE,
   path: "/roles-and-suits",
   name: "roles-and-suits",
-  component: RolesAndSuitsPage,
+  component: defineAsyncComponent(() => import("@pages/RolesAndSuitsPage.vue")),
 });
 
 export const CLUBS_AND_GROUPS_ROUTE = createRoute({
+  parent: THEORY_ROUTE,
   path: "/clubs-and-groups",
   name: "clubs-and-groups",
-  component: ClubsAndGroupsPage,
+  component: defineAsyncComponent(
+    () => import("@pages/ClubsAndGroupsPage.vue"),
+  ),
 });
 
 export const MINDSET_ROUTE = createRoute({
+  parent: THEORY_ROUTE,
   path: "/mindset-kinds",
   name: "mindset",
-  component: MindsetKindsPage,
+  component: defineAsyncComponent(() => import("@pages/MindsetKindsPage.vue")),
 });
 
 export const RAINING_SIGNS_ROUTE = createRoute({
+  parent: THEORY_ROUTE,
   path: "/raining-signs",
   name: "raining",
-  component: RainingSignsPage,
+  component: defineAsyncComponent(() => import("@pages/RainingSignsPage.vue")),
 });
 
 export const JUNG_DICHOTOMY_ROUTE = createRoute({
+  parent: THEORY_ROUTE,
   path: "/jung-dichotomy",
   name: "jung",
-  component: JungDichotomyPage,
+  component: defineAsyncComponent(() => import("@pages/JungDichotomyPage.vue")),
 });

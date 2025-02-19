@@ -16,9 +16,13 @@ import { BlockFunctionsWidget } from "@widgets/functions-and-blocks";
 
 import * as config from "../config";
 
-const route = useRoute("sociotypes");
-const tabName = computed(() => route.params.tabName);
-const isCardTab = computed(() => toValue(tabName) === "card");
+const route = useRoute();
+const tabName = computed(
+  () => route.params.tabName ?? config.DEFAULT_PAGE_TAB_NAME,
+);
+const isCardTab = computed(
+  () => toValue(tabName) === config.DEFAULT_PAGE_TAB_NAME,
+);
 
 const tabDescription = computed(() =>
   config.SOCIOTYPE_PAGE_TABS.find((row) => row.name === toValue(tabName)),
