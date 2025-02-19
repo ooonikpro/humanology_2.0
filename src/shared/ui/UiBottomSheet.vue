@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 import { defineProps, defineEmits, computed, ref } from "vue";
+import { useSwipe } from "@shared/hooks/useSwipe";
+
 import UiBackdrop from "./UiBackdrop.vue";
 import UiSvg from "./UiSvg.vue";
-import { useSwipe } from "@shared/hooks/useSwipe";
 
 const props = defineProps<{ isOpen: boolean }>();
 
@@ -45,47 +46,45 @@ const onScroll = (e: Event) => {
 </script>
 
 <template>
-  <Teleport to="body">
-    <UiBackdrop
-      :isShow="props.isOpen"
-      @afterEnter="showBottomSheet"
-      @click.self="hideBottomSheet"
-    >
-      <Transition name="ui-bottom-sheet--animate" @afterLeave="hideBackdrop">
-        <div
-          v-if="isShowBottomSheet"
-          :class="{
-            'ui-bottom-sheet--expanded': isExpanded,
-            'ui-bottom-sheet--swiping': isSwiping,
-          }"
-          class="ui-bottom-sheet"
+  <UiBackdrop
+    :isShow="props.isOpen"
+    @afterEnter="showBottomSheet"
+    @click.self="hideBottomSheet"
+  >
+    <Transition name="ui-bottom-sheet--animate" @afterLeave="hideBackdrop">
+      <div
+        v-if="isShowBottomSheet"
+        :class="{
+          'ui-bottom-sheet--expanded': isExpanded,
+          'ui-bottom-sheet--swiping': isSwiping,
+        }"
+        class="ui-bottom-sheet"
+      >
+        <header
+          class="ui-bottom-sheet__header"
+          @pointerdown.prevent="handleSwipeStart"
+          @[pointermove].prevent="handleSwipe"
+          @[pointerup].prevent="handleSwipeEnd"
+          @[pointerleave].prevent="handleSwipeEnd"
         >
-          <header
-            class="ui-bottom-sheet__header"
-            @pointerdown.prevent="handleSwipeStart"
-            @[pointermove].prevent="handleSwipe"
-            @[pointerup].prevent="handleSwipeEnd"
-            @[pointerleave].prevent="handleSwipeEnd"
+          <slot name="title"></slot>
+
+          <button
+            class="ui-bottom-sheet__close-button"
+            @click="hideBottomSheet"
           >
-            <slot name="title"></slot>
+            <UiSvg name="close" size="24" color="accent" />
+          </button>
+        </header>
 
-            <button
-              class="ui-bottom-sheet__close-button"
-              @click="hideBottomSheet"
-            >
-              <UiSvg name="close" size="24" color="accent" />
-            </button>
-          </header>
-
-          <div class="ui-bottom-sheet__body">
-            <div class="ui-bottom-sheet__content" @scroll="onScroll($event)">
-              <slot />
-            </div>
+        <div class="ui-bottom-sheet__body">
+          <div class="ui-bottom-sheet__content" @scroll="onScroll($event)">
+            <slot />
           </div>
         </div>
-      </Transition>
-    </UiBackdrop>
-  </Teleport>
+      </div>
+    </Transition>
+  </UiBackdrop>
 </template>
 
 <style lang="scss" scoped>

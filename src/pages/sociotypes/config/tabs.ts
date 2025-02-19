@@ -1,4 +1,4 @@
-const SOCIOTYPE_PAGE_TABS = [
+export const SOCIOTYPE_PAGE_TABS = [
   {
     name: "card",
     iconName: "card",
@@ -45,7 +45,5 @@ const SOCIOTYPE_PAGE_TABS = [
     label: "История",
   },
 ] as const;
-
-export default SOCIOTYPE_PAGE_TABS;
 
 export type TabName = (typeof SOCIOTYPE_PAGE_TABS)[number]["name"];

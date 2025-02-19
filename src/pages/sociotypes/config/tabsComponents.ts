@@ -11,7 +11,7 @@ import ProgressTab from "../ui/tabs/progress";
 import HumorTab from "../ui/tabs/humor";
 import HistoryTab from "../ui/tabs/history";
 
-const SOCIOTYPE_PAGE_TABS_COMPONENTS: Record<
+export const SOCIOTYPE_PAGE_TABS_COMPONENTS: Record<
   TabName,
   Component | AsyncComponentLoader
 > = {
@@ -25,5 +25,3 @@ const SOCIOTYPE_PAGE_TABS_COMPONENTS: Record<
   humor: HumorTab,
   history: HistoryTab,
 };
-
-export default SOCIOTYPE_PAGE_TABS_COMPONENTS;

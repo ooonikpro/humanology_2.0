@@ -4,7 +4,7 @@ import { createRoute, path } from "@kitbag/router";
 import { sociotypeIdParam, sociotypeTabNameParam } from "./params";
 
 const SOCIOTYPE_ROUTE = createRoute({
-  path: path("/sociotypes/[id]/[tabName]", {
+  path: path("/s/[id]/[tabName]", {
     id: sociotypeIdParam,
     tabName: sociotypeTabNameParam,
   }),

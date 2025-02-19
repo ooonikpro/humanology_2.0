@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { defineProps, ref } from "vue";
+import { defineProps } from "vue";
 import type { BlockNameType, SociotypeIdType } from "@types";
 import {
-  BlockWithFunctions,
+  BlockFunctionsProvider,
   FunctionCard,
 } from "@entities/functions-and-blocks";
 import { sociotypeModel } from "@entities/sociotypes";
@@ -12,13 +12,10 @@ const props = defineProps<{
   sociotypeId: SociotypeIdType;
   blockName: BlockNameType;
 }>();
-
-const isOpenModal = ref(false);
-const closeModal = () => (isOpenModal.value = false);
 </script>
 
 <template>
-  <BlockWithFunctions :name="props.blockName" @click="isOpenModal = true">
+  <BlockFunctionsProvider :name="props.blockName">
     <template #left="{ leftFunctionName }">
       <FunctionCard
         :function="leftFunctionName"
@@ -58,7 +55,5 @@ const closeModal = () => (isOpenModal.value = false);
         "
       />
     </template>
-  </BlockWithFunctions>
-
-  <slot v-bind="{ isOpenModal, closeModal }" />
+  </BlockFunctionsProvider>
 </template>

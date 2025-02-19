@@ -18,6 +18,7 @@ export { default as SociotypeBodySwitcher } from "./ui/bodies/SociotypeBodySwitc
 export { default as SociotypeFaceSwitcher } from "./ui/faces/SociotypeFaceSwitcher.vue";
 export { default as SociotypeIntertypeProvider } from "./ui/intertype/SociotypeIntertypeProvider.vue";
 export { default as SociotypeIntertypeCard } from "./ui/intertype/SociotypeIntertypeCard.vue";
+export { default as SociotypeSignsBlock } from "./ui/SociotypeSignsBlock.vue";
 
 export { SOCIOTYPES } from "./config";
 

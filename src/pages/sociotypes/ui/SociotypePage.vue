@@ -12,16 +12,16 @@ import {
   SociotypesTabsWidget,
   SociotypesPageTitleWidget,
 } from "@widgets/sociotypes";
+import { BlockFunctionsWidget } from "@widgets/functions-and-blocks";
 
 import * as config from "../config";
-import BlockFunctionsWithModalWidget from "@widgets/functions-and-blocks/BlockFunctionsWithModalWidget.vue";
 
 const route = useRoute("sociotypes");
 const tabName = computed(() => route.params.tabName);
 const isCardTab = computed(() => toValue(tabName) === "card");
 
 const tabDescription = computed(() =>
-  config.TABS.find((row) => row.name === toValue(tabName)),
+  config.SOCIOTYPE_PAGE_TABS.find((row) => row.name === toValue(tabName)),
 );
 </script>
 
@@ -46,19 +46,17 @@ const tabDescription = computed(() =>
     </SociotypeCard>
 
     <template v-if="isCardTab">
-      <BlockFunctionsWithModalWidget :sociotypeId="data.id" blockName="ego" />
-      <BlockFunctionsWithModalWidget
-        :sociotypeId="data.id"
-        blockName="superego"
-      />
-      <BlockFunctionsWithModalWidget :sociotypeId="data.id" blockName="id" />
-      <BlockFunctionsWithModalWidget
-        :sociotypeId="data.id"
-        blockName="superid"
-      />
+      <div class="sociotype-page__functions">
+        <BlockFunctionsWidget
+          v-for="blockName in config.BLOCKS_ORDER"
+          :key="blockName"
+          :sociotypeId="data.id"
+          :blockName="blockName"
+        />
+      </div>
     </template>
 
-    <SociotypesTabsWidget :tabs="config.TABS" />
+    <SociotypesTabsWidget :tabs="config.SOCIOTYPE_PAGE_TABS" />
 
     <SociotypesPageTitleWidget
       v-if="!isCardTab && tabDescription"
@@ -67,7 +65,7 @@ const tabDescription = computed(() =>
     />
 
     <component
-      :is="config.TABS_COMPONENTS[tabName as config.TabName]"
+      :is="config.SOCIOTYPE_PAGE_TABS_COMPONENTS[tabName as config.TabName]"
       :data="data"
     />
   </SociotypeProvider>
@@ -81,5 +79,11 @@ const tabDescription = computed(() =>
   flex-direction: column;
   gap: 8px;
   background-color: colors.$white;
+
+  &__functions {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 }
 </style>

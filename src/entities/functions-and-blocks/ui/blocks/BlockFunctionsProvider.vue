@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineProps, defineEmits } from "vue";
+import { defineProps } from "vue";
 import type { BlockNameType } from "@types";
 import model from "../../model";
 
@@ -8,39 +8,23 @@ const props = defineProps<{
   leftInactive?: boolean;
   rightInactive?: boolean;
 }>();
-const emit = defineEmits(["leftClick", "rightClick"]);
-
-const handleLeftClick = () => emit("leftClick");
-const handleRightClick = () => emit("rightClick");
 </script>
 
 <template>
   <div
     :class="{
-      [`block-with-functions--${props.name}`]: true,
+      [`block-functions-provider--${props.name}`]: true,
     }"
-    class="block-with-functions"
+    class="block-functions-provider"
   >
-    <div
-      :class="{
-        'block-with-functions__left--inactive': props.leftInactive,
-      }"
-      class="block-with-functions__left"
-      @click="handleLeftClick"
-    >
+    <div class="block-functions-provider__left">
       <slot
         v-bind="{ leftFunctionName: model.getLeftFunctionName(props.name) }"
         name="left"
       />
     </div>
 
-    <div
-      :class="{
-        'block-with-functions__right--inactive': props.rightInactive,
-      }"
-      class="block-with-functions__right"
-      @click="handleRightClick"
-    >
+    <div class="block-functions-provider__right">
       <slot
         v-bind="{ rightFunctionName: model.getRightFunctionName(props.name) }"
         name="right"
@@ -52,19 +36,12 @@ const handleRightClick = () => emit("rightClick");
 <style lang="scss" scoped>
 @use "@shared/styles/mixins/bem";
 
-$gap: 8px;
+$gap: 4px;
 
-.block-with-functions {
+.block-functions-provider {
   display: flex;
   flex-wrap: nowrap;
   gap: $gap;
-
-  &__left--inactive,
-  &__right--inactive {
-    pointer-events: none;
-    touch-action: none;
-    opacity: 0.2;
-  }
 
   @include bem.modificatorForChildren("ego") {
     &__left {

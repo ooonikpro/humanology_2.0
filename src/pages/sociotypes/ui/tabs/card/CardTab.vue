@@ -4,9 +4,9 @@ import {
   SociotypeMentality,
   SociotypeReininSigns,
   SociotypeYungDichtomy,
+  SociotypeSignsBlock,
 } from "@entities/sociotypes";
 import type { SociotypeDataType } from "@types";
-import SociotypeSignsBlock from "@entities/sociotypes/ui/SociotypeSignsBlock.vue";
 import { defineAsyncComponent } from "vue";
 
 const props = defineProps<{ data: SociotypeDataType }>();

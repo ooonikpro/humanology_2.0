@@ -66,7 +66,7 @@ onMounted(scrollToActiveElement);
     min-width: max-content;
     opacity: 0.75;
 
-    &:active {
+    &--active {
       opacity: 1;
       background-color: colors.$role;
       color: colors.$white;
