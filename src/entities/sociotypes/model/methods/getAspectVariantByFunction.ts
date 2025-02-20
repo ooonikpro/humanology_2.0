@@ -1,11 +1,11 @@
 import type { HumanFunctionType, SociotypeIdType } from "@types";
 import getFunctions from "./getFunctions";
 
-const getAspectByFunction = (
+const getAspectVariantByFunction = (
   id: SociotypeIdType,
   functionName: HumanFunctionType,
 ) => {
-  return getFunctions(id)[functionName].aspect;
+  return getFunctions(id)[functionName].variant;
 };
 
-export default getAspectByFunction;
+export default getAspectVariantByFunction;

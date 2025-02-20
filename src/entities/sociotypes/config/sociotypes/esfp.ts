@@ -15,14 +15,38 @@ const ESFP: SociotypeDataType = {
   psychotype: "aggressor", // группа
   populationPercentage: "4 ~ 9%",
   functions: {
-    base: "will",
-    creative: "people",
-    limit: "comfort",
-    back: "emotions",
-    role: "ideas",
-    pain: "logic",
-    suggestive: "time",
-    activate: "business",
+    base: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "business",
+    },
   },
   stimulant: "status",
   communication: "passionate",

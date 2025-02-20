@@ -1,4 +1,4 @@
-import type { BlockNameType, HumanFunction } from "@types";
+import type { BlockNameType, HumanFunctionType } from "@types";
 
 export const BLOCKS: Record<BlockNameType, string> = {
   ego: "Блок Эго",
@@ -9,7 +9,7 @@ export const BLOCKS: Record<BlockNameType, string> = {
 
 export const BLOCK_WITH_FUNCTIONS: Record<
   BlockNameType,
-  [HumanFunction, HumanFunction]
+  [HumanFunctionType, HumanFunctionType]
 > = {
   ego: ["base", "creative"],
   id: ["pain", "role"],
@@ -24,10 +24,13 @@ export const BLOCKS_LABELS: Record<BlockNameType, string> = {
   superid: "Ребенок — Самочувствие",
 };
 
-export const LARGE_FUNCTION_CARD: HumanFunction[] = [
+export const LARGE_FUNCTION_CARD: HumanFunctionType[] = [
   "base",
   "creative",
   "activate",
   "suggestive",
 ];
-export const FUNCTION_CARD_WITHOUT_ICON: HumanFunction[] = ["limit", "role"];
+export const FUNCTION_CARD_WITHOUT_ICON: HumanFunctionType[] = [
+  "limit",
+  "role",
+];

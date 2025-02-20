@@ -15,14 +15,38 @@ const ESTJ: SociotypeDataType = {
   psychotype: "caring",
   populationPercentage: "8 ~ 12%",
   functions: {
-    base: "business",
-    creative: "comfort",
-    limit: "logic",
-    back: "will",
-    role: "emotions",
-    pain: "time",
-    suggestive: "people",
-    activate: "ideas",
+    base: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
   },
   stimulant: "status",
   communication: "business",

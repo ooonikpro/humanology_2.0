@@ -15,14 +15,38 @@ const ESTP: SociotypeDataType = {
   psychotype: "aggressor", // группа
   populationPercentage: "4 ~ 5%",
   functions: {
-    base: "will",
-    creative: "logic",
-    limit: "comfort",
-    back: "business",
-    pain: "people",
-    role: "ideas",
-    activate: "emotions",
-    suggestive: "time",
+    base: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "time",
+    },
   },
   stimulant: "status",
   communication: "business",

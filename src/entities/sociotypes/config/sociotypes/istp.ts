@@ -15,14 +15,38 @@ const ISTP: SociotypeDataType = {
   psychotype: "caring", // группа
   populationPercentage: "4 ~ 6%",
   functions: {
-    base: "comfort",
-    creative: "business",
-    limit: "will",
-    back: "logic",
-    role: "time",
-    pain: "emotions",
-    suggestive: "ideas",
-    activate: "people",
+    base: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "people",
+    },
   },
   stimulant: "wealth",
   communication: "coldBlooded",

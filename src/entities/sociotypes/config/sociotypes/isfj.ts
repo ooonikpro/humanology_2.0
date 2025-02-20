@@ -15,14 +15,38 @@ const ISFJ: SociotypeDataType = {
   psychotype: "aggressor", // группа
   populationPercentage: "9 ~ 14%",
   functions: {
-    base: "people",
-    creative: "will",
-    limit: "emotions",
-    back: "comfort",
-    role: "logic",
-    pain: "ideas",
-    suggestive: "business",
-    activate: "time",
+    base: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "time",
+    },
   },
   stimulant: "wealth",
   communication: "sincere",

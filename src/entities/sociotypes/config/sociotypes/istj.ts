@@ -15,14 +15,38 @@ const ISTJ: SociotypeDataType = {
   psychotype: "aggressor", // группа
   populationPercentage: "11 ~ 14%",
   functions: {
-    base: "logic",
-    creative: "will",
-    limit: "business",
-    back: "comfort",
-    pain: "ideas",
-    role: "people",
-    activate: "time",
-    suggestive: "emotions",
+    base: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
   },
   stimulant: "wealth",
   communication: "coldBlooded",

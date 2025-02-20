@@ -15,14 +15,38 @@ const ENFP: SociotypeDataType = {
   psychotype: "childlike", // группа
   populationPercentage: "6 ~ 8%",
   functions: {
-    base: "ideas",
-    creative: "people",
-    limit: "time",
-    back: "emotions",
-    role: "will",
-    pain: "logic",
-    suggestive: "comfort",
-    activate: "business",
+    base: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "business",
+    },
   },
   stimulant: "uniqueness",
   communication: "passionate",

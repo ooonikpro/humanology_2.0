@@ -15,14 +15,38 @@ const ESFJ: SociotypeDataType = {
   psychotype: "caring", // группа
   populationPercentage: "9 ~ 13%",
   functions: {
-    base: "emotions",
-    creative: "comfort",
-    limit: "people",
-    back: "will",
-    pain: "time",
-    role: "business",
-    activate: "ideas",
-    suggestive: "logic",
+    base: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "logic",
+    },
   },
   stimulant: "status",
   communication: "passionate",

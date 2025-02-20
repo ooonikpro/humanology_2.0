@@ -15,14 +15,38 @@ const INFP: SociotypeDataType = {
   psychotype: "victim", // группа
   populationPercentage: "4 ~ 5%",
   functions: {
-    base: "time",
-    creative: "emotions",
-    limit: "ideas",
-    back: "people",
-    pain: "business",
-    role: "comfort",
-    activate: "logic",
-    suggestive: "will",
+    base: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "will",
+    },
   },
   stimulant: "selfSufficiency",
   communication: "sincere",

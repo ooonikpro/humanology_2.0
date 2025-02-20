@@ -15,14 +15,38 @@ const ENTJ: SociotypeDataType = {
   psychotype: "victim", // группа
   populationPercentage: "2 ~ 5%",
   functions: {
-    base: "business",
-    creative: "time",
-    limit: "logic",
-    back: "ideas",
-    role: "emotions",
-    pain: "comfort",
-    suggestive: "people",
-    activate: "will",
+    base: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "will",
+    },
   },
   stimulant: "uniqueness",
   communication: "business",

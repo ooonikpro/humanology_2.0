@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
-import type { HumanFunction, IconNameType } from "@types";
+import type {
+  HumanFunctionType,
+  IconNameType,
+  FunctionAspectVariantType,
+} from "@types";
 import { UiSvg, UiText } from "@shared/ui";
 
 import { FUNCTION_CARD_WITHOUT_ICON, LARGE_FUNCTION_CARD } from "../../config";
@@ -8,7 +12,8 @@ import model from "../../model";
 import FunctionLevel from "./FunctionLevel.vue";
 
 const props = defineProps<{
-  function: HumanFunction;
+  function: HumanFunctionType;
+  aspectVariant: FunctionAspectVariantType;
   aspectIcon?: IconNameType;
   aspectName: string;
 }>();
@@ -41,7 +46,7 @@ const iconSize = isLarge ? "96" : "64";
 
       <div class="function-card__head-icons">
         <UiSvg
-          :name="model.getType(props.function)"
+          :name="props.aspectVariant"
           color="inherit"
           size="16"
           class="function-card__head-icon"

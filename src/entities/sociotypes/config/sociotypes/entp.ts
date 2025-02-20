@@ -17,14 +17,38 @@ const ENTP: SociotypeDataType = {
   socionicAbbrevation: "ИЛЭ",
   personalitiesTerm: "Debater",
   functions: {
-    base: "ideas",
-    creative: "logic",
-    limit: "time",
-    back: "business",
-    role: "will",
-    pain: "people",
-    suggestive: "comfort",
-    activate: "emotions",
+    base: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
   },
   stimulant: "uniqueness",
   communication: "business",

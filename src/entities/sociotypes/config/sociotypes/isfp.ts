@@ -15,14 +15,38 @@ const ISFP: SociotypeDataType = {
   psychotype: "caring", // группа
   populationPercentage: "5 ~ 9%",
   functions: {
-    base: "comfort",
-    creative: "emotions",
-    limit: "will",
-    back: "people",
-    pain: "business",
-    role: "time",
-    activate: "logic",
-    suggestive: "ideas",
+    base: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
   },
   stimulant: "wealth",
   communication: "sincere",

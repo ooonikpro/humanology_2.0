@@ -1,7 +1,7 @@
-import type { HumanFunction } from "@types";
+import type { HumanFunctionType } from "@types";
 import { FUNCTIONS } from "../../config";
 
-const getNumber = (functionName: HumanFunction) => {
+const getNumber = (functionName: HumanFunctionType) => {
   return FUNCTIONS[functionName].number;
 };
 

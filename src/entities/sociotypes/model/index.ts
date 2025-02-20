@@ -29,6 +29,7 @@ import getIntertypeRelationGroupName from "./methods/getIntertypeRelationGroupNa
 import getRelationData from "./methods/getRelationData";
 import getFunctions from "./methods/getFunctions";
 import getAspectByFunction from "./methods/getAspectByFunction";
+import getAspectVariantByFunction from "./methods/getAspectVariantByFunction";
 
 const model = {
   getSociotypeBy,
@@ -62,6 +63,7 @@ const model = {
   getRelationData,
   getFunctions,
   getAspectByFunction,
+  getAspectVariantByFunction,
 };
 
 export default model;

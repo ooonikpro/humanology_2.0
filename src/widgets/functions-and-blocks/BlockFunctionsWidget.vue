@@ -33,6 +33,12 @@ const props = defineProps<{
             leftFunctionName,
           )
         "
+        :aspectVariant="
+          sociotypeModel.getAspectVariantByFunction(
+            props.sociotypeId,
+            leftFunctionName,
+          )
+        "
       />
     </template>
 
@@ -49,6 +55,12 @@ const props = defineProps<{
         "
         :aspectIcon="
           sociotypeModel.getAspectByFunction(
+            props.sociotypeId,
+            rightFunctionName,
+          )
+        "
+        :aspectVariant="
+          sociotypeModel.getAspectVariantByFunction(
             props.sociotypeId,
             rightFunctionName,
           )

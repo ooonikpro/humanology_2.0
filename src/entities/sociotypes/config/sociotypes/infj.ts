@@ -15,14 +15,38 @@ const INFJ: SociotypeDataType = {
   psychotype: "childlike", // группа
   populationPercentage: "1 ~ 3%",
   functions: {
-    base: "people",
-    creative: "ideas",
-    limit: "emotions",
-    back: "time",
-    role: "logic",
-    pain: "will",
-    suggestive: "business",
-    activate: "comfort",
+    base: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
   },
   stimulant: "selfSufficiency",
   communication: "sincere",

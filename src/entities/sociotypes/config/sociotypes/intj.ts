@@ -15,14 +15,38 @@ const INTJ: SociotypeDataType = {
   psychotype: "childlike", // группа
   populationPercentage: "2 ~ 4%",
   functions: {
-    base: "logic",
-    creative: "ideas",
-    limit: "business",
-    back: "time",
-    pain: "will",
-    role: "people",
-    activate: "comfort",
-    suggestive: "emotions",
+    base: {
+      variant: "intensive",
+      aspect: "logic",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
   },
   stimulant: "selfSufficiency",
   communication: "coldBlooded",

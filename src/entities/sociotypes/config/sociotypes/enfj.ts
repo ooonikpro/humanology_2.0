@@ -15,14 +15,38 @@ const ENFJ: SociotypeDataType = {
   psychotype: "victim", // группа
   populationPercentage: "2 ~ 5%",
   functions: {
-    base: "emotions",
-    creative: "time",
-    limit: "people",
-    back: "ideas",
-    pain: "comfort",
-    role: "business",
-    activate: "will",
-    suggestive: "logic",
+    base: {
+      variant: "intensive",
+      aspect: "emotions",
+    },
+    creative: {
+      variant: "intensive",
+      aspect: "time",
+    },
+    limit: {
+      variant: "intensive",
+      aspect: "people",
+    },
+    back: {
+      variant: "intensive",
+      aspect: "ideas",
+    },
+    pain: {
+      variant: "intensive",
+      aspect: "comfort",
+    },
+    role: {
+      variant: "intensive",
+      aspect: "business",
+    },
+    activate: {
+      variant: "intensive",
+      aspect: "will",
+    },
+    suggestive: {
+      variant: "intensive",
+      aspect: "logic",
+    },
   },
   stimulant: "uniqueness",
   communication: "passionate",

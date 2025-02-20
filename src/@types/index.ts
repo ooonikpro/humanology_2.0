@@ -78,7 +78,7 @@ export type AspectKey =
   | "desires"
   | "likes";
 
-export type HumanFunction =
+export type HumanFunctionType =
   | "base"
   | "creative"
   | "suggestive"
@@ -249,6 +249,8 @@ export type IntertypeRelationsType = {
   >;
 };
 
+export type FunctionAspectVariantType = "intensive" | "extensive";
+
 export type SociotypeDataType = {
   id: SociotypeIdType;
   quadra: QuadrasType;
@@ -265,7 +267,13 @@ export type SociotypeDataType = {
   populationPercentage: string;
   socionicAbbrevation: string;
   personalitiesTerm: string;
-  functions: Record<HumanFunction, AspectType>;
+  functions: Record<
+    HumanFunctionType,
+    {
+      variant: FunctionAspectVariantType;
+      aspect: AspectType;
+    }
+  >;
   stimulant: StimulantType;
   communication: CommunicationStyleType;
   companion: CompanionType;
