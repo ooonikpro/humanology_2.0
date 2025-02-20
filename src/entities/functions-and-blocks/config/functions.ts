@@ -29,7 +29,7 @@ export const FUNCTIONS: Record<
     lvl: 7,
   },
   limit: {
-    name: "Защиты",
+    name: "Защитная",
     number: 7,
     lvl: 5,
   },
@@ -39,7 +39,7 @@ export const FUNCTIONS: Record<
     lvl: 2,
   },
   activate: {
-    name: "Активации",
+    name: "Активационная",
     number: 6,
     lvl: 4,
   },
@@ -48,6 +48,17 @@ export const FUNCTIONS: Record<
     number: 5,
     lvl: 1,
   },
+} as const;
+
+export const FUNCTION_LVL_NAME: Record<FunctionLevel, string> = {
+  8: "Четырехмерная",
+  7: "Четырехмерная",
+  6: "Трехмерная",
+  5: "Трехмерная",
+  4: "Двумерная",
+  3: "Двумерная",
+  2: "Одномерная",
+  1: "Одномерная",
 } as const;
 
 export const FUNCTION_LABELS: Record<HumanFunctionType, string> = {
