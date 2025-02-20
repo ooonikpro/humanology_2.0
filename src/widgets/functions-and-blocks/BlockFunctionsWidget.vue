@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
-import type { BlockNameType, SociotypeIdType } from "@types";
+import { useRouter } from "@kitbag/router";
+import type { BlockNameType, HumanFunctionType, SociotypeIdType } from "@types";
 import {
   BlockFunctionsProvider,
   FunctionCard,
@@ -11,7 +12,24 @@ import { aspectModel } from "@entities/aspects";
 const props = defineProps<{
   sociotypeId: SociotypeIdType;
   blockName: BlockNameType;
+  activeFunctionName?: HumanFunctionType;
 }>();
+
+const router = useRouter();
+
+const openBottomSheet = (functionName: HumanFunctionType) => {
+  if (!props.activeFunctionName) {
+    router.replace(router.route, { query: { f: functionName } });
+  }
+};
+
+const isDisabled = (functionName: HumanFunctionType) => {
+  if (props.activeFunctionName) {
+    return props.activeFunctionName !== functionName;
+  }
+
+  return false;
+};
 </script>
 
 <template>
@@ -39,6 +57,8 @@ const props = defineProps<{
             leftFunctionName,
           )
         "
+        :disabled="isDisabled(leftFunctionName)"
+        @click="() => openBottomSheet(leftFunctionName)"
       />
     </template>
 
@@ -65,6 +85,8 @@ const props = defineProps<{
             rightFunctionName,
           )
         "
+        :disabled="isDisabled(rightFunctionName)"
+        @click="() => openBottomSheet(rightFunctionName)"
       />
     </template>
   </BlockFunctionsProvider>

@@ -22,29 +22,13 @@ export const ASPECTS_LABEL: Record<AspectType, string> = {
   ideas: "Интуиция возможностей",
 } as const;
 
-export const ASPECTS_GROUPS: Array<{
-  title: string;
-  subtitle: string;
-  aspects: AspectType[];
-}> = [
-  {
-    title: "Объекты",
-    subtitle: "Логика",
-    aspects: ["business", "logic"],
-  },
-  {
-    title: "Энергия",
-    subtitle: "Этика",
-    aspects: ["emotions", "people"],
-  },
-  {
-    title: "Пространство",
-    subtitle: "Сенсорика",
-    aspects: ["will", "comfort"],
-  },
-  {
-    title: "Время",
-    subtitle: "Интуиция",
-    aspects: ["ideas", "time"],
-  },
-];
+export const ASPECTS_TAGS: Record<AspectType, string[]> = {
+  business: ["Страсть", "Эмоция", "Восторг"],
+  logic: ["Страсть", "Эмоция", "Восторг"],
+  emotions: ["Страсть", "Эмоция", "Восторг"],
+  people: ["Страсть", "Эмоция", "Восторг"],
+  will: ["Страсть", "Эмоция", "Восторг"],
+  comfort: ["Страсть", "Эмоция", "Восторг"],
+  time: ["Страсть", "Эмоция", "Восторг"],
+  ideas: ["Страсть", "Эмоция", "Восторг"],
+} as const;

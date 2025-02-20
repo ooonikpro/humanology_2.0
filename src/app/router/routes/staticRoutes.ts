@@ -77,20 +77,6 @@ export const HISTORY_ROUTE = createRoute({
   component: defineAsyncComponent(() => import("@pages/HistoryPage.vue")),
 });
 
-export const FUNCTIONS_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/functions",
-  name: "functions",
-  component: defineAsyncComponent(() => import("@pages/FunctionsPage.vue")),
-});
-
-export const ASPECTS_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/aspects",
-  name: "aspects",
-  component: defineAsyncComponent(() => import("@pages/AspectsPage.vue")),
-});
-
 export const QUADRAS_ROUTE = createRoute({
   parent: THEORY_ROUTE,
   path: "/quadras",

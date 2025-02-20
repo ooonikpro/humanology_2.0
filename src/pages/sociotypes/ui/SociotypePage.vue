@@ -12,9 +12,13 @@ import {
   SociotypesTabsWidget,
   SociotypesPageTitleWidget,
 } from "@widgets/sociotypes";
-import { BlockFunctionsWidget } from "@widgets/functions-and-blocks";
+import {
+  BlockFunctionsWidget,
+  FunctionInsideBottomSheetWidget,
+} from "@widgets/functions-and-blocks";
 
 import * as config from "../config";
+import FunctionDescription from "@pages/sociotypes/ui/functions/FunctionDescription.vue";
 
 const route = useRoute();
 
@@ -77,6 +81,10 @@ const tabDescription = computed(() =>
       :data="data"
     />
   </SociotypeProvider>
+
+  <FunctionInsideBottomSheetWidget v-slot="propsData">
+    <FunctionDescription v-bind="propsData" />
+  </FunctionInsideBottomSheetWidget>
 </template>
 
 <style lang="scss" scoped>

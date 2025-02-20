@@ -7,7 +7,7 @@ import UiSvg from "./UiSvg.vue";
 
 const props = defineProps<{ isOpen: boolean }>();
 
-const emit = defineEmits<{ close: [] }>();
+const emit = defineEmits<{ close: []; afterClose: [] }>();
 
 const {
   isSwiping,
@@ -28,7 +28,9 @@ const pointermove = computed(() => (isSwiping.value ? "pointermove" : ""));
 const pointerup = computed(() => (isSwiping.value ? "pointerup" : ""));
 const pointerleave = computed(() => (isSwiping.value ? "pointerleave" : ""));
 
-const showBottomSheet = () => (isShowBottomSheet.value = true);
+const showBottomSheet = () => {
+  isShowBottomSheet.value = true;
+};
 const hideBottomSheet = () => {
   isShowBottomSheet.value = false;
   isExpanded.value = false;
@@ -37,6 +39,10 @@ const hideBottomSheet = () => {
 const hideBackdrop = () => {
   emit("close");
   swipeValue.value = 0;
+};
+
+const afterClose = () => {
+  emit("afterClose");
 };
 
 const onScroll = (e: Event) => {
@@ -49,6 +55,7 @@ const onScroll = (e: Event) => {
   <UiBackdrop
     :isShow="props.isOpen"
     @afterEnter="showBottomSheet"
+    @afterLeave="afterClose"
     @click.self="hideBottomSheet"
   >
     <Transition name="ui-bottom-sheet--animate" @afterLeave="hideBackdrop">

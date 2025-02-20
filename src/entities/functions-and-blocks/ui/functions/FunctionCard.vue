@@ -16,6 +16,7 @@ const props = defineProps<{
   aspectVariant: FunctionAspectVariantType;
   aspectIcon?: IconNameType;
   aspectName: string;
+  disabled?: boolean;
 }>();
 
 const hasIcon = !FUNCTION_CARD_WITHOUT_ICON.includes(props.function);
@@ -27,6 +28,7 @@ const iconSize = isLarge ? "96" : "64";
   <div
     :class="{
       'function-card--large': isLarge,
+      'function-card--disabled': props.disabled,
       [`function-card--function-${props.function}`]: true,
     }"
     class="function-card"
@@ -176,6 +178,13 @@ $gap: 8px;
     &-role {
       opacity: 0.6;
     }
+  }
+
+  &--disabled {
+    pointer-events: none;
+    touch-action: none;
+    cursor: none;
+    opacity: 0.4;
   }
 }
 </style>

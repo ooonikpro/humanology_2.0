@@ -35,6 +35,7 @@ onUnmounted(() => {
 <template>
   <Transition
     name="ui-backdrop--animate"
+    appear
     @afterEnter="emit('afterEnter')"
     @afterLeave="emit('afterLeave')"
   >
