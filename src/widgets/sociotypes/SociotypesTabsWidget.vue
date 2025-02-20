@@ -1,17 +1,22 @@
 <script setup lang="ts">
 import { toValue, useTemplateRef, watch, onMounted, computed } from "vue";
 import { useRoute } from "@kitbag/router";
-import type { SociotypeTabType } from "@types";
+import type { SociotypeIdType, SociotypeTabType } from "@types";
 import { NavigationTab } from "@entities/navigation";
 import { scrollContainerToElementByIndex } from "@shared/lib";
+import type { TabName } from "@pages/sociotypes/config";
 
-const props = defineProps<{ tabs: readonly SociotypeTabType[] }>();
+const props = defineProps<{
+  tabName: TabName;
+  tabs: readonly SociotypeTabType[];
+  sociotypeId: SociotypeIdType;
+}>();
 
 const route = useRoute();
 const container = useTemplateRef<HTMLElement>("my-container");
 
 const activeElementIndex = computed(() =>
-  props.tabs.findIndex((tab) => tab.name === route.params.tabName),
+  props.tabs.findIndex((tab) => tab.name === props.tabName),
 );
 
 const scrollToActiveElement = () => {
@@ -30,11 +35,11 @@ onMounted(scrollToActiveElement);
     <NavigationTab
       v-for="tab in props.tabs"
       :key="tab.name"
-      :to="(r) => r('sociotypes', { id: route.params.id, tabName: tab.name })"
+      :to="(r) => r('sociotypes', { id: props.sociotypeId, tabName: tab.name })"
       :iconName="tab.iconName"
       :label="tab.label"
       :class="{
-        'tabs-widget__link--active': route.params.tabName === tab.name,
+        'tabs-widget__link--active': props.tabName === tab.name,
       }"
       class="tabs-widget__link"
     />

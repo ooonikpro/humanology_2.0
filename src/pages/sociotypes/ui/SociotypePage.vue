@@ -17,9 +17,13 @@ import { BlockFunctionsWidget } from "@widgets/functions-and-blocks";
 import * as config from "../config";
 
 const route = useRoute();
+
+const sociotypeId = computed(() => route.params.id);
+
 const tabName = computed(
   () => route.params.tabName ?? config.DEFAULT_PAGE_TAB_NAME,
 );
+
 const isCardTab = computed(
   () => toValue(tabName) === config.DEFAULT_PAGE_TAB_NAME,
 );
@@ -30,11 +34,7 @@ const tabDescription = computed(() =>
 </script>
 
 <template>
-  <SociotypeProvider
-    v-slot="{ data }"
-    :id="route.params.id"
-    class="sociotype-page"
-  >
+  <SociotypeProvider v-slot="{ data }" :id="sociotypeId" class="sociotype-page">
     <SociotypeCard :data="data">
       <template #header>
         <SociotypeCardHeader :data="data" />
@@ -60,7 +60,11 @@ const tabDescription = computed(() =>
       </div>
     </template>
 
-    <SociotypesTabsWidget :tabs="config.SOCIOTYPE_PAGE_TABS" />
+    <SociotypesTabsWidget
+      :sociotypeId="sociotypeId"
+      :tabName="tabName"
+      :tabs="config.SOCIOTYPE_PAGE_TABS"
+    />
 
     <SociotypesPageTitleWidget
       v-if="!isCardTab && tabDescription"
