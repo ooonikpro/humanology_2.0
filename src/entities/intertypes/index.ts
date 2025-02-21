@@ -1,5 +1,7 @@
 export { default as IntertypeGroupProvider } from "./ui/IntertypeGroupProvider.vue";
 export { default as IntertypeProvider } from "./ui/IntertypeProvider.vue";
 export { default as IntertypeWithSociotype } from "./ui/IntertypeWithSociotype.vue";
+export { default as IntertypeCard } from "./ui/IntertypeCard.vue";
+export { default as IntertypeNameBlock } from "./ui/IntertypeNameBlock.vue";
 
 export { default as intertypeModel } from "./model";

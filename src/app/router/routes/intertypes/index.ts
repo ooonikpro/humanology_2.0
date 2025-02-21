@@ -16,6 +16,6 @@ export const INTERTYPES_DESCRIPTION_ROUTE = createRoute({
   path: "/i/[intertype]",
   name: "intertypes.description",
   component: defineAsyncComponent(
-    () => import("@pages/intertypes/IntertypesDescriptionPage.vue"),
+    () => import("@pages/intertypes/description/IntertypesDescriptionPage.vue"),
   ),
 });

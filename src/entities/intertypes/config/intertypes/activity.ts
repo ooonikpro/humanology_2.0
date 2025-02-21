@@ -6,6 +6,7 @@ const ACTIVITY: IntertypeDataType = {
   alternativeName: "Откровенность",
   shortDescription: "Полное психологическое дополнение",
   lvl: "+3",
+  tags: ["Tag-1", "Tag-2", "Tag-3"],
 };
 
 export default ACTIVITY;

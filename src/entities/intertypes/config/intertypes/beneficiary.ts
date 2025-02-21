@@ -6,6 +6,7 @@ const BENEFICIARY: IntertypeDataType = {
   alternativeName: "Бессмысленность",
   shortDescription: "Полное психологическое дополнение",
   lvl: "+2",
+  tags: ["Tag-1", "Tag-2", "Tag-3"],
 };
 
 export default BENEFICIARY;

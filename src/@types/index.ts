@@ -168,6 +168,7 @@ export type IntertypeDataType = {
   alternativeName: string;
   shortDescription: string;
   lvl: string;
+  tags: string[];
 };
 
 export type ReininSignType =
@@ -311,7 +312,8 @@ export type IconSizeType =
   | "48"
   | "64"
   | "80"
-  | "96";
+  | "96"
+  | "128";
 
 export type SociotypeTabType = {
   name: string;

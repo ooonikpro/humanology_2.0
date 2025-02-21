@@ -4,3 +4,4 @@ export { default as SociotypesPageTitleWidget } from "./SociotypesPageTitleWidge
 export { default as SociotypesTabsWidget } from "./SociotypesTabsWidget.vue";
 export { default as SociotypesFamousPeopleWidget } from "./SociotypesFamousPeopleWidget.vue";
 export { default as SociotypesCompatibilityWidget } from "./SociotypesCompatibilityWidget.vue";
+export { default as SociotypesDuoByIntertypeWidget } from "./SociotypesDuoByIntertypeWidget.vue";

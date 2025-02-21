@@ -6,6 +6,7 @@ const KINDRED: IntertypeDataType = {
   alternativeName: "Обмен мнениями",
   shortDescription: "Полное психологическое дополнение",
   lvl: "-2",
+  tags: ["Tag-1", "Tag-2", "Tag-3"],
 };
 
 export default KINDRED;

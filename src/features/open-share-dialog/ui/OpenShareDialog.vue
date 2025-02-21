@@ -1,5 +1,11 @@
 <script lang="ts" setup>
 import { UiSvg } from "@shared/ui";
+import type { IconSizeType, TextColorType } from "@types";
+
+const { color = "accent", size = "24" } = defineProps<{
+  color?: TextColorType;
+  size?: IconSizeType;
+}>();
 
 const onClick = () => {
   const title = document.title;
@@ -18,8 +24,6 @@ const onClick = () => {
 
 <template>
   <button @click="onClick">
-    <UiSvg name="share" color="accent" size="24" />
+    <UiSvg :color="color" :size="size" name="share" />
   </button>
 </template>
-
-<style lang="scss" scoped></style>
