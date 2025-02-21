@@ -33,12 +33,14 @@ $unfavorable: $pink;
 
 $quadra: var(--color-quadra);
 $role: var(--color-role);
-$intertype: var(--color-role);
+$intertype: var(--color-intertype-group);
 
 $bg-quadra: var(--bg-quadra);
 $bg-role: var(--bg-role);
+$bg-intertype: var(--bg-intertype-group);
 
-$all-colors: (
+// Палетка из которой собираются @type {TextColorType}
+$global-colors: (
   "white": $white,
   "grey": $grey,
   "beige": $beige,
@@ -63,3 +65,4 @@ $all-colors: (
 
   "inherit": inherit,
 );
+

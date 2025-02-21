@@ -1,7 +1,7 @@
-import type { IntertypeRelationsGroupNameType } from "@types";
+import type { IntertypeGroupIdType } from "@types";
 
 const createBgColorIntertypeGroupStyles = (
-  intertypeGroupName: IntertypeRelationsGroupNameType,
+  intertypeGroupName: IntertypeGroupIdType,
 ) => {
   return {
     "--bg-intertype-group": `var(--bg-intertype-group-${intertypeGroupName})`,

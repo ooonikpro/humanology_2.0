@@ -25,6 +25,7 @@ import {
 } from "./sociotypes";
 import { ASPECTS_ROUTE, ASPECTS_CARD_ROUTE } from "./aspects";
 import { FUNCTIONS_ROUTE, FUNCTIONS_CARD_ROUTE } from "./functions";
+import { INTERTYPES_ROUTE, INTERTYPES_DESCRIPTION_ROUTE } from "./intertypes";
 
 const ROUTES = [
   HOME_ROUTE,
@@ -52,6 +53,8 @@ const ROUTES = [
   MINDSET_ROUTE,
   RAINING_SIGNS_ROUTE,
   JUNG_DICHOTOMY_ROUTE,
+  INTERTYPES_ROUTE,
+  INTERTYPES_DESCRIPTION_ROUTE,
 ] as const;
 
 export default ROUTES;

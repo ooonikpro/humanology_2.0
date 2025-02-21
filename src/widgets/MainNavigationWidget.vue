@@ -98,6 +98,20 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
       />
 
       <NavigationTab
+        :to="(r) => r('intertypes')"
+        class="main-nav__tab col-60"
+        label="Интертипные отношения"
+        iconName="square-2"
+      />
+
+      <NavigationTab
+        :to="(r) => r('aspects')"
+        class="main-nav__tab col-40"
+        label="Аспекты"
+        iconName="square-4"
+      />
+
+      <NavigationTab
         :to="(r) => r('history')"
         class="main-nav__tab col-50"
         label="История"
@@ -109,13 +123,6 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
         class="main-nav__tab col-50"
         label="Функции"
         iconName="square-5"
-      />
-
-      <NavigationTab
-        :to="(r) => r('aspects')"
-        class="main-nav__tab col-100"
-        label="Аспекты"
-        iconName="square-4"
       />
 
       <NavigationTab

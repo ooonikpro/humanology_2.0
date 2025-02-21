@@ -138,7 +138,13 @@ export type DichotomyType =
   | "irrational"
   | "rational";
 
-export type IntertypeRelations =
+export type IntertypeGroupIdType =
+  | "quadral"
+  | "favorable"
+  | "neutral"
+  | "unfavorable";
+
+export type IntertypeIdType =
   | "dual"
   | "activity"
   | "mirror"
@@ -155,6 +161,14 @@ export type IntertypeRelations =
   | "parallel"
   | "contrary"
   | "superego";
+
+export type IntertypeDataType = {
+  id: IntertypeIdType;
+  name: string;
+  alternativeName: string;
+  shortDescription: string;
+  lvl: string;
+};
 
 export type ReininSignType =
   | "static"
@@ -215,39 +229,7 @@ export type SignPropType = {
   quadra: QuadrasType;
 };
 
-export type IntertypeRelationsGroupNameType =
-  | "quadral"
-  | "favorable"
-  | "neutral"
-  | "unfavorable";
-
-export type IntertypeRelationsType = {
-  quadral: Record<
-    Extract<IntertypeRelations, "dual" | "activity" | "mirror" | "identical">,
-    SociotypeIdType
-  >;
-  favorable: Record<
-    Extract<
-      IntertypeRelations,
-      "kindred" | "semidual" | "pragmatic" | "illusionary"
-    >,
-    SociotypeIdType
-  >;
-  neutral: Record<
-    Extract<
-      IntertypeRelations,
-      "beneficiary" | "giver" | "supervisor" | "underling"
-    >,
-    SociotypeIdType
-  >;
-  unfavorable: Record<
-    Extract<
-      IntertypeRelations,
-      "quasidentical" | "parallel" | "contrary" | "superego"
-    >,
-    SociotypeIdType
-  >;
-};
+export type IntertypeRelationsType = Record<IntertypeIdType, SociotypeIdType>;
 
 export type FunctionAspectVariantType = "intensive" | "extensive";
 

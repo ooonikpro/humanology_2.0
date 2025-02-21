@@ -72,33 +72,22 @@ const ENTP: SociotypeDataType = {
     "democrat",
   ],
   intertypeRelations: {
-    quadral: {
-      dual: "ISFP",
-      activity: "ESFJ",
-      mirror: "INTJ",
-      identical: "ENTP",
-    },
-
-    favorable: {
-      kindred: "ENFP",
-      semidual: "ISTP",
-      pragmatic: "ESTP",
-      illusionary: "INFP",
-    },
-
-    neutral: {
-      beneficiary: "ENFJ",
-      giver: "ESTJ",
-      supervisor: "ISTJ",
-      underling: "INFJ",
-    },
-
-    unfavorable: {
-      quasidentical: "ENTJ",
-      parallel: "ISFJ",
-      contrary: "INTP",
-      superego: "ESFP",
-    },
+    dual: "ISFP",
+    activity: "ESFJ",
+    mirror: "INTJ",
+    identical: "ENTP",
+    kindred: "ENFP",
+    semidual: "ISTP",
+    pragmatic: "ESTP",
+    illusionary: "INFP",
+    beneficiary: "ENFJ",
+    giver: "ESTJ",
+    supervisor: "ISTJ",
+    underling: "INFJ",
+    quasidentical: "ENTJ",
+    parallel: "ISFJ",
+    contrary: "INTP",
+    superego: "ESFP",
   },
 };
 

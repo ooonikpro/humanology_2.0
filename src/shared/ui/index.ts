@@ -7,3 +7,4 @@ export { default as UiZapList } from "./UiZapList.vue";
 export { default as UiSwitcher } from "./UiSwitcher.vue";
 export { default as UiGenderSwitcher } from "./UiGenderSwitcher.vue";
 export { default as UiBottomSheet } from "./UiBottomSheet.vue";
+export { default as UiBadge } from "./UiBadge.vue";

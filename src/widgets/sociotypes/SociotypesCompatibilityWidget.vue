@@ -1,68 +1,70 @@
 <script lang="ts" setup>
-import { computed, defineProps } from "vue";
-import type {
-  IntertypeRelations,
-  IntertypeRelationsGroupNameType,
-  SociotypeIdType,
-} from "@types";
+import { defineProps } from "vue";
+import type { SociotypeIdType } from "@types";
 import { UiText } from "@shared/ui";
 import {
-  SociotypeIntertypeProvider,
-  SociotypeIntertypeCard,
   sociotypeModel,
   SociotypeCard,
   SociotypeCardHeader,
   SociotypeCardGroupsAndQuadras,
   SociotypeProvider,
 } from "@entities/sociotypes";
+import {
+  IntertypeGroupProvider,
+  intertypeModel,
+  IntertypeProvider,
+  IntertypeWithSociotype,
+} from "@entities/intertypes";
+import { useRouter } from "@kitbag/router";
 
-const {
-  intertypeOrder = () => ["quadral", "favorable", "neutral", "unfavorable"],
-  ...props
-} = defineProps<{
-  sociotypeId: SociotypeIdType;
-  intertypeOrder?: () => IntertypeRelationsGroupNameType[];
-}>();
+const router = useRouter();
+const props = defineProps<{ sociotypeId: SociotypeIdType }>();
 
-const intertypeRelations = computed(() => {
-  return sociotypeModel.getIntertypeRelations(props.sociotypeId);
-});
+const goToSociotypeCardPage = (id: SociotypeIdType) => {
+  router.push("sociotypes", { id, tabName: "card" });
+};
 </script>
 
 <template>
   <div class="sociotypes-compatibility-widget">
-    <section
-      v-for="group in intertypeOrder()"
-      :key="group"
+    <IntertypeGroupProvider
+      v-slot="{ intertypeGroupName, intertypeOrder }"
+      v-for="intertypeGroupId in intertypeModel.getIntertypeGroupOrder()"
+      :key="intertypeGroupId"
+      :intertypeGroupId="intertypeGroupId"
       class="sociotypes-compatibility-widget__section"
     >
-      <SociotypeIntertypeProvider :intertype-group="group">
-        <hr class="sociotypes-compatibility-widget__separator" />
-        <UiText
-          force-tag="h3"
-          preset="large"
-          color="intertype"
-          class="sociotypes-compatibility-widget__title"
-        >
-          {{ sociotypeModel.getIntertypeRelationGroupName(group) }}
-        </UiText>
-      </SociotypeIntertypeProvider>
-
-      <SociotypeIntertypeProvider
-        v-slot="{ intertypeData }"
-        v-for="(relationSociotypeId, intertypeId) in intertypeRelations[
-          group
-        ] as Record<IntertypeRelations, SociotypeIdType>"
-        :key="relationSociotypeId"
-        :intertype-id="intertypeId"
-        :intertype-group="group"
+      <hr class="sociotypes-compatibility-widget__separator" />
+      <UiText
+        force-tag="h3"
+        preset="large"
+        color="intertype"
+        class="sociotypes-compatibility-widget__title"
       >
-        <SociotypeIntertypeCard v-bind="intertypeData">
+        {{ intertypeGroupName }}
+      </UiText>
+
+      <IntertypeProvider
+        v-slot="intertypeData"
+        v-for="intertypeId in intertypeOrder"
+        :key="intertypeId"
+        :intertypeId="intertypeId"
+      >
+        <IntertypeWithSociotype v-bind="intertypeData">
           <SociotypeProvider
             v-slot="{ data: sociotypeData }"
-            :id="relationSociotypeId"
+            :id="
+              sociotypeModel.getIntertypeRelations(
+                props.sociotypeId,
+                intertypeId,
+              )
+            "
           >
-            <SociotypeCard :data="sociotypeData" mini>
+            <SociotypeCard
+              :data="sociotypeData"
+              mini
+              @click="() => goToSociotypeCardPage(sociotypeData.id)"
+            >
               <template #header>
                 <SociotypeCardHeader :data="sociotypeData" mini />
               </template>
@@ -72,9 +74,9 @@ const intertypeRelations = computed(() => {
               </template>
             </SociotypeCard>
           </SociotypeProvider>
-        </SociotypeIntertypeCard>
-      </SociotypeIntertypeProvider>
-    </section>
+        </IntertypeWithSociotype>
+      </IntertypeProvider>
+    </IntertypeGroupProvider>
   </div>
 </template>
 
@@ -93,11 +95,7 @@ const intertypeRelations = computed(() => {
   }
 
   &__separator {
-    background-color: var(--color-intertype-group);
-  }
-
-  &__title {
-    color: var(--color-intertype-group);
+    background-color: colors.$intertype;
   }
 }
 </style>

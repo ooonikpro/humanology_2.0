@@ -1,10 +1,11 @@
 import { computed, type MaybeRefOrGetter, toValue } from "vue";
-import type { IntertypeRelationsGroupNameType } from "@types";
+import type { IntertypeGroupIdType } from "@types";
+
 import createColorIntertypeGroupStyle from "../createColorIntertypeGroupStyle";
 import createBgColorIntertypeGroupStyles from "../createBgColorIntertypeGroupStyle";
 
 const useIntertypeColors = (
-  intertypeGroupName: MaybeRefOrGetter<IntertypeRelationsGroupNameType>,
+  intertypeGroupName: MaybeRefOrGetter<IntertypeGroupIdType>,
 ) => {
   return computed(() => ({
     ...createColorIntertypeGroupStyle(toValue(intertypeGroupName)),
