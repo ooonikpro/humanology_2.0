@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
+import { useRouter } from "vue-router";
 import { UiBadge, UiSvg, UiText } from "@shared/ui";
 import type { IntertypeDataType } from "@types";
-import { useRouter } from "@kitbag/router";
 
 const router = useRouter();
 const props = defineProps<IntertypeDataType>();
 
 const goToIntertype = () => {
-  router.push("intertypes.description", { intertype: props.id });
+  router.push({
+    name: "intertypes.description",
+    params: { intertype: props.id },
+  });
 };
 </script>
 

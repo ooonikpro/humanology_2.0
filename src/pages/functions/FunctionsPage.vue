@@ -10,7 +10,7 @@ import { AspectDescription } from "@entities/aspects";
       :key="f"
       :title="functionsModel.getName(f)"
       :tags="functionsModel.getTags(f)"
-      :to="(r) => r('functions.card', { functionName: f })"
+      :to="{ name: 'functions.card', params: { functionName: f } }"
     >
       {{ functionsModel.getDescription(f) }}
     </AspectDescription>

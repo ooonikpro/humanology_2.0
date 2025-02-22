@@ -7,7 +7,7 @@ const props = defineProps<IntertypeDataType>();
 
 <template>
   <RouterLink
-    :to="(r) => r('intertypes.description', { intertype: props.id })"
+    :to="{ name: 'intertypes.description', params: { intertype: props.id } }"
     class="intertype-card"
   >
     <UiSvg :name="props.id" size="96" color="intertype" />
