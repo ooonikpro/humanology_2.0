@@ -1,37 +1,26 @@
-import { defineAsyncComponent } from "vue";
-import { createRoute, withParams } from "@kitbag/router";
+import type { RouteRecordRaw } from "vue-router";
 
-import { sociotypeIdParam, sociotypeTabNameParam } from "./params";
-
-export const SOCIOTYPE_CARD_ROUTE = createRoute({
-  path: withParams("/s/[id]", {
-    id: sociotypeIdParam,
-  }),
+export const SOCIOTYPE_CARD_ROUTE: RouteRecordRaw = {
+  path: "/s/:id",
   name: "card",
-  component: defineAsyncComponent(() => import("@pages/sociotypes")),
-});
+  component: () => import("@pages/sociotypes"),
+  children: [
+    {
+      path: ":tabName",
+      name: "sociotypes",
+      component: () => import("@pages/sociotypes"),
+    } satisfies RouteRecordRaw,
+  ],
+};
 
-export const SOCIOTYPE_TAB_ROUTE = createRoute({
-  parent: SOCIOTYPE_CARD_ROUTE,
-  path: withParams("/[tabName]", {
-    tabName: sociotypeTabNameParam,
-  }),
-  name: "sociotypes",
-  component: defineAsyncComponent(() => import("@pages/sociotypes")),
-});
-
-export const KIDS_ROUTE = createRoute({
+export const KIDS_ROUTE: RouteRecordRaw = {
   path: "/k",
   name: "kids",
-  component: defineAsyncComponent(() => import("@pages/kids/KidsPage.vue")),
-});
+  component: () => import("@pages/kids/KidsPage.vue"),
+};
 
-export const SOCIOTYPE_KIDS_CARD_ROUTE = createRoute({
-  path: withParams("/k/[id]", {
-    id: sociotypeIdParam,
-  }),
+export const SOCIOTYPE_KIDS_CARD_ROUTE: RouteRecordRaw = {
+  path: "/k/:id",
   name: "kids.card",
-  component: defineAsyncComponent(
-    () => import("@pages/kids/id/KidsIdPage.vue"),
-  ),
-});
+  component: () => import("@pages/kids/id/KidsIdPage.vue"),
+};

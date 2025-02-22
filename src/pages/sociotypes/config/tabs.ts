@@ -2,7 +2,7 @@ const SOCIOTYPE_CARD_TAB = {
   name: "card",
   iconName: "card",
   label: "Карточка",
-};
+} as const;
 
 export const DEFAULT_PAGE_TAB_NAME = SOCIOTYPE_CARD_TAB.name;
 
