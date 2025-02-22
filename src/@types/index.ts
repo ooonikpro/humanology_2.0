@@ -316,10 +316,21 @@ export type IconSizeType =
   | "128";
 
 export type SociotypeTabType = {
-  name: string;
+  name: SociotypeTabNameType;
   iconName: IconNameType;
   label: string;
 };
+
+export type SociotypeTabNameType =
+  | "card"
+  | "how-to-define"
+  | "description"
+  | "compatibility"
+  | "people"
+  | "business-qualities"
+  | "progress"
+  | "humor"
+  | "history";
 
 export type FamousPersonType = {
   id: SociotypeIdType;

@@ -1,8 +1,10 @@
+import type { SociotypeTabType } from "@types";
+
 const SOCIOTYPE_CARD_TAB = {
   name: "card",
   iconName: "card",
   label: "Карточка",
-} as const;
+} as const satisfies SociotypeTabType;
 
 export const DEFAULT_PAGE_TAB_NAME = SOCIOTYPE_CARD_TAB.name;
 
@@ -48,6 +50,4 @@ export const SOCIOTYPE_PAGE_TABS = [
     iconName: "annotation",
     label: "История",
   },
-] as const;
-
-export type TabName = (typeof SOCIOTYPE_PAGE_TABS)[number]["name"];
+] as const satisfies SociotypeTabType[];
