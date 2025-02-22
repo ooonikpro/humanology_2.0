@@ -1,5 +1,5 @@
 import type { AsyncComponentLoader, Component } from "vue";
-import type { TabName } from "./tabs";
+import type { SociotypeTabNameType } from "@types";
 
 import CardTab from "../ui/tabs/card";
 import HowToDefineTab from "../ui/tabs/how-to-define";
@@ -12,7 +12,7 @@ import HumorTab from "../ui/tabs/humor";
 import HistoryTab from "../ui/tabs/history";
 
 export const SOCIOTYPE_PAGE_TABS_COMPONENTS: Record<
-  TabName,
+  SociotypeTabNameType,
   Component | AsyncComponentLoader
 > = {
   card: CardTab,

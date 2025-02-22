@@ -1,6 +1,5 @@
 import type { RouteRecordInfo } from "vue-router";
-import type { SociotypeIdType } from "@types";
-import type { TabName } from "@pages/sociotypes/config";
+import type { SociotypeIdType, SociotypeTabNameType } from "@types";
 
 type SociotypeCardRouteType = RouteRecordInfo<
   "card",
@@ -12,8 +11,8 @@ type SociotypeCardRouteType = RouteRecordInfo<
 type SociotypeTabRouteType = RouteRecordInfo<
   "sociotypes",
   "/s/:id/:tabName",
-  { id: SociotypeIdType; tabName: TabName },
-  { id: SociotypeIdType; tabName: TabName }
+  { id: SociotypeIdType; tabName: SociotypeTabNameType },
+  { id: SociotypeIdType; tabName: SociotypeTabNameType }
 >;
 
 type KidsRouteType = RouteRecordInfo<
