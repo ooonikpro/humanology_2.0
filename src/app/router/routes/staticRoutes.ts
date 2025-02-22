@@ -1,122 +1,131 @@
-import { createRoute } from "@kitbag/router";
+import type { RouteRecordRaw } from "vue-router";
 import HomePage from "@pages/HomePage.vue";
+import { ASPECTS_CARD_ROUTE, ASPECTS_ROUTE } from "./aspects";
+import { FUNCTIONS_CARD_ROUTE, FUNCTIONS_ROUTE } from "./functions";
+import { INTERTYPES_DESCRIPTION_ROUTE, INTERTYPES_ROUTE } from "./intertypes";
 
-import { defineAsyncComponent } from "vue";
-
-export const HOME_ROUTE = createRoute({
+export const HOME_ROUTE: RouteRecordRaw = {
   path: "/",
   name: "home",
   component: HomePage,
-});
+};
 
-export const WHAT_IS_IT_ROUTE = createRoute({
+export const WHAT_IS_IT_ROUTE: RouteRecordRaw = {
   path: "/what-is-it",
   name: "what-is-it",
-  component: defineAsyncComponent(() => import("@pages/WhatIsPage.vue")),
-});
+  component: () => import("@pages/WhatIsPage.vue"),
+};
 
-export const DISCLAIMER_ROUTE = createRoute({
+export const DISCLAIMER_ROUTE: RouteRecordRaw = {
   path: "/disclaimer",
   name: "disclaimer",
-  component: defineAsyncComponent(() => import("@pages/DisclaimerPage.vue")),
-});
+  component: () => import("@pages/DisclaimerPage.vue"),
+};
 
-export const HOW_TO_DEFINE_ROUTE = createRoute({
+export const HOW_TO_DEFINE_ROUTE: RouteRecordRaw = {
   path: "/how-to-define-type",
   name: "how-to-define",
-  component: defineAsyncComponent(
-    () => import("@pages/HowToDefineTypePage.vue"),
-  ),
-});
+  component: () => import("@pages/HowToDefineTypePage.vue"),
+};
 
-export const TESTS_ROUTE = createRoute({
+export const TESTS_ROUTE: RouteRecordRaw = {
   path: "/tests",
   name: "tests",
-  component: defineAsyncComponent(() => import("@pages/TestsPage.vue")),
-});
+  component: () => import("@pages/TestsPage.vue"),
+};
 
-export const PROFILE_ROUTE = createRoute({
+export const PROFILE_ROUTE: RouteRecordRaw = {
   path: "/profile",
   name: "profile",
-  component: defineAsyncComponent(() => import("@pages/ProfilePage.vue")),
-});
+  component: () => import("@pages/ProfilePage.vue"),
+};
 
-export const PEOPLE_ROUTE = createRoute({
+export const PEOPLE_ROUTE: RouteRecordRaw = {
   path: "/people",
   name: "people",
-  component: defineAsyncComponent(() => import("@pages/PeoplesPage.vue")),
-});
+  component: () => import("@pages/PeoplesPage.vue"),
+};
 
-export const SPECIALISTS_ROUTE = createRoute({
+export const SPECIALISTS_ROUTE: RouteRecordRaw = {
   path: "/specialists",
   name: "specialists",
-  component: defineAsyncComponent(() => import("@pages/SpecialistsPage.vue")),
-});
+  component: () => import("@pages/SpecialistsPage.vue"),
+};
 
-export const TEAMS_ROUTE = createRoute({
+export const TEAMS_ROUTE: RouteRecordRaw = {
   path: "/teams",
   name: "teams",
-  component: defineAsyncComponent(() => import("@pages/TeamsPage.vue")),
-});
+  component: () => import("@pages/TeamsPage.vue"),
+};
 
-export const THEORY_ROUTE = createRoute({
-  path: "/t",
-  name: "theory",
-});
-
-export const METABOLISM_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/information-metabolism",
-  name: "metabolism",
-  component: defineAsyncComponent(() => import("@pages/MetabolismPage.vue")),
-});
-
-export const HISTORY_ROUTE = createRoute({
+export const HISTORY_ROUTE: RouteRecordRaw = {
   path: "/history",
   name: "history",
-  component: defineAsyncComponent(() => import("@pages/HistoryPage.vue")),
-});
+  component: () => import("@pages/HistoryPage.vue"),
+};
 
-export const QUADRAS_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/quadras",
+// Children of THEORY_ROUTE
+
+const METABOLISM_ROUTE: RouteRecordRaw = {
+  path: "information-metabolism",
+  name: "metabolism",
+  component: () => import("@pages/MetabolismPage.vue"),
+};
+
+const QUADRAS_ROUTE: RouteRecordRaw = {
+  path: "quadras",
   name: "quadras",
-  component: defineAsyncComponent(() => import("@pages/QuadrasPage.vue")),
-});
+  component: () => import("@pages/QuadrasPage.vue"),
+};
 
-export const ROLES_AND_SUITS_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/roles-and-suits",
+const ROLES_AND_SUITS_ROUTE: RouteRecordRaw = {
+  path: "roles-and-suits",
   name: "roles-and-suits",
-  component: defineAsyncComponent(() => import("@pages/RolesAndSuitsPage.vue")),
-});
+  component: () => import("@pages/RolesAndSuitsPage.vue"),
+};
 
-export const CLUBS_AND_GROUPS_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/clubs-and-groups",
+const CLUBS_AND_GROUPS_ROUTE: RouteRecordRaw = {
+  path: "clubs-and-groups",
   name: "clubs-and-groups",
-  component: defineAsyncComponent(
-    () => import("@pages/ClubsAndGroupsPage.vue"),
-  ),
-});
+  component: () => import("@pages/ClubsAndGroupsPage.vue"),
+};
 
-export const MINDSET_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/mindset-kinds",
+const MINDSET_ROUTE: RouteRecordRaw = {
+  path: "mindset-kinds",
   name: "mindset",
-  component: defineAsyncComponent(() => import("@pages/MindsetKindsPage.vue")),
-});
+  component: () => import("@pages/MindsetKindsPage.vue"),
+};
 
-export const RAINING_SIGNS_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/raining-signs",
+const RAINING_SIGNS_ROUTE: RouteRecordRaw = {
+  path: "raining-signs",
   name: "raining",
-  component: defineAsyncComponent(() => import("@pages/RainingSignsPage.vue")),
-});
+  component: () => import("@pages/RainingSignsPage.vue"),
+};
 
-export const JUNG_DICHOTOMY_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/jung-dichotomy",
+const JUNG_DICHOTOMY_ROUTE: RouteRecordRaw = {
+  path: "jung-dichotomy",
   name: "jung",
-  component: defineAsyncComponent(() => import("@pages/JungDichotomyPage.vue")),
-});
+  component: () => import("@pages/JungDichotomyPage.vue"),
+};
+
+export const THEORY_ROUTE: RouteRecordRaw = {
+  path: "/t",
+  name: "theory",
+  component: () => import("@pages/TheoryPage.vue"),
+  children: [
+    ASPECTS_ROUTE,
+    ASPECTS_CARD_ROUTE,
+    FUNCTIONS_ROUTE,
+    FUNCTIONS_CARD_ROUTE,
+    INTERTYPES_ROUTE,
+    INTERTYPES_DESCRIPTION_ROUTE,
+    // static children
+    METABOLISM_ROUTE,
+    QUADRAS_ROUTE,
+    ROLES_AND_SUITS_ROUTE,
+    CLUBS_AND_GROUPS_ROUTE,
+    MINDSET_ROUTE,
+    RAINING_SIGNS_ROUTE,
+    JUNG_DICHOTOMY_ROUTE,
+  ] satisfies RouteRecordRaw[],
+};

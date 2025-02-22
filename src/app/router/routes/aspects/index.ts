@@ -1,21 +1,16 @@
-import { createRoute } from "@kitbag/router";
-import { defineAsyncComponent } from "vue";
-import { THEORY_ROUTE } from "../staticRoutes";
+import type { RouteRecordRaw } from "vue-router";
+export type { AspectsRoutesTypes } from "./aspectsTypedMap";
 
-export const ASPECTS_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/a",
+// Children of THEORY_ROUTE
+
+export const ASPECTS_ROUTE: RouteRecordRaw = {
+  path: "a",
   name: "aspects",
-  component: defineAsyncComponent(
-    () => import("@pages/aspects/AspectsPage.vue"),
-  ),
-});
+  component: () => import("@pages/aspects/AspectsPage.vue"),
+};
 
-export const ASPECTS_CARD_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/a/[aspect]",
+export const ASPECTS_CARD_ROUTE: RouteRecordRaw = {
+  path: "a/:aspect",
   name: "aspects.card",
-  component: defineAsyncComponent(
-    () => import("@pages/aspects/AspectsCardPage.vue"),
-  ),
-});
+  component: () => import("@pages/aspects/AspectsCardPage.vue"),
+};

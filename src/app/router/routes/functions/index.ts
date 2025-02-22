@@ -1,21 +1,16 @@
-import { createRoute } from "@kitbag/router";
-import { defineAsyncComponent } from "vue";
-import { THEORY_ROUTE } from "../staticRoutes";
+import type { RouteRecordRaw } from "vue-router";
+export type { FunctionsRoutesTypes } from "./functionsTypedMap";
 
-export const FUNCTIONS_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/f",
+// Children of THEORY_ROUTE
+
+export const FUNCTIONS_ROUTE: RouteRecordRaw = {
+  path: "f",
   name: "functions",
-  component: defineAsyncComponent(
-    () => import("@pages/functions/FunctionsPage.vue"),
-  ),
-});
+  component: () => import("@pages/functions/FunctionsPage.vue"),
+};
 
-export const FUNCTIONS_CARD_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/f/[functionName]",
+export const FUNCTIONS_CARD_ROUTE: RouteRecordRaw = {
+  path: "f/:functionName",
   name: "functions.card",
-  component: defineAsyncComponent(
-    () => import("@pages/functions/FunctionsCardPage.vue"),
-  ),
-});
+  component: () => import("@pages/functions/FunctionsCardPage.vue"),
+};
