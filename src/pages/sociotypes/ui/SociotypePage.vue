@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed, toValue } from "vue";
-import { useRoute } from "@kitbag/router";
+import { useRoute } from "vue-router";
 import {
   SociotypeCard,
   SociotypeCardGroupsAndQuadras,
@@ -20,7 +20,7 @@ import {
 import * as config from "../config";
 import FunctionDescription from "@pages/sociotypes/ui/functions/FunctionDescription.vue";
 
-const route = useRoute();
+const route = useRoute("sociotypes");
 
 const sociotypeId = computed(() => route.params.id);
 
@@ -77,7 +77,7 @@ const tabDescription = computed(() =>
     />
 
     <component
-      :is="config.SOCIOTYPE_PAGE_TABS_COMPONENTS[tabName as config.TabName]"
+      :is="config.SOCIOTYPE_PAGE_TABS_COMPONENTS[tabName]"
       :data="data"
     />
   </SociotypeProvider>

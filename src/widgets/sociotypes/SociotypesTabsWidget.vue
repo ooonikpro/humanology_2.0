@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import { toValue, useTemplateRef, watch, onMounted, computed } from "vue";
-import { useRoute } from "@kitbag/router";
-import type { SociotypeIdType, SociotypeTabType } from "@types";
+import { useRoute } from "vue-router";
+import type {
+  SociotypeIdType,
+  SociotypeTabType,
+  SociotypeTabNameType,
+} from "@types";
 import { NavigationTab } from "@entities/navigation";
 import { scrollContainerToElementByIndex } from "@shared/lib";
-import type { TabName } from "@pages/sociotypes/config";
 
 const props = defineProps<{
-  tabName: TabName;
+  tabName: SociotypeTabNameType;
   tabs: readonly SociotypeTabType[];
   sociotypeId: SociotypeIdType;
 }>();
@@ -35,7 +38,10 @@ onMounted(scrollToActiveElement);
     <NavigationTab
       v-for="tab in props.tabs"
       :key="tab.name"
-      :to="(r) => r('sociotypes', { id: props.sociotypeId, tabName: tab.name })"
+      :to="{
+        name: 'sociotypes',
+        params: { id: props.sociotypeId, tabName: tab.name },
+      }"
       :iconName="tab.iconName"
       :label="tab.label"
       :class="{

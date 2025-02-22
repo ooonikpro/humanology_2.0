@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
+import { useRouter } from "vue-router";
 import type { SociotypeIdType } from "@types";
 import { UiText } from "@shared/ui";
 import {
@@ -15,13 +16,12 @@ import {
   IntertypeProvider,
   IntertypeWithSociotype,
 } from "@entities/intertypes";
-import { useRouter } from "@kitbag/router";
 
 const router = useRouter();
 const props = defineProps<{ sociotypeId: SociotypeIdType }>();
 
 const goToSociotypeCardPage = (id: SociotypeIdType) => {
-  router.push("sociotypes", { id, tabName: "card" });
+  router.push({ name: "sociotypes", params: { id, tabName: "card" } });
 };
 </script>
 

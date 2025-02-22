@@ -8,28 +8,28 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
   <nav class="main-nav">
     <div class="main-nav__row">
       <NavigationTab
-        :to="(r) => r('what-is-it')"
+        :to="{ name: 'what-is-it' }"
         class="main-nav__tab col-50"
         label="Что это такое?"
         iconName="square-0"
       />
 
       <NavigationTab
-        :to="(r) => r('disclaimer')"
+        :to="{ name: 'disclaimer' }"
         class="main-nav__tab col-50"
         label="Дисклеймер"
         iconName="square-1"
       />
 
       <NavigationTab
-        :to="(r) => r('how-to-define')"
+        :to="{ name: 'how-to-define' }"
         class="main-nav__tab col-60"
         label="Как определять тип?"
         iconName="ghost"
       />
 
       <NavigationTab
-        :to="(r) => r('tests')"
+        :to="{ name: 'tests' }"
         class="main-nav__tab col-40"
         label="Тесты"
         iconName="presentation-chart-bar-alt"
@@ -38,14 +38,14 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
 
     <div class="main-nav__row main-nav__row--tab-bg-grey">
       <NavigationTab
-        :to="(r) => r('profile')"
+        :to="{ name: 'profile' }"
         class="main-nav__tab col-40"
         label="Профиль"
         iconName="user-square"
       />
 
       <NavigationTab
-        :to="(r) => r('people')"
+        :to="{ name: 'people' }"
         class="main-nav__tab col-60"
         label="Люди"
         iconName="users"
@@ -56,7 +56,7 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
       </NavigationTab>
 
       <NavigationTab
-        :to="(r) => r('specialists')"
+        :to="{ name: 'specialists' }"
         class="main-nav__tab col-50"
         label="Специалисты"
         iconName="diamond"
@@ -67,7 +67,7 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
       </NavigationTab>
 
       <NavigationTab
-        :to="(r) => r('teams')"
+        :to="{ name: 'teams' }"
         class="main-nav__tab col-50"
         label="Коллективы"
         iconName="briefcase-alt"
@@ -80,7 +80,7 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
 
     <div class="main-nav__row">
       <NavigationTab
-        :to="(r) => r('kids')"
+        :to="{ name: 'kids' }"
         class="main-nav__tab col-100"
         label="Дети"
         iconName="chart-bubble"
@@ -91,77 +91,77 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
       </NavigationTab>
 
       <NavigationTab
-        :to="(r) => r('metabolism')"
+        :to="{ name: 'metabolism' }"
         class="main-nav__tab col-100"
         label="Информационный метаболизм"
         iconName="square-3"
       />
 
       <NavigationTab
-        :to="(r) => r('intertypes')"
+        :to="{ name: 'intertypes' }"
         class="main-nav__tab col-60"
         label="Интертипные отношения"
         iconName="square-2"
       />
 
       <NavigationTab
-        :to="(r) => r('aspects')"
+        :to="{ name: 'aspects' }"
         class="main-nav__tab col-40"
         label="Аспекты"
         iconName="square-4"
       />
 
       <NavigationTab
-        :to="(r) => r('history')"
+        :to="{ name: 'history' }"
         class="main-nav__tab col-50"
         label="История"
         iconName="time"
       />
 
       <NavigationTab
-        :to="(r) => r('functions')"
+        :to="{ name: 'functions' }"
         class="main-nav__tab col-50"
         label="Функции"
         iconName="square-5"
       />
 
       <NavigationTab
-        :to="(r) => r('quadras')"
+        :to="{ name: 'quadras' }"
         class="main-nav__tab col-50"
         label="Квадры"
         iconName="square-6"
       />
 
       <NavigationTab
-        :to="(r) => r('roles-and-suits')"
+        :to="{ name: 'roles-and-suits' }"
         class="main-nav__tab col-50"
         label="Роли и масти"
         iconName="square-7"
       />
 
       <NavigationTab
-        :to="(r) => r('clubs-and-groups')"
+        :to="{ name: 'clubs-and-groups' }"
         class="main-nav__tab col-50"
         label="Клубы и группы"
         iconName="square-8"
       />
 
       <NavigationTab
-        :to="(r) => r('mindset')"
+        :to="{ name: 'mindset' }"
         class="main-nav__tab col-50"
         label="Типы мышления"
         iconName="square-9"
       />
 
       <NavigationTab
-        :to="(r) => r('raining')"
+        :to="{ name: 'raining' }"
         class="main-nav__tab col-50"
         label="Признаки Рейнина"
         iconName="square-10"
       />
 
       <NavigationTab
-        :to="(r) => r('jung')"
+        :to="{ name: 'jung' }"
         class="main-nav__tab col-50"
         label="Дихотомии Юнга"
         iconName="square-11"

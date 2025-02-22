@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { ToCallback } from "@kitbag/router";
+import type { RouteLocationRaw } from "vue-router";
 import { UiText, UiSvg } from "@shared/ui";
 import type { IconNameType } from "@types";
 
 const props = defineProps<{
   iconName?: IconNameType;
-  to: ToCallback;
+  to: RouteLocationRaw;
   title: string;
   subtitle?: string;
   tags?: string[];
@@ -41,7 +41,7 @@ const props = defineProps<{
       />
     </RouterLink>
 
-    <div v-if="$slots.default?.()" class="aspect-description__body">
+    <div v-if="$slots.default" class="aspect-description__body">
       <slot />
     </div>
 

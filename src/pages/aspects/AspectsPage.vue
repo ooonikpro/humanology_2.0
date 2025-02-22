@@ -11,7 +11,7 @@ import { AspectDescription, aspectModel } from "@entities/aspects";
       :title="aspectModel.getAspectName(aspect)"
       :subtitle="aspectModel.getAspectLabel(aspect)"
       :tags="aspectModel.getAspectTags(aspect)"
-      :to="(r) => r('aspects.card', { aspect })"
+      :to="{ name: 'aspects.card', params: { aspect } }"
     />
   </div>
 </template>
