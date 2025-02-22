@@ -1,8 +1,8 @@
-import type { ToCallback } from "@kitbag/router";
+import type { RouteLocationRaw } from "vue-router";
 import type { IconNameType } from "@types";
 
 export type NavigationTabPropsType = {
-  to: ToCallback;
+  to: RouteLocationRaw;
   iconName: IconNameType;
   label: string;
 };

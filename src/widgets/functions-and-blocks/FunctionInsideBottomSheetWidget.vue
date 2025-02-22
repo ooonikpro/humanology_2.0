@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { LocationQueryRaw } from "vue-router";
 import { sociotypeModel, SociotypeProvider } from "@entities/sociotypes";
 import { UiBottomSheet, UiText } from "@shared/ui";
 import { OpenBottomSheetByQuery } from "@features/open-bottom-sheet-by-query";
@@ -6,8 +7,8 @@ import { FunctionLevel, functionsModel } from "@entities/functions-and-blocks";
 import BlockFunctionsWidget from "@widgets/functions-and-blocks/BlockFunctionsWidget.vue";
 import { AspectDescription, aspectModel } from "@entities/aspects";
 
-const routePredicate = (query: URLSearchParams) => {
-  return query.has("f");
+const routePredicate = (query: LocationQueryRaw) => {
+  return query.hasOwnProperty("f");
 };
 </script>
 
@@ -36,7 +37,7 @@ const routePredicate = (query: URLSearchParams) => {
           <div class="bottom-sheet-content">
             <BlockFunctionsWidget
               :sociotypeId="data.id"
-              :blockName="functionsModel.getBlockName(data.f)"
+              :blockName="functionsModel.getBlockName(data.f)!"
               :activeFunctionName="data.f"
             />
 
@@ -61,18 +62,18 @@ const routePredicate = (query: URLSearchParams) => {
                   sociotypeModel.getAspectByFunction(data.id, data.f),
                 )
               "
-              :to="
-                (r) =>
-                  r('aspects.card', {
-                    aspect: sociotypeModel.getAspectByFunction(data.id, data.f),
-                  })
-              "
+              :to="{
+                name: 'aspects.card',
+                params: {
+                  aspect: sociotypeModel.getAspectByFunction(data.id, data.f),
+                },
+              }"
             />
 
             <AspectDescription
               :title="functionsModel.getName(data.f)"
               :tags="functionsModel.getTags(data.f)"
-              :to="(r) => r('functions.card', { functionName: data.f })"
+              :to="{ name: 'functions.card', params: { functionName: data.f } }"
             >
               {{ functionsModel.getDescription(data.f) }}
             </AspectDescription>

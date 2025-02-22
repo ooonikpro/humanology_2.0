@@ -1,21 +1,16 @@
-import { createRoute } from "@kitbag/router";
-import { defineAsyncComponent } from "vue";
-import { THEORY_ROUTE } from "../staticRoutes";
+import type { RouteRecordRaw } from "vue-router";
 
-export const INTERTYPES_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/i",
+// ? Children of THEORY_ROUTE
+
+export const INTERTYPES_ROUTE: RouteRecordRaw = {
+  path: "/t/i",
   name: "intertypes",
-  component: defineAsyncComponent(
-    () => import("@pages/intertypes/IntertypesPage.vue"),
-  ),
-});
+  component: () => import("@pages/intertypes/IntertypesPage.vue"),
+};
 
-export const INTERTYPES_DESCRIPTION_ROUTE = createRoute({
-  parent: THEORY_ROUTE,
-  path: "/i/[intertype]",
+export const INTERTYPES_DESCRIPTION_ROUTE: RouteRecordRaw = {
+  path: "/t/i/:intertype",
   name: "intertypes.description",
-  component: defineAsyncComponent(
-    () => import("@pages/intertypes/description/IntertypesDescriptionPage.vue"),
-  ),
-});
+  component: () =>
+    import("@pages/intertypes/description/IntertypesDescriptionPage.vue"),
+};

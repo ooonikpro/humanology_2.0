@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
-import { useRoute } from "@kitbag/router";
+import { useRoute } from "vue-router";
 
 const route = useRoute("functions.card");
 

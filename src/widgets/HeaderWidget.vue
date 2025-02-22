@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink } from "@kitbag/router";
+import { RouterLink } from "vue-router";
 import { UiSvg } from "@shared/ui";
 </script>
 
@@ -9,7 +9,7 @@ import { UiSvg } from "@shared/ui";
       <UiSvg color="black" name="menu" size="24" />
     </button>
 
-    <RouterLink :to="(resolve) => resolve('home')" class="header-widget__button">
+    <RouterLink :to="{ name: 'home' }" class="header-widget__button">
       <UiSvg color="black" name="logo-circle" size="24" />
     </RouterLink>
 
@@ -30,7 +30,6 @@ import { UiSvg } from "@shared/ui";
   border-radius: 4px;
   background-color: colors.$white;
   border-bottom: 1px solid colors.$grey;
-  
 
   &__button {
     cursor: pointer;

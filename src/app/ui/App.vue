@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { RouterView } from "@kitbag/router";
+import { RouterView } from "vue-router";
 import FooterWidget from "@widgets/FooterWidget.vue";
 import HeaderWidget from "@widgets/HeaderWidget.vue";
 
