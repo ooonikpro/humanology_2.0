@@ -1,22 +1,31 @@
 import { createRouter, createWebHistory } from "vue-router";
-import type { AspectsRoutesTypes } from "./routes/aspects/aspectsTypedMap";
-import type { FunctionsRoutesTypes } from "./routes/functions/functionsTypedMap";
-import type { IntertypesRoutesTypes } from "./routes/intertypes/intertypesTypedMap";
-import type { SociotypesRoutesTypes } from "./routes/sociotypes/sociotypesTypedMap";
-import type { StaticRoutesTypes } from "./routes/staticRoutesTypedMap";
 import ROUTES from "./routes";
+import {
+  aspectsMiddleware,
+  functionsMiddleWare,
+  intertypesMiddleware,
+  sociotypeIdMiddleware,
+  sociotypeKidsCardIdMiddleware,
+  sociotypeTabNameMiddleware,
+} from "./middlewares";
+import type { RouteNamedMap } from "./routesTypedMap";
 
 const appRouter = createRouter({
   history: createWebHistory(),
   routes: ROUTES,
 });
 
-export interface RouteNamedMap
-  extends AspectsRoutesTypes,
-    FunctionsRoutesTypes,
-    IntertypesRoutesTypes,
-    SociotypesRoutesTypes,
-    StaticRoutesTypes {}
+appRouter.beforeEach((to, from, next) => {
+  return (
+    aspectsMiddleware(to, from, next) ??
+    functionsMiddleWare(to, from, next) ??
+    intertypesMiddleware(to, from, next) ??
+    sociotypeIdMiddleware(to, from, next) ??
+    sociotypeKidsCardIdMiddleware(to, from, next) ??
+    sociotypeTabNameMiddleware(to, from, next) ??
+    next()
+  );
+});
 
 declare module "vue-router" {
   interface TypesConfig {
