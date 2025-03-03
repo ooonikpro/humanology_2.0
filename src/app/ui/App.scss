@@ -1,6 +1,7 @@
 @use "../../shared/styles/fonts/index";
 @use "../../shared/styles/variables/fonts";
 @use "../../shared/styles/variables/colors";
+@use "../../shared/styles/variables/layouts";
 @use "../../shared/styles/mixins/globals";
 
 :root {
@@ -42,6 +43,8 @@
 
   color: var(--text-color);
   background-color: var(--bg-color);
+  scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -58,12 +61,6 @@
     color: inherit;
     font-size: inherit;
     font-family: inherit;
-
-    &::-webkit-scrollbar {
-      width: 0;
-      opacity: 0;
-      scroll-behavior: smooth;
-    }
   }
 }
 
@@ -85,7 +82,10 @@ hr {
 }
 
 #app {
-  height: 100vh;
+  max-width: layouts.$maxWidth;
+  min-width: layouts.$minWidth;
+  margin: 0 auto;
+  border-radius: 4px;
 }
 
 @include globals.textColors();

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { toValue, useTemplateRef, watch, onMounted, computed } from "vue";
-import { useRoute } from "@kitbag/router";
+import { useRoute } from "vue-router";
 import type { SociotypeIdType, SociotypeTabType } from "@types";
 import { NavigationTab } from "@entities/navigation";
 import { scrollContainerToElementByIndex } from "@shared/lib";
@@ -26,7 +26,7 @@ const scrollToActiveElement = () => {
   );
 };
 
-watch(route, scrollToActiveElement);
+watch(activeElementIndex, scrollToActiveElement);
 onMounted(scrollToActiveElement);
 </script>
 
@@ -35,7 +35,7 @@ onMounted(scrollToActiveElement);
     <NavigationTab
       v-for="tab in props.tabs"
       :key="tab.name"
-      :to="(r) => r('sociotypes', { id: props.sociotypeId, tabName: tab.name })"
+      :to="$appRoutes.sociotypeTab(props.sociotypeId, tab.name)"
       :iconName="tab.iconName"
       :label="tab.label"
       :class="{

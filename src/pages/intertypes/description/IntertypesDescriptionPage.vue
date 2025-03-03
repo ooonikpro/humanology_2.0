@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { useRoute } from "@kitbag/router";
+import { defineAsyncComponent } from "vue";
+import { useRoute } from "vue-router";
 import { UiBadge, UiSvg, UiText } from "@shared/ui";
 import { OpenShareDialog } from "@features/open-share-dialog";
 import { IntertypeProvider } from "@entities/intertypes";
-import { defineAsyncComponent } from "vue";
 
 const route = useRoute("intertypes.description");
 
@@ -20,7 +20,7 @@ const ComponentName = defineAsyncComponent(
   >
     <div class="intertype-description-page__header">
       <div class="intertype-description-page__header-double-icon">
-        <RouterLink :to="(r) => r('intertypes')">
+        <RouterLink :to="$appRoutes.intertypes">
           <UiSvg name="chevron-left" color="black" size="24" />
         </RouterLink>
         <OpenShareDialog color="black" />

@@ -1,13 +1,14 @@
 <script lang="ts" setup>
-import { sociotypeModel, SociotypeProvider } from "@entities/sociotypes";
+import type { LocationQuery } from "vue-router";
 import { UiBottomSheet, UiText } from "@shared/ui";
+import { sociotypeModel, SociotypeProvider } from "@entities/sociotypes";
 import { OpenBottomSheetByQuery } from "@features/open-bottom-sheet-by-query";
 import { FunctionLevel, functionsModel } from "@entities/functions-and-blocks";
 import BlockFunctionsWidget from "@widgets/functions-and-blocks/BlockFunctionsWidget.vue";
 import { AspectDescription, aspectModel } from "@entities/aspects";
 
-const routePredicate = (query: URLSearchParams) => {
-  return query.has("f");
+const routePredicate = (query: LocationQuery) => {
+  return query.hasOwnProperty("f");
 };
 </script>
 
@@ -66,17 +67,16 @@ const routePredicate = (query: URLSearchParams) => {
                 )
               "
               :to="
-                (r) =>
-                  r('aspects.card', {
-                    aspect: sociotypeModel.getAspectByFunction(data.id, data.f),
-                  })
+                $appRoutes.aspectCard(
+                  sociotypeModel.getAspectByFunction(data.id, data.f),
+                )
               "
             />
 
             <AspectDescription
               :title="functionsModel.getName(data.f)"
               :tags="functionsModel.getTags(data.f)"
-              :to="(r) => r('functions.card', { functionName: data.f })"
+              :to="$appRoutes.functionCard(data.f)"
             >
               {{ functionsModel.getDescription(data.f) }}
             </AspectDescription>
