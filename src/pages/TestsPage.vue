@@ -117,7 +117,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
   .page {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   padding-left: 12px;
   padding-right: 12px;
 

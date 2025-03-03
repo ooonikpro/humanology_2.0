@@ -184,7 +184,7 @@ $gap: 8px;
     pointer-events: none;
     touch-action: none;
     cursor: none;
-    opacity: 0.4;
+    opacity: 0.1;
   }
 }
 </style>

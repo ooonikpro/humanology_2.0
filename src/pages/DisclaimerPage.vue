@@ -43,7 +43,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
   </UiText>
 
   <UiText>
-    Желательно развернуто изложить суть претензии. Адрес тот же.
+    Желательно развернуто изложить суть претензии. <br /> Адрес тот же.
   </UiText>
 
 </div>
@@ -55,7 +55,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
   .page {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   padding-left: 12px;
   padding-right: 12px;
 

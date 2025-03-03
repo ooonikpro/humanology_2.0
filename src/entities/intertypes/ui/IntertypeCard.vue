@@ -62,7 +62,7 @@ $card-padding: 12px;
     background: colors.$bg-intertype;
     border-radius: inherit;
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.75;
   }
 
   &__details {
@@ -72,18 +72,18 @@ $card-padding: 12px;
   }
 
   &__details-description {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
 
   &__details-title,
   &__details-tags {
     display: flex;
-    gap: 8px;
+    gap: 4px;
     align-items: center;
   }
 
   &__details-tags {
-    opacity: 0.6;
+    opacity: 0.75;
   }
 
   &__chevron {

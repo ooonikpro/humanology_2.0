@@ -4,9 +4,9 @@ const ACTIVITY: IntertypeDataType = {
   id: "activity",
   name: "Активации",
   alternativeName: "Откровенность",
-  shortDescription: "Полное психологическое дополнение",
-  lvl: "+3",
-  tags: ["Tag-1", "Tag-2", "Tag-3"],
+  shortDescription: "Поощрение активности друг друга",
+  lvl: "+5",
+  tags: ["Активность", "Игривость", "Эмоциональный подъем", "Захватывающее интенсивное общение", "Откровенность", "Поддержка", "Трудовая активность"],
 };
 
 export default ACTIVITY;
