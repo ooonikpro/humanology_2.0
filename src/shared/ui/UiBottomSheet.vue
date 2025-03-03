@@ -1,13 +1,31 @@
 <script lang="ts" setup>
-import { defineProps, defineEmits, computed, ref } from "vue";
+import {
+  clearAllBodyScrollLocks,
+  enableBodyScroll,
+  disableBodyScroll,
+} from "body-scroll-lock";
+import {
+  defineProps,
+  defineEmits,
+  computed,
+  ref,
+  inject,
+  onUnmounted,
+  type ShallowRef,
+  watch,
+} from "vue";
 import { useSwipe } from "@shared/hooks/useSwipe";
 
-import UiBackdrop from "./UiBackdrop.vue";
 import UiSvg from "./UiSvg.vue";
+
+const layoutRef = inject("layoutRef") as Readonly<ShallowRef<HTMLElement>>;
 
 const props = defineProps<{ isOpen: boolean }>();
 
-const emit = defineEmits<{ close: []; afterClose: [] }>();
+const emit = defineEmits<{
+  close: [];
+  afterClose: [];
+}>();
 
 const {
   isSwiping,
@@ -22,7 +40,6 @@ const {
 );
 
 const isShowBottomSheet = ref(false);
-const isExpanded = ref(false);
 
 const pointermove = computed(() => (isSwiping.value ? "pointermove" : ""));
 const pointerup = computed(() => (isSwiping.value ? "pointerup" : ""));
@@ -31,9 +48,9 @@ const pointerleave = computed(() => (isSwiping.value ? "pointerleave" : ""));
 const showBottomSheet = () => {
   isShowBottomSheet.value = true;
 };
+
 const hideBottomSheet = () => {
   isShowBottomSheet.value = false;
-  isExpanded.value = false;
 };
 
 const hideBackdrop = () => {
@@ -45,66 +62,107 @@ const afterClose = () => {
   emit("afterClose");
 };
 
-const onScroll = (e: Event) => {
-  const target = e.target as HTMLElement;
-  isExpanded.value = (target.scrollTop / target.scrollHeight) * 100 > 2;
-};
+watch(
+  () => props.isOpen,
+  (newState) => {
+    if (newState) {
+      disableBodyScroll(layoutRef.value);
+      disableBodyScroll(document.body);
+    } else {
+      enableBodyScroll(layoutRef.value);
+      enableBodyScroll(document.body);
+    }
+  },
+  {
+    immediate: true,
+  },
+);
+
+onUnmounted(() => {
+  clearAllBodyScrollLocks();
+});
 </script>
 
 <template>
-  <UiBackdrop
-    :isShow="props.isOpen"
+  <Transition
+    name="ui-backdrop--animate"
+    appear
     @afterEnter="showBottomSheet"
     @afterLeave="afterClose"
     @click.self="hideBottomSheet"
   >
-    <Transition name="ui-bottom-sheet--animate" @afterLeave="hideBackdrop">
-      <div
-        v-if="isShowBottomSheet"
-        :class="{
-          'ui-bottom-sheet--expanded': isExpanded,
-          'ui-bottom-sheet--swiping': isSwiping,
-        }"
-        class="ui-bottom-sheet"
-      >
-        <header
-          class="ui-bottom-sheet__header"
-          @pointerdown.prevent="handleSwipeStart"
-          @[pointermove].prevent="handleSwipe"
-          @[pointerup].prevent="handleSwipeEnd"
-          @[pointerleave].prevent="handleSwipeEnd"
+    <div v-if="props.isOpen" class="ui-backdrop">
+      <Transition name="ui-bottom-sheet--animate" @afterLeave="hideBackdrop">
+        <div
+          v-if="isShowBottomSheet"
+          :class="{
+            'ui-bottom-sheet--swiping': isSwiping,
+          }"
+          class="ui-bottom-sheet"
         >
-          <slot name="title"></slot>
-
-          <button
-            class="ui-bottom-sheet__close-button"
-            @click="hideBottomSheet"
+          <header
+            class="ui-bottom-sheet__header"
+            @pointerdown.prevent="handleSwipeStart"
+            @[pointermove].prevent="handleSwipe"
+            @[pointerup].prevent="handleSwipeEnd"
+            @[pointerleave].prevent="handleSwipeEnd"
           >
-            <UiSvg name="close" size="24" color="accent" />
-          </button>
-        </header>
+            <slot name="title"></slot>
 
-        <div class="ui-bottom-sheet__body">
-          <div class="ui-bottom-sheet__content" @scroll="onScroll($event)">
-            <slot />
+            <button
+              class="ui-bottom-sheet__close-button"
+              @click="hideBottomSheet"
+            >
+              <UiSvg name="close" size="24" color="accent" />
+            </button>
+          </header>
+
+          <div class="ui-bottom-sheet__body">
+            <div class="ui-bottom-sheet__content">
+              <slot />
+            </div>
           </div>
         </div>
-      </div>
-    </Transition>
-  </UiBackdrop>
+      </Transition>
+    </div>
+  </Transition>
 </template>
 
 <style lang="scss" scoped>
 @use "../styles/variables/layouts.scss";
 @use "../styles/variables/colors.scss";
+@use "../styles/variables/layers";
+@use "../styles/mixins/transitions";
 
+$gutter: 70px;
 $gap: 8px;
 $closeButtonSize: 24px;
 $headerHeight: 36px;
 $translate: v-bind(swipePercentValue);
 
+$opacity-transition: opacity 150ms ease;
 $transform-transition: transform 150ms ease;
 $height-transition: height 150ms ease;
+
+.ui-backdrop {
+  position: fixed;
+  top: -$gutter;
+  left: 0;
+  right: 0;
+  bottom: -$gutter;
+  padding: $gutter 0;
+  z-index: layers.$z-index-app-backdrop;
+  background-color: colors.$dark-grey;
+  transition: $opacity-transition;
+  overflow: hidden;
+
+  touch-action: none;
+
+  &--animate-enter-from,
+  &--animate-leave-to {
+    opacity: 0;
+  }
+}
 
 .ui-bottom-sheet {
   position: fixed;
@@ -182,17 +240,13 @@ $height-transition: height 150ms ease;
     padding: $gap;
   }
 
-  &--expanded {
-    height: 87%;
-  }
-
   &--swiping {
     transition: $height-transition;
   }
 
   &--animate {
     &-enter-active {
-      transition: transform 250ms cubic-bezier(0.38, 0.45, 0, 1.01);
+      transition: transform 150ms cubic-bezier(0.38, 0.45, 0, 1.01);
     }
 
     &-leave-active {
