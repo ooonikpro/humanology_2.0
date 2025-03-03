@@ -70,8 +70,7 @@ const genderModel = ref(GenderEnum.male);
 
 .sociotype-card {
   position: relative;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-radius: 4px;
   border-top: 1px solid colors.$quadra;
   background: colors.$white;
 
