@@ -16,6 +16,11 @@ $fire: #fa7c01;
 $water: #13a4d3;
 $earth: #7fb900;
 
+$air-dark: #733E7B;
+$fire-dark: #8C4500;
+$water-dark: #105971;
+$earth-dark: #476800;
+
 $transparently-air: rgba($air, 0.1);
 $transparently-fire: rgba($fire, 0.1);
 $transparently-water: rgba($water, 0.1);
@@ -33,6 +38,10 @@ $unfavorable: $pink;
 
 $quadra: var(--color-quadra);
 $role: var(--color-role);
+
+$quadra-dark: var(--color-quadra-dark);
+$role-dark: var(--color-role-dark);
+
 $intertype: var(--color-intertype-group);
 
 $bg-quadra: var(--bg-quadra);
@@ -59,8 +68,17 @@ $global-colors: (
   "water": $water,
   "earth": $earth,
 
+  "air-dark": $air-dark,
+  "fire-dark": $fire-dark,
+  "water-dark": $water-dark,
+  "earth-dark": $earth-dark,
+
   "quadra": $quadra,
   "role": $role,
+
+  "quadra-dark": $quadra-dark,
+  "role-dark": $role-dark,
+
   "intertype": $intertype,
 
   "inherit": inherit,

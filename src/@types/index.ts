@@ -288,6 +288,12 @@ export type TextColorType =
   | "earth"
   | "quadra"
   | "role"
+  | "air-dark"
+  | "fire-dark"
+  | "water-dark"
+  | "earth-dark"
+  | "quadra-dark"
+  | "role-dark"
   | "intertype"
   | "inherit";
 
