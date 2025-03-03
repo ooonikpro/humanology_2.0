@@ -1,37 +1,42 @@
-import { defineAsyncComponent } from "vue";
-import { createRoute, withParams } from "@kitbag/router";
+import type { RouteRecordRaw } from "vue-router";
+import { isSociotypeId } from "@entities/sociotypes";
+import { SOCIOTYPE_PAGE_TABS } from "@pages/sociotypes";
+import { appRoutes } from "../../constants";
 
-import { sociotypeIdParam, sociotypeTabNameParam } from "./params";
+export default [
+  {
+    path: appRoutes.sociotypeCard(),
+    component: () => import("@pages/sociotypes"),
+    beforeEnter: (to, _, next) => {
+      const id = ((to.params.id ?? "") as string).toUpperCase();
 
-export const SOCIOTYPE_CARD_ROUTE = createRoute({
-  path: withParams("/s/[id]", {
-    id: sociotypeIdParam,
-  }),
-  name: "card",
-  component: defineAsyncComponent(() => import("@pages/sociotypes")),
-});
+      if (isSociotypeId(to.params.id as string)) return next();
 
-export const SOCIOTYPE_TAB_ROUTE = createRoute({
-  parent: SOCIOTYPE_CARD_ROUTE,
-  path: withParams("/[tabName]", {
-    tabName: sociotypeTabNameParam,
-  }),
-  name: "sociotypes",
-  component: defineAsyncComponent(() => import("@pages/sociotypes")),
-});
+      if (isSociotypeId(id)) return next(appRoutes.sociotypeCard(id));
 
-export const KIDS_ROUTE = createRoute({
-  path: "/k",
-  name: "kids",
-  component: defineAsyncComponent(() => import("@pages/kids/KidsPage.vue")),
-});
+      return next(appRoutes.sociotypes);
+    },
+  },
+  {
+    path: appRoutes.sociotypeTab(),
+    component: () => import("@pages/sociotypes"),
+    beforeEnter: (to, _, next) => {
+      const id = ((to.params.id ?? "") as string).toUpperCase();
+      const tabName = to.params.tabName as string;
 
-export const SOCIOTYPE_KIDS_CARD_ROUTE = createRoute({
-  path: withParams("/k/[id]", {
-    id: sociotypeIdParam,
-  }),
-  name: "kids.card",
-  component: defineAsyncComponent(
-    () => import("@pages/kids/id/KidsIdPage.vue"),
-  ),
-});
+      if (isSociotypeId(to.params.id as string)) {
+        if (!SOCIOTYPE_PAGE_TABS.find(({ name }) => name === tabName)) {
+          return next(appRoutes.sociotypeCard(id));
+        }
+
+        return next();
+      }
+
+      if (isSociotypeId(id)) {
+        return next(appRoutes.sociotypeTab(id, tabName));
+      }
+
+      return next(appRoutes.sociotypes);
+    },
+  },
+] as Array<RouteRecordRaw>;

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { RouterLink } from "@kitbag/router";
+import { RouterLink } from "vue-router";
 import { defineProps } from "vue";
 import { UiSvg } from "@shared/ui";
 import type { NavigationTabPropsType } from "../types";

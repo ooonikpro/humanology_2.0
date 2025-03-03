@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
+import { useRouter } from "vue-router";
 import type { SociotypeIdType } from "@types";
 import { UiText } from "@shared/ui";
 import {
@@ -15,14 +16,9 @@ import {
   IntertypeProvider,
   IntertypeWithSociotype,
 } from "@entities/intertypes";
-import { useRouter } from "@kitbag/router";
 
 const router = useRouter();
 const props = defineProps<{ sociotypeId: SociotypeIdType }>();
-
-const goToSociotypeCardPage = (id: SociotypeIdType) => {
-  router.push("sociotypes", { id, tabName: "card" });
-};
 </script>
 
 <template>
@@ -63,7 +59,7 @@ const goToSociotypeCardPage = (id: SociotypeIdType) => {
             <SociotypeCard
               :data="sociotypeData"
               mini
-              @click="() => goToSociotypeCardPage(sociotypeData.id)"
+              @click="router.push($appRoutes.sociotypeCard(sociotypeData.id))"
             >
               <template #header>
                 <SociotypeCardHeader :data="sociotypeData" mini />

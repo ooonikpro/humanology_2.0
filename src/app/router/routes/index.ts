@@ -1,60 +1,53 @@
-import {
-  CLUBS_AND_GROUPS_ROUTE,
-  DISCLAIMER_ROUTE,
-  HISTORY_ROUTE,
-  HOME_ROUTE,
-  HOW_TO_DEFINE_ROUTE,
-  JUNG_DICHOTOMY_ROUTE,
-  METABOLISM_ROUTE,
-  MINDSET_ROUTE,
-  PEOPLE_ROUTE,
-  PROFILE_ROUTE,
-  QUADRAS_ROUTE,
-  RAINING_SIGNS_ROUTE,
-  ROLES_AND_SUITS_ROUTE,
-  SPECIALISTS_ROUTE,
-  TEAMS_ROUTE,
-  TESTS_ROUTE,
-  WHAT_IS_IT_ROUTE,
-} from "./staticRoutes";
-import {
-  SOCIOTYPE_CARD_ROUTE,
-  SOCIOTYPE_TAB_ROUTE,
-  SOCIOTYPE_KIDS_CARD_ROUTE,
-  KIDS_ROUTE,
-} from "./sociotypes";
-import { ASPECTS_ROUTE, ASPECTS_CARD_ROUTE } from "./aspects";
-import { FUNCTIONS_ROUTE, FUNCTIONS_CARD_ROUTE } from "./functions";
-import { INTERTYPES_ROUTE, INTERTYPES_DESCRIPTION_ROUTE } from "./intertypes";
+import type { RouteRecordRaw } from "vue-router";
+import HomePage from "@pages/HomePage.vue";
+import { appRoutes } from "../constants";
 
-const ROUTES = [
-  HOME_ROUTE,
-  SOCIOTYPE_CARD_ROUTE,
-  SOCIOTYPE_KIDS_CARD_ROUTE,
-  SOCIOTYPE_TAB_ROUTE,
-  WHAT_IS_IT_ROUTE,
-  DISCLAIMER_ROUTE,
-  HOW_TO_DEFINE_ROUTE,
-  TESTS_ROUTE,
-  PROFILE_ROUTE,
-  PEOPLE_ROUTE,
-  SPECIALISTS_ROUTE,
-  TEAMS_ROUTE,
-  KIDS_ROUTE,
-  METABOLISM_ROUTE,
-  HISTORY_ROUTE,
-  FUNCTIONS_ROUTE,
-  FUNCTIONS_CARD_ROUTE,
-  ASPECTS_ROUTE,
-  ASPECTS_CARD_ROUTE,
-  QUADRAS_ROUTE,
-  ROLES_AND_SUITS_ROUTE,
-  CLUBS_AND_GROUPS_ROUTE,
-  MINDSET_ROUTE,
-  RAINING_SIGNS_ROUTE,
-  JUNG_DICHOTOMY_ROUTE,
-  INTERTYPES_ROUTE,
-  INTERTYPES_DESCRIPTION_ROUTE,
-] as const;
+import SociotypeRoutes from "./sociotypes";
+import KidsRoutes from "./kids";
+import TheoryRoutes from "./theory";
 
-export default ROUTES;
+export default [
+  {
+    path: appRoutes.home,
+    component: HomePage,
+  },
+  ...SociotypeRoutes,
+  ...KidsRoutes,
+  ...TheoryRoutes,
+  {
+    path: appRoutes.whatIsIt,
+    component: () => import("@pages/WhatIsPage.vue"),
+  },
+  {
+    path: appRoutes.disclaimer,
+    component: () => import("@pages/DisclaimerPage.vue"),
+  },
+  {
+    path: appRoutes.howToDefine,
+    component: () => import("@pages/HowToDefineTypePage.vue"),
+  },
+  {
+    path: appRoutes.tests,
+    component: () => import("@pages/TestsPage.vue"),
+  },
+  {
+    path: appRoutes.profile,
+    component: () => import("@pages/ProfilePage.vue"),
+  },
+  {
+    path: appRoutes.people,
+    component: () => import("@pages/PeoplesPage.vue"),
+  },
+  {
+    path: appRoutes.specialists,
+    component: () => import("@pages/SpecialistsPage.vue"),
+  },
+  {
+    path: appRoutes.teams,
+    component: () => import("@pages/TeamsPage.vue"),
+  },
+  {
+    path: appRoutes.history,
+    component: () => import("@pages/HistoryPage.vue"),
+  },
+] satisfies RouteRecordRaw[];

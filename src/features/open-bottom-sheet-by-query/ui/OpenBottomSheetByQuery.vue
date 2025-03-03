@@ -1,8 +1,10 @@
 <script lang="ts" setup>
-import { useRoute, useRouter } from "@kitbag/router";
 import { ref, watch } from "vue";
+import { useRoute, useRouter, type LocationQuery } from "vue-router";
 
-const props = defineProps<{ predicate: (query: URLSearchParams) => boolean }>();
+const props = defineProps<{
+  predicate: (query: LocationQuery) => boolean;
+}>();
 
 const route = useRoute();
 const router = useRouter();
@@ -16,15 +18,13 @@ const handleClose = () => {
   isOpen.value = false;
 };
 const handleAfterClose = () => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  router.replace(route.href.split("?")?.[0] ?? route.href);
+  router.replace(route.path.split("?")?.[0] ?? route.path);
 };
 
 watch(
   () => route.query,
-  () => {
-    if (props.predicate(route.query)) {
+  (newQuery) => {
+    if (props.predicate(newQuery)) {
       handleOpen();
     } else {
       handleClose();
@@ -41,7 +41,7 @@ watch(
         isOpen,
         data: {
           ...route.params,
-          ...Object.fromEntries(route.query.entries()),
+          ...route.query,
         },
         handleOpen,
         handleClose,

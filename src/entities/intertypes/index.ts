@@ -4,4 +4,6 @@ export { default as IntertypeWithSociotype } from "./ui/IntertypeWithSociotype.v
 export { default as IntertypeCard } from "./ui/IntertypeCard.vue";
 export { default as IntertypeNameBlock } from "./ui/IntertypeNameBlock.vue";
 
+export { default as isIntertype } from "./lib/guards/isIntertype";
+
 export { default as intertypeModel } from "./model";
