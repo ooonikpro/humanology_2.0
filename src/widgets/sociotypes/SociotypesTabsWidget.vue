@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { toValue, useTemplateRef, watch, onMounted, computed } from "vue";
-import { useRoute } from "vue-router";
 import type { SociotypeIdType, SociotypeTabType } from "@types";
 import { NavigationTab } from "@entities/navigation";
 import { scrollContainerToElementByIndex } from "@shared/lib";
@@ -12,7 +11,6 @@ const props = defineProps<{
   sociotypeId: SociotypeIdType;
 }>();
 
-const route = useRoute();
 const container = useTemplateRef<HTMLElement>("my-container");
 
 const activeElementIndex = computed(() =>

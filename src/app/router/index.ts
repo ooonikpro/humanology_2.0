@@ -4,8 +4,10 @@ import ROUTES from "./routes";
 const appRouter = createRouter({
   history: createWebHistory(),
   routes: ROUTES,
-  scrollBehavior: (to, __, savedPosition) => {
-    if (to.query) return { top: document.documentElement.scrollTop };
+  scrollBehavior: (to, from, savedPosition) => {
+    if (to.path === from.path) {
+      return { top: document.documentElement.scrollTop };
+    }
 
     return savedPosition ?? { top: 0 };
   },
