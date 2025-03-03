@@ -46,7 +46,11 @@ const routePredicate = (query: LocationQueryRaw) => {
             <slot v-bind="{ sociotypeId: data.id, functionName: data.f }" />
 
             <AspectDescription
-              :iconName="sociotypeModel.getAspectByFunction(data.id, data.f)"
+              :iconName="
+                aspectModel.getAspectIconName(
+                  sociotypeModel.getAspectByFunction(data.id, data.f),
+                )
+              "
               :title="
                 aspectModel.getAspectName(
                   sociotypeModel.getAspectByFunction(data.id, data.f),

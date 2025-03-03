@@ -49,9 +49,11 @@ const isDisabled = (functionName: HumanFunctionType) => {
           )
         "
         :aspectIcon="
-          sociotypeModel.getAspectByFunction(
-            props.sociotypeId,
-            leftFunctionName,
+          aspectModel.getAspectIconName(
+            sociotypeModel.getAspectByFunction(
+              props.sociotypeId,
+              leftFunctionName,
+            ),
           )
         "
         :aspectVariant="
@@ -77,9 +79,11 @@ const isDisabled = (functionName: HumanFunctionType) => {
           )
         "
         :aspectIcon="
-          sociotypeModel.getAspectByFunction(
-            props.sociotypeId,
-            rightFunctionName,
+          aspectModel.getAspectIconName(
+            sociotypeModel.getAspectByFunction(
+              props.sociotypeId,
+              rightFunctionName,
+            ),
           )
         "
         :aspectVariant="

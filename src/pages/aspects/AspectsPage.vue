@@ -7,7 +7,7 @@ import { AspectDescription, aspectModel } from "@entities/aspects";
     <AspectDescription
       v-for="aspect in aspectModel.getAllAspects()"
       :key="aspect"
-      :iconName="aspect"
+      :iconName="aspectModel.getAspectIconName(aspect)"
       :title="aspectModel.getAspectName(aspect)"
       :subtitle="aspectModel.getAspectLabel(aspect)"
       :tags="aspectModel.getAspectTags(aspect)"
