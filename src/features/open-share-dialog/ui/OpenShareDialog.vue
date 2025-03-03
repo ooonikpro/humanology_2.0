@@ -23,7 +23,22 @@ const onClick = () => {
 </script>
 
 <template>
-  <button @click="onClick">
-    <UiSvg :color="color" :size="size" name="share" />
+  <button @click="onClick" class="share" >
+    <UiSvg :color="black" :size="size" name="share" />
   </button>
 </template>
+
+
+<style lang="scss" scoped>
+@use "@shared/styles/variables/colors";
+
+.share { 
+  cursor: pointer;
+  opacity: 0.8;
+  
+  :hover {
+    opacity: 1;
+  }
+}
+
+</style>
