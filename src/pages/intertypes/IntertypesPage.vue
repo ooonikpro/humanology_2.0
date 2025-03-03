@@ -81,7 +81,7 @@ import {
     }
 
     &-title {
-      text-align: center;
+      text-align: left;
     }
   }
 }
