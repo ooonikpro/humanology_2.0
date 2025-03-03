@@ -24,7 +24,7 @@ const props = defineProps<{ iconName: IconNameType; title?: string }>();
 @use "@shared/styles/variables/colors";
 
 .page-header-widget {
-  padding: 8px 8px 16px 8px;
+  padding: 12px 12px 12px 0;
   border-bottom: solid 1px colors.$grey;
   margin-bottom: 8px;
 
