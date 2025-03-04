@@ -52,17 +52,6 @@ const ComponentName = defineAsyncComponent(
 
     <hr class="intertype-description-page__separator" />
     <component :is="ComponentName" :intertypeId="intertypeData.id" />
-
-    <UiLinkBlock
-      iconName="specialist"
-      iconColor="intertype"
-      bg="intertype-bg"
-      to="/"
-    >
-      Что может помешать дуалам
-      <br />
-      найти общий язык?
-    </UiLinkBlock>
   </IntertypeProvider>
 </template>
 

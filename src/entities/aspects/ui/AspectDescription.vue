@@ -19,12 +19,12 @@ const props = defineProps<{
         v-if="props.iconName"
         :name="props.iconName"
         class="aspect-description__icon"
-        size="48"
+        size="64"
         color="accent"
       />
 
       <div class="aspect-description__title">
-        <UiText force-tag="h3" preset="large" color="accent">
+        <UiText force-tag="h3" preset="subtitle" color="accent">
           {{ props.title }}
         </UiText>
 

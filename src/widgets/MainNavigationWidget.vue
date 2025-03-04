@@ -106,63 +106,63 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
 
       <NavigationTab
         :to="$appRoutes.aspects"
-        class="main-nav__tab col-40"
+        class="main-nav__tab col-60"
         label="Аспекты"
         iconName="square-4"
       />
 
       <NavigationTab
         :to="$appRoutes.history"
-        class="main-nav__tab col-50"
+        class="main-nav__tab col-40"
         label="История"
         iconName="time"
       />
 
       <NavigationTab
         :to="$appRoutes.functions"
-        class="main-nav__tab col-50"
+        class="main-nav__tab col-60"
         label="Функции"
         iconName="square-5"
       />
 
       <NavigationTab
         :to="$appRoutes.quadras"
-        class="main-nav__tab col-50"
+        class="main-nav__tab col-40"
         label="Квадры"
         iconName="square-6"
       />
 
       <NavigationTab
         :to="$appRoutes.roles"
-        class="main-nav__tab col-50"
+        class="main-nav__tab col-40"
         label="Роли и масти"
         iconName="square-7"
       />
 
       <NavigationTab
         :to="$appRoutes.clubs"
-        class="main-nav__tab col-50"
+        class="main-nav__tab col-60"
         label="Клубы и группы"
         iconName="square-8"
       />
 
       <NavigationTab
         :to="$appRoutes.mindset"
-        class="main-nav__tab col-50"
+        class="main-nav__tab col-100"
         label="Типы мышления"
         iconName="square-9"
       />
 
       <NavigationTab
         :to="$appRoutes.raining"
-        class="main-nav__tab col-50"
+        class="main-nav__tab col-40"
         label="Признаки Рейнина"
         iconName="square-10"
       />
 
       <NavigationTab
         :to="$appRoutes.jung"
-        class="main-nav__tab col-50"
+        class="main-nav__tab col-60"
         label="Дихотомии Юнга"
         iconName="square-11"
       />

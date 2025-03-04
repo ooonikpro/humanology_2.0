@@ -191,6 +191,12 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 <style scoped lang="scss">
 @use "@shared/styles/variables/colors";
 
+  .graph {
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+
   .text {
     display: flex;
     flex-direction: column;
