@@ -80,6 +80,13 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
 
     <div class="main-nav__row">
       <NavigationTab
+        :to="$appRoutes.intertypes"
+        class="main-nav__tab col-100"
+        label="Интертипные отношения"
+        iconName="square-2"
+      />
+
+      <NavigationTab
         :to="$appRoutes.kids"
         class="main-nav__tab col-100"
         label="Дети"
@@ -95,13 +102,6 @@ import { SociotypePortraitTrioKids } from "@entities/sociotypes";
         class="main-nav__tab col-100"
         label="Информационный метаболизм"
         iconName="square-3"
-      />
-
-      <NavigationTab
-        :to="$appRoutes.intertypes"
-        class="main-nav__tab col-60"
-        label="Интертипные отношения"
-        iconName="square-2"
       />
 
       <NavigationTab

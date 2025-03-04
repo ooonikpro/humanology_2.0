@@ -6,7 +6,7 @@ const QUASIDENTICAL: IntertypeDataType = {
   alternativeName: "Заблуждение",
   shortDescription: "Сосуществование при непонимании",
   lvl: "−1",
-  tags: ["Tag-1", "Tag-2", "Tag-3"],
+  tags: ["Дискуссии", "Заблуждение","Информационная насыщеность", "Готовность помочь", "Интерес к взглядам и знаниям друг друга", "Сонаправленные интересы", "Восхищенность интеллектом"],
 };
 
 export default QUASIDENTICAL;

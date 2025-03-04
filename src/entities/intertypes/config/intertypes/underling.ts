@@ -6,7 +6,7 @@ const UNDERLING: IntertypeDataType = {
   alternativeName: "Перегрузка",
   shortDescription: "Нервное обучение",
   lvl: "−3",
-  tags: ["Tag-1", "Tag-2", "Tag-3"],
+  tags: ["Перегрузка", "Стимул", "Значимость", "Самоценность", "Умение прощать", "Восхищение партнером", "Благосклонность и уважение"],
 };
 
 export default UNDERLING;

@@ -36,18 +36,13 @@ const ComponentName = defineAsyncComponent(
       </UiText>
     </div>
 
-    <hr class="intertype-description-page__separator" />
-
     <div class="intertype-description-page__tags">
       <UiBadge v-for="tag in intertypeData.tags" :key="tag" bg="intertype">
         {{ tag }}
       </UiBadge>
     </div>
 
-    <br />
-
     <hr class="intertype-description-page__separator" />
-
     <component :is="ComponentName" :intertypeId="intertypeData.id" />
   </IntertypeProvider>
 </template>
@@ -58,7 +53,7 @@ const ComponentName = defineAsyncComponent(
 .intertype-description-page {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 
   &__header {
     position: relative;
@@ -67,8 +62,7 @@ const ComponentName = defineAsyncComponent(
     justify-content: space-between;
     min-height: 176px;
     padding: 12px;
-    border-bottom: solid 1px colors.$grey;
-    margin-bottom: 8px;
+    border-bottom: solid 1px colors.$intertype;
     background-color: colors.$bg-intertype;
 
     &-double-icon {
@@ -90,8 +84,9 @@ const ComponentName = defineAsyncComponent(
 
   &__tags {
     display: flex;
+    opacity: 0.75;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 4px;
   }
 }
 </style>
