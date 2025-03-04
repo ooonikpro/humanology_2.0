@@ -4,9 +4,9 @@ const BENEFICIARY: IntertypeDataType = {
   id: "beneficiary",
   name: "Заказчик",
   alternativeName: "Бессмысленность",
-  shortDescription: "Полное психологическое дополнение",
+  shortDescription: "Снисходительность",
   lvl: "+2",
-  tags: ["Tag-1", "Tag-2", "Tag-3"],
+  tags: ["Притяжение", "Активность", "Расширение интересов", "Ощущение значимости", "Опека", "Преданность партнера", "Удовлетворение потребностей", "Направление активности", "Помощь", "Раскрытие потенциала"],
 };
 
 export default BENEFICIARY;

@@ -4,9 +4,9 @@ const MIRROR: IntertypeDataType = {
   id: "mirror",
   name: "Зеркальные",
   alternativeName: "Уважение",
-  shortDescription: "Полное психологическое дополнение",
-  lvl: "+2",
-  tags: ["Tag-1", "Tag-2", "Tag-3"],
+  shortDescription: "Конструктивная критика",
+  lvl: "+3",
+  tags: ["Уважение", "Теплое откровенное общение", "Поддержка и придание уверенности", "Поддержка и придание уверенности", "Корректировка планов и действий", "Доверие", "Уcпокоение"],
 };
 
 export default MIRROR;

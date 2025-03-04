@@ -109,7 +109,7 @@ $gap: 8px;
     &-icons {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 2px;
       margin-top: -4px;
     }
 
@@ -184,7 +184,7 @@ $gap: 8px;
     pointer-events: none;
     touch-action: none;
     cursor: none;
-    opacity: 0.4;
+    opacity: 0.1;
   }
 }
 </style>

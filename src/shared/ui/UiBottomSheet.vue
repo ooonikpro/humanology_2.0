@@ -192,7 +192,7 @@ $height-transition: height 150ms ease;
 
   &--animate {
     &-enter-active {
-      transition: transform 250ms cubic-bezier(0.38, 0.45, 0, 1.01);
+      transition: transform 200ms cubic-bezier(0.38, 0.45, 0, 1.01);
     }
 
     &-leave-active {

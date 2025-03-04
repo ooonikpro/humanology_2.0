@@ -12,25 +12,38 @@ import {
 <template>
   <div class="intertype-page">
     <PageHeaderWidget iconName="square-2" title="Интертипные отношения" />
-    <UiText>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque
-      cupiditate debitis enim fugit ipsa pariatur, quae quis? Iure obcaecati
-      possimus praesentium, quam ratione rem similique sit soluta suscipit
-      tempora.
+    <UiText preset="large" color="accent">
+      Одной из главных причин, почему люди обращаются к соционике, является желание упростить общение и лучше понимать окружающих. 
     </UiText>
 
     <UiText>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque
-      cupiditate debitis enim fugit ipsa pariatur, quae quis? Iure obcaecati
-      possimus praesentium, quam ratione rem similique sit soluta suscipit
-      tempora.
+      Соционика показывает, что с разными типами людей взаимодействие складывается по-разному: с одними отношения будут легкими и естественными, с другими — сложными и требующими усилий. 
     </UiText>
 
     <UiText>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cumque
-      cupiditate debitis enim fugit ipsa pariatur, quae quis? Iure obcaecati
-      possimus praesentium, quam ratione rem similique sit soluta suscipit
-      tempora.
+      Это не зависит от личных качеств или опыта, а связано с тем, как устроен обмен информации между разными типами психики.
+    </UiText>
+    
+    <UiText>
+      Это естественно — невозможно быть в гармонии со всеми. Аушра Аугустинавичюте еще в 1978 году выделила, что в соционике существуют благоприятные, нейтральные и неблагоприятные типы отношений. 
+    </UiText>
+
+    <hr />
+
+    <UiText>
+      В благоприятных взаимодействие происходит легко, без особых усилий, в нейтральных – спокойно и без особых конфликтов, а в неблагоприятных неизбежны частые недопонимания, напряжение и ссоры.
+    </UiText>
+
+    <UiText>
+      Эти различия объясняются тем, как воспринимается и обрабатывается информация разными психотипами. 
+    </UiText>
+
+    <UiText>
+      В одних случаях люди интуитивно дополняют друг друга, а в других — оказываются на разных «волнах», что создает сложности в общении.
+    </UiText>
+
+    <UiText>
+      Знание соционики помогает не только предсказать, какие отношения могут сложиться с тем или иным человеком, но и избежать ненужных конфликтов, адаптируясь к особенностям взаимодействия.
     </UiText>
 
     <IntertypeGroupProvider
@@ -68,7 +81,17 @@ import {
 .intertype-page {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
+
+  hr {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+    }
+
+  .half {
+      width:50%;
+    }
 
   &__intertypes {
     display: flex;

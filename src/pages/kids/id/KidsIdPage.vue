@@ -37,19 +37,33 @@ const Content = defineAsyncComponent(
       </template>
     </SociotypeCard>
 
-    <SociotypeSignsBlock title="Описание">
+    <div class="page">
       <component :is="Content" />
-    </SociotypeSignsBlock>
+    </div>
   </SociotypeProvider>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 @use "@shared/styles/variables/colors";
 
-.kids-id-page {
+  .page {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  background-color: colors.$white;
-}
+  gap: 16px;
+  margin-top: 24px;
+  padding-left: 12px;
+  padding-right: 12px;
+
+  hr {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    opacity: 0.2;
+    background-color: colors.$accent;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
 </style>

@@ -4,7 +4,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 </script>
 
 <template>
-<div class="whatis-page">
+<div class="page">
 
   <PageHeaderWidget iconName="square-0" title="Что это такое?" />
 
@@ -20,8 +20,12 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     Люди различаются по своим ролям, функциям и стилям взаимодействия с миром. Достаточно внимательно наблюдать за ними — как делал Дроздов в «В мире животных», — чтобы заметить повторяющиеся жесты, мимику, походку, манеру общения. Человеческих «скафандров» не так много, и их различия подчиняются определённым закономерностям.
   </UiText>
 
+  <UiText preset="large" color="accent">
+    Есть гипотеза: тип информационного метаболизма — это физический атрибут человека.  
+  </UiText>
+
   <UiText>
-    Есть гипотеза: тип информационного метаболизма — это физический атрибут человека. Возможно, он закреплён на уровне клеток, ДНК и гистонов. Наука пока не подтвердила это напрямую, но вероятность высока. Возможно, в будущем анализ на гистосовместимость откроет нам точные биологические маркеры психотипов. Но даже без этого знания о типах дают колоссальные преимущества.
+    Возможно, он закреплён на уровне клеток, ДНК и гистонов <i>(предположение автора)</i>. Наука пока не подтвердила это напрямую, но вероятность высока. Возможно, в будущем анализ на гистосовместимость откроет нам точные биологические маркеры психотипов. Но даже без этого знания о типах дают колоссальные преимущества.
   </UiText>
 
   <hr class="separator" />
@@ -52,19 +56,22 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 @use "@shared/styles/variables/colors";
 
-.whatis-page {
-display: flex;
-flex-direction: column;
-gap: 16px;
+  .page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
 
-.separator {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  opacity: 0.2;
-  background-color: colors.$accent;
+  hr {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    opacity: 0.2;
+    background-color: colors.$accent;
+    }
   }
-}
+  
 </style>

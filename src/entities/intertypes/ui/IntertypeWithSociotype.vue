@@ -77,6 +77,7 @@ $gap: 8px;
     &-bg {
       width: 100%;
       height: calc(100% + $space-for-bg);
+      opacity: 0.5;
 
       position: absolute;
       top: 0;

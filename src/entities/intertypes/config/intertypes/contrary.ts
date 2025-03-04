@@ -5,7 +5,7 @@ const CONTRARY: IntertypeDataType = {
   name: "Погашение",
   alternativeName: "Скука",
   shortDescription: "Полное психологическое дополнение",
-  lvl: "+1",
+  lvl: "−3",
   tags: ["Tag-1", "Tag-2", "Tag-3"],
 };
 

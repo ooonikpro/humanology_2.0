@@ -4,9 +4,9 @@ const KINDRED: IntertypeDataType = {
   id: "kindred",
   name: "Родственные",
   alternativeName: "Обмен мнениями",
-  shortDescription: "Полное психологическое дополнение",
+  shortDescription: "Дальние родственники",
   lvl: "-2",
-  tags: ["Tag-1", "Tag-2", "Tag-3"],
+  tags: ["Соперничество", "Обмен мнениями", "Приятное общение", "Взаимопонимание", "Общие цели", "Снятие напряжения и волнения", "Успокоение", "Отстаивание и защита друг друга"],
 };
 
 export default KINDRED;

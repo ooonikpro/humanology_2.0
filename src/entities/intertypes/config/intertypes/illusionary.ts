@@ -4,9 +4,9 @@ const ILLUSIONARY: IntertypeDataType = {
   id: "illusionary",
   name: "Миражные",
   alternativeName: "Расслабление",
-  shortDescription: "Полное психологическое дополнение",
+  shortDescription: "Расслаблениe",
   lvl: "+3",
-  tags: ["Tag-1", "Tag-2", "Tag-3"],
+  tags: ["Смущение", "Интересное общение", "Благосклонность", "Вежливость", "Внимание", "Подхваливания", "Стремление поддержать и морально, и в деле"],
 };
 
 export default ILLUSIONARY;
