@@ -4,9 +4,9 @@ const SEMIDUAL: IntertypeDataType = {
   id: "semidual",
   name: "Полудуальные",
   alternativeName: "Поддержка",
-  shortDescription: "Полное психологическое дополнение",
-  lvl: "+3",
-  tags: ["Tag-1", "Tag-2", "Tag-3"],
+  shortDescription: "Неполное дополнение",
+  lvl: "+2",
+  tags: ["Поддержка", "Оценка", "Легкий контакт", "Увлеченное общение", "Уверенность", "Многообразие тем", "Повышение тонуса и работоспособности", "Защита и поддержка в начинаниях"],
 };
 
 export default SEMIDUAL;

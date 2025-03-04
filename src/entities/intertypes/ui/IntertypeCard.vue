@@ -87,7 +87,7 @@ $card-padding: 12px;
   }
 
   &__chevron {
-    margin-top: 22px - $card-padding;
+    margin-top: 20px - $card-padding;
     align-self: flex-start;
   }
 }

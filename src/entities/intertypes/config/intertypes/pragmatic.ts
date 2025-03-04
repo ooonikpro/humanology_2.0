@@ -4,9 +4,9 @@ const PRAGMATIC: IntertypeDataType = {
   id: "pragmatic",
   name: "Деловые",
   alternativeName: "Сотрудничество",
-  shortDescription: "Полное психологическое дополнение",
-  lvl: "+2",
-  tags: ["Tag-1", "Tag-2", "Tag-3"],
+  shortDescription: "Равные партнеры",
+  lvl: "-2",
+  tags: ["Легкое общение", "Взаимопонимание", "Подшучивания","Чувство равенства", "Ощущение безопасности", "Уравновешенность","Искренние похвалы", "Расширение знаний и нормативов поведения"],
 };
 
 export default PRAGMATIC;

@@ -4,8 +4,8 @@ const QUASIDENTICAL: IntertypeDataType = {
   id: "quasidentical",
   name: "Квазитождество",
   alternativeName: "Заблуждение",
-  shortDescription: "Полное психологическое дополнение",
-  lvl: "+2",
+  shortDescription: "Сосуществование при непонимании",
+  lvl: "−1",
   tags: ["Tag-1", "Tag-2", "Tag-3"],
 };
 

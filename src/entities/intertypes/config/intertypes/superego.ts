@@ -4,8 +4,8 @@ const SUPEREGO: IntertypeDataType = {
   id: "superego",
   name: "Суперэго",
   alternativeName: "Переутомление",
-  shortDescription: "Полное психологическое дополнение",
-  lvl: "+1",
+  shortDescription: "Уважение друг к другу",
+  lvl: "−5",
   tags: ["Tag-1", "Tag-2", "Tag-3"],
 };
 

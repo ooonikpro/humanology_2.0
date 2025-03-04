@@ -108,9 +108,9 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     background-color: colors.$accent;
     }
 
- .half {
-    width:50%;
-  }
+  .half {
+      width:50%;
+    }
   }
   
 </style>
