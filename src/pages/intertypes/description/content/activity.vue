@@ -2,7 +2,6 @@
 import { SociotypesDuoByIntertypeWidget } from "@widgets/sociotypes";
 import type { IntertypeIdType } from "@types";
 import { UiText } from "@shared/ui";
-import { UiLinkBlock } from "@shared/ui";
 
 const props = defineProps<{ intertypeId: IntertypeIdType }>();
 </script>
@@ -161,11 +160,11 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
         />
        
         <UiText>
-          <span class="g-color--water">Бизнесмен</span> учит <span class="g-color--fire">Политика</span> быть более гибким в области правил.
+          <span class="g-color--water">Предприниматель</span> учит <span class="g-color--fire">Политика</span> быть более гибким в области правил.
         </UiText>
     
         <UiText>
-          <span class="g-color--fire">Политик</span> учит <span class="g-color--water">Бизнесмена</span> отдыхать и заботиться о своем здоровье.
+          <span class="g-color--fire">Политик</span> учит <span class="g-color--water">Предпринимателя</span> отдыхать и заботиться о своем здоровье.
         </UiText>
 
       </div>

@@ -54,7 +54,7 @@ $card-padding: 12px;
   flex: 1 0 auto;
   padding: $card-padding;
   border-radius: 8px;
-  gap: 16px;
+  gap: 12px;
 
   &::before {
     content: "";

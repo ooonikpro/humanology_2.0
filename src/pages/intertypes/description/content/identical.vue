@@ -2,7 +2,6 @@
 import { SociotypesDuoByIntertypeWidget } from "@widgets/sociotypes";
 import type { IntertypeIdType } from "@types";
 import { UiText } from "@shared/ui";
-import { UiLinkBlock } from "@shared/ui";
 
 const props = defineProps<{ intertypeId: IntertypeIdType }>();
 </script>
@@ -90,21 +89,6 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
     display: flex;
     flex-direction: column;
     gap: 16px;
-
-    .pairs {
-      margin-top: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .pair {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid colors.$intertype;
-    }
   }
 
 </style>

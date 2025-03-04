@@ -183,11 +183,11 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
         />
 
         <UiText>
-          <span class="g-color--water">Бизнесмен</span> позволяет <span class="g-color--earth">Хранителю</span> не зацикливаться на этических нормах и правилах, а применять их в зависимости от постоянно меняющейся ситуации.
+          <span class="g-color--water">Предприниматель</span> позволяет <span class="g-color--earth">Хранителю</span> не зацикливаться на этических нормах и правилах, а применять их в зависимости от постоянно меняющейся ситуации.
         </UiText>
     
         <UiText>
-          <span class="g-color--earth">Хранитель</span> учит <span class="g-color--water">Бизнесмен</span> разбираться в людях и не позволять собой пользоваться.
+          <span class="g-color--earth">Хранитель</span> учит <span class="g-color--water">Предпринимателя</span> разбираться в людях и не позволять собой пользоваться.
         </UiText>
 
         <UiLinkBlock

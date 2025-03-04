@@ -33,7 +33,7 @@ const onClick = () => {
 
 button {
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.75;
 
   :hover {
     opacity: 1;
