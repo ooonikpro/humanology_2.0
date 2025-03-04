@@ -31,7 +31,7 @@ const ComponentName = defineAsyncComponent(
         color="intertype"
         class="intertype-description-page__header-icon"
       />
-      <UiText preset="title-alternative" color="intertype">
+      <UiText preset="title-alternative" color="black">
         {{ intertypeData.name }}
       </UiText>
     </div>

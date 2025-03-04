@@ -44,10 +44,12 @@ const { iconSize = "48", ...props } = defineProps<{
 @use "../styles/variables/colors";
 
 .ui-link-block {
-  padding: 15px 10px;
+  padding: 12px 12px;
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 16px;
+  margin-top: 16px;
 
   border-radius: 8px;
   box-shadow: 0 1px 1px 0 colors.$shadow;

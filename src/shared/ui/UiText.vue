@@ -87,7 +87,7 @@ const tag = props.forceTag ?? presetTag;
     &-title-alternative {
       font-family: fonts.$family-alternative;
       font-size: 36px;
-      line-height: 44px;
+      line-height: 40px;
       font-weight: 500;
       letter-spacing: -0.05rem;
     }

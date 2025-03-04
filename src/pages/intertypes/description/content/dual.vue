@@ -2,6 +2,7 @@
 import { SociotypesDuoByIntertypeWidget } from "@widgets/sociotypes";
 import type { IntertypeIdType } from "@types";
 import { UiText } from "@shared/ui";
+import { UiLinkBlock } from "@shared/ui";
 
 const props = defineProps<{ intertypeId: IntertypeIdType }>();
 </script>
@@ -24,6 +25,17 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
     <UiText preset="large" color="accent">
       На первый взгляд он может показаться слишком простым, «никаким», даже скучным. 
     </UiText>
+
+    <UiLinkBlock
+      iconName="specialist"
+      iconColor="intertype"
+      bg="intertype-bg"
+      to="/"
+    >
+      Что может помешать дуалам
+      <br />
+      найти общий язык?
+    </UiLinkBlock>
 
     <UiText>
       С ним не возникает привычного эмоционального напряжения, нет желания завоевывать его внимание или разгадывать сложные мотивы поведения. Такое спокойствие может обмануть, заставляя искать кого-то более яркого или загадочного.
@@ -56,6 +68,17 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
         <UiText>
           <span class="g-color--earth">Дипломат</span> при этом обеспечивает <span class="g-color--water">Новатора</span> сенсорным комфортом, вкусной едой, приятной атмосферой общения и искренним желанием услышать каждую фразу.
         </UiText>
+
+        <UiLinkBlock
+          iconName="mosaic"
+          iconColor="accent"
+          textColor="accent"
+          bg="beige"
+          to="/"
+        >
+          Разбор взаимодействий <br />
+          по конкретным функциям
+        </UiLinkBlock>
       </div>
 
       <div class="pair">
@@ -74,6 +97,17 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
         <UiText>
           Взамен <span class="g-color--fire">Энтузиаст</span> заботится о том, чтобы <span class="g-color--air">Аналитику</span> было комфортно работать, чтобы он был здоров, сыт и счастлив. 
         </UiText>
+
+        <UiLinkBlock
+          iconName="mosaic"
+          iconColor="accent"
+          textColor="accent"
+          bg="beige"
+          to="/"
+        >
+          Разбор взаимодействий <br />
+          по конкретным функциям
+        </UiLinkBlock>
       </div>
 
       <div class="pair">
@@ -92,6 +126,17 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
         <UiText>
           <span class="g-color--water">Наставник</span>, в свою очередь, объясняет <span class="g-color--earth">Инспектору</span>, как устроен мир эмоций, дарит ему новые ощущения и новые чувства, делает его менее замкнутым человеком.
         </UiText>
+
+        <UiLinkBlock
+          iconName="mosaic"
+          iconColor="accent"
+          textColor="accent"
+          bg="beige"
+          to="/"
+        >
+          Разбор взаимодействий <br />
+          по конкретным функциям
+        </UiLinkBlock>
       </div>
 
       <div class="pair">
@@ -110,6 +155,17 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
         <UiText>
           <span class="g-color--air">Лирик</span> дарит <span class="g-color--fire">Лидеру</span> ощущение, что завтрашний день принесет только приятные эмоции и больший успех.
         </UiText>
+
+        <UiLinkBlock
+          iconName="mosaic"
+          iconColor="accent"
+          textColor="accent"
+          bg="beige"
+          to="/"
+        >
+          Разбор взаимодействий <br />
+          по конкретным функциям
+        </UiLinkBlock>
       </div>
 
       <div class="pair">
@@ -128,6 +184,17 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
         <UiText>
           <span class="g-color--earth">Хранитель</span> учит <span class="g-color--water">Бизнесмен</span> разбираться в людях и не позволять собой пользоваться.
         </UiText>
+
+        <UiLinkBlock
+          iconName="mosaic"
+          iconColor="accent"
+          textColor="accent"
+          bg="beige"
+          to="/"
+        >
+          Разбор взаимодействий <br />
+          по конкретным функциям
+        </UiLinkBlock>
       </div>
 
       <div class="pair">
@@ -146,6 +213,17 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
         <UiText>
           <span class="g-color--fire">Политик</span> же превращает <span class="g-color--air">Критика</span> из закрытого человека в более социального, веселого, оптимистичного.
         </UiText>
+
+        <UiLinkBlock
+          iconName="mosaic"
+          iconColor="accent"
+          textColor="accent"
+          bg="beige"
+          to="/"
+        >
+          Разбор взаимодействий <br />
+          по конкретным функциям
+        </UiLinkBlock>
       </div>
 
       <div class="pair">
@@ -164,6 +242,17 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
         <UiText>
           <span class="g-color--water">Советчик</span> рассказывает <span class="g-color--earth">Мастеру</span> как, с помощью отношений, добиться желаемого и получить поддержку.
         </UiText>
+
+        <UiLinkBlock
+          iconName="mosaic"
+          iconColor="accent"
+          textColor="accent"
+          bg="beige"
+          to="/"
+        >
+          Разбор взаимодействий <br />
+          по конкретным функциям
+        </UiLinkBlock>
       </div>
 
       <div class="pair">
@@ -182,6 +271,17 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
         <UiText>
           <span class="g-color--air">Гуманист</span> помогает <span class="g-color--fire">Администратору</span> сдерживать свои эмоции и быть более терпимым к людям.
         </UiText>
+
+        <UiLinkBlock
+          iconName="mosaic"
+          iconColor="accent"
+          textColor="accent"
+          bg="beige"
+          to="/"
+        >
+          Разбор взаимодействий <br />
+          по конкретным функциям
+        </UiLinkBlock>
       </div>
 
     </div>
