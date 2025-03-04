@@ -20,7 +20,7 @@ const props = defineProps<IntertypeDataType>();
   flex: 1 0 auto;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: space-between;
   height: 36px;
   background-color: colors.$intertype;

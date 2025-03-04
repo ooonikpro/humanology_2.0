@@ -52,7 +52,7 @@ watch(
   }
 
   &--size {
-    @each $size in 12, 16, 20, 24, 48, 64, 80, 96, 128 {
+    @each $size in 12, 16, 20, 24, 32, 48, 64, 80, 96, 128 {
       &-#{$size} {
         width: #{$size}px;
         height: #{$size}px;

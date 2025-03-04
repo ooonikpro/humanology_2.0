@@ -28,7 +28,7 @@ const { color = "black", ...props } = defineProps<{
 <style lang="scss" scoped>
 .ui-badge {
   width: max-content;
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 2px 8px;
 
   &--small {

@@ -56,7 +56,7 @@ import {
       <hr class="intertype-page__intertypes-separator" />
       <UiText
         force-tag="h3"
-        preset="large"
+        preset="subtitle-alternative"
         color="intertype"
         class="intertype-page__intertypes-title"
       >
