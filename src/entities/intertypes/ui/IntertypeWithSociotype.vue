@@ -1,20 +1,19 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
+import { useRouter } from "vue-router";
 import { UiBadge, UiSvg, UiText } from "@shared/ui";
 import type { IntertypeDataType } from "@types";
-import { useRouter } from "@kitbag/router";
 
 const router = useRouter();
 const props = defineProps<IntertypeDataType>();
-
-const goToIntertype = () => {
-  router.push("intertypes.description", { intertype: props.id });
-};
 </script>
 
 <template>
   <article class="intertype-with-sociotype">
-    <div class="intertype-with-sociotype__info" @click="goToIntertype">
+    <div
+      class="intertype-with-sociotype__info"
+      @click="router.push($appRoutes.intertypeDescription(props.id))"
+    >
       <UiSvg
         color="intertype"
         name="intertype-bg"

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useRouter } from "@kitbag/router";
+import { useRouter } from "vue-router";
 import type { SociotypeIdType } from "@types";
 import {
   SociotypeCard,
@@ -10,7 +10,6 @@ import {
 } from "@entities/sociotypes";
 
 const router = useRouter();
-const goToPage = (id: SociotypeIdType) => router.push("kids.card", { id });
 </script>
 
 <template>
@@ -19,7 +18,7 @@ const goToPage = (id: SociotypeIdType) => router.push("kids.card", { id });
       <SociotypeProvider
         v-slot="{ data }"
         :id="quadraProps.id"
-        @click="goToPage(quadraProps.id)"
+        @click="router.push($appRoutes.kidsCard(quadraProps.id))"
       >
         <SociotypeCard :data="data" age="kid" mini>
           <template #header>

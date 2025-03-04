@@ -8,7 +8,7 @@ const scrollContainerToElementByIndex = (
     if (element) {
       element.scrollIntoView({
         inline: "center",
-        block: "center",
+        block: "nearest",
         behavior: "smooth",
       });
     }

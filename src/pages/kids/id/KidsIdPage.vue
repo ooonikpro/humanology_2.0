@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { defineAsyncComponent } from "vue";
+import { useRoute } from "vue-router";
 import {
   SociotypeCard,
   SociotypeCardGroupsAndQuadras,
@@ -7,8 +9,6 @@ import {
   SociotypeProvider,
   SociotypeSignsBlock,
 } from "@entities/sociotypes";
-import { useRoute } from "@kitbag/router";
-import { defineAsyncComponent } from "vue";
 
 const route = useRoute("kids.card");
 
