@@ -24,7 +24,7 @@ const props = defineProps<IntertypeDataType>();
 
       <div class="intertype-card__details-tags">
         <UiBadge
-          v-for="tag in props.tags.slice(0, 2)"
+          v-for="tag in props.positiveTags.slice(0, 2)"
           :key="tag"
           bg="intertype"
         >
@@ -54,6 +54,7 @@ $card-padding: 12px;
   flex: 1 0 auto;
   padding: $card-padding;
   border-radius: 8px;
+  gap: 16px;
 
   &::before {
     content: "";
@@ -66,6 +67,7 @@ $card-padding: 12px;
   }
 
   &__details {
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
     gap: 2px;

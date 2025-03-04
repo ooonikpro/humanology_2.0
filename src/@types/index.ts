@@ -168,7 +168,8 @@ export type IntertypeDataType = {
   alternativeName: string;
   shortDescription: string;
   lvl: string;
-  tags: string[];
+  positiveTags: string[];
+  negativeTags: string[];
 };
 
 export type ReininSignType =

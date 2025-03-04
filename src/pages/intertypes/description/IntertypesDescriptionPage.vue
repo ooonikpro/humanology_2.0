@@ -39,7 +39,15 @@ const ComponentName = defineAsyncComponent(
     <hr class="intertype-description-page__separator" />
 
     <div class="intertype-description-page__tags">
-      <UiBadge v-for="tag in intertypeData.tags" :key="tag" bg="intertype">
+      <UiBadge
+        v-for="tag in intertypeData.positiveTags"
+        :key="tag"
+        bg="intertype"
+      >
+        {{ tag }}
+      </UiBadge>
+
+      <UiBadge v-for="tag in intertypeData.negativeTags" :key="tag" bg="grey">
         {{ tag }}
       </UiBadge>
     </div>
