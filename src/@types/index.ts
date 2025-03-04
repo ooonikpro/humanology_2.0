@@ -168,7 +168,8 @@ export type IntertypeDataType = {
   alternativeName: string;
   shortDescription: string;
   lvl: string;
-  tags: string[];
+  positiveTags: string[];
+  negativeTags: string[];
 };
 
 export type ReininSignType =
@@ -295,6 +296,7 @@ export type TextColorType =
   | "quadra-dark"
   | "role-dark"
   | "intertype"
+  | "intertype-bg"
   | "inherit";
 
 export type OptionType<T = string> = {

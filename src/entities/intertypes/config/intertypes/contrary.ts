@@ -4,9 +4,10 @@ const CONTRARY: IntertypeDataType = {
   id: "contrary",
   name: "Погашение",
   alternativeName: "Скука",
-  shortDescription: "Неустойчивая дистанция",
+  shortDescription: "Полное психологическое дополнение",
   lvl: "−3",
-  tags: ["Решение проблем", "Взаимное любопытство", "Сильное притяжение", "Интересное общение", "Решение конкретных проблем"],
+  positiveTags: ["Tag-1", "Tag-2", "Tag-3"],
+  negativeTags: ["Tag-1", "Tag-2", "Tag-3"],
 };
 
 export default CONTRARY;

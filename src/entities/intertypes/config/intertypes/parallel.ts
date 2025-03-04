@@ -6,7 +6,8 @@ const PARALLEL: IntertypeDataType = {
   alternativeName: "Опустошение",
   shortDescription: "Назревающий конфликт",
   lvl: "−7",
-  tags: ["Веселье", "Ощущение идилии", "Общность взглядов", "Восхищение оригинальностью взглядов", "Увлекательные разговоры", "Свободный обмен мыслями", "Мирное шутливое общение"],
+  positiveTags: ["Tag-1", "Tag-2", "Tag-3"],
+  negativeTags: ["Tag-1", "Tag-2", "Tag-3"],
 };
 
 export default PARALLEL;

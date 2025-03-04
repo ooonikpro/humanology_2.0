@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineProps, ref } from "vue";
+import { defineProps, ref, toValue } from "vue";
 import type { SociotypeAgeType, SociotypeDataType } from "@types";
 import { UiText, UiGenderToggle } from "@shared/ui";
 import { GenderEnum } from "@shared/constants";
@@ -12,8 +12,9 @@ const { age = "young", ...props } = defineProps<{
   gender?: GenderEnum;
   age?: SociotypeAgeType;
   data: SociotypeDataType;
+  isShowToggle?: boolean;
 }>();
-const genderModel = ref(GenderEnum.male);
+const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
 </script>
 
 <template>
@@ -47,14 +48,14 @@ const genderModel = ref(GenderEnum.male);
       />
 
       <SociotypePortrait
-        :gender="props.gender ?? genderModel"
+        :gender="genderModel"
         :age="age"
         :id="props.data.id"
         class="sociotype-card__portrait"
       />
 
       <UiGenderToggle
-        v-if="!props.gender && !props.mini"
+        v-if="props.isShowToggle || !props.mini"
         class="sociotype-card__gender-switcher"
         v-model="genderModel"
       />

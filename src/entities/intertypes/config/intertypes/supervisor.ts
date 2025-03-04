@@ -6,7 +6,8 @@ const SUPERVISOR: IntertypeDataType = {
   alternativeName: "Напряжение",
   shortDescription: "Строгость",
   lvl: "−2",
-  tags: ["Самоуважение", "Значимость", "Интересное общение", "Самосовершенствование", "Благотворительная опека", "Увлечение партнером", "Помощь"],
+  positiveTags: ["Tag-1", "Tag-2", "Tag-3"],
+  negativeTags: ["Tag-1", "Tag-2", "Tag-3"],
 };
 
 export default SUPERVISOR;

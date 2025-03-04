@@ -6,7 +6,8 @@ const SUPEREGO: IntertypeDataType = {
   alternativeName: "Переутомление",
   shortDescription: "Уважение друг к другу",
   lvl: "−5",
-  tags: ["Расположение", "Быстрое решение вопросов", "Интересный обмен мыслями", "Желание высказать точку зрения и возбудить к себе интерес", "Оказание конкретной помощи", "Восхищение манерами и поведением"],
+  positiveTags: ["Tag-1", "Tag-2", "Tag-3"],
+  negativeTags: ["Tag-1", "Tag-2", "Tag-3"],
 };
 
 export default SUPEREGO;

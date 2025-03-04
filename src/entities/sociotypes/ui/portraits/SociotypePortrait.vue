@@ -19,11 +19,13 @@ const src = computed(() =>
 </script>
 
 <template>
-  <img :src="src" :alt="props.id" class="sociotype-portrait" />
+  <div :style="`background-image:url(${src})`" class="sociotype-portrait" />
 </template>
 
 <style lang="scss" scoped>
 .sociotype-portrait {
+  background-size: contain;
+  background-position: center;
   aspect-ratio: 1/1;
 }
 </style>
