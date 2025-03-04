@@ -7,6 +7,7 @@ import {
   SociotypeCardYungs,
   SociotypeCardHeader,
   SociotypeProvider,
+  sociotypeModel,
 } from "@entities/sociotypes";
 import {
   SociotypesTabsWidget,
@@ -39,7 +40,11 @@ const tabDescription = computed(() =>
 
 <template>
   <SociotypeProvider v-slot="{ data }" :id="sociotypeId" class="sociotype-page">
-    <SociotypeCard :data="data">
+    <SociotypeCard
+      :data="data"
+      :gender="sociotypeModel.getGenderByYung(data.id)"
+      isShowToggle
+    >
       <template #header>
         <SociotypeCardHeader :data="data" />
       </template>
