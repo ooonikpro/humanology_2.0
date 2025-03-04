@@ -51,7 +51,12 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 
     <hr />
 
-    <div class="dual-pairs"> 
+    <div class="pairs"> 
+
+      <UiText preset="subtitle" color="accent">
+            Дуалы
+        </UiText>
+
       <div class="pair">
         <SociotypesDuoByIntertypeWidget
           :intertypeId="props.intertypeId"
@@ -261,7 +266,7 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           leftSociotypeId="ESTJ"
           leftGender="male"
           rightSociotypeId="INFJ"
-          rightGender="male"
+          rightGender="female"
         />
 
         <UiText>
@@ -302,7 +307,7 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
     flex-direction: column;
     gap: 16px;
 
-    .dual-pairs {
+    .pairs {
       margin-top: 16px;
       display: flex;
       flex-direction: column;

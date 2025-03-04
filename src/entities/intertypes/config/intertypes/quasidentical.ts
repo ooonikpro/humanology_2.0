@@ -7,7 +7,7 @@ const QUASIDENTICAL: IntertypeDataType = {
   shortDescription: "Сосуществование при непонимании",
   lvl: "−1",
   positiveTags: [
-    "Информационная насыщенность",
+    "Интерес",
     "Заблуждение",
     "Дискуссии",
     "Сонаправленный интерес",

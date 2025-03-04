@@ -7,7 +7,7 @@ const SUPEREGO: IntertypeDataType = {
   shortDescription: "Уважение друг к другу",
   lvl: "−5",
   positiveTags: [
-    "Восхищение способностями", 
+    "Восхищение", 
     "Переутомление", 
     "Расположение",
     "Взаимоуважение",

@@ -7,7 +7,7 @@ const BENEFICIARY: IntertypeDataType = {
   shortDescription: "Снисходительность",
   lvl: "+2",
   positiveTags: [
-    "Выполнение потребностей",
+    "Удовлетворение",
     "Бессмысленность",
     "Притяжение",
     "Активность",

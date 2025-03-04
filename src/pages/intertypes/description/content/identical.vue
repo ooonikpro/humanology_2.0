@@ -1,5 +1,110 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { SociotypesDuoByIntertypeWidget } from "@widgets/sociotypes";
+import type { IntertypeIdType } from "@types";
+import { UiText } from "@shared/ui";
+import { UiLinkBlock } from "@shared/ui";
 
-<template></template>
+const props = defineProps<{ intertypeId: IntertypeIdType }>();
+</script>
 
-<style lang="scss" scoped></style>
+<template>
+    <img class="graph" src="/public/assets/images/intertype/graph/identical.svg">
+    <div class="text">
+        <UiText preset="large" color="accent">
+            Отношения между людьми одного типа. Считаются нейтральными по степени комфортности.
+        </UiText>
+
+        <UiText>
+            Когда вы впервые встречаете человека с таким же типом, в соционике такие люди называются «тождики», то сначала вы удивляетесь тому, насколько вы похожи.
+        </UiText>
+
+        <UiText>
+            Создается ощущение, будто вы встретили близнеца по характеру, по жизненным предпочтениям.
+        </UiText>
+
+        <UiText preset="large" color="accent">
+            Тождественные отношения — это идеальные отношения для объяснения и обучения.
+        </UiText>
+        
+        <UiText>
+            Лучшим преподавателем всегда будет ваш «тождик»: только он сможет объяснить всю информацию простыми словами, и вы схватите все на лету.
+        </UiText>
+
+        <UiText>
+            Хорошо, если один из родителей является «тождиком» ребенка — в этом случае, и ребенок будет понимать мотивы родителя, и родитель прекрасно видит, почему ребенок поступает именно так.
+        </UiText>
+
+        <UiText>
+            Несмотря на то, что понимание между людьми с тождественными типами складывается отличное, эти люди не могут друг другу помочь: у них одни и те же слабые стороны, которые нуждаются в прикрытии.
+        </UiText>
+
+        <UiText preset="large" color="accent">
+            К «тождику» часто возникает сочувствие, понимание его истинных мотивов и желание оправдать: ведь вы бы в такой ситуации поступили абсолютно также.
+        </UiText>
+
+        <hr />
+
+        <UiText preset="large" color="accent">
+            Тождественное общение быстро надоедает.
+        </UiText>
+
+        <UiText color="dark-grey">
+            Если учитель в начальной школе совпадает по типу с учеником, то ученик учится хорошо, выбивается в отличники, становится любимчиком.
+        </UiText>
+
+        <UiText color="dark-grey">
+            Если же типы учителя и ученика не совместимы, то, порой, проблема не в том, что ребенок ленится, или учитель плохо объясняет – часто эти два человека просто говорят на разных языках, поэтому и учитель не может ничего объяснить, и ученик – понять.
+        </UiText>
+
+        <UiText preset="large" color="accent">
+            Люди с тождественными типами совсем не спорят, ведь их точки зрения, в целом, совпадают.
+        </UiText>
+
+        <UiText>
+            Если такие люди долгое время находятся вдвоем, они могут и вовсе прекратить разговоры — зачем это нужно, если они и так друг друга понимают с полуслова?
+        </UiText>
+
+        <UiText>
+            Человек с таким же типом, как и ваш, для вас абсолютно «прозрачен», как и вы для него. Этот человек читается как открытая книга, его мотивы ясны, его задачи понятны.
+        </UiText>
+
+        <UiText>
+            С таким человеком получается деловое общение, при этом говорить на «пустые» темы совсем не выходит.
+        </UiText>
+
+        <hr />
+
+    </div>
+</template>
+
+<style scoped lang="scss">
+@use "@shared/styles/variables/colors";
+
+  .graph {
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .pairs {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .pair {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid colors.$intertype;
+    }
+  }
+
+</style>
