@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { defineAsyncComponent } from "vue";
 import { useRoute } from "vue-router";
-import { UiBadge, UiSvg, UiText } from "@shared/ui";
+import { UiBadge, UiLinkBlock, UiSvg, UiText } from "@shared/ui";
 import { OpenShareDialog } from "@features/open-share-dialog";
 import { IntertypeProvider } from "@entities/intertypes";
 
@@ -57,6 +57,17 @@ const ComponentName = defineAsyncComponent(
     <hr class="intertype-description-page__separator" />
 
     <component :is="ComponentName" :intertypeId="intertypeData.id" />
+
+    <UiLinkBlock
+      iconName="specialist"
+      iconColor="intertype"
+      bg="intertype-bg"
+      to="/"
+    >
+      Что может помешать дуалам
+      <br />
+      найти общий язык?
+    </UiLinkBlock>
   </IntertypeProvider>
 </template>
 

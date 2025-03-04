@@ -296,6 +296,7 @@ export type TextColorType =
   | "quadra-dark"
   | "role-dark"
   | "intertype"
+  | "intertype-bg"
   | "inherit";
 
 export type OptionType<T = string> = {
