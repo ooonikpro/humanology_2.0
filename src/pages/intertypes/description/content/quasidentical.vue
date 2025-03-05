@@ -171,6 +171,7 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           показывает
           <span class="g-color--earth">Мастеру</span>
           , что стоит расширить свою ответственность.
+          <span class="g-color--earth">Инспектор</span> показывает <span class="g-color--earth">Мастеру</span>, что стоит расширить свою ответственность.
         </UiText>
     
         <UiText>
