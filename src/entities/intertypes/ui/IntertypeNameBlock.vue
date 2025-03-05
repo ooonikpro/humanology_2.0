@@ -7,7 +7,7 @@ const props = defineProps<IntertypeDataType>();
 
 <template>
   <div class="intertype-name-block">
-    <UiSvg :name="props.id" size="24" />
+    <UiSvg :name="props.id" size="32" />
     <UiText preset="body">{{ props.name }}</UiText>
     <UiText preset="body">{{ props.lvl }}</UiText>
   </div>
@@ -22,9 +22,9 @@ const props = defineProps<IntertypeDataType>();
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 36px;
+  height: 40px;
   background-color: colors.$intertype;
   border-radius: 4px;
-  padding: 8px;
+  padding: 8px 12px 8px 8px;
 }
 </style>

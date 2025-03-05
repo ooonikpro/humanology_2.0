@@ -9,7 +9,7 @@ const props = defineProps<{ iconName: IconNameType; title?: string }>();
 <template>
   <div class="page-header-widget">
     <div class="page-header-widget__double-icon">
-      <UiSvg :name="props.iconName" color="black" size="48" />
+      <UiSvg :name="props.iconName" color="black" size="32" />
       <OpenShareDialog color="black" />
     </div>
     <slot>
@@ -24,7 +24,7 @@ const props = defineProps<{ iconName: IconNameType; title?: string }>();
 @use "@shared/styles/variables/colors";
 
 .page-header-widget {
-  padding: 12px 12px 12px 0;
+  padding: 12px 8px 12px 0;
   border-bottom: solid 1px colors.$grey;
   margin-bottom: 8px;
 

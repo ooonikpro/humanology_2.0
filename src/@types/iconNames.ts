@@ -7,7 +7,6 @@ export type IconNameType =
   | "air"
   | "alert-square"
   | "annotation"
-  | "apps"
   | "arrow-left-square"
   | "arrow-right-square"
   | "aspect_business"

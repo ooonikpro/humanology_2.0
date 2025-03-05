@@ -11,10 +11,9 @@ const props = defineProps<IntertypeDataType>();
     class="intertype-card"
   >
     <UiSvg :name="props.id" size="96" color="intertype" />
-
     <div class="intertype-card__details">
       <div class="intertype-card__details-title">
-        <UiText preset="subtitle-alternative">{{ props.name }}</UiText>
+        <UiText preset="subtitle">{{ props.name }}</UiText>
         <UiBadge bg="intertype" small>{{ props.lvl }}</UiBadge>
       </div>
 
@@ -45,6 +44,7 @@ const props = defineProps<IntertypeDataType>();
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
 
+$space-for-bg: 4px;
 $card-padding: 12px;
 
 .intertype-card {
@@ -54,7 +54,7 @@ $card-padding: 12px;
   flex: 1 0 auto;
   padding: $card-padding;
   border-radius: 8px;
-  gap: 16px;
+  gap: 12px;
 
   &::before {
     content: "";
@@ -92,5 +92,15 @@ $card-padding: 12px;
     margin-top: 20px - $card-padding;
     align-self: flex-start;
   }
+
+  &-bg {
+      width: 100%;
+      height: calc(100% + $space-for-bg);
+      opacity: 0.5;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
 }
 </style>

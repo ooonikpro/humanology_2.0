@@ -21,7 +21,7 @@ const width = LINE_WIDTH * (LINE_COUNT * 2 - 1);
     <rect
       v-for="i in LINE_COUNT"
       :key="i"
-      :opacity="i <= props.lvl ? 1 : 0.5"
+      :opacity="i <= props.lvl ? 1 : 0.25"
       :width="LINE_WIDTH"
       :height="LINE_HEIGHT"
       :x="(i - 1) * (LINE_WIDTH * 2)"

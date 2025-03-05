@@ -56,7 +56,7 @@ import {
       <hr class="intertype-page__intertypes-separator" />
       <UiText
         force-tag="h3"
-        preset="large"
+        preset="subtitle-alternative"
         color="intertype"
         class="intertype-page__intertypes-title"
       >
@@ -84,7 +84,6 @@ import {
   gap: 16px;
 
   hr {
-    margin-top: 16px;
     margin-bottom: 16px;
     opacity: 0.5;
     }
@@ -96,7 +95,7 @@ import {
   &__intertypes {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
     margin-top: 32px;
 
     &-separator {
@@ -105,6 +104,7 @@ import {
 
     &-title {
       text-align: left;
+      margin-bottom: 12px;
     }
   }
 }
