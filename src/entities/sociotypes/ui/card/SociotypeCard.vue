@@ -55,7 +55,7 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
       />
 
       <UiGenderToggle
-        v-if="props.isShowToggle || !props.mini"
+        v-if="props.isShowToggle && !props.mini"
         class="sociotype-card__gender-switcher"
         v-model="genderModel"
       />
@@ -85,7 +85,11 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
       position: absolute;
       inset: 0;
       opacity: 0.1;
-      background: linear-gradient(0, colors.$role 1%, colors.$quadra 56%);
+      background: linear-gradient(
+        0,
+        colors.$sociotype-secondary-color 1%,
+        colors.$sociotype-primary-color 56%
+      );
     }
   }
 
