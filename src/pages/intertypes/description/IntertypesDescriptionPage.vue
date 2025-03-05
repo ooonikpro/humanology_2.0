@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { defineAsyncComponent } from "vue";
 import { useRoute } from "vue-router";
-import { UiBadge, UiLinkBlock, UiSvg, UiText } from "@shared/ui";
+import { UiBadge, UiSvg, UiText } from "@shared/ui";
 import { OpenShareDialog } from "@features/open-share-dialog";
-import { IntertypeProvider } from "@entities/intertypes";
+import { IntertypeGraph, IntertypeProvider } from "@entities/intertypes";
 
 const route = useRoute("intertypes.description");
 
@@ -51,6 +51,9 @@ const ComponentName = defineAsyncComponent(
     </div>
 
     <hr class="intertype-description-page__separator" />
+
+    <IntertypeGraph :intertypeId="intertypeData.id" class="graph" />
+
     <component :is="ComponentName" :intertypeId="intertypeData.id" />
   </IntertypeProvider>
 </template>
@@ -95,6 +98,12 @@ const ComponentName = defineAsyncComponent(
     opacity: 0.75;
     flex-wrap: wrap;
     gap: 4px;
+  }
+
+  .graph {
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 16px;
   }
 }
 </style>
