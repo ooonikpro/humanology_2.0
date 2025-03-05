@@ -172,6 +172,10 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           <span class="g-color--earth">Мастеру</span>
           , что стоит расширить свою ответственность.
         </UiText>
+    
+        <UiText>
+          <span class="g-color--earth">Мастер</span> учит <span class="g-color--earth">Инспектора</span> не только оберегать ресурс, но и вкладывать его в свое дело.
+        </UiText>
 
         <UiText>
           <span class="g-color--earth">Мастер</span>
@@ -195,6 +199,11 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           объясняет
           <span class="g-color--water">Советчик</span>
           исторический ход и его взаимодействие с событиями повседневности.
+          <span class="g-color--water">Наставник</span> объясняет <span class="g-color--water">Советчику</span> исторический ход времени и его взаимодействие с событиями повседневности.
+        </UiText>
+    
+        <UiText>
+          <span class="g-color--water">Советчик</span> учит <span class="g-color--water">Наставника</span> направлять отношения с людьми в правильное русло.
         </UiText>
 
         <UiText>

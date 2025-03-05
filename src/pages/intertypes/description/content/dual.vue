@@ -105,6 +105,8 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           Разбор взаимодействий
           <br />
           по конкретным функциям
+        Разбор взаимодействий пары <br />
+        по конкретным функциям
         </UiLinkBlock>
       </div>
 
@@ -142,6 +144,8 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           Разбор взаимодействий
           <br />
           по конкретным функциям
+        Разбор взаимодействий пары <br />
+        по конкретным функциям
         </UiLinkBlock>
       </div>
 
@@ -180,6 +184,8 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           Разбор взаимодействий
           <br />
           по конкретным функциям
+        Разбор взаимодействий пары <br />
+        по конкретным функциям
         </UiLinkBlock>
       </div>
 
@@ -217,6 +223,8 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           Разбор взаимодействий
           <br />
           по конкретным функциям
+        Разбор взаимодействий пары <br />
+        по конкретным функциям
         </UiLinkBlock>
       </div>
 
@@ -254,6 +262,8 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           Разбор взаимодействий
           <br />
           по конкретным функциям
+        Разбор взаимодействий пары <br />
+        по конкретным функциям
         </UiLinkBlock>
       </div>
 
@@ -291,6 +301,8 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           Разбор взаимодействий
           <br />
           по конкретным функциям
+        Разбор взаимодействий пары <br />
+        по конкретным функциям
         </UiLinkBlock>
       </div>
 
@@ -363,6 +375,7 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
         >
           Разбор взаимодействий
           <br />
+          Разбор взаимодействий пары <br />
           по конкретным функциям
         </UiLinkBlock>
       </div>
