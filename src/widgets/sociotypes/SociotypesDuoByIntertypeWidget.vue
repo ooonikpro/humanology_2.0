@@ -70,11 +70,11 @@ $gap: 8px;
   gap: $gap;
 
   &__card {
-    flex: 1 1 calc(50% - $gap);
+    width: calc(50% - $gap / 2);
   }
 
   &__intertype {
-    flex: 1 0 auto;
+    width: 100%;
   }
 }
 </style>
