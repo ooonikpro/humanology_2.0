@@ -96,11 +96,13 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
   }
 
   &__title {
-    width: 100%;
+    width: 98%;
     font-size: min(8vw, 30px);
     line-height: min(8vw, 40px);
     overflow: hidden;
     margin: 12px 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   &__quadra-circle,
@@ -134,7 +136,7 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
 
   @include bem.modificatorForChildren("mini") {
     &__title {
-      font-size: min(7vw, 24px);
+      font-size: min(7vw, 20px);
       margin: -8px 8px 8px;
     }
 
