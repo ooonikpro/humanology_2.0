@@ -151,8 +151,8 @@ $gap: 8px;
       --function-border: none;
       --function-background: linear-gradient(
         158.38deg,
-        #{colors.$role} -14.75%,
-        #{colors.$quadra} 67.11%
+        #{colors.$sociotype-secondary-color} -14.75%,
+        #{colors.$sociotype-primary-color} 67.11%
       );
     }
 
@@ -161,8 +161,8 @@ $gap: 8px;
       --function-border: none;
       --function-background: linear-gradient(
         225.63deg,
-        #{colors.$role} -12.69%,
-        #{colors.$quadra} 71.14%
+        #{colors.$sociotype-secondary-color} -12.69%,
+        #{colors.$sociotype-primary-color} 71.14%
       );
     }
 

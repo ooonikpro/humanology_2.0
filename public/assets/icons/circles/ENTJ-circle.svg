@@ -9,12 +9,12 @@
 </g>
 <defs>
 <linearGradient id="paint0_linear_1049_61962" x1="70" y1="-14" x2="70" y2="146" gradientUnits="userSpaceOnUse">
-<stop stop-color="var(--color-quadra)"/>
-<stop offset="1" stop-color="var(--color-role)" stop-opacity="0"/>
+<stop stop-color="var(--color-sociotype-primary)"/>
+<stop offset="1" stop-color="var(--color-sociotype-secondary)" stop-opacity="0"/>
 </linearGradient>
 <linearGradient id="paint1_linear_1049_61962" x1="16.9155" y1="32.1626" x2="93.6967" y2="108.945" gradientUnits="userSpaceOnUse">
-<stop stop-color="var(--color-quadra)"/>
-<stop offset="1" stop-color="var(--color-role)"/>
+<stop stop-color="var(--color-sociotype-primary)"/>
+<stop offset="1" stop-color="var(--color-sociotype-secondary)"/>
 </linearGradient>
 <clipPath id="clip0_1049_61962">
 <rect width="160" height="146" fill="white"/>
