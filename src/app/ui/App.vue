@@ -1,25 +1,32 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { RouterView } from "vue-router";
 import FooterWidget from "@widgets/FooterWidget.vue";
 import HeaderWidget from "@widgets/HeaderWidget.vue";
 
-import AppLayout from "./AppLayout.vue";
+import { appRoutes } from "../constants";
 import AppLoader from "./AppLoader.vue";
 
-const isLoading = ref(true);
+const app = useNuxtApp().vueApp;
 
-setTimeout(() => (isLoading.value = false), Math.random() * 2500);
+// Глобальная переменная для быстрых ссылок
+app.config.globalProperties.$appRoutes = appRoutes;
+
+app.provide("$appRoutes", appRoutes);
+
+declare module "vue" {
+  interface ComponentCustomProperties {
+    $appRoutes: typeof appRoutes;
+  }
+}
 </script>
 
 <template>
-  <AppLayout>
+  <NuxtLayout>
     <template #header>
       <HeaderWidget />
     </template>
 
     <template #default>
-      <RouterView />
+      <NuxtPage />
     </template>
 
     <template #footer>
@@ -27,9 +34,9 @@ setTimeout(() => (isLoading.value = false), Math.random() * 2500);
     </template>
 
     <template #loader>
-      <AppLoader v-if="isLoading" />
+      <AppLoader />
     </template>
-  </AppLayout>
+  </NuxtLayout>
 </template>
 
 <style src="./App.scss" lang="scss"></style>

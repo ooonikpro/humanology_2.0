@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { ref, watch } from "vue";
 import { useRoute, useRouter, type LocationQuery } from "vue-router";
 
 const props = defineProps<{

@@ -15,11 +15,7 @@ const { iconSize = "48", ...props } = defineProps<{
 </script>
 
 <template>
-  <RouterLink
-    :to="props.to"
-    :class="[`g-bg--${props.bg}`]"
-    class="ui-link-block"
-  >
+  <NuxtLink :to="props.to" :class="[`g-bg--${props.bg}`]" class="ui-link-block">
     <UiSvg
       :name="props.iconName"
       :color="props.iconColor"
@@ -37,7 +33,7 @@ const { iconSize = "48", ...props } = defineProps<{
       name="chevron-right"
       size="24"
     />
-  </RouterLink>
+  </NuxtLink>
 </template>
 
 <style lang="scss" scoped>

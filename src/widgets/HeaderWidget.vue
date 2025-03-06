@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
 import { UiSvg } from "@shared/ui";
 </script>
 
@@ -9,9 +8,9 @@ import { UiSvg } from "@shared/ui";
       <UiSvg color="black" name="menu" size="24" />
     </button>
 
-    <RouterLink :to="$appRoutes.home" class="header-widget__button">
+    <NuxtLink :to="$appRoutes.home" class="header-widget__button">
       <UiSvg color="black" name="logo-circle" size="24" />
-    </RouterLink>
+    </NuxtLink>
 
     <button class="header-widget__button">
       <UiSvg color="black" name="user-square" size="24" />

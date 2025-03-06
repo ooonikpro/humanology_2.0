@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import type { FamousPersonType } from "@types";
 import { UiText } from "@shared/ui";
 import { getLocaleDateString } from "@shared/lib";

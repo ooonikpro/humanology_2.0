@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import type { SociotypeDataType } from "@types";
 import { UiSvg, UiText } from "@shared/ui";
 

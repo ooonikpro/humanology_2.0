@@ -1,5 +1,4 @@
 <script setup lang="ts" generic="T extends UiSwitcherVariantType">
-import { defineModel, defineProps, useId } from "vue";
 import type {
   OptionType,
   OptionWithIconType,

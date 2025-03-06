@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import UiSvg from "./UiSvg.vue";
 
 const props = defineProps<{ temperamentLvl: 1 | 2 | 3 | 4 }>();

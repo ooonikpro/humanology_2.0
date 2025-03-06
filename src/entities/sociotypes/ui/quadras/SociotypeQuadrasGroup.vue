@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { computed, ref, toValue } from "vue";
 import type { QuadrasType } from "@types";
 import { UiSvg, UiText } from "@shared/ui";
 

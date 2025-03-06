@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineModel } from "vue";
 import type { IconNameType } from "@types";
 import { GenderEnum } from "@shared/constants";
 

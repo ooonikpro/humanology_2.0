@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { RouterLink } from "vue-router";
-import { defineProps } from "vue";
 import { UiSvg } from "@shared/ui";
 import type { NavigationTabPropsType } from "../types";
 
@@ -8,7 +6,7 @@ const props = defineProps<NavigationTabPropsType>();
 </script>
 
 <template>
-  <RouterLink :to="props.to" class="navigation-tab">
+  <NuxtLink :to="props.to" class="navigation-tab">
     <span class="navigation-tab__content">
       <UiSvg :name="props.iconName" class="navigation-tab__icon" />
       <span class="navigation-tab__label">{{ props.label }}</span>
@@ -20,7 +18,7 @@ const props = defineProps<NavigationTabPropsType>();
     <span v-if="$slots.bottom" class="navigation-tab__bottom">
       <slot name="bottom"></slot>
     </span>
-  </RouterLink>
+  </NuxtLink>
 </template>
 
 <style lang="scss" scoped>

@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps, computed } from "vue";
 import type { Gender, SociotypeAgeType, SociotypeIdType } from "@types";
 import type { GenderEnum } from "@shared/constants";
 

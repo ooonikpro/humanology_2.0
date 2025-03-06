@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import type { FamousPersonType } from "@types";
 import {
   SociotypeCard,
@@ -8,6 +7,7 @@ import {
   SociotypeProvider,
   SociotypeCardPersonDetails,
 } from "@entities/sociotypes";
+import { getImage } from "@shared/lib";
 
 const props = defineProps<{ list: Array<FamousPersonType> }>();
 </script>
@@ -22,7 +22,7 @@ const props = defineProps<{ list: Array<FamousPersonType> }>();
     >
       <SociotypeCard :data="data" :gender="person.gender">
         <template #photo>
-          <SociotypeCardPhoto :src="person.photo" />
+          <SociotypeCardPhoto :src="getImage(person.photo)" />
         </template>
 
         <template #footer>

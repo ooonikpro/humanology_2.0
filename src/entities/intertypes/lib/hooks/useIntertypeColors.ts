@@ -1,4 +1,4 @@
-import { computed, type MaybeRefOrGetter, toValue } from "vue";
+import type { MaybeRefOrGetter } from "vue";
 import type { IntertypeGroupIdType } from "@types";
 
 import createColorIntertypeGroupStyle from "../createColorIntertypeGroupStyle";

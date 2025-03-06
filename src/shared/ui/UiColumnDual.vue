@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import UiText from "./UiText.vue";
 
 const props = defineProps<{ leftTitle: string; rightTitle?: string }>();

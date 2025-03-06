@@ -1,9 +1,15 @@
 <script lang="ts" setup>
 import { UiSvg } from "@shared/ui";
+import { useLoadingIndicator } from "#app/composables/loading-indicator";
+
+const { isLoading } = useLoadingIndicator({
+  duration: 2e3,
+  throttle: 200,
+});
 </script>
 
 <template>
-  <div class="app-loader">
+  <div v-if="isLoading" class="app-loader">
     <div class="app-loader__image">
       <UiSvg name="touch-icon" />
     </div>

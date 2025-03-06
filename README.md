@@ -69,16 +69,12 @@ yarn build
 3) Для пропсов компонента используем синтаксис `defineProps`.
     ```vue
    <script lang="ts" setup>
-       import { defineProps } from 'vue';
-    
        const props = defineProps<YourPropsType>();
    </script>
    ```
    В секции `template` использовать значения обязательно использовать как `props.myValue`. Например:
     ```vue
    <script lang="ts" setup>
-       import { defineProps } from 'vue';
-    
        const props = defineProps<{ name: string; secondName: string; }>();
    </script>
    <template>
@@ -88,8 +84,6 @@ yarn build
    При необходимости дефолтных значений `props` использовать деструктуризацию. Например:
     ```vue
    <script lang="ts" setup>
-       import { defineProps } from 'vue';
-    
        const { myDefaultValue = 'myDefaultValue', ...props } = defineProps<{ myDefaultValue?: string; someObject: ObjectType }>();
    </script>
    <template>
@@ -112,7 +106,7 @@ yarn build
 ### Работа с svg-иконками
 Если нужна иконка - используй компонент `UiSvg`.
 
-Все svg-иконки добавлять/изменять/удалять в `public/assets/icons` **ТОЛЬКО С ЗАПУЩЕННЫМ ПРОЕКТОМ** (`yarn dev`).
+Все svg-иконки добавлять/изменять/удалять в `public/icons` **ТОЛЬКО С ЗАПУЩЕННЫМ ПРОЕКТОМ** (`yarn dev`).
 
 Vite отслеживает изменения в этой директории и при добавлении/удалении/изменении генерируется `@types/iconName.ts` файл с именами иконок для лучшего DX при использовании `UiSvg`.
 

@@ -6,7 +6,7 @@ const props = defineProps<IntertypeDataType>();
 </script>
 
 <template>
-  <RouterLink
+  <NuxtLink
     :to="$appRoutes.intertypeDescription(props.id)"
     class="intertype-card"
   >
@@ -38,7 +38,7 @@ const props = defineProps<IntertypeDataType>();
       size="24"
       class="intertype-card__chevron"
     />
-  </RouterLink>
+  </NuxtLink>
 </template>
 
 <style lang="scss" scoped>
@@ -94,13 +94,13 @@ $card-padding: 12px;
   }
 
   &-bg {
-      width: 100%;
-      height: calc(100% + $space-for-bg);
-      opacity: 0.5;
+    width: 100%;
+    height: calc(100% + $space-for-bg);
+    opacity: 0.5;
 
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 </style>

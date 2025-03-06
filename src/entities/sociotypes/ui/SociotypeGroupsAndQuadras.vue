@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 import type { SociotypeDataType } from "@types";
 import { UiColumnDual, UiSvg, UiText } from "@shared/ui";
 import SociotypeSignsBlock from "./SociotypeSignsBlock.vue";

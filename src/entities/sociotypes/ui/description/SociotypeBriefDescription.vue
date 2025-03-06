@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineAsyncComponent, defineProps } from "vue";
 import type { SociotypeDataType } from "@types";
 import SociotypeSignsBlock from "../SociotypeSignsBlock.vue";
 
