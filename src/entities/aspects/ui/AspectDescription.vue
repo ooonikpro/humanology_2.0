@@ -19,7 +19,7 @@ const props = defineProps<{
         v-if="props.iconName"
         :name="props.iconName"
         class="aspect-description__icon"
-        size="64"
+        size="80"
         color="accent"
       />
 
@@ -49,7 +49,7 @@ const props = defineProps<{
       <UiText
         v-for="label in props.tags"
         :key="label"
-        preset="small"
+        preset="body"
         color="dark-grey"
       >
         {{ label }}
@@ -61,7 +61,7 @@ const props = defineProps<{
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
 
-$gap: 8px;
+$gap: 12px;
 
 .aspect-description {
   display: flex;
@@ -69,14 +69,14 @@ $gap: 8px;
   width: 100%;
   padding: 12px $gap;
   background-color: colors.$beige;
-  gap: $gap;
+  gap: 4px;
 
   &__head {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    gap: 10px;
+    gap: 12px;
   }
 
   &__title {
@@ -86,7 +86,8 @@ $gap: 8px;
   &__tags {
     display: flex;
     flex-flow: row wrap;
-    gap: 4px;
+    row-gap: 2px;
+    column-gap: 8px;
   }
 }
 </style>
