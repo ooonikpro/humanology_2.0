@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { UiText } from "@shared/ui";
-
 const props = defineProps<{ title: string }>();
 </script>
 

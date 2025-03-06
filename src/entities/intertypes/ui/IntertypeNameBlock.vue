@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { UiSvg, UiText } from "@shared/ui";
 import type { IntertypeDataType } from "@types";
 
 const props = defineProps<IntertypeDataType>();

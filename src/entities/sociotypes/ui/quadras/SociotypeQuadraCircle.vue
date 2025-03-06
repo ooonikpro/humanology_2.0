@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { SociotypeIdType } from "@types";
-import { UiSvg } from "@shared/ui";
 
 const props = defineProps<{ id: SociotypeIdType }>();
 </script>

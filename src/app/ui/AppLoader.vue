@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { UiSvg } from "@shared/ui";
 import { useLoadingIndicator } from "#app/composables/loading-indicator";
 
 const { isLoading } = useLoadingIndicator({

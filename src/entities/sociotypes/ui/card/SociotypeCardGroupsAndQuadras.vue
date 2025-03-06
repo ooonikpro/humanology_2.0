@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { SociotypeDataType } from "@types";
-import { UiSvg, UiText } from "@shared/ui";
 
 import model from "../../model";
 

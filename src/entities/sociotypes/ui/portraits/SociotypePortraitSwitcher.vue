@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { OptionType, SociotypeAgeType, SociotypeIdType } from "@types";
-import { UiSwitcher } from "@shared/ui";
 
 import SociotypeQuadraCircle from "../quadras/SociotypeQuadraCircle.vue";
 import SociotypePortrait from "../portraits/SociotypePortrait.vue";

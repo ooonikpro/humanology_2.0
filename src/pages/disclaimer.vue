@@ -1,58 +1,60 @@
 <script setup lang="ts">
-import { UiText } from "@shared/ui";
 import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 </script>
 
 <template>
-<div class="page">
+  <div class="page">
+    <PageHeaderWidget iconName="square-1" title="Дисклеймер" />
 
-  <PageHeaderWidget iconName="square-1" title="Дисклеймер" />
+    <UiText preset="subtitle" color="accent">
+      Верить, проверять, доверять соционике — личный выбор каждого.
+    </UiText>
 
-  <UiText preset="subtitle" color="accent">
-    Верить, проверять, доверять соционике — личный выбор каждого.
-  </UiText>
+    <UiText>
+      Убеждать скептиков без материальных доказательств — бесполезно. Даже если
+      такие доказательства появятся, споры не закончатся.
+    </UiText>
 
-  <UiText>
-    Убеждать скептиков без материальных доказательств — бесполезно. Даже если такие доказательства появятся, споры не закончатся.
-  </UiText>
+    <UiText>
+      Проект создан в первую очередь для удобства. Если он окажется полезным и
+      вам — отлично.
+    </UiText>
 
-  <UiText>
-    Проект создан в первую очередь для удобства. Если он окажется полезным и вам — отлично.
-  </UiText>
+    <UiText>
+      Вся информация собрана из открытых источников. Источники, как правило,
+      указаны. Если нет — будем считать это продуктом коллективного
+      бессознательного.
+    </UiText>
 
-  <UiText>
-    Вся информация собрана из открытых источников. Источники, как правило, указаны. Если нет — будем считать это продуктом коллективного бессознательного.
-  </UiText>
+    <hr />
 
-  <hr />
-  
-  <UiText preset="subtitle" color="accent">
-    Нашли ошибку?
-  </UiText>
-  
-  <UiText>
-    Пишите на <a href="mailto:feedback@humanology.app">feedback@humanology.app</a>.
-  </UiText>
+    <UiText preset="subtitle" color="accent">Нашли ошибку?</UiText>
 
-  <UiText>
-    Прикрепите скриншот и укажите версию браузера или операционной системы телефона — получите лучи добра.
-  </UiText>
+    <UiText>
+      Пишите на
+      <a href="mailto:feedback@humanology.app">feedback@humanology.app</a>
+      .
+    </UiText>
 
-  <UiText preset="subtitle" color="accent">
-    Оскорбились за науку?
-  </UiText>
+    <UiText>
+      Прикрепите скриншот и укажите версию браузера или операционной системы
+      телефона — получите лучи добра.
+    </UiText>
 
-  <UiText>
-    Желательно развернуто изложить суть претензии. <br /> Адрес тот же.
-  </UiText>
+    <UiText preset="subtitle" color="accent">Оскорбились за науку?</UiText>
 
-</div>
+    <UiText>
+      Желательно развернуто изложить суть претензии.
+      <br />
+      Адрес тот же.
+    </UiText>
+  </div>
 </template>
 
 <style scoped lang="scss">
 @use "@shared/styles/variables/colors";
 
-  .page {
+.page {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -64,11 +66,10 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     margin-bottom: 16px;
     opacity: 0.2;
     background-color: colors.$accent;
-    }
   }
+}
 
-  a {
-    text-decoration: underline;
-  }
-
+a {
+  text-decoration: underline;
+}
 </style>

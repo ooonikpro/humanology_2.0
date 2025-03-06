@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { UiSvg } from "@shared/ui";
 import { NavigationTab } from "@entities/navigation";
 import { SociotypePortraitTrioKids } from "@entities/sociotypes";
 </script>

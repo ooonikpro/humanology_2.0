@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { SociotypeAgeType, SociotypeDataType } from "@types";
-import { UiText, UiGenderToggle } from "@shared/ui";
+
 import { GenderEnum } from "@shared/constants";
 
 import SociotypeQuadraCircle from "../quadras/SociotypeQuadraCircle.vue";

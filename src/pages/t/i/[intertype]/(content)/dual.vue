@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import { SociotypesDuoByIntertypeWidget } from "@widgets/sociotypes";
 import type { IntertypeIdType } from "@types";
-import { UiText } from "@shared/ui";
-import { UiLinkBlock } from "@shared/ui";
 
 const props = defineProps<{ intertypeId: IntertypeIdType }>();
 </script>
@@ -102,8 +100,9 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           bg="beige"
           to="/"
         >
-        Разбор взаимодействий пары <br />
-        по конкретным функциям
+          Разбор взаимодействий пары
+          <br />
+          по конкретным функциям
         </UiLinkBlock>
       </div>
 
@@ -138,8 +137,9 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           bg="beige"
           to="/"
         >
-        Разбор взаимодействий пары <br />
-        по конкретным функциям
+          Разбор взаимодействий пары
+          <br />
+          по конкретным функциям
         </UiLinkBlock>
       </div>
 
@@ -175,8 +175,9 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           bg="beige"
           to="/"
         >
-        Разбор взаимодействий пары <br />
-        по конкретным функциям
+          Разбор взаимодействий пары
+          <br />
+          по конкретным функциям
         </UiLinkBlock>
       </div>
 
@@ -211,8 +212,9 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           bg="beige"
           to="/"
         >
-        Разбор взаимодействий пары <br />
-        по конкретным функциям
+          Разбор взаимодействий пары
+          <br />
+          по конкретным функциям
         </UiLinkBlock>
       </div>
 
@@ -247,8 +249,9 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           bg="beige"
           to="/"
         >
-        Разбор взаимодействий пары <br />
-        по конкретным функциям
+          Разбор взаимодействий пары
+          <br />
+          по конкретным функциям
         </UiLinkBlock>
       </div>
 
@@ -283,7 +286,8 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           bg="beige"
           to="/"
         >
-          Разбор взаимодействий пары <br />
+          Разбор взаимодействий пары
+          <br />
           по конкретным функциям
         </UiLinkBlock>
       </div>
@@ -319,7 +323,8 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           bg="beige"
           to="/"
         >
-          Разбор взаимодействий пары <br />
+          Разбор взаимодействий пары
+          <br />
           по конкретным функциям
         </UiLinkBlock>
       </div>
@@ -354,7 +359,8 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
           bg="beige"
           to="/"
         >
-          Разбор взаимодействий пары <br />
+          Разбор взаимодействий пары
+          <br />
           по конкретным функциям
         </UiLinkBlock>
       </div>

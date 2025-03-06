@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import type { SociotypeIdType } from "@types";
 import { GenderEnum } from "@shared/constants";
-import { UiGenderSwitcher } from "@shared/ui";
 
 import SociotypeFaceImage from "./SociotypeFaceImage.vue";
 

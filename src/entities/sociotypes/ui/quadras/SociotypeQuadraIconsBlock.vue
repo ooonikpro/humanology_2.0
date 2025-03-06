@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { QuadrasType } from "@types";
-import { UiSvg } from "@shared/ui";
 
 import model from "../../model";
 

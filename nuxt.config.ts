@@ -13,6 +13,10 @@ export default defineNuxtConfig({
     assets: fileURLToPath(new URL("./assets", import.meta.url)),
   },
 
+  components: {
+    dirs: ["~/shared/ui"],
+  },
+
   vite: {
     resolve: {
       alias: {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import { UiBadge, UiSvg, UiText } from "@shared/ui";
+
 import type { IntertypeDataType } from "@types";
 
 const router = useRouter();
