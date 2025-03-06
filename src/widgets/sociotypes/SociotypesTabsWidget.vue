@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { toValue, useTemplateRef, watch, onMounted, computed } from "vue";
 import type { SociotypeIdType, SociotypeTabType } from "@types";
 import { NavigationTab } from "@entities/navigation";
 import { scrollContainerToElementByIndex } from "@shared/lib";
-import type { TabName } from "@pages/sociotypes/config";
+import type { TabName } from "../../pages/s/(config)";
 
 const props = defineProps<{
   tabName: TabName;

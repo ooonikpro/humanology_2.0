@@ -2,13 +2,13 @@ import { writeFileSync } from "fs";
 import { parse } from "path";
 import { glob } from "glob";
 import prettier from "prettier";
-import { PluginOption } from "vite";
+import type { PluginOption } from "vite";
 
-const OUTPUT_FILE = `./src/@types/iconNames.ts`;
-const ICONS_FOLDER = "/public/assets/icons/";
+const OUTPUT_FILE = `./@types/iconNames.ts`;
+const ICONS_FOLDER = "./public/assets/icons/";
 
 const generateIconNameType = async () => {
-  const iconList = await glob("./public/assets/icons/**/*.svg");
+  const iconList = await glob("./public/icons/**/*.svg");
 
   const iconNames = Array.from(
     new Set(

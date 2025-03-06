@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import type { FunctionLevel } from "@types";
 
 const props = defineProps<{ lvl: FunctionLevel }>();

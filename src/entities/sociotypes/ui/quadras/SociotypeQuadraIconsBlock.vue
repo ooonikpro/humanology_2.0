@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import type { QuadrasType } from "@types";
 import { UiSvg } from "@shared/ui";
 

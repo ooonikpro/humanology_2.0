@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps, ref } from "vue";
 import type { OptionType, SociotypeAgeType, SociotypeIdType } from "@types";
 import { UiSwitcher } from "@shared/ui";
 

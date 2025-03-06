@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import { useRouter } from "vue-router";
 import type { BlockNameType, HumanFunctionType, SociotypeIdType } from "@types";
 import {

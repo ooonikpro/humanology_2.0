@@ -14,7 +14,7 @@ const props = defineProps<{
 
 <template>
   <article class="aspect-description">
-    <RouterLink :to="props.to" class="aspect-description__head">
+    <NuxtLink :to="props.to" class="aspect-description__head">
       <UiSvg
         v-if="props.iconName"
         :name="props.iconName"
@@ -39,7 +39,7 @@ const props = defineProps<{
         color="accent"
         class="aspect-description__chevron"
       />
-    </RouterLink>
+    </NuxtLink>
 
     <div v-if="$slots.default?.()" class="aspect-description__body">
       <slot />

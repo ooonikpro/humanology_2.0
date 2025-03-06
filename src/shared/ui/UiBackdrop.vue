@@ -4,7 +4,6 @@ import {
   enableBodyScroll,
   disableBodyScroll,
 } from "body-scroll-lock";
-import { defineProps, onUnmounted, watch } from "vue";
 
 const props = defineProps<{ isShow: boolean }>();
 const emit = defineEmits(["afterEnter", "afterLeave"]);

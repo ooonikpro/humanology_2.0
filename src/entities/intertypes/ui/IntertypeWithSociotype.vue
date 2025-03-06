@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 import { useRouter } from "vue-router";
 import { UiBadge, UiSvg, UiText } from "@shared/ui";
 import type { IntertypeDataType } from "@types";

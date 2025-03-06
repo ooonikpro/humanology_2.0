@@ -1,13 +1,17 @@
 <script lang="ts" setup>
+import { getImage } from "@shared/lib";
+
+const props = defineProps<{ src: string }>();
+const defaultImage = getImage("public/images/no-image.png");
+
 const onError = (e: Event) => {
-  import("/assets/images/no-image.png").then(
-    (data) => ((e.target as HTMLImageElement).src = data.default),
-  );
+  e.target.src = defaultImage;
 };
 </script>
 
 <template>
   <img
+    :src="props.src || defaultImage"
     v-bind="$attrs"
     loading="lazy"
     class="sociotype-card-photo"

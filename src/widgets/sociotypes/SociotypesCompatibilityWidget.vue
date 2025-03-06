@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import { useRouter } from "vue-router";
 import type { SociotypeIdType } from "@types";
 import { UiText } from "@shared/ui";

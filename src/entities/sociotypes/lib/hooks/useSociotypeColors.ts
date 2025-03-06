@@ -1,4 +1,4 @@
-import { computed, type MaybeRefOrGetter, toValue } from "vue";
+import type { MaybeRefOrGetter } from "vue";
 import type { QuadrasType, RoleType } from "@types";
 
 import createColorQuadraStyle from "../createColorQuadraStyle";

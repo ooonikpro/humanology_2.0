@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import { UiText } from "@shared/ui";
 
 const props = defineProps<{ title: string }>();
