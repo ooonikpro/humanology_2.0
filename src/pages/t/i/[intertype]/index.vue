@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useRoute } from "vue-router";
-import { UiBadge, UiSvg, UiText } from "@shared/ui";
+
 import { OpenShareDialog } from "@features/open-share-dialog";
 import { IntertypeGraph, IntertypeProvider } from "@entities/intertypes";
 

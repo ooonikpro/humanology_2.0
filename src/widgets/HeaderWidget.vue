@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { UiSvg } from "@shared/ui";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <header class="header-widget">

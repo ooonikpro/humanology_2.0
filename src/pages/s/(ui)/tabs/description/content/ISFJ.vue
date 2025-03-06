@@ -1,6 +1,4 @@
-<script lang="ts" setup>
-import { UiText } from "@shared/ui";
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <UiText class="attributes" preset="large" color="role">

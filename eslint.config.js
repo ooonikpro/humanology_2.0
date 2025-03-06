@@ -8,6 +8,7 @@ export default [
     files: ["**/*.{ts,mts,tsx,vue}"],
     rules: {
       "no-console": "error",
+      "vue/multi-word-component-names": "ignore",
       "vue/attributes-order": [
         "warn",
         {

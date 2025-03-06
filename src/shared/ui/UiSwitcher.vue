@@ -4,7 +4,6 @@ import type {
   OptionWithIconType,
   OptionWithSubtitleType,
 } from "@types";
-import { UiSvg } from "@shared/ui";
 
 export type UiSwitcherVariantType =
   | "text"

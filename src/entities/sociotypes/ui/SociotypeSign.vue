@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { UiSvg } from "@shared/ui";
 import type { BaziSignType, IconSizeType, ZodiacSignType } from "@types";
 
 import { SIGNS_COLORS_MAP } from "../config";

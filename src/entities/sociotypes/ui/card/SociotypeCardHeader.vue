@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { SociotypeDataType } from "@types";
-import { UiText } from "@shared/ui";
 
 const props = defineProps<{ mini?: boolean; data: SociotypeDataType }>();
 </script>

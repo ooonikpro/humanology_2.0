@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { UiSvg } from "@shared/ui";
 import type { NavigationTabPropsType } from "../types";
 
 const props = defineProps<NavigationTabPropsType>();

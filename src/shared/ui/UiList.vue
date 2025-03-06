@@ -10,7 +10,6 @@ const props = defineProps<{
 
 defineSlots<{
   default(): unknown;
-  title(): unknown;
 }>();
 
 const ListItem: FunctionalComponent<{ node: VNode }> = ({ node }) => {

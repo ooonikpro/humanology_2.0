@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
 import type { SociotypeIdType } from "@types";
-import { UiText } from "@shared/ui";
+
 import {
   sociotypeModel,
   SociotypeCard,

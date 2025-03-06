@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { LocationQuery } from "vue-router";
-import { UiBottomSheet, UiText } from "@shared/ui";
+
 import { sociotypeModel, SociotypeProvider } from "@entities/sociotypes";
 import { OpenBottomSheetByQuery } from "@features/open-bottom-sheet-by-query";
 import { FunctionLevel, functionsModel } from "@entities/functions-and-blocks";

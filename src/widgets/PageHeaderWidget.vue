@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { IconNameType } from "@types";
-import { UiSvg, UiText } from "@shared/ui";
+
 import { OpenShareDialog } from "@features/open-share-dialog";
 
 const props = defineProps<{ iconName: IconNameType; title?: string }>();

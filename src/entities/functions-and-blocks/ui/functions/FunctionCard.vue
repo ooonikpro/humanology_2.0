@@ -4,7 +4,6 @@ import type {
   IconNameType,
   FunctionAspectVariantType,
 } from "@types";
-import { UiSvg, UiText } from "@shared/ui";
 
 import { FUNCTION_CARD_WITHOUT_ICON, LARGE_FUNCTION_CARD } from "../../config";
 import model from "../../model";

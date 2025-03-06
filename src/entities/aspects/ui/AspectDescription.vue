@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { RouteLocationRaw } from "vue-router";
-import { UiText, UiSvg } from "@shared/ui";
+
 import type { IconNameType } from "@types";
 
 const props = defineProps<{

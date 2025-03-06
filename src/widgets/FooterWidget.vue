@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { UiSvg, UiText } from "@shared/ui";
 import { scrollToTop } from "@shared/lib";
 </script>
 

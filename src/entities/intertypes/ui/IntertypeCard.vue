@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { IntertypeDataType } from "@types";
-import { UiBadge, UiSvg, UiText } from "@shared/ui";
 
 const props = defineProps<IntertypeDataType>();
 </script>

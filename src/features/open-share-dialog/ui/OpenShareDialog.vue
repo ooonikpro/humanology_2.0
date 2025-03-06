@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { UiSvg } from "@shared/ui";
 import type { IconSizeType, TextColorType } from "@types";
 
 const { color = "black", size = "24" } = defineProps<{
