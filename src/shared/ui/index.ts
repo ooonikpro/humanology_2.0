@@ -9,3 +9,5 @@ export { default as UiGenderSwitcher } from "./UiGenderSwitcher.vue";
 export { default as UiBottomSheet } from "./UiBottomSheet.vue";
 export { default as UiBadge } from "./UiBadge.vue";
 export { default as UiLinkBlock } from "./UiLinkBlock.vue";
+export { default as UiList } from "./UiList.vue";
+export { default as UiListItem } from "./UiListItem.vue";
