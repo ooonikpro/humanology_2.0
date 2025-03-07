@@ -10,7 +10,7 @@ const getPortraitSrc = (
   const agePostfix = age === "young" ? "" : `-${age}`;
 
   return getImage(
-    `${IMAGES_FOLDER}/portraits/${id.toLowerCase()}-${gender}${agePostfix}.png`,
+    `${IMAGES_FOLDER}/portraits/${id.toLowerCase()}-${gender}${agePostfix}.webp`,
   );
 };
 

@@ -9,19 +9,6 @@ const { color, size, ...props } = defineProps<{
   color?: TextColorType;
   size?: IconSizeType;
 }>();
-
-const svgBody = ref("");
-const iconPromise = computed(() => iconMap[props.name]);
-
-watch(
-  iconPromise,
-  async () => {
-    if (iconPromise.value) {
-      svgBody.value = await iconPromise.value();
-    }
-  },
-  { immediate: true },
-);
 </script>
 
 <template>
@@ -34,7 +21,7 @@ watch(
       color && `g-color--${color}`,
     ]"
     class="ui-icon"
-    v-html="svgBody"
+    v-html="iconMap[props.name]"
   ></i>
 </template>
 

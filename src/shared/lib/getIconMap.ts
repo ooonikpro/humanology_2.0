@@ -2,6 +2,7 @@ import type { IconNameType } from "@types";
 
 const getIconMap = () => {
   const globIcon = import.meta.glob(`public/icons/**/*.svg`, {
+    eager: true,
     query: "?raw",
     import: "default",
   });

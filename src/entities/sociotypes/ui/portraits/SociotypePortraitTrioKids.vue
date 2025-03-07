@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { random } from "@shared/lib";
 import SociotypePortrait from "./SociotypePortrait.vue";
 import { KIDS } from "../../config";
 
-const kids = KIDS[random(KIDS.length - 1)];
+const kids = KIDS[0];
 </script>
 
 <template>

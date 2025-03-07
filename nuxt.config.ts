@@ -6,7 +6,7 @@ import viteGenerateIconNameTypePlugin from "./viteGenerateIconNameTypePlugin";
 export default defineNuxtConfig({
   srcDir: "./src",
   compatibilityDate: "2024-11-01",
-  devtools: { enabled: true },
+  devtools: { enabled: false },
 
   alias: {
     public: fileURLToPath(new URL("./public", import.meta.url)),
