@@ -8,13 +8,12 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: false },
 
-  alias: {
-    public: fileURLToPath(new URL("./public", import.meta.url)),
-    assets: fileURLToPath(new URL("./assets", import.meta.url)),
-  },
-
   components: {
     dirs: ["~/shared/ui"],
+  },
+
+  dir: {
+    public: "./public",
   },
 
   vite: {

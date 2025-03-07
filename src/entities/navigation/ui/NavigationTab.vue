@@ -25,12 +25,10 @@ const props = defineProps<NavigationTabPropsType>();
 
 .navigation-tab {
   padding: 8px;
-  flex: 0 0 96px;
-
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-template-rows: max-content;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
 
   font-size: 18px;
@@ -68,7 +66,7 @@ const props = defineProps<NavigationTabPropsType>();
 
   &__top,
   &__bottom {
-    justify-self: end;
+    justify-self: flex-end;
   }
 }
 </style>

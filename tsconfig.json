@@ -3,10 +3,6 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "assets": ["./assets"],
-      "assets/*": ["./assets/*"],
-      "public": ["./public"],
-      "public/*": ["./public/*"],
       "@app": ["./src/app/index.ts"],
       "@pages/*": ["./src/pages/*"],
       "@widgets/*": ["./src/widgets/*"],
