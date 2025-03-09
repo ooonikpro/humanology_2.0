@@ -7,7 +7,7 @@ const props = defineProps<{ activeQuadra: QuadrasType }>();
 </script>
 
 <template>
-  <div class="sociotype-quadra-icons-block">
+  <NuxtLink :to="$appRoutes.sociotypes" class="sociotype-quadra-icons-block">
     <UiSvg
       v-for="quadra in model.getQuadras()"
       :key="quadra"
@@ -19,7 +19,7 @@ const props = defineProps<{ activeQuadra: QuadrasType }>();
       size="16"
       class="sociotype-quadra-icons-block__icon"
     />
-  </div>
+  </NuxtLink>
 </template>
 
 <style lang="scss" scoped>
