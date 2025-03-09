@@ -80,16 +80,24 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
     display: flex;
     flex-direction: column;
 
-    &::before {
+    &::before,
+    &::after {
       content: "";
+      height: 48px;
       position: absolute;
-      inset: 0;
+      left: 0;
+      width: 100%;
       opacity: 0.1;
-      background: linear-gradient(
-        0,
-        colors.$sociotype-secondary-color 1%,
-        colors.$sociotype-primary-color 56%
-      );
+    }
+
+    &::before {
+      top: 0;
+      background: linear-gradient(to top, colors.$white 0%, colors.$quadra);
+    }
+
+    &::after {
+      bottom: 0;
+      background: linear-gradient(to bottom, colors.$white 0%, colors.$role);
     }
   }
 
