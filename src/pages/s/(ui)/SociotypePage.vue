@@ -43,17 +43,18 @@ const tabDescription = computed(() =>
       :data="data"
       :gender="sociotypeModel.getGenderByYung(data.id)"
       isShowToggle
+      :bordered="!isCardTab"
     >
       <template #header>
         <SociotypeCardHeader :data="data" />
       </template>
 
-      <template #groups-and-quadras>
-        <SociotypeCardGroupsAndQuadras v-if="isCardTab" v-bind="data" />
+      <template #groups-and-quadras v-if="isCardTab">
+        <SociotypeCardGroupsAndQuadras v-bind="data" />
       </template>
 
-      <template #yungs>
-        <SociotypeCardYungs v-if="isCardTab" v-bind="data" />
+      <template #yungs v-if="isCardTab">
+        <SociotypeCardYungs v-bind="data" />
       </template>
     </SociotypeCard>
 

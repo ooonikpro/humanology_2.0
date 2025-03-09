@@ -12,12 +12,19 @@ const { age = "young", ...props } = defineProps<{
   age?: SociotypeAgeType;
   data: SociotypeDataType;
   isShowToggle?: boolean;
+  bordered?: boolean;
 }>();
 const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
 </script>
 
 <template>
-  <div :class="{ 'sociotype-card--mini': props.mini }" class="sociotype-card">
+  <div
+    :class="{
+      'sociotype-card--mini': props.mini,
+      'sociotype-card--bordered': props.bordered,
+    }"
+    class="sociotype-card"
+  >
     <div class="sociotype-card__content">
       <slot name="header" />
 
@@ -139,6 +146,12 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
     position: absolute;
     right: 12px;
     bottom: 8px;
+  }
+
+  &--bordered {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid colors.$role;
   }
 
   &--mini {
