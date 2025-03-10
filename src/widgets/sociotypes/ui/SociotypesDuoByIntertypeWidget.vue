@@ -7,6 +7,7 @@ import {
   SociotypeProvider,
 } from "@entities/sociotypes";
 import { IntertypeNameBlock, IntertypeProvider } from "@entities/intertypes";
+import SociotypesCardMiniWidget from "@widgets/sociotypes/ui/SociotypesCardMiniWidget.vue";
 
 const props = defineProps<{
   leftSociotypeId: SociotypeIdType;
@@ -19,37 +20,17 @@ const props = defineProps<{
 
 <template>
   <div class="sociotypes-duo-by-intertype">
-    <SociotypeProvider
-      v-slot="{ data: sociotypeData }"
-      :id="props.leftSociotypeId"
+    <SociotypesCardMiniWidget
+      :sociotypeId="props.leftSociotypeId"
+      :gender="props.leftGender"
       class="sociotypes-duo-by-intertype__card"
-    >
-      <SociotypeCard :data="sociotypeData" :gender="props.leftGender" mini>
-        <template #header>
-          <SociotypeCardHeader :data="sociotypeData" mini />
-        </template>
+    />
 
-        <template #groups-and-quadras>
-          <SociotypeCardGroupsAndQuadras v-bind="sociotypeData" mini />
-        </template>
-      </SociotypeCard>
-    </SociotypeProvider>
-
-    <SociotypeProvider
-      v-slot="{ data: sociotypeData }"
-      :id="props.rightSociotypeId"
+    <SociotypesCardMiniWidget
+      :sociotypeId="props.rightSociotypeId"
+      :gender="props.rightGender"
       class="sociotypes-duo-by-intertype__card"
-    >
-      <SociotypeCard :data="sociotypeData" :gender="props.rightGender" mini>
-        <template #header>
-          <SociotypeCardHeader :data="sociotypeData" mini />
-        </template>
-
-        <template #groups-and-quadras>
-          <SociotypeCardGroupsAndQuadras v-bind="sociotypeData" mini />
-        </template>
-      </SociotypeCard>
-    </SociotypeProvider>
+    />
 
     <IntertypeProvider
       v-slot="intertypeData"

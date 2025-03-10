@@ -4,7 +4,7 @@ import { GenderEnum } from "@shared/constants";
 
 import UiSvg from "./UiSvg.vue";
 
-const gender = defineModel<GenderEnum>({
+const gender = defineModel<Gender | GenderEnum>({
   required: true,
 });
 </script>

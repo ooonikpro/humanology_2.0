@@ -1,7 +1,8 @@
-export { default as SociotypesByQadrasWidget } from "./SociotypesByQadrasWidget.vue";
-export { default as SociotypesKidsByQadrasWidget } from "./SociotypesKidsByQadrasWidget.vue";
-export { default as SociotypesPageTitleWidget } from "./SociotypesPageTitleWidget.vue";
-export { default as SociotypesTabsWidget } from "./SociotypesTabsWidget.vue";
-export { default as SociotypesFamousPeopleWidget } from "./SociotypesFamousPeopleWidget.vue";
-export { default as SociotypesCompatibilityWidget } from "./SociotypesCompatibilityWidget.vue";
-export { default as SociotypesDuoByIntertypeWidget } from "./SociotypesDuoByIntertypeWidget.vue";
+export { default as SociotypesByQadrasWidget } from "./ui/SociotypesByQadrasWidget.vue";
+export { default as SociotypesKidsByQadrasWidget } from "./ui/SociotypesKidsByQadrasWidget.vue";
+export { default as SociotypesPageTitleWidget } from "./ui/SociotypesPageTitleWidget.vue";
+export { default as SociotypesTabsWidget } from "./ui/SociotypesTabsWidget.vue";
+export { default as SociotypesFamousPeopleWidget } from "./ui/SociotypesFamousPeopleWidget.vue";
+export { default as SociotypesCompatibilityWidget } from "./ui/SociotypesCompatibilityWidget.vue";
+export { default as SociotypesDuoByIntertypeWidget } from "./ui/SociotypesDuoByIntertypeWidget.vue";
+export { default as SociotypesCardMiniWidget } from "./ui/SociotypesCardMiniWidget.vue";

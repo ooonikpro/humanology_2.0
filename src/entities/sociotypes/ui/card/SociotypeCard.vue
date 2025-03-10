@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { SociotypeAgeType, SociotypeDataType } from "@types";
+import type { Gender, SociotypeAgeType, SociotypeDataType } from "@types";
 
 import { GenderEnum } from "@shared/constants";
 
@@ -8,7 +8,7 @@ import SociotypePortrait from "../portraits/SociotypePortrait.vue";
 
 const { age = "young", ...props } = defineProps<{
   mini?: boolean;
-  gender?: GenderEnum;
+  gender?: Gender | GenderEnum;
   age?: SociotypeAgeType;
   data: SociotypeDataType;
   isShowToggle?: boolean;
