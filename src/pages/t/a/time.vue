@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
+import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 </script>
 
@@ -95,16 +96,20 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     <hr />
     
     <UiText preset="subtitle" color="accent">
-      Эксперты структурной логики
+      Эксперты интуиции времени
     </UiText>
 
-        <UiText>
-          <span class="g-color--air">Лирик</span> — эксперт <span class="g-color--water">интенсивного Времени</span>, предчувствует назревающую опасность, крупные, обычно неприятные изменения ситуации, помнит яркие эпизоды прошлого.
-        </UiText>
+      <SociotypesCardMiniWidget sociotype-id="INFP" gender="female" />
 
-        <UiText>
-          <span class="g-color--air">Критик</span> — эксперт <span class="g-color--fire">экстенсивного Времени</span>, на основе близкого, внимательного, подробного наблюдения за людьми или явлениями может предсказать их поведение в ближайшем будущем.
-        </UiText>
+      <UiText>
+        <span class="g-color--air">Лирик</span> — эксперт <span class="g-color--water">интенсивного Времени</span>, предчувствует назревающую опасность, крупные, обычно неприятные изменения ситуации, помнит яркие эпизоды прошлого.
+      </UiText>
+
+      <SociotypesCardMiniWidget sociotype-id="INTP" />
+
+      <UiText>
+        <span class="g-color--air">Критик</span> — эксперт <span class="g-color--fire">экстенсивного Времени</span>, на основе близкого, внимательного, подробного наблюдения за людьми или явлениями может предсказать их поведение в ближайшем будущем.
+      </UiText>
           
   </div>
 </template>
