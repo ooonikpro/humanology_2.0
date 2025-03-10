@@ -19,7 +19,7 @@ const props = defineProps<{
         v-if="props.iconName"
         :name="props.iconName"
         class="aspect-description__icon"
-        size="80"
+        size="64"
         color="accent"
       />
 
@@ -69,10 +69,12 @@ $gap: 12px;
   width: 100%;
   padding: 12px $gap;
   background-color: colors.$beige;
+  border-radius: 4px;
   gap: 4px;
 
   &__head {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     width: 100%;

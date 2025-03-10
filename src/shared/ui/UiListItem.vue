@@ -24,8 +24,8 @@ const props = defineProps<{
 <style lang="scss" scoped>
 .ui-list-item {
   display: flex;
-  align-items: center;
+  align-items: top;
   flex-flow: row nowrap;
-  gap: 10px;
+  gap: 12px;
 }
 </style>
