@@ -56,7 +56,7 @@ $gutter: 70px;
   padding: $gutter 0;
   z-index: layers.$z-index-app-backdrop;
   background-color: colors.$dark-grey;
-  transition: opacity 130ms ease;
+  transition: opacity 100ms ease;
   overflow: hidden;
 
   touch-action: none;
