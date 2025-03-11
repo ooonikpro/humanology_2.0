@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
+import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 </script>
 
@@ -95,15 +96,19 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     <hr />
     
     <UiText preset="subtitle" color="accent">
-      Эксперты этики отношений
+      Эксперты волевой сенсорики
     </UiText>
+
+    <SociotypesCardMiniWidget sociotype-id="ESTP" />
 
         <UiText>
           <span class="g-color--fire">Лидер</span> — эксперт <span class="g-color--water">интенсивной Воли</span>, ориентирован на достижение крупных задач , обычно связанных со свержением или подавлением превосходящего противника, инициатива исходит при этом обычно от него, при этом он недемонстративен, предпочитает держаться в тени.
         </UiText>
 
+        <SociotypesCardMiniWidget sociotype-id="ESFP" gender="female" />
+
         <UiText>
-          <span class="g-color--fire">Политик</span> — эксперт <span class="g-color--fire">экстенсивной Воли</span>, же решает конкретные тактические задачи, любит находиться в центре внимания, его инициатива - это всегда ответ на чей-то вызов, при этом он не нападает, а отстаивает свою территорию и право на лидерство.
+          <span class="g-color--fire">Политик</span> — эксперт <span class="g-color--fire">экстенсивной Воли</span>, же решает конкретные тактические задачи, любит находиться в центре внимания, его инициатива — это всегда ответ на чей-то вызов, при этом он не нападает, а отстаивает свою территорию и право на лидерство.
         </UiText>
           
   </div>

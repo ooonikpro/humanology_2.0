@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
+import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 </script>
 
@@ -86,9 +87,13 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
       Эксперты этики отношений
     </UiText>
 
+    <SociotypesCardMiniWidget sociotype-id="ISFJ" gender="female" />
+
         <UiText>
           <span class="g-color--earth">Хранитель</span> — эксперт <span class="g-color--water">интенсивных Людей</span>, держится от людей на расстоянии, не подпуская их близко к себе на долгое время, оценивает отношения в целом, резко деля людей на друзей и врагов, особое внимание уделяет критике зла и стремится уйти от источника плохих отношений — человека, который вызывает у него антипатию.
         </UiText>
+
+        <SociotypesCardMiniWidget sociotype-id="INFJ" gender="female" />
 
         <UiText>
           <span class="g-color--air">Гуманист</span> — эксперт <span class="g-color--fire">экстенсивных Людей</span>, прекрасно разбирается в отношениях между людьми, так как общается с ними близко, ориентирован на установление положительных отношений — дружбу, любовь, теплоту, видит оттенки отношений идет к людям, утверждая добро и прощая зло.

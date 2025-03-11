@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
+import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 </script>
 
@@ -83,15 +84,19 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     <hr />
     
     <UiText preset="subtitle" color="accent">
-      Эксперты этики отношений
+      Эксперты сенсорики комфорта
     </UiText>
 
-      <UiText>
-        <span class="g-color--earth">Дипломат</span> — эксперт <span class="g-color--fire">экстенсивной Воли</span>, стремится к приятному в окружающем мире как никто другой, его влекут простые житейские радости и удовольствия: вкусная еда, красивый интерьер, отдых на природе, комфорт обстановки, как бы направлен на прием приятных ощущений в малых дозах на окружающем его пространстве.
-      </UiText>
+    <SociotypesCardMiniWidget sociotype-id="ISFP" gender="female" />
 
       <UiText>
-        <span class="g-color--earth">Мастер</span> — эксперт <span class="g-color--water">интенсивного Комфорта</span>, сильнее реагирует на отрицательные, неприятные, острые ощущения, стремясь уйти от напряжения, неудобства и дискомфорта. Реакция отличается большей силой и распространяется на большее, чем у Дипломата, расстояние. 
+        <span class="g-color--earth">Дипломат</span> — эксперт <span class="g-color--fire">экстенсивного Комфорта</span>, стремится к приятному в окружающем мире как никто другой, его влекут простые житейские радости и удовольствия: вкусная еда, красивый интерьер, отдых на природе, комфорт обстановки, как бы направлен на прием приятных ощущений в малых дозах на окружающем его пространстве.
+      </UiText>
+
+      <SociotypesCardMiniWidget sociotype-id="ISTP" gender="male" />
+
+      <UiText>
+        <span class="g-color--earth">Мастер</span> — эксперт <span class="g-color--water">интенсивного Комфорта</span>, сильнее реагирует на отрицательные, неприятные, острые ощущения, стремясь уйти от напряжения, неудобства и дискомфорта. Реакция отличается большей силой и распространяется на большее, чем у <span class="g-color--earth">Дипломата</span>, расстояние. 
       </UiText>
           
   </div>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
+import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 </script>
 
@@ -90,13 +91,17 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
       Эксперты интуиции возможностей
     </UiText>
 
-        <UiText>
-          <span class="g-color--water">Новатор</span> — эксперт <span class="g-color--fire">экстенсивных Идей</span>, направлен на сбор интересной информации, перспективных идей и многообещающих теорий (направление и качество) на окружающей его территории (дистанция), причем эти знания отличаются большой проработанностью, многочисленными подробностями (масштаб).
-        </UiText>
+      <SociotypesCardMiniWidget sociotype-id="ENTP" />
 
-        <UiText>
-          <span class="g-color--earth">Советчик</span> — эксперт <span class="g-color--water">интенсивных Идей</span>, уходит от неинтересной информации, хорошо оценивает глубоко спрятанные способности ранее незнакомых людей и улавливает перспективу в целом, альтернативно, по-крупному.
-        </UiText>
+      <UiText>
+        <span class="g-color--water">Новатор</span> — эксперт <span class="g-color--fire">экстенсивных Идей</span>, направлен на сбор интересной информации, перспективных идей и многообещающих теорий на окружающей его территории, причем эти знания отличаются большой проработанностью, многочисленными подробностями.
+      </UiText>
+
+      <SociotypesCardMiniWidget sociotype-id="ENFP" gender="female" />
+
+      <UiText>
+        <span class="g-color--water">Советчик</span> — эксперт <span class="g-color--water">интенсивных Идей</span>, уходит от неинтересной информации, хорошо оценивает глубоко спрятанные способности ранее незнакомых людей и улавливает перспективу в целом, альтернативно, по-крупному.
+      </UiText>
           
   </div>
 </template>
