@@ -30,7 +30,6 @@ const props = defineProps<Pick<SociotypeDataType, "yungs">>();
   position: relative;
   padding: 8px;
   border: 0;
-  border-bottom: 1px solid colors.$role;
 
   &__line {
     width: 53%;
