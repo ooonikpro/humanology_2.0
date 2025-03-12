@@ -1,24 +1,10 @@
-<script setup lang="ts" generic="T extends UiSwitcherVariantType">
-import type {
-  OptionType,
-  OptionWithIconType,
-  OptionWithSubtitleType,
-} from "@types";
-
-export type UiSwitcherVariantType =
-  | "text"
-  | "textWithIcon"
-  | "textWithSubtitle";
-
-type UiSwitcherOptionsType = {
-  text: OptionType;
-  textWithIcon: OptionWithIconType;
-  textWithSubtitle: OptionWithSubtitleType;
-};
+<script setup lang="ts" generic="T extends VariantType">
+import type { OptionByVariantType, VariantType } from "@types";
+import UiVariant from "./UiVariant.vue";
 
 const props = defineProps<{
   type: T;
-  options: UiSwitcherOptionsType[T][];
+  options: OptionByVariantType[T][];
 }>();
 
 const picked = defineModel<string>({
@@ -29,56 +15,27 @@ const switcherName = useId();
 </script>
 
 <template>
-  <div ref="switcher" class="ui-switcher">
-    <label
+  <div class="ui-switcher">
+    <UiVariant
       v-for="option in props.options"
       :key="option.value"
-      :class="{ 'ui-switcher__option--picked': picked === option.value }"
-      class="ui-switcher__option"
+      v-bind="option"
+      :picked="picked"
     >
-      <template v-if="props.type === 'textWithSubtitle'">
-        <span
-          class="ui-switcher__option-label ui-switcher__option-label--start"
-        >
-          {{ option.label }}
-        </span>
-        <span class="ui-switcher__option-subtitle">
-          {{ (option as OptionWithSubtitleType).subtitle }}
-        </span>
-      </template>
-
-      <template v-else-if="props.type === 'textWithIcon'">
-        <span class="ui-switcher__option-label">
-          <UiSvg
-            :name="(option as OptionWithIconType).iconName"
-            size="16"
-            class="ui-switcher__option-label-icon"
-          />
-          {{ option.label }}
-        </span>
-      </template>
-
-      <template v-else>
-        <span class="ui-switcher__option-label">
-          {{ option.label }}
-        </span>
-      </template>
-
       <input
+        v-model="picked"
         :name="switcherName"
         :value="option.value"
         :checked="picked === option.value"
         type="radio"
         class="ui-switcher__input"
-        v-model="picked"
       />
-    </label>
+    </UiVariant>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors.scss";
-@use "@shared/styles/mixins/transitions.scss";
 
 .ui-switcher {
   padding: 4px 4px;
@@ -90,51 +47,6 @@ const switcherName = useId();
   border-radius: 4px;
 
   background-color: colors.$beige;
-
-  &__option {
-    padding: 6px 8px;
-    width: clamp(60px, 100%, 240px);
-    min-height: 40px;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 4px;
-
-    border-radius: 4px;
-    background-color: transparent;
-    @include transitions.ease(background-color);
-
-    &-label {
-      width: 100%;
-
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-
-      color: colors.$dark-grey;
-      @include transitions.ease(color);
-
-      &--start {
-        justify-content: start;
-      }
-    }
-
-    &-subtitle {
-      color: colors.$dark-grey;
-    }
-
-    &--picked {
-      background-color: colors.$white;
-      box-shadow: 0 1px 1px 0 colors.$shadow;
-    }
-
-    &--picked > &-label {
-      color: colors.$black;
-    }
-  }
 
   &__input {
     display: none;

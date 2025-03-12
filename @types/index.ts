@@ -341,3 +341,11 @@ export type FamousPersonType = {
 };
 
 export type BlockNameType = "ego" | "superego" | "id" | "superid";
+
+export type OptionByVariantType = {
+  text: OptionType;
+  textWithIcon: OptionWithIconType;
+  textWithSubtitle: OptionWithSubtitleType;
+};
+
+export type VariantType = keyof OptionByVariantType;
