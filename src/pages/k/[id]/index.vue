@@ -21,7 +21,7 @@ const Content = defineAsyncComponent(
     :id="route.params.id"
     class="kids-id-page"
   >
-    <SociotypeCard :data="data" age="kid">
+    <SociotypeCard :data="data" age="kid" bordered>
       <template #header>
         <SociotypeCardHeader :data="data" />
       </template>
