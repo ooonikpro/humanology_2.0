@@ -11,7 +11,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     </UiText>
 
     <div class="person">
-      <img src="public/images/history/carl-gustav.png" class="portrait" />
+      <img src="public/images/history/carl-gustav.webp" class="portrait" />
       <div class="person-text">
         <UiText preset="subtitle">
          Карл Густав Юнг
@@ -96,7 +96,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     </UiText>
 
     <div class="person">
-      <img src="public/images/history/briggs.png" class="portrait" />
+      <img src="public/images/history/briggs.webp" class="portrait" />
       <div class="person-text">
         <UiText preset="subtitle">
           Кэтрин
@@ -196,7 +196,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     </UiText>
 
     <div class="person">
-      <img src="public/images/history/anton.png" class="portrait" />
+      <img src="public/images/history/anton.webp" class="portrait" />
       <div class="person-text">
         <UiText preset="subtitle">
           Антон Кемпинский
@@ -265,7 +265,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     </UiText>
 
     <div class="person">
-      <img src="public/images/history/aushra.png" class="portrait" />
+      <img src="public/images/history/aushra.webp" class="portrait" />
       <div class="person-text">
         <UiText preset="subtitle">
           Аушра Аугустинавичюте
@@ -348,7 +348,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     </UiText>
 
     <div class="person">
-      <img src="public/images/history/grigoriy.png" class="portrait" />
+      <img src="public/images/history/grigoriy.webp" class="portrait" />
       <div class="person-text">
         <UiText preset="subtitle">
           Григорий Рейнин

@@ -18,7 +18,7 @@ const ENTP: SociotypeDataType = {
   personalitiesTerm: "Debater",
   functions: {
     base: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "ideas",
     },
     creative: {
@@ -30,11 +30,11 @@ const ENTP: SociotypeDataType = {
       aspect: "time",
     },
     back: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "business",
     },
     role: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "will",
     },
     pain: {
@@ -46,7 +46,7 @@ const ENTP: SociotypeDataType = {
       aspect: "comfort",
     },
     activate: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "emotions",
     },
   },

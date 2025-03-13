@@ -16,7 +16,7 @@ const ENFJ: SociotypeDataType = {
   populationPercentage: "2 ~ 5%",
   functions: {
     base: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "emotions",
     },
     creative: {
@@ -28,7 +28,7 @@ const ENFJ: SociotypeDataType = {
       aspect: "people",
     },
     back: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "ideas",
     },
     pain: {
@@ -36,11 +36,11 @@ const ENFJ: SociotypeDataType = {
       aspect: "comfort",
     },
     role: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "business",
     },
     activate: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "will",
     },
     suggestive: {
