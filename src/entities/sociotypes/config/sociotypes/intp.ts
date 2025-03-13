@@ -16,7 +16,7 @@ const INTP: SociotypeDataType = {
   populationPercentage: "3 ~ 5%",
   functions: {
     base: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "time",
     },
     creative: {
@@ -28,11 +28,11 @@ const INTP: SociotypeDataType = {
       aspect: "ideas",
     },
     back: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "logic",
     },
     role: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "comfort",
     },
     pain: {
@@ -44,7 +44,7 @@ const INTP: SociotypeDataType = {
       aspect: "will",
     },
     activate: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "people",
     },
   },

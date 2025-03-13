@@ -16,7 +16,7 @@ const INFJ: SociotypeDataType = {
   populationPercentage: "1 ~ 3%",
   functions: {
     base: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "people",
     },
     creative: {
@@ -28,11 +28,11 @@ const INFJ: SociotypeDataType = {
       aspect: "emotions",
     },
     back: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "time",
     },
     role: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "logic",
     },
     pain: {
@@ -44,7 +44,7 @@ const INFJ: SociotypeDataType = {
       aspect: "business",
     },
     activate: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "comfort",
     },
   },

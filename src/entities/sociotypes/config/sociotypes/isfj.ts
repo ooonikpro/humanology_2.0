@@ -20,11 +20,11 @@ const ISFJ: SociotypeDataType = {
       aspect: "people",
     },
     creative: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "will",
     },
     limit: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "emotions",
     },
     back: {
@@ -36,11 +36,11 @@ const ISFJ: SociotypeDataType = {
       aspect: "logic",
     },
     pain: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "ideas",
     },
     suggestive: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "business",
     },
     activate: {

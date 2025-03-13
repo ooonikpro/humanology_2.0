@@ -20,11 +20,11 @@ const ENFP: SociotypeDataType = {
       aspect: "ideas",
     },
     creative: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "people",
     },
     limit: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "time",
     },
     back: {
@@ -36,11 +36,11 @@ const ENFP: SociotypeDataType = {
       aspect: "will",
     },
     pain: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "logic",
     },
     suggestive: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "comfort",
     },
     activate: {

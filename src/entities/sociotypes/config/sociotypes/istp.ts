@@ -20,11 +20,11 @@ const ISTP: SociotypeDataType = {
       aspect: "comfort",
     },
     creative: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "business",
     },
     limit: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "will",
     },
     back: {
@@ -36,11 +36,11 @@ const ISTP: SociotypeDataType = {
       aspect: "time",
     },
     pain: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "emotions",
     },
     suggestive: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "ideas",
     },
     activate: {
