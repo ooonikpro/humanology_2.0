@@ -2,7 +2,7 @@ import type { SociotypeIdType } from "@types";
 import type { SociotypeTabNameType } from "../config";
 
 const parseSociotypeRoute = (path: string) => {
-  const segments = path.split("/");
+  const segments = /^\/([sk])/.test(path) ? path.split("/") : [];
 
   return {
     id: segments?.[2] as SociotypeIdType,
