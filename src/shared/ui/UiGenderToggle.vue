@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { IconNameType } from "@types";
+import type { Gender, IconNameType } from "@types";
 import { GenderEnum } from "@shared/constants";
 
 import UiSvg from "./UiSvg.vue";

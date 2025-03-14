@@ -1,20 +1,19 @@
 <script lang="ts" setup>
-import type { IconNameType } from "@types";
-
 import { OpenShareDialog } from "@features/open-share-dialog";
+import { useSociotypePageRoute } from "@entities/sociotypes";
 
-const props = defineProps<{ iconName: IconNameType; title?: string }>();
+const { activeTab } = useSociotypePageRoute();
 </script>
 
 <template>
   <div class="page-title-widget">
     <div class="page-title-widget__double-icon">
-      <UiSvg :name="props.iconName" color="accent" size="24" />
+      <UiSvg :name="activeTab.iconName" color="accent" size="24" />
       <OpenShareDialog />
     </div>
     <slot>
       <UiText preset="subtitle" color="black">
-        {{ props.title }}
+        {{ activeTab.label }}
       </UiText>
     </slot>
   </div>

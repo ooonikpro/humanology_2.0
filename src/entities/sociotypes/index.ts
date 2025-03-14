@@ -18,8 +18,11 @@ export { default as SociotypeBodySwitcher } from "./ui/bodies/SociotypeBodySwitc
 export { default as SociotypeFaceSwitcher } from "./ui/faces/SociotypeFaceSwitcher.vue";
 export { default as SociotypeSignsBlock } from "./ui/SociotypeSignsBlock.vue";
 
-export { SOCIOTYPES } from "./config";
+export { SOCIOTYPES, SOCIOTYPE_PAGE_TABS } from "./config";
+
+export { default as useSociotypePageRoute } from "./lib/hooks/useSociotypePageRoute";
 
 export { default as sociotypeModel } from "./model";
 
+export { default as parseSociotypeRoute } from "./lib/parseSociotypeRoute";
 export { default as isSociotypeId } from "./lib/guards/isSociotypeId";
