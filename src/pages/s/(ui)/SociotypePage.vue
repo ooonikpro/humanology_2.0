@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useRoute } from "vue-router";
+import type { SociotypeIdType } from "@types";
 import {
   SociotypeCard,
   SociotypeCardGroupsAndQuadras,
@@ -12,17 +13,13 @@ import {
   SociotypesTabsWidget,
   SociotypesPageTitleWidget,
 } from "@widgets/sociotypes";
-import {
-  BlockFunctionsWidget,
-  FunctionInsideBottomSheetWidget,
-} from "@widgets/functions-and-blocks";
+import { BlockFunctionsListWidget } from "@widgets/functions-and-blocks";
 
 import * as config from "../(config)";
-import FunctionDescription from "./functions/FunctionDescription.vue";
 
 const route = useRoute();
 
-const sociotypeId = computed(() => route.params.id);
+const sociotypeId = computed(() => route.params.id as SociotypeIdType);
 
 const tabName = computed(
   () => route.params.tabName ?? config.DEFAULT_PAGE_TAB_NAME,
@@ -59,14 +56,7 @@ const tabDescription = computed(() =>
     </SociotypeCard>
 
     <template v-if="isCardTab">
-      <div class="sociotype-page__functions">
-        <BlockFunctionsWidget
-          v-for="blockName in config.BLOCKS_ORDER"
-          :key="blockName"
-          :sociotypeId="data.id"
-          :blockName="blockName"
-        />
-      </div>
+      <BlockFunctionsListWidget :sociotypeId="sociotypeId" />
     </template>
 
     <SociotypesTabsWidget
@@ -86,10 +76,6 @@ const tabDescription = computed(() =>
       :data="data"
     />
   </SociotypeProvider>
-
-  <FunctionInsideBottomSheetWidget v-slot="propsData">
-    <FunctionDescription v-bind="propsData" />
-  </FunctionInsideBottomSheetWidget>
 </template>
 
 <style lang="scss" scoped>
@@ -100,11 +86,5 @@ const tabDescription = computed(() =>
   flex-direction: column;
   gap: 8px;
   background-color: colors.$white;
-
-  &__functions {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
 }
 </style>

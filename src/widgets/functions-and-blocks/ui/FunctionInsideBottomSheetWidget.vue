@@ -4,8 +4,8 @@ import type { LocationQuery } from "vue-router";
 import { sociotypeModel, SociotypeProvider } from "@entities/sociotypes";
 import { OpenBottomSheetByQuery } from "@features/open-bottom-sheet-by-query";
 import { FunctionLevel, functionsModel } from "@entities/functions-and-blocks";
-import BlockFunctionsWidget from "@widgets/functions-and-blocks/BlockFunctionsWidget.vue";
 import { AspectDescription, aspectModel } from "@entities/aspects";
+import BlockFunctions from "./BlockFunctions.vue";
 
 const routePredicate = (query: LocationQuery) => {
   return query.hasOwnProperty("f");
@@ -35,7 +35,7 @@ const routePredicate = (query: LocationQuery) => {
 
         <template #default>
           <div class="bottom-sheet-content">
-            <BlockFunctionsWidget
+            <BlockFunctions
               :sociotypeId="data.id"
               :blockName="functionsModel.getBlockName(data.f)"
               :activeFunctionName="data.f"

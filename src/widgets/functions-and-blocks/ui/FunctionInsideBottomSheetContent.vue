@@ -7,7 +7,7 @@ const props = defineProps<{
 }>();
 
 const Component = defineAsyncComponent(
-  () => import(`./${props.functionName}/${props.sociotypeId}.vue`),
+  () => import(`./content/${props.functionName}/${props.sociotypeId}.vue`),
 );
 </script>
 
