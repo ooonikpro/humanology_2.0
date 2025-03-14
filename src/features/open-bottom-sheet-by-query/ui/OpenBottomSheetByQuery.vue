@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useRoute, useRouter, type LocationQuery } from "vue-router";
+import { parseSociotypeRoute } from "@entities/sociotypes";
 
 const props = defineProps<{
   predicate: (query: LocationQuery) => boolean;
@@ -40,6 +41,7 @@ watch(
         isOpen,
         data: {
           ...route.params,
+          ...parseSociotypeRoute(route.path),
           ...route.query,
         },
         handleOpen,

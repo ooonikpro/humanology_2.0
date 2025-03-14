@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import FooterWidget from "@widgets/FooterWidget.vue";
-import HeaderWidget from "@widgets/HeaderWidget.vue";
-
 import { appRoutes } from "../constants";
 import AppLoader from "./AppLoader.vue";
 
@@ -21,21 +18,8 @@ declare module "vue" {
 
 <template>
   <NuxtLayout>
-    <template #header>
-      <HeaderWidget />
-    </template>
-
-    <template #default>
-      <NuxtPage />
-    </template>
-
-    <template #footer>
-      <FooterWidget />
-    </template>
-
-    <template #loader>
-      <AppLoader />
-    </template>
+    <NuxtPage />
+    <AppLoader />
   </NuxtLayout>
 </template>
 

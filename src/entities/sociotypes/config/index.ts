@@ -46,6 +46,7 @@ export * from "./quadras";
 export * from "./yungsDichotomies";
 export * from "./reininSigns";
 export * from "./portraits-data";
+export * from "./pageTabs";
 
 export { default as ROLES } from "./roles";
 export { default as TAROT } from "./tarot";

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
-import type { SociotypeIdType } from "@types";
 
 import {
   sociotypeModel,
@@ -8,6 +7,7 @@ import {
   SociotypeCardHeader,
   SociotypeCardGroupsAndQuadras,
   SociotypeProvider,
+  useSociotypePageRoute,
 } from "@entities/sociotypes";
 import {
   IntertypeGroupProvider,
@@ -17,7 +17,7 @@ import {
 } from "@entities/intertypes";
 
 const router = useRouter();
-const props = defineProps<{ sociotypeId: SociotypeIdType }>();
+const { sociotypeId } = useSociotypePageRoute();
 </script>
 
 <template>
@@ -48,12 +48,7 @@ const props = defineProps<{ sociotypeId: SociotypeIdType }>();
         <IntertypeWithSociotype v-bind="intertypeData">
           <SociotypeProvider
             v-slot="{ data: sociotypeData }"
-            :id="
-              sociotypeModel.getIntertypeRelations(
-                props.sociotypeId,
-                intertypeId,
-              )
-            "
+            :id="sociotypeModel.getIntertypeRelations(sociotypeId, intertypeId)"
           >
             <SociotypeCard
               :data="sociotypeData"

@@ -1,9 +1,15 @@
+<script setup lang="ts">
+import HeaderWidget from "@widgets/HeaderWidget.vue";
+import FooterWidget from "@widgets/FooterWidget.vue";
+</script>
+
 <template>
   <div class="app-layout">
-    <header class="app-layout__header"><slot name="header" /></header>
+    <header class="app-layout__header">
+      <HeaderWidget />
+    </header>
     <main class="app-layout__body"><slot /></main>
-    <slot name="footer" />
-    <slot name="loader" />
+    <FooterWidget />
   </div>
 </template>
 

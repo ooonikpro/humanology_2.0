@@ -152,12 +152,14 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
 
   &__portrait {
     right: 0;
+    z-index: 1;
   }
 
   &__gender-switcher {
     position: absolute;
     right: 12px;
     bottom: 8px;
+    z-index: 1;
   }
 
   &--bordered {

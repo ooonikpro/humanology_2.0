@@ -1,42 +1,33 @@
 <script setup lang="ts">
-import type { SociotypeIdType, SociotypeTabType } from "@types";
 import { NavigationTab } from "@entities/navigation";
 import { scrollContainerToElementByIndex } from "@shared/lib";
-import type { TabName } from "@pages/s/(config)";
+import {
+  useSociotypePageRoute,
+  SOCIOTYPE_PAGE_TABS,
+} from "@entities/sociotypes";
 
-const props = defineProps<{
-  tabName: TabName;
-  tabs: readonly SociotypeTabType[];
-  sociotypeId: SociotypeIdType;
-}>();
+const { sociotypeId, activeTab, activeTabIndex } = useSociotypePageRoute();
 
 const container = useTemplateRef<HTMLElement>("my-container");
 
-const activeElementIndex = computed(() =>
-  props.tabs.findIndex((tab) => tab.name === props.tabName),
-);
-
 const scrollToActiveElement = () => {
-  scrollContainerToElementByIndex(
-    toValue(container),
-    toValue(activeElementIndex),
-  );
+  scrollContainerToElementByIndex(toValue(container), toValue(activeTabIndex));
 };
 
-watch(activeElementIndex, scrollToActiveElement);
+watch(activeTabIndex, scrollToActiveElement);
 onMounted(scrollToActiveElement);
 </script>
 
 <template>
   <div ref="my-container" class="tabs-widget">
     <NavigationTab
-      v-for="tab in props.tabs"
+      v-for="tab in SOCIOTYPE_PAGE_TABS"
       :key="tab.name"
-      :to="$appRoutes.sociotypeTab(props.sociotypeId, tab.name)"
+      :to="$appRoutes.sociotypeTab(sociotypeId, tab.name)"
       :iconName="tab.iconName"
       :label="tab.label"
       :class="{
-        'tabs-widget__link--active': props.tabName === tab.name,
+        'tabs-widget__link--active': activeTab.name === tab.name,
       }"
       class="tabs-widget__link"
     />
