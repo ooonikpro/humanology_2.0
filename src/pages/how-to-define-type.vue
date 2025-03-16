@@ -17,6 +17,15 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
       Никакие тесты не дадут истину.
     </UiText>
 
+    <UiLinkBlock
+        iconName="presentation-chart-bar-alt"
+        iconColor="accent"
+        bg="beige"
+        to="/tests/"
+      >
+        Тесты
+      </UiLinkBlock>
+
     <UiText>Но если нетерпеливы — ссылка ниже. Предупреждены.</UiText>
 
     <hr />

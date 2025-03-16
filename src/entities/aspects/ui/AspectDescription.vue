@@ -19,7 +19,7 @@ const props = defineProps<{
         v-if="props.iconName"
         :name="props.iconName"
         class="aspect-description__icon"
-        size="64"
+        size="80"
         color="accent"
       />
 
@@ -32,14 +32,13 @@ const props = defineProps<{
           {{ props.subtitle }}
         </UiText>
       </div>
-
+      
       <UiSvg
         name="chevron-right"
         size="24"
         color="accent"
         class="aspect-description__chevron"
       />
-    </NuxtLink>
 
     <div v-if="$slots.default?.()" class="aspect-description__body">
       <slot />
@@ -55,6 +54,7 @@ const props = defineProps<{
         {{ label }}
       </UiText>
     </div>
+    </NuxtLink>
   </article>
 </template>
 
@@ -74,11 +74,11 @@ $gap: 12px;
 
   &__head {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
     justify-content: flex-start;
     width: 100%;
-    gap: 12px;
+    gap: 4px;
   }
 
   &__title {
@@ -90,6 +90,11 @@ $gap: 12px;
     flex-flow: row wrap;
     row-gap: 2px;
     column-gap: 8px;
+  }
+
+  &__chevron {
+    position: absolute;
+    right: 24px;
   }
 }
 </style>

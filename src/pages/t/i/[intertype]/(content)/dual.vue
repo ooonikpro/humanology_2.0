@@ -36,7 +36,7 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
       iconName="specialist"
       iconColor="intertype"
       bg="intertype-bg"
-      to="/"
+      to="/t/i/why-duals"
     >
       Что может помешать дуалам
       <br />

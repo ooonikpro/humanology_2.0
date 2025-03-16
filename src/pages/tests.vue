@@ -49,7 +49,7 @@ import {
 
         <VariousTab
           title="Воробьева"
-          subtitle="5-6 минут"
+          subtitle="5 минут"
           target-content-id="tab-2"
         />
 
@@ -67,7 +67,6 @@ import {
       </template>
 
       <VariousTabContent id="tab-1" class="page">
-        <hr />
 
         <UiText preset="subtitle" color="accent">
           Экспресс-тест Мегедь-Овчарова
@@ -81,7 +80,6 @@ import {
       </VariousTabContent>
 
       <VariousTabContent id="tab-2" class="page">
-        <hr />
         <UiText preset="subtitle" color="accent">Тест Воробьева</UiText>
 
         <UiText preset="large" color="accent">
@@ -110,7 +108,6 @@ import {
       </VariousTabContent>
 
       <VariousTabContent id="tab-3" class="page">
-        <hr />
 
         <UiText preset="subtitle" color="accent">Тест Филатовой</UiText>
 
@@ -125,7 +122,6 @@ import {
       </VariousTabContent>
 
       <VariousTabContent id="tab-4" class="page">
-        <hr />
 
         <UiText preset="subtitle" color="accent">Опросник Кейрси</UiText>
 
