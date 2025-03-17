@@ -12,6 +12,7 @@ import {
   SociotypeMentality,
   SociotypeReininSigns,
   SociotypeGroupsAndQuadras,
+  SociotypeSwitcher,
 } from "@entities/sociotypes";
 import {
   SociotypesPageTitleWidget,
@@ -25,6 +26,7 @@ const { sociotypeId, isCardTab } = useSociotypePageRoute();
 
 <template>
   <DefaultLayout>
+    <SociotypeSwitcher :sociotype-id="sociotypeId" />
     <SociotypeProvider
       v-slot="{ data }"
       :id="sociotypeId"
@@ -33,7 +35,7 @@ const { sociotypeId, isCardTab } = useSociotypePageRoute();
       <SociotypeCard
         :data="data"
         :gender="sociotypeModel.getGenderByYung(data.id)"
-        :bordered="!isCardTab"
+        bordered
         isShowToggle
       >
         <template #header>

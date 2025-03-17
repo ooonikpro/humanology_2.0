@@ -17,6 +17,7 @@ export { default as SociotypeBriefDescription } from "./ui/description/Sociotype
 export { default as SociotypeBodySwitcher } from "./ui/bodies/SociotypeBodySwitcher.vue";
 export { default as SociotypeFaceSwitcher } from "./ui/faces/SociotypeFaceSwitcher.vue";
 export { default as SociotypeSignsBlock } from "./ui/SociotypeSignsBlock.vue";
+export { default as SociotypeSwitcher } from "./ui/SociotypeSwitcher.vue";
 
 export { SOCIOTYPES, SOCIOTYPE_PAGE_TABS } from "./config";
 
