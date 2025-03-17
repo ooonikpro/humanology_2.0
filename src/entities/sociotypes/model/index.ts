@@ -29,6 +29,8 @@ import getFunctions from "./methods/getFunctions";
 import getAspectByFunction from "./methods/getAspectByFunction";
 import getAspectVariantByFunction from "./methods/getAspectVariantByFunction";
 import getGenderByYung from "./methods/getGenderByYung";
+import getPrevSociotypeId from "./methods/getPrevSociotypeId";
+import getNextSociotypeId from "./methods/getNextSociotypeId";
 
 const model = {
   getSociotypeBy,
@@ -62,6 +64,8 @@ const model = {
   getAspectByFunction,
   getAspectVariantByFunction,
   getGenderByYung,
+  getPrevSociotypeId,
+  getNextSociotypeId,
 };
 
 export default model;

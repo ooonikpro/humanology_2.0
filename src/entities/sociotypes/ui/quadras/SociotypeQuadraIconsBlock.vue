@@ -12,10 +12,7 @@ const props = defineProps<{ activeQuadra: QuadrasType }>();
       v-for="quadra in model.getQuadras()"
       :key="quadra"
       :name="quadra"
-      :class="{
-        'sociotype-quadra-icons-block__icon--active':
-          props.activeQuadra === quadra,
-      }"
+      :color="props.activeQuadra === quadra ? quadra : 'dark-grey'"
       size="16"
       class="sociotype-quadra-icons-block__icon"
     />
@@ -30,16 +27,5 @@ const props = defineProps<{ activeQuadra: QuadrasType }>();
   display: flex;
   align-items: center;
   gap: 4px;
-
-  &__icon {
-    @include transitions.ease(color, opacity);
-
-    color: colors.$shadow;
-
-    &--active {
-      opacity: 1;
-      color: colors.$quadra;
-    }
-  }
 }
 </style>
