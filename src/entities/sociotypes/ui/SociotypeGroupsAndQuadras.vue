@@ -6,14 +6,6 @@ import SociotypeSignsBlock from "./SociotypeSignsBlock.vue";
 import model from "../model";
 
 const props = defineProps<SociotypeDataType>();
-
-const groupsAndQuadrasData = {
-  quadra: model.getQuadraLabel(props.quadra),
-  role: model.getRoleLabel(props.role),
-  tarot: model.getTarotLabel(props.tarot),
-  club: model.getClubLabel(props.club),
-  psychotype: model.getPsychotypeLabel(props.psychotype),
-};
 </script>
 
 <template>
@@ -25,7 +17,7 @@ const groupsAndQuadrasData = {
       <template #left>
         <UiSvg :name="props.quadra" color="quadra" size="24" />
         <UiText preset="large" color="quadra">
-          {{ groupsAndQuadrasData.quadra }}
+          {{ model.getQuadraLabel(props.quadra) }}
         </UiText>
       </template>
     </UiColumnDual>
@@ -35,13 +27,13 @@ const groupsAndQuadrasData = {
       <template #left>
         <UiSvg :name="props.role" color="role" size="24" />
         <UiText preset="large" color="role">
-          {{ groupsAndQuadrasData.role }}
+          {{ model.getRoleLabel(props.role) }}
         </UiText>
       </template>
       <template #right>
         <UiSvg :name="props.tarot" size="24" />
         <UiText preset="large">
-          {{ groupsAndQuadrasData.tarot }}
+          {{ model.getTarotLabel(props.tarot) }}
         </UiText>
       </template>
     </UiColumnDual>
@@ -51,13 +43,13 @@ const groupsAndQuadrasData = {
       <template #left>
         <UiSvg :name="props.club" size="24" />
         <UiText preset="large">
-          {{ groupsAndQuadrasData.club }}
+          {{ model.getClubLabel(props.club) }}
         </UiText>
       </template>
       <template #right>
         <UiSvg :name="props.psychotype" size="24" />
         <UiText preset="large">
-          {{ groupsAndQuadrasData.psychotype }}
+          {{ model.getPsychotypeLabel(props.psychotype) }}
         </UiText>
       </template>
     </UiColumnDual>
