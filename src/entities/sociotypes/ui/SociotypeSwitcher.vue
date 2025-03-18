@@ -1,13 +1,17 @@
 <script lang="ts" setup>
 import type { SociotypeIdType } from "@types";
+import type { SociotypeTabNameType } from "../config";
 import model from "../model";
 import SociotypeQuadraIconsBlock from "./quadras/SociotypeQuadraIconsBlock.vue";
 
-const props = defineProps<{ sociotypeId: SociotypeIdType }>();
+const props = defineProps<{
+  sociotypeId: SociotypeIdType;
+  sociotypeTabName: SociotypeTabNameType;
+}>();
 
-const prevSociotype = computed(() =>
-  model.getSociotypeBy(model.getPrevSociotypeId(props.sociotypeId)),
-);
+const prevSociotype = computed(() => {
+  return model.getSociotypeBy(model.getPrevSociotypeId(props.sociotypeId));
+});
 const sociotype = computed(() => model.getSociotypeBy(props.sociotypeId));
 
 const nextSociotype = computed(() =>
@@ -18,7 +22,7 @@ const nextSociotype = computed(() =>
 <template>
   <div class="sociotype-switcher">
     <NuxtLink
-      :to="$appRoutes.sociotypeCard(prevSociotype.id)"
+      :to="$appRoutes.sociotypeTab(prevSociotype.id, props.sociotypeTabName)"
       class="sociotype-switcher__link"
     >
       <UiText force-tag="span" preset="small" color="dark-grey">
@@ -29,7 +33,7 @@ const nextSociotype = computed(() =>
     <SociotypeQuadraIconsBlock :activeQuadra="sociotype.quadra" />
 
     <NuxtLink
-      :to="$appRoutes.sociotypeCard(nextSociotype.id)"
+      :to="$appRoutes.sociotypeTab(nextSociotype.id, props.sociotypeTabName)"
       class="sociotype-switcher__link"
     >
       <UiText force-tag="span" preset="small" color="dark-grey">
