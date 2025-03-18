@@ -1,6 +1,7 @@
 const scrollContainerToElementByIndex = (
   container: HTMLElement | null,
   index: number,
+  behavior: ScrollBehavior = "smooth",
 ): void => {
   if (container) {
     const element = container.children[index];
@@ -9,7 +10,7 @@ const scrollContainerToElementByIndex = (
       element.scrollIntoView({
         inline: "center",
         block: "nearest",
-        behavior: "smooth",
+        behavior,
       });
     }
   }
