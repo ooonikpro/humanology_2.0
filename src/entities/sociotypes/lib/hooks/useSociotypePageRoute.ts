@@ -1,4 +1,5 @@
 import { useRoute } from "vue-router";
+import type { SociotypeIdType } from "@types";
 
 import { SOCIOTYPE_CARD_TAB, SOCIOTYPE_PAGE_TABS } from "../../config";
 import parseSociotypeRoute from "../parseSociotypeRoute";
@@ -8,18 +9,12 @@ const useSociotypePageRoute = () => {
 
   const routeParams = computed(() => parseSociotypeRoute(route.path));
 
-  const sociotypeId = ref(toValue(routeParams).id);
-  const tabName = ref(toValue(routeParams).tabName);
-
-  /**
-   * @description При уходе со страницы социотипа возникает ошибка
-   **/
-  watch(routeParams, (newVal) => {
-    if (newVal.id) {
-      sociotypeId.value = newVal.id;
-      tabName.value = newVal.tabName ?? SOCIOTYPE_CARD_TAB.name;
-    }
-  });
+  const sociotypeId = computed<SociotypeIdType>(
+    (oldId) => routeParams.value.id ?? oldId,
+  );
+  const tabName = computed<string>(
+    (oldTabName) => routeParams.value.tabName ?? oldTabName,
+  );
 
   const activeTab = computed(
     () =>
