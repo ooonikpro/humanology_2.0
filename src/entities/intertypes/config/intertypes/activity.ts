@@ -2,7 +2,7 @@ import type { IntertypeDataType } from "@types";
 
 const ACTIVITY: IntertypeDataType = {
   id: "activity",
-  name: "Активация",
+  name: "Активации",
   alternativeName: "Откровенность",
   shortDescription: "Поощрение активности друг друга",
   lvl: "+5",
