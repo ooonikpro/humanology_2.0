@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { SociotypeIdType } from "@types";
 import {
   SociotypeCard,
   SociotypeCardGroupsAndQuadras,
@@ -19,24 +20,21 @@ import {
   SociotypesTabsWidget,
 } from "@widgets/sociotypes";
 import { BlockFunctionsListWidget } from "@widgets/functions-and-blocks";
-import DefaultLayout from "./default.vue";
-import { appRoutes } from "../app/constants";
-import getNextSociotypeId from "@entities/sociotypes/model/methods/getNextSociotypeId";
-import getPrevSociotypeId from "@entities/sociotypes/model/methods/getPrevSociotypeId";
-import type { SociotypeIdType } from "@types";
 import { scrollContainerToElementByIndex } from "@shared/lib";
+import { useInjectAppRoutes } from "@shared/hooks/useAppRoutes";
 
 const { sociotypeId, isCardTab, activeTab } = useSociotypePageRoute();
 
 const carousel = computed<[SociotypeIdType, SociotypeIdType, SociotypeIdType]>(
   () => [
-    getPrevSociotypeId(sociotypeId.value),
+    sociotypeModel.getPrevSociotypeId(sociotypeId.value),
     sociotypeId.value,
-    getNextSociotypeId(sociotypeId.value),
+    sociotypeModel.getNextSociotypeId(sociotypeId.value),
   ],
 );
 
 const router = useRouter();
+const appRoutes = useInjectAppRoutes();
 
 const carouselRef = useTemplateRef("carousel");
 onMounted(() => {
@@ -69,7 +67,7 @@ const onScroll = (e: Event) => {
 </script>
 
 <template>
-  <DefaultLayout>
+  <NuxtLayout name="default">
     <SociotypeSwitcher
       :sociotype-id="sociotypeId"
       :sociotype-tab-name="activeTab.name"
@@ -122,7 +120,7 @@ const onScroll = (e: Event) => {
         </template>
       </SociotypeProvider>
     </div>
-  </DefaultLayout>
+  </NuxtLayout>
 </template>
 
 <style lang="scss" scoped>
