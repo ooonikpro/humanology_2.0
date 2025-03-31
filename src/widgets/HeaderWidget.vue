@@ -6,7 +6,7 @@
       <UiSvg color="black" name="menu" size="24" />
     </button>
 
-    <NuxtLink :to="$appRoutes.home" class="header-widget__button">
+    <NuxtLink :to="$appRoutes.home" class="header-widget__button home-button">
       <UiSvg color="black" name="logo-circle" size="24" />
     </NuxtLink>
 
@@ -25,6 +25,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px;
+  position: relative;
   border-radius: 4px;
   background-color: colors.$white;
   border-bottom: 1px solid colors.$grey;
@@ -36,6 +37,13 @@
     &:hover {
       opacity: 1;
     }
+  }
+
+  .home-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .courses-button {
