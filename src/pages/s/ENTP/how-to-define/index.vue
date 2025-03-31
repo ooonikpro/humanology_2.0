@@ -3,15 +3,16 @@ import {
   SociotypePortraitSwitcher,
   SociotypeBodySwitcher,
   SociotypeFaceSwitcher,
+  SociotypeProvider,
 } from "@entities/sociotypes";
 </script>
 
 <template>
   <div class="text">
-    <section>
+    <SociotypeProvider id="ENTP" force-tag="section">
       <UiText preset="large" color="role">Портреты</UiText>
       <SociotypePortraitSwitcher id="ENTP" />
-    </section>
+    </SociotypeProvider>
 
     <section>
       <UiText preset="large" color="role">Телосложение</UiText>
