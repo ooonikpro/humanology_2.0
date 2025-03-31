@@ -100,7 +100,11 @@ const onScroll = (e: Event) => {
           </template>
         </SociotypeCard>
 
-        <BlockFunctionsListWidget v-if="isCardTab" :sociotypeId="id" />
+        <BlockFunctionsListWidget
+          v-if="isCardTab"
+          :sociotypeId="id"
+          :render-bottom-sheet="id === sociotypeId"
+        />
 
         <SociotypesTabsWidget />
 
