@@ -7,7 +7,13 @@ const props = defineProps<NavigationTabPropsType>();
 <template>
   <NuxtLink :to="props.to" class="navigation-tab">
     <span class="navigation-tab__content">
-      <UiSvg :name="props.iconName" class="navigation-tab__icon" />
+      <slot name="icon">
+        <UiSvg
+          v-if="props.iconName"
+          :name="props.iconName"
+          class="navigation-tab__icon"
+        />
+      </slot>
       <span class="navigation-tab__label">{{ props.label }}</span>
     </span>
 
