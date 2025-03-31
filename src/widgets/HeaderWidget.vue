@@ -10,9 +10,10 @@
       <UiSvg color="black" name="logo-circle" size="24" />
     </NuxtLink>
 
-    <button class="header-widget__button">
-      <UiSvg color="black" name="user-square" size="24" />
-    </button>
+    <NuxtLink class="header-widget__button courses-button">
+      <UiSvg color="accent" name="energy" size="16" />
+      <UiText color="accent" preset="small">Курсы</UiText>
+    </NuxtLink>
   </header>
 </template>
 
@@ -35,6 +36,22 @@
     &:hover {
       opacity: 1;
     }
+  }
+
+  .courses-button {
+    padding: 2px 4px;
+    padding-right: 9px;
+
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 2px;
+
+    position: relative;
+    background-color: colors.$beige;
+    border-radius: 2px;
+
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
   }
 }
 </style>
