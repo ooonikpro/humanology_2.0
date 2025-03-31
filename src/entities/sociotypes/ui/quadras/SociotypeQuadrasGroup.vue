@@ -5,8 +5,28 @@ import model from "../../model";
 import useSociotypeColors from "../../lib/hooks/useSociotypeColors";
 import SociotypeQuadraIconsBlock from "./SociotypeQuadraIconsBlock.vue";
 
-const quadrasList = model.getQuadras();
-const activeQuadra = ref<QuadrasType>("air");
+const props = defineProps<{
+  activeQuadra?: QuadrasType | undefined;
+  singleBlock?: boolean;
+}>();
+
+const allQuadras = model.getQuadras();
+const quadrasList = computed(() =>
+  props.singleBlock
+    ? allQuadras.filter((quadra) => props.activeQuadra === quadra)
+    : allQuadras,
+);
+
+const activeQuadra = ref<QuadrasType>(props.activeQuadra || "air");
+watch(
+  () => props.activeQuadra,
+  (newQuadra) => {
+    activeQuadra.value = newQuadra || "air";
+  },
+  {
+    immediate: true,
+  },
+);
 
 const styles = useSociotypeColors({ quadra: activeQuadra });
 const subtitles = computed(() =>
@@ -17,7 +37,7 @@ const onScroll = (e: Event) => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
   const value = Math.round(e.target.scrollLeft / e.target.clientWidth);
-  activeQuadra.value = quadrasList[value];
+  activeQuadra.value = quadrasList.value[value];
 };
 </script>
 
