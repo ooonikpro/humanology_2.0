@@ -7,6 +7,7 @@ export { default as SociotypeCardPhoto } from "./ui/card/SociotypeCardPhoto.vue"
 export { default as SociotypeCardFooter } from "./ui/card/SociotypeCardFooter.vue";
 export { default as SociotypeCardPersonDetails } from "./ui/card/SociotypeCardPersonDetails.vue";
 export { default as SociotypeQuadras } from "./ui/quadras/SociotypeQuadrasGroup.vue";
+export { default as SociotypeQuadraIconsBlock } from "./ui/quadras/SociotypeQuadraIconsBlock.vue";
 export { default as SociotypeMentality } from "./ui/SociotypeMentality.vue";
 export { default as SociotypeGroupsAndQuadras } from "./ui/SociotypeGroupsAndQuadras.vue";
 export { default as SociotypeYungDichtomy } from "./ui/SociotypeYungDichtomy.vue";
