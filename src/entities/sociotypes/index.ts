@@ -14,6 +14,7 @@ export { default as SociotypeYungDichtomy } from "./ui/SociotypeYungDichtomy.vue
 export { default as SociotypeReininSigns } from "./ui/SociotypeReininSigns.vue";
 export { default as SociotypePortraitSwitcher } from "./ui/portraits/SociotypePortraitSwitcher.vue";
 export { default as SociotypePortraitTrioKids } from "./ui/portraits/SociotypePortraitTrioKids.vue";
+export { default as SociotypePortraitTrioYoungs } from "./ui/portraits/SociotypePortraitTrioYoungs.vue";
 export { default as SociotypeBodySwitcher } from "./ui/bodies/SociotypeBodySwitcher.vue";
 export { default as SociotypeFaceSwitcher } from "./ui/faces/SociotypeFaceSwitcher.vue";
 export { default as SociotypeSignsBlock } from "./ui/SociotypeSignsBlock.vue";
