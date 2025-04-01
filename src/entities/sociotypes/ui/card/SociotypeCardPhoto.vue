@@ -5,7 +5,7 @@ const props = defineProps<{ src: string }>();
 const defaultImage = getImage("public/images/no-image.png");
 
 const onError = (e: Event) => {
-  e.target.src = defaultImage;
+  (e.target as HTMLInputElement).src = defaultImage;
 };
 </script>
 

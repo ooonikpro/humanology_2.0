@@ -10,6 +10,7 @@ const props = defineProps<{
 </script>
 
 <template>
+  <!-- @vue-expect-error -->
   <UiSvg
     :name="props.sign"
     :color="SIGNS_COLORS_MAP[props.sign]"

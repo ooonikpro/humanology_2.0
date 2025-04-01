@@ -5,6 +5,7 @@ import {
   SociotypePortraitTrioYoungs,
   SociotypeQuadraIconsBlock,
 } from "@entities/sociotypes";
+import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
 </script>
 
 <template>
@@ -32,10 +33,17 @@ import {
         label="Социотипы"
       >
         <template #icon>
-          <SociotypeQuadraIconsBlock quadrasSize="24" />
+          <ClientOnly>
+            <template #fallback>
+              <MainNavigationIconsSkeleton :icons-amount="4" size="24" />
+            </template>
+            <SociotypeQuadraIconsBlock quadrasSize="24" />
+          </ClientOnly>
         </template>
         <template #bottom>
-          <SociotypePortraitTrioYoungs class="with-image-tab__img" />
+          <ClientOnly>
+            <SociotypePortraitTrioYoungs class="with-image-tab__img" />
+          </ClientOnly>
         </template>
       </NavigationTab>
       <NavigationTab
@@ -45,12 +53,17 @@ import {
         iconName="square-2"
       >
         <template #top>
-          <div class="intertypes-tab__icons">
-            <UiSvg name="parallel" color="pink" size="24" />
-            <UiSvg name="beneficiary" color="yellow" size="32" />
-            <UiSvg name="pragmatic" color="green" size="48" />
-            <UiSvg name="activity" color="turquoise" size="64" />
-          </div>
+          <ClientOnly>
+            <template #fallback>
+              <MainNavigationIconsSkeleton :size="['24', '32', '48', '64']" />
+            </template>
+            <div class="intertypes-tab__icons">
+              <UiSvg name="parallel" color="pink" size="24" />
+              <UiSvg name="beneficiary" color="yellow" size="32" />
+              <UiSvg name="pragmatic" color="green" size="48" />
+              <UiSvg name="activity" color="turquoise" size="64" />
+            </div>
+          </ClientOnly>
         </template>
       </NavigationTab>
     </div>

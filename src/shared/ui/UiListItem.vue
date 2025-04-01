@@ -2,20 +2,20 @@
 import type { IconNameType, IconSizeType, TextColorType } from "@types";
 import UiSvg from "./UiSvg.vue";
 
-const props = defineProps<{
-  iconName?: IconNameType;
-  iconSize?: Extract<IconSizeType, "16" | "24">;
-  iconColor?: TextColorType;
-}>();
+const iconData = inject("$iconProps") as {
+  iconName: IconNameType;
+  iconSize: Extract<IconSizeType, "16" | "24">;
+  iconColor: TextColorType;
+};
 </script>
 
 <template>
   <li class="ui-list-item">
     <UiSvg
-      v-if="props.iconName"
-      :name="props.iconName"
-      :color="props.iconColor"
-      :size="props.iconSize"
+      v-if="iconData.iconName"
+      :name="iconData.iconName"
+      :color="iconData.iconColor"
+      :size="iconData.iconSize"
     />
     <slot />
   </li>

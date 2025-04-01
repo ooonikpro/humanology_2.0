@@ -41,7 +41,7 @@ const props = defineProps<{
       />
     </NuxtLink>
 
-    <div v-if="$slots.default?.()" class="aspect-description__body">
+    <div v-if="$slots.default" class="aspect-description__body">
       <slot />
     </div>
 

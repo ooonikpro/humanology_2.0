@@ -5,7 +5,7 @@ export const TEMPERAMENT_LVL = {
   phlegmatic: 1,
   melancholic: 2,
   sanguine: 3,
-};
+} as const;
 
 export const TEMPERAMENT: Record<TemperamentType, string> = {
   sanguine: "Сангвиник",

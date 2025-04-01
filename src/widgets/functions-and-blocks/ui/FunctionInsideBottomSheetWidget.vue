@@ -26,10 +26,10 @@ const routePredicate = (query: LocationQuery) => {
         <template #title>
           <div class="bottom-sheet-title-group">
             <UiText color="quadra">
-              {{ functionsModel.getName(data.f) }} функция
+              {{ functionsModel.getName(data.f!) }} функция
             </UiText>
-            <UiText>{{ functionsModel.getLevelName(data.f) }}</UiText>
-            <FunctionLevel :lvl="functionsModel.getLevel(data.f)" />
+            <UiText>{{ functionsModel.getLevelName(data.f!) }}</UiText>
+            <FunctionLevel :lvl="functionsModel.getLevel(data.f!)" />
           </div>
         </template>
 
@@ -37,48 +37,48 @@ const routePredicate = (query: LocationQuery) => {
           <div class="bottom-sheet-content">
             <BlockFunctions
               :sociotypeId="data.id"
-              :blockName="functionsModel.getBlockName(data.f)"
+              :blockName="functionsModel.getBlockName(data.f!)!"
               :activeFunctionName="data.f"
             />
 
             <hr class="bottom-sheet-content__divinder" />
 
-            <slot v-bind="{ sociotypeId: data.id, functionName: data.f }" />
+            <slot v-bind="{ sociotypeId: data.id, functionName: data.f! }" />
 
             <AspectDescription
               :iconName="
                 aspectModel.getAspectIconName(
-                  sociotypeModel.getAspectByFunction(data.id, data.f),
+                  sociotypeModel.getAspectByFunction(data.id, data.f!),
                 )
               "
               :title="
                 aspectModel.getAspectName(
-                  sociotypeModel.getAspectByFunction(data.id, data.f),
+                  sociotypeModel.getAspectByFunction(data.id, data.f!),
                 )
               "
               :subtitle="
                 aspectModel.getAspectLabel(
-                  sociotypeModel.getAspectByFunction(data.id, data.f),
+                  sociotypeModel.getAspectByFunction(data.id, data.f!),
                 )
               "
               :tags="
                 aspectModel.getAspectTags(
-                  sociotypeModel.getAspectByFunction(data.id, data.f),
+                  sociotypeModel.getAspectByFunction(data.id, data.f!),
                 )
               "
               :to="
                 $appRoutes.aspectCard(
-                  sociotypeModel.getAspectByFunction(data.id, data.f),
+                  sociotypeModel.getAspectByFunction(data.id, data.f!),
                 )
               "
             />
 
             <AspectDescription
-              :title="functionsModel.getName(data.f)"
-              :tags="functionsModel.getTags(data.f)"
-              :to="$appRoutes.functionCard(data.f)"
+              :title="functionsModel.getName(data.f!)"
+              :tags="functionsModel.getTags(data.f!)"
+              :to="$appRoutes.functionCard(data.f!)"
             >
-              {{ functionsModel.getDescription(data.f) }}
+              {{ functionsModel.getDescription(data.f!) }}
             </AspectDescription>
           </div>
         </template>
