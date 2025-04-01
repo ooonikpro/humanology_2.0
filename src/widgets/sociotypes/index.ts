@@ -1,4 +1,4 @@
-export { default as SociotypesByQadrasWidget } from "./ui/SociotypesByQadrasWidget.vue";
+export { default as SociotypesByQuadrasWidget } from "./ui/SociotypesByQuadrasWidget.vue";
 export { default as SociotypesKidsByQadrasWidget } from "./ui/SociotypesKidsByQadrasWidget.vue";
 export { default as SociotypesPageTitleWidget } from "./ui/SociotypesPageTitleWidget.vue";
 export { default as SociotypesTabsWidget } from "./ui/SociotypesTabsWidget.vue";
