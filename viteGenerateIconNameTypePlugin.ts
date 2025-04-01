@@ -5,7 +5,7 @@ import prettier from "prettier";
 import type { PluginOption } from "vite";
 
 const OUTPUT_FILE = `./@types/iconNames.ts`;
-const ICONS_FOLDER = "./public/assets/icons/";
+const ICONS_FOLDER = "/public/icons/";
 
 const generateIconNameType = async () => {
   const iconList = await glob("./public/icons/**/*.svg");
@@ -38,6 +38,7 @@ export type IconNameType = ${iconNames};`;
  */
 const viteGenerateIconNameTypePlugin = () =>
   ({
+    enforce: "pre",
     name: "generateIconNameType",
     watchChange: (id) => {
       if (id.includes(ICONS_FOLDER)) generateIconNameType();

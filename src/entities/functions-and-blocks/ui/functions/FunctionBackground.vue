@@ -9,13 +9,15 @@ const props = defineProps<{
 const hasBackgroundImage = !FUNCTION_CARD_WITHOUT_BACKGROUND_IMAGE.includes(
   props.function,
 );
+
+type FunctionWithBackground = Exclude<HumanFunctionType, "back" | "role">;
 </script>
 
 <template>
   <div class="function-background" />
   <UiSvg
     v-if="hasBackgroundImage"
-    :name="`blink_${props.function}`"
+    :name="`blink_${props.function as FunctionWithBackground}`"
     :class="[`function-background-image--function-${props.function}`]"
     class="function-background-image"
   />

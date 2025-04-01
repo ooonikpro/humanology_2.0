@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useRoute } from "vue-router";
 
+import type { IntertypeIdType } from "@types";
 import { OpenShareDialog } from "@features/open-share-dialog";
 import { IntertypeGraph, IntertypeProvider } from "@entities/intertypes";
 
@@ -14,7 +15,7 @@ const ComponentName = defineAsyncComponent(
 <template>
   <IntertypeProvider
     v-slot="intertypeData"
-    :intertypeId="route.params.intertype"
+    :intertypeId="route.params.intertype as IntertypeIdType"
     class="intertype-description-page"
   >
     <div class="intertype-description-page__header">
