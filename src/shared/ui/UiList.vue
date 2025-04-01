@@ -8,24 +8,12 @@ const props = defineProps<{
   iconColor: TextColorType;
 }>();
 
-defineSlots<{
-  default(): unknown;
-}>();
-
-const ListItem: FunctionalComponent<{ node: VNode }> = ({ node }) => {
-  if (Array.isArray(node.children))
-    return node.children.map((li) => h(li as VNode, props));
-  return h(node, props);
-};
+provide("$iconProps", props);
 </script>
 
 <template>
   <ul class="ui-list">
-    <ListItem
-      v-for="(node, $index) in $slots.default?.()"
-      :key="node.key ?? $index"
-      :node="node"
-    />
+    <slot />
   </ul>
 </template>
 
