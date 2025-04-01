@@ -2,7 +2,7 @@ import type { IntertypeDataType } from "@types";
 
 const IDENTICAL: IntertypeDataType = {
   id: "identical",
-  name: "Тождество",
+  name: "Тождественные",
   alternativeName: "Самооценка",
   shortDescription: "Понимание, но неумение помочь",
   lvl: "+1",

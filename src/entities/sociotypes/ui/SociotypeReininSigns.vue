@@ -19,3 +19,9 @@ const props = defineProps<{ reinin: SociotypeDataType["reinin"] }>();
     </template>
   </SociotypeSignsBlock>
 </template>
+
+<style scoped lang="scss">
+hr {
+  margin: 8px 0;
+}
+</style>

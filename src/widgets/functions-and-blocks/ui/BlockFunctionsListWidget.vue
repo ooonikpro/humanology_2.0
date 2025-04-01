@@ -7,7 +7,10 @@ import BlockFunctions from "./BlockFunctions.vue";
 import FunctionInsideBottomSheetWidget from "./FunctionInsideBottomSheetWidget.vue";
 import FunctionInsideBottomSheetContent from "./FunctionInsideBottomSheetContent.vue";
 
-const props = defineProps<{ sociotypeId: SociotypeIdType }>();
+const { renderBottomSheet = true, ...props } = defineProps<{
+  sociotypeId: SociotypeIdType;
+  renderBottomSheet?: boolean;
+}>();
 
 const relationRole = computed(() => {
   return sociotypeModel.getSociotypeBy(
@@ -33,7 +36,7 @@ const style = computed(() => ({
     />
   </div>
 
-  <FunctionInsideBottomSheetWidget v-slot="propsData">
+  <FunctionInsideBottomSheetWidget v-if="renderBottomSheet" v-slot="propsData">
     <FunctionInsideBottomSheetContent v-bind="propsData" />
   </FunctionInsideBottomSheetWidget>
 </template>

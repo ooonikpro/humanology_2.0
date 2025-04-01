@@ -4,7 +4,10 @@ import type { SociotypeIdType } from "@types";
 import useSociotypeColors from "../lib/hooks/useSociotypeColors";
 import model from "../model";
 
-const props = defineProps<{ id: SociotypeIdType }>();
+const { forceTag = "div", ...props } = defineProps<{
+  id: SociotypeIdType;
+  forceTag?: keyof HTMLElementTagNameMap;
+}>();
 
 const data = computed(() => model.getSociotypeBy(props.id));
 const quadra = computed(() => toValue(data).quadra);
@@ -14,9 +17,9 @@ const colors = useSociotypeColors({ quadra, role });
 </script>
 
 <template>
-  <div :style="colors" class="sociotype-provider">
+  <component :is="forceTag" :style="colors" class="sociotype-provider">
     <slot :data="data" />
-  </div>
+  </component>
 </template>
 
 <style lang="scss" scoped>

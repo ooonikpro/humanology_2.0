@@ -20,7 +20,7 @@ const switcherName = useId();
       v-for="option in props.options"
       :key="option.value"
       v-bind="option"
-      :picked="picked"
+      :is-selected="picked === option.value"
     >
       <input
         v-model="picked"

@@ -53,10 +53,12 @@ onMounted(scrollToActiveElement);
   }
 
   &__link {
+    flex: 0 0 content;
+    min-width: 96px;
+
     @include transitions.ease(background-color, color);
 
     background-color: colors.$beige;
-    min-width: max-content;
     opacity: 0.75;
 
     &--active {

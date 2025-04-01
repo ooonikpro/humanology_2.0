@@ -13,7 +13,10 @@ const props = defineProps<
 </script>
 
 <template>
-  <label :class="{ 'ui-variant--selected': isSelected }" class="ui-variant">
+  <label
+    :class="{ 'ui-variant--selected': props.isSelected }"
+    class="ui-variant"
+  >
     <span
       class="ui-variant__label"
       :class="{ 'ui-variant__label--with-subtitle': props.subtitle }"
