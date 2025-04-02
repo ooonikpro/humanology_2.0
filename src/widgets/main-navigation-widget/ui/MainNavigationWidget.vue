@@ -33,17 +33,10 @@ import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
         label="Социотипы"
       >
         <template #icon>
-          <ClientOnly>
-            <template #fallback>
-              <MainNavigationIconsSkeleton :icons-amount="4" size="24" />
-            </template>
-            <SociotypeQuadraIconsBlock quadrasSize="24" />
-          </ClientOnly>
+          <SociotypeQuadraIconsBlock only-icons quadrasSize="24" />
         </template>
         <template #bottom>
-          <ClientOnly>
-            <SociotypePortraitTrioYoungs class="with-image-tab__img" />
-          </ClientOnly>
+          <SociotypePortraitTrioYoungs class="with-image-tab__img" />
         </template>
       </NavigationTab>
       <NavigationTab
@@ -53,17 +46,12 @@ import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
         iconName="square-2"
       >
         <template #top>
-          <ClientOnly>
-            <template #fallback>
-              <MainNavigationIconsSkeleton :size="['24', '32', '48', '64']" />
-            </template>
-            <div class="intertypes-tab__icons">
-              <UiSvg name="parallel" color="pink" size="24" />
-              <UiSvg name="beneficiary" color="yellow" size="32" />
-              <UiSvg name="pragmatic" color="green" size="48" />
-              <UiSvg name="activity" color="turquoise" size="64" />
-            </div>
-          </ClientOnly>
+          <div class="intertypes-tab__icons">
+            <UiSvg name="parallel" color="pink" size="24" />
+            <UiSvg name="beneficiary" color="yellow" size="32" />
+            <UiSvg name="pragmatic" color="green" size="48" />
+            <UiSvg name="activity" color="turquoise" size="64" />
+          </div>
         </template>
       </NavigationTab>
     </div>
