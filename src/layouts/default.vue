@@ -60,7 +60,6 @@ const closeNavigation = () => {
   display: flex;
   flex-direction: column;
   padding-bottom: 16px;
-  overflow: hidden;
 
   &__header {
     width: 100%;
@@ -92,8 +91,8 @@ const closeNavigation = () => {
     left: 0;
     right: 0;
     bottom: 0;
-
     z-index: layers.$z-index-app-nav;
+    overflow: hidden;
     visibility: hidden;
 
     @include transitions.ease(visibility, display);

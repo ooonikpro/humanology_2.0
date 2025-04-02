@@ -35,10 +35,10 @@ const { sociotypeId, isCardTab, activeTab } = useSociotypePageRoute();
     <SociotypeProvider
       v-slot="{ data }"
       :id="sociotypeId"
-      class="sociotype-page"
+      class="sociotype-layout"
     >
       <SociotypeCard
-        class="sociotype-page__card"
+        class="sociotype-layout__card"
         :data="data"
         :gender="sociotypeModel.getGenderByYung(data.id)"
         bordered
@@ -83,40 +83,10 @@ const { sociotypeId, isCardTab, activeTab } = useSociotypePageRoute();
 
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
-
-.sociotype-layout__scroll {
-  position: relative;
-
-  display: flex;
-  flex-flow: row nowrap;
-
-  scroll-snap-type: x mandatory;
-  overflow-x: scroll;
-
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    scroll-behavior: smooth;
-  }
-}
-
-.sociotype-page {
+.sociotype-layout {
   display: flex;
   flex-direction: column;
   gap: 8px;
   background-color: colors.$white;
-
-  scroll-snap-align: center;
-
-  > * {
-    touch-action: none;
-    -ms-touch-action: none;
-  }
-
-  &__card {
-    touch-action: manipulation;
-    -ms-touch-action: manipulation;
-  }
 }
 </style>

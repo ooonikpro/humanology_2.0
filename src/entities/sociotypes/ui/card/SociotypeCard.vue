@@ -86,7 +86,6 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
   border-radius: 4px;
   border-top: 1px solid colors.$quadra;
   background: colors.$white;
-  cursor: pointer;
 
   &__content {
     position: relative;
