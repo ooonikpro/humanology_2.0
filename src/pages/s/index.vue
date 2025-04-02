@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-import { SociotypesByQadrasWidget } from "@widgets/sociotypes";
+import ArticleLinksListWidget from "@widgets/ArticleLinksListWidget.vue";
+import { SociotypesByQuadrasWidget } from "@widgets/sociotypes";
 </script>
 
 <template>
-  <SociotypesByQadrasWidget />
+  <SociotypesByQuadrasWidget />
+  <ArticleLinksListWidget />
 </template>
 
 <style lang="scss" scoped></style>

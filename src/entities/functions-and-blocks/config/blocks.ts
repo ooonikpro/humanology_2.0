@@ -34,3 +34,8 @@ export const FUNCTION_CARD_WITHOUT_ICON: HumanFunctionType[] = [
   "limit",
   "role",
 ];
+
+export const FUNCTION_CARD_WITHOUT_BACKGROUND_IMAGE: HumanFunctionType[] = [
+  "back",
+  "role",
+];

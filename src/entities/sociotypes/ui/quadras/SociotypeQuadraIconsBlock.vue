@@ -1,9 +1,14 @@
 <script lang="ts" setup>
-import type { QuadrasType } from "@types";
+import type { IconSizeType, QuadrasType } from "@types";
 
 import model from "../../model";
 
-const props = defineProps<{ activeQuadra: QuadrasType }>();
+const { quadrasSize = "16", ...props } = defineProps<{
+  activeQuadra?: QuadrasType;
+  quadrasSize?: IconSizeType;
+}>();
+
+const isQuadrasColorize = computed(() => props.activeQuadra === undefined);
 </script>
 
 <template>
@@ -12,8 +17,12 @@ const props = defineProps<{ activeQuadra: QuadrasType }>();
       v-for="quadra in model.getQuadras()"
       :key="quadra"
       :name="quadra"
-      :color="props.activeQuadra === quadra ? quadra : 'dark-grey'"
-      size="16"
+      :color="
+        props.activeQuadra === quadra || isQuadrasColorize
+          ? quadra
+          : 'dark-grey'
+      "
+      :size="quadrasSize"
       class="sociotype-quadra-icons-block__icon"
     />
   </NuxtLink>

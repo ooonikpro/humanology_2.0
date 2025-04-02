@@ -1,6 +1,10 @@
 import type { Gender, SociotypeAgeType, SociotypeIdType } from "@types";
 
-export const KIDS: [SociotypeIdType, Gender, SociotypeAgeType][][] = [
+export const KIDS: [
+  SociotypeIdType,
+  Gender,
+  Extract<SociotypeAgeType, "kid">,
+][][] = [
   [
     ["ENTP", "female", "kid"],
     ["INTJ", "male", "kid"],
@@ -20,5 +24,32 @@ export const KIDS: [SociotypeIdType, Gender, SociotypeAgeType][][] = [
     ["ENFJ", "female", "kid"],
     ["ESTP", "male", "kid"],
     ["INFP", "female", "kid"],
+  ],
+];
+
+export const YOUNGS: [
+  SociotypeIdType,
+  Gender,
+  Extract<SociotypeAgeType, "young">,
+][][] = [
+  [
+    ["ENTP", "female", "young"],
+    ["INTJ", "male", "young"],
+    ["ESFJ", "female", "young"],
+  ],
+  [
+    ["ENFP", "female", "young"],
+    ["ESTJ", "male", "young"],
+    ["INFJ", "female", "young"],
+  ],
+  [
+    ["INTP", "female", "young"],
+    ["ESFP", "female", "young"],
+    ["ENTJ", "male", "young"],
+  ],
+  [
+    ["ENFJ", "female", "young"],
+    ["ESTP", "male", "young"],
+    ["INFP", "female", "young"],
   ],
 ];

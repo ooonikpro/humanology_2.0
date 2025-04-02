@@ -7,6 +7,7 @@ import type {
 
 import { FUNCTION_CARD_WITHOUT_ICON, LARGE_FUNCTION_CARD } from "../../config";
 import model from "../../model";
+import FunctionBackground from "./FunctionBackground.vue";
 import FunctionLevel from "./FunctionLevel.vue";
 
 const props = defineProps<{
@@ -24,14 +25,15 @@ const iconSize = isLarge ? "96" : "64";
 
 <template>
   <div
-    :class="{
-      'function-card--large': isLarge,
-      'function-card--disabled': props.disabled,
-      [`function-card--function-${props.function}`]: true,
-    }"
+    :class="[
+      { 'function-card--large': isLarge },
+      { 'function-card--disabled': props.disabled },
+      `function-card--function-${props.function}`,
+    ]"
     class="function-card"
   >
-    <div class="function-card__background"></div>
+    <FunctionBackground :function="props.function" />
+
     <div class="function-card__head">
       <div class="function-card__purpose">
         <FunctionLevel :lvl="model.getLevel(props.function)" />
@@ -58,7 +60,7 @@ const iconSize = isLarge ? "96" : "64";
     </div>
     <UiSvg
       v-if="hasIcon"
-      :name="props.aspectIcon"
+      :name="props.aspectIcon!"
       :size="iconSize"
       color="inherit"
       class="function-card__icon"
@@ -73,6 +75,7 @@ const iconSize = isLarge ? "96" : "64";
 @use "@shared/styles/variables/colors";
 
 $gap: 8px;
+$card-gap: 4px;
 
 .function-card {
   --function-color: #{colors.$quadra};
@@ -87,15 +90,7 @@ $gap: 8px;
   border: var(--function-border);
   color: var(--function-color);
   min-height: 80px;
-
-  &__background {
-    position: absolute;
-    inset: 0;
-    border-radius: 4px;
-    background: var(--function-background);
-    opacity: var(--function-background-opacity);
-    z-index: 0;
-  }
+  overflow: hidden;
 
   &__head {
     position: relative;
