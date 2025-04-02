@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { SociotypesDuoByIntertypeWidget } from "@widgets/sociotypes";
 import type { IntertypeIdType } from "@types";
 
 const props = defineProps<{ intertypeId: IntertypeIdType }>();

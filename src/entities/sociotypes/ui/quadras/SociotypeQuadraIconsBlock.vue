@@ -3,26 +3,16 @@ import type { IconSizeType, QuadrasType } from "@types";
 
 import model from "../../model";
 
-const {
-  quadrasSize = "16",
-  onlyIcons = false,
-  ...props
-} = defineProps<{
+const { quadrasSize = "16", ...props } = defineProps<{
   activeQuadra?: QuadrasType;
   quadrasSize?: IconSizeType;
-  onlyIcons?: boolean;
 }>();
 
 const isQuadrasColorize = computed(() => props.activeQuadra === undefined);
 </script>
 
 <template>
-  <component
-    :is="onlyIcons ? 'div' : 'NuxtLink'"
-    :to="!onlyIcons ? $appRoutes.sociotypes : undefined"
-    class="sociotype-quadra-icons-block"
-    :style="{ '--sociotype-quadra-icons-block-height': `${quadrasSize}px` }"
-  >
+  <div class="sociotype-quadra-icons-block">
     <UiSvg
       v-for="quadra in model.getQuadras()"
       :key="quadra"
@@ -35,7 +25,7 @@ const isQuadrasColorize = computed(() => props.activeQuadra === undefined);
       :size="quadrasSize"
       class="sociotype-quadra-icons-block__icon"
     />
-  </component>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -46,6 +36,5 @@ const isQuadrasColorize = computed(() => props.activeQuadra === undefined);
   display: flex;
   align-items: center;
   gap: 4px;
-  height: var(--sociotype-quadra-icons-block-height);
 }
 </style>
