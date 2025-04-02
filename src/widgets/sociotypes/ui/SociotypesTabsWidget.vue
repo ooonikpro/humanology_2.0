@@ -14,8 +14,19 @@ const scrollToActiveElement = () => {
   scrollContainerToElementByIndex(toValue(container), toValue(activeTabIndex));
 };
 
+const stopPropagation = (e: Event) => {
+  e.stopPropagation();
+  e.preventDefault();
+};
+
 watch(activeTabIndex, scrollToActiveElement);
-onMounted(scrollToActiveElement);
+onMounted(() => {
+  scrollToActiveElement();
+  container.value!.addEventListener("scroll", stopPropagation);
+});
+onBeforeUnmount(() => {
+  container.value!.removeEventListener("scroll", stopPropagation);
+});
 </script>
 
 <template>
@@ -46,6 +57,7 @@ onMounted(scrollToActiveElement);
   overflow: hidden;
   overflow-x: auto;
   scrollbar-width: none;
+  scroll-behavior: smooth;
   padding-bottom: 2px;
 
   &::-webkit-scrollbar {
