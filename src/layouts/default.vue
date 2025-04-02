@@ -8,7 +8,10 @@ import FooterWidget from "@widgets/FooterWidget.vue";
     <header class="app-layout__header">
       <HeaderWidget />
     </header>
-    <main class="app-layout__body"><slot /></main>
+    <main class="app-layout__body">
+      <slot />
+      <slot name="loader" />
+    </main>
     <FooterWidget />
   </div>
 </template>

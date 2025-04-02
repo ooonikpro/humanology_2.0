@@ -5,7 +5,6 @@ import {
   SociotypePortraitTrioYoungs,
   SociotypeQuadraIconsBlock,
 } from "@entities/sociotypes";
-import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
 </script>
 
 <template>
@@ -154,13 +153,22 @@ import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
 
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
+@use "@shared/styles/variables/layouts";
+@use "@shared/styles/variables/layers";
 
 $gap: 8px;
 $mt: 20px;
 
 .main-nav {
   padding: 8px;
-  gap: $gap;
+  max-width: layouts.$maxWidth;
+  min-width: layouts.$minWidth;
+  position: fixed;
+  top: 41px; // header height
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bg-color);
+  z-index: layers.$z-index-app-backdrop;
 
   &__row {
     display: flex;

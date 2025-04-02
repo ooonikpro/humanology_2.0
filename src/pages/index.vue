@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import MainNavigationWidget from "@widgets/main-navigation-widget";
+navigateTo("/s");
 </script>
 
-<template>
-  <MainNavigationWidget />
-</template>
+<template></template>
+
+<style scoped lang="scss"></style>

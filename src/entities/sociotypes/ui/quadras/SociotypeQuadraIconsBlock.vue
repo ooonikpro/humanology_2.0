@@ -14,11 +14,15 @@ const {
 }>();
 
 const isQuadrasColorize = computed(() => props.activeQuadra === undefined);
+
+const RootBlock = computed(() =>
+  onlyIcons ? "div" : resolveComponent("NuxtLink"),
+);
 </script>
 
 <template>
   <component
-    :is="onlyIcons ? 'div' : 'NuxtLink'"
+    :is="RootBlock"
     :to="!onlyIcons ? $appRoutes.sociotypes : undefined"
     class="sociotype-quadra-icons-block"
     :style="{ '--sociotype-quadra-icons-block-height': `${quadrasSize}px` }"

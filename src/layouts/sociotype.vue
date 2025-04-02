@@ -37,9 +37,16 @@ const router = useRouter();
 const appRoutes = useInjectAppRoutes();
 
 const carouselRef = useTemplateRef("carousel");
-onMounted(() => {
+
+const isLoading = useState("loading");
+isLoading.value = true;
+onMounted(async () => {
+  isLoading.value = false;
+  await nextTick();
   scrollContainerToElementByIndex(carouselRef.value!, 1, "auto");
 });
+
+const scroll = computed(() => (!isLoading.value ? "scroll" : ""));
 
 watch(
   () => router.currentRoute.value.fullPath,
@@ -68,11 +75,14 @@ const onScroll = (e: Event) => {
 
 <template>
   <NuxtLayout name="default">
+    <template #loader>
+      <slot name="loader" />
+    </template>
     <SociotypeSwitcher
       :sociotype-id="sociotypeId"
       :sociotype-tab-name="activeTab.name"
     />
-    <div ref="carousel" class="sociotype-layout__scroll" @scroll="onScroll">
+    <div ref="carousel" class="sociotype-layout__scroll" @[scroll]="onScroll">
       <SociotypeProvider
         v-for="(id, $carouselIndex) in carousel"
         :key="`${id}-${$carouselIndex}-card`"
@@ -129,6 +139,10 @@ const onScroll = (e: Event) => {
 
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
+
+.hidden {
+  opacity: 0;
+}
 
 .sociotype-layout__scroll {
   position: relative;

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const props = defineProps<{ isLoading: boolean }>();
+
 const { isLoading } = useLoadingIndicator({
   duration: 2e3,
   throttle: 200,
@@ -6,7 +8,7 @@ const { isLoading } = useLoadingIndicator({
 </script>
 
 <template>
-  <div v-if="isLoading" class="app-loader">
+  <div v-if="isLoading || props.isLoading" class="app-loader">
     <div class="app-loader__image">
       <UiSvg name="touch-icon" />
     </div>

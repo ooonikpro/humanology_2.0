@@ -1,8 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const isMenuOpen = useState("menu-state", () => false);
+const toggleMenuOpen = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+</script>
 
 <template>
   <header class="header-widget">
-    <button class="header-widget__button">
+    <button @click="toggleMenuOpen" class="header-widget__button">
       <UiSvg color="black" name="menu" size="24" />
     </button>
 

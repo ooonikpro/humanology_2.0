@@ -50,6 +50,7 @@ const nextSociotype = computed(() =>
   padding: 0 8px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
   height: 32px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
