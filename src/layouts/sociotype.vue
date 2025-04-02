@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import type { SociotypeIdType } from "@types";
 import {
   SociotypeCard,
   SociotypeCardGroupsAndQuadras,
@@ -19,51 +18,12 @@ import {
   SociotypesPageTitleWidget,
   SociotypesTabsWidget,
 } from "@widgets/sociotypes";
-import { BlockFunctionsListWidget } from "@widgets/functions-and-blocks";
-import { scrollContainerToElementByIndex } from "@shared/lib";
-import { useInjectAppRoutes } from "@shared/hooks/useAppRoutes";
+import {
+  BlockFunctionsListWidget,
+  FunctionInsideBottomSheetWidget,
+} from "@widgets/functions-and-blocks";
 
 const { sociotypeId, isCardTab, activeTab } = useSociotypePageRoute();
-
-const carousel = computed<[SociotypeIdType, SociotypeIdType, SociotypeIdType]>(
-  () => [
-    sociotypeModel.getPrevSociotypeId(sociotypeId.value),
-    sociotypeId.value,
-    sociotypeModel.getNextSociotypeId(sociotypeId.value),
-  ],
-);
-
-const router = useRouter();
-const appRoutes = useInjectAppRoutes();
-
-const carouselRef = useTemplateRef("carousel");
-onMounted(() => {
-  scrollContainerToElementByIndex(carouselRef.value!, 1, "auto");
-});
-
-watch(
-  () => router.currentRoute.value.fullPath,
-  async () => {
-    await nextTick();
-    scrollContainerToElementByIndex(carouselRef.value!, 1, "auto");
-  },
-);
-
-const onScroll = (e: Event) => {
-  const container = e.target as HTMLElement;
-  const elementWidth = container.clientWidth;
-  if (container.scrollLeft % elementWidth === 0) {
-    let activeIndex = Math.round(container.scrollLeft / elementWidth);
-    if (activeIndex !== 1) {
-      router.push(
-        appRoutes.sociotypeTab(
-          carousel.value[activeIndex],
-          activeTab.value.name,
-        ),
-      );
-    }
-  }
-};
 </script>
 
 <template>
@@ -72,58 +32,52 @@ const onScroll = (e: Event) => {
       :sociotype-id="sociotypeId"
       :sociotype-tab-name="activeTab.name"
     />
-    <div ref="carousel" class="sociotype-layout__scroll" @scroll="onScroll">
-      <SociotypeProvider
-        v-for="(id, $carouselIndex) in carousel"
-        :key="`${id}-${$carouselIndex}-card`"
-        v-slot="{ data }"
-        :id="id"
-        class="sociotype-page"
+    <SociotypeProvider
+      v-slot="{ data }"
+      :id="sociotypeId"
+      class="sociotype-page"
+    >
+      <SociotypeCard
+        class="sociotype-page__card"
+        :data="data"
+        :gender="sociotypeModel.getGenderByYung(data.id)"
+        bordered
+        isShowToggle
       >
-        <SociotypeCard
-          class="sociotype-page__card"
-          :data="data"
-          :gender="sociotypeModel.getGenderByYung(data.id)"
-          bordered
-          isShowToggle
-        >
-          <template #header>
-            <SociotypeCardHeader :data="data" />
-          </template>
-
-          <template #groups-and-quadras v-if="isCardTab">
-            <SociotypeCardGroupsAndQuadras v-bind="data" />
-          </template>
-
-          <template #yungs v-if="isCardTab">
-            <SociotypeCardYungs v-bind="data" />
-          </template>
-        </SociotypeCard>
-
-        <BlockFunctionsListWidget
-          v-if="isCardTab"
-          :sociotypeId="id"
-          :render-bottom-sheet="id === sociotypeId"
-        />
-
-        <SociotypesTabsWidget />
-
-        <template v-if="isCardTab">
-          <SociotypeSignsBlock title="Краткое описание">
-            <NuxtPage />
-          </SociotypeSignsBlock>
-          <SociotypeMentality v-bind="data" />
-          <SociotypeGroupsAndQuadras v-bind="data" />
-          <SociotypeYungDichtomy v-bind="data" />
-          <SociotypeReininSigns v-bind="data" />
+        <template #header>
+          <SociotypeCardHeader :data="data" />
         </template>
 
-        <template v-else>
-          <SociotypesPageTitleWidget v-if="!isCardTab" />
+        <template #groups-and-quadras v-if="isCardTab">
+          <SociotypeCardGroupsAndQuadras v-bind="data" />
+        </template>
+
+        <template #yungs v-if="isCardTab">
+          <SociotypeCardYungs v-bind="data" />
+        </template>
+      </SociotypeCard>
+
+      <BlockFunctionsListWidget v-if="isCardTab" :sociotypeId="data.id" />
+
+      <SociotypesTabsWidget />
+
+      <template v-if="isCardTab">
+        <SociotypeSignsBlock title="Краткое описание">
           <NuxtPage />
-        </template>
-      </SociotypeProvider>
-    </div>
+        </SociotypeSignsBlock>
+        <SociotypeMentality v-bind="data" />
+        <SociotypeGroupsAndQuadras v-bind="data" />
+        <SociotypeYungDichtomy v-bind="data" />
+        <SociotypeReininSigns v-bind="data" />
+      </template>
+
+      <template v-else>
+        <SociotypesPageTitleWidget v-if="!isCardTab" />
+        <NuxtPage />
+      </template>
+    </SociotypeProvider>
+
+    <FunctionInsideBottomSheetWidget :sociotype-id="sociotypeId" />
   </NuxtLayout>
 </template>
 

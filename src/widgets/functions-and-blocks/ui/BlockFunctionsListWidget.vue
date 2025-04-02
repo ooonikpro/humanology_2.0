@@ -2,14 +2,12 @@
 import type { SociotypeIdType } from "@types";
 import { sociotypeModel } from "@entities/sociotypes";
 import { intertypeModel } from "@entities/intertypes";
+
 import * as config from "../config";
 import BlockFunctions from "./BlockFunctions.vue";
-import FunctionInsideBottomSheetWidget from "./FunctionInsideBottomSheetWidget.vue";
-import FunctionInsideBottomSheetContent from "./FunctionInsideBottomSheetContent.vue";
 
-const { renderBottomSheet = true, ...props } = defineProps<{
+const props = defineProps<{
   sociotypeId: SociotypeIdType;
-  renderBottomSheet?: boolean;
 }>();
 
 const relationRole = computed(() => {
@@ -35,10 +33,6 @@ const style = computed(() => ({
       :blockName="blockName"
     />
   </div>
-
-  <FunctionInsideBottomSheetWidget v-if="renderBottomSheet" v-slot="propsData">
-    <FunctionInsideBottomSheetContent v-bind="propsData" />
-  </FunctionInsideBottomSheetWidget>
 </template>
 
 <style lang="scss" scoped>
