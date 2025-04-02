@@ -1,9 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps<{ isOpenNavigation?: boolean }>();
+const emit = defineEmits(["toggleNavigation"]);
+</script>
 
 <template>
   <header class="header-widget">
-    <button class="header-widget__button">
-      <UiSvg color="black" name="menu" size="24" />
+    <button @click="emit('toggleNavigation')" class="header-widget__button">
+      <UiSvg
+        color="black"
+        :name="props.isOpenNavigation ? 'close' : 'menu'"
+        size="24"
+      />
     </button>
 
     <NuxtLink :to="$appRoutes.home" class="header-widget__button home-button">

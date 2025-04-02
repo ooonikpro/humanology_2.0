@@ -1,1 +1,1 @@
-export { default } from "./ui/MainNavigationWidget.vue";
+export { default as MainNavigationWidget } from "./ui/MainNavigationWidget.vue";

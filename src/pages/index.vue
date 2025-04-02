@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import MainNavigationWidget from "@widgets/main-navigation-widget";
+import SociotypesPage from "@pages/s/index.vue";
 </script>
 
 <template>
-  <MainNavigationWidget />
+  <SociotypesPage />
 </template>
