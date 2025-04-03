@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import { NavigationTab } from "@entities/navigation";
-import { scrollContainerToElementByIndex } from "@shared/lib";
 import {
   useSociotypePageRoute,
   SOCIOTYPE_PAGE_TABS,
 } from "@entities/sociotypes";
+import scrollTabContainerToElementByIndex from "../lib/scrollTabContainerToElementByIndex";
 
 const { sociotypeId, activeTab, activeTabIndex } = useSociotypePageRoute();
 
 const container = useTemplateRef<HTMLElement>("my-container");
 
 const scrollToActiveElement = () => {
-  scrollContainerToElementByIndex(toValue(container), toValue(activeTabIndex));
+  scrollTabContainerToElementByIndex(
+    toValue(container),
+    toValue(activeTabIndex),
+  );
 };
 
 const stopPropagation = (e: Event) => {
@@ -19,9 +22,8 @@ const stopPropagation = (e: Event) => {
   e.preventDefault();
 };
 
-watch(activeTabIndex, scrollToActiveElement);
+watchEffect(scrollToActiveElement);
 onMounted(() => {
-  scrollToActiveElement();
   container.value!.addEventListener("scroll", stopPropagation);
 });
 onBeforeUnmount(() => {

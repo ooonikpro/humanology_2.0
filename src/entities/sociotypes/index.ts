@@ -19,9 +19,12 @@ export { default as SociotypePortraitTrioYoungs } from "./ui/portraits/Sociotype
 export { default as SociotypeBodySwitcher } from "./ui/bodies/SociotypeBodySwitcher.vue";
 export { default as SociotypeFaceSwitcher } from "./ui/faces/SociotypeFaceSwitcher.vue";
 export { default as SociotypeSignsBlock } from "./ui/SociotypeSignsBlock.vue";
-export { default as SociotypeSwitcher } from "./ui/SociotypeSwitcher.vue";
 
-export { SOCIOTYPES, SOCIOTYPE_PAGE_TABS } from "./config";
+export {
+  SOCIOTYPES,
+  SOCIOTYPE_PAGE_TABS,
+  type SociotypeTabNameType,
+} from "./config";
 
 export { default as useSociotypePageRoute } from "./lib/hooks/useSociotypePageRoute";
 
