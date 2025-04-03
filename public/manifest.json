@@ -1,24 +1,10 @@
 {
-    "name": "Человековедение 2.0",
-    "short_name": "Человековедение 2.0",
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone",
-    "orientation": "portrait",
-    "lang": "ru",
-    "dir": "ltr",
-    "start_url": "https://humanology.app/",
-    "scope": "/",
-    "icons": [
-        {
-            "src": "https://humanology.app/public/favicon.svg",
-            "sizes": "any",
-            "type": "image/svg"
-        },
-        {
-            "src": "https://humanology.app/public/touch-icon.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ]
+  "name": "Соционика 2.0",
+  "short_name": "Соционика",
+  "theme_color": "#fbf9f4",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/"
 }

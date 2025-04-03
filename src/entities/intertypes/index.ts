@@ -6,5 +6,6 @@ export { default as IntertypeNameBlock } from "./ui/IntertypeNameBlock.vue";
 export { default as IntertypeGraph } from "./ui/IntertypeGraph.vue";
 
 export { default as isIntertype } from "./lib/guards/isIntertype";
+export { default as useIntertypePageRoute } from "./lib/hooks/useIntertypePageRoute";
 
 export { default as intertypeModel } from "./model";

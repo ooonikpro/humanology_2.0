@@ -17,7 +17,7 @@ const props = defineProps<SociotypeDataType>();
         </UiText>
         <UiZapList
           :temperamentLvl="model.getTemperament(props.temperament).lvl"
-        ></UiZapList>
+        />
       </template>
       <template #leftBottom>
         <UiText>

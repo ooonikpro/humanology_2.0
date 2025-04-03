@@ -51,8 +51,9 @@ export default defineNuxtConfig({
 
   routeRules: {
     "/": { prerender: true },
-    "/t/**": { prerender: true },
     "/k/**": { prerender: true },
+    "/s/**": { prerender: true },
+    "/t/**": { prerender: true },
     "/disclaimer": { prerender: true },
     "/history": { prerender: true },
     "/how-to-define-type": { prerender: true },

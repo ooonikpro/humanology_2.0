@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { useLoadingIndicator } from "#app/composables/loading-indicator";
-
 const { isLoading } = useLoadingIndicator({
   duration: 2e3,
   throttle: 200,

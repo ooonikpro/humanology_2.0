@@ -1,9 +1,5 @@
-<script setup lang="ts">
-import MainNavigationWidget from "@widgets/MainNavigationWidget.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <NuxtPage>
-    <MainNavigationWidget />
-  </NuxtPage>
+  <NuxtPage></NuxtPage>
 </template>

@@ -91,6 +91,7 @@ $card-gap: 4px;
   color: var(--function-color);
   min-height: 80px;
   overflow: hidden;
+  cursor: pointer;
 
   &__head {
     position: relative;

@@ -40,7 +40,7 @@ const props = defineProps<{
         class="aspect-description__chevron"
       />
 
-    <div v-if="$slots.default?.()" class="aspect-description__body">
+    <div v-if="$slots.default" class="aspect-description__body">
       <slot />
     </div>
 

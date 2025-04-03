@@ -30,7 +30,9 @@ const nextSociotype = computed(() =>
       </UiText>
     </NuxtLink>
 
-    <SociotypeQuadraIconsBlock :activeQuadra="sociotype.quadra" />
+    <NuxtLink :to="$appRoutes.sociotypes" class="sociotype-switcher__link">
+      <SociotypeQuadraIconsBlock :activeQuadra="sociotype.quadra" />
+    </NuxtLink>
 
     <NuxtLink
       :to="$appRoutes.sociotypeTab(nextSociotype.id, props.sociotypeTabName)"

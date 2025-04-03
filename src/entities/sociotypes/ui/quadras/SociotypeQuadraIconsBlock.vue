@@ -12,7 +12,7 @@ const isQuadrasColorize = computed(() => props.activeQuadra === undefined);
 </script>
 
 <template>
-  <NuxtLink :to="$appRoutes.sociotypes" class="sociotype-quadra-icons-block">
+  <div class="sociotype-quadra-icons-block">
     <UiSvg
       v-for="quadra in model.getQuadras()"
       :key="quadra"
@@ -25,7 +25,7 @@ const isQuadrasColorize = computed(() => props.activeQuadra === undefined);
       :size="quadrasSize"
       class="sociotype-quadra-icons-block__icon"
     />
-  </NuxtLink>
+  </div>
 </template>
 
 <style lang="scss" scoped>

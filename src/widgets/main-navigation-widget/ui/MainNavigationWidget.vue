@@ -5,6 +5,7 @@ import {
   SociotypePortraitTrioYoungs,
   SociotypeQuadraIconsBlock,
 } from "@entities/sociotypes";
+import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
 </script>
 
 <template>
@@ -32,7 +33,7 @@ import {
         label="Социотипы"
       >
         <template #icon>
-          <SociotypeQuadraIconsBlock quadrasSize="24" />
+          <SociotypeQuadraIconsBlock only-icons quadrasSize="24" />
         </template>
         <template #bottom>
           <SociotypePortraitTrioYoungs class="with-image-tab__img" />

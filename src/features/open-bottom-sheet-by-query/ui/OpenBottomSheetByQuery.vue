@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useRoute, useRouter, type LocationQuery } from "vue-router";
-import { parseSociotypeRoute } from "@entities/sociotypes";
+import type { HumanFunctionType } from "@types";
 
 const props = defineProps<{
   predicate: (query: LocationQuery) => boolean;
@@ -32,6 +32,8 @@ watch(
   },
   { immediate: true },
 );
+
+type SociotypeQueryType = { f?: HumanFunctionType };
 </script>
 
 <template>
@@ -41,8 +43,7 @@ watch(
         isOpen,
         data: {
           ...route.params,
-          ...parseSociotypeRoute(route.path),
-          ...route.query,
+          ...(route.query as SociotypeQueryType),
         },
         handleOpen,
         handleClose,
