@@ -127,8 +127,6 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
 
   &__title {
     width: 98%;
-    font-size: min(8vw, 30px);
-    line-height: min(8vw, 40px);
     overflow: hidden;
     margin: 12px 8px;
     white-space: nowrap;

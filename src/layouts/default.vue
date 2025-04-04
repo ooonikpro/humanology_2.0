@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import HeaderWidget from "@widgets/HeaderWidget.vue";
 import FooterWidget from "@widgets/FooterWidget.vue";
-import { MainNavigationWidget } from "@widgets/main-navigation-widget";
+import { MenuNavigationWidget } from "@widgets/navigation";
 
 const isOpenNavigation = ref(false);
 const toggleNavigation = () => {
@@ -31,7 +31,7 @@ const closeNavigation = () => {
         },
       ]"
     >
-      <MainNavigationWidget
+      <MenuNavigationWidget
         :class="[
           'app-layout__nav',
           {

@@ -4,19 +4,14 @@ const scrollTabContainerToElementByIndex = (
   behavior: ScrollBehavior = "smooth",
 ): void => {
   if (container) {
+    let scrollLeft;
     const element = container.children[index] as HTMLElement;
+    const elementScrollLeft = element.offsetLeft - container.offsetLeft;
 
-    const childOffsetLeft = element.offsetLeft - element.offsetWidth;
-    const containerScrollLeft = container.scrollLeft + container.offsetWidth;
-
-    let scrollLeft = container.scrollLeft;
-
-    if (container.scrollLeft > element.offsetLeft) {
-      scrollLeft = element.offsetLeft;
-    }
-
-    if (containerScrollLeft < childOffsetLeft) {
-      scrollLeft = container.scrollLeft + childOffsetLeft - containerScrollLeft;
+    if (elementScrollLeft + element.clientWidth > container.clientWidth) {
+      scrollLeft = elementScrollLeft / 2;
+    } else {
+      scrollLeft = elementScrollLeft - element.clientWidth;
     }
 
     container.scrollTo({

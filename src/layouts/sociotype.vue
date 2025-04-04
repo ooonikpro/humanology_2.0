@@ -22,8 +22,9 @@ import {
   BlockFunctionsListWidget,
   FunctionInsideBottomSheetWidget,
 } from "@widgets/functions-and-blocks";
+import UiLoadSociotypePageComponent from "@shared/ui/UiLoadSociotypePageComponent.vue";
 
-const { sociotypeId, isCardTab } = useSociotypePageRoute();
+const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
 </script>
 
 <template>
@@ -60,7 +61,12 @@ const { sociotypeId, isCardTab } = useSociotypePageRoute();
 
         <template v-if="isCardTab">
           <SociotypeSignsBlock title="Краткое описание">
-            <NuxtPage />
+            <NuxtPage v-if="carouselData.isCurrent" />
+            <UiLoadSociotypePageComponent
+              v-else
+              :sociotype-id="carouselData.sociotypeId"
+              :tab-name="activeTab.name"
+            />
           </SociotypeSignsBlock>
           <SociotypeMentality v-bind="data" />
           <SociotypeGroupsAndQuadras v-bind="data" />
@@ -70,7 +76,12 @@ const { sociotypeId, isCardTab } = useSociotypePageRoute();
 
         <template v-else>
           <SociotypesPageTitleWidget v-if="!isCardTab" />
-          <NuxtPage />
+          <NuxtPage v-if="carouselData.isCurrent" />
+          <UiLoadSociotypePageComponent
+            v-else
+            :sociotype-id="carouselData.sociotypeId"
+            :tab-name="activeTab.name"
+          />
         </template>
       </SociotypeProvider>
     </SociotypeCarousel>

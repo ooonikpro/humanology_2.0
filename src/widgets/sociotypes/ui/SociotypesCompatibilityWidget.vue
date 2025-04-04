@@ -15,6 +15,9 @@ import {
   IntertypeProvider,
   IntertypeWithSociotype,
 } from "@entities/intertypes";
+import type { SociotypeIdType } from "@types";
+
+const props = defineProps<{ sociotypeId?: SociotypeIdType }>();
 
 const router = useRouter();
 const { sociotypeId } = useSociotypePageRoute();
@@ -48,7 +51,12 @@ const { sociotypeId } = useSociotypePageRoute();
         <IntertypeWithSociotype v-bind="intertypeData">
           <SociotypeProvider
             v-slot="{ data: sociotypeData }"
-            :id="sociotypeModel.getIntertypeRelations(sociotypeId, intertypeId)"
+            :id="
+              sociotypeModel.getIntertypeRelations(
+                props.sociotypeId ?? sociotypeId,
+                intertypeId,
+              )
+            "
           >
             <SociotypeCard
               :data="sociotypeData"
