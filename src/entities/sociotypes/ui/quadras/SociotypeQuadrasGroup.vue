@@ -7,21 +7,22 @@ import SociotypeQuadraIconsBlock from "./SociotypeQuadraIconsBlock.vue";
 
 const props = defineProps<{
   activeQuadra?: QuadrasType | undefined;
-  singleBlock?: boolean;
+  onlyActiveQuadra?: boolean;
 }>();
 
 const allQuadras = model.getQuadras();
+const defaultQuadra = allQuadras[0];
 const quadrasList = computed(() =>
-  props.singleBlock
+  props.onlyActiveQuadra
     ? allQuadras.filter((quadra) => props.activeQuadra === quadra)
     : allQuadras,
 );
 
-const activeQuadra = ref<QuadrasType>(props.activeQuadra || "air");
+const activeQuadra = ref<QuadrasType>(props.activeQuadra || defaultQuadra);
 watch(
   () => props.activeQuadra,
   (newQuadra) => {
-    activeQuadra.value = newQuadra || "air";
+    activeQuadra.value = newQuadra || defaultQuadra;
   },
   {
     immediate: true,

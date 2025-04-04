@@ -80,7 +80,12 @@ watch(() => toValue(currentSociotype).id, updateCarouselItems);
         :key="sociotype.id"
         class="sociotype-carousel__sociotype"
       >
-        <slot v-bind="{ sociotypeId: sociotype.id }" />
+        <slot
+          v-bind="{
+            sociotypeId: sociotype.id,
+            isCurrent: sociotype.id === currentSociotype.id,
+          }"
+        />
       </div>
     </div>
   </div>

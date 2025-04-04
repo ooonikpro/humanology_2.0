@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
-import type { IconNameType } from "@types";
 import {
   SociotypeCard,
   SociotypeCardGroupsAndQuadras,
@@ -30,7 +29,7 @@ const quadrasList = sociotypeModel.getQuadras();
       <SociotypeQuadras
         v-if="$index === 0 || isExpanded"
         :active-quadra="quadra"
-        :single-block="$index === 0 ? isExpanded : true"
+        :only-active-quadra="isExpanded"
       >
         <template v-slot="quadraProps">
           <SociotypeProvider
