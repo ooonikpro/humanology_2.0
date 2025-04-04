@@ -1,0 +1,61 @@
+@use "@shared/styles/variables/colors";
+
+$gap: 8px;
+$mt: 20px;
+
+.navigation {
+  padding: 8px;
+
+  &__row {
+    display: flex;
+    flex-flow: row wrap;
+    gap: $gap;
+
+    &:not(:first-child) {
+      margin-top: $mt;
+    }
+
+    &--tab-bg-grey > .navigation__tab {
+      background-color: colors.$beige;
+      border: 0;
+    }
+  }
+
+  &__tab {
+    border: 1px solid colors.$grey;
+
+    &--soon {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+}
+
+.with-image-tab {
+  &__img {
+    margin-bottom: -8px;
+  }
+}
+
+.in-development {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 4px;
+}
+
+.col-40 {
+  flex: 0 0 calc(40% - $gap / 2);
+}
+
+.col-50 {
+  flex: 0 0 calc(50% - $gap / 2);
+}
+
+.col-60 {
+  flex: 0 0 calc(60% - $gap / 2);
+}
+
+.col-100 {
+  flex: 0 0 100%;
+}
