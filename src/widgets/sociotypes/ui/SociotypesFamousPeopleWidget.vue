@@ -1,22 +1,25 @@
 <script lang="ts" setup>
-import type { FamousPersonType } from "@types";
+import type { SociotypeIdType } from "@types";
 import {
   SociotypeCard,
   SociotypeCardFooter,
   SociotypeCardPhoto,
   SociotypeProvider,
   SociotypeCardPersonDetails,
+  useFamousPeople,
 } from "@entities/sociotypes";
 import { getImage } from "@shared/lib";
 
-const props = defineProps<{ list: Array<FamousPersonType> }>();
+const props = defineProps<{ sociotypeId?: SociotypeIdType }>();
+
+const { data: famousPeople } = useFamousPeople(props.sociotypeId);
 </script>
 
 <template>
   <div class="sociotypes-famous-people-widget">
     <SociotypeProvider
       v-slot="{ data }"
-      v-for="person in props.list"
+      v-for="person in famousPeople"
       :key="person.name"
       :id="person.id"
     >
