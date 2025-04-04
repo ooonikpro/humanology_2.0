@@ -5,31 +5,30 @@ import {
   SociotypePortraitTrioYoungs,
   SociotypeQuadraIconsBlock,
 } from "@entities/sociotypes";
-import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
 </script>
 
 <template>
-  <nav class="main-nav">
-    <div class="main-nav__row">
+  <nav class="navigation">
+    <div class="navigation__row">
       <NavigationTab
         :to="$appRoutes.whatIsIt"
-        class="main-nav__tab col-50"
+        class="navigation__tab col-50"
         label="Что это такое?"
         iconName="square-0"
       />
 
       <NavigationTab
         :to="$appRoutes.disclaimer"
-        class="main-nav__tab col-50"
+        class="navigation__tab col-50"
         label="Дисклеймер"
         iconName="square-1"
       />
     </div>
 
-    <div class="main-nav__row">
+    <div class="navigation__row">
       <NavigationTab
         :to="$appRoutes.sociotypes"
-        class="main-nav__tab col-100 with-image-tab"
+        class="navigation__tab col-100 with-image-tab"
         label="Социотипы"
       >
         <template #icon>
@@ -41,7 +40,7 @@ import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
       </NavigationTab>
       <NavigationTab
         :to="$appRoutes.intertypes"
-        class="main-nav__tab col-100 intertypes-tab"
+        class="navigation__tab col-100 intertypes-tab"
         label="Интертипные отношения"
         iconName="square-2"
       >
@@ -56,35 +55,35 @@ import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
       </NavigationTab>
     </div>
 
-    <div class="main-nav__row">
+    <div class="navigation__row">
       <NavigationTab
         :to="$appRoutes.howToDefine"
-        class="main-nav__tab col-60"
+        class="navigation__tab col-60"
         label="Как определять тип?"
         iconName="ghost"
       />
 
       <NavigationTab
         :to="$appRoutes.tests"
-        class="main-nav__tab col-40"
+        class="navigation__tab col-40"
         label="Тесты"
         iconName="presentation-chart-bar-alt"
       />
     </div>
 
-    <div class="main-nav__row">
+    <div class="navigation__row">
       <NavigationTab
         :to="$appRoutes.theory"
-        class="main-nav__tab col-100"
+        class="navigation__tab col-100"
         label="Теория"
         iconName="justify-left"
       />
     </div>
 
-    <div class="main-nav__row main-nav__row--tab-bg-grey">
+    <div class="navigation__row navigation__row--tab-bg-grey">
       <NavigationTab
         to="#"
-        class="main-nav__tab col-40 main-nav__tab--soon"
+        class="navigation__tab col-40 navigation__tab--soon"
         label="Профиль"
         iconName="user-square"
       >
@@ -95,7 +94,7 @@ import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
 
       <NavigationTab
         to="#"
-        class="main-nav__tab col-60 people-tab main-nav__tab--soon"
+        class="navigation__tab col-60 people-tab navigation__tab--soon"
         label="Люди"
         iconName="users"
       >
@@ -111,7 +110,7 @@ import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
 
       <NavigationTab
         to="#"
-        class="main-nav__tab col-50 main-nav__tab--soon"
+        class="navigation__tab col-50 navigation__tab--soon"
         label="Специалисты"
         iconName="diamond"
       >
@@ -122,7 +121,7 @@ import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
 
       <NavigationTab
         to="#"
-        class="main-nav__tab col-50 main-nav__tab--soon"
+        class="navigation__tab col-50 navigation__tab--soon"
         label="Коллективы"
         iconName="briefcase-alt"
       >
@@ -132,10 +131,10 @@ import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
       </NavigationTab>
     </div>
 
-    <div class="main-nav__row">
+    <div class="navigation__row">
       <NavigationTab
         to="#"
-        class="main-nav__tab col-100 kids-tab with-image-tab main-nav__tab--soon"
+        class="navigation__tab col-100 kids-tab with-image-tab navigation__tab--soon"
         label="Дети"
         iconName="chart-bubble"
       >
@@ -153,95 +152,30 @@ import MainNavigationIconsSkeleton from "./MainNavigationIconsSkeleton.vue";
 </template>
 
 <style lang="scss" scoped>
-@use "@shared/styles/variables/colors";
+@use "./NavigationWidget.scss";
 
-$gap: 8px;
-$mt: 20px;
+.people-tab {
+  position: relative;
+  &__announcement {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+  }
+}
 
-.main-nav {
-  padding: 8px;
-  gap: $gap;
-
-  &__row {
+.intertypes-tab {
+  &__icons {
     display: flex;
-    flex-flow: row wrap;
-    gap: $gap;
-
-    &:not(:first-child) {
-      margin-top: $mt;
-    }
-
-    &--tab-bg-grey > .main-nav__tab {
-      background-color: colors.$beige;
-      border: 0;
-    }
-  }
-
-  &__tab {
-    border: 1px solid colors.$grey;
-
-    & .people-amount {
-      color: rgba(colors.$black, 0.5);
-    }
-
-    &--soon {
-      opacity: 0.5;
-      cursor: default;
-    }
-  }
-
-  .people-tab {
-    position: relative;
-    &__announcement {
-      position: absolute;
-      bottom: 8px;
-      right: 8px;
-    }
-  }
-
-  .intertypes-tab {
-    &__icons {
-      display: flex;
-      align-items: flex-start;
-    }
-  }
-
-  .with-image-tab {
-    &__img {
-      margin-bottom: -8px;
-    }
-  }
-
-  .kids-tab {
-    position: relative;
-    .in-development {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-    }
+    align-items: flex-start;
   }
 }
 
-.in-development {
-  display: flex;
-  align-items: center;
-  flex-flow: row nowrap;
-  gap: 4px;
-}
-
-.col-40 {
-  flex: 0 0 calc(40% - $gap / 2);
-}
-
-.col-50 {
-  flex: 0 0 calc(50% - $gap / 2);
-}
-
-.col-60 {
-  flex: 0 0 calc(60% - $gap / 2);
-}
-
-.col-100 {
-  flex: 0 0 100%;
+.kids-tab {
+  position: relative;
+  .in-development {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
 }
 </style>
