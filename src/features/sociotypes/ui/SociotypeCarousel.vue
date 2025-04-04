@@ -13,6 +13,7 @@ const appRoutes = useInjectAppRoutes();
 const { prevSociotype, currentSociotype, nextSociotype, activeTab } =
   useSociotypesAround();
 
+const isBindedOnScroll = ref(false);
 const sociotypeList = ref<SociotypeDataType[]>([toValue(currentSociotype)]);
 
 const container = useTemplateRef<HTMLElement>("carousel-container");
@@ -32,6 +33,8 @@ const resetCarouselScroll = () => {
 };
 
 const onScroll = debounce((e: Event) => {
+  if (toValue(isBindedOnScroll) === false) return;
+
   const container = e.target as HTMLElement;
   const elementWidth = container.clientWidth;
 
@@ -61,9 +64,18 @@ onMounted(() => {
   // Для того чтобы показывать соседей только на клиенте и только после того как все отрендерилось
   updateCarouselItems();
   resetCarouselScroll();
+  isBindedOnScroll.value = true;
 });
 
-watch(() => toValue(currentSociotype).id, updateCarouselItems);
+watch(
+  () => toValue(currentSociotype).id,
+  () => {
+    isBindedOnScroll.value = false;
+    updateCarouselItems();
+    resetCarouselScroll();
+    isBindedOnScroll.value = true;
+  },
+);
 </script>
 
 <template>
