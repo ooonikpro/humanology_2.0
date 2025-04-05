@@ -299,6 +299,17 @@ export type TextColorType =
   | "intertype-bg"
   | "inherit";
 
+export type TextPresetType =
+  | "display"
+  | "heading"
+  | "title"
+  | "title-alternative"
+  | "subtitle"
+  | "subtitle-alternative"
+  | "large"
+  | "body"
+  | "small";
+
 export type OptionType<T = string> = {
   label: string;
   value: T;
