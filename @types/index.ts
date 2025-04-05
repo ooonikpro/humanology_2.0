@@ -299,6 +299,17 @@ export type TextColorType =
   | "intertype-bg"
   | "inherit";
 
+export type TextPresetType =
+  | "display"
+  | "heading"
+  | "title"
+  | "title-alternative"
+  | "subtitle"
+  | "subtitle-alternative"
+  | "large"
+  | "body"
+  | "small";
+
 export type OptionType<T = string> = {
   label: string;
   value: T;
@@ -350,3 +361,79 @@ export type OptionByVariantType = {
 };
 
 export type VariantType = keyof OptionByVariantType;
+
+export type DefaultDetailCardType<T extends string> = {
+  title: string;
+  type: T;
+  subtitle: string;
+  tags: string[];
+  content: string[];
+};
+
+export type FunctionDetailCardType = DefaultDetailCardType<"function"> & {
+  socionicFn: HumanFunctionType;
+};
+
+export type AspectDetailCardType = DefaultDetailCardType<"aspect"> & {
+  alias: string[];
+  aspect: AspectType;
+};
+
+export type BlockDetailCardType = DefaultDetailCardType<"block"> & {
+  block: BlockNameType;
+};
+
+export type RingDetailCardType = DefaultDetailCardType<"ring"> & {
+  ring: "mental" | "vital";
+};
+
+export type QuadraDetailCardType = DefaultDetailCardType<"quadra"> & {
+  quadra: QuadrasType;
+};
+
+export type SuitDetailCardType = DefaultDetailCardType<"suit"> & {
+  suit: TarotType;
+};
+
+export type RoleDetailCardType = DefaultDetailCardType<"role"> & {
+  role: RoleType;
+};
+
+export type ClubDetailCardType = DefaultDetailCardType<"club"> & {
+  club: ClubType;
+};
+
+export type PsychotypeDetailCardType = DefaultDetailCardType<"psychotype"> & {
+  psychotype: PsychotypeType;
+};
+
+export type MindsetDetailCardType = DefaultDetailCardType<"mindset"> & {
+  mindset: MindsetType;
+};
+
+export type IntertypeDetailCardType = DefaultDetailCardType<"intertype"> & {
+  intertype: IntertypeIdType;
+};
+
+export type YungDetailCardType = DefaultDetailCardType<"yung"> & {
+  yung: DichotomyType;
+};
+
+export type ReininDetailCardType = DefaultDetailCardType<"reinin"> & {
+  reinin: ReininSignType;
+};
+
+export type DetailCardType =
+  | FunctionDetailCardType
+  | AspectDetailCardType
+  | BlockDetailCardType
+  | RingDetailCardType
+  | QuadraDetailCardType
+  | SuitDetailCardType
+  | RoleDetailCardType
+  | ClubDetailCardType
+  | PsychotypeDetailCardType
+  | MindsetDetailCardType
+  | IntertypeDetailCardType
+  | YungDetailCardType
+  | ReininDetailCardType;

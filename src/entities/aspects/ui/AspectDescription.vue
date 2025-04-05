@@ -45,29 +45,18 @@ const props = defineProps<{
       <slot />
     </div>
 
-    <div v-if="props.tags" class="aspect-description__tags">
-      <UiText
-        v-for="label in props.tags"
-        :key="label"
-        preset="body"
-        color="dark-grey"
-      >
-        {{ label }}
-      </UiText>
-    </div>
+    <UiTags v-if="props.tags" color="dark-grey" :tags="props.tags" />
   </article>
 </template>
 
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
 
-$gap: 12px;
-
 .aspect-description {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 12px $gap;
+  padding: 12px;
   background-color: colors.$beige;
   border-radius: 4px;
   gap: 4px;
@@ -83,13 +72,6 @@ $gap: 12px;
 
   &__title {
     margin-right: auto;
-  }
-
-  &__tags {
-    display: flex;
-    flex-flow: row wrap;
-    row-gap: 2px;
-    column-gap: 8px;
   }
 }
 </style>
