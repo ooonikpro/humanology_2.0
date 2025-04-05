@@ -1,4 +1,20 @@
-export const DETAIL_CARD_FUNCTIONS = [
+import type {
+  AspectDetailCardType,
+  BlockDetailCardType,
+  ClubDetailCardType,
+  FunctionDetailCardType,
+  IntertypeDetailCardType,
+  MindsetDetailCardType,
+  PsychotypeDetailCardType,
+  QuadraDetailCardType,
+  ReininDetailCardType,
+  RingDetailCardType,
+  RoleDetailCardType,
+  SuitDetailCardType,
+  YungDetailCardType,
+} from "@types";
+
+export const DETAIL_CARD_FUNCTIONS: FunctionDetailCardType[] = [
   {
     type: "function",
     socionicFn: "base",
@@ -166,7 +182,7 @@ export const DETAIL_CARD_FUNCTIONS = [
   },
 ];
 
-export const DETAIL_CARD_ASPECTS = [
+export const DETAIL_CARD_ASPECTS: AspectDetailCardType[] = [
   {
     type: "aspect",
     aspect: "business",
@@ -377,7 +393,7 @@ export const DETAIL_CARD_ASPECTS = [
   },
 ];
 
-export const DETAIL_CARD_BLOCKS = [
+export const DETAIL_CARD_BLOCKS: BlockDetailCardType[] = [
   {
     type: "block",
     block: "ego",
@@ -425,7 +441,7 @@ export const DETAIL_CARD_BLOCKS = [
   },
 ];
 
-export const DETAIL_CARD_RINGS = [
+export const DETAIL_CARD_RINGS: RingDetailCardType[] = [
   {
     type: "ring",
     ring: "mental",
@@ -451,7 +467,7 @@ export const DETAIL_CARD_RINGS = [
   },
 ];
 
-export const DETAIL_CARD_QUADRAS = [
+export const DETAIL_CARD_QUADRAS: QuadraDetailCardType[] = [
   {
     type: "quadra",
     quadra: "air",
@@ -499,7 +515,7 @@ export const DETAIL_CARD_QUADRAS = [
   },
 ];
 
-export const DETAIL_CARD_SUITS = [
+export const DETAIL_CARD_SUITS: SuitDetailCardType[] = [
   {
     type: "suit",
     suit: "swords",
@@ -546,7 +562,7 @@ export const DETAIL_CARD_SUITS = [
   },
 ];
 
-export const DETAIL_CARD_ROLES = [
+export const DETAIL_CARD_ROLES: RoleDetailCardType[] = [
   {
     type: "role",
     role: "queen",
@@ -611,7 +627,7 @@ export const DETAIL_CARD_ROLES = [
   },
 ];
 
-export const DETAIL_CARD_CLUBS = [
+export const DETAIL_CARD_CLUBS: ClubDetailCardType[] = [
   {
     type: "club",
     club: "researcher",
@@ -658,7 +674,7 @@ export const DETAIL_CARD_CLUBS = [
   },
 ];
 
-export const DETAIL_CARD_PsychotypeTypeS = [
+export const DETAIL_CARD_PsychotypeTypeS: PsychotypeDetailCardType[] = [
   {
     type: "psychotype",
     psychotype: "childlike",
@@ -705,7 +721,7 @@ export const DETAIL_CARD_PsychotypeTypeS = [
   },
 ];
 
-export const DETAIL_CARD_MINDS = [
+export const DETAIL_CARD_MINDS: MindsetDetailCardType[] = [
   {
     type: "mindset",
     mindset: "causal",
@@ -784,7 +800,7 @@ export const DETAIL_CARD_MINDS = [
   },
 ];
 
-export const DETAIL_CARD_INTERTYPE = [
+export const DETAIL_CARD_INTERTYPE: IntertypeDetailCardType[] = [
   {
     type: "intertype",
     intertype: "dual",
@@ -957,7 +973,7 @@ export const DETAIL_CARD_INTERTYPE = [
   },
 ];
 
-export const DETAIL_CARD_YUNG = [
+export const DETAIL_CARD_YUNG: YungDetailCardType[] = [
   {
     type: "yung",
     yung: "irrational",
@@ -1085,7 +1101,7 @@ export const DETAIL_CARD_YUNG = [
   },
 ];
 
-export const DETAIL_CARD_REININ = [
+export const DETAIL_CARD_REININ: ReininDetailCardType[] = [
   {
     type: "reinin",
     reinin: "static",

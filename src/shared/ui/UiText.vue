@@ -1,23 +1,14 @@
 <script lang="ts" setup>
-import type { TextColorType } from "@types";
+import type { TextColorType, TextPresetType } from "@types";
 
 const {
   color = "black",
   preset = "body",
   ...props
 } = defineProps<{
-  forceTag?: string;
+  forceTag?: keyof HTMLElementTagNameMap;
   color?: TextColorType;
-  preset?:
-    | "display"
-    | "heading"
-    | "title"
-    | "title-alternative"
-    | "subtitle"
-    | "subtitle-alternative"
-    | "large"
-    | "body"
-    | "small";
+  preset?: TextPresetType;
 }>();
 
 const presetTag = (() => {
