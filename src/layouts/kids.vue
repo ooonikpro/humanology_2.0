@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import {
   SociotypeCard,
-  SociotypeCardGroupsAndQuadras,
   SociotypeCardYungs,
   SociotypeCardHeader,
   SociotypeProvider,
   sociotypeModel,
   useSociotypePageRoute,
 } from "@entities/sociotypes";
+import { SociotypesCardGroupsAndQuadrasWidget } from "@widgets/sociotypes";
 import DefaultLayout from "./default.vue";
 
 const { sociotypeId } = useSociotypePageRoute();
@@ -32,7 +32,7 @@ const { sociotypeId } = useSociotypePageRoute();
         </template>
 
         <template #groups-and-quadras>
-          <SociotypeCardGroupsAndQuadras v-bind="data" />
+          <SociotypesCardGroupsAndQuadrasWidget v-bind="data" />
         </template>
 
         <template #yungs>

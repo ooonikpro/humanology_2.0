@@ -1,12 +1,13 @@
 <script lang="ts" setup>
 import {
   SociotypeCard,
-  SociotypeCardGroupsAndQuadras,
   SociotypeCardHeader,
   SociotypeProvider,
 } from "@entities/sociotypes";
 import type { Gender, SociotypeIdType } from "@types";
 import { GenderEnum } from "@shared/constants";
+
+import SociotypesCardGroupsAndQuadrasWidget from "./SociotypesCardGroupsAndQuadrasWidget.vue";
 
 const props = defineProps<{
   sociotypeId: SociotypeIdType;
@@ -26,7 +27,7 @@ const props = defineProps<{
       </template>
 
       <template #groups-and-quadras>
-        <SociotypeCardGroupsAndQuadras v-bind="sociotypeData" mini />
+        <SociotypesCardGroupsAndQuadrasWidget v-bind="sociotypeData" mini />
       </template>
     </SociotypeCard>
   </SociotypeProvider>

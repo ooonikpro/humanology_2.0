@@ -8,11 +8,15 @@ export type QuadrasType = "air" | "fire" | "earth" | "water";
 
 export type RoleType = "knight" | "king" | "queen" | "page" | "lady";
 
-export type PsychotypeType = "childlike" | "aggressor" | "caring" | "victim";
+export type PsychotypeIdType = "childlike" | "aggressor" | "caring" | "victim";
 
 export type TarotType = "swords" | "pentacles" | "cups" | "wands";
 
-export type ClubType = "researcher" | "pragmatist" | "social" | "humanitarian";
+export type ClubIdType =
+  | "researcher"
+  | "pragmatist"
+  | "social"
+  | "humanitarian";
 
 export type MindKeyType =
   | "irrational-1"
@@ -245,9 +249,9 @@ export type SociotypeDataType = {
   mindset: MindsetType;
   name: string;
   gender: Gender;
-  club: ClubType;
+  club: ClubIdType;
   tarot: TarotType;
-  psychotype: PsychotypeType;
+  psychotype: PsychotypeIdType;
   populationPercentage: string;
   socionicAbbrevation: string;
   personalitiesTerm: string;
@@ -297,6 +301,7 @@ export type TextColorType =
   | "role-dark"
   | "intertype"
   | "intertype-bg"
+  | "psychotype"
   | "inherit";
 
 export type TextPresetType =
@@ -362,12 +367,13 @@ export type OptionByVariantType = {
 
 export type VariantType = keyof OptionByVariantType;
 
-export type DefaultDetailCardType<T extends string> = {
+export type TheoryEntityDataType<T> = {
+  id: T;
+  label: string;
   title: string;
-  type: T;
   subtitle: string;
   tags: string[];
-  content: string[];
+  description: string[];
 };
 
 export type FunctionDetailCardType = DefaultDetailCardType<"function"> & {
@@ -399,13 +405,9 @@ export type RoleDetailCardType = DefaultDetailCardType<"role"> & {
   role: RoleType;
 };
 
-export type ClubDetailCardType = DefaultDetailCardType<"club"> & {
-  club: ClubType;
-};
+export type ClubDataType = TheoryEntityDataType<ClubIdType>;
 
-export type PsychotypeDetailCardType = DefaultDetailCardType<"psychotype"> & {
-  psychotype: PsychotypeType;
-};
+export type PsychotypeDataType = TheoryEntityDataType<PsychotypeIdType>;
 
 export type MindsetDetailCardType = DefaultDetailCardType<"mindset"> & {
   mindset: MindsetType;
@@ -431,8 +433,8 @@ export type DetailCardType =
   | QuadraDetailCardType
   | SuitDetailCardType
   | RoleDetailCardType
-  | ClubDetailCardType
-  | PsychotypeDetailCardType
+  | ClubDataType
+  | PsychotypeDataType
   | MindsetDetailCardType
   | IntertypeDetailCardType
   | YungDetailCardType

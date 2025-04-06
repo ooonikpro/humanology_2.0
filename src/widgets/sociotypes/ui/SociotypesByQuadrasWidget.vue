@@ -2,13 +2,13 @@
 import { useRouter } from "vue-router";
 import {
   SociotypeCard,
-  SociotypeCardGroupsAndQuadras,
   SociotypeCardHeader,
   SociotypeProvider,
   SociotypeQuadras,
   SociotypeSquashedQuadra,
   sociotypeModel,
 } from "@entities/sociotypes";
+import SociotypesCardGroupsAndQuadrasWidget from "./SociotypesCardGroupsAndQuadrasWidget.vue";
 
 const router = useRouter();
 
@@ -47,7 +47,7 @@ const quadrasList = sociotypeModel.getQuadras();
               </template>
 
               <template #groups-and-quadras>
-                <SociotypeCardGroupsAndQuadras v-bind="data" />
+                <SociotypesCardGroupsAndQuadrasWidget v-bind="data" />
               </template>
             </SociotypeCard>
           </SociotypeProvider>

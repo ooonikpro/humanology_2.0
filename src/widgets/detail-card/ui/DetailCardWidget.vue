@@ -2,32 +2,35 @@
 import type { DetailCardType, IconNameType } from "@types";
 
 const props = defineProps<{
-  iconName: IconNameType;
+  iconName?: IconNameType;
   data: DetailCardType;
 }>();
 </script>
 
 <template>
-  <article class="detail-card" :class="[`detail-card--${data.type}`]">
+  <article class="detail-card" :class="[`detail-card--${props.data.type}`]">
     <button class="detail-card__explanation-button">
       <UiSvg name="help-circle" size="24" color="accent" />
     </button>
 
-    <UiSvg
-      class="detail-card__icon"
-      :name="props.iconName"
-      size="48"
-      color="accent"
-    />
-
-    <UiText
-      class="detail-card__title"
-      force-tag="h3"
-      preset="subtitle-alternative"
-      color="accent"
-    >
-      {{ props.data.title }}
-    </UiText>
+    <slot name="icon">
+      <UiSvg
+        class="detail-card__icon"
+        :name="props.iconName!"
+        size="48"
+        color="accent"
+      />
+    </slot>
+    <slot name="title">
+      <UiText
+        class="detail-card__title"
+        force-tag="h3"
+        preset="subtitle-alternative"
+        color="accent"
+      >
+        {{ props.data.title }}
+      </UiText>
+    </slot>
 
     <UiText
       class="detail-card__subtitle"

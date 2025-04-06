@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { DETAIL_CARD_YUNG } from "@entities/sociotypes/config/detailCard";
-import DetailCardWidget from "@widgets/DetailCardWidget.vue";
+import { DetailCardWidget } from "@widgets/detail-card";
 </script>
 
 <template>
