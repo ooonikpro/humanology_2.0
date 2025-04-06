@@ -67,7 +67,7 @@ import { NavigationTab } from "@entities/navigation";
       <NavigationTab
         :to="$appRoutes.jung"
         class="navigation__tab col-50"
-        label="Дитохомии Юнга"
+        label="Дихотомии Юнга"
         iconName="square-11"
       />
     </div>
