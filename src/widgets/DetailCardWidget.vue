@@ -10,15 +10,21 @@ const props = defineProps<{
 <template>
   <article class="detail-card" :class="[`detail-card--${data.type}`]">
     <button class="detail-card__explanation-button">
-      <UiSvg name="square-1" size="24" />
+      <UiSvg name="help-circle" size="24" color="accent" />
     </button>
 
-    <UiSvg :name="props.iconName" size="48" class="detail-card__icon" />
+    <UiSvg
+      class="detail-card__icon"
+      :name="props.iconName"
+      size="48"
+      color="accent"
+    />
 
     <UiText
+      class="detail-card__title"
       force-tag="h3"
       preset="subtitle-alternative"
-      class="detail-card__title"
+      color="accent"
     >
       {{ props.data.title }}
     </UiText>
@@ -53,6 +59,8 @@ const props = defineProps<{
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
 
+$gap: 8px;
+
 .detail-card {
   padding: 8px;
   display: grid;
@@ -66,11 +74,11 @@ const props = defineProps<{
 
   & > *:not(:first-child, :nth-child(2)) {
     grid-column: 1/1;
-    margin-top: 8px;
+    margin-top: $gap;
   }
 
-  &--reinin &__icon {
-    color: #6b360d;
+  &__text:not(:first-of-type) {
+    margin-top: $gap * 2;
   }
 
   &__tags {
@@ -81,7 +89,7 @@ const props = defineProps<{
     grid-row: 1/1;
     grid-column: 1/3;
     justify-self: flex-end;
-    margin-bottom: -8px;
+    margin-bottom: -$gap * 2;
     cursor: pointer;
   }
 }
