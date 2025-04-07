@@ -8,11 +8,15 @@ export type QuadrasType = "air" | "fire" | "earth" | "water";
 
 export type RoleType = "knight" | "king" | "queen" | "page" | "lady";
 
-export type PsychotypeType = "childlike" | "aggressor" | "caring" | "victim";
+export type PsychotypeIdType = "childlike" | "aggressor" | "caring" | "victim";
 
 export type TarotType = "swords" | "pentacles" | "cups" | "wands";
 
-export type ClubType = "researcher" | "pragmatist" | "social" | "humanitarian";
+export type ClubIdType =
+  | "researcher"
+  | "pragmatist"
+  | "social"
+  | "humanitarian";
 
 export type MindKeyType =
   | "irrational-1"
@@ -245,9 +249,9 @@ export type SociotypeDataType = {
   mindset: MindsetType;
   name: string;
   gender: Gender;
-  club: ClubType;
+  club: ClubIdType;
   tarot: TarotType;
-  psychotype: PsychotypeType;
+  psychotype: PsychotypeIdType;
   populationPercentage: string;
   socionicAbbrevation: string;
   personalitiesTerm: string;
@@ -297,7 +301,19 @@ export type TextColorType =
   | "role-dark"
   | "intertype"
   | "intertype-bg"
+  | "psychotype"
   | "inherit";
+
+export type TextPresetType =
+  | "display"
+  | "heading"
+  | "title"
+  | "title-alternative"
+  | "subtitle"
+  | "subtitle-alternative"
+  | "large"
+  | "body"
+  | "small";
 
 export type OptionType<T = string> = {
   label: string;
@@ -350,3 +366,76 @@ export type OptionByVariantType = {
 };
 
 export type VariantType = keyof OptionByVariantType;
+
+export type TheoryEntityDataType<T> = {
+  id: T;
+  label: string;
+  title: string;
+  subtitle: string;
+  tags: string[];
+  description: string[];
+};
+
+export type FunctionDetailCardType = DefaultDetailCardType<"function"> & {
+  socionicFn: HumanFunctionType;
+};
+
+export type AspectDetailCardType = DefaultDetailCardType<"aspect"> & {
+  alias: string[];
+  aspect: AspectType;
+};
+
+export type BlockDetailCardType = DefaultDetailCardType<"block"> & {
+  block: BlockNameType;
+};
+
+export type RingDetailCardType = DefaultDetailCardType<"ring"> & {
+  ring: "mental" | "vital";
+};
+
+export type QuadraDetailCardType = DefaultDetailCardType<"quadra"> & {
+  quadra: QuadrasType;
+};
+
+export type SuitDetailCardType = DefaultDetailCardType<"suit"> & {
+  suit: TarotType;
+};
+
+export type RoleDetailCardType = DefaultDetailCardType<"role"> & {
+  role: RoleType;
+};
+
+export type ClubDataType = TheoryEntityDataType<ClubIdType>;
+
+export type PsychotypeDataType = TheoryEntityDataType<PsychotypeIdType>;
+
+export type MindsetDetailCardType = DefaultDetailCardType<"mindset"> & {
+  mindset: MindsetType;
+};
+
+export type IntertypeDetailCardType = DefaultDetailCardType<"intertype"> & {
+  intertype: IntertypeIdType;
+};
+
+export type YungDetailCardType = DefaultDetailCardType<"yung"> & {
+  yung: DichotomyType;
+};
+
+export type ReininDetailCardType = DefaultDetailCardType<"reinin"> & {
+  reinin: ReininSignType;
+};
+
+export type DetailCardType =
+  | FunctionDetailCardType
+  | AspectDetailCardType
+  | BlockDetailCardType
+  | RingDetailCardType
+  | QuadraDetailCardType
+  | SuitDetailCardType
+  | RoleDetailCardType
+  | ClubDataType
+  | PsychotypeDataType
+  | MindsetDetailCardType
+  | IntertypeDetailCardType
+  | YungDetailCardType
+  | ReininDetailCardType;

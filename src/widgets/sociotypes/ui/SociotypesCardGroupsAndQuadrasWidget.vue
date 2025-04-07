@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import type { SociotypeDataType } from "@types";
 
-import model from "../../model";
+import { sociotypeModel } from "@entities/sociotypes";
+import { clubsAndPsychotypesModel } from "@entities/clubs-and-psychotypes";
 
 type PropsType = Pick<
   SociotypeDataType,
@@ -13,14 +14,14 @@ const { mini = false, ...props } = defineProps<PropsType>();
 
 <template>
   <div
-    :class="{ 'sociotype-card-groups-and-quadras--mini': mini }"
-    class="sociotype-card-groups-and-quadras"
+    :class="{ 'sociotypes-card-groups-and-quadras-widget--mini': mini }"
+    class="sociotypes-card-groups-and-quadras-widget"
   >
     <template v-if="mini">
       <UiSvg :name="props.quadra" :color="props.quadra" size="20" />
       <UiSvg
         :name="props.role"
-        :color="model.getRoleQuadra(props.role)"
+        :color="sociotypeModel.getRoleQuadra(props.role)"
         size="20"
       />
       <span />
@@ -33,49 +34,49 @@ const { mini = false, ...props } = defineProps<PropsType>();
       <UiText
         preset="small"
         color="quadra"
-        class="sociotype-card-groups-and-quadras__text-row"
+        class="sociotypes-card-groups-and-quadras-widget__text-row"
       >
         <UiSvg :name="props.quadra" size="20" />
-        {{ model.getQuadraLabel(props.quadra) }}
+        {{ sociotypeModel.getQuadraLabel(props.quadra) }}
       </UiText>
       <UiText
         preset="small"
         color="role"
-        class="sociotype-card-groups-and-quadras__text-row"
+        class="sociotypes-card-groups-and-quadras-widget__text-row"
       >
         <UiSvg :name="props.role" size="20" />
-        {{ model.getRoleLabel(props.role) }}
+        {{ sociotypeModel.getRoleLabel(props.role) }}
       </UiText>
       <UiText
         preset="small"
         color="accent"
-        class="sociotype-card-groups-and-quadras__text-row"
+        class="sociotypes-card-groups-and-quadras-widget__text-row"
       >
         <UiSvg :name="props.tarot" size="20" />
-        {{ model.getTarotLabel(props.tarot) }}
+        {{ sociotypeModel.getTarotLabel(props.tarot) }}
       </UiText>
       <UiText
         preset="small"
         color="dark-grey"
-        class="sociotype-card-groups-and-quadras__text-row"
+        class="sociotypes-card-groups-and-quadras-widget__text-row"
       >
         <UiSvg :name="props.psychotype" size="20" />
-        {{ model.getPsychotypeLabel(props.psychotype) }}
+        {{ clubsAndPsychotypesModel.getPsychotypeLabel(props.psychotype) }}
       </UiText>
       <UiText
         preset="small"
         color="dark-grey"
-        class="sociotype-card-groups-and-quadras__text-row"
+        class="sociotypes-card-groups-and-quadras-widget__text-row"
       >
         <UiSvg :name="props.club" size="20" />
-        {{ model.getClubLabel(props.club) }}
+        {{ clubsAndPsychotypesModel.getClubLabel(props.club) }}
       </UiText>
     </template>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.sociotype-card-groups-and-quadras {
+.sociotypes-card-groups-and-quadras-widget {
   display: flex;
   flex-direction: column;
   padding: 0 8px 12px;

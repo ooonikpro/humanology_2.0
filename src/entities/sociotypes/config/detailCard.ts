@@ -1,4 +1,18 @@
-export const DETAIL_CARD_FUNCTIONS = [
+import type {
+  AspectDetailCardType,
+  BlockDetailCardType,
+  FunctionDetailCardType,
+  IntertypeDetailCardType,
+  MindsetDetailCardType,
+  QuadraDetailCardType,
+  ReininDetailCardType,
+  RingDetailCardType,
+  RoleDetailCardType,
+  SuitDetailCardType,
+  YungDetailCardType,
+} from "@types";
+
+export const DETAIL_CARD_FUNCTIONS: FunctionDetailCardType[] = [
   {
     type: "function",
     socionicFn: "base",
@@ -166,7 +180,7 @@ export const DETAIL_CARD_FUNCTIONS = [
   },
 ];
 
-export const DETAIL_CARD_ASPECTS = [
+export const DETAIL_CARD_ASPECTS: AspectDetailCardType[] = [
   {
     type: "aspect",
     aspect: "business",
@@ -377,7 +391,7 @@ export const DETAIL_CARD_ASPECTS = [
   },
 ];
 
-export const DETAIL_CARD_BLOCKS = [
+export const DETAIL_CARD_BLOCKS: BlockDetailCardType[] = [
   {
     type: "block",
     block: "ego",
@@ -425,7 +439,7 @@ export const DETAIL_CARD_BLOCKS = [
   },
 ];
 
-export const DETAIL_CARD_RINGS = [
+export const DETAIL_CARD_RINGS: RingDetailCardType[] = [
   {
     type: "ring",
     ring: "mental",
@@ -451,7 +465,7 @@ export const DETAIL_CARD_RINGS = [
   },
 ];
 
-export const DETAIL_CARD_QUADRAS = [
+export const DETAIL_CARD_QUADRAS: QuadraDetailCardType[] = [
   {
     type: "quadra",
     quadra: "air",
@@ -499,7 +513,7 @@ export const DETAIL_CARD_QUADRAS = [
   },
 ];
 
-export const DETAIL_CARD_SUITS = [
+export const DETAIL_CARD_SUITS: SuitDetailCardType[] = [
   {
     type: "suit",
     suit: "swords",
@@ -546,7 +560,7 @@ export const DETAIL_CARD_SUITS = [
   },
 ];
 
-export const DETAIL_CARD_ROLES = [
+export const DETAIL_CARD_ROLES: RoleDetailCardType[] = [
   {
     type: "role",
     role: "queen",
@@ -611,101 +625,7 @@ export const DETAIL_CARD_ROLES = [
   },
 ];
 
-export const DETAIL_CARD_CLUBS = [
-  {
-    type: "club",
-    club: "researcher",
-    tags: ["Логики", "Интуиты", "Демократы"],
-    title: "Исследователи",
-    subtitle:
-      "Научно-исследовательская и конструкторская деятельность, анализ и прогнозирование.",
-    content: [
-      "Хорошо разбираются в универсальных законах и правилах, общих принципах устройства и функционирования устройств.",
-    ],
-  },
-  {
-    type: "club",
-    club: "social",
-    tags: ["Этики", "Сенсорики", "Демократы"],
-    title: "Социалы",
-    subtitle:
-      "Социальное обслуживание, общение, налаживание контактов, медицина.",
-    content: [
-      "Лучше всех чувствуют потребности общества и индивидов. Хорошо ведут хозяйство.",
-    ],
-  },
-  {
-    type: "club",
-    club: "pragmatist",
-    tags: ["Логики", "Сенсорики", "Аристократы"],
-    title: "Практики",
-    subtitle:
-      "Налаживание процессов, производство, управление техникой, техническое сервисное обслуживание.",
-    content: [
-      "Могут досконально разобраться в технике. Хорошо налаживают производство, учитывая все мелочи. Также прекрасно владеют инструментом.",
-    ],
-  },
-  {
-    type: "club",
-    club: "humanitarian",
-    tags: ["Этики", "Интуиты", "Аристократы"],
-    title: "Гуманитарии",
-    subtitle:
-      "Культура и искусство, актёрская деятельность, психология, реклама и общественные отношения.",
-    content: [
-      "В первую очередь разбираются в психологии людей и их духовных потребностях.",
-    ],
-  },
-];
-
-export const DETAIL_CARD_PsychotypeTypeS = [
-  {
-    type: "psychotype",
-    psychotype: "childlike",
-    tags: ["Интуиты", "Рассудительные"],
-    title: "Инфантилы",
-    subtitle:
-      "Проявляют качества ребёнка — непосредственность, любознательность, фантазирование.",
-    content: [
-      "Часто выбирают роль неопытного партнёра, с одной стороны осторожного, с другой стороны — стремящегося попробовать в жизни всё.",
-    ],
-  },
-  {
-    type: "psychotype",
-    psychotype: "caring",
-    tags: ["Сенсорики", "Рассудительные"],
-    title: "Заботливые",
-    subtitle: "Мягкие, склонные опекать, защищать, поддерживать партнёра.",
-    content: [
-      "Стремятся быть более опытными в повседневных делах, но к власти не стремятся.",
-    ],
-  },
-  {
-    type: "psychotype",
-    psychotype: "victim",
-    tags: ["Интуиты", "Решительные"],
-    title: "Виктимы",
-    subtitle:
-      "Стремятся подстраиваться под партнёра, ожидая от них указаний, наставлений, упрёков.",
-    content: [
-      "Играют в жертву, которая то демонстрирует подчинённость, то пытается вырваться из под контроля.",
-      "Они врождённые провокаторы: нередко совершают поступки, за которые их одёргивают и упрекают.",
-    ],
-  },
-  {
-    type: "psychotype",
-    psychotype: "aggressor",
-    tags: ["Сенсорики", "Решительные"],
-    title: "Агрессоры",
-    subtitle: "Стремящиеся к доминированию, в том числе в личных отношениях.",
-    content: [
-      "Отношения строят на соперничестве и борьбе. Проявляют надменность и неприязнь к человечески слабостям, пытаясь вызвать на прямое противостояние. ",
-      "Физический контакт также основан на силовом воздействии, характерны крепкие объятия и сжатие. Могут в процессе игры или в шутку причинить боль или унизить партнёра.",
-    ],
-  },
-];
-
-export const DETAIL_CARD_MINDS = [
+export const DETAIL_CARD_MINDS: MindsetDetailCardType[] = [
   {
     type: "mindset",
     mindset: "causal",
@@ -784,7 +704,7 @@ export const DETAIL_CARD_MINDS = [
   },
 ];
 
-export const DETAIL_CARD_INTERTYPE = [
+export const DETAIL_CARD_INTERTYPE: IntertypeDetailCardType[] = [
   {
     type: "intertype",
     intertype: "dual",
@@ -957,7 +877,7 @@ export const DETAIL_CARD_INTERTYPE = [
   },
 ];
 
-export const DETAIL_CARD_YUNG = [
+export const DETAIL_CARD_YUNG: YungDetailCardType[] = [
   {
     type: "yung",
     yung: "irrational",
@@ -1085,7 +1005,7 @@ export const DETAIL_CARD_YUNG = [
   },
 ];
 
-export const DETAIL_CARD_REININ = [
+export const DETAIL_CARD_REININ: ReininDetailCardType[] = [
   {
     type: "reinin",
     reinin: "static",

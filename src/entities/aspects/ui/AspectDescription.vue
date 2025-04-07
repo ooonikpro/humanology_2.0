@@ -19,7 +19,7 @@ const props = defineProps<{
         v-if="props.iconName"
         :name="props.iconName"
         class="aspect-description__icon"
-        size="80"
+        size="64"
         color="accent"
       />
 
@@ -32,69 +32,46 @@ const props = defineProps<{
           {{ props.subtitle }}
         </UiText>
       </div>
-      
+
       <UiSvg
         name="chevron-right"
         size="24"
         color="accent"
         class="aspect-description__chevron"
       />
+    </NuxtLink>
 
     <div v-if="$slots.default" class="aspect-description__body">
       <slot />
     </div>
 
-    <div v-if="props.tags" class="aspect-description__tags">
-      <UiText
-        v-for="label in props.tags"
-        :key="label"
-        preset="body"
-        color="dark-grey"
-      >
-        {{ label }}
-      </UiText>
-    </div>
-    </NuxtLink>
+    <UiTags v-if="props.tags" color="dark-grey" :tags="props.tags" />
   </article>
 </template>
 
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
 
-$gap: 12px;
-
 .aspect-description {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 12px $gap;
+  padding: 12px;
   background-color: colors.$beige;
   border-radius: 4px;
   gap: 4px;
 
   &__head {
     display: flex;
-    flex-direction: column;
-    align-items: start;
+    flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
     width: 100%;
-    gap: 4px;
+    gap: 12px;
   }
 
   &__title {
     margin-right: auto;
-  }
-
-  &__tags {
-    display: flex;
-    flex-flow: row wrap;
-    row-gap: 2px;
-    column-gap: 8px;
-  }
-
-  &__chevron {
-    position: absolute;
-    right: 24px;
   }
 }
 </style>

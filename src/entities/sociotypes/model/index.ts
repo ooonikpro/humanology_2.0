@@ -5,8 +5,6 @@ import getQuadraLabel from "./methods/getQuadraLabel";
 import getQuadras from "./methods/getQuadras";
 import getQuadraSubtitles from "./methods/getQuadraSubtitles";
 import getTarotLabel from "./methods/getTarotLabel";
-import getPsychotypeLabel from "./methods/getPsychotypeLabel";
-import getClubLabel from "./methods/getClubLabel";
 import getYungDichtomyLabel from "./methods/getYungDichtomyLabel";
 import getPortraitSrc from "./methods/getPortraitSrc";
 import getSociotypesByQuadra from "./methods/getSociotypesByQuadra";
@@ -38,8 +36,6 @@ const model = {
   getQuadras,
   getQuadraSubtitles,
   getTarotLabel,
-  getPsychotypeLabel,
-  getClubLabel,
   getYungDichtomyLabel,
   getOppositeYungDichtomyLabel,
   getPortraitSrc,
@@ -62,7 +58,7 @@ const model = {
   getGenderByYung,
   getPrevSociotypeId,
   getNextSociotypeId,
-};
+} as const;
 
 export default model;
 export type SociotypeModelType = typeof model;

@@ -16,8 +16,8 @@ $fire: #fa7c01;
 $water: #13a4d3;
 $earth: #7fb900;
 
-$air-dark: #733E7B;
-$fire-dark: #8C4500;
+$air-dark: #733e7b;
+$fire-dark: #8c4500;
 $water-dark: #105971;
 $earth-dark: #476800;
 
@@ -31,6 +31,11 @@ $transparently-green: rgba($green, 0.3);
 $transparently-yellow: rgba($yellow, 0.3);
 $transparently-pink: rgba($pink, 0.3);
 
+$aggressor: $pink;
+$caring: $green;
+$childlike: $turquoise;
+$victim: $yellow;
+
 $quadral: $turquoise;
 $favorable: $green;
 $neutral: $yellow;
@@ -39,17 +44,20 @@ $unfavorable: $pink;
 $quadra: var(--color-quadra);
 $role: var(--color-role);
 
+$intertype: var(--color-intertype-group);
+$psychotype: var(--color-psychotype);
+
 $sociotype-primary-color: var(--color-sociotype-primary);
 $sociotype-secondary-color: var(--color-sociotype-secondary);
 
 $quadra-dark: var(--color-quadra-dark);
 $role-dark: var(--color-role-dark);
 
-$intertype: var(--color-intertype-group);
 
 $bg-quadra: var(--bg-quadra);
 $bg-role: var(--bg-role);
 $bg-intertype: var(--bg-intertype-group);
+
 
 // Палетка из которой собираются @type {TextColorType}
 $global-colors: (
@@ -85,6 +93,7 @@ $global-colors: (
   "intertype": $intertype,
   "intertype-bg": $bg-intertype,
 
+  "psychotype": $psychotype,
+
   "inherit": inherit,
 );
-

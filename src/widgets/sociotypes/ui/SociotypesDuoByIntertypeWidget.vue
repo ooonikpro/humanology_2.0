@@ -1,11 +1,5 @@
 <script lang="ts" setup>
 import type { Gender, IntertypeIdType, SociotypeIdType } from "@types";
-import {
-  SociotypeCard,
-  SociotypeCardGroupsAndQuadras,
-  SociotypeCardHeader,
-  SociotypeProvider,
-} from "@entities/sociotypes";
 import { IntertypeNameBlock, IntertypeProvider } from "@entities/intertypes";
 import SociotypesCardMiniWidget from "@widgets/sociotypes/ui/SociotypesCardMiniWidget.vue";
 
