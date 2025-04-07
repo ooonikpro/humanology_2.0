@@ -1,23 +1,34 @@
 <script setup lang="ts">
-import type { SociotypeDataType } from "@types";
+import type {
+  ClubIdType,
+  PsychotypeIdType,
+  QuadrasType,
+  RoleType,
+  TarotType,
+} from "@types";
 
-import SociotypeSignsBlock from "./SociotypeSignsBlock.vue";
+import { SociotypeSignsBlock, sociotypeModel } from "@entities/sociotypes";
+import { clubsAndPsychotypesModel } from "@entities/clubs-and-psychotypes";
 
-import model from "../model";
-
-const props = defineProps<SociotypeDataType>();
+const props = defineProps<{
+  quadra: QuadrasType;
+  role: RoleType;
+  tarot: TarotType;
+  club: ClubIdType;
+  psychotype: PsychotypeIdType;
+}>();
 </script>
 
 <template>
   <SociotypeSignsBlock
-    class="sociotype-groups-and-quadras"
+    class="sociotypes-groups-and-quadras-widget"
     title="Группы и квадры"
   >
     <UiColumnDual leftTitle="Квадра">
       <template #left>
         <UiSvg :name="props.quadra" color="quadra" size="24" />
         <UiText preset="large" color="quadra">
-          {{ model.getQuadraLabel(props.quadra) }}
+          {{ sociotypeModel.getQuadraLabel(props.quadra) }}
         </UiText>
       </template>
     </UiColumnDual>
@@ -27,13 +38,13 @@ const props = defineProps<SociotypeDataType>();
       <template #left>
         <UiSvg :name="props.role" color="role" size="24" />
         <UiText preset="large" color="role">
-          {{ model.getRoleLabel(props.role) }}
+          {{ sociotypeModel.getRoleLabel(props.role) }}
         </UiText>
       </template>
       <template #right>
         <UiSvg :name="props.tarot" size="24" />
         <UiText preset="large">
-          {{ model.getTarotLabel(props.tarot) }}
+          {{ sociotypeModel.getTarotLabel(props.tarot) }}
         </UiText>
       </template>
     </UiColumnDual>
@@ -43,13 +54,13 @@ const props = defineProps<SociotypeDataType>();
       <template #left>
         <UiSvg :name="props.club" size="24" />
         <UiText preset="large">
-          {{ model.getClubLabel(props.club) }}
+          {{ clubsAndPsychotypesModel.getClubLabel(props.club) }}
         </UiText>
       </template>
       <template #right>
         <UiSvg :name="props.psychotype" size="24" />
         <UiText preset="large">
-          {{ model.getPsychotypeLabel(props.psychotype) }}
+          {{ clubsAndPsychotypesModel.getPsychotypeLabel(props.psychotype) }}
         </UiText>
       </template>
     </UiColumnDual>

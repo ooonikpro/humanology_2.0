@@ -21,7 +21,6 @@ const props = defineProps<{
           {{ props.title }}
         </UiText>
       </slot>
-      <slot name="onTitleRight"></slot>
     </div>
   </div>
 </template>
@@ -29,15 +28,13 @@ const props = defineProps<{
 <style lang="scss" scoped>
 .page-title-widget {
   padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
   &__row {
     display: flex;
     justify-content: space-between;
-    gap: 4px;
-
-    &:not(:first-child) {
-      margin-top: 16px;
-    }
   }
 }
 </style>

@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
+import type { SociotypeIdType } from "@types";
 
 import {
   sociotypeModel,
   SociotypeCard,
   SociotypeCardHeader,
-  SociotypeCardGroupsAndQuadras,
   SociotypeProvider,
   useSociotypePageRoute,
 } from "@entities/sociotypes";
@@ -15,7 +15,7 @@ import {
   IntertypeProvider,
   IntertypeWithSociotype,
 } from "@entities/intertypes";
-import type { SociotypeIdType } from "@types";
+import SociotypesCardGroupsAndQuadrasWidget from "./SociotypesCardGroupsAndQuadrasWidget.vue";
 
 const props = defineProps<{ sociotypeId?: SociotypeIdType }>();
 
@@ -68,7 +68,10 @@ const { sociotypeId } = useSociotypePageRoute();
               </template>
 
               <template #groups-and-quadras>
-                <SociotypeCardGroupsAndQuadras v-bind="sociotypeData" mini />
+                <SociotypesCardGroupsAndQuadrasWidget
+                  v-bind="sociotypeData"
+                  mini
+                />
               </template>
             </SociotypeCard>
           </SociotypeProvider>

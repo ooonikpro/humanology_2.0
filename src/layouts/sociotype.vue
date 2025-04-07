@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import {
   SociotypeCard,
-  SociotypeCardGroupsAndQuadras,
   SociotypeCardYungs,
   SociotypeCardHeader,
   SociotypeProvider,
@@ -11,12 +10,13 @@ import {
   SociotypeSignsBlock,
   SociotypeMentality,
   SociotypeReininSigns,
-  SociotypeGroupsAndQuadras,
 } from "@entities/sociotypes";
 import { SociotypeCarousel } from "@features/sociotypes";
 import {
   SociotypesPageTitleWidget,
   SociotypesTabsWidget,
+  SociotypesGroupsAndQuadrasWidget,
+  SociotypesCardGroupsAndQuadrasWidget,
 } from "@widgets/sociotypes";
 import {
   BlockFunctionsListWidget,
@@ -47,7 +47,7 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
           </template>
 
           <template #groups-and-quadras v-if="isCardTab">
-            <SociotypeCardGroupsAndQuadras v-bind="data" />
+            <SociotypesCardGroupsAndQuadrasWidget v-bind="data" />
           </template>
 
           <template #yungs v-if="isCardTab">
@@ -69,7 +69,7 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
             />
           </SociotypeSignsBlock>
           <SociotypeMentality v-bind="data" />
-          <SociotypeGroupsAndQuadras v-bind="data" />
+          <SociotypesGroupsAndQuadrasWidget v-bind="data" />
           <SociotypeYungDichtomy v-bind="data" />
           <SociotypeReininSigns v-bind="data" />
         </template>

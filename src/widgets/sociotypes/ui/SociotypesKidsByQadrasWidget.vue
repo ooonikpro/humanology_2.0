@@ -1,13 +1,12 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
-import type { SociotypeIdType } from "@types";
 import {
   SociotypeCard,
-  SociotypeCardGroupsAndQuadras,
   SociotypeCardHeader,
   SociotypeProvider,
   SociotypeQuadras,
 } from "@entities/sociotypes";
+import SociotypesCardGroupsAndQuadrasWidget from "./SociotypesCardGroupsAndQuadrasWidget.vue";
 
 const router = useRouter();
 </script>
@@ -26,7 +25,7 @@ const router = useRouter();
           </template>
 
           <template #groups-and-quadras>
-            <SociotypeCardGroupsAndQuadras v-bind="data" />
+            <SociotypesCardGroupsAndQuadrasWidget v-bind="data" />
           </template>
         </SociotypeCard>
       </SociotypeProvider>
