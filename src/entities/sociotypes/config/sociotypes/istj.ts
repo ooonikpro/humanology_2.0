@@ -16,7 +16,7 @@ const ISTJ: SociotypeDataType = {
   populationPercentage: "11 ~ 14%",
   functions: {
     base: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "logic",
     },
     creative: {
@@ -28,7 +28,7 @@ const ISTJ: SociotypeDataType = {
       aspect: "business",
     },
     back: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "comfort",
     },
     pain: {
@@ -36,11 +36,11 @@ const ISTJ: SociotypeDataType = {
       aspect: "ideas",
     },
     role: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "people",
     },
     activate: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "time",
     },
     suggestive: {

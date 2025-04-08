@@ -20,7 +20,7 @@ const ESTP: SociotypeDataType = {
       aspect: "will",
     },
     creative: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "logic",
     },
     limit: {
@@ -28,11 +28,11 @@ const ESTP: SociotypeDataType = {
       aspect: "comfort",
     },
     back: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "business",
     },
     pain: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "people",
     },
     role: {
@@ -44,7 +44,7 @@ const ESTP: SociotypeDataType = {
       aspect: "emotions",
     },
     suggestive: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "time",
     },
   },

@@ -1,17 +1,55 @@
 <script setup lang="ts">
 import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
+import {
+  VariousContentContainer,
+  VariousTab,
+  VariousTabContent,
+} from "@widgets/various-content";
 </script>
 
 <template>
   <div class="page">
     <PageHeaderWidget iconName="time" title="История" />
 
-    <UiText preset="subtitle" color="accent">
+    <VariousContentContainer
+      default-content-id="tab-1"
+      sync-with-url
+      switcher-on-top
+    >
+      <template #tabs>
+        <VariousTab
+          title="Карл"
+          target-content-id="tab-1"
+        />
+
+        <VariousTab
+          title="Кэтрин"
+          target-content-id="tab-2"
+        />
+
+        <VariousTab
+          title="Антон"
+          target-content-id="tab-3"
+        />
+
+        <VariousTab
+          title="Аушра"
+          target-content-id="tab-4"
+        />
+
+        <VariousTab
+          title="Григорий"
+          target-content-id="tab-5"
+        />
+      </template>
+
+      <VariousTabContent id="tab-1" class="page">
+        <UiText preset="subtitle" color="accent">
       Психические функции, Карл
     </UiText>
 
     <div class="person">
-      <img src="public/images/history/carl-gustav.png" class="portrait" />
+      <img src="public/images/history/carl-gustav.webp" class="portrait" />
       <div class="person-text">
         <UiText preset="subtitle">
          Карл Густав Юнг
@@ -88,15 +126,15 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     <UiText color="accent">
       Равномерная сознательность и бессознательность функций есть, следовательно, признак примитивного состояния духа.
     </UiText>
+      </VariousTabContent>
 
-    <hr />
-
-    <UiText preset="subtitle" color="accent">
+      <VariousTabContent id="tab-2" class="page">
+        <UiText preset="subtitle" color="accent">
       Дочки-матери типологии
     </UiText>
 
     <div class="person">
-      <img src="public/images/history/briggs.png" class="portrait" />
+      <img src="public/images/history/briggs.webp" class="portrait" />
       <div class="person-text">
         <UiText preset="subtitle">
           Кэтрин
@@ -188,15 +226,15 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     <UiText>
       MBTI подвергается критике со стороны некоторых, кто утверждает, что Бриггс разработала оценку у себя дома до проведения каких-либо обширных научных исследований, а не наоборот.
     </UiText>
+      </VariousTabContent>
 
-    <hr />
-
-    <UiText preset="subtitle" color="accent">
+      <VariousTabContent id="tab-3" class="page">
+        <UiText preset="subtitle" color="accent">
       Польский метаболизм
     </UiText>
 
     <div class="person">
-      <img src="public/images/history/anton.png" class="portrait" />
+      <img src="public/images/history/anton.webp" class="portrait" />
       <div class="person-text">
         <UiText preset="subtitle">
           Антон Кемпинский
@@ -258,14 +296,15 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
       Аналогии между энергетическим метаболизмом и информационным подтверждает верность известного выражения «психическое несварение»…
     </UiText>
 
-    <hr />
+      </VariousTabContent>
 
-    <UiText preset="subtitle" color="accent">
+      <VariousTabContent id="tab-4" class="page">
+        <UiText preset="subtitle" color="accent">
       На задворках империи…
     </UiText>
 
     <div class="person">
-      <img src="public/images/history/aushra.png" class="portrait" />
+      <img src="public/images/history/aushra.webp" class="portrait" />
       <div class="person-text">
         <UiText preset="subtitle">
           Аушра Аугустинавичюте
@@ -340,15 +379,15 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     <UiText color="accent">
       Механизм этого явления,по нашим сегодняшним представлениям, достаточно прост: отдельные аспекты действительности отражаются в мозгу человека с разной степенью дифференциации и осознанности.
     </UiText>
+      </VariousTabContent>
 
-    <hr />
-
-    <UiText preset="subtitle" color="accent">
+      <VariousTabContent id="tab-5" class="page">
+        <UiText preset="subtitle" color="accent">
       Математика психики…
     </UiText>
 
     <div class="person">
-      <img src="public/images/history/grigoriy.png" class="portrait" />
+      <img src="public/images/history/grigoriy.webp" class="portrait" />
       <div class="person-text">
         <UiText preset="subtitle">
           Григорий Рейнин
@@ -408,6 +447,9 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     <UiText preset="large">
       Вклад Рейнина в соционику и объяснение сложных перепитий человеческой психики трудно недооценить.
     </UiText>
+
+      </VariousTabContent>
+    </VariousContentContainer>
 
   </div>
 </template>

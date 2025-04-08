@@ -24,7 +24,7 @@ const INTJ: SociotypeDataType = {
       aspect: "ideas",
     },
     limit: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "business",
     },
     back: {
@@ -32,7 +32,7 @@ const INTJ: SociotypeDataType = {
       aspect: "time",
     },
     pain: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "will",
     },
     role: {
@@ -44,7 +44,7 @@ const INTJ: SociotypeDataType = {
       aspect: "comfort",
     },
     suggestive: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "emotions",
     },
   },

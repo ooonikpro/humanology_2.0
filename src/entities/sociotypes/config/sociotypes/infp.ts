@@ -20,11 +20,11 @@ const INFP: SociotypeDataType = {
       aspect: "time",
     },
     creative: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "emotions",
     },
     limit: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "ideas",
     },
     back: {
@@ -32,7 +32,7 @@ const INFP: SociotypeDataType = {
       aspect: "people",
     },
     pain: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "business",
     },
     role: {
@@ -44,7 +44,7 @@ const INFP: SociotypeDataType = {
       aspect: "logic",
     },
     suggestive: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "will",
     },
   },

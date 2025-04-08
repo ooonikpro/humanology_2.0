@@ -33,7 +33,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
         iconName="test-simple"
         iconColor="accent"
         bg="beige"
-        to="/"
+        to="/t/f/blocks"
       >
         Блоки и кольца
       </UiLinkBlock>
@@ -42,9 +42,9 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
         iconName="test-complex"
         iconColor="accent"
         bg="beige"
-        to="/"
+        to="/t/f/signs"
       >
-        Мерности функций
+        Мерности и признаки
       </UiLinkBlock>
 
     </div>

@@ -16,7 +16,7 @@ const ISFP: SociotypeDataType = {
   populationPercentage: "5 ~ 9%",
   functions: {
     base: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "comfort",
     },
     creative: {
@@ -28,7 +28,7 @@ const ISFP: SociotypeDataType = {
       aspect: "will",
     },
     back: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "people",
     },
     pain: {
@@ -36,11 +36,11 @@ const ISFP: SociotypeDataType = {
       aspect: "business",
     },
     role: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "time",
     },
     activate: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "logic",
     },
     suggestive: {

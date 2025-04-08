@@ -20,11 +20,11 @@ const ENTJ: SociotypeDataType = {
       aspect: "business",
     },
     creative: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "time",
     },
     limit: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "logic",
     },
     back: {
@@ -36,11 +36,11 @@ const ENTJ: SociotypeDataType = {
       aspect: "emotions",
     },
     pain: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "comfort",
     },
     suggestive: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "people",
     },
     activate: {

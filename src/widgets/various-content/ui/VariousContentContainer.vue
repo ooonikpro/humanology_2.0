@@ -46,6 +46,7 @@ useVariousContentContainer({
 
   &__tabs {
     overflow: hidden;
+    margin-bottom: 24px;
   }
 
   &__tabs-scroller {

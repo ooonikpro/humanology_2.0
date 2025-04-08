@@ -20,11 +20,11 @@ const ESFJ: SociotypeDataType = {
       aspect: "emotions",
     },
     creative: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "comfort",
     },
     limit: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "people",
     },
     back: {
@@ -32,7 +32,7 @@ const ESFJ: SociotypeDataType = {
       aspect: "will",
     },
     pain: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "time",
     },
     role: {
@@ -44,7 +44,7 @@ const ESFJ: SociotypeDataType = {
       aspect: "ideas",
     },
     suggestive: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "logic",
     },
   },

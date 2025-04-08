@@ -17,6 +17,15 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
       Никакие тесты не дадут истину.
     </UiText>
 
+    <UiLinkBlock
+        iconName="presentation-chart-bar-alt"
+        iconColor="accent"
+        bg="beige"
+        to="/tests/"
+      >
+        Тесты
+      </UiLinkBlock>
+
     <UiText>Но если нетерпеливы — ссылка ниже. Предупреждены.</UiText>
 
     <hr />
@@ -119,7 +128,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 
     <hr class="half" />
 
-    <UiText preset="large" color="water">Рыцарь</UiText>
+    <UiText preset="large" color="water">Рыцари</UiText>
 
     <UiText>
       Телосложение: атлетичное, с развитым грудным отделом (сенсорные) или чуть
@@ -130,7 +139,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 
     <hr class="half" />
 
-    <UiText preset="large" color="earth">Дама</UiText>
+    <UiText preset="large" color="earth">Дамы</UiText>
 
     <UiText>Телосложение: песочные часы или грушевидная фигура.</UiText>
 
@@ -183,7 +192,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 
     <hr class="half" />
 
-    <UiText preset="large" color="water">Рыцарь</UiText>
+    <UiText preset="large" color="water">Рыцари</UiText>
 
     <UiText>
       Флиртуют с дамами, впечатляют их. Выполняют приказы королей. Игнорируют
@@ -197,7 +206,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 
     <hr class="half" />
 
-    <UiText preset="large" color="earth">Дама</UiText>
+    <UiText preset="large" color="earth">Дамы</UiText>
 
     <UiText>
       Строят глазки рыцарям, восхищаются ими. Опасаются королей

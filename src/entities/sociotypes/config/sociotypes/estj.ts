@@ -16,7 +16,7 @@ const ESTJ: SociotypeDataType = {
   populationPercentage: "8 ~ 12%",
   functions: {
     base: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "business",
     },
     creative: {
@@ -28,11 +28,11 @@ const ESTJ: SociotypeDataType = {
       aspect: "logic",
     },
     back: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "will",
     },
     role: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "emotions",
     },
     pain: {
@@ -44,7 +44,7 @@ const ESTJ: SociotypeDataType = {
       aspect: "people",
     },
     activate: {
-      variant: "intensive",
+      variant: "extensive",
       aspect: "ideas",
     },
   },
