@@ -165,12 +165,12 @@ $card-gap: 4px;
       --function-color: #{colors.$white};
       --function-border: none;
       --function-background: #{colors.$quadra};
-      --function-background-opacity: 0.8;
+      --function-background-opacity: 0.75;
     }
 
     &-pain,
     &-role {
-      opacity: 0.6;
+      opacity: 0.75;
     }
   }
 
