@@ -4,8 +4,32 @@ import viteGenerateIconNameTypePlugin from "./viteGenerateIconNameTypePlugin";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: "Человековедение",
+      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+      htmlAttrs: {
+        lang: "ru",
+      },
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      meta: [
+        {
+          name: "og:title",
+          content: "Человековедение",
+        },
+        {
+          name: "og:description",
+          content: "Приложение чтобы наконец разбираться в людях.",
+        },
+        {
+          name: "description",
+          content: "Приложение чтобы наконец разбираться в людях.",
+        },
+      ],
+    },
+  },
+
   srcDir: "./src",
-  compatibilityDate: "2024-11-01",
   devtools: { enabled: false },
 
   components: {
@@ -51,17 +75,19 @@ export default defineNuxtConfig({
 
   routeRules: {
     "/": { prerender: true },
-    "/k/**": { prerender: true },
+    "/k/**": { prerender: false },
     "/s/**": { prerender: true },
     "/t/**": { prerender: true },
     "/disclaimer": { prerender: true },
     "/history": { prerender: true },
     "/how-to-define-type": { prerender: true },
-    "/people": { prerender: true },
-    "/profile": { prerender: true },
-    "/specialists": { prerender: true },
-    "/teams": { prerender: true },
+    "/people": { prerender: false },
+    "/profile": { prerender: false },
+    "/specialists": { prerender: false },
+    "/teams": { prerender: false },
     "/tests": { prerender: true },
     "/what-is-it": { prerender: true },
   },
+
+  compatibilityDate: "2025-04-08",
 });

@@ -4,7 +4,7 @@ import {
   useSociotypePageRoute,
   SOCIOTYPE_PAGE_TABS,
 } from "@entities/sociotypes";
-import scrollTabContainerToElementByIndex from "../lib/scrollTabContainerToElementByIndex";
+import { scrollTabContainerToElementByIndex } from "@shared/lib";
 
 const { sociotypeId, activeTab, activeTabIndex } = useSociotypePageRoute();
 

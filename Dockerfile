@@ -21,7 +21,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 #COPY ssl/privkey.pem /etc/nginx/ssl/privkey.pem
 
 # Открываем порты
-EXPOSE 80 443
+EXPOSE 443
 
 # Запускаем Nginx
 CMD ["nginx", "-g", "daemon off;"]
