@@ -58,6 +58,7 @@ const tag = props.forceTag ?? presetTag;
       font-size: 64px;
       line-height: 72px;
       font-weight: 400;
+      letter-spacing: -0.1rem;
     }
 
     &-heading {
@@ -65,6 +66,7 @@ const tag = props.forceTag ?? presetTag;
       font-size: 48px;
       line-height: 56px;
       font-weight: 400;
+      letter-spacing: -0.1rem;
     }
 
     &-title {
@@ -72,14 +74,15 @@ const tag = props.forceTag ?? presetTag;
       font-size: 36px;
       line-height: 44px;
       font-weight: 400;
+      letter-spacing: -0.04rem;
     }
 
     &-title-alternative {
       font-family: fonts.$family-alternative;
-      font-size: 30px;
-      line-height: 40px;
+      font-size: 36px;
+      line-height: 44px;
       font-weight: 500;
-      letter-spacing: -0.05rem;
+      letter-spacing: -0.1rem;
     }
 
     &-subtitle {
@@ -87,6 +90,7 @@ const tag = props.forceTag ?? presetTag;
       font-size: 24px;
       line-height: 28px;
       font-weight: 400;
+      letter-spacing: -0.04rem;
     }
 
     &-subtitle-alternative {
@@ -94,6 +98,7 @@ const tag = props.forceTag ?? presetTag;
       font-size: 24px;
       line-height: 28px;
       font-weight: 500;
+      letter-spacing: -0.02rem;
     }
 
     &-large {
@@ -101,6 +106,7 @@ const tag = props.forceTag ?? presetTag;
       font-size: 18px;
       line-height: 128%;
       font-weight: 400;
+      letter-spacing: -0.02rem;
     }
 
     &-body {
@@ -108,6 +114,7 @@ const tag = props.forceTag ?? presetTag;
       font-size: 16px;
       line-height: 128%;
       font-weight: 400;
+      letter-spacing: -0.02rem;
     }
 
     &-small {
@@ -115,6 +122,7 @@ const tag = props.forceTag ?? presetTag;
       font-size: 14px;
       line-height: 128%;
       font-weight: 400;
+      letter-spacing: -0.02rem;
     }
   }
 }
