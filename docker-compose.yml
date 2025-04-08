@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   nuxt-ssg:
     build:
@@ -7,9 +5,10 @@ services:
       dockerfile: Dockerfile
     container_name: nuxt-ssg-container
     ports:
-      - "443:443"
+      - "80:80"
     volumes:
-      - ../ssl:/etc/nginx/ssl
+      - ./.nginx:/etc/nginx
+      - ./.letsencrypt:/usr/share/nginx/html
     environment:
       - NODE_ENV=production
     restart: always

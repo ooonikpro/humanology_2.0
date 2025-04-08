@@ -7,21 +7,14 @@ RUN yarn install --frozen-lockfile
 RUN yarn generate
 
 # ---
-FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
+FROM nginx
+WORKDIR /etc/nginx
 
 # Копируем сгенерированные файлы из builder-а
-COPY --from=builder /app/.output/public .
-
-# Копируем конфигурацию Nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Копируем SSL сертификаты
-#COPY ssl/fullchain.pem /etc/nginx/ssl/fullchain.pem
-#COPY ssl/privkey.pem /etc/nginx/ssl/privkey.pem
+COPY --from=builder /app/.output/public /html
 
 # Открываем порты
-EXPOSE 443
+EXPOSE 80
 
 # Запускаем Nginx
 CMD ["nginx", "-g", "daemon off;"]
