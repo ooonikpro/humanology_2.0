@@ -1,4 +1,4 @@
-import { scrollContainerToElementByIndex } from "@shared/lib";
+import { scrollTabContainerToElementByIndex } from "@shared/lib";
 import type { ShallowRef } from "@vue/reactivity";
 
 type FnType = (id: string) => void;
@@ -55,7 +55,7 @@ export const useVariousContentContainer = ({
     }
   });
   watchEffect(() => {
-    scrollContainerToElementByIndex(
+    scrollTabContainerToElementByIndex(
       toValue(containerRef),
       toValue(currentContentElementIndex),
     );

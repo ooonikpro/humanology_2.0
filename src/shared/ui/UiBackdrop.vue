@@ -1,30 +1,10 @@
 <script lang="ts" setup>
-import {
-  clearAllBodyScrollLocks,
-  enableBodyScroll,
-  disableBodyScroll,
-} from "body-scroll-lock";
+import useBodyScrollLock from "@shared/hooks/useBodyScrollLock";
 
 const props = defineProps<{ isShow: boolean }>();
 const emit = defineEmits(["afterEnter", "afterLeave"]);
 
-watch(
-  () => props.isShow,
-  (newState) => {
-    if (newState) {
-      disableBodyScroll(document.body);
-    } else {
-      enableBodyScroll(document.body);
-    }
-  },
-  {
-    immediate: true,
-  },
-);
-
-onUnmounted(() => {
-  clearAllBodyScrollLocks();
-});
+useBodyScrollLock(() => props.isShow);
 </script>
 
 <template>
