@@ -26,7 +26,9 @@ $mt: 20px;
 
     &--soon {
       opacity: 0.5;
-      cursor: default;
+      cursor: not-allowed;
+      touch-action: none;
+      pointer-events: none;
     }
   }
 }
@@ -42,6 +44,7 @@ $mt: 20px;
   align-items: center;
   flex-flow: row nowrap;
   gap: 4px;
+
 }
 
 .col-40 {

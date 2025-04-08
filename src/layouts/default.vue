@@ -16,31 +16,17 @@ const closeNavigation = () => {
   <div class="app-layout">
     <header class="app-layout__header">
       <HeaderWidget
-        :is-open-navigation="isOpenNavigation"
+        :isOpenNavigation="isOpenNavigation"
         @toggleNavigation="toggleNavigation"
       />
     </header>
     <main class="app-layout__body"><slot /></main>
     <FooterWidget />
 
-    <div
-      :class="[
-        'app-layout__nav-overflow',
-        {
-          'app-layout__nav-overflow--visible': isOpenNavigation,
-        },
-      ]"
-    >
-      <MenuNavigationWidget
-        :class="[
-          'app-layout__nav',
-          {
-            'app-layout__nav--animate': isOpenNavigation,
-          },
-        ]"
-        @click.capture="closeNavigation"
-      />
-    </div>
+    <MenuNavigationWidget
+      :isOpen="isOpenNavigation"
+      @click.capture="closeNavigation"
+    />
   </div>
 </template>
 
@@ -70,36 +56,6 @@ const closeNavigation = () => {
     right: 0;
     height: layouts.$headerHeight;
     z-index: layers.$z-index-app-header;
-  }
-
-  &__nav {
-    position: absolute;
-    inset: 0;
-    background-color: colors.$white;
-    transform: translateX(-100%);
-
-    @include transitions.ease(transform);
-
-    &--animate {
-      transform: translateX(0);
-    }
-  }
-
-  &__nav-overflow {
-    position: absolute;
-    top: layouts.$headerHeight;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: layers.$z-index-app-nav;
-    overflow: hidden;
-    visibility: hidden;
-
-    @include transitions.ease(visibility, display);
-
-    &--visible {
-      visibility: visible;
-    }
   }
 
   &__body {
