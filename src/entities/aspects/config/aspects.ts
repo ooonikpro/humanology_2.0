@@ -1,14 +1,14 @@
 import type { AspectType } from "@types";
 
 export const ASPECTS: Record<AspectType, string> = {
-  ideas: "Идеи",
-  time: "Время",
-  logic: "Разум",
-  business: "Дела",
-  people: "Люди",
-  emotions: "Эмоции",
-  will: "Воля",
-  comfort: "Комфорт",
+  ideas: "Мысль",
+  time: "Чутьё",
+  logic: "Знание",
+  business: "Действие",
+  people: "Чувство",
+  emotions: "Желание",
+  will: "Намерение",
+  comfort: "Ощущение",
 } as const;
 
 export const ASPECTS_LABEL: Record<AspectType, string> = {

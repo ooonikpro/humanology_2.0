@@ -28,6 +28,93 @@ type FunctionWithBackground = Exclude<HumanFunctionType, "back" | "role">;
 
 $card-gap: 4px;
 
+@keyframes base-function {
+    0% {
+      top: 10%;
+    }
+
+    50% {
+      top: 25%;
+    }
+
+    100% {
+      top: 10%;
+    }
+}
+
+@keyframes creative-function {
+    0% {
+      left: 0%;
+    }
+
+    50% {
+      left: -15%;
+    }
+
+    100% {
+      left: 0%;
+    }
+}
+
+@keyframes limit-function {
+    0% {
+      right: -10%;
+    }
+
+    50% {
+      right: -25%;
+    }
+
+    100% {
+      right: -10%;
+    }
+}
+
+@keyframes pain-function {
+    0% {
+      bottom: -108px;
+      opacity: 0.1;
+    }
+
+    50% {
+      bottom: -128px;
+      opacity: 0.2;
+    }
+
+    100% {
+      bottom: -108px;
+      opacity: 0.1;
+    }
+}
+
+@keyframes activate-function {
+    0% {
+      left: 10%;
+    }
+
+    50% {
+      left: 25%;
+    }
+
+    100% {
+      left: 10%;
+    }
+}
+
+@keyframes suggestive-function {
+    0% {
+      left: -25%;
+    }
+
+    50% {
+      left: -50%;
+    }
+
+    100% {
+      left: -25%;
+    }
+}
+
 .function-background {
   position: absolute;
   inset: 0;
@@ -47,6 +134,7 @@ $card-gap: 4px;
       width: 100%;
       height: 88px;
       left: 0;
+      animation: base-function 5s ease-in-out infinite;
     }
 
     &-creative {
@@ -54,6 +142,7 @@ $card-gap: 4px;
       height: 173px;
       left: -$card-gap;
       bottom: -$card-gap;
+      animation: creative-function 5s ease-in-out infinite;
     }
 
     &-limit {
@@ -61,16 +150,16 @@ $card-gap: 4px;
       height: 153px;
       top: -50%;
       right: -12px;
+      animation: limit-function 5s ease-in-out infinite;
     }
 
     &-pain {
-      width: 351px;
-      height: 351px;
-      left: -78px;
-      bottom: -94px;
-
-      opacity: 0.1;
+      width: 360px;
+      height: 360px;
+      left: -64px;
+      bottom: -128px;
       color: var(--function-color);
+      animation: pain-function 5s ease-in-out infinite;
     }
 
     &-activate {
@@ -78,6 +167,7 @@ $card-gap: 4px;
       height: 139px;
       left: 35%;
       bottom: -13px;
+      animation: activate-function 5s ease-in-out infinite;
     }
 
     &-suggestive {
@@ -85,6 +175,7 @@ $card-gap: 4px;
       height: 139px;
       right: -7px;
       bottom: -15px;
+      animation: suggestive-function 5s ease-in-out infinite;
     }
 
     &-activate,

@@ -172,13 +172,13 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
 
   @include bem.modificatorForChildren("mini") {
     &__title {
-      font-size: min(7vw, 20px);
+      font-size: min(7vw, 28px);
       margin: -8px 8px 8px;
     }
 
     &__quadra-circle,
     &__portrait {
-      height: min(32vw, 90%);
+      height: min(32vw, 80%);
     }
   }
 }
