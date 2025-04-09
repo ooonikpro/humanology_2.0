@@ -39,7 +39,7 @@ const emit = defineEmits(["toggleNavigation"]);
 
   &__button {
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.75;
 
     &:hover {
       opacity: 1;
@@ -55,7 +55,7 @@ const emit = defineEmits(["toggleNavigation"]);
 
   .courses-button {
     padding: 2px 4px;
-    padding-right: 9px;
+    padding-right: 8px;
 
     display: flex;
     align-items: center;

@@ -54,7 +54,6 @@ const quadrasList = sociotypeModel.getQuadras();
         </template>
       </SociotypeQuadras>
 
-      <SociotypeSquashedQuadra v-else :quadra="quadra" />
     </template>
 
     <button
@@ -78,10 +77,10 @@ const quadrasList = sociotypeModel.getQuadras();
   gap: 2px;
 
   &__expand-button {
-    padding: 2px;
+    padding: 8px;
     display: flex;
-    flex-flow: column nowrap;
-    gap: 8px;
+    flex-flow: row nowrap;
+    gap: 4px;
     cursor: pointer;
   }
 }

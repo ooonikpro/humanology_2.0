@@ -168,6 +168,7 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
   &--mini {
     border-radius: 4px;
     box-shadow: 0 1px 1px 0 colors.$shadow;
+    cursor: pointer;
   }
 
   @include bem.modificatorForChildren("mini") {

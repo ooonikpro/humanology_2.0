@@ -22,7 +22,7 @@ $mt: 20px;
   }
 
   &__tab {
-    border: 1px solid colors.$grey;
+    border: 1px solid colors.$beige;
 
     &--soon {
       opacity: 0.5;
@@ -45,6 +45,10 @@ $mt: 20px;
   flex-flow: row nowrap;
   gap: 4px;
 
+}
+
+.sociotypes {
+  height: 128px;
 }
 
 .col-40 {

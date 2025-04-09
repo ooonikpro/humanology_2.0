@@ -6,7 +6,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 <template>
   <div class="page">
-    <PageHeaderWidget iconName="aspect_people" iconSize="80" title="Люди" subtitle="Fi — Cоотношение энергетических состояний" />
+    <PageHeaderWidget iconName="aspect_people" iconSize="80" title="Чувство" subtitle="Fi — Cоотношение энергетических состояний" />
 
     <UiText>
       Интровертная часть аспекта этика — чувства. Называется так же «Этика отношений» или «Белая этика».
