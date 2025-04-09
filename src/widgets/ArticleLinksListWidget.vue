@@ -15,10 +15,12 @@ const psychotypes: IconNameType[] = [
   <ul id="article-links-list" class="article-links-list-widget">
     <li class="article-links-list-widget__item">
       <a href="#article-links-list" class="article-links-list-widget__title">
-        <UiSvg name="document" size="24" />
-        <UiText preset="subtitle">Статьи</UiText>
+        <UiSvg name="document" size="20" />
+        <UiText preset="large">Свежие статьи</UiText>
       </a>
     </li>
+
+    <hr />
     <li class="article-links-list-widget__item">
       <NavigationTab
         :to="$appRoutes.sociotypes"
@@ -29,7 +31,7 @@ const psychotypes: IconNameType[] = [
         </template>
         <template #top>
           <UiSvg name="leaf" color="earth" />
-          <UiText color="earth">Новая</UiText>
+          <UiText color="earth">Свежая</UiText>
         </template>
       </NavigationTab>
     </li>
@@ -37,6 +39,7 @@ const psychotypes: IconNameType[] = [
       <NavigationTab
         :to="$appRoutes.sociotypes"
         label="Психо-эмоциональная совместимость"
+        class="article-links-list-widget__navtab"
       >
         <template #icon>
           <div class="icons">
@@ -55,10 +58,12 @@ const psychotypes: IconNameType[] = [
 </template>
 
 <style lang="scss" scoped>
+@use "../shared/styles/variables/colors";
+
 .article-links-list-widget {
   margin-top: 24px;
-  list-style: none;
-
+  list-style: none;  
+  
   &__item {
     padding: 8px;
 
@@ -69,11 +74,17 @@ const psychotypes: IconNameType[] = [
     }
   }
 
+  &__navtab {
+    border: 1px solid colors.$beige;
+    margin-top: -8px;
+  }
+
   &__title {
     display: flex;
-    align-items: flex-start;
-    flex-flow: column nowrap;
-    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    gap: 4px;
   }
 }
 </style>

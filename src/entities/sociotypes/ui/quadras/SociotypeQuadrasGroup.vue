@@ -45,7 +45,7 @@ const onScroll = (e: Event) => {
 <template>
   <div :style="styles" class="sociotype-quadras-group">
     <div class="sociotype-quadras-group__header">
-      <UiText color="quadra" class="sociotype-quadras-group__active-quadra">
+      <UiText color="quadra" preset="small" class="sociotype-quadras-group__active-quadra">
         <UiSvg
           :name="activeQuadra"
           size="20"
@@ -103,7 +103,7 @@ const onScroll = (e: Event) => {
   background-color: colors.$bg-quadra;
 
   &__header {
-    height: 40px;
+    height: 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;

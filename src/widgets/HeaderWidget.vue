@@ -33,7 +33,6 @@ const emit = defineEmits(["toggleNavigation"]);
   justify-content: space-between;
   padding: 8px;
   position: relative;
-  border-radius: 4px;
   background-color: colors.$white;
   border-bottom: 1px solid colors.$grey;
 
