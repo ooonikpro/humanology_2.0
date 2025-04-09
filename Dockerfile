@@ -7,14 +7,19 @@ RUN yarn install --frozen-lockfile
 RUN yarn generate
 
 # ---
-FROM nginx
-WORKDIR /etc/nginx
+FROM nginx:alpine
+
+# Удаляем дефолтный конфиг Nginx
+RUN rm /etc/nginx/conf.d/default.conf
 
 # Копируем сгенерированные файлы из builder-а
-COPY --from=builder /app/.output/public /html
+COPY --from=builder /app/.output/public /usr/share/nginx/html
 
-COPY ./.nginx/nginx.conf /conf.d/default.conf
-COPY ./.nginx/certs /certs
+# Копируем ваш конфиг
+COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
+# Копируем SSL-сертификаты
+COPY ./.nginx/certs/humanology.app.crt /etc/nginx/ssl/humanology.app.crt
+COPY ./.nginx/certs/humanology.app.key /etc/nginx/ssl/humanology.app.key
 # Открываем порты
 EXPOSE 80 443
 
