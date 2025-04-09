@@ -7,16 +7,25 @@ RUN yarn install --frozen-lockfile
 RUN yarn generate
 
 # ---
-FROM nginx
-WORKDIR /etc/nginx
+FROM nginx:alpine
+
+# Удаляем дефолтный конфиг Nginx
+RUN rm /etc/nginx/conf.d/default.conf
 
 # Копируем сгенерированные файлы из builder-а
-COPY --from=builder /app/.output/public /html
+COPY --from=builder /app/.output/public /usr/share/nginx/html
 
-COPY ./.nginx/nginx.conf /conf.d/default.conf
-COPY ./.nginx/certs /certs
+COPY ./public/favicon.svg /usr/share/nginx/html/assets/favicon.svg
+COPY ./public/touch-icon.png /usr/share/nginx/html/assets/touch-icon.png
+
+# Копируем ваш конфиг
+COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./.nginx/mime.types /etc/nginx/conf/mime.types
+# Копируем SSL-сертификаты
+COPY ./.nginx/certs/certificate.crt /etc/nginx/ssl/certificate.crt
+COPY ./.nginx/certs/certificate.key /etc/nginx/ssl/certificate.key
 # Открываем порты
-EXPOSE 443
+EXPOSE 80 443
 
 # Запускаем Nginx
 CMD ["nginx", "-g", "daemon off;"]
