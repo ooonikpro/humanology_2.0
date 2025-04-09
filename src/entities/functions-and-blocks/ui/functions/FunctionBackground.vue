@@ -115,6 +115,7 @@ $card-gap: 4px;
     }
 }
 
+
 .function-background {
   position: absolute;
   inset: 0;
