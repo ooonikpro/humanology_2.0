@@ -14,7 +14,7 @@ WORKDIR /etc/nginx
 COPY --from=builder /app/.output/public /html
 
 # Открываем порты
-EXPOSE 80
+EXPOSE 443
 
 # Запускаем Nginx
 CMD ["nginx", "-g", "daemon off;"]
