@@ -13,6 +13,8 @@ WORKDIR /etc/nginx
 # Копируем сгенерированные файлы из builder-а
 COPY --from=builder /app/.output/public /html
 
+COPY ./.nginx/nginx.conf /conf.d/default.conf
+COPY ./.nginx/certs /certs
 # Открываем порты
 EXPOSE 443
 

@@ -22,6 +22,7 @@ jobs:
             cd ./humanology_2.0
             git pull origin main
             docker compose down
+            sudo service nginx stop
             docker compose up -d --build
             docker volume prune -f
             docker image prune -a -f

@@ -6,8 +6,6 @@ services:
     container_name: nuxt-ssg-container
     ports:
       - "443:443"
-    volumes:
-      - ./.nginx:/etc/nginx
     environment:
       - NODE_ENV=production
     restart: always
