@@ -16,7 +16,7 @@ COPY --from=builder /app/.output/public /html
 COPY ./.nginx/nginx.conf /conf.d/default.conf
 COPY ./.nginx/certs /certs
 # Открываем порты
-EXPOSE 443
+EXPOSE 80 443
 
 # Запускаем Nginx
 CMD ["nginx", "-g", "daemon off;"]
