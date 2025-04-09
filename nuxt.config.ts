@@ -5,27 +5,63 @@ import viteGenerateIconNameTypePlugin from "./viteGenerateIconNameTypePlugin";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
+    buildAssetsDir: "/assets/",
     head: {
-      title: "Человековедение",
+      title: "Человековедение — приложение чтобы наконец разбираться в людях",
       viewport: "width=device-width, initial-scale=1, maximum-scale=1",
       htmlAttrs: {
         lang: "ru",
       },
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      link: [{ rel: "icon", type: "image/svg", href: "/assets/favicon.svg" }],
       meta: [
         {
+          name: "description",
+          content:
+            "Современная типология личности: Юнг, соционика, MBTI, архетипы и физиология. Понимание себя, развитие ребёнка, подбор команды и поиск судьбы.",
+        },
+        {
+          name: "author",
+          content: "Команда Человековедения",
+        },
+        {
+          name: "keywords",
+          content:
+            "типология личности, соционика, MBTI, архетипы, воспитание, психология, команда, отношения, развитие ребёнка, карта типов, humanology",
+        },
+        {
           name: "og:title",
-          content: "Человековедение",
+          content:
+            "Человековедение — приложение чтобы наконец разбираться в людях",
         },
         {
           name: "og:description",
-          content: "Приложение чтобы наконец разбираться в людях.",
+          content:
+            "Современная типология личности: Юнг, соционика, MBTI, архетипы и физиология. Понимание себя, развитие ребёнка, подбор команды и поиск судьбы.",
         },
         {
-          name: "description",
-          content: "Приложение чтобы наконец разбираться в людях.",
+          name: "og:url",
+          content: "https://humanology.app",
+        },
+        {
+          name: "og:type",
+          content: "website",
+        },
+        {
+          name: "og:locale",
+          content: "ru_RU",
+        },
+        {
+          name: "og:site_name",
+          content: "Человековедение",
+        },
+        {
+          name: "og:image",
+          content: "https://humanology.app/assets/touch-icon.png",
         },
       ],
+    },
+    rootAttrs: {
+      id: "humanology",
     },
   },
 

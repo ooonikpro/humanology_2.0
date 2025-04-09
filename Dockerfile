@@ -18,8 +18,8 @@ COPY --from=builder /app/.output/public /usr/share/nginx/html
 # Копируем ваш конфиг
 COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
 # Копируем SSL-сертификаты
-COPY ./.nginx/certs/humanology.app.crt /etc/nginx/ssl/humanology.app.crt
-COPY ./.nginx/certs/humanology.app.key /etc/nginx/ssl/humanology.app.key
+COPY ./.nginx/certs/certificate.crt /etc/nginx/ssl/certificate.crt
+COPY ./.nginx/certs/certificate.key /etc/nginx/ssl/certificate.key
 # Открываем порты
 EXPOSE 80 443
 
