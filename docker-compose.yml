@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   nuxt-ssg:
     build:
@@ -8,8 +6,6 @@ services:
     container_name: nuxt-ssg-container
     ports:
       - "443:443"
-    volumes:
-      - ../ssl:/etc/nginx/ssl
     environment:
       - NODE_ENV=production
     restart: always

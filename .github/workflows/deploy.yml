@@ -21,6 +21,10 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             cd ./humanology_2.0
             git pull origin main
-            docker compose down --rmi all --volumes --remove-orphans
+            docker compose down
+            sudo service nginx stop
             docker compose up -d --build
+            docker volume prune -f
+            docker image prune -a -f
+            docker container prune -f
           EOF
