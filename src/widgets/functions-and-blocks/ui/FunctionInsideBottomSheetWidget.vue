@@ -46,12 +46,16 @@ const routePredicate = (query: LocationQuery) => {
               :activeFunctionName="data.f"
             />
 
-            <hr class="bottom-sheet-content__divinder" />
+            <hr class="bottom-sheet-content__divider" />
 
             <FunctionInsideBottomSheetContent
               :sociotype-id="props.sociotypeId"
               :function-name="data.f!"
             />
+
+            <br />
+
+            <hr />
 
             <AspectDescription
               :iconName="
@@ -123,12 +127,12 @@ const routePredicate = (query: LocationQuery) => {
 .bottom-sheet-content {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 
-  &__divinder {
+  &__divider {
     background-color: colors.$role;
     border-bottom: 1px dotted colors.$white;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
 }
 </style>
