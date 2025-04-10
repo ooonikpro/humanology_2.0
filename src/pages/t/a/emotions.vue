@@ -6,7 +6,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 <template>
   <div class="page">
-    <PageHeaderWidget iconName="aspect_emotions" iconSize="80" title="Эмоции" subtitle="Fe — Энергетические состояния" />
+    <PageHeaderWidget iconName="aspect_emotions" iconSize="80" title="Желание" subtitle="Fe — Энергетические состояния" />
 
     <UiText>
       Экстравертная часть аспекта этика — чувства. Называется так же «Этика эмоций» или «Черная этика».

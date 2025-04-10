@@ -8,7 +8,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
     <PageHeaderWidget
       iconName="aspect_business"
       iconSize="80"
-      title="Дела"
+      title="Действие"
       subtitle="Te — Свойства объектов"
     />
 

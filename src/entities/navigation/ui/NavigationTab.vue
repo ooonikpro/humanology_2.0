@@ -30,7 +30,7 @@ const props = defineProps<NavigationTabPropsType>();
 @use "@shared/styles/variables/colors";
 
 .navigation-tab {
-  padding: 8px;
+  padding: 8px 12px 8px 12px;
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-template-rows: max-content;
@@ -41,8 +41,7 @@ const props = defineProps<NavigationTabPropsType>();
   line-height: 24px;
 
   overflow: hidden;
-  box-shadow: 0 1px 1px 0 rgba(colors.$black, 0.1);
-  background-color: colors.$white;
+  background-color: colors.$beige-tone;
   border-radius: 4px;
   cursor: pointer;
 
@@ -74,5 +73,6 @@ const props = defineProps<NavigationTabPropsType>();
   &__bottom {
     justify-self: flex-end;
   }
+
 }
 </style>

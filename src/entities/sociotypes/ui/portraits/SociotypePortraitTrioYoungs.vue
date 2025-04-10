@@ -26,7 +26,7 @@ const youngs = YOUNGS[0];
   align-items: flex-end;
 
   &__img {
-    --width: clamp(90px, 33%, 200px);
+    --width: clamp(118px, 33%, 200px);
     position: relative;
     flex: 0 0 var(--width);
     width: var(--width);

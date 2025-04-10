@@ -36,24 +36,8 @@ useBodyScrollLock(() => {
     >
       <div class="navigation__row">
         <NavigationTab
-          :to="$appRoutes.whatIsIt"
-          class="navigation__tab col-50"
-          label="Что это такое?"
-          iconName="square-0"
-        />
-
-        <NavigationTab
-          :to="$appRoutes.disclaimer"
-          class="navigation__tab col-50"
-          label="Дисклеймер"
-          iconName="square-1"
-        />
-      </div>
-
-      <div class="navigation__row">
-        <NavigationTab
           :to="$appRoutes.sociotypes"
-          class="navigation__tab col-100 with-image-tab"
+          class="navigation__tab col-100 with-image-tab sociotypes"
           label="Социотипы"
         >
           <template #icon>
@@ -82,6 +66,19 @@ useBodyScrollLock(() => {
 
       <div class="navigation__row">
         <NavigationTab
+          :to="$appRoutes.whatIsIt"
+          class="navigation__tab col-50"
+          label="Что это такое?"
+          iconName="square-0"
+        />
+
+        <NavigationTab
+          :to="$appRoutes.disclaimer"
+          class="navigation__tab col-50"
+          label="Дисклеймер"
+          iconName="square-1"
+        />
+        <NavigationTab
           :to="$appRoutes.howToDefine"
           class="navigation__tab col-60"
           label="Как определять тип?"
@@ -94,6 +91,24 @@ useBodyScrollLock(() => {
           label="Тесты"
           iconName="presentation-chart-bar-alt"
         />
+      </div>
+
+      <div class="navigation__row">
+        <NavigationTab
+          to="#"
+          class="navigation__tab col-100 kids-tab with-image-tab navigation__tab--soon"
+          label="Дети"
+          iconName="chart-bubble"
+        >
+          <template #bottom>
+            <div class="in-development">
+              <UiText color="accent">В разработке</UiText>
+              <UiSvg color="accent" name="cone" />
+            </div>
+
+            <SociotypePortraitTrioKids class="with-image-tab__img" />
+          </template>
+        </NavigationTab>
       </div>
 
       <div class="navigation__row">
@@ -155,24 +170,6 @@ useBodyScrollLock(() => {
           </template>
         </NavigationTab>
       </div>
-
-      <div class="navigation__row">
-        <NavigationTab
-          to="#"
-          class="navigation__tab col-100 kids-tab with-image-tab navigation__tab--soon"
-          label="Дети"
-          iconName="chart-bubble"
-        >
-          <template #bottom>
-            <div class="in-development">
-              <UiText color="accent">В разработке</UiText>
-              <UiSvg color="accent" name="cone" />
-            </div>
-
-            <SociotypePortraitTrioKids class="with-image-tab__img" />
-          </template>
-        </NavigationTab>
-      </div>
     </nav>
   </div>
 </template>
@@ -191,6 +188,7 @@ useBodyScrollLock(() => {
   background-color: colors.$white;
   transform: translateX(-100%);
   padding-bottom: 70px;
+  padding-top: 12px;
   overflow-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;

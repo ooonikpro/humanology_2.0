@@ -6,7 +6,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 <template>
   <div class="page">
-    <PageHeaderWidget iconName="aspect_will" iconSize="80" title="Воля" subtitle="Se — Cвойства пространства" />
+    <PageHeaderWidget iconName="aspect_will" iconSize="80" title="Намерение" subtitle="Se — Cвойства пространства" />
 
     <UiText>
       Экстравертная часть аспекта сенсорика — ощущения. Называется так же «Волевая сенсорика» или «Черная сенсорика».

@@ -6,7 +6,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 <template>
   <div class="page">
-    <PageHeaderWidget iconName="aspect_logic" iconSize="80" title="Разум" subtitle="Ti — Соотношение свойств объектов" />
+    <PageHeaderWidget iconName="aspect_logic" iconSize="80" title="Знание" subtitle="Ti — Соотношение свойств объектов" />
 
     <UiText>
       Интровертная часть аспекта логика — мышление. Называется так же «структурная логика», «логика соотношений» или «белая логика».

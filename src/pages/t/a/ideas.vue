@@ -6,7 +6,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 <template>
   <div class="page">
-    <PageHeaderWidget iconName="aspect_ideas" iconSize="80" title="Идеи" subtitle="Ne — Свойства изменений" />
+    <PageHeaderWidget iconName="aspect_ideas" iconSize="80" title="Мысль" subtitle="Ne — Свойства изменений" />
 
     <UiText>
       Экстравертная часть аспекта интуиция. Называется так же «интуиция возможностей», или черная интуиция».

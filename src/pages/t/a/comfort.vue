@@ -6,7 +6,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 <template>
   <div class="page">
-    <PageHeaderWidget iconName="aspect_comfort" iconSize="80" title="Комфорт" subtitle="Si — Пространственные соотношения" />
+    <PageHeaderWidget iconName="aspect_comfort" iconSize="80" title="Ощущение" subtitle="Si — Пространственные соотношения" />
 
     <UiText>
       Интровертная часть аспекта сенсорика — ощущения. Называется так же «Сенсорика ощущений» или «Белая сенсорика».

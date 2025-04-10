@@ -6,7 +6,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 
 <template>
   <div class="page">
-    <PageHeaderWidget iconName="aspect_time" iconSize="80" title="Время" subtitle="Ni — Соотношение изменений" />
+    <PageHeaderWidget iconName="aspect_time" iconSize="80" title="Чутьё" subtitle="Ni — Соотношение изменений" />
 
     <UiText>
       Интровертная часть аспекта интуиция. Называется так же «интуиция времени» или «черная интуиция».
