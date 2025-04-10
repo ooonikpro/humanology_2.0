@@ -1,18 +1,12 @@
 <script setup lang="ts">
-import { functionsModel } from "@entities/functions-and-blocks";
-import { AspectDescription } from "@entities/aspects";
 import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 </script>
 
 <template>
   <div class="page">
-
     <PageHeaderWidget iconName="test-complex" title="Мерности и признаки" />
 
-    <UiText>
-      Тут пока пусто но скоро все будет.
-    </UiText>
-
+    <UiText>Тут пока пусто но скоро все будет.</UiText>
   </div>
 </template>
 

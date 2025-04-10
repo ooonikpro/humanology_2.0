@@ -1,30 +1,27 @@
 <script setup lang="ts">
-import { functionsModel } from "@entities/functions-and-blocks";
-import { AspectDescription } from "@entities/aspects";
 import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 </script>
 
 <template>
   <div class="page">
-
     <PageHeaderWidget iconName="test-simple" title="Блоки и кольца" />
 
     <UiText>
-      Аспекты всегда используются в блоке, состоящем из пары аспектов, что обеспечивает возможность согласовывать процессы непосредственного восприятия и оценки полученной информации.
+      Аспекты всегда используются в блоке, состоящем из пары аспектов, что
+      обеспечивает возможность согласовывать процессы непосредственного
+      восприятия и оценки полученной информации.
     </UiText>
 
     <UiText preset="large" color="accent">
-      В блоке могут находиться только соседние аспекты из одного и того же кольца.
+      В блоке могут находиться только соседние аспекты из одного и того же
+      кольца.
     </UiText>
 
     <hr />
 
-    <UiText preset="subtitle" color="accent">
-        Кольца функций
-      </UiText>
+    <UiText preset="subtitle" color="accent">Кольца функций</UiText>
 
-   <hr />
-
+    <hr />
   </div>
 </template>
 
