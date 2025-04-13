@@ -1,25 +1,27 @@
 <script setup lang="ts">
 import type { TextColorType, TextPresetType } from "@types";
-import UiText from "./UiText.vue";
+import UiBadge from "./UiBadge.vue";
 
-const props = defineProps<{
+const { bg = "shadow", ...props } = defineProps<{
   tags: string[];
-  preset?: TextPresetType;
+  bg?: TextColorType;
   color?: TextColorType;
+  small?: boolean;
 }>();
 </script>
 
 <template>
   <div class="ui-tags">
-    <UiText
+    <UiBadge
       v-for="label in props.tags"
       :key="label"
       force-tag="span"
+      small
       :color="props.color"
-      :preset="props.preset"
+      :bg="bg"
     >
       {{ label }}
-    </UiText>
+    </UiBadge>
   </div>
 </template>
 
