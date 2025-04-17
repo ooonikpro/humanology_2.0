@@ -27,9 +27,10 @@ const { bg = "shadow", ...props } = defineProps<{
 
 <style lang="scss" scoped>
 .ui-tags {
+  padding-top: 8px;
   display: flex;
   flex-flow: row wrap;
-  row-gap: 2px;
-  column-gap: 8px;
+  row-gap: 4px;
+  column-gap: 4px;
 }
 </style>
