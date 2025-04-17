@@ -23,7 +23,7 @@ const props = defineProps<{
       <UiSvg
         :name="props.iconName"
         class="aspect-description__icon"
-        size="64"
+        size="80"
         color="accent"
       />
     </template>
@@ -34,7 +34,7 @@ const props = defineProps<{
 
     <slot />
 
-    <UiTags v-if="props.tags" :tags="props.tags" bg="shadow" small />
+    <UiTags v-if="props.tags" :tags="props.tags" bg="white" color="accent" small />
   </UiDescriptionCard>
 </template>
 
@@ -43,7 +43,7 @@ const props = defineProps<{
 
 .aspect-description {
   border-radius: 4px;
-  gap: 4px;
+  gap: 12px;
 
   &__icon {
     align-self: flex-start;

@@ -58,6 +58,14 @@ const routePredicate = (query: LocationQuery) => {
             <hr />
 
             <AspectDescription
+              :title="functionsModel.getName(data.f!)"
+              :tags="functionsModel.getTags(data.f!)"
+              :to="$appRoutes.functionCard(data.f!)"
+            >
+              {{ functionsModel.getDescription(data.f!) }}
+            </AspectDescription>
+
+            <AspectDescription
               :iconName="
                 aspectModel.getAspectIconName(
                   sociotypeModel.getAspectByFunction(
@@ -100,13 +108,6 @@ const routePredicate = (query: LocationQuery) => {
               "
             />
 
-            <AspectDescription
-              :title="functionsModel.getName(data.f!)"
-              :tags="functionsModel.getTags(data.f!)"
-              :to="$appRoutes.functionCard(data.f!)"
-            >
-              {{ functionsModel.getDescription(data.f!) }}
-            </AspectDescription>
           </div>
         </template>
       </UiBottomSheet>
