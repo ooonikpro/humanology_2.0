@@ -6,7 +6,7 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 </script>
 
 <template>
-  <div class="text">
+  <div class="text g-page">
     <UiText preset="large" color="accent">
       Издалека партнер-«миражник» выглядит похожим на дуала, чем вызывает
       симпатию, но при близком общении возникает ощущение, что партнер — это
@@ -288,10 +288,6 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 @use "@shared/styles/variables/colors";
 
 .text {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
   .pairs {
     margin-top: 16px;
     display: flex;

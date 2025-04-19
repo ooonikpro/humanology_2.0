@@ -6,7 +6,7 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 </script>
 
 <template>
-  <div class="text">
+  <div class="text g-page">
     <UiText preset="large" color="accent">
       Неблагоприятные отношения, в которых партнеры «гасят» друг в друге
       искренние и яркие проявления, считая их чрезмерными и бессмысленными.
@@ -265,10 +265,6 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 @use "@shared/styles/variables/colors";
 
 .text {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
   .pairs {
     margin-top: 16px;
     display: flex;

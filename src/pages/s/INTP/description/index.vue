@@ -1,5 +1,5 @@
 <template>
-  <div class="text">
+  <div class="text g-page">
     <section>
       <UiText preset="body" color="accent">
         Описания не должны обязательно совпадать со всеми чертами характера
@@ -329,8 +329,6 @@
 @use "@shared/styles/variables/colors";
 
 .text {
-  display: flex;
-  flex-direction: column;
   gap: 24px;
 
   section {

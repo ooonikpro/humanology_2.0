@@ -8,7 +8,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     title="Что может помешать дуалам найти общий язык?"
   />
 
-  <div class="text">
+  <div class="text g-page">
     <UiText>
       Отдельно важно пояснить, что кроме непосредственно соционических
       интертипных отношений, также на взаимодействие влияют и другие факторы.
@@ -93,12 +93,4 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
   </div>
 </template>
 
-<style scoped lang="scss">
-@use "@shared/styles/variables/colors";
-
-.text {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-</style>
+<style scoped lang="scss"></style>

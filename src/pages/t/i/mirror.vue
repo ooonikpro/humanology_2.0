@@ -6,7 +6,7 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 </script>
 
 <template>
-  <div class="text">
+  <div class="text g-page">
     <UiText preset="large" color="accent">
       Вы воспринимаете своего партнера очень похожим на вас, но при этом
       «перевернутым» способом.
@@ -270,10 +270,6 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 @use "@shared/styles/variables/colors";
 
 .text {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
   .pairs {
     margin-top: 16px;
     display: flex;

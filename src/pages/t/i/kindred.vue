@@ -6,7 +6,7 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 </script>
 
 <template>
-  <div class="text">
+  <div class="text g-page">
     <UiText preset="large" color="accent">
       Нейтральные отношения между людьми, которые одновременно и очень похожи
       друг на друга, и совершенно разные.
@@ -277,10 +277,6 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 @use "@shared/styles/variables/colors";
 
 .text {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
   .pairs {
     margin-top: 16px;
     display: flex;

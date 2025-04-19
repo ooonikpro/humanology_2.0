@@ -14,7 +14,7 @@ const { intertypeId } = useIntertypePageRoute();
     <IntertypeProvider
       v-slot="intertypeData"
       :intertypeId="intertypeId"
-      class="intertype-description-page"
+      class="intertype-description-page g-page"
     >
       <div class="intertype-description-page__header">
         <div class="intertype-description-page__header-double-icon">
@@ -35,17 +35,13 @@ const { intertypeId } = useIntertypePageRoute();
       </div>
 
       <div class="intertype-description-page__tags">
-        <UiBadge
-          v-for="tag in intertypeData.positiveTags"
-          :key="tag"
+        <UiTags
+          :tags="intertypeData.positiveTags"
+          :small="false"
           bg="intertype"
-        >
-          {{ tag }}
-        </UiBadge>
+        />
 
-        <UiBadge v-for="tag in intertypeData.negativeTags" :key="tag" bg="grey">
-          {{ tag }}
-        </UiBadge>
+        <UiTags :tags="intertypeData.negativeTags" :small="false" bg="grey" />
       </div>
 
       <hr class="intertype-description-page__separator" />
@@ -61,9 +57,7 @@ const { intertypeId } = useIntertypePageRoute();
 @use "@shared/styles/variables/colors";
 
 .intertype-description-page {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  padding: 0;
 
   &__header {
     position: relative;
@@ -93,6 +87,7 @@ const { intertypeId } = useIntertypePageRoute();
   }
 
   &__tags {
+    padding: 0 12px;
     display: flex;
     opacity: 0.75;
     flex-wrap: wrap;
@@ -100,6 +95,7 @@ const { intertypeId } = useIntertypePageRoute();
   }
 
   .graph {
+    padding: 0 12px;
     width: 100%;
     margin-bottom: 16px;
     margin-top: 16px;

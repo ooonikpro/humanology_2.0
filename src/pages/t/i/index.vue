@@ -10,7 +10,7 @@ import {
 </script>
 
 <template>
-  <div class="intertype-page">
+  <div class="intertype-page g-page">
     <PageHeaderWidget iconName="square-2" title="Интертипные отношения" />
     <UiText preset="large" color="accent">
       Одной из главных причин, почему люди обращаются к соционике, является
@@ -91,10 +91,6 @@ import {
 @use "@shared/styles/variables/colors";
 
 .intertype-page {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
   hr {
     margin-bottom: 16px;
     opacity: 0.5;

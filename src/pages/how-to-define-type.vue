@@ -3,7 +3,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 </script>
 
 <template>
-  <div class="page">
+  <div class="page g-page">
     <PageHeaderWidget iconName="ghost" title="Как определять?" />
 
     <UiText preset="subtitle" color="accent">О правильном типировании</UiText>
@@ -18,13 +18,13 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     </UiText>
 
     <UiLinkBlock
-        iconName="presentation-chart-bar-alt"
-        iconColor="accent"
-        bg="beige"
-        to="/tests/"
-      >
-        Тесты
-      </UiLinkBlock>
+      iconName="presentation-chart-bar-alt"
+      iconColor="accent"
+      bg="beige"
+      to="/tests/"
+    >
+      Тесты
+    </UiLinkBlock>
 
     <UiText>Но если нетерпеливы — ссылка ниже. Предупреждены.</UiText>
 
@@ -353,12 +353,6 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 @use "@shared/styles/variables/colors";
 
 .page {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-left: 12px;
-  padding-right: 12px;
-
   hr {
     margin-top: 16px;
     margin-bottom: 16px;

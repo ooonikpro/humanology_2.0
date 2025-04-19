@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useSociotypePageRoute } from "@entities/sociotypes";
+import PageTitleWidget from "../../PageTitleWidget.vue";
 
 const { activeTab } = useSociotypePageRoute();
 </script>

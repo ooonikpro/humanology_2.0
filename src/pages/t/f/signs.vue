@@ -3,7 +3,7 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 </script>
 
 <template>
-  <div class="page">
+  <div class="page g-page">
     <PageHeaderWidget iconName="test-complex" title="Мерности и признаки" />
 
     <UiText>Тут пока пусто но скоро все будет.</UiText>
@@ -14,12 +14,6 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 @use "@shared/styles/variables/colors";
 
 .page {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-left: 12px;
-  padding-right: 12px;
-
   hr {
     margin-top: 16px;
     margin-bottom: 16px;
