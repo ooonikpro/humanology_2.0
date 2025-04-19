@@ -2,7 +2,11 @@
 import type { TextColorType, TextPresetType } from "@types";
 import UiBadge from "./UiBadge.vue";
 
-const { bg = "shadow", ...props } = defineProps<{
+const {
+  bg = "shadow",
+  small = true,
+  ...props
+} = defineProps<{
   tags: string[];
   bg?: TextColorType;
   color?: TextColorType;
@@ -16,7 +20,7 @@ const { bg = "shadow", ...props } = defineProps<{
       v-for="label in props.tags"
       :key="label"
       force-tag="span"
-      small
+      :small="small"
       :color="props.color"
       :bg="bg"
     >
