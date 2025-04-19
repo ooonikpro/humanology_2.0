@@ -8,7 +8,7 @@ import {
 </script>
 
 <template>
-  <div class="text">
+  <div class="text g-page">
     <SociotypeProvider id="ENTP" force-tag="section">
       <UiText preset="large" color="role">Портреты</UiText>
       <SociotypePortraitSwitcher id="ENTP" />
@@ -60,10 +60,6 @@ import {
 @use "@shared/styles/variables/colors";
 
 .text {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
   section {
     display: flex;
     flex-direction: column;

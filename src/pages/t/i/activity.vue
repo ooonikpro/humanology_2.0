@@ -7,7 +7,7 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 </script>
 
 <template>
-  <div class="text">
+  <div class="text g-page">
     <UiText preset="large" color="accent">
       Один из самых приятных видов отношений.
     </UiText>
@@ -288,8 +288,6 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 <style scoped lang="scss">
 @use "@shared/styles/variables/colors";
 .text {
-  display: flex;
-  flex-direction: column;
   gap: 16px;
 
   .pairs {

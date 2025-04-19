@@ -5,7 +5,7 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 </script>
 
 <template>
-  <div class="text">
+  <div class="text g-page">
     <UiText preset="large" color="accent">
       Неблагоприятные отношения, которые отличаются также отсутствием симметрии:
       в этой паре партнеры относятся друг к другу неодинаково.
@@ -156,12 +156,4 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
   </div>
 </template>
 
-<style scoped lang="scss">
-@use "@shared/styles/variables/colors";
-
-.text {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-</style>
+<style scoped lang="scss"></style>
