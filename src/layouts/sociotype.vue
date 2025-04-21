@@ -23,7 +23,6 @@ import {
   BlockFunctionsListWidget,
   FunctionInsideBottomSheetWidget,
 } from "@widgets/functions-and-blocks";
-import UiLoadSociotypePageComponent from "@shared/ui/UiLoadSociotypePageComponent.vue";
 
 const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
 </script>
@@ -41,7 +40,8 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
           :data="data"
           :gender="sociotypeModel.getGenderByYung(data.id)"
           bordered
-          isShowToggle
+          :isShowToggle="isCardTab"
+          @click="$router.push($appRoutes.sociotypeCard(data.id))"
         >
           <template #header>
             <SociotypeCardHeader :data="data" />
@@ -99,5 +99,9 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
   flex-direction: column;
   gap: 8px;
   background-color: colors.$white;
+
+  &__card {
+    cursor: pointer;
+  }
 }
 </style>
