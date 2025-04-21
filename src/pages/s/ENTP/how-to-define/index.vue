@@ -1,5 +1,10 @@
 <script lang="ts" setup>
 import {
+  VariousContentContainer,
+  VariousTab,
+  VariousTabContent,
+} from "@widgets/various-content";
+import {
   SociotypePortraitSwitcher,
   SociotypeBodySwitcher,
   SociotypeFaceSwitcher,
@@ -9,6 +14,7 @@ import {
 
 <template>
   <div class="text">
+
     <SociotypeProvider id="ENTP" force-tag="section">
       <UiText preset="large" color="role">Портреты</UiText>
       <SociotypePortraitSwitcher id="ENTP" />
@@ -63,6 +69,8 @@ import {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
 
   section {
     display: flex;

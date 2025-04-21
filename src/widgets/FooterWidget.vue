@@ -9,12 +9,12 @@ import { scrollToTop } from "@shared/lib";
     </div>
     <hr />
     <div class="bottom">
-      <a href="/" class="link">
+      <a href="https://t.me/humanologyapp" class="link">
         <UiSvg color="dark-grey" name="telegram" size="24" />
 
         <UiText preset="small" color="dark-grey">Телеграм</UiText>
       </a>
-      <a href="/" class="link">
+      <a href="https://vk.com/humanologyapp" class="link">
         <UiSvg color="dark-grey" name="vk" size="24" />
 
         <UiText preset="small" color="dark-grey">ВК</UiText>

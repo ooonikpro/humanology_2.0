@@ -17,7 +17,7 @@ const emit = defineEmits(["toggleNavigation"]);
       <UiSvg color="black" name="logo-circle" size="24" />
     </NuxtLink>
 
-    <NuxtLink class="header-widget__button courses-button">
+    <NuxtLink class="header-widget__button courses-button" to="/courses">
       <UiSvg color="accent" name="energy" size="16" />
       <UiText color="accent" preset="small">Курсы</UiText>
     </NuxtLink>

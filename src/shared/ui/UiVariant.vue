@@ -75,6 +75,7 @@ const props = defineProps<
 
   &__subtitle {
     color: colors.$dark-grey;
+    font-size: 14px;
   }
 
   &--selected {

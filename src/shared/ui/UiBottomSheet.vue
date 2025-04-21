@@ -124,7 +124,6 @@ $height-transition: height 150ms ease;
   display: flex;
   flex-direction: column;
   transition: $height-transition, $transform-transition;
-
   transform: translateY($translate);
   touch-action: none;
 
@@ -134,8 +133,7 @@ $height-transition: height 150ms ease;
     height: $headerHeight;
     border-top: 1px solid colors.$quadra;
     padding: $gap ($gap * 2 + $closeButtonSize) $gap $gap;
-    position: relative;
-
+    
     &::before {
       content: "";
       position: absolute;
@@ -180,7 +178,9 @@ $height-transition: height 150ms ease;
   &__content {
     height: 100%;
     overflow-y: auto;
+    scrollbar-width: none;
     padding: $gap;
+    margin-bottom: 48px;
   }
 
   &--expanded {

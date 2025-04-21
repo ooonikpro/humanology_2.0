@@ -61,7 +61,7 @@ const { sociotypeId } = useSociotypePageRoute();
             <SociotypeCard
               :data="sociotypeData"
               mini
-              @click="router.push($appRoutes.sociotypeCard(sociotypeData.id))"
+              @click="router.push($appRoutes.sociotypeCard(sociotypeData.id))/card"
             >
               <template #header>
                 <SociotypeCardHeader :data="sociotypeData" mini />
