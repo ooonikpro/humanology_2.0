@@ -86,5 +86,12 @@ hr {
   background-color: colors.$grey;
 }
 
+.g-page {
+  padding: 0 12px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+}
+
 @include globals.textColors();
 @include globals.bgColors();

@@ -4,7 +4,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 </script>
 
 <template>
-  <div class="page">
+  <div class="page g-page">
     <PageHeaderWidget
       iconName="aspect_business"
       iconSize="80"
@@ -98,7 +98,11 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
     <UiText>
       <span class="g-color--water">Предпринимателя</span>
       — эксперта
-      <span class="g-color--water">интенсивных Дел</span>, привлекают крупные, рискованные, порой весьма авантюрные дела, для исполнения которых надо много двигаться, бывать в отдаленных местах, при этом не боится затрат, в надежде на то, что они окупятся в ближайшем будущем.
+      <span class="g-color--water">интенсивных Дел</span>
+      , привлекают крупные, рискованные, порой весьма авантюрные дела, для
+      исполнения которых надо много двигаться, бывать в отдаленных местах, при
+      этом не боится затрат, в надежде на то, что они окупятся в ближайшем
+      будущем.
     </UiText>
 
     <SociotypesCardMiniWidget sociotype-id="ESTJ" />
@@ -106,7 +110,11 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
     <UiText>
       <span class="g-color--fire">Администратор</span>
       — эксперт
-      <span class="g-color--fire">экстенсивных Дел</span>, предпочитает не рисковать, не вкладывать средства в надежде на удачу, а стабильно, качественно работать, рационально организовывать труд, экономить, не упускать из внимания подробности, собирать конкретные факты в интересующей его довольно узкой сфере.
+      <span class="g-color--fire">экстенсивных Дел</span>
+      , предпочитает не рисковать, не вкладывать средства в надежде на удачу, а
+      стабильно, качественно работать, рационально организовывать труд,
+      экономить, не упускать из внимания подробности, собирать конкретные факты
+      в интересующей его довольно узкой сфере.
     </UiText>
   </div>
 </template>
@@ -115,12 +123,6 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
 @use "@shared/styles/variables/colors";
 
 .page {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-left: 12px;
-  padding-right: 12px;
-
   hr {
     margin-top: 16px;
     margin-bottom: 16px;

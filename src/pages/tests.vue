@@ -8,7 +8,7 @@ import {
 </script>
 
 <template>
-  <div class="page">
+  <div class="page g-page">
     <PageHeaderWidget iconName="presentation-chart-bar-alt" title="Тесты" />
 
     <UiText preset="subtitle" color="accent">О точности тестов</UiText>
@@ -66,8 +66,7 @@ import {
         />
       </template>
 
-      <VariousTabContent id="tab-1" class="page">
-
+      <VariousTabContent id="tab-1" class="page g-page">
         <UiText preset="subtitle" color="accent">
           Экспресс-тест Мегедь-Овчарова
         </UiText>
@@ -79,7 +78,7 @@ import {
         </UiText>
       </VariousTabContent>
 
-      <VariousTabContent id="tab-2" class="page">
+      <VariousTabContent id="tab-2" class="page g-page">
         <UiText preset="subtitle" color="accent">Тест Воробьева</UiText>
 
         <UiText preset="large" color="accent">
@@ -107,8 +106,7 @@ import {
         </UiText>
       </VariousTabContent>
 
-      <VariousTabContent id="tab-3" class="page">
-
+      <VariousTabContent id="tab-3" class="page g-page">
         <UiText preset="subtitle" color="accent">Тест Филатовой</UiText>
 
         <UiText preset="large" color="accent">
@@ -121,8 +119,7 @@ import {
         </UiText>
       </VariousTabContent>
 
-      <VariousTabContent id="tab-4" class="page">
-
+      <VariousTabContent id="tab-4" class="page g-page">
         <UiText preset="subtitle" color="accent">Опросник Кейрси</UiText>
 
         <UiText preset="large" color="accent">
@@ -144,12 +141,6 @@ import {
 @use "@shared/styles/variables/colors";
 
 .page {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding-left: 12px;
-  padding-right: 12px;
-
   hr {
     margin-top: 16px;
     margin-bottom: 16px;
