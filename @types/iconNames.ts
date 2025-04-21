@@ -116,7 +116,7 @@ export type IconNameType =
   | "mosaic"
   | "mug"
   | "page"
-  | "paragrah"
+  | "paragraph"
   | "parallel"
   | "pentacles"
   | "people"

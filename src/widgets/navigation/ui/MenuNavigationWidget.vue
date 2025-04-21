@@ -60,10 +60,10 @@ useBodyScrollLock(() => {
           :to="$appRoutes.tests"
           class="navigation__tab col-40"
           label="Тесты"
-          iconName="presentation-chart-bar-alt"
+          iconName="atom"
         />
       </div>
-      
+
       <div class="navigation__row">
         <NavigationTab
           :to="$appRoutes.sociotypes"
@@ -117,7 +117,7 @@ useBodyScrollLock(() => {
           :to="$appRoutes.theory"
           class="navigation__tab col-100"
           label="Теория"
-          iconName="justify-left"
+          iconName="paragraph"
         />
       </div>
 

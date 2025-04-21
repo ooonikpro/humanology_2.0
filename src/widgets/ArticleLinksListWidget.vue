@@ -23,7 +23,7 @@ const psychotypes: IconNameType[] = [
     <hr />
     <li class="article-links-list-widget__item">
       <NavigationTab
-        :to="$appRoutes.sociotypes"
+        to="/sexual-programs"
         label="Сексуальные программы квадр"
       >
         <template #icon>
@@ -37,8 +37,8 @@ const psychotypes: IconNameType[] = [
     </li>
     <li class="article-links-list-widget__item">
       <NavigationTab
-        :to="$appRoutes.sociotypes"
-        label="Психо-эмоциональная совместимость"
+        to="/group-compatibility"
+        label="Совместимость психогрупп"
         class="article-links-list-widget__navtab"
       >
         <template #icon>
