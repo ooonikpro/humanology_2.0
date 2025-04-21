@@ -22,16 +22,15 @@ const psychotypes: IconNameType[] = [
 
     <hr />
     <li class="article-links-list-widget__item">
-      <NavigationTab
-        to="/sexual-programs"
-        label="Сексуальные программы квадр"
-      >
+      <NavigationTab to="/sexual-programs" label="Сексуальные программы квадр">
         <template #icon>
           <SociotypeQuadraIconsBlock class="icons" quadras-size="24" />
         </template>
         <template #top>
-          <UiSvg name="leaf" color="earth" />
-          <UiText color="earth">Свежая</UiText>
+          <div class="new">
+            <UiText color="earth">Свежая</UiText>
+            <UiSvg name="leaf" color="earth" />
+          </div>
         </template>
       </NavigationTab>
     </li>
@@ -62,8 +61,8 @@ const psychotypes: IconNameType[] = [
 
 .article-links-list-widget {
   margin-top: 24px;
-  list-style: none;  
-  
+  list-style: none;
+
   &__item {
     padding: 8px;
 
@@ -84,6 +83,13 @@ const psychotypes: IconNameType[] = [
     align-items: center;
     justify-content: flex-start;
     flex-flow: row nowrap;
+    gap: 4px;
+  }
+
+  .new {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     gap: 4px;
   }
 }

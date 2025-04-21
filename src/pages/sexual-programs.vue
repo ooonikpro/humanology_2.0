@@ -27,10 +27,10 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 
     <div class="quadra-title">
       <UiSvg name="air" size="48" color="air" />
-      <UiText preset="subtitle" color="air">Воздух</UiText>
+      <UiText preset="subtitle-alternative" color="air">Воздух</UiText>
     </div>
 
-    <UiText preset="large" color="air">
+    <UiText preset="subtitle" color="air">
       Телячьи нежности и лёгкие эксперименты
     </UiText>
 
@@ -105,10 +105,10 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 
     <div class="quadra-title">
       <UiSvg name="fire" size="48" color="fire" />
-      <UiText preset="subtitle" color="fire">Огонь</UiText>
+      <UiText preset="subtitle-alternative" color="fire">Огонь</UiText>
     </div>
 
-    <UiText preset="large" color="fire">Страсть, контроль и внезапность</UiText>
+    <UiText preset="subtitle" color="fire">Страсть, контроль и внезапность</UiText>
 
     <UiText>
       Огонь выражает сексуальность мощно, энергично, с подчёркнутой доминантной
@@ -179,10 +179,10 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 
     <div class="quadra-title">
       <UiSvg name="water" size="48" color="water" />
-      <UiText preset="subtitle" color="water">Вода</UiText>
+      <UiText preset="subtitle-alternative" color="water">Вода</UiText>
     </div>
 
-    <UiText preset="large" color="water">
+    <UiText preset="subtitle" color="water">
       Прагматичность, телесность и гибкий ритм
     </UiText>
 
@@ -253,10 +253,10 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
 
     <div class="quadra-title">
       <UiSvg name="earth" size="48" color="earth" />
-      <UiText preset="subtitle" color="earth">Земля</UiText>
+      <UiText preset="subtitle-alternative" color="earth">Земля</UiText>
     </div>
 
-    <UiText preset="large" color="earth">Игра, уют и зрелая телесность</UiText>
+    <UiText preset="subtitle" color="earth">Игра, уют и зрелая телесность</UiText>
 
     <UiText>
       Сексуальность Земли — тёплая, медленная, спокойная. Здесь важны доверие,
@@ -338,8 +338,8 @@ import PageHeaderWidget from "@widgets/PageHeaderWidget.vue";
     </UiText>
 
     <UiText>
-        Кто-то ищет объятий и тепла, кто-то — власти и ритма, кто-то — игры
-        и покоя. 
+      Кто-то ищет объятий и тепла, кто-то — власти и ритма, кто-то — игры
+      и покоя. 
     </UiText>
 
     <UiText preset="large" color="accent">
