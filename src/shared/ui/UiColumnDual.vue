@@ -1,12 +1,17 @@
 <script lang="ts" setup>
 import UiText from "./UiText.vue";
 
-const props = defineProps<{ leftTitle: string; rightTitle?: string }>();
+const props = defineProps<{
+  leftTitle: string;
+  rightTitle?: string;
+  leftLink: string;
+  rightLink?: string;
+}>();
 </script>
 
 <template>
   <div class="ui-column-dual">
-    <div>
+    <NuxtLink :to="props.leftLink" class="ui-column-dual__link">
       <UiText color="dark-grey" class="ui-column-dual__title">
         {{ props.leftTitle }}
       </UiText>
@@ -14,16 +19,20 @@ const props = defineProps<{ leftTitle: string; rightTitle?: string }>();
         <slot name="left"></slot>
       </div>
       <slot name="leftBottom"></slot>
-    </div>
+    </NuxtLink>
 
-    <div v-if="props.rightTitle || $slots.right">
+    <NuxtLink
+      v-if="props.rightTitle || $slots.right"
+      :to="props.rightLink"
+      class="ui-column-dual__link"
+    >
       <UiText color="dark-grey" class="ui-column-dual__title">
         {{ props.rightTitle }}
       </UiText>
       <div class="ui-column-dual__content">
         <slot name="right"></slot>
       </div>
-    </div>
+    </NuxtLink>
   </div>
 </template>
 
@@ -34,6 +43,12 @@ const props = defineProps<{ leftTitle: string; rightTitle?: string }>();
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 12px;
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
   &__content {
     display: flex;

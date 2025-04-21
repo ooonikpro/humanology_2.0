@@ -8,3 +8,4 @@ export { default as SociotypesDuoByIntertypeWidget } from "./ui/SociotypesDuoByI
 export { default as SociotypesCardMiniWidget } from "./ui/SociotypesCardMiniWidget.vue";
 export { default as SociotypesGroupsAndQuadrasWidget } from "./ui/SociotypesGroupsAndQuadrasWidget.vue";
 export { default as SociotypesCardGroupsAndQuadrasWidget } from "./ui/SociotypesCardGroupsAndQuadrasWidget.vue";
+export { default as CharacteristicInsideBottomSheetWidget } from "./ui/CharacteristicInsideBottomSheetWidget.vue";

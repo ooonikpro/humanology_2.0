@@ -8,7 +8,9 @@ import getTarotLabel from "./methods/getTarotLabel";
 import getYungDichtomyLabel from "./methods/getYungDichtomyLabel";
 import getPortraitSrc from "./methods/getPortraitSrc";
 import getSociotypesByQuadra from "./methods/getSociotypesByQuadra";
+import getOppositeYungDichotomy from "./methods/getOppositeYungDichotomy";
 import getOppositeYungDichtomyLabel from "./methods/getOppositeYungDichtomyLabel";
+import getOppositeReinin from "./methods/getOppositeReinin";
 import getReininLabel from "./methods/getReininLabel";
 import getOppositeReininLabel from "./methods/getOppositeReininLabel";
 import getTemperament from "./methods/getTemperament";
@@ -37,9 +39,11 @@ const model = {
   getQuadraSubtitles,
   getTarotLabel,
   getYungDichtomyLabel,
+  getOppositeYungDichotomy,
   getOppositeYungDichtomyLabel,
   getPortraitSrc,
   getSociotypesByQuadra,
+  getOppositeReinin,
   getReininLabel,
   getOppositeReininLabel,
   getGender,

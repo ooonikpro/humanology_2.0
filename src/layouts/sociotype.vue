@@ -17,6 +17,7 @@ import {
   SociotypesTabsWidget,
   SociotypesGroupsAndQuadrasWidget,
   SociotypesCardGroupsAndQuadrasWidget,
+  CharacteristicInsideBottomSheetWidget,
 } from "@widgets/sociotypes";
 import {
   BlockFunctionsListWidget,
@@ -70,8 +71,8 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
           </SociotypeSignsBlock>
           <SociotypeMentality v-bind="data" />
           <SociotypesGroupsAndQuadrasWidget v-bind="data" />
-          <SociotypeYungDichtomy v-bind="data" />
-          <SociotypeReininSigns v-bind="data" />
+          <SociotypeYungDichtomy :id="data.id" :yungs="data.yungs" />
+          <SociotypeReininSigns :id="data.id" :reinin="data.reinin" />
         </template>
 
         <template v-else>
@@ -86,6 +87,7 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
       </SociotypeProvider>
     </SociotypeCarousel>
 
+    <CharacteristicInsideBottomSheetWidget />
     <FunctionInsideBottomSheetWidget :sociotype-id="sociotypeId" />
   </NuxtLayout>
 </template>

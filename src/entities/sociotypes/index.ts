@@ -25,6 +25,7 @@ export {
 } from "./config";
 
 export { default as useSociotypePageRoute } from "./lib/hooks/useSociotypePageRoute";
+export { default as useCharacteristicSheet } from "./lib/hooks/useCharacteristicSheet";
 export { default as useFamousPeople } from "./lib/hooks/useFamousPeople";
 
 export { default as sociotypeModel } from "./model";

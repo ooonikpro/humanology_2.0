@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { LocationQuery } from "vue-router";
-import type { SociotypeIdType } from "@types";
+import type { HumanFunctionType, SociotypeIdType } from "@types";
 
 import { sociotypeModel, SociotypeProvider } from "@entities/sociotypes";
 import { FunctionLevel, functionsModel } from "@entities/functions-and-blocks";
@@ -18,6 +18,7 @@ const routePredicate = (query: LocationQuery) => {
 </script>
 
 <template>
+  <!-- @vue-generic {{ f: HumanFunctionType }} -->
   <OpenBottomSheetByQuery
     v-slot="{ isOpen, data, handleClose, handleAfterClose }"
     :predicate="routePredicate"
@@ -31,10 +32,10 @@ const routePredicate = (query: LocationQuery) => {
         <template #title>
           <div class="bottom-sheet-title-group">
             <UiText color="quadra">
-              {{ functionsModel.getName(data.f!) }} функция
+              {{ functionsModel.getName(data.f) }} функция
             </UiText>
-            <UiText>{{ functionsModel.getLevelName(data.f!) }}</UiText>
-            <FunctionLevel :lvl="functionsModel.getLevel(data.f!)" />
+            <UiText>{{ functionsModel.getLevelName(data.f) }}</UiText>
+            <FunctionLevel :lvl="functionsModel.getLevel(data.f)" />
           </div>
         </template>
 
@@ -42,7 +43,7 @@ const routePredicate = (query: LocationQuery) => {
           <div class="bottom-sheet-content">
             <BlockFunctions
               :sociotypeId="props.sociotypeId"
-              :blockName="functionsModel.getBlockName(data.f!)!"
+              :blockName="functionsModel.getBlockName(data.f)!"
               :activeFunctionName="data.f"
             />
 
@@ -50,7 +51,7 @@ const routePredicate = (query: LocationQuery) => {
 
             <FunctionInsideBottomSheetContent
               :sociotype-id="props.sociotypeId"
-              :function-name="data.f!"
+              :function-name="data.f"
             />
 
             <br />
@@ -58,56 +59,40 @@ const routePredicate = (query: LocationQuery) => {
             <hr />
 
             <AspectDescription
-              :title="functionsModel.getName(data.f!)"
-              :tags="functionsModel.getTags(data.f!)"
-              :to="$appRoutes.functionCard(data.f!)"
+              :title="functionsModel.getName(data.f)"
+              :tags="functionsModel.getTags(data.f)"
+              :to="$appRoutes.functionCard(data.f)"
             >
-              {{ functionsModel.getDescription(data.f!) }}
+              {{ functionsModel.getDescription(data.f) }}
             </AspectDescription>
 
             <AspectDescription
               :iconName="
                 aspectModel.getAspectIconName(
-                  sociotypeModel.getAspectByFunction(
-                    props.sociotypeId,
-                    data.f!,
-                  ),
+                  sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
                 )
               "
               :title="
                 aspectModel.getAspectName(
-                  sociotypeModel.getAspectByFunction(
-                    props.sociotypeId,
-                    data.f!,
-                  ),
+                  sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
                 )
               "
               :subtitle="
                 aspectModel.getAspectLabel(
-                  sociotypeModel.getAspectByFunction(
-                    props.sociotypeId,
-                    data.f!,
-                  ),
+                  sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
                 )
               "
               :tags="
                 aspectModel.getAspectTags(
-                  sociotypeModel.getAspectByFunction(
-                    props.sociotypeId,
-                    data.f!,
-                  ),
+                  sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
                 )
               "
               :to="
                 $appRoutes.aspectCard(
-                  sociotypeModel.getAspectByFunction(
-                    props.sociotypeId,
-                    data.f!,
-                  ),
+                  sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
                 )
               "
             />
-
           </div>
         </template>
       </UiBottomSheet>
