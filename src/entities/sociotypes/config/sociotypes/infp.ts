@@ -52,7 +52,7 @@ const INFP: SociotypeDataType = {
   communication: "sincere",
   companion: "provident",
   temperament: "melancholic",
-  alignment: "chaoticGood",
+  alignment: "neutralGood",
   yungs: ["irrational", "intuit", "ethic", "introvert"],
   reinin: [
     "dynamic",

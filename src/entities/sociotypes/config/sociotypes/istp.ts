@@ -52,7 +52,7 @@ const ISTP: SociotypeDataType = {
   communication: "coldBlooded",
   companion: "restrained",
   temperament: "melancholic",
-  alignment: "neutralEvil",
+  alignment: "chaoticNeutral",
   yungs: ["irrational", "sensory", "logic", "introvert"],
   reinin: [
     "dynamic",

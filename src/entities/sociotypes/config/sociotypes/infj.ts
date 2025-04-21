@@ -52,7 +52,7 @@ const INFJ: SociotypeDataType = {
   communication: "sincere",
   companion: "provident",
   temperament: "phlegmatic",
-  alignment: "neutralGood",
+  alignment: "trueNeutral",
   yungs: ["rational", "intuit", "ethic", "introvert"],
   reinin: [
     "static",
