@@ -42,11 +42,11 @@ useVariousContentContainer({
 .various-content-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 
   &__tabs {
     overflow: hidden;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   &__tabs-scroller {

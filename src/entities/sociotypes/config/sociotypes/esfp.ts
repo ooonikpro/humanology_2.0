@@ -52,7 +52,7 @@ const ESFP: SociotypeDataType = {
   communication: "passionate",
   companion: "volitional",
   temperament: "sanguine",
-  alignment: "chaoticGood",
+  alignment: "chaoticNeutral",
   yungs: ["irrational", "sensory", "ethic", "extravert"],
   reinin: [
     "static",

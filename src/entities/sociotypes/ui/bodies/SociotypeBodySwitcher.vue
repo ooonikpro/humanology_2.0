@@ -24,7 +24,6 @@ const genderRef = ref<GenderEnum>(GenderEnum.male);
   &__img {
     display: block;
     height: 480px;
-    margin-bottom: 8px;
   }
 }
 </style>

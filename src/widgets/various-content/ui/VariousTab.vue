@@ -26,6 +26,6 @@ const { setOwnContentId, isSelected } = useVariousTab(props.targetContentId);
 <style lang="scss" scoped>
 .various-tab {
   flex: 1 0 36%;
-  gap: 2px;
+  gap: 0;
 }
 </style>

@@ -52,7 +52,7 @@ const INTJ: SociotypeDataType = {
   communication: "coldBlooded",
   companion: "restrained",
   temperament: "phlegmatic",
-  alignment: "trueNeutral",
+  alignment: "neutralEvil",
   yungs: ["rational", "intuit", "logic", "introvert"],
   reinin: [
     "static",

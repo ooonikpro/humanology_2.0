@@ -9,7 +9,7 @@ import {
 
 <template>
   <div class="page g-page">
-    <PageHeaderWidget iconName="presentation-chart-bar-alt" title="Тесты" />
+    <PageHeaderWidget iconName="atom" title="Тесты" />
 
     <UiText preset="subtitle" color="accent">О точности тестов</UiText>
 

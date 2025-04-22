@@ -6,5 +6,19 @@ const props = defineProps<{ sociotypeId?: SociotypeIdType }>();
 </script>
 
 <template>
-  <SociotypesCompatibilityWidget :sociotypeId="props.sociotypeId" />
+  <div class="text">
+    <SociotypesCompatibilityWidget :sociotypeId="props.sociotypeId" />
+  </div>
 </template>
+
+<style lang="scss" scoped>
+@use "@shared/styles/variables/colors";
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+</style>

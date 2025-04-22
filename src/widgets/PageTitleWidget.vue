@@ -27,7 +27,7 @@ const props = defineProps<{
 
 <style lang="scss" scoped>
 .page-title-widget {
-  padding: 8px;
+  padding: 12px 12px 0 12px;
   display: flex;
   flex-direction: column;
   gap: 16px;
