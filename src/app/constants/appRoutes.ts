@@ -16,7 +16,7 @@ export const appRoutes = {
   // Общая страница социотипов
   sociotypes: "/s",
   // Карточка социотипа
-  sociotypeCard: (id = ":id") => `/s/${id}`,
+  sociotypeCard: (id = ":id") => `/s/${id}/card`,
   // Карточка социотипа + переключение на таб
   sociotypeTab: (id = ":id", tabName = ":tabName") => `/s/${id}/${tabName}`,
   // Навигация по теории

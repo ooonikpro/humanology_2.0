@@ -17,12 +17,12 @@ import {
   SociotypesTabsWidget,
   SociotypesGroupsAndQuadrasWidget,
   SociotypesCardGroupsAndQuadrasWidget,
+  CharacteristicInsideBottomSheetWidget,
 } from "@widgets/sociotypes";
 import {
   BlockFunctionsListWidget,
   FunctionInsideBottomSheetWidget,
 } from "@widgets/functions-and-blocks";
-import UiLoadSociotypePageComponent from "@shared/ui/UiLoadSociotypePageComponent.vue";
 
 const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
 </script>
@@ -40,7 +40,8 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
           :data="data"
           :gender="sociotypeModel.getGenderByYung(data.id)"
           bordered
-          isShowToggle
+          :isShowToggle="isCardTab"
+          @click="$router.push($appRoutes.sociotypeCard(data.id))"
         >
           <template #header>
             <SociotypeCardHeader :data="data" />
@@ -70,8 +71,8 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
           </SociotypeSignsBlock>
           <SociotypeMentality v-bind="data" />
           <SociotypesGroupsAndQuadrasWidget v-bind="data" />
-          <SociotypeYungDichtomy v-bind="data" />
-          <SociotypeReininSigns v-bind="data" />
+          <SociotypeYungDichtomy :id="data.id" :yungs="data.yungs" />
+          <SociotypeReininSigns :id="data.id" :reinin="data.reinin" />
         </template>
 
         <template v-else>
@@ -86,6 +87,7 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
       </SociotypeProvider>
     </SociotypeCarousel>
 
+    <CharacteristicInsideBottomSheetWidget />
     <FunctionInsideBottomSheetWidget :sociotype-id="sociotypeId" />
   </NuxtLayout>
 </template>
@@ -97,5 +99,9 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
   flex-direction: column;
   gap: 8px;
   background-color: colors.$white;
+
+  &__card {
+    cursor: pointer;
+  }
 }
 </style>

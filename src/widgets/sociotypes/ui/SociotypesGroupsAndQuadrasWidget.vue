@@ -4,19 +4,21 @@ import type {
   PsychotypeIdType,
   QuadrasType,
   RoleType,
+  SociotypeDataType,
+  SociotypeIdType,
   TarotType,
 } from "@types";
 
-import { SociotypeSignsBlock, sociotypeModel } from "@entities/sociotypes";
+import {
+  SociotypeSignsBlock,
+  sociotypeModel,
+  useCharacteristicSheet,
+} from "@entities/sociotypes";
 import { clubsAndPsychotypesModel } from "@entities/clubs-and-psychotypes";
 
-const props = defineProps<{
-  quadra: QuadrasType;
-  role: RoleType;
-  tarot: TarotType;
-  club: ClubIdType;
-  psychotype: PsychotypeIdType;
-}>();
+const props = defineProps<SociotypeDataType>();
+
+const { goToSheet } = useCharacteristicSheet(() => props.id);
 </script>
 
 <template>
@@ -24,7 +26,10 @@ const props = defineProps<{
     class="sociotypes-groups-and-quadras-widget"
     title="Группы и квадры"
   >
-    <UiColumnDual leftTitle="Квадра">
+    <UiColumnDual
+      leftTitle="Квадра"
+      :left-link="goToSheet('quadra', props.quadra)"
+    >
       <template #left>
         <UiSvg :name="props.quadra" color="quadra" size="24" />
         <UiText preset="large" color="quadra">
@@ -34,7 +39,12 @@ const props = defineProps<{
     </UiColumnDual>
     <hr />
 
-    <UiColumnDual leftTitle="Роль" rightTitle="Масть">
+    <UiColumnDual
+      leftTitle="Роль"
+      :left-link="goToSheet('role', props.role)"
+      rightTitle="Масть"
+      :right-link="goToSheet('tarot', props.tarot)"
+    >
       <template #left>
         <UiSvg :name="props.role" color="role" size="24" />
         <UiText preset="large" color="role">
@@ -50,7 +60,12 @@ const props = defineProps<{
     </UiColumnDual>
     <hr />
 
-    <UiColumnDual leftTitle="Клуб" rightTitle="Группа">
+    <UiColumnDual
+      leftTitle="Клуб"
+      :left-link="goToSheet('club', props.club)"
+      rightTitle="Группа"
+      :right-link="goToSheet('psychotype', props.psychotype)"
+    >
       <template #left>
         <UiSvg :name="props.club" size="24" />
         <UiText preset="large">
