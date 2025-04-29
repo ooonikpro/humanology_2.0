@@ -2,13 +2,14 @@
 import UiText from "./UiText.vue";
 
 const props = defineProps<{
+  link: string;
   leftText: string;
   rightText: string;
 }>();
 </script>
 
 <template>
-  <div class="ui-row-dual">
+  <NuxtLink :to="props.link" class="ui-row-dual">
     <UiText preset="large" class="ui-row-dual__text">
       {{ props.leftText }}
     </UiText>
@@ -16,7 +17,7 @@ const props = defineProps<{
     <UiText preset="large" class="ui-row-dual__text">
       {{ props.rightText }}
     </UiText>
-  </div>
+  </NuxtLink>
 </template>
 
 <style scoped lang="scss">
