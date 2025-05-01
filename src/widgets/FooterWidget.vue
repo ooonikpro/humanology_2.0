@@ -3,7 +3,7 @@ import { scrollToTop } from "@shared/lib";
 </script>
 
 <template>
-  <footer>
+  <div class="footer-widget">
     <div class="logo-link">
       <UiSvg color="dark-grey" name="logo-circle" size="20" />
     </div>
@@ -25,14 +25,17 @@ import { scrollToTop } from "@shared/lib";
         <UiSvg color="dark-grey" name="chevron-up" size="24" />
       </a>
     </div>
-  </footer>
+  </div>
 </template>
 
 <style scoped lang="scss">
+@use "@shared/styles/variables/layouts";
 @use "../shared/styles/variables/colors";
 
-footer {
+.footer-widget {
   width: 100%;
+  max-width: layouts.$maxWidth;
+  margin: 0 auto;
   height: 160px;
   background-color: colors.$white;
   display: flex;

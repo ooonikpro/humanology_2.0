@@ -52,6 +52,11 @@
   scroll-behavior: smooth;
 }
 
+html, body {
+  min-width: layouts.$minWidth;
+  overflow-x: hidden;
+}
+
 * {
   &,
   &::before,
@@ -84,13 +89,6 @@ hr {
   height: 1px;
   border: 0;
   background-color: colors.$grey;
-}
-
-.g-page {
-  padding: 0 12px;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 16px;
 }
 
 @include globals.textColors();

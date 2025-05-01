@@ -1,18 +1,24 @@
+import type { ShallowRef } from "vue";
 import {
   clearAllBodyScrollLocks,
   disableBodyScroll,
   enableBodyScroll,
 } from "body-scroll-lock";
 
-const useBodyScrollLock = (watchSourceFn: () => boolean) => {
+const useBodyScrollLock = <T extends HTMLElement>(
+  watchSourceFn: () => boolean,
+  containerRef: Readonly<ShallowRef<T | null>>,
+) => {
   onMounted(() => {
     watch(
       watchSourceFn,
       (isTrue) => {
         if (isTrue) {
-          disableBodyScroll(document.body);
+          document.documentElement.style.overflow = "hidden";
+          disableBodyScroll(containerRef.value as T);
         } else {
-          enableBodyScroll(document.body);
+          enableBodyScroll(containerRef.value as T);
+          document.documentElement.style.overflow = "";
         }
       },
       {

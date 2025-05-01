@@ -1,12 +1,13 @@
 <script lang="ts" setup>
-import { useSwipe } from "@shared/hooks/useSwipe";
+import useSwipe from "@shared/hooks/useSwipe";
+import useBodyScrollLock from "@shared/hooks/useBodyScrollLock";
 
 import UiBackdrop from "./UiBackdrop.vue";
 import UiSvg from "./UiSvg.vue";
 
 const props = defineProps<{ isOpen: boolean }>();
-
 const emit = defineEmits<{ close: []; afterClose: [] }>();
+const scrollableContainer = useTemplateRef("scrollableContainer");
 
 const {
   isSwiping,
@@ -44,10 +45,10 @@ const afterClose = () => {
   emit("afterClose");
 };
 
-const onScroll = (e: Event) => {
-  const target = e.target as HTMLElement;
-  isExpanded.value = (target.scrollTop / target.scrollHeight) * 100 > 2;
-};
+useBodyScrollLock(
+  () => Boolean(isShowBottomSheet.value && scrollableContainer.value),
+  scrollableContainer,
+);
 </script>
 
 <template>
@@ -62,7 +63,6 @@ const onScroll = (e: Event) => {
         <div
           v-if="isShowBottomSheet"
           :class="{
-            'ui-bottom-sheet--expanded': isExpanded,
             'ui-bottom-sheet--swiping': isSwiping,
           }"
           class="ui-bottom-sheet"
@@ -85,7 +85,7 @@ const onScroll = (e: Event) => {
           </header>
 
           <div class="ui-bottom-sheet__body">
-            <div class="ui-bottom-sheet__content" @scroll="onScroll($event)">
+            <div ref="scrollableContainer" class="ui-bottom-sheet__content">
               <slot />
             </div>
           </div>
@@ -110,7 +110,7 @@ $height-transition: height 150ms ease;
 .ui-bottom-sheet {
   position: fixed;
   width: 100%;
-  height: 80%;
+  height: 87%;
   max-width: layouts.$maxWidth;
   min-width: layouts.$minWidth;
   bottom: 0;
@@ -133,7 +133,8 @@ $height-transition: height 150ms ease;
     height: $headerHeight;
     border-top: 1px solid colors.$quadra;
     padding: $gap ($gap * 2 + $closeButtonSize) $gap $gap;
-    
+    position: relative;
+
     &::before {
       content: "";
       position: absolute;
@@ -179,12 +180,7 @@ $height-transition: height 150ms ease;
     height: 100%;
     overflow-y: auto;
     scrollbar-width: none;
-    padding: $gap;
-    margin-bottom: 48px;
-  }
-
-  &--expanded {
-    height: 87%;
+    padding: $gap $gap 48px;
   }
 
   &--swiping {

@@ -25,9 +25,13 @@ const emit = defineEmits(["toggleNavigation"]);
 </template>
 
 <style scoped lang="scss">
+@use "@shared/styles/variables/layouts";
 @use "../shared/styles/variables/colors";
 
 .header-widget {
+  width: 100%;
+  max-width: layouts.$maxWidth;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;

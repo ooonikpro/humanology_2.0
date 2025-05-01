@@ -13,9 +13,3 @@ import PageTitleWidget from "@widgets/PageTitleWidget.vue";
   </PageTitleWidget>
   <TheoryNavigationWidget />
 </template>
-
-<style lang="scss">
-.app-layout__body {
-  max-height: max-content;
-}
-</style>
