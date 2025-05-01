@@ -63,6 +63,9 @@ export default defineNuxtConfig({
     rootAttrs: {
       id: "humanology",
     },
+    pageTransition: {
+      name: "page-transition",
+    },
   },
 
   srcDir: "./src",

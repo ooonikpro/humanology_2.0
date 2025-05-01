@@ -62,7 +62,12 @@ const closeNavigation = () => {
   }
 
   &__body {
+    width: 100vw;
     flex: 2 0 auto;
+
+    @media screen and (min-width: layouts.$maxWidth) {
+      width: 100%;
+    }
   }
 
   &__body,

@@ -5,8 +5,12 @@ import {
   SociotypePortraitTrioYoungs,
   SociotypeQuadraIconsBlock,
 } from "@entities/sociotypes";
+import useBodyScrollLock from "@shared/hooks/useBodyScrollLock";
 
 const props = defineProps<{ isOpen: boolean }>();
+const container = useTemplateRef("container");
+
+useBodyScrollLock(() => props.isOpen, container);
 </script>
 
 <template>
@@ -18,7 +22,10 @@ const props = defineProps<{ isOpen: boolean }>();
       },
     ]"
   >
-    <nav :class="['navigation', { 'navigation--open': props.isOpen }]">
+    <nav
+      ref="container"
+      :class="['navigation', { 'navigation--open': props.isOpen }]"
+    >
       <div class="navigation__row">
         <NavigationTab
           :to="$appRoutes.whatIsIt"
