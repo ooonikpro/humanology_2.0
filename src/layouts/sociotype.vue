@@ -36,22 +36,21 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
         class="sociotype-layout"
       >
         <SociotypeCard
-          class="sociotype-layout__card"
           :data="data"
           :gender="sociotypeModel.getGenderByYung(data.id)"
-          bordered
           :isShowToggle="isCardTab"
-          @click="$router.push($appRoutes.sociotypeCard(data.id))"
+          class="sociotype-layout__card"
+          bordered
         >
           <template #header>
             <SociotypeCardHeader :data="data" />
           </template>
 
-          <template #groups-and-quadras v-if="isCardTab">
+          <template v-if="isCardTab" #groups-and-quadras>
             <SociotypesCardGroupsAndQuadrasWidget v-bind="data" />
           </template>
 
-          <template #yungs v-if="isCardTab">
+          <template v-if="isCardTab" #yungs>
             <SociotypeCardYungs v-bind="data" />
           </template>
         </SociotypeCard>
@@ -71,8 +70,8 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
           </SociotypeSignsBlock>
           <SociotypeMentality v-bind="data" />
           <SociotypesGroupsAndQuadrasWidget v-bind="data" />
-          <SociotypeYungDichtomy :id="data.id" :yungs="data.yungs" />
-          <SociotypeReininSigns :id="data.id" :reinin="data.reinin" />
+          <SociotypeYungDichtomy :yungs="data.yungs" :id="data.id" />
+          <SociotypeReininSigns :reinin="data.reinin" :id="data.id" />
         </template>
 
         <template v-else>

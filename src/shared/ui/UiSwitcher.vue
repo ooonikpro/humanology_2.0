@@ -23,12 +23,12 @@ const switcherName = useId();
       :is-selected="picked === option.value"
     >
       <input
-        v-model="picked"
         :name="switcherName"
         :value="option.value"
         :checked="picked === option.value"
         type="radio"
         class="ui-switcher__input"
+        v-model="picked"
       />
     </UiVariant>
   </div>

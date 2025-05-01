@@ -71,7 +71,7 @@ useBodyScrollLock(() => {
           label="Социотипы"
         >
           <template #icon>
-            <SociotypeQuadraIconsBlock only-icons quadrasSize="24" />
+            <SociotypeQuadraIconsBlock quadrasSize="24" only-icons />
           </template>
           <template #bottom>
             <SociotypePortraitTrioYoungs class="with-image-tab__img" />

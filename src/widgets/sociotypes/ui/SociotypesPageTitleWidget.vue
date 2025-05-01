@@ -7,9 +7,9 @@ const { activeTab } = useSociotypePageRoute();
 
 <template>
   <PageTitleWidget
-    class="sociotype-page-title-widget"
     :title="activeTab.label"
     :icon-name="activeTab.iconName"
+    class="sociotype-page-title-widget"
   >
     <template>
       <UiText preset="subtitle" color="black">

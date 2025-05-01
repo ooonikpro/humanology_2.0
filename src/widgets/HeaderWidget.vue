@@ -5,10 +5,10 @@ const emit = defineEmits(["toggleNavigation"]);
 
 <template>
   <header class="header-widget">
-    <button @click="emit('toggleNavigation')" class="header-widget__button">
+    <button class="header-widget__button" @click="emit('toggleNavigation')">
       <UiSvg
-        color="black"
         :name="props.isOpenNavigation ? 'close' : 'menu'"
+        color="black"
         size="24"
       />
     </button>

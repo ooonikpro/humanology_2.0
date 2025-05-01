@@ -34,7 +34,11 @@ import {
         </UiText>
 
         <div class="person">
-          <img src="public/images/history/carl-gustav.webp" class="portrait" />
+          <NuxtImg
+            src="/images/history/carl-gustav.webp"
+            loading="lazy"
+            class="portrait"
+          />
           <div class="person-text">
             <UiText preset="subtitle">Карл Густав Юнг</UiText>
 
@@ -133,7 +137,11 @@ import {
         <UiText preset="subtitle" color="accent">Дочки-матери типологии</UiText>
 
         <div class="person">
-          <img src="public/images/history/briggs.webp" class="portrait" />
+          <NuxtImg
+            src="/images/history/briggs.webp"
+            loading="lazy"
+            class="portrait"
+          />
           <div class="person-text">
             <UiText preset="subtitle">Кэтрин и Изабель Бриггс</UiText>
 
@@ -265,7 +273,11 @@ import {
         <UiText preset="subtitle" color="accent">Польский метаболизм</UiText>
 
         <div class="person">
-          <img src="public/images/history/anton.webp" class="portrait" />
+          <NuxtImg
+            src="/images/history/anton.webp"
+            loading="lazy"
+            class="portrait"
+          />
           <div class="person-text">
             <UiText preset="subtitle">Антон Кемпинский</UiText>
 
@@ -350,7 +362,11 @@ import {
         <UiText preset="subtitle" color="accent">На задворках империи…</UiText>
 
         <div class="person">
-          <img src="public/images/history/aushra.webp" class="portrait" />
+          <NuxtImg
+            src="/images/history/aushra.webp"
+            loading="lazy"
+            class="portrait"
+          />
           <div class="person-text">
             <UiText preset="subtitle">Аушра Аугустинавичюте</UiText>
 
@@ -450,7 +466,11 @@ import {
         <UiText preset="subtitle" color="accent">Математика психики…</UiText>
 
         <div class="person">
-          <img src="public/images/history/grigoriy.webp" class="portrait" />
+          <NuxtImg
+            src="/images/history/grigoriy.webp"
+            loading="lazy"
+            class="portrait"
+          />
           <div class="person-text">
             <UiText preset="subtitle">Григорий Рейнин</UiText>
 

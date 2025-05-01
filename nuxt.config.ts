@@ -12,9 +12,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "ru",
       },
-      link: [
-        { rel: "icon", type: "image/svg+xml", href: "/assets/favicon.svg" },
-      ],
+      link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
       meta: [
         {
           name: "description",
@@ -58,7 +56,7 @@ export default defineNuxtConfig({
         },
         {
           name: "og:image",
-          content: "https://humanology.app/assets/touch-icon.png",
+          content: "https://humanology.app/touch-icon.png",
         },
       ],
     },
@@ -74,9 +72,10 @@ export default defineNuxtConfig({
     dirs: ["~/shared/ui"],
   },
 
-  alias: {
+  dir: {
     public: fileURLToPath(new URL("./public", import.meta.url)),
     assets: fileURLToPath(new URL("./assets", import.meta.url)),
+    static: fileURLToPath(new URL("./public", import.meta.url)),
   },
 
   vite: {

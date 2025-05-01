@@ -1,5 +1,5 @@
 import { scrollTabContainerToElementByIndex } from "@shared/lib";
-import type { ShallowRef } from "@vue/reactivity";
+import type { ShallowRef } from "vue";
 
 type FnType = (id: string) => void;
 

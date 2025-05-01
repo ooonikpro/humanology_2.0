@@ -14,11 +14,7 @@ const router = useRouter();
 <template>
   <SociotypeQuadras>
     <template v-slot="quadraProps">
-      <SociotypeProvider
-        v-slot="{ data }"
-        :id="quadraProps.id"
-        @click="router.push($appRoutes.kidsCard(quadraProps.id))"
-      >
+      <SociotypeProvider v-slot="{ data }" :id="quadraProps.id">
         <SociotypeCard :data="data" age="kid" mini>
           <template #header>
             <SociotypeCardHeader :data="data" mini />

@@ -8,15 +8,15 @@ const props = defineProps<{
 </script>
 
 <template>
-  <article class="detail-card" :class="[`detail-card--${props.data.type}`]">
+  <article :class="[`detail-card--${props.data.type}`]" class="detail-card">
     <button class="detail-card__explanation-button">
       <UiSvg name="help-circle" size="24" color="accent" />
     </button>
 
     <slot name="icon">
       <UiSvg
-        class="detail-card__icon"
         :name="props.iconName!"
+        class="detail-card__icon"
         size="48"
         color="accent"
       />
@@ -42,8 +42,8 @@ const props = defineProps<{
     </UiText>
 
     <UiTags
-      class="detail-card__tags"
       :tags="props.data.tags"
+      class="detail-card__tags"
       color="accent"
       preset="small"
     />

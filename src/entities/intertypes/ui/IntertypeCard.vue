@@ -6,9 +6,9 @@ const props = defineProps<IntertypeDataType>();
 
 <template>
   <UiDescriptionCard
-    class="intertype-card"
     :to="$appRoutes.intertypeDescription(props.id)"
     :title="props.name"
+    class="intertype-card"
     chevron-color="intertype"
   >
     <template #icon>
@@ -23,8 +23,8 @@ const props = defineProps<IntertypeDataType>();
     </UiText>
 
     <UiTags
-      class="intertype-card__tags"
       :tags="props.positiveTags.slice(0, 2)"
+      class="intertype-card__tags"
       bg="intertype"
       small
     />

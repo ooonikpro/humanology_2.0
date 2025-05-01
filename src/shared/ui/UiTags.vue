@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TextColorType, TextPresetType } from "@types";
+import type { TextColorType } from "@types";
 import UiBadge from "./UiBadge.vue";
 
 const {
@@ -19,10 +19,10 @@ const {
     <UiBadge
       v-for="label in props.tags"
       :key="label"
-      force-tag="span"
       :small="small"
       :color="props.color"
       :bg="bg"
+      force-tag="span"
     >
       {{ label }}
     </UiBadge>

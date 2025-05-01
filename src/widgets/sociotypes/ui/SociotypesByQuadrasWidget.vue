@@ -5,7 +5,6 @@ import {
   SociotypeCardHeader,
   SociotypeProvider,
   SociotypeQuadras,
-  SociotypeSquashedQuadra,
   sociotypeModel,
 } from "@entities/sociotypes";
 import SociotypesCardGroupsAndQuadrasWidget from "./SociotypesCardGroupsAndQuadrasWidget.vue";
@@ -32,11 +31,7 @@ const quadrasList = sociotypeModel.getQuadras();
         :only-active-quadra="isExpanded"
       >
         <template v-slot="quadraProps">
-          <SociotypeProvider
-            v-slot="{ data }"
-            :id="quadraProps.id"
-            @click="router.push($appRoutes.sociotypeCard(quadraProps.id))"
-          >
+          <SociotypeProvider v-slot="{ data }" :id="quadraProps.id">
             <SociotypeCard
               :data="data"
               :gender="sociotypeModel.getGenderByYung(data.id)"
@@ -53,7 +48,6 @@ const quadrasList = sociotypeModel.getQuadras();
           </SociotypeProvider>
         </template>
       </SociotypeQuadras>
-
     </template>
 
     <button

@@ -5,6 +5,7 @@ const pageComponent = computed(() => {
   // Строка для триггера
   // функция с динамическим импортом вызывается только при отрисовке
   // а для того чтобы отработал триггер Вью должен понимать от чего зависит вычисления
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const _unusedStr = props.sociotypeId + props.tabName;
 
   return defineAsyncComponent(

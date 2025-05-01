@@ -18,8 +18,8 @@ const props = defineProps<
     class="ui-variant"
   >
     <span
-      class="ui-variant__label"
       :class="{ 'ui-variant__label--with-subtitle': props.subtitle }"
+      class="ui-variant__label"
     >
       <UiSvg
         v-if="props.iconName"

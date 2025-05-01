@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { LocationQuery } from "vue-router";
-import type { HumanFunctionType, SociotypeIdType } from "@types";
+import type { SociotypeIdType } from "@types";
 
 import { sociotypeModel, SociotypeProvider } from "@entities/sociotypes";
 import { FunctionLevel, functionsModel } from "@entities/functions-and-blocks";

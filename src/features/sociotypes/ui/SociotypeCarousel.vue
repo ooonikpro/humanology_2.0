@@ -60,7 +60,7 @@ const onScroll = debounce((e: Event) => {
   const scrollRange = [elementWidth - 5, elementWidth + 5] as [number, number];
 
   if (checkScrollLeftByRange(container, elementWidth, scrollRange)) {
-    let activeIndex = Math.round(container.scrollLeft / elementWidth);
+    const activeIndex = Math.round(container.scrollLeft / elementWidth);
 
     if (activeIndex !== 1) {
       router.push(

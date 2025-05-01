@@ -13,10 +13,10 @@ const props = defineProps<{
 
 <template>
   <UiDescriptionCard
-    class="aspect-description"
     :to="props.to"
     :tags="props.tags"
     :title="props.title"
+    class="aspect-description"
     title-color="accent"
   >
     <template v-if="props.iconName" #icon>

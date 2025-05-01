@@ -1,1 +1,1 @@
-export const IMAGES_FOLDER = "public/images";
+export const IMAGES_FOLDER = "/images";

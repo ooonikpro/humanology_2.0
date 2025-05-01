@@ -8,7 +8,6 @@ import {
   SociotypeCardPersonDetails,
   useFamousPeople,
 } from "@entities/sociotypes";
-import { getImage } from "@shared/lib";
 
 const props = defineProps<{ sociotypeId?: SociotypeIdType }>();
 
@@ -25,7 +24,7 @@ const { data: famousPeople } = useFamousPeople(props.sociotypeId);
     >
       <SociotypeCard :data="data" :gender="person.gender">
         <template #photo>
-          <SociotypeCardPhoto :src="getImage(person.photo)" />
+          <SociotypeCardPhoto :src="person.photo" />
         </template>
 
         <template #footer>

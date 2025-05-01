@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-import { getImage } from "@shared/lib";
-
 const props = defineProps<{ src?: string }>();
-const defaultImage = getImage("public/images/no-image.png");
+const defaultImage = "/images/no-image.png";
 
 const onError = (e: Event) => {
   (e.target as HTMLInputElement).src = defaultImage;

@@ -18,8 +18,8 @@ const props = defineProps<{
 <template>
   <SociotypeProvider
     v-slot="{ data: sociotypeData }"
-    :id="props.sociotypeId"
     :class="$attrs.class ?? 'sociotypes-card-mini-widget'"
+    :id="props.sociotypeId"
   >
     <SociotypeCard :data="sociotypeData" :gender="props.gender" mini>
       <template #header>

@@ -6,8 +6,9 @@ const props = defineProps<{ intertypeId: IntertypeIdType }>();
 </script>
 
 <template>
-  <img
+  <NuxtImg
     :src="model.getIntertypeGraphSrc(props.intertypeId)"
+    loading="lazy"
     class="intertype-graph"
   />
 </template>

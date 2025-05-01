@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { FunctionalComponent } from "vue";
 import type { IconNameType, IconSizeType, TextColorType } from "@types";
 
 const props = defineProps<{
