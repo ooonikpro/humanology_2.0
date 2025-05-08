@@ -8,7 +8,7 @@ export default [
     files: ["**/*.{ts,mts,tsx,vue}"],
     rules: {
       "no-console": "error",
-      "vue/multi-word-component-names": "ignore",
+      "vue/multi-word-component-names": 0,
       "vue/attributes-order": [
         "warn",
         {
@@ -36,7 +36,13 @@ export default [
 
   {
     name: "app/files-to-ignore",
-    ignores: ["**/dist/**", "**/dist-ssr/**", "**/coverage/**"],
+    ignores: [
+      ".nuxt/**",
+      ".output/**",
+      "**/dist/**",
+      "**/dist-ssr/**",
+      "**/coverage/**",
+    ],
   },
 
   ...pluginVue.configs["flat/essential"],

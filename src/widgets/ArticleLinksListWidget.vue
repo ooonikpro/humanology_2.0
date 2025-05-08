@@ -44,8 +44,8 @@ const psychotypes: IconNameType[] = [
           <div class="icons">
             <UiSvg
               v-for="name in psychotypes"
-              :name="name"
               :key="name"
+              :name="name"
               color="accent"
               size="24"
             />

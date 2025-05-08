@@ -21,12 +21,16 @@ const closeNavigation = () => {
       />
     </header>
     <main class="app-layout__body"><slot /></main>
-    <FooterWidget />
+    <footer class="app-layout__footer">
+      <FooterWidget />
+    </footer>
 
-    <MenuNavigationWidget
-      :isOpen="isOpenNavigation"
-      @click.capture="closeNavigation"
-    />
+    <Teleport to="body">
+      <MenuNavigationWidget
+        :isOpen="isOpenNavigation"
+        @click.capture="closeNavigation"
+      />
+    </Teleport>
   </div>
 </template>
 
@@ -39,18 +43,17 @@ const closeNavigation = () => {
 .app-layout {
   position: relative;
   max-width: layouts.$maxWidth;
-  min-width: layouts.$minWidth;
   margin: 0 auto;
   border-radius: 4px;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding-bottom: 16px;
+  padding-top: layouts.$headerHeight;
+  overflow-x: hidden;
 
   &__header {
     width: 100%;
-    position: sticky;
-    align-self: start;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -59,7 +62,12 @@ const closeNavigation = () => {
   }
 
   &__body {
+    width: 100vw;
     flex: 2 0 auto;
+
+    @media screen and (min-width: layouts.$maxWidth) {
+      width: 100%;
+    }
   }
 
   &__body,

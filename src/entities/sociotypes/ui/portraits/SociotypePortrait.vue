@@ -11,21 +11,19 @@ type PropsType = {
 };
 
 const { age = "young", gender = "male", ...props } = defineProps<PropsType>();
-
-const src = computed(() =>
-  model.getPortraitSrc(props.id, gender as GenderEnum, age),
-);
 </script>
 
 <template>
-  <div :style="`background-image: url(${src})`" class="sociotype-portrait" />
+  <NuxtImg
+    :src="model.getPortraitSrc(props.id, gender as GenderEnum, age)"
+    loading="lazy"
+    class="sociotype-portrait"
+  />
 </template>
 
 <style lang="scss" scoped>
 .sociotype-portrait {
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  object-fit: cover;
   aspect-ratio: 1/1;
 }
 </style>

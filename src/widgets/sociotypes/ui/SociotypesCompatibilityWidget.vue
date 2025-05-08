@@ -20,7 +20,7 @@ import SociotypesCardGroupsAndQuadrasWidget from "./SociotypesCardGroupsAndQuadr
 const props = defineProps<{ sociotypeId?: SociotypeIdType }>();
 
 const router = useRouter();
-const { sociotypeId } = useSociotypePageRoute();
+const { sociotypeId: routeSociotypeId } = useSociotypePageRoute();
 </script>
 
 <template>
@@ -53,16 +53,12 @@ const { sociotypeId } = useSociotypePageRoute();
             v-slot="{ data: sociotypeData }"
             :id="
               sociotypeModel.getIntertypeRelations(
-                props.sociotypeId ?? sociotypeId,
+                props.sociotypeId ?? routeSociotypeId,
                 intertypeId,
               )
             "
           >
-            <SociotypeCard
-              :data="sociotypeData"
-              mini
-              @click="router.push($appRoutes.sociotypeCard(sociotypeData.id))/card"
-            >
+            <SociotypeCard :data="sociotypeData" mini>
               <template #header>
                 <SociotypeCardHeader :data="sociotypeData" mini />
               </template>

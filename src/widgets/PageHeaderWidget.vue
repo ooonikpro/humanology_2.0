@@ -9,7 +9,7 @@ const props = defineProps<{ iconName: IconNameType; iconSize?: Extract<IconSizeT
 <template>
   <div class="page-header-widget">
     <div class="page-header-widget__double-icon">
-      <UiSvg :name="props.iconName" color="black" :size="props.iconSize" />
+      <UiSvg :name="props.iconName" :size="props.iconSize" color="black" />
       <OpenShareDialog color="black" />
     </div>
     <slot>

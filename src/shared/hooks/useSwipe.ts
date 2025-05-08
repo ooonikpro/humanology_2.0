@@ -33,8 +33,7 @@ type UseSwipeReturns = {
     handleSwipeEnd,
   } = useSwipe((value) => value > 35, () => hideBottomSheet())
  */
-
-export const useSwipe = (
+const useSwipe = (
   pushToBottomCondition: (value: number) => boolean,
   pushToBottomHandle: () => void,
 ): UseSwipeReturns => {
@@ -77,3 +76,5 @@ export const useSwipe = (
     handleSwipeEnd,
   };
 };
+
+export default useSwipe;

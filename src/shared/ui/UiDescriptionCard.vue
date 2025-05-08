@@ -12,15 +12,15 @@ const { chevronColor = "accent", ...props } = defineProps<{
 
 <template>
   <NuxtLink
-    class="ui-description-card"
     :to="props.to"
     :class="{ 'ui-description-card--cols-3': $slots.icon }"
+    class="ui-description-card"
   >
     <slot name="icon" />
 
     <div class="ui-description-card__body">
       <div class="ui-description-card__title-block">
-        <UiText force-tag="h3" preset="subtitle" :color="props.titleColor">
+        <UiText :color="props.titleColor" force-tag="h3" preset="subtitle">
           {{ props.title }}
         </UiText>
         <slot name="after-title"></slot>
@@ -30,9 +30,9 @@ const { chevronColor = "accent", ...props } = defineProps<{
     </div>
 
     <UiSvg
+      :color="chevronColor"
       name="chevron-right"
       size="24"
-      :color="chevronColor"
       class="ui-description-card__chevron"
     />
   </NuxtLink>

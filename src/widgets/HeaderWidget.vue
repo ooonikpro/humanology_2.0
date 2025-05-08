@@ -5,10 +5,10 @@ const emit = defineEmits(["toggleNavigation"]);
 
 <template>
   <header class="header-widget">
-    <button @click="emit('toggleNavigation')" class="header-widget__button">
+    <button class="header-widget__button" @click="emit('toggleNavigation')">
       <UiSvg
-        color="black"
         :name="props.isOpenNavigation ? 'close' : 'menu'"
+        color="black"
         size="24"
       />
     </button>
@@ -25,9 +25,13 @@ const emit = defineEmits(["toggleNavigation"]);
 </template>
 
 <style scoped lang="scss">
+@use "@shared/styles/variables/layouts";
 @use "../shared/styles/variables/colors";
 
 .header-widget {
+  width: 100%;
+  max-width: layouts.$maxWidth;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;

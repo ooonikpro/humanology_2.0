@@ -13,12 +13,12 @@ const style = {
 
 <template>
   <UiArticleCard
-    theme-color="psychotype"
     :icon-name="data.id"
     :title="data.title"
     :subtitle="data.subtitle"
     :tags="data.tags"
     :description="data.description"
     :style="style"
+    theme-color="psychotype"
   />
 </template>

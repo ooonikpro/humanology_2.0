@@ -1,10 +1,6 @@
 <script lang="ts" setup>
-import useBodyScrollLock from "@shared/hooks/useBodyScrollLock";
-
 const props = defineProps<{ isShow: boolean }>();
 const emit = defineEmits(["afterEnter", "afterLeave"]);
-
-useBodyScrollLock(() => props.isShow);
 </script>
 
 <template>

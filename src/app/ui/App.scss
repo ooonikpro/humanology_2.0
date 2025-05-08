@@ -3,6 +3,7 @@
 @use "../../shared/styles/variables/colors";
 @use "../../shared/styles/variables/layouts";
 @use "../../shared/styles/mixins/globals";
+@use "../../shared/styles/mixins/transitions.scss";
 
 :root {
   --color-quadra-air: #{colors.$air};
@@ -52,6 +53,11 @@
   scroll-behavior: smooth;
 }
 
+html, body {
+  min-width: layouts.$minWidth;
+  overflow-x: hidden;
+}
+
 * {
   &,
   &::before,
@@ -86,11 +92,14 @@ hr {
   background-color: colors.$grey;
 }
 
-.g-page {
-  padding: 0 12px;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 16px;
+.page-transition-enter-active,
+.page-transition-leave-active {
+  @include transitions.ease(opacity);
+}
+
+.page-transition-enter-from,
+.page-transition-leave-to {
+  opacity: 0;
 }
 
 @include globals.textColors();

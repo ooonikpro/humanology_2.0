@@ -14,8 +14,8 @@ const { goToSheet } = useCharacteristicSheet(() => props.id);
 <template>
   <SociotypeSignsBlock class="sociotype-mentality" title="Ментальность">
     <UiColumnDual
-      leftTitle="Темперамент"
       :left-link="goToSheet('temperament', props.temperament)"
+      leftTitle="Темперамент"
     >
       <template #left>
         <UiText color="role" preset="large">
@@ -34,10 +34,10 @@ const { goToSheet } = useCharacteristicSheet(() => props.id);
     <hr />
 
     <UiColumnDual
-      leftTitle="Стимул"
       :left-link="goToSheet('motivation', props.stimulant)"
-      rightTitle="Характер"
       :right-link="goToSheet('character', props.gender)"
+      leftTitle="Стимул"
+      rightTitle="Характер"
     >
       <template #left>
         <UiText color="role" preset="large">
@@ -54,10 +54,10 @@ const { goToSheet } = useCharacteristicSheet(() => props.id);
     <hr />
 
     <UiColumnDual
-      leftTitle="Стиль общения"
       :left-link="goToSheet('communication_style', props.communication)"
-      rightTitle="Собеседник"
       :right-link="goToSheet('companion', props.companion)"
+      leftTitle="Стиль общения"
+      rightTitle="Собеседник"
     >
       <template #left>
         <UiText preset="large">
@@ -73,8 +73,8 @@ const { goToSheet } = useCharacteristicSheet(() => props.id);
     <hr />
 
     <UiColumnDual
-      leftTitle="Мышление"
       :left-link="goToSheet('mindset', props.mindset)"
+      leftTitle="Мышление"
     >
       <template #left>
         <UiText preset="large">
@@ -85,8 +85,8 @@ const { goToSheet } = useCharacteristicSheet(() => props.id);
     <hr />
 
     <UiColumnDual
-      leftTitle="Мировоззрение"
       :left-link="goToSheet('worldview', props.alignment)"
+      leftTitle="Мировоззрение"
     >
       <template #left>
         <UiText preset="large">

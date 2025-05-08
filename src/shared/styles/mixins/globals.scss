@@ -19,3 +19,10 @@
     }
   }
 }
+
+.g-page {
+  padding: 0 12px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+}

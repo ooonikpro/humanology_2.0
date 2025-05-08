@@ -9,7 +9,7 @@ const FAMOUS_PEOPLE: Array<FamousPersonType> = [
     birthDate: "17.12.1975",
     zodiac: "sagittarius",
     bazi: "rat",
-    photo: "public/images/people/mila.webp",
+    photo: "/images/people/mila.webp",
     gender: GenderEnum.female,
   },
   {
@@ -19,7 +19,7 @@ const FAMOUS_PEOPLE: Array<FamousPersonType> = [
     birthDate: "18.12.2001",
     zodiac: "sagittarius",
     bazi: "rat",
-    photo: "public/images/people/billi.webp",
+    photo: "/images/people/billi.webp",
     gender: GenderEnum.female,
   },
   {
@@ -29,7 +29,7 @@ const FAMOUS_PEOPLE: Array<FamousPersonType> = [
     birthDate: "24.02.1955",
     zodiac: "aries",
     bazi: "goat",
-    photo: "public/images/people/steve.webp",
+    photo: "/images/people/steve.webp",
     gender: GenderEnum.male,
   },
   {
@@ -39,7 +39,7 @@ const FAMOUS_PEOPLE: Array<FamousPersonType> = [
     birthDate: "04.04.1965",
     zodiac: "aries",
     bazi: "snake",
-    photo: "public/images/people/robert.webp",
+    photo: "/images/people/robert.webp",
     gender: GenderEnum.male,
   },
   {
@@ -49,7 +49,7 @@ const FAMOUS_PEOPLE: Array<FamousPersonType> = [
     birthDate: "05.05.1983",
     zodiac: "aries",
     bazi: "pig",
-    photo: "public/images/people/henry.webp",
+    photo: "/images/people/henry.webp",
     gender: GenderEnum.male,
   },
   {

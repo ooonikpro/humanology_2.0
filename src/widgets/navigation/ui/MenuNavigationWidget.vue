@@ -8,17 +8,9 @@ import {
 import useBodyScrollLock from "@shared/hooks/useBodyScrollLock";
 
 const props = defineProps<{ isOpen: boolean }>();
+const container = useTemplateRef("container");
 
-const navigationOffsetTop = ref(0);
-const styles = computed(() => ({
-  top: navigationOffsetTop.value + "px",
-}));
-
-useBodyScrollLock(() => {
-  navigationOffsetTop.value = document.documentElement.scrollTop;
-
-  return props.isOpen;
-});
+useBodyScrollLock(() => props.isOpen, container);
 </script>
 
 <template>
@@ -31,8 +23,8 @@ useBodyScrollLock(() => {
     ]"
   >
     <nav
+      ref="container"
       :class="['navigation', { 'navigation--open': props.isOpen }]"
-      :style="styles"
     >
       <div class="navigation__row">
         <NavigationTab
@@ -71,7 +63,7 @@ useBodyScrollLock(() => {
           label="Социотипы"
         >
           <template #icon>
-            <SociotypeQuadraIconsBlock only-icons quadrasSize="24" />
+            <SociotypeQuadraIconsBlock quadrasSize="24" only-icons />
           </template>
           <template #bottom>
             <SociotypePortraitTrioYoungs class="with-image-tab__img" />
@@ -183,16 +175,16 @@ useBodyScrollLock(() => {
 @use "@shared/styles/mixins/transitions";
 
 .navigation {
-  position: absolute;
   width: 100%;
   height: 100dvh;
-  background-color: colors.$white;
   transform: translateX(-100%);
   padding-bottom: 70px;
   padding-top: 12px;
+  overflow-x: hidden;
   overflow-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  background-color: colors.$white;
 
   @include transitions.ease(transform);
 
@@ -202,14 +194,17 @@ useBodyScrollLock(() => {
 }
 
 .navigation-overflow {
-  position: absolute;
-  top: layouts.$headerHeight;
-  left: 0;
-  right: 0;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  padding-top: layouts.$headerHeight;
+  max-width: layouts.$maxWidth;
   bottom: 0;
   z-index: layers.$z-index-app-nav;
   overflow: hidden;
   visibility: hidden;
+  transform: translateX(-50%);
 
   @include transitions.ease(visibility, display);
 

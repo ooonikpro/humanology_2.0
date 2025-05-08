@@ -25,7 +25,7 @@ const style = computed(() => ({
 </script>
 
 <template>
-  <div class="block-functions-list" :style="style">
+  <div :style="style" class="block-functions-list">
     <BlockFunctions
       v-for="blockName in config.BLOCKS_ORDER"
       :key="blockName"

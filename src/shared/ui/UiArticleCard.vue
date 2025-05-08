@@ -14,28 +14,28 @@ const { themeColor = "accent", ...props } = defineProps<{
 <template>
   <article class="ui-article-card">
     <UiSvg
+      :color="themeColor"
       name="help-circle"
       size="24"
-      :color="themeColor"
       class="ui-article-card__help-icon"
     />
 
     <slot name="icon">
       <UiSvg
         v-if="props.iconName"
-        class="ui-article-card__icon"
         :name="props.iconName"
-        size="48"
         :color="themeColor"
+        class="ui-article-card__icon"
+        size="48"
       />
     </slot>
     <slot name="title">
       <UiText
         v-if="props.title"
+        :color="themeColor"
         class="ui-article-card__title"
         force-tag="h3"
         preset="subtitle-alternative"
-        :color="themeColor"
       >
         {{ props.title }}
       </UiText>
@@ -43,8 +43,8 @@ const { themeColor = "accent", ...props } = defineProps<{
 
     <UiText
       v-if="props.subtitle"
-      class="ui-article-card__subtitle"
       :color="themeColor"
+      class="ui-article-card__subtitle"
       force-tag="h4"
       preset="subtitle"
     >
@@ -53,8 +53,8 @@ const { themeColor = "accent", ...props } = defineProps<{
 
     <UiTags
       v-if="props.tags"
-      class="ui-article-card__tags"
       :tags="props.tags"
+      class="ui-article-card__tags"
       color="accent"
       preset="small"
     />

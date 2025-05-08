@@ -19,15 +19,15 @@ const psychotypeList = clubsAndPsychotypesModel.getPsychotypesInOrder();
     <div class="clubs-and-groups__body">
       <ClubArticleCard
         v-for="(clubId, $index) in clubList"
-        :club-id="clubId"
         :key="clubId"
+        :club-id="clubId"
         :style="{ order: $index - 1 }"
       />
 
       <PsychotypeArticleCard
         v-for="(psychotypeId, $index) in psychotypeList"
-        :psychotype-id="psychotypeId"
         :key="psychotypeId"
+        :psychotype-id="psychotypeId"
         :style="{ order: $index - 1 }"
       />
     </div>

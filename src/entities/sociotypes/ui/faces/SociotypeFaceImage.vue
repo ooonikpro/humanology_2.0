@@ -5,12 +5,15 @@ import type { GenderEnum } from "@shared/constants";
 import model from "../../model";
 
 const props = defineProps<{ id: SociotypeIdType; gender: GenderEnum }>();
-
-const src = computed(() => model.getFaceImageSrc(props.id, props.gender));
 </script>
 
 <template>
-  <img :src="src" :alt="`${props.id}-face`" class="sociotype-face-image" />
+  <NuxtImg
+    :src="model.getFaceImageSrc(props.id, props.gender)"
+    :alt="`${props.id}-face`"
+    loading="lazy"
+    class="sociotype-face-image"
+  />
 </template>
 
 <style lang="scss" scoped>

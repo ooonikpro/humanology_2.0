@@ -1,11 +1,14 @@
 <script lang="ts" setup>
 import type { Gender, SociotypeAgeType, SociotypeDataType } from "@types";
-
 import { GenderEnum } from "@shared/constants";
+import { useInjectAppRoutes } from "@shared/hooks/useAppRoutes";
 
 import SociotypeQuadraCircle from "../quadras/SociotypeQuadraCircle.vue";
 import SociotypePortrait from "../portraits/SociotypePortrait.vue";
 import SociotypeCardRationalsBlock from "./SociotypeCardRationalsBlock.vue";
+
+const $appRoutes = useInjectAppRoutes();
+const router = useRouter();
 
 const { age = "young", ...props } = defineProps<{
   mini?: boolean;
@@ -15,7 +18,19 @@ const { age = "young", ...props } = defineProps<{
   isShowToggle?: boolean;
   bordered?: boolean;
 }>();
+
 const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
+
+const handleClick = () => {
+  const targetRoute =
+    age === "kid"
+      ? $appRoutes.kidsCard(props.data.id)
+      : $appRoutes.sociotypeCard(props.data.id);
+
+  if (targetRoute !== router.currentRoute.value.fullPath) {
+    router.push(targetRoute);
+  }
+};
 </script>
 
 <template>
@@ -25,6 +40,7 @@ const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
       'sociotype-card--bordered': props.bordered,
     }"
     class="sociotype-card"
+    @click="handleClick"
   >
     <div class="sociotype-card__content">
       <SociotypeCardRationalsBlock

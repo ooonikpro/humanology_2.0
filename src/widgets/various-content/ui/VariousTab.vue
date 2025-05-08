@@ -14,12 +14,12 @@ const { setOwnContentId, isSelected } = useVariousTab(props.targetContentId);
 
 <template>
   <UiVariant
-    @click="setOwnContentId"
     :label="props.title"
     :subtitle="props.subtitle"
     :icon-name="props.iconName"
     :is-selected="isSelected"
     class="various-tab"
+    @click="setOwnContentId"
   />
 </template>
 

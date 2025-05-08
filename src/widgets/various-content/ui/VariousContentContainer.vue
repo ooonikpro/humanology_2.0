@@ -18,10 +18,10 @@ useVariousContentContainer({
 
 <template>
   <div
-    class="various-content-container"
     :class="{
       'various-content-container__switcher-top': switcherOnTop,
     }"
+    class="various-content-container"
   >
     <div class="various-content-container__tabs">
       <div ref="scroller" class="various-content-container__tabs-scroller">
