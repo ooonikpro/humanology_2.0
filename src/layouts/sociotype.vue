@@ -10,6 +10,7 @@ import {
   SociotypeSignsBlock,
   SociotypeMentality,
   SociotypeReininSigns,
+  isSociotypeId,
 } from "@entities/sociotypes";
 import { SociotypeCarousel } from "@features/sociotypes";
 import {
@@ -23,6 +24,12 @@ import {
   BlockFunctionsListWidget,
   FunctionInsideBottomSheetWidget,
 } from "@widgets/functions-and-blocks";
+
+definePageMeta({
+  validate: async (route) => {
+    return isSociotypeId((route.params.id as string).toUpperCase());
+  },
+});
 
 const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
 </script>
