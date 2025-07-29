@@ -27,5 +27,6 @@ const { setOwnContentId, isSelected } = useVariousTab(props.targetContentId);
 .various-tab {
   flex: 1 0 36%;
   gap: 0;
+  cursor: pointer;
 }
 </style>
