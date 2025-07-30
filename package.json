@@ -1,19 +1,17 @@
 {
   "name": "humanology_2.0",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "formatter": "prettier --write .",
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "@nuxt/image": "1.9.0",
     "body-scroll-lock": "^4.0.0-beta.0",
     "nuxt": "^3.15.4",
     "vue": "^3.5.13",

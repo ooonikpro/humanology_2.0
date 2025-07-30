@@ -4,12 +4,58 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install corepack
+        run: corepack enable && corepack prepare yarn@stable --activate
+
+      - name: Install deps
+        run: yarn install --frozen-lockfile
+
+      - name: Build Nuxt app
+        run: yarn build
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
+
+      - name: Create deployment archive
+        run: |
+          tar -czf deploy.tar.gz .output
+
+      - name: Upload artifact (optional)
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-package
+          path: deploy.tar.gz
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: deploy-package
+
+      - name: Deploy via SCP
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: "22"
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "deploy.tar.gz"
+          target: "/root/humanology_2.0"
 
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.9.0
@@ -24,5 +70,8 @@ jobs:
             docker compose down
             sudo service nginx stop
             docker system prune --all -f
+            rm -rf ./.output
+            tar -xzf deploy.tar.gz
+            rm deploy.tar.gz
             docker compose up -d --build
           EOF

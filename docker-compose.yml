@@ -1,12 +1,41 @@
 services:
-  nuxt-ssg:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: humanology-container
+  nuxt-app:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: sh -c "node /app/.output/server/index.mjs"
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 3000
+      NITRO_PORT: 3000
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    networks:
+      - nuxt-network
+
+  # Nginx (прокси к Nuxt)
+  nginx:
+    image: nginx:stable-alpine
     ports:
       - "80:80"
       - "443:443"
-    environment:
-      - NODE_ENV=production
+    volumes:
+      - ./public/favicon.svg:/usr/share/nginx/html/assets/favicon.svg
+      - ./public/touch-icon.png:/usr/share/nginx/html/assets/touch-icon.png
+      - ./.nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./.nginx/mime.types:/etc/nginx/conf/mime.types
+      - ./.nginx/certs/certificate.crt:/etc/nginx/ssl/certificate.crt
+      - ./.nginx/certs/certificate.key:/etc/nginx/ssl/certificate.key
+    depends_on:
+      - nuxt-app
+    command: sh -c "rm -f /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
     restart: unless-stopped
+    networks:
+      - nuxt-network
+
+networks:
+  nuxt-network:
+    driver: bridge
