@@ -113,8 +113,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
     <UiText>
       <span class="g-color--air">Лирик</span>
       — эксперт
-      <span class="g-color--water">интенсивного Времени</span>
-      , предчувствует назревающую опасность, крупные, обычно неприятные
+      <span class="g-color--water">интенсивного Чутья</span>, предчувствует назревающую опасность, крупные, обычно неприятные
       изменения ситуации, помнит яркие эпизоды прошлого.
     </UiText>
 
@@ -123,8 +122,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
     <UiText>
       <span class="g-color--air">Критик</span>
       — эксперт
-      <span class="g-color--fire">экстенсивного Времени</span>
-      , на основе близкого, внимательного, подробного наблюдения за людьми или
+      <span class="g-color--fire">экстенсивного Чутья</span>, на основе близкого, внимательного, подробного наблюдения за людьми или
       явлениями может предсказать их поведение в ближайшем будущем.
     </UiText>
   </div>

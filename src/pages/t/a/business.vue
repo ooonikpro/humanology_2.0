@@ -8,12 +8,12 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
     <PageHeaderWidget
       iconName="aspect_business"
       iconSize="80"
-      title="Действие"
+      title="Практика"
       subtitle="Te — Свойства объектов"
     />
 
     <UiText>
-      Экстравертная часть аспекта логика — мышление. Называется так же «Деловая
+      Экстравертная часть аспекта логика — практика. Называется так же «Деловая
       логика» или «Черная логика».
     </UiText>
 
@@ -98,7 +98,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
     <UiText>
       <span class="g-color--water">Предпринимателя</span>
       — эксперта
-      <span class="g-color--water">интенсивных Дел</span>
+      <span class="g-color--water">интенсивной Практики</span>
       , привлекают крупные, рискованные, порой весьма авантюрные дела, для
       исполнения которых надо много двигаться, бывать в отдаленных местах, при
       этом не боится затрат, в надежде на то, что они окупятся в ближайшем
@@ -110,7 +110,7 @@ import { SociotypesCardMiniWidget } from "@widgets/sociotypes";
     <UiText>
       <span class="g-color--fire">Администратор</span>
       — эксперт
-      <span class="g-color--fire">экстенсивных Дел</span>
+      <span class="g-color--fire">экстенсивной Практики</span>
       , предпочитает не рисковать, не вкладывать средства в надежде на удачу, а
       стабильно, качественно работать, рационально организовывать труд,
       экономить, не упускать из внимания подробности, собирать конкретные факты

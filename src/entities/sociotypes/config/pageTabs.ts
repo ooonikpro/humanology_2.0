@@ -46,7 +46,7 @@ export const SOCIOTYPE_PAGE_TABS: SociotypeTabType[] = [
   {
     name: "history",
     iconName: "annotation",
-    label: "История",
+    label: "Истории",
   },
 ] as const;
 
