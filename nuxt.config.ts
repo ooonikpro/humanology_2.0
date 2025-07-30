@@ -106,6 +106,9 @@ export default defineNuxtConfig({
         },
       },
     },
+    build: {
+      chunkSizeWarningLimit: 1500,
+    },
   },
 
   vue: {
@@ -113,22 +116,6 @@ export default defineNuxtConfig({
   },
 
   modules: ["@nuxt/image"],
-
-  routeRules: {
-    "/": { prerender: true },
-    "/k/**": { prerender: false },
-    "/s/**": { prerender: true },
-    "/t/**": { prerender: true },
-    "/disclaimer": { prerender: true },
-    "/history": { prerender: true },
-    "/how-to-define-type": { prerender: true },
-    "/people": { prerender: false },
-    "/profile": { prerender: false },
-    "/specialists": { prerender: false },
-    "/teams": { prerender: false },
-    "/tests": { prerender: true },
-    "/what-is-it": { prerender: true },
-  },
 
   compatibilityDate: "2025-04-08",
 });
