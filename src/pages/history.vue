@@ -35,7 +35,7 @@ import {
 
         <div class="person">
           <NuxtImg
-            src="/images/history/carl-gustav.webp"
+            src="/images/history/carl-gustav.png"
             loading="lazy"
             class="portrait"
           />
@@ -138,7 +138,7 @@ import {
 
         <div class="person">
           <NuxtImg
-            src="/images/history/briggs.webp"
+            src="/images/history/briggs.png"
             loading="lazy"
             class="portrait"
           />
@@ -274,7 +274,7 @@ import {
 
         <div class="person">
           <NuxtImg
-            src="/images/history/anton.webp"
+            src="/images/history/anton.png"
             loading="lazy"
             class="portrait"
           />
@@ -363,7 +363,7 @@ import {
 
         <div class="person">
           <NuxtImg
-            src="/images/history/aushra.webp"
+            src="/images/history/aushra.png"
             loading="lazy"
             class="portrait"
           />
@@ -467,7 +467,7 @@ import {
 
         <div class="person">
           <NuxtImg
-            src="/images/history/grigoriy.webp"
+            src="/images/history/grigoriy.png"
             loading="lazy"
             class="portrait"
           />
