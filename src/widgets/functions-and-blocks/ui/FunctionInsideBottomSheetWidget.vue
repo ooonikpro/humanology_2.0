@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { LocationQuery } from "vue-router";
-import type { SociotypeIdType } from "@types";
+// HumanFunctionType используется для Generic в шаблоне
+/* eslint-disable-next-line */
+import type { HumanFunctionType, SociotypeIdType } from "@types";
 
 import { sociotypeModel, SociotypeProvider } from "@entities/sociotypes";
 import { FunctionLevel, functionsModel } from "@entities/functions-and-blocks";
