@@ -86,7 +86,7 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
       </SociotypeProvider>
     </SociotypeCarousel>
 
-    <CharacteristicInsideBottomSheetWidget />
+    <CharacteristicInsideBottomSheetWidget :sociotype-id="sociotypeId" />
     <FunctionInsideBottomSheetWidget :sociotype-id="sociotypeId" />
   </NuxtLayout>
 </template>
