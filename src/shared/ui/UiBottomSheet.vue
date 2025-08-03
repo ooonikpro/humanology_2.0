@@ -45,10 +45,7 @@ const afterClose = () => {
   emit("afterClose");
 };
 
-useBodyScrollLock(
-  () => Boolean(isShowBottomSheet.value && scrollableContainer.value),
-  scrollableContainer,
-);
+useBodyScrollLock(isShowBottomSheet, scrollableContainer);
 </script>
 
 <template>
