@@ -439,3 +439,11 @@ export type DetailCardType =
   | IntertypeDetailCardType
   | YungDetailCardType
   | ReininDetailCardType;
+
+export type SociotypeQueryType = Partial<{
+  ch: string;
+  v: string;
+  f: HumanFunctionType;
+}>;
+
+export type SociotypeQueryKeyType = keyof SociotypeQueryType;

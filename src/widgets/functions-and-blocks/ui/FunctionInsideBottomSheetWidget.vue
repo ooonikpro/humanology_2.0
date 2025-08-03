@@ -1,114 +1,91 @@
 <script lang="ts" setup>
-import type { LocationQuery } from "vue-router";
 import type { SociotypeIdType } from "@types";
 
-import { sociotypeModel, SociotypeProvider } from "@entities/sociotypes";
+import { sociotypeModel } from "@entities/sociotypes";
 import { FunctionLevel, functionsModel } from "@entities/functions-and-blocks";
 import { AspectDescription, aspectModel } from "@entities/aspects";
-import { OpenBottomSheetByQuery } from "@features/open-bottom-sheet-by-query";
+import { SociotypeBottomSheetByQuery } from "@features/open-bottom-sheet-by-query";
 
 import BlockFunctions from "./BlockFunctions.vue";
 import FunctionInsideBottomSheetContent from "./FunctionInsideBottomSheetContent.vue";
 
 const props = defineProps<{ sociotypeId: SociotypeIdType }>();
-
-const routePredicate = (query: LocationQuery) => {
-  return query.hasOwnProperty("f");
-};
 </script>
 
 <template>
-  <!-- @vue-generic {{ f: HumanFunctionType }} -->
-  <OpenBottomSheetByQuery
-    v-slot="{ isOpen, data, handleClose, handleAfterClose }"
-    :predicate="routePredicate"
+  <SociotypeBottomSheetByQuery
+    :sociotype-id="props.sociotypeId"
+    :accepted-query="['f']"
   >
-    <SociotypeProvider :id="props.sociotypeId">
-      <UiBottomSheet
-        :isOpen="isOpen"
-        @close="handleClose"
-        @afterClose="handleAfterClose"
-      >
-        <template #title>
-          <div class="bottom-sheet-title-group">
-            <UiText color="quadra">
-              {{ functionsModel.getName(data.f) }} функция
-            </UiText>
-            <UiText>{{ functionsModel.getLevelName(data.f) }}</UiText>
-            <FunctionLevel :lvl="functionsModel.getLevel(data.f)" />
-          </div>
-        </template>
+    <template #title="{ data }">
+      <UiText color="quadra">
+        {{ functionsModel.getName(data.f) }} функция
+      </UiText>
+      <UiText>{{ functionsModel.getLevelName(data.f) }}</UiText>
+      <FunctionLevel :lvl="functionsModel.getLevel(data.f)" />
+    </template>
 
-        <template #default>
-          <div class="bottom-sheet-content">
-            <BlockFunctions
-              :sociotypeId="props.sociotypeId"
-              :blockName="functionsModel.getBlockName(data.f)!"
-              :activeFunctionName="data.f"
-            />
+    <template #default="{ data }">
+      <div class="bottom-sheet-content">
+        <BlockFunctions
+          :sociotypeId="props.sociotypeId"
+          :blockName="functionsModel.getBlockName(data.f)!"
+          :activeFunctionName="data.f"
+        />
 
-            <hr class="bottom-sheet-content__divider" />
+        <hr class="bottom-sheet-content__divider" />
 
-            <FunctionInsideBottomSheetContent
-              :sociotype-id="props.sociotypeId"
-              :function-name="data.f"
-            />
+        <FunctionInsideBottomSheetContent
+          :sociotype-id="props.sociotypeId"
+          :function-name="data.f"
+        />
 
-            <br />
+        <br />
 
-            <hr />
+        <hr />
 
-            <AspectDescription
-              :title="functionsModel.getName(data.f)"
-              :tags="functionsModel.getTags(data.f)"
-              :to="$appRoutes.functionCard(data.f)"
-            >
-              {{ functionsModel.getDescription(data.f) }}
-            </AspectDescription>
+        <AspectDescription
+          :title="functionsModel.getName(data.f)"
+          :tags="functionsModel.getTags(data.f)"
+          :to="$appRoutes.functionCard(data.f)"
+        >
+          {{ functionsModel.getDescription(data.f) }}
+        </AspectDescription>
 
-            <AspectDescription
-              :iconName="
-                aspectModel.getAspectIconName(
-                  sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
-                )
-              "
-              :title="
-                aspectModel.getAspectName(
-                  sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
-                )
-              "
-              :subtitle="
-                aspectModel.getAspectLabel(
-                  sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
-                )
-              "
-              :tags="
-                aspectModel.getAspectTags(
-                  sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
-                )
-              "
-              :to="
-                $appRoutes.aspectCard(
-                  sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
-                )
-              "
-            />
-          </div>
-        </template>
-      </UiBottomSheet>
-    </SociotypeProvider>
-  </OpenBottomSheetByQuery>
+        <AspectDescription
+          :iconName="
+            aspectModel.getAspectIconName(
+              sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
+            )
+          "
+          :title="
+            aspectModel.getAspectName(
+              sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
+            )
+          "
+          :subtitle="
+            aspectModel.getAspectLabel(
+              sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
+            )
+          "
+          :tags="
+            aspectModel.getAspectTags(
+              sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
+            )
+          "
+          :to="
+            $appRoutes.aspectCard(
+              sociotypeModel.getAspectByFunction(props.sociotypeId, data.f),
+            )
+          "
+        />
+      </div>
+    </template>
+  </SociotypeBottomSheetByQuery>
 </template>
 
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
-
-.bottom-sheet-title-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: colors.$quadra;
-}
 
 .bottom-sheet-content {
   display: flex;
