@@ -34,10 +34,16 @@ const isDisabled = (functionName: HumanFunctionType) => {
 </script>
 
 <template>
-  <BlockFunctionsProvider :name="props.blockName">
+  <BlockFunctionsProvider :name="props.blockName" :sociotypeId="props.sociotypeId">
     <template #left="{ leftFunctionName }">
       <FunctionCard
         :function="leftFunctionName"
+        :aspect="
+          sociotypeModel.getAspectByFunction(
+            props.sociotypeId,
+            leftFunctionName,
+          )
+        "
         :aspectName="
           aspectModel.getAspectName(
             sociotypeModel.getAspectByFunction(
@@ -68,6 +74,12 @@ const isDisabled = (functionName: HumanFunctionType) => {
     <template #right="{ rightFunctionName }">
       <FunctionCard
         :function="rightFunctionName"
+        :aspect="
+          sociotypeModel.getAspectByFunction(
+            props.sociotypeId,
+            rightFunctionName,
+          )
+        "
         :aspectName="
           aspectModel.getAspectName(
             sociotypeModel.getAspectByFunction(

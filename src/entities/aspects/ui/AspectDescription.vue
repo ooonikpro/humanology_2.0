@@ -42,7 +42,7 @@ const props = defineProps<{
 @use "@shared/styles/variables/colors";
 
 .aspect-description {
-  border-radius: 4px;
+  border-radius: 12px;
   gap: 12px;
 
   &__icon {

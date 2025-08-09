@@ -52,7 +52,7 @@ const ENTJ: SociotypeDataType = {
   communication: "business",
   companion: "stubborn",
   temperament: "choleric",
-  alignment: "lawfulEvil",
+  alignment: "neutralEvil",
   yungs: ["rational", "intuit", "logic", "extravert"],
   reinin: [
     "dynamic",

@@ -23,7 +23,7 @@ const props = defineProps<IntertypeDataType>();
   justify-content: space-between;
   height: 40px;
   background-color: colors.$intertype;
-  border-radius: 4px;
+  border-radius: 12px;
   padding: 8px 12px 8px 8px;
 }
 </style>

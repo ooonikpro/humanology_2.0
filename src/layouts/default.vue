@@ -10,6 +10,9 @@ const toggleNavigation = () => {
 const closeNavigation = () => {
   isOpenNavigation.value = false;
 };
+
+const route = useRoute();
+const isDev = process.dev;
 </script>
 
 <template>
@@ -31,6 +34,7 @@ const closeNavigation = () => {
         @click.capture="closeNavigation"
       />
     </Teleport>
+    <div v-if="isDev" class="route-debug">Route: {{ route.fullPath }}</div>
   </div>
 </template>
 
@@ -75,5 +79,17 @@ const closeNavigation = () => {
     position: relative;
     z-index: layers.$z-index-app-content;
   }
+}
+
+.route-debug {
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 4px;
+  z-index: 9999;
 }
 </style>

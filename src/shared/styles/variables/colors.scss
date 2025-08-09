@@ -54,6 +54,23 @@ $sociotype-secondary-color: var(--color-sociotype-secondary);
 $quadra-dark: var(--color-quadra-dark);
 $role-dark: var(--color-role-dark);
 
+// Цвета аспектов функций
+$aspect-logic: $pink;        // Розовый для логики
+$aspect-ethics: $green;      // Зеленый для этики
+$aspect-intuition: $turquoise; // Бирюзовый для интуиции
+$aspect-sensory: $yellow;    // Желтый для сенсорики
+
+$aspect-logic-dark: rgba($pink, 0.75);
+$aspect-ethics-dark: rgba($green, 0.75);
+$aspect-intuition-dark: rgba($turquoise, 0.75);
+$aspect-sensory-dark: rgba($yellow, 0.75);
+
+// 50% прозрачности для бордеров
+$aspect-logic-border: rgba($pink, 0.5);
+$aspect-ethics-border: rgba($green, 0.5);
+$aspect-intuition-border: rgba($turquoise, 0.5);
+$aspect-sensory-border: rgba($yellow, 0.5);
+
 
 $bg-quadra: var(--bg-quadra);
 $bg-role: var(--bg-role);
@@ -90,6 +107,21 @@ $global-colors: (
 
   "quadra-dark": $quadra-dark,
   "role-dark": $role-dark,
+
+  "aspect-logic": $aspect-logic,
+  "aspect-ethics": $aspect-ethics,
+  "aspect-intuition": $aspect-intuition,
+  "aspect-sensory": $aspect-sensory,
+
+  "aspect-logic-dark": $aspect-logic-dark,
+  "aspect-ethics-dark": $aspect-ethics-dark,
+  "aspect-intuition-dark": $aspect-intuition-dark,
+  "aspect-sensory-dark": $aspect-sensory-dark,
+
+  "aspect-logic-border": $aspect-logic-border,
+  "aspect-ethics-border": $aspect-ethics-border,
+  "aspect-intuition-border": $aspect-intuition-border,
+  "aspect-sensory-border": $aspect-sensory-border,
 
   "intertype": $intertype,
   "intertype-bg": $bg-intertype,

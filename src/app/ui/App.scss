@@ -26,10 +26,10 @@
   --color-intertype-group-neutral: #{colors.$neutral};
   --color-intertype-group-unfavorable: #{colors.$unfavorable};
 
-  --bg-quadra-air: #{colors.$transparently-air};
-  --bg-quadra-fire: #{colors.$transparently-fire};
-  --bg-quadra-water: #{colors.$transparently-water};
-  --bg-quadra-earth: #{colors.$transparently-earth};
+  --bg-quadra-air: #{rgba(colors.$air, 0.05)};
+  --bg-quadra-fire: #{rgba(colors.$fire, 0.05)};
+  --bg-quadra-water: #{rgba(colors.$water, 0.05)};
+  --bg-quadra-earth: #{rgba(colors.$earth, 0.05)};
 
   --bg-intertype-group-quadral: #{colors.$transparently-turquoise};
   --bg-intertype-group-favorable: #{colors.$transparently-green};

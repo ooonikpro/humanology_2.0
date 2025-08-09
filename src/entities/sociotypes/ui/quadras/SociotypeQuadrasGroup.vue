@@ -98,8 +98,7 @@ const onScroll = (e: Event) => {
 .sociotype-quadras-group {
   @include transitions.ease(border-top, background-color);
 
-  border-radius: 4px;
-  border-top: 1px solid colors.$quadra;
+  border-radius: 12px;
   background-color: colors.$bg-quadra;
 
   &__header {

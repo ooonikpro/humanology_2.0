@@ -1,33 +1,29 @@
 <script setup lang="ts">
-import type { SociotypeIdType } from "@types";
-
-import { SociotypeBottomSheetByQuery } from "@features/open-bottom-sheet-by-query";
+import type { LocationQuery } from "vue-router";
+import { OpenBottomSheetByQuery } from "@features/open-bottom-sheet-by-query";
 import CharacteristicInsideBottomSheetContent from "./CharacteristicInsideBottomSheetContent.vue";
 
-const props = defineProps<{ sociotypeId: SociotypeIdType }>();
+const checkCharacteristicQuery = (query: LocationQuery) =>
+  query.hasOwnProperty("ch") && query.hasOwnProperty("v");
 </script>
 
 <template>
-  <SociotypeBottomSheetByQuery
-    :sociotype-id="props.sociotypeId"
-    :accepted-query="['ch', 'v']"
+  <!-- @vue-generic {{ ch: string, v: string }} -->
+  <OpenBottomSheetByQuery
+    v-slot="{ data, handleAfterClose, handleClose, isOpen }"
+    :predicate="checkCharacteristicQuery"
   >
-    <template #title="{ data }">
-      <UiTitle color="quadra">
-        {{ data.ch }}
-      </UiTitle>
-      <UiTitle>
-        {{ data.v }}
-      </UiTitle>
-    </template>
-
-    <template #default="{ data }">
+    <UiBottomSheet
+      :isOpen="isOpen"
+      @close="handleClose"
+      @afterClose="handleAfterClose"
+    >
       <CharacteristicInsideBottomSheetContent
         :characteristic="data.ch"
         :value="data.v"
       />
-    </template>
-  </SociotypeBottomSheetByQuery>
+    </UiBottomSheet>
+  </OpenBottomSheetByQuery>
 </template>
 
 <style lang="scss" scoped></style>

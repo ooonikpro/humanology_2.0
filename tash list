@@ -1,0 +1,10 @@
+[33m75ecf48[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcursor[m[33m, [m[1;31morigin/cursor[m[33m)[m HEAD@{0}: reset: moving to HEAD@{1}
+[33mf069fbe[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: reset: moving to HEAD~1
+[33m75ecf48[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcursor[m[33m, [m[1;31morigin/cursor[m[33m)[m HEAD@{2}: commit (amend): tests: implement Keirsey test; unify UI (UiButton variants), reusable TestProgressBar & TestDichotomyScales; refactor tests pages; standardize UiDismissibleInfo; fix styles/layouts
+[33m7901f93[m HEAD@{3}: commit (amend): tests: implement Keirsey test; unify UI (UiButton variants), reusable TestProgressBar & TestDichotomyScales; refactor tests pages; standardize UiDismissibleInfo; fix styles/layouts
+[33mb8dbfbc[m HEAD@{4}: rebase (finish): returning to refs/heads/cursor
+[33mb8dbfbc[m HEAD@{5}: rebase (continue): tests: implement Keirsey test; unify UI (UiButton variants), reusable TestProgressBar & TestDichotomyScales; refactor tests pages; standardize UiDismissibleInfo; fix styles/layouts
+[33mf069fbe[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{6}: rebase (start): checkout origin/main
+[33mee51f1e[m HEAD@{7}: reset: moving to HEAD
+[33mee51f1e[m HEAD@{8}: rebase (abort): returning to refs/heads/cursor
+[33mf069fbe[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{9}: rebase (start): checkout origin/main

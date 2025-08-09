@@ -51,7 +51,7 @@ const { chevronColor = "accent", ...props } = defineProps<{
 
   text-decoration: none;
   background-color: colors.$beige;
-  border-radius: 4px;
+  border-radius: 12px;
 
   &--cols-3 {
     grid-template-columns: max-content 1fr max-content;

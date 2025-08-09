@@ -64,10 +64,12 @@ const { sociotypeId: routeSociotypeId } = useSociotypePageRoute();
               </template>
 
               <template #groups-and-quadras>
-                <SociotypesCardGroupsAndQuadrasWidget
-                  v-bind="sociotypeData"
-                  mini
-                />
+                <div class="sociotype-card__groups-quadras">
+                  <SociotypesCardGroupsAndQuadrasWidget
+                    v-bind="sociotypeData"
+                    mini
+                  />
+                </div>
               </template>
             </SociotypeCard>
           </SociotypeProvider>

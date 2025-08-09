@@ -15,20 +15,20 @@ const { iconSize = "48", ...props } = defineProps<{
 </script>
 
 <template>
-  <NuxtLink :to="props.to" :class="[`g-bg--${props.bg}`]" class="ui-link-block">
+  <NuxtLink :to="props.to" class="ui-link-block">
     <UiSvg
       :name="props.iconName"
-      :color="props.iconColor"
+      color="accent"
       :size="iconSize"
       class="ui-link-block__icon"
     />
 
-    <UiText :color="props.textColor" preset="large" force-tag="span">
+    <UiText color="black" preset="large" force-tag="span">
       <slot />
     </UiText>
 
     <UiSvg
-      :color="props.iconColor"
+      color="accent"
       class="ui-link-block__arrow"
       name="chevron-right"
       size="24"
@@ -47,8 +47,8 @@ const { iconSize = "48", ...props } = defineProps<{
   margin-bottom: 16px;
   margin-top: 16px;
 
-  border-radius: 8px;
-  box-shadow: 0 1px 1px 0 colors.$shadow;
+  border-radius: 12px;
+  background-color: colors.$beige;
   cursor: pointer;
   text-decoration: none;
 

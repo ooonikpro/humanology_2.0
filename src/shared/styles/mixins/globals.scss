@@ -20,6 +20,11 @@
   }
 }
 
+.g-shadow-accent-soft {
+  /* 1px down, 1px blur, 25% accent */
+  box-shadow: 0 1px 1px rgba(colors.$accent, 0.25);
+}
+
 .g-page {
   padding: 0 12px;
   display: flex;

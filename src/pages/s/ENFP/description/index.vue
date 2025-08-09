@@ -8,17 +8,7 @@ import {
 
 <template>
   <div class="text g-page">
-    <div class="warning">
-      <UiText preset="small" color="accent">
-        Описания не должны обязательно совпадать со всеми чертами характера
-        личности.
-      </UiText>
-
-      <UiText preset="small" color="accent">
-        Идея как раз описать наблюдаемые у среднего представителя типа
-        особенности поведения и обработки информации психикой.
-      </UiText>
-    </div>
+    
 
     <VariousContentContainer
       default-content-id="tab-1"

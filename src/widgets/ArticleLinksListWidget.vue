@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { IconNameType } from "@types";
-import { NavigationTab } from "@entities/navigation";
+import UiArticleLink from "@shared/ui/UiArticleLink.vue";
 import { SociotypeQuadraIconsBlock } from "@entities/sociotypes";
 
 const psychotypes: IconNameType[] = [
@@ -12,33 +12,31 @@ const psychotypes: IconNameType[] = [
 </script>
 
 <template>
-  <ul id="article-links-list" class="article-links-list-widget">
-    <li class="article-links-list-widget__item">
+  <div class="article-links-list-widget">
+    <div class="article-links-list-widget__header">
       <a href="#article-links-list" class="article-links-list-widget__title">
         <UiSvg name="document" size="20" />
         <UiText preset="large">Свежие статьи</UiText>
       </a>
-    </li>
+    </div>
 
     <hr />
-    <li class="article-links-list-widget__item">
-      <NavigationTab to="/sexual-programs" label="Сексуальные программы квадр">
+    
+    <div class="article-links-list-widget__cards">
+      <UiArticleLink 
+        to="/sexual-programs"
+      >
         <template #icon>
-          <SociotypeQuadraIconsBlock class="icons" quadras-size="24" />
+          <SociotypeQuadraIconsBlock quadras-size="24" />
         </template>
-        <template #top>
-          <div class="new">
-            <UiText color="earth">Свежая</UiText>
-            <UiSvg name="leaf" color="earth" />
-          </div>
+        <template #title>
+          Сексуальные<br>программы квадр
         </template>
-      </NavigationTab>
-    </li>
-    <li class="article-links-list-widget__item">
-      <NavigationTab
+      </UiArticleLink>
+      
+      <UiArticleLink
         to="/group-compatibility"
-        label="Совместимость психогрупп"
-        class="article-links-list-widget__navtab"
+        title="Совместимость психогрупп"
       >
         <template #icon>
           <div class="icons">
@@ -51,9 +49,9 @@ const psychotypes: IconNameType[] = [
             />
           </div>
         </template>
-      </NavigationTab>
-    </li>
-  </ul>
+      </UiArticleLink>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -61,21 +59,9 @@ const psychotypes: IconNameType[] = [
 
 .article-links-list-widget {
   margin-top: 24px;
-  list-style: none;
 
-  &__item {
+  &__header {
     padding: 8px;
-
-    .icons {
-      display: flex;
-      flex-flow: row nowrap;
-      align-self: flex-start;
-    }
-  }
-
-  &__navtab {
-    border: 1px solid colors.$beige;
-    margin-top: -8px;
   }
 
   &__title {
@@ -86,11 +72,20 @@ const psychotypes: IconNameType[] = [
     gap: 4px;
   }
 
-  .new {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 4px;
+  hr {
+    margin: 0 0 8px 0;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    
+    .icons {
+      display: flex;
+      flex-flow: row nowrap;
+      align-self: flex-start;
+    }
   }
 }
 </style>
