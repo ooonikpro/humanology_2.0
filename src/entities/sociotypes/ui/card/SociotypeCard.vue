@@ -117,7 +117,6 @@ const handleClick = () => {
     flex-direction: column;
     border-radius: 12px;
     overflow: hidden;
-    height: 232px;
     padding: 12px 12px 12px 12px;
 
     &::before {
@@ -204,6 +203,8 @@ const handleClick = () => {
       }
     }
   }
+
+
 
   &--mini {
     border-radius: 12px;

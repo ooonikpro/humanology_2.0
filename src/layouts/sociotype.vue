@@ -55,9 +55,8 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
             </div>
           </template>
 
-
           <template v-if="isCardTab" #population>
-            <div class="sociotype-card__population">
+            <div class="sociotype-card__population" style="margin-top: 8px !important;">
               <UiText preset="small" color="role">
                 {{ data.populationPercentage }}
               </UiText>

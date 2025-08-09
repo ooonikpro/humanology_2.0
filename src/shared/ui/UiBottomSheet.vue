@@ -131,9 +131,10 @@ $height-transition: height 150ms ease;
     flex: 0 1 auto;
     width: 100%;
     height: $headerHeight;
-    border-top: 1px solid colors.$quadra;
+    background-color: colors.$beige-tone;
     padding: $gap ($gap * 2 + $closeButtonSize) $gap $gap;
     position: relative;
+    border-bottom: 1px solid colors.$grey;
 
     &::before {
       content: "";
@@ -143,22 +144,11 @@ $height-transition: height 150ms ease;
       right: 0;
       height: 100%;
       background: linear-gradient(
-        -156.36deg,
-        transparent 10.56%,
-        colors.$quadra 98.41%
+        90deg,
+        colors.$beige-tone 0%,
+        rgba(colors.$beige-tone, 0.8) 100%
       );
-
-      opacity: 0.1;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -1px;
-      left: $gap;
-      right: $gap;
-      height: 1px;
-      background-color: colors.$grey;
+      opacity: 1;
     }
   }
 
@@ -189,7 +179,7 @@ $height-transition: height 150ms ease;
 
   &--animate {
     &-enter-active {
-      transition: transform 200ms cubic-bezier(0.38, 0.45, 0, 1.01);
+      transition: transform 200ms cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     &-leave-active {
