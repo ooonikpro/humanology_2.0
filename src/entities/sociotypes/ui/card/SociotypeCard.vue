@@ -161,7 +161,6 @@ const handleClick = () => {
   }
 
   &__population {
-    margin-top: 16px;
     position: relative;
     z-index: 1;
   }

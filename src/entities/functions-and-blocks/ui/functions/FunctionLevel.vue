@@ -22,6 +22,14 @@ const indicatorOpacity = computed(() => {
   const filledFunctions = ['base', 'creative', 'limit', 'back'];
   return filledFunctions.includes(props.functionType) ? 0.5 : 1;
 });
+
+// Цвет индикатора - для определенных функций используем цвет функции
+const indicatorColor = computed(() => {
+  if (!props.functionType) return 'currentColor';
+  
+  const coloredFunctions = ['pain', 'role', 'activate', 'suggestive'];
+  return coloredFunctions.includes(props.functionType) ? 'currentColor' : 'currentColor';
+});
 </script>
 
 <template>
@@ -39,8 +47,14 @@ const indicatorOpacity = computed(() => {
       :width="LINE_WIDTH"
       :height="LINE_HEIGHT"
       :x="(i - 1) * (LINE_WIDTH + SPACING)"
-      fill="currentColor"
+      :fill="indicatorColor"
       rx="1"
     />
   </svg>
 </template>
+
+<style lang="scss" scoped>
+.function-level {
+  // Цвет наследуется от родителя или задается через :fill
+}
+</style>

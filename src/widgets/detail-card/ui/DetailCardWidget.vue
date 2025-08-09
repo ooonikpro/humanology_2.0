@@ -74,7 +74,7 @@ $gap: 12px;
   gap: $gap;
   padding: $gap;
   background-color: colors.$beige;
-  border-radius: 4px;
+  border-radius: 12px;
 
   &__header {
     display: flex;

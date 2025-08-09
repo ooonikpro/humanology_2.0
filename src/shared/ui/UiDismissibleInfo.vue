@@ -67,7 +67,7 @@ function close() {
   padding: 12px 40px 12px 12px;
   border: none;
   background: colors.$beige;
-  border-radius: 4px;
+  border-radius: 12px;
   margin-bottom: 8px;
   color: colors.$black;
   

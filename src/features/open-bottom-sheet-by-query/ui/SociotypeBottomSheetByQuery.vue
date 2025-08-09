@@ -51,7 +51,7 @@ const checkQuery = (query: LocationQuery) =>
   display: flex;
   align-items: center;
   gap: 6px;
-  color: colors.$dark-grey;
+  color: colors.$black;
   font-size: 14px;
   font-weight: 500;
   overflow: hidden;

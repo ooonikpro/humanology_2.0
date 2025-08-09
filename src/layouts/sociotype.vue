@@ -51,15 +51,7 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
 
           <template v-if="isCardTab" #groups-and-quadras>
             <div class="sociotype-card__groups-quadras">
-              <SociotypesCardGroupsAndQuadrasWidget v-bind="data" />
-            </div>
-          </template>
-
-          <template v-if="isCardTab" #population>
-            <div class="sociotype-card__population" style="margin-top: 8px !important;">
-              <UiText preset="small" color="role">
-                {{ data.populationPercentage }}
-              </UiText>
+              <SociotypesCardGroupsAndQuadrasWidget v-bind="data" :showPopulation="true" />
             </div>
           </template>
         </SociotypeCard>

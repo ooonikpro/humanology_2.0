@@ -118,8 +118,8 @@ $height-transition: height 150ms ease;
   right: 0;
   margin: auto;
   background-color: colors.$white;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -132,24 +132,11 @@ $height-transition: height 150ms ease;
     width: 100%;
     height: $headerHeight;
     background-color: colors.$beige-tone;
-    padding: $gap ($gap * 2 + $closeButtonSize) $gap $gap;
+    padding: $gap 40px $gap 12px;
     position: relative;
-    border-bottom: 1px solid colors.$grey;
+    border-radius: 12px;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        colors.$beige-tone 0%,
-        rgba(colors.$beige-tone, 0.8) 100%
-      );
-      opacity: 1;
-    }
+
   }
 
   &__close-button {
@@ -170,7 +157,7 @@ $height-transition: height 150ms ease;
     height: 100%;
     overflow-y: auto;
     scrollbar-width: none;
-    padding: $gap $gap 48px;
+    padding: 12px 12px 48px;
   }
 
   &--swiping {

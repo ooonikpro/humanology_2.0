@@ -31,11 +31,15 @@ const routePredicate = (query: LocationQuery) => {
       >
         <template #title>
           <div class="bottom-sheet-title-group">
-            <UiText color="quadra">
+            <UiText color="black">
               {{ functionsModel.getName(data.f) }} функция
             </UiText>
-            <UiText>{{ functionsModel.getLevelName(data.f) }}</UiText>
-            <FunctionLevel :lvl="functionsModel.getLevel(data.f)" />
+            <div style="margin-left: 4px; display: flex; align-items: center;">
+              <FunctionLevel :lvl="functionsModel.getLevel(data.f)" />
+            </div>
+            <UiText color="black" style="margin-left: auto; margin-right: 0; opacity: 0.5;">
+              {{ functionsModel.getLevelName(data.f) }}
+            </UiText>
           </div>
         </template>
 
