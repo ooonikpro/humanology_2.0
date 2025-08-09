@@ -23,6 +23,7 @@ import {
   BlockFunctionsListWidget,
   FunctionInsideBottomSheetWidget,
 } from "@widgets/functions-and-blocks";
+import UiDismissibleInfo from "@shared/ui/UiDismissibleInfo.vue";
 
 const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
 </script>
@@ -61,6 +62,14 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
 
         <template v-if="isCardTab">
           <SociotypeSignsBlock title="Краткое описание">
+            <UiDismissibleInfo storage-key="sociotypes-precision-info">
+              <template #title>
+                <UiText preset="large" color="black">О точности описаний</UiText>
+              </template>
+              <UiText preset="body" color="black">
+                Описания — ориентиры, а не ярлыки. Не всё совпадёт с каждым. Сверяйте с наблюдениями и независимыми оценками.
+              </UiText>
+            </UiDismissibleInfo>
             <NuxtPage v-if="carouselData.isCurrent" />
             <UiLoadSociotypePageComponent
               v-else
@@ -86,7 +95,7 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
       </SociotypeProvider>
     </SociotypeCarousel>
 
-    <CharacteristicInsideBottomSheetWidget :sociotype-id="sociotypeId" />
+    <CharacteristicInsideBottomSheetWidget />
     <FunctionInsideBottomSheetWidget :sociotype-id="sociotypeId" />
   </NuxtLayout>
 </template>

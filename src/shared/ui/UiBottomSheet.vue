@@ -45,7 +45,10 @@ const afterClose = () => {
   emit("afterClose");
 };
 
-useBodyScrollLock(isShowBottomSheet, scrollableContainer);
+useBodyScrollLock(
+  () => Boolean(isShowBottomSheet.value && scrollableContainer.value),
+  scrollableContainer,
+);
 </script>
 
 <template>
@@ -161,7 +164,7 @@ $height-transition: height 150ms ease;
 
   &__close-button {
     position: absolute;
-    top: $gap;
+    top: $gap - 2px;
     right: $gap;
     width: $closeButtonSize;
     height: $closeButtonSize;

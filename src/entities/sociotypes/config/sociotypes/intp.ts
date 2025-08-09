@@ -52,7 +52,7 @@ const INTP: SociotypeDataType = {
   communication: "coldBlooded",
   companion: "provident",
   temperament: "melancholic",
-  alignment: "trueNeutral",
+  alignment: "neutralEvil",
   yungs: ["irrational", "intuit", "logic", "introvert"],
   reinin: [
     "dynamic",

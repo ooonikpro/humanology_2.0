@@ -14,4 +14,6 @@ export default defineNuxtRouteMiddleware((to) => {
   if (intertypePageRegExp.test(to.path)) {
     setPageLayout("intertype");
   }
+  
+  return;
 });

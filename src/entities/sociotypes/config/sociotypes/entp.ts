@@ -54,7 +54,7 @@ const ENTP: SociotypeDataType = {
   communication: "business",
   companion: "categorical",
   temperament: "sanguine",
-  alignment: "chaoticEvil",
+  alignment: "neutralEvil",
   yungs: ["irrational", "intuit", "logic", "extravert"],
   reinin: [
     "static",
