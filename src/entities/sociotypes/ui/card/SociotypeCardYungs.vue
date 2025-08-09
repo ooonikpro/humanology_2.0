@@ -8,12 +8,12 @@ const props = defineProps<Pick<SociotypeDataType, "yungs">>();
 
 <template>
   <div class="sociotype-card-yungs">
-    <hr class="sociotype-card-yungs__line" />
 
     <UiText
       v-for="(yung, $index) in props.yungs"
       :key="yung"
-      :color="$index > 0 ? 'dark-grey' : 'black'"
+      :color="$index === 0 ? 'role' : 'black'"
+      :class="{ 'sociotype-card-yungs__secondary': $index !== 0 }"
       preset="small"
     >
       {{ model.getYungDichtomyLabel(yung) }}
@@ -26,15 +26,14 @@ const props = defineProps<Pick<SociotypeDataType, "yungs">>();
 
 .sociotype-card-yungs {
   display: flex;
-  gap: 6px;
-  position: relative;
-  padding: 8px;
-  border: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0 8px;
+  background-color: colors.$white;
 
-  &__line {
-    width: 53%;
-    position: absolute;
-    top: 0;
+  &__secondary {
+    opacity: 0.5;
   }
 }
 </style>

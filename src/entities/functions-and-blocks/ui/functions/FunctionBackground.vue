@@ -44,29 +44,29 @@ $card-gap: 4px;
 
 @keyframes creative-function {
     0% {
-      left: 0%;
+      left: -10%;
     }
 
     50% {
-      left: -15%;
+      left: 5%;
     }
 
     100% {
-      left: 0%;
+      left: -10%;
     }
 }
 
 @keyframes limit-function {
     0% {
-      right: -10%;
+      right: -15%;
     }
 
     50% {
-      right: -25%;
+      right: 0%;
     }
 
     100% {
-      right: -10%;
+      right: -15%;
     }
 }
 
@@ -128,7 +128,7 @@ $card-gap: 4px;
 .function-background-image {
   position: absolute;
   z-index: 0;
-  color: rgba(colors.$white, 0.1);
+  color: rgba(colors.$white, 0.15);
 
   &--function {
     &-base {
@@ -139,10 +139,10 @@ $card-gap: 4px;
     }
 
     &-creative {
-      width: 252px;
-      height: 173px;
-      left: -$card-gap;
-      bottom: -$card-gap;
+      width: 320px;
+      height: 200px;
+      left: 0%;
+      bottom: -10%;
       animation: creative-function 5s ease-in-out infinite;
     }
 
@@ -159,7 +159,8 @@ $card-gap: 4px;
       height: 360px;
       left: -64px;
       bottom: -128px;
-      color: var(--function-color);
+      color: var(--function-aspect-color);
+      opacity: 0.1;
       animation: pain-function 5s ease-in-out infinite;
     }
 
@@ -182,7 +183,7 @@ $card-gap: 4px;
     &-activate,
     &-suggestive {
       opacity: 0.1;
-      color: var(--function-quadral-role-color);
+      color: var(--function-aspect-color);
     }
   }
 }

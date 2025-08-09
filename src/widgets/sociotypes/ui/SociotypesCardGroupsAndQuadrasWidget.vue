@@ -79,13 +79,13 @@ const { mini = false, ...props } = defineProps<PropsType>();
 .sociotypes-card-groups-and-quadras-widget {
   display: flex;
   flex-direction: column;
-  padding: 0 8px 12px;
 
   &--mini {
     display: grid;
     grid-template-columns: repeat(3, max-content);
     grid-template-rows: 1fr 1fr;
     row-gap: 4px;
+    padding: 0 0 8px;
   }
 
   &__text-row {

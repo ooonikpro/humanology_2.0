@@ -1,10 +1,24 @@
 <script setup lang="ts">
 const props = defineProps<{ isOpenNavigation?: boolean }>();
 const emit = defineEmits(["toggleNavigation"]);
+
+const isScrolled = ref(false);
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 0;
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <template>
-  <header class="header-widget">
+  <header :class="{ 'header-widget--scrolled': isScrolled }" class="header-widget">
     <button class="header-widget__button" @click="emit('toggleNavigation')">
       <UiSvg
         :name="props.isOpenNavigation ? 'close' : 'menu'"
@@ -38,7 +52,12 @@ const emit = defineEmits(["toggleNavigation"]);
   padding: 8px;
   position: relative;
   background-color: colors.$white;
-  border-bottom: 1px solid colors.$grey;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+
+  &--scrolled {
+    border-bottom-color: colors.$grey;
+  }
 
   &__button {
     cursor: pointer;

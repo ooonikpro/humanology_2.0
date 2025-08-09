@@ -40,7 +40,13 @@ const handleClick = () => {
       'sociotype-card--bordered': props.bordered,
     }"
     class="sociotype-card"
+    role="button"
+    tabindex="0"
+    data-no-image-processing
+    data-yandex-disable-smart-reader
+    data-turbo="false"
     @click="handleClick"
+    @contextmenu.prevent
   >
     <div class="sociotype-card__content">
       <SociotypeCardRationalsBlock
@@ -61,7 +67,7 @@ const handleClick = () => {
 
         <slot name="groups-and-quadras"></slot>
 
-        <slot name="yungs" />
+        <slot name="population"></slot>
       </template>
 
       <template v-else>
@@ -99,40 +105,39 @@ const handleClick = () => {
 
 .sociotype-card {
   position: relative;
-  border-radius: 4px;
-  border-top: 1px solid colors.$quadra;
+  border-radius: 12px;
   background: colors.$white;
+  user-select: none;
+  -webkit-user-drag: none;
+
 
   &__content {
     position: relative;
     display: flex;
     flex-direction: column;
-
-    &::before,
-    &::after {
-      content: "";
-      height: 48px;
-      position: absolute;
-      left: 0;
-      width: 100%;
-      opacity: 0.1;
-    }
+    border-radius: 12px;
+    overflow: hidden;
+    height: 232px;
+    padding: 12px 12px 12px 12px;
 
     &::before {
+      content: "";
+      position: absolute;
       top: 0;
-      background: linear-gradient(to top, colors.$white 0%, colors.$quadra);
-    }
-
-    &::after {
+      left: 0;
+      right: 0;
       bottom: 0;
-      background: linear-gradient(to bottom, colors.$white 0%, colors.$role);
+      background: linear-gradient(135deg, colors.$role 0%, colors.$quadra 100%);
+      opacity: 0.1;
+      z-index: 0;
     }
   }
 
   &__rationals {
     position: absolute;
-    right: 8px;
-    top: 8px;
+    right: 12px;
+    top: 12px;
+    z-index: 1;
   }
 
   &__photo {
@@ -142,11 +147,24 @@ const handleClick = () => {
   }
 
   &__title {
-    width: 98%;
     overflow: hidden;
-    margin: 12px 8px;
+    margin: 0;
     white-space: nowrap;
     text-overflow: ellipsis;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__groups-quadras {
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__population {
+    margin-top: 16px;
+    position: relative;
+    z-index: 1;
   }
 
   &__quadra-circle,
@@ -171,26 +189,36 @@ const handleClick = () => {
   &__gender-switcher {
     position: absolute;
     right: 12px;
-    bottom: 8px;
+    bottom: 12px;
     z-index: 1;
   }
 
   &--bordered {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    border-bottom: 1px solid colors.$role;
+    
+    // Если нет слотов groups-and-quadras и population, карточка становится компактной
+    &:not(:has(.sociotype-card__groups-quadras)):not(:has(.sociotype-card__population)) {
+      .sociotype-card__content {
+        height: 96px;
+      }
+    }
   }
 
   &--mini {
-    border-radius: 4px;
+    border-radius: 12px;
     box-shadow: 0 1px 1px 0 colors.$shadow;
     cursor: pointer;
   }
 
   @include bem.modificatorForChildren("mini") {
+    &__content {
+      border-radius: 12px;
+    }
+    
     &__title {
       font-size: min(7vw, 28px);
-      margin: -8px 8px 8px;
+      margin: 0 0 8px;
     }
 
     &__quadra-circle,

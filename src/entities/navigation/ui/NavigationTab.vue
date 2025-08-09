@@ -42,7 +42,7 @@ const props = defineProps<NavigationTabPropsType>();
 
   overflow: hidden;
   background-color: colors.$beige-tone;
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
 
   &__content {
