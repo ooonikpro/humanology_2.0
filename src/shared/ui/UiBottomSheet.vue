@@ -115,8 +115,8 @@ $height-transition: height 150ms ease;
   right: 0;
   margin: auto;
   background-color: colors.$white;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -128,40 +128,15 @@ $height-transition: height 150ms ease;
     flex: 0 1 auto;
     width: 100%;
     height: $headerHeight;
-    border-top: 1px solid colors.$quadra;
-    padding: $gap ($gap * 2 + $closeButtonSize) $gap $gap;
+    background-color: colors.$beige-tone;
+    padding: $gap ($gap * 2 + $closeButtonSize) $gap 12px;
     position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      background: linear-gradient(
-        -156.36deg,
-        transparent 10.56%,
-        colors.$quadra 98.41%
-      );
-
-      opacity: 0.1;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -1px;
-      left: $gap;
-      right: $gap;
-      height: 1px;
-      background-color: colors.$grey;
-    }
+    border-radius: 12px;
   }
 
   &__close-button {
     position: absolute;
-    top: $gap;
+    top: 6px;
     right: $gap;
     width: $closeButtonSize;
     height: $closeButtonSize;
@@ -177,7 +152,7 @@ $height-transition: height 150ms ease;
     height: 100%;
     overflow-y: auto;
     scrollbar-width: none;
-    padding: $gap $gap 48px;
+    padding: 12px 12px 48px;
   }
 
   &--swiping {

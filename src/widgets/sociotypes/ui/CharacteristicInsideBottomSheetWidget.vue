@@ -13,12 +13,12 @@ const props = defineProps<{ sociotypeId: SociotypeIdType }>();
     :accepted-query="['ch', 'v']"
   >
     <template #title="{ data }">
-      <UiTitle color="quadra">
+      <UiText color="quadra">
         {{ data.ch }}
-      </UiTitle>
-      <UiTitle>
+      </UiText>
+      <UiText>
         {{ data.v }}
-      </UiTitle>
+      </UiText>
     </template>
 
     <template #default="{ data }">

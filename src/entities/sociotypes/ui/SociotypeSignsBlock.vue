@@ -19,8 +19,7 @@ const props = defineProps<{ title: string }>();
 
 .sociotype-signs-block {
   background-color: colors.$white;
-  border-radius: 4px;
-  border-top: solid 1px colors.$grey;
+  border-radius: 12px;
   padding: 8px;
 
   &__header {

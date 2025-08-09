@@ -66,17 +66,16 @@ $gap: 8px;
 
 .detail-card {
   padding: 8px;
-  display: grid;
-  grid-template-columns: 1fr max-content;
-  grid-template-rows: auto;
-  column-gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
 
-  border-radius: 8px;
-  border: 1px solid rgba(colors.$accent, 0.15);
   cursor: pointer;
+  border-radius: 12px;
+  border: 1px solid rgba(colors.$accent, 0.15);
+  background-color: colors.$beige;
 
   & > *:not(:first-child, :nth-child(2)) {
-    grid-column: 1/1;
     margin-top: $gap;
   }
 
@@ -89,8 +88,6 @@ $gap: 8px;
   }
 
   &__explanation-button {
-    grid-row: 1/1;
-    grid-column: 1/3;
     justify-self: flex-end;
     margin-bottom: -$gap * 2;
     cursor: pointer;

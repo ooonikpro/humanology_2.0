@@ -6,10 +6,14 @@ import { clubsAndPsychotypesModel } from "@entities/clubs-and-psychotypes";
 
 type PropsType = Pick<
   SociotypeDataType,
-  "quadra" | "role" | "tarot" | "psychotype" | "club"
-> & { mini?: boolean };
+  "quadra" | "role" | "tarot" | "psychotype" | "club" | "populationPercentage"
+> & { mini?: boolean; showPopulation?: boolean };
 
-const { mini = false, ...props } = defineProps<PropsType>();
+const {
+  mini = false,
+  showPopulation = false,
+  ...props
+} = defineProps<PropsType>();
 </script>
 
 <template>
@@ -71,11 +75,22 @@ const { mini = false, ...props } = defineProps<PropsType>();
         <UiSvg :name="props.club" size="20" />
         {{ clubsAndPsychotypesModel.getClubLabel(props.club) }}
       </UiText>
+
+      <div
+        v-if="showPopulation"
+        class="sociotypes-card-groups-and-quadras-widget__population"
+      >
+        <UiText preset="small" color="role">
+          {{ props.populationPercentage }}
+        </UiText>
+      </div>
     </template>
   </div>
 </template>
 
 <style lang="scss" scoped>
+@use "@shared/styles/variables/colors";
+
 .sociotypes-card-groups-and-quadras-widget {
   display: flex;
   flex-direction: column;
@@ -93,6 +108,14 @@ const { mini = false, ...props } = defineProps<PropsType>();
     display: flex;
     align-items: center;
     gap: 4px;
+  }
+
+  &__population {
+    margin-top: 8px;
+    width: fit-content;
+    background-color: color-mix(in srgb, colors.$role 10%, transparent);
+    padding: 4px 8px;
+    border-radius: 4px;
   }
 }
 </style>

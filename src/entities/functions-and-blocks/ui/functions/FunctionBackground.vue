@@ -119,7 +119,7 @@ $card-gap: 4px;
 .function-background {
   position: absolute;
   inset: 0;
-  border-radius: 4px;
+  border-radius: 12px;
   background: var(--function-background);
   opacity: var(--function-background-opacity);
   z-index: 0;

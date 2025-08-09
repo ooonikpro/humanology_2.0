@@ -1,4 +1,5 @@
 $white: #ffffff;
+$light-grey: #e0e0e0;
 $grey: #f0f0f0;
 $beige: #f8f5ed;
 $beige-tone: #faf9f6;
@@ -54,15 +55,14 @@ $sociotype-secondary-color: var(--color-sociotype-secondary);
 $quadra-dark: var(--color-quadra-dark);
 $role-dark: var(--color-role-dark);
 
-
 $bg-quadra: var(--bg-quadra);
 $bg-role: var(--bg-role);
 $bg-intertype: var(--bg-intertype-group);
 
-
 // Палетка из которой собираются @type {TextColorType}
 $global-colors: (
   "white": $white,
+  "light-grey": $light-grey,
   "grey": $grey,
   "beige": $beige,
   "black": $black,

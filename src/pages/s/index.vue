@@ -4,8 +4,10 @@ import { SociotypesByQuadrasWidget } from "@widgets/sociotypes";
 </script>
 
 <template>
-  <SociotypesByQuadrasWidget />
-  <ArticleLinksListWidget />
+  <div>
+    <SociotypesByQuadrasWidget />
+    <ArticleLinksListWidget />
+  </div>
 </template>
 
 <style lang="scss" scoped></style>

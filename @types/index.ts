@@ -277,6 +277,7 @@ export type DateRuLocaleType = `${string}.${string}.${string}`; // dd.mm.yyyy
 export type SociotypeAgeType = "kid" | "young" | "adult";
 export type TextColorType =
   | "white"
+  | "light-grey"
   | "grey"
   | "dark-grey"
   | "beige"
