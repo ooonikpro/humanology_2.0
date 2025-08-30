@@ -125,7 +125,7 @@ $height-transition: height 150ms ease;
   touch-action: none;
 
   &__header {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
     width: 100%;
     height: $headerHeight;
     background-color: colors.$beige-tone;

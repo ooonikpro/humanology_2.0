@@ -7,6 +7,8 @@ import getIntertypeGroupById from "./methods/getIntertypeGroupById";
 import getIntertypeGroupOrder from "./methods/getIntertypeGroupOrder";
 import getIntertypeOrder from "./methods/getIntertypeOrder";
 import getIntertypeGraphSrc from "./methods/getIntertypeGraphSrc";
+import getAllDetailIntertypes from "./methods/getAllDetailIntertypes";
+import getDetailIntertype from "./methods/getDetailIntertype";
 
 export default {
   getIntertype,
@@ -18,4 +20,6 @@ export default {
   getIntertypeGroupOrder,
   getIntertypeOrder,
   getIntertypeGraphSrc,
+  getAllDetailIntertypes,
+  getDetailIntertype,
 };

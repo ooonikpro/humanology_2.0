@@ -1,65 +1,74 @@
 <script setup lang="ts">
-import { sociotypeModel } from "@entities/sociotypes";
-import { capitalize } from "@shared/lib";
+import {
+  DetailCard,
+  characteristicsModel,
+  isValidCharacteristic,
+} from "@features/characteristics";
+import type { DetailCardType, DetailValueType, IconNameType } from "@types";
 
 const props = defineProps<{
   characteristic: string;
   value: string;
 }>();
 
-// some_word -> SomeWord
-const transformCharacteristic = (ch: string) => {
-  if (ch.includes("_")) {
-    return ch
-      .split("_")
-      .map((word) => capitalize(word))
-      .join("");
-  }
-  return capitalize(ch);
-};
+const normalizedValue = computed(() => props.value.split(" "));
 
-const normalizeValue = computed(() =>
-  props.value.split(" ").filter((v) => !!v),
-);
+const detailCardList = computed(() => {
+  type Card = DetailCardType & { icon: IconNameType };
 
-const checkValidPair = <T extends string>(
-  pair: string[],
-  oppositeFunc: (val: T) => T,
-) => {
-  const [opposite, value] = [
-    oppositeFunc(pair[0] as T),
-    oppositeFunc(pair[1] as T),
-  ];
-  return !!value && !!opposite && value === pair[0] && opposite === pair[1];
-};
-
-const transformedCharacteristic = computed(() => {
-  if (normalizeValue.value.length > 1) {
-    const { getOppositeYungDichotomy, getOppositeReinin } = sociotypeModel;
-    if (checkValidPair(normalizeValue.value, getOppositeYungDichotomy)) {
-      return "Dichotomy";
+  return normalizedValue.value.reduce<Card[]>((result, value) => {
+    if (!isValidCharacteristic(props.characteristic)) {
+      return result;
     }
 
-    if (checkValidPair(normalizeValue.value, getOppositeReinin)) {
-      return "Reinin";
-    }
-  }
-  return transformCharacteristic(props.characteristic);
+    const detailCard = characteristicsModel.getDetailBy(
+      props.characteristic,
+      value,
+    );
+    if (!detailCard) return result;
+
+    result.push({
+      ...detailCard,
+      icon: characteristicsModel.getIconByDetail(
+        value as DetailValueType,
+        detailCard.type,
+      ),
+    });
+
+    return result;
+  }, []);
 });
 
-const Component = defineAsyncComponent(() => {
-  return import(
-    `./sheet-content/${transformedCharacteristic.value}SheetContent.vue`
-  );
-});
+// ! worldview icon
+// ! mindset icon
 </script>
 
 <template>
-  <component
-    :is="Component"
-    :characteristic="props.characteristic"
-    :value="normalizeValue"
-  ></component>
+  <div class="characteristic-sheet-content">
+    <DetailCard
+      v-for="(card, i) in detailCardList"
+      :key="`${card.type}-${i}`"
+      :icon-name="card.icon"
+      :data="card"
+      :class="{ 'characteristic-card--inactive': i === 1 }"
+      class="characteristic-card"
+    />
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use "@shared/styles/variables/colors";
+
+.characteristic-sheet-content {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+}
+
+.characteristic-card {
+  &--inactive {
+    background-color: colors.$grey;
+    opacity: 0.75;
+  }
+}
+</style>
