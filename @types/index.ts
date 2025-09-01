@@ -448,3 +448,23 @@ export type SociotypeQueryType = Partial<{
 }>;
 
 export type SociotypeQueryKeyType = keyof SociotypeQueryType;
+
+export type TestType<V extends string> = {
+  id: number;
+  question?: string;
+  answers: {
+    variant: V;
+    label: string;
+  }[];
+};
+
+export type TallyKeyType = Extract<
+  DichotomyType,
+  "rational" | "logic" | "sensory" | "extravert"
+>;
+
+export type TallyType = Record<TallyKeyType, number>;
+
+export type TallyPoleType = "left" | "right";
+
+export type AnswerCardType = "mini" | "default" | "big-label";
