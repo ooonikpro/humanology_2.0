@@ -1,9 +1,5 @@
 <script lang="ts" setup>
-import type {
-  ReininSignType,
-  SociotypeDataType,
-  SociotypeIdType,
-} from "@types";
+import type { SociotypeDataType, SociotypeIdType } from "@types";
 
 import SociotypeSignsBlock from "./SociotypeSignsBlock.vue";
 
@@ -16,19 +12,26 @@ const props = defineProps<{
 }>();
 
 const { goToSheet } = useCharacteristicSheet(() => props.id);
-const goToReininSheet = (reinin: ReininSignType) => {
-  return goToSheet("reinin", [reinin, model.getOppositeReinin(reinin)]);
-};
+
+const row = computed(() => {
+  return props.reinin.map((reinin) => {
+    const oppositeReinin = model.getOppositeReinin(reinin);
+
+    return {
+      key: `${props.id}-${reinin}`,
+      leftLink: goToSheet("reinin", [reinin, oppositeReinin]),
+      rightLink: goToSheet("reinin", [oppositeReinin, reinin]),
+      leftText: model.getReininLabel(reinin),
+      rightText: model.getOppositeReininLabel(reinin),
+    };
+  });
+});
 </script>
 
 <template>
   <SociotypeSignsBlock title="Признаки Рейнина">
-    <template v-for="(row, $index) in props.reinin" :key="row">
-      <UiRowDual
-        :link="goToReininSheet(row)"
-        :leftText="model.getReininLabel(row)"
-        :rightText="model.getOppositeReininLabel(row)"
-      />
+    <template v-for="({ key, ...reininData }, $index) in row" :key="key">
+      <UiRowDual v-bind="reininData" />
 
       <hr v-if="[4, 7].includes($index)" />
     </template>

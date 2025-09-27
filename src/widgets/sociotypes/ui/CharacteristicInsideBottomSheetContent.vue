@@ -1,74 +1,50 @@
 <script setup lang="ts">
+import type { CharacteristicType } from "@types";
+import { capitalize } from "@shared/lib";
 import {
-  DetailCard,
-  characteristicsModel,
+  isMentalityCharacteristic,
   isValidCharacteristic,
 } from "@features/characteristics";
-import type { DetailCardType, DetailValueType, IconNameType } from "@types";
+import DetailCardList from "./sheet-content/DetailCardList.vue";
 
 const props = defineProps<{
   characteristic: string;
   value: string;
 }>();
 
-const normalizedValue = computed(() => props.value.split(" "));
-
-const detailCardList = computed(() => {
-  type Card = DetailCardType & { icon: IconNameType };
-
-  return normalizedValue.value.reduce<Card[]>((result, value) => {
-    if (!isValidCharacteristic(props.characteristic)) {
-      return result;
-    }
-
-    const detailCard = characteristicsModel.getDetailBy(
-      props.characteristic,
-      value,
-    );
-    if (!detailCard) return result;
-
-    result.push({
-      ...detailCard,
-      icon: characteristicsModel.getIconByDetail(
-        value as DetailValueType,
-        detailCard.type,
-      ),
-    });
-
-    return result;
-  }, []);
+const isMentalityCh = computed(() => {
+  return isMentalityCharacteristic(props.characteristic);
+});
+const isValidCh = computed(() => isValidCharacteristic(props.characteristic));
+const sharedProps = computed(() => {
+  return {
+    values: props.value.split(" "),
+    characteristic: props.characteristic as CharacteristicType,
+  };
 });
 
-// ! worldview icon
-// ! mindset icon
+const componentName = computed(() => {
+  return props.characteristic
+    .split("_")
+    .filter(Boolean)
+    .map(capitalize)
+    .join("");
+});
+const Component = defineAsyncComponent({
+  loader: () => {
+    return import(`./sheet-content/${componentName.value}SheetContent.vue`);
+  },
+});
 </script>
 
 <template>
-  <div class="characteristic-sheet-content">
-    <DetailCard
-      v-for="(card, i) in detailCardList"
-      :key="`${card.type}-${i}`"
-      :icon-name="card.icon"
-      :data="card"
-      :class="{ 'characteristic-card--inactive': i === 1 }"
-      class="characteristic-card"
-    />
-  </div>
+  <component
+    v-if="isValidCh && isMentalityCh"
+    :is="Component"
+    v-bind="sharedProps"
+  />
+  <DetailCardList v-else-if="isValidCh" v-bind="sharedProps" />
+  <div v-else>Что-то пошло не так</div>
 </template>
 
-<style lang="scss" scoped>
-@use "@shared/styles/variables/colors";
-
-.characteristic-sheet-content {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 16px;
-}
-
-.characteristic-card {
-  &--inactive {
-    background-color: colors.$grey;
-    opacity: 0.75;
-  }
-}
-</style>
+<style lang="scss" scoped></style>
