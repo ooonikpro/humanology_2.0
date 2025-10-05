@@ -303,6 +303,9 @@ export type TextColorType =
   | "intertype"
   | "intertype-bg"
   | "psychotype"
+  | "aspect"
+  | "aspect-semitransparent"
+  | "aspect-bg"
   | "inherit";
 
 export type TextPresetType =

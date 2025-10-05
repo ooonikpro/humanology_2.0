@@ -46,8 +46,7 @@ const { prevSociotype, currentSociotype, nextSociotype } =
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   height: 32px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-radius: 12px;
   background-color: colors.$beige-tone;
 
   &__link {

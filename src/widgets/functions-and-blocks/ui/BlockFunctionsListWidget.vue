@@ -27,18 +27,22 @@ const style = computed(() => ({
 <template>
   <div :style="style" class="block-functions-list">
     <BlockFunctions
-      v-for="blockName in config.BLOCKS_ORDER"
-      :key="blockName"
-      :sociotypeId="props.sociotypeId"
-      :blockName="blockName"
+      v-for="(blockName, $index) in config.BLOCKS_ORDER"
+      :key="`${props.sociotypeId}-${blockName}-block-function`"
+      :sociotype-id="props.sociotypeId"
+      :block-name="blockName"
+      :with-separators="$index === 1 || $index === 3"
+      class="block-functions-list__item"
     />
   </div>
 </template>
 
 <style lang="scss" scoped>
+@use "@shared/styles/variables/colors";
+
 .block-functions-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 </style>

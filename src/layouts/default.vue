@@ -62,6 +62,7 @@ const closeNavigation = () => {
   }
 
   &__body {
+    margin-top: 8px;
     width: 100vw;
     flex: 2 0 auto;
 

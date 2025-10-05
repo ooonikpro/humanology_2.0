@@ -38,6 +38,11 @@ $caring: $green;
 $childlike: $turquoise;
 $victim: $yellow;
 
+$logic: $pink;
+$ethic: $green;
+$intuit: $turquoise;
+$sensory: $yellow;
+
 $quadral: $turquoise;
 $favorable: $green;
 $neutral: $yellow;
@@ -48,6 +53,9 @@ $role: var(--color-role);
 
 $intertype: var(--color-intertype-group);
 $psychotype: var(--color-psychotype);
+$yung: var(--color-yung);
+$aspect: var(--color-aspect);
+$aspect-semitransparent: var(--color-aspect-semitransparent);
 
 $sociotype-primary-color: var(--color-sociotype-primary);
 $sociotype-secondary-color: var(--color-sociotype-secondary);
@@ -58,6 +66,8 @@ $role-dark: var(--color-role-dark);
 $bg-quadra: var(--bg-quadra);
 $bg-role: var(--bg-role);
 $bg-intertype: var(--bg-intertype-group);
+$bg-yung: var(--bg-yung);
+$bg-aspect: var(--bg-aspect);
 
 // Палетка из которой собираются @type {TextColorType}
 $global-colors: (
@@ -85,6 +95,11 @@ $global-colors: (
   "water-dark": $water-dark,
   "earth-dark": $earth-dark,
 
+  "logic": $logic,
+  "ethic": $ethic,
+  "intuit": $intuit,
+  "sensory": $sensory,
+
   "quadra": $quadra,
   "role": $role,
 
@@ -95,6 +110,13 @@ $global-colors: (
   "intertype-bg": $bg-intertype,
 
   "psychotype": $psychotype,
+
+  "yung": $yung,
+  "yung-bg": $yung,
+
+  "aspect": $aspect,
+  "aspect-semitransparent": $aspect-semitransparent,
+  "aspect-bg": $bg-aspect,
 
   "inherit": inherit,
 );

@@ -1,3 +1,4 @@
+import getAspectElementIcon from "./methods/getAspectElementIcon";
 import getAllAspects from "./methods/getAllAspects";
 import getAllDetailAspects from "./methods/getAllDetailAspects";
 import getAspectIconName from "./methods/getAspectIconName";
@@ -14,4 +15,5 @@ export default {
   getAspectIconName,
   getAllDetailAspects,
   getDetailAspect,
+  getAspectElementIcon,
 };

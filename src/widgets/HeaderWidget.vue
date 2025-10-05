@@ -1,16 +1,33 @@
 <script setup lang="ts">
 const props = defineProps<{ isOpenNavigation?: boolean }>();
 const emit = defineEmits(["toggleNavigation"]);
+
+const navigationIcon = computed(() => {
+  return props.isOpenNavigation ? "close" : "menu";
+});
+
+const isScrolled = ref(false);
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 0;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  onUnmounted(() => {
+    window.removeEventListener("scroll", handleScroll);
+  });
+});
 </script>
 
 <template>
-  <header class="header-widget">
+  <header
+    :class="{ 'header-widget--scrolled': isScrolled }"
+    class="header-widget"
+  >
     <button class="header-widget__button" @click="emit('toggleNavigation')">
-      <UiSvg
-        :name="props.isOpenNavigation ? 'close' : 'menu'"
-        color="black"
-        size="24"
-      />
+      <UiSvg :name="navigationIcon" color="black" size="24" />
     </button>
 
     <NuxtLink :to="$appRoutes.home" class="header-widget__button home-button">
@@ -25,6 +42,7 @@ const emit = defineEmits(["toggleNavigation"]);
 </template>
 
 <style scoped lang="scss">
+@use "@shared/styles/mixins/transitions";
 @use "@shared/styles/variables/layouts";
 @use "../shared/styles/variables/colors";
 
@@ -38,7 +56,13 @@ const emit = defineEmits(["toggleNavigation"]);
   padding: 8px;
   position: relative;
   background-color: colors.$white;
-  border-bottom: 1px solid colors.$grey;
+
+  border-bottom: 1px solid transparent;
+  @include transitions.ease(border-color);
+
+  &--scrolled {
+    border-bottom-color: colors.$grey;
+  }
 
   &__button {
     cursor: pointer;

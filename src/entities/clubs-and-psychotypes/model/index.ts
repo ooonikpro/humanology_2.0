@@ -8,6 +8,7 @@ import getAllDetailPsychotypes from "./methods/getAllDetailPsychotypes";
 import getDetailPsychotype from "./methods/getDetailPsychotype";
 import getAllDetailClubs from "./methods/getAllDetailClubs";
 import getDetailClub from "./methods/getDetailClub";
+import getAllPsychotypes from "./methods/getAllPsychotypes";
 
 const clubsAndGroupsModel = {
   getClubsInOrder,
@@ -20,6 +21,7 @@ const clubsAndGroupsModel = {
   getDetailPsychotype,
   getAllDetailClubs,
   getDetailClub,
+  getAllPsychotypes,
 } as const;
 
 export type ClubsAndGroupsModelType = typeof clubsAndGroupsModel;

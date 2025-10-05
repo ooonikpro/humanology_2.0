@@ -4,5 +4,6 @@ import type { IconNameType } from "@types";
 export type NavigationTabPropsType = {
   to: RouteLocationRaw;
   iconName?: IconNameType;
-  label: string;
+  label?: string;
+  isColumn?: boolean;
 };

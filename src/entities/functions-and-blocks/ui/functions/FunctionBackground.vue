@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import type { HumanFunctionType } from "@types";
-import { FUNCTION_CARD_WITHOUT_BACKGROUND_IMAGE } from "../../config";
+import { FUNCTION_CARD_CONFIG } from "../../config";
 
 const props = defineProps<{
   function: HumanFunctionType;
 }>();
 
-const hasBackgroundImage = !FUNCTION_CARD_WITHOUT_BACKGROUND_IMAGE.includes(
-  props.function,
-);
+const hasBackgroundImage = computed(() => {
+  return FUNCTION_CARD_CONFIG[props.function].hasBackground;
+});
 
 type FunctionWithBackground = Exclude<HumanFunctionType, "back" | "role">;
 </script>
@@ -26,95 +26,92 @@ type FunctionWithBackground = Exclude<HumanFunctionType, "back" | "role">;
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
 
-$card-gap: 4px;
-
 @keyframes base-function {
-    0% {
-      top: 10%;
-    }
+  0% {
+    top: 10%;
+  }
 
-    50% {
-      top: 25%;
-    }
+  50% {
+    top: 25%;
+  }
 
-    100% {
-      top: 10%;
-    }
+  100% {
+    top: 10%;
+  }
 }
 
 @keyframes creative-function {
-    0% {
-      left: 0%;
-    }
+  0% {
+    left: -10%;
+  }
 
-    50% {
-      left: -15%;
-    }
+  50% {
+    left: 5%;
+  }
 
-    100% {
-      left: 0%;
-    }
+  100% {
+    left: -10%;
+  }
 }
 
 @keyframes limit-function {
-    0% {
-      right: -10%;
-    }
+  0% {
+    right: -15%;
+  }
 
-    50% {
-      right: -25%;
-    }
+  50% {
+    right: -0%;
+  }
 
-    100% {
-      right: -10%;
-    }
+  100% {
+    right: -15%;
+  }
 }
 
 @keyframes pain-function {
-    0% {
-      bottom: -108px;
-      opacity: 0.1;
-    }
+  0% {
+    bottom: -108px;
+    opacity: 0.1;
+  }
 
-    50% {
-      bottom: -128px;
-      opacity: 0.2;
-    }
+  50% {
+    bottom: -128px;
+    opacity: 0.2;
+  }
 
-    100% {
-      bottom: -108px;
-      opacity: 0.1;
-    }
+  100% {
+    bottom: -108px;
+    opacity: 0.1;
+  }
 }
 
 @keyframes activate-function {
-    0% {
-      left: 10%;
-    }
+  0% {
+    left: 10%;
+  }
 
-    50% {
-      left: 25%;
-    }
+  50% {
+    left: 25%;
+  }
 
-    100% {
-      left: 10%;
-    }
+  100% {
+    left: 10%;
+  }
 }
 
 @keyframes suggestive-function {
-    0% {
-      left: -25%;
-    }
+  0% {
+    left: -25%;
+  }
 
-    50% {
-      left: -50%;
-    }
+  50% {
+    left: -50%;
+  }
 
-    100% {
-      left: -25%;
-    }
+  100% {
+    left: -25%;
+  }
 }
-
 
 .function-background {
   position: absolute;
@@ -128,7 +125,7 @@ $card-gap: 4px;
 .function-background-image {
   position: absolute;
   z-index: 0;
-  color: rgba(colors.$white, 0.1);
+  color: rgba(colors.$white, 0.15);
 
   &--function {
     &-base {
@@ -139,10 +136,10 @@ $card-gap: 4px;
     }
 
     &-creative {
-      width: 252px;
-      height: 173px;
-      left: -$card-gap;
-      bottom: -$card-gap;
+      width: 320px;
+      height: 200px;
+      left: 0;
+      bottom: -10%;
       animation: creative-function 5s ease-in-out infinite;
     }
 
@@ -159,7 +156,8 @@ $card-gap: 4px;
       height: 360px;
       left: -64px;
       bottom: -128px;
-      color: var(--function-color);
+      color: var(--function-aspect-color);
+      opacity: 0.1;
       animation: pain-function 5s ease-in-out infinite;
     }
 
@@ -182,7 +180,7 @@ $card-gap: 4px;
     &-activate,
     &-suggestive {
       opacity: 0.1;
-      color: var(--function-quadral-role-color);
+      color: #{colors.$aspect};
     }
   }
 }

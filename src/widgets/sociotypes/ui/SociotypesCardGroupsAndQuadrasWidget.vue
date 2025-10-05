@@ -94,9 +94,9 @@ const {
 .sociotypes-card-groups-and-quadras-widget {
   display: flex;
   flex-direction: column;
-  padding: 0 8px 12px;
 
   &--mini {
+    padding-bottom: 8px;
     display: grid;
     grid-template-columns: repeat(3, max-content);
     grid-template-rows: 1fr 1fr;
