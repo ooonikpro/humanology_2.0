@@ -18,7 +18,9 @@ const fillWidth = computed(() => {
     class="ui-progress-bar"
   >
     <slot v-bind="{ fillWidth, colorClass: `g-bg--${props.color}` }">
-      <div :class="[`g-bg--${props.color}`]" class="ui-progress-bar__fill" />
+      <div class="ui-progress-bar__container">
+        <div :class="[`g-bg--${props.color}`]" class="ui-progress-bar__fill" />
+      </div>
     </slot>
   </div>
 </template>
@@ -42,12 +44,23 @@ const fillWidth = computed(() => {
     flex-flow: row-reverse nowrap;
   }
 
+  &__container {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
   &__fill {
-    flex: 0 0 v-bind(fillWidth);
-    width: v-bind(fillWidth);
+    width: 100%;
     height: 100%;
 
-    @include transitions.ease(width);
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    transform: translateX(v-bind(fillWidth));
+    @include transitions.ease(transform);
   }
 }
 </style>

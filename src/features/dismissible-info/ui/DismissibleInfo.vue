@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import UiDismissibleInfo from "@shared/ui/UiDismissibleInfo.vue";
-import { ref, onMounted } from "vue";
+import { ref, onBeforeMount } from "vue";
 
 const { initiallyVisible = true, ...props } = defineProps<{
   storageKey: string;
@@ -13,7 +13,7 @@ const close = () => {
   localStorage.setItem(props.storageKey, "hidden");
 };
 
-onMounted(() => {
+onBeforeMount(() => {
   const stored = localStorage.getItem(props.storageKey);
   isVisible.value = stored !== "hidden";
 });
