@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { DETAIL_CARD_YUNG } from "@entities/sociotypes/config/detailCard";
-import { DetailCardWidget } from "@widgets/detail-card";
+import { yungDichotomiesModel } from "@entities/yung-dichotomies";
+import { DetailCard } from "@features/characteristics";
+
+const allDetailYungs = yungDichotomiesModel.getAllDetailYungs();
 </script>
 
 <template>
   <div class="jung-dichotomy">
-    <DetailCardWidget
-      v-for="data in DETAIL_CARD_YUNG"
+    <DetailCard
+      v-for="data in allDetailYungs"
       :key="data.yung"
       :icon-name="`yung_${data.yung}`"
       :data="data"

@@ -19,6 +19,7 @@ const { color = "black", ...props } = defineProps<{
       `g-bg--${props.bg}`,
     ]"
   >
+    <slot name="icon" />
     <UiText :color="color" preset="small">
       <slot />
     </UiText>

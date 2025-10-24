@@ -50,7 +50,7 @@ const checkQuery = (query: LocationQuery) =>
 .sociotype-bottom-sheet-title-group {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: colors.$quadra;
+  gap: 12px;
+  color: colors.$black;
 }
 </style>

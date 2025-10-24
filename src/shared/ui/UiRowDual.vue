@@ -1,23 +1,45 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="T">
 import UiText from "./UiText.vue";
 
-const props = defineProps<{
-  link: string;
+type SharedProps = {
   leftText: string;
   rightText: string;
-}>();
+};
+
+type BothLink = {
+  link?: never;
+  leftLink: string;
+  rightLink: string;
+};
+
+type OneLink = {
+  link: string;
+  leftLink?: never;
+  rightLink?: never;
+};
+
+const props = defineProps<(OneLink | BothLink) & SharedProps>();
 </script>
 
 <template>
-  <NuxtLink :to="props.link" class="ui-row-dual">
-    <UiText preset="large" class="ui-row-dual__text">
-      {{ props.leftText }}
-    </UiText>
+  <div class="ui-row-dual">
+    <NuxtLink :to="props.link || props.leftLink">
+      <UiText
+        preset="large"
+        color="black"
+        force-tag="span"
+        class="ui-row-dual__text"
+      >
+        {{ props.leftText }}
+      </UiText>
+    </NuxtLink>
     <span class="ui-row-dual__line"></span>
-    <UiText preset="large" class="ui-row-dual__text">
-      {{ props.rightText }}
-    </UiText>
-  </NuxtLink>
+    <NuxtLink :to="props.link || props.rightLink">
+      <UiText preset="small" color="dark-grey" class="ui-row-dual__text">
+        {{ props.rightText }}
+      </UiText>
+    </NuxtLink>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -28,15 +50,6 @@ const props = defineProps<{
   display: flex;
   align-items: baseline;
   gap: 8px;
-
-  &__text {
-    color: colors.$black;
-
-    &:last-child {
-      font-size: 14px;
-      opacity: 0.5;
-    }
-  }
 
   &__line {
     height: 1px;

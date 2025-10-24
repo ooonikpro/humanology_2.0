@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { DETAIL_CARD_REININ } from "@entities/sociotypes/config/detailCard";
-import { DetailCardWidget } from "@widgets/detail-card";
+import { reininsModel } from "@entities/reinins";
+import { DetailCard } from "@features/characteristics";
+
+const allDetailReinins = reininsModel.getAllDetailReinins();
 </script>
 
 <template>
   <div class="reining-signs">
-    <DetailCardWidget
-      v-for="data in DETAIL_CARD_REININ"
+    <DetailCard
+      v-for="data in allDetailReinins"
       :key="data.reinin"
       :icon-name="`reinin_${data.reinin}`"
       :data="data"

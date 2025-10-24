@@ -59,7 +59,7 @@ $gap: 8px;
 
 .intertype-with-sociotype {
   padding: $gap;
-  border-radius: 8px;
+  border-radius: 12px;
   display: grid;
   grid-template-columns: 40% 60%;
   background-color: colors.$bg-intertype;

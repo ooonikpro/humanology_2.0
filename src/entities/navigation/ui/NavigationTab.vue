@@ -5,8 +5,17 @@ const props = defineProps<NavigationTabPropsType>();
 </script>
 
 <template>
-  <NuxtLink :to="props.to" class="navigation-tab">
-    <span class="navigation-tab__content">
+  <NuxtLink
+    :to="props.to"
+    :class="{ 'navigation-tab--column': props.isColumn }"
+    class="navigation-tab"
+  >
+    <span
+      :class="{
+        'navigation-tab__content--full': props.isColumn,
+      }"
+      class="navigation-tab__content"
+    >
       <slot name="icon">
         <UiSvg
           v-if="props.iconName"
@@ -14,13 +23,18 @@ const props = defineProps<NavigationTabPropsType>();
           class="navigation-tab__icon"
         />
       </slot>
-      <span class="navigation-tab__label">{{ props.label }}</span>
+      <slot name="label">
+        <span class="navigation-tab__label">{{ props.label }}</span>
+      </slot>
     </span>
 
-    <span v-if="$slots.top" class="navigation-tab__top">
+    <span v-if="$slots.top && !props.isColumn" class="navigation-tab__top">
       <slot name="top"></slot>
     </span>
-    <span v-if="$slots.bottom" class="navigation-tab__bottom">
+    <span
+      v-if="$slots.bottom && !props.isColumn"
+      class="navigation-tab__bottom"
+    >
       <slot name="bottom"></slot>
     </span>
   </NuxtLink>
@@ -31,6 +45,7 @@ const props = defineProps<NavigationTabPropsType>();
 
 .navigation-tab {
   padding: 8px 12px 8px 12px;
+
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-template-rows: max-content;
@@ -42,14 +57,25 @@ const props = defineProps<NavigationTabPropsType>();
 
   overflow: hidden;
   background-color: colors.$beige-tone;
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
+
+  &--column {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 8px;
+  }
 
   &__content {
     grid-column: 1/1;
     display: flex;
     flex-flow: column nowrap;
     gap: 8px;
+
+    &--full {
+      gap: inherit;
+    }
   }
 
   &__icon {
@@ -73,6 +99,5 @@ const props = defineProps<NavigationTabPropsType>();
   &__bottom {
     justify-self: flex-end;
   }
-
 }
 </style>

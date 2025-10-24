@@ -277,6 +277,7 @@ export type DateRuLocaleType = `${string}.${string}.${string}`; // dd.mm.yyyy
 export type SociotypeAgeType = "kid" | "young" | "adult";
 export type TextColorType =
   | "white"
+  | "light-grey"
   | "grey"
   | "dark-grey"
   | "beige"
@@ -302,6 +303,9 @@ export type TextColorType =
   | "intertype"
   | "intertype-bg"
   | "psychotype"
+  | "aspect"
+  | "aspect-semitransparent"
+  | "aspect-bg"
   | "inherit";
 
 export type TextPresetType =
@@ -367,6 +371,8 @@ export type OptionByVariantType = {
 
 export type VariantType = keyof OptionByVariantType;
 
+export type RingType = "mental" | "vital";
+
 export type TheoryEntityDataType<T> = {
   id: T;
   label: string;
@@ -376,8 +382,20 @@ export type TheoryEntityDataType<T> = {
   description: string[];
 };
 
+export type DefaultDetailCardType<T extends string> = {
+  title: string;
+  type: T;
+  subtitle: string;
+  tags: string[];
+  content: string[];
+};
+
 export type FunctionDetailCardType = DefaultDetailCardType<"function"> & {
   socionicFn: HumanFunctionType;
+};
+
+export type AlignmentDetailCardType = DefaultDetailCardType<"alignment"> & {
+  alignment: AlignmentType;
 };
 
 export type AspectDetailCardType = DefaultDetailCardType<"aspect"> & {
@@ -389,20 +407,28 @@ export type BlockDetailCardType = DefaultDetailCardType<"block"> & {
   block: BlockNameType;
 };
 
-export type RingDetailCardType = DefaultDetailCardType<"ring"> & {
-  ring: "mental" | "vital";
+export type ClubDetailCardType = DefaultDetailCardType<"club"> & {
+  club: ClubIdType;
+};
+
+export type PsychotypeDetailCardType = DefaultDetailCardType<"psychotype"> & {
+  psychotype: PsychotypeIdType;
 };
 
 export type QuadraDetailCardType = DefaultDetailCardType<"quadra"> & {
   quadra: QuadrasType;
 };
 
-export type SuitDetailCardType = DefaultDetailCardType<"suit"> & {
-  suit: TarotType;
+export type RingDetailCardType = DefaultDetailCardType<"ring"> & {
+  ring: RingType;
 };
 
 export type RoleDetailCardType = DefaultDetailCardType<"role"> & {
   role: RoleType;
+};
+
+export type SuitDetailCardType = DefaultDetailCardType<"suit"> & {
+  suit: TarotType;
 };
 
 export type ClubDataType = TheoryEntityDataType<ClubIdType>;
@@ -425,7 +451,34 @@ export type ReininDetailCardType = DefaultDetailCardType<"reinin"> & {
   reinin: ReininSignType;
 };
 
+export type DetailValueType =
+  | HumanFunctionType
+  | AlignmentType
+  | AspectType
+  | BlockNameType
+  | ClubIdType
+  | PsychotypeIdType
+  | QuadrasType
+  | RingType
+  | RoleType
+  | TarotType
+  | MindsetType
+  | IntertypeIdType
+  | DichotomyType
+  | ReininSignType;
+
+export type CharacteristicType =
+  | Exclude<DetailCardType["type"], "alignment" | "suit">
+  | "tarot"
+  | "worldview"
+  | "temperament"
+  | "motivation"
+  | "character"
+  | "communication_style"
+  | "companion";
+
 export type DetailCardType =
+  | AlignmentDetailCardType
   | FunctionDetailCardType
   | AspectDetailCardType
   | BlockDetailCardType
@@ -433,8 +486,8 @@ export type DetailCardType =
   | QuadraDetailCardType
   | SuitDetailCardType
   | RoleDetailCardType
-  | ClubDataType
-  | PsychotypeDataType
+  | ClubDetailCardType
+  | PsychotypeDetailCardType
   | MindsetDetailCardType
   | IntertypeDetailCardType
   | YungDetailCardType
@@ -447,3 +500,23 @@ export type SociotypeQueryType = Partial<{
 }>;
 
 export type SociotypeQueryKeyType = keyof SociotypeQueryType;
+
+export type TestType<V extends string> = {
+  id: number;
+  question?: string;
+  answers: {
+    variant: V;
+    label: string;
+  }[];
+};
+
+export type TallyKeyType = Extract<
+  DichotomyType,
+  "rational" | "logic" | "sensory" | "extravert"
+>;
+
+export type TallyType = Record<TallyKeyType, number>;
+
+export type TallyPoleType = "left" | "right";
+
+export type AnswerCardType = "mini" | "default" | "big-label";

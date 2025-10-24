@@ -1,4 +1,4 @@
-import type { BlockNameType, HumanFunctionType } from "@types";
+import type { BlockNameType, HumanFunctionType, IconSizeType } from "@types";
 
 export const BLOCKS: Record<BlockNameType, string> = {
   ego: "Блок Эго",
@@ -24,18 +24,60 @@ export const BLOCKS_LABELS: Record<BlockNameType, string> = {
   superid: "Ребенок — Самочувствие",
 };
 
-export const LARGE_FUNCTION_CARD: HumanFunctionType[] = [
-  "base",
-  "creative",
-  "activate",
-  "suggestive",
-];
-export const FUNCTION_CARD_WITHOUT_ICON: HumanFunctionType[] = [
-  "limit",
-  "role",
-];
-
-export const FUNCTION_CARD_WITHOUT_BACKGROUND_IMAGE: HumanFunctionType[] = [
-  "back",
-  "role",
-];
+type FunctionCardConfigItemType = {
+  hasBackground: boolean;
+  iconSize?: IconSizeType;
+  size: "large" | "default";
+  opacity: number;
+};
+export const FUNCTION_CARD_CONFIG: Record<
+  HumanFunctionType,
+  FunctionCardConfigItemType
+> = {
+  base: {
+    hasBackground: true,
+    iconSize: "80",
+    size: "large",
+    opacity: 1,
+  },
+  creative: {
+    hasBackground: true,
+    iconSize: "64",
+    size: "large",
+    opacity: 0.75,
+  },
+  suggestive: {
+    hasBackground: true,
+    iconSize: "80",
+    size: "large",
+    opacity: 1,
+  },
+  activate: {
+    hasBackground: true,
+    iconSize: "64",
+    size: "large",
+    opacity: 0.75,
+  },
+  role: {
+    hasBackground: false,
+    size: "default",
+    opacity: 1,
+  },
+  pain: {
+    hasBackground: true,
+    iconSize: "64",
+    size: "default",
+    opacity: 1,
+  },
+  back: {
+    hasBackground: false,
+    iconSize: "64",
+    size: "default",
+    opacity: 1,
+  },
+  limit: {
+    hasBackground: true,
+    size: "default",
+    opacity: 1,
+  },
+};

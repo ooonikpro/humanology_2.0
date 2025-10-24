@@ -8,6 +8,10 @@ import getRightFunctionName from "./methods/getRightFunctionName";
 import getBlockName from "./methods/getBlockName";
 import getDescription from "./methods/getDescription";
 import getTags from "./methods/getTags";
+import getAllDetailBlocks from "./methods/getAllDetailBlocks";
+import getDetailBlock from "./methods/getDetailBlock";
+import getAllDetailFunctions from "./methods/getAllDetailFunctions";
+import getDetailFunction from "./methods/getDetailFunction";
 
 export default {
   getAllFunctions,
@@ -20,4 +24,8 @@ export default {
   getBlockName,
   getDescription,
   getTags,
+  getAllDetailBlocks,
+  getDetailBlock,
+  getAllDetailFunctions,
+  getDetailFunction,
 };

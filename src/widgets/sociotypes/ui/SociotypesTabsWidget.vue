@@ -69,6 +69,7 @@ onBeforeUnmount(() => {
   &__link {
     flex: 0 0 content;
     min-width: 96px;
+    border-radius: 12px;
 
     @include transitions.ease(background-color, color);
 
@@ -77,7 +78,7 @@ onBeforeUnmount(() => {
 
     &--active {
       opacity: 1;
-      background-color: colors.$role;
+      background-color: colors.$black;
       color: colors.$white;
     }
 

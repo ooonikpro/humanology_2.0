@@ -45,7 +45,11 @@ const onScroll = (e: Event) => {
 <template>
   <div :style="styles" class="sociotype-quadras-group">
     <div class="sociotype-quadras-group__header">
-      <UiText color="quadra" preset="small" class="sociotype-quadras-group__active-quadra">
+      <UiText
+        color="quadra"
+        preset="small"
+        class="sociotype-quadras-group__active-quadra"
+      >
         <UiSvg
           :name="activeQuadra"
           size="20"
@@ -98,8 +102,7 @@ const onScroll = (e: Event) => {
 .sociotype-quadras-group {
   @include transitions.ease(border-top, background-color);
 
-  border-radius: 4px;
-  border-top: 1px solid colors.$quadra;
+  border-radius: 12px;
   background-color: colors.$bg-quadra;
 
   &__header {

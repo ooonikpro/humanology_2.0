@@ -35,7 +35,7 @@ const props = defineProps<{
 <style lang="scss" scoped>
 @use "@shared/styles/mixins/bem";
 
-$gap: 4px;
+$gap: 8px;
 
 .block-functions-provider {
   display: flex;

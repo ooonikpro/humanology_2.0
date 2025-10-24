@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { DichotomyType, SociotypeDataType, SociotypeIdType } from "@types";
+import type { DichotomyType, SociotypeIdType } from "@types";
 
 import SociotypeSignsBlock from "./SociotypeSignsBlock.vue";
 
@@ -8,24 +8,32 @@ import model from "../model";
 
 const props = defineProps<{
   id: SociotypeIdType;
-  yungs: SociotypeDataType["yungs"];
+  yungs: DichotomyType[];
 }>();
 
 const { goToSheet } = useCharacteristicSheet(() => props.id);
 
-const goToDichotomySheet = (yung: DichotomyType) => {
-  return goToSheet("yung", [yung, model.getOppositeYungDichotomy(yung)]);
-};
+const row = computed(() => {
+  return props.yungs.map((yung) => {
+    const oppositeYung = model.getOppositeYungDichotomy(yung);
+
+    return {
+      key: `${props.id}-${yung}`,
+      leftLink: goToSheet("yung", [yung, oppositeYung]),
+      rightLink: goToSheet("yung", [oppositeYung, yung]),
+      leftText: model.getYungDichtomyLabel(yung),
+      rightText: model.getOppositeYungDichtomyLabel(yung),
+    };
+  });
+});
 </script>
 
 <template>
   <SociotypeSignsBlock title="Дихотомии Юнга">
     <UiRowDual
-      v-for="row in props.yungs"
-      :key="row"
-      :link="goToDichotomySheet(row)"
-      :leftText="model.getYungDichtomyLabel(row)"
-      :rightText="model.getOppositeYungDichtomyLabel(row)"
+      v-for="{ key, ...yungData } in row"
+      :key="key"
+      v-bind="yungData"
     />
   </SociotypeSignsBlock>
 </template>

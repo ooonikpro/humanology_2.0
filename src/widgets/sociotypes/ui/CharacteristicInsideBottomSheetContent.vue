@@ -1,65 +1,50 @@
 <script setup lang="ts">
-import { sociotypeModel } from "@entities/sociotypes";
+import type { CharacteristicType } from "@types";
 import { capitalize } from "@shared/lib";
+import {
+  isMentalityCharacteristic,
+  isValidCharacteristic,
+} from "@features/characteristics";
+import DetailCardList from "./sheet-content/DetailCardList.vue";
 
 const props = defineProps<{
   characteristic: string;
   value: string;
 }>();
 
-// some_word -> SomeWord
-const transformCharacteristic = (ch: string) => {
-  if (ch.includes("_")) {
-    return ch
-      .split("_")
-      .map((word) => capitalize(word))
-      .join("");
-  }
-  return capitalize(ch);
-};
-
-const normalizeValue = computed(() =>
-  props.value.split(" ").filter((v) => !!v),
-);
-
-const checkValidPair = <T extends string>(
-  pair: string[],
-  oppositeFunc: (val: T) => T,
-) => {
-  const [opposite, value] = [
-    oppositeFunc(pair[0] as T),
-    oppositeFunc(pair[1] as T),
-  ];
-  return !!value && !!opposite && value === pair[0] && opposite === pair[1];
-};
-
-const transformedCharacteristic = computed(() => {
-  if (normalizeValue.value.length > 1) {
-    const { getOppositeYungDichotomy, getOppositeReinin } = sociotypeModel;
-    if (checkValidPair(normalizeValue.value, getOppositeYungDichotomy)) {
-      return "Dichotomy";
-    }
-
-    if (checkValidPair(normalizeValue.value, getOppositeReinin)) {
-      return "Reinin";
-    }
-  }
-  return transformCharacteristic(props.characteristic);
+const isMentalityCh = computed(() => {
+  return isMentalityCharacteristic(props.characteristic);
+});
+const isValidCh = computed(() => isValidCharacteristic(props.characteristic));
+const sharedProps = computed(() => {
+  return {
+    values: props.value.split(" "),
+    characteristic: props.characteristic as CharacteristicType,
+  };
 });
 
-const Component = defineAsyncComponent(() => {
-  return import(
-    `./sheet-content/${transformedCharacteristic.value}SheetContent.vue`
-  );
+const componentName = computed(() => {
+  return props.characteristic
+    .split("_")
+    .filter(Boolean)
+    .map(capitalize)
+    .join("");
+});
+const Component = defineAsyncComponent({
+  loader: () => {
+    return import(`./sheet-content/${componentName.value}SheetContent.vue`);
+  },
 });
 </script>
 
 <template>
   <component
+    v-if="isValidCh && isMentalityCh"
     :is="Component"
-    :characteristic="props.characteristic"
-    :value="normalizeValue"
-  ></component>
+    v-bind="sharedProps"
+  />
+  <DetailCardList v-else-if="isValidCh" v-bind="sharedProps" />
+  <div v-else>Что-то пошло не так</div>
 </template>
 
 <style lang="scss" scoped></style>

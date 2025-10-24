@@ -1,12 +1,14 @@
-<script setup lang="ts">
+<script lang="ts" setup>
+import type { CharacteristicType } from "@types";
+
 const props = defineProps<{
-  characteristic: string;
-  value: string;
+  characteristic: CharacteristicType;
+  values: string[];
 }>();
 </script>
 
 <template>
-  <div>Worldview</div>
+  <div>WorldView</div>
 </template>
 
 <style lang="scss" scoped></style>

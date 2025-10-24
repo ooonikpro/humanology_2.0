@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import {
   SociotypeCard,
-  SociotypeCardYungs,
   SociotypeCardHeader,
   SociotypeProvider,
   sociotypeModel,
@@ -12,6 +11,7 @@ import {
   SociotypeReininSigns,
 } from "@entities/sociotypes";
 import { SociotypeCarousel } from "@features/sociotypes";
+import { DismissibleInfo } from "@features/dismissible-info";
 import {
   SociotypesPageTitleWidget,
   SociotypesTabsWidget,
@@ -47,11 +47,10 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
           </template>
 
           <template v-if="isCardTab" #groups-and-quadras>
-            <SociotypesCardGroupsAndQuadrasWidget v-bind="data" />
-          </template>
-
-          <template v-if="isCardTab" #yungs>
-            <SociotypeCardYungs v-bind="data" />
+            <SociotypesCardGroupsAndQuadrasWidget
+              v-bind="data"
+              :showPopulation="true"
+            />
           </template>
         </SociotypeCard>
 
@@ -61,6 +60,13 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
 
         <template v-if="isCardTab">
           <SociotypeSignsBlock title="Краткое описание">
+            <DismissibleInfo storage-key="sociotypes-precision-info">
+              <UiText preset="large" color="black">О точности описаний</UiText>
+              <UiText preset="body" color="black">
+                Описания — ориентиры, а не ярлыки. Не всё совпадёт с каждым.
+                Сверяйте с наблюдениями и независимыми оценками.
+              </UiText>
+            </DismissibleInfo>
             <NuxtPage v-if="carouselData.isCurrent" />
             <UiLoadSociotypePageComponent
               v-else

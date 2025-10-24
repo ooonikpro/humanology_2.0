@@ -26,6 +26,24 @@
   --color-intertype-group-neutral: #{colors.$neutral};
   --color-intertype-group-unfavorable: #{colors.$unfavorable};
 
+  --color-aspect-logic: #{colors.$pink};
+  --color-aspect-business: #{colors.$pink};
+  --color-aspect-people: #{colors.$green};
+  --color-aspect-emotions: #{colors.$green};
+  --color-aspect-ideas: #{colors.$turquoise};
+  --color-aspect-time: #{colors.$turquoise};
+  --color-aspect-will: #{colors.$yellow};
+  --color-aspect-comfort: #{colors.$yellow};
+
+  --color-aspect-logic-semitransparent: #{rgba(colors.$pink, 0.5)};
+  --color-aspect-business-semitransparent: #{rgba(colors.$pink, 0.5)};
+  --color-aspect-people-semitransparent: #{rgba(colors.$green, 0.5)};
+  --color-aspect-emotions-semitransparent: #{rgba(colors.$green, 0.5)};
+  --color-aspect-ideas-semitransparent: #{rgba(colors.$turquoise, 0.5)};
+  --color-aspect-time-semitransparent: #{rgba(colors.$turquoise, 0.5)};
+  --color-aspect-will-semitransparent: #{rgba(colors.$yellow, 0.5)};
+  --color-aspect-comfort-semitransparent: #{rgba(colors.$yellow, 0.5)};
+
   --bg-quadra-air: #{colors.$transparently-air};
   --bg-quadra-fire: #{colors.$transparently-fire};
   --bg-quadra-water: #{colors.$transparently-water};
@@ -35,6 +53,15 @@
   --bg-intertype-group-favorable: #{colors.$transparently-green};
   --bg-intertype-group-neutral: #{colors.$transparently-yellow};
   --bg-intertype-group-unfavorable: #{colors.$transparently-pink};
+
+  --bg-aspect-logic: #{colors.$transparently-air};
+  --bg-aspect-business: #{colors.$transparently-air};
+  --bg-aspect-people: #{colors.$transparently-fire};
+  --bg-aspect-emotions: #{colors.$transparently-fire};
+  --bg-aspect-ideas: #{colors.$transparently-water};
+  --bg-aspect-time: #{colors.$transparently-water};
+  --bg-aspect-will: #{colors.$transparently-earth};
+  --bg-aspect-comfort: #{colors.$transparently-earth};
 
   --bg-color: #{colors.$white};
   --text-color: #{colors.$black};
@@ -53,7 +80,8 @@
   scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
   min-width: layouts.$minWidth;
   overflow-x: hidden;
 }

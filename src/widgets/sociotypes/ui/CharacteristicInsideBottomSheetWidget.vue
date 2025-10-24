@@ -12,15 +12,6 @@ const props = defineProps<{ sociotypeId: SociotypeIdType }>();
     :sociotype-id="props.sociotypeId"
     :accepted-query="['ch', 'v']"
   >
-    <template #title="{ data }">
-      <UiTitle color="quadra">
-        {{ data.ch }}
-      </UiTitle>
-      <UiTitle>
-        {{ data.v }}
-      </UiTitle>
-    </template>
-
     <template #default="{ data }">
       <CharacteristicInsideBottomSheetContent
         :characteristic="data.ch"

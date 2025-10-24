@@ -5,7 +5,7 @@ const props = defineProps<{ title: string }>();
 <template>
   <div class="sociotype-signs-block">
     <div class="sociotype-signs-block__header">
-      <UiText color="quadra">{{ props.title }}</UiText>
+      <UiText preset="small" color="black">{{ props.title }}</UiText>
     </div>
 
     <div class="sociotype-signs-block__content">
@@ -19,36 +19,24 @@ const props = defineProps<{ title: string }>();
 
 .sociotype-signs-block {
   background-color: colors.$white;
-  border-radius: 4px;
-  border-top: solid 1px colors.$grey;
-  padding: 8px;
+  border-radius: 12px;
 
   &__header {
-    padding: 0 8px 8px;
-    margin: 0 -8px;
-    position: relative;
+    padding: 8px 12px;
 
-    &:before {
-      content: "";
-      position: absolute;
-      top: -8px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        0,
-        rgba(colors.$white, 0) 10%,
-        colors.$quadra 98%
-      );
-      opacity: 0.05;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    position: relative;
+    background-color: colors.$beige-tone;
+    border-radius: inherit;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid colors.$grey;
-    padding: 16px 0;
+    padding: 16px 8px;
     gap: 8px;
   }
 }

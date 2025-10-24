@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import {
   SociotypeCard,
-  SociotypeCardYungs,
   SociotypeCardHeader,
   SociotypeProvider,
   sociotypeModel,
@@ -33,10 +32,6 @@ const { sociotypeId } = useSociotypePageRoute();
 
         <template #groups-and-quadras>
           <SociotypesCardGroupsAndQuadrasWidget v-bind="data" />
-        </template>
-
-        <template #yungs>
-          <SociotypeCardYungs v-bind="data" />
         </template>
       </SociotypeCard>
 

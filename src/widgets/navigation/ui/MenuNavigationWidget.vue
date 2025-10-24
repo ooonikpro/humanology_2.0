@@ -175,21 +175,23 @@ useBodyScrollLock(() => props.isOpen, container);
 @use "@shared/styles/mixins/transitions";
 
 .navigation {
+  padding: 12px 8px 70px 8px;
   width: 100%;
   height: 100dvh;
-  transform: translateX(-100%);
-  padding-bottom: 70px;
-  padding-top: 12px;
+
   overflow-x: hidden;
   overflow-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
+
   background-color: colors.$white;
 
-  @include transitions.ease(transform);
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
 
   &--open {
-    transform: translateX(0);
+    opacity: 1;
+    transition: opacity 0.1s ease-in 0.05s;
   }
 }
 

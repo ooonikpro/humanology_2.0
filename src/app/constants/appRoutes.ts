@@ -40,4 +40,8 @@ export const appRoutes = {
   intertypes: "/t/i",
   // Описание интертипа
   intertypeDescription: (intertype = ":intertype") => `/t/i/${intertype}`,
+  // Сексуальные программы квадр
+  sexualPrograms: "/sexual-programs",
+  // Совместимость психогрупп
+  groupCompatibility: "/group-compatibility",
 } as const;

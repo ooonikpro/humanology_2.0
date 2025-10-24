@@ -18,11 +18,16 @@ const props = defineProps<{ sociotypeId: SociotypeIdType }>();
     :accepted-query="['f']"
   >
     <template #title="{ data }">
-      <UiText color="quadra">
+      <UiText color="black">
         {{ functionsModel.getName(data.f) }} функция
       </UiText>
-      <UiText>{{ functionsModel.getLevelName(data.f) }}</UiText>
-      <FunctionLevel :lvl="functionsModel.getLevel(data.f)" />
+      <FunctionLevel
+        :lvl="functionsModel.getLevel(data.f)"
+        class="bottom-sheet-function-level"
+      />
+      <UiText color="black" class="bottom-sheet-level-name">
+        {{ functionsModel.getLevelName(data.f) }}
+      </UiText>
     </template>
 
     <template #default="{ data }">
@@ -86,6 +91,14 @@ const props = defineProps<{ sociotypeId: SociotypeIdType }>();
 
 <style lang="scss" scoped>
 @use "@shared/styles/variables/colors";
+
+.bottom-sheet-function-level {
+  color: colors.$quadra;
+}
+
+.bottom-sheet-level-name {
+  margin-left: auto;
+}
 
 .bottom-sheet-content {
   display: flex;
