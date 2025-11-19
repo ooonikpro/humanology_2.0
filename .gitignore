@@ -36,3 +36,5 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+/.nginx/certs
