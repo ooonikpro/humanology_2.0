@@ -2,27 +2,27 @@
 import {
   SociotypeCard,
   SociotypeCardHeader,
+  SociotypeMentality,
   SociotypeProvider,
+  SociotypeReininSigns,
+  SociotypeSignsBlock,
+  SociotypeYungDichtomy,
   sociotypeModel,
   useSociotypePageRoute,
-  SociotypeYungDichtomy,
-  SociotypeSignsBlock,
-  SociotypeMentality,
-  SociotypeReininSigns,
 } from "@entities/sociotypes";
-import { SociotypeCarousel } from "@features/sociotypes";
 import { DismissibleInfo } from "@features/dismissible-info";
-import {
-  SociotypesPageTitleWidget,
-  SociotypesTabsWidget,
-  SociotypesGroupsAndQuadrasWidget,
-  SociotypesCardGroupsAndQuadrasWidget,
-  CharacteristicInsideBottomSheetWidget,
-} from "@widgets/sociotypes";
+import { SociotypeCarousel } from "@features/sociotypes";
 import {
   BlockFunctionsListWidget,
   FunctionInsideBottomSheetWidget,
 } from "@widgets/functions-and-blocks";
+import {
+  CharacteristicInsideBottomSheetWidget,
+  SociotypesCardGroupsAndQuadrasWidget,
+  SociotypesGroupsAndQuadrasWidget,
+  SociotypesPageTitleWidget,
+  SociotypesTabsWidget,
+} from "@widgets/sociotypes";
 
 const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
 </script>
@@ -40,7 +40,6 @@ const { sociotypeId, activeTab, isCardTab } = useSociotypePageRoute();
           :gender="sociotypeModel.getGenderByYung(data.id)"
           :isShowToggle="isCardTab"
           class="sociotype-layout__card"
-          bordered
         >
           <template #header>
             <SociotypeCardHeader :data="data" />

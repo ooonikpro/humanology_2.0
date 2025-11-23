@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { Gender, SociotypeAgeType, SociotypeDataType } from "@types";
 import { GenderEnum } from "@shared/constants";
 import { useInjectAppRoutes } from "@shared/hooks/useAppRoutes";
+import type { Gender, SociotypeAgeType, SociotypeDataType } from "@types";
 
-import SociotypeQuadraCircle from "../quadras/SociotypeQuadraCircle.vue";
 import SociotypePortrait from "../portraits/SociotypePortrait.vue";
+import SociotypeQuadraCircle from "../quadras/SociotypeQuadraCircle.vue";
 import SociotypeCardRationalsBlock from "./SociotypeCardRationalsBlock.vue";
 
 const $appRoutes = useInjectAppRoutes();
@@ -16,7 +16,6 @@ const { age = "young", ...props } = defineProps<{
   age?: SociotypeAgeType;
   data: SociotypeDataType;
   isShowToggle?: boolean;
-  bordered?: boolean;
 }>();
 
 const genderModel = ref(toValue(props.gender) ?? GenderEnum.male);
@@ -37,7 +36,6 @@ const handleClick = () => {
   <div
     :class="{
       'sociotype-card--mini': props.mini,
-      'sociotype-card--bordered': props.bordered,
     }"
     :data-turbo="false"
     class="sociotype-card"
@@ -116,6 +114,7 @@ const handleClick = () => {
     overflow: hidden;
     position: relative;
     border-radius: inherit;
+    background: inherit;
 
     &::before {
       content: "";
@@ -124,7 +123,7 @@ const handleClick = () => {
       position: absolute;
       inset: 0;
 
-      opacity: 0.1;
+      opacity: 0.05;
       background: linear-gradient(135deg, colors.$role 0%, colors.$quadra 100%);
     }
   }
@@ -171,11 +170,6 @@ const handleClick = () => {
     right: 12px;
     bottom: 12px;
     z-index: 1;
-  }
-
-  &--bordered {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
   }
 
   &--mini {
