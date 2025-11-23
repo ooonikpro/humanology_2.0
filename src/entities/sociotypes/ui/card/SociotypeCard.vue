@@ -114,6 +114,7 @@ const handleClick = () => {
     overflow: hidden;
     position: relative;
     border-radius: inherit;
+    background: inherit;
 
     &::before {
       content: "";
@@ -122,7 +123,7 @@ const handleClick = () => {
       position: absolute;
       inset: 0;
 
-      opacity: 0.1;
+      opacity: 0.05;
       background: linear-gradient(135deg, colors.$role 0%, colors.$quadra 100%);
     }
   }
