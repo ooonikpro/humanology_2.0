@@ -23,7 +23,6 @@ const { sociotypeId } = useSociotypePageRoute();
         :data="data"
         :gender="sociotypeModel.getGenderByYung(data.id)"
         age="kid"
-        bordered
         isShowToggle
       >
         <template #header>
